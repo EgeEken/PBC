@@ -4,9 +4,10 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 
 The paper detailing the process along with the code will be uploaded soon.
 
-## WORK IN PROGRESS, PROOF OF CONCEPT
+# WORK IN PROGRESS
+## V1.0
 
-![image](https://github.com/EgeEken/PBC/assets/96302110/a371acc6-fae7-48c7-a669-794ab3f76dc7)
+![image](https://github.com/EgeEken/PBC/assets/96302110/60513a43-f5ab-43e2-93c3-2011c1b61349)
 
 ![image](https://github.com/EgeEken/PBC/assets/96302110/d4378cac-5da1-4605-920d-87e9ea9adf40)
 
