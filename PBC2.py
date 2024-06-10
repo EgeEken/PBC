@@ -1,11 +1,3 @@
-
-
-# |------------------------------------------------------------------------------|
-# | This is the V2.0 Encoder for the Probabilistic Brush Compression algorithm.  |
-# | Developed by: Ege Eken, 2024, github.com/EgeEken/PBC                         |
-# |------------------------------------------------------------------------------|
-
-
 import numpy as np
 from PIL import Image
 import time
@@ -211,28 +203,3 @@ def compress_into_file(filename, img, sizerange, multlist, stroke_count=10000):
     
 def recreate_from_file(filename):
     return decompress(*decode_all(read_encoded_file(filename)))
-
-
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-def main():
-    
-    filename = input("Enter the image filename: ")
-    img = np.asarray(Image.open(filename).convert("RGB"))
-    
-    sizerange = (max(img.shape)//100, max(img.shape)//30)
-    multlist = np.array([-30, 0, 15, 30])
-    
-    max_seed = 20000
-    
-    compress_into_file(filename, img, sizerange, multlist, max_seed)
-    
-    input("Done! Use the decoder to recreate the image from the binary file. Press Enter to exit.")
-    
-    
-if __name__ == "__main__":
-    main()
