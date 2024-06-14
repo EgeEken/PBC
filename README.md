@@ -33,9 +33,14 @@ This is essentially the same model as V2.0 but with a good amount of extra optio
 
 <img src="https://github.com/EgeEken/EgeEken/assets/96302110/da61d3e8-434b-4679-925d-987f19d41771" alt="Demonstration" width="80%" />
 
+Another thing i added later is custom size functions, for this i had help from a friend who studied more maths than i did, but essentially it is a function that allows for gradual transition from linear to sigmoid functions, with only 16 additional bits of info required for a lot of customization. The difference is pretty subtle, but worth the effort in my opinion, the difference is visible at the same rate of compression between a linear size function and a custom finetuned one.
+
+<img src="https://github.com/EgeEken/PBC/assets/96302110/2982d7ad-c97e-487c-836b-d3c516dbb315" alt="Demonstration" width="60%" />
+
+
 ## V3.0
 
-In this version, i changed the way seeds are applied, to a more predictable way. Which essentially means the brushes are no longer probabilistic, but this new algorithm will allow for lossless compression, as well as a significant improvement to the lossy compression. I will release the code and put some results here once i am done with it
+In this version, i changed the way seeds are applied, to a more predictable way. Which essentially means the brushes are no longer probabilistic, but this new algorithm will allow for lossless compression, as well as a significant improvement to the lossy compression. I will release the code and put some results here once i am done with it. For now it is still in development
 
 
 
