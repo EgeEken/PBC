@@ -1,3 +1,10 @@
+
+# |------------------------------------------------------------------------------|
+# | This is the V2.1 Model for the Probabilistic Brush Compression algorithm.    |
+# | Developed by: Ege Eken, 2024, github.com/EgeEken/PBC                         |
+# |------------------------------------------------------------------------------|
+
+
 import numpy as np
 from PIL import Image
 import time
