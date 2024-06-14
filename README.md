@@ -6,7 +6,7 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 
 The paper detailing the process will be uploaded soon.
 
-# WORK IN PROGRESS (V1 and V2 released, currently working on V3.0)
+# WORK IN PROGRESS (V2.1 released, currently working on V3.0)
 ## V1.0
 
 This is the base model, it works by taking in an image, a size list, a multiplier list, and generating random positions to place "brush strokes" on, and then checking every combination of size and multipliers from the lists to find the best attributes for that specific spot, then encoding them as the indexes for the used size and multipliers. 
