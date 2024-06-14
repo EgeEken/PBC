@@ -31,6 +31,8 @@ I also made a gradio demo for the compressor, where it is much easier and faster
 
 This is essentially the same model as V2.0 but with a good amount of extra options that allow further customization in encoding. Such as the starting color options, cutoff value, and a bunch of new features to the gradio interface, which is also now hosted 24/7 on [Hugging Face Spaces/PBC_V2.1](https://huggingface.co/spaces/EgeEken/PBC_V2.1)
 
+<img src="https://github.com/EgeEken/EgeEken/assets/96302110/da61d3e8-434b-4679-925d-987f19d41771" alt="Demonstration" width="80%" />
+
 ## V3.0
 
 In this version, i changed the way seeds are applied, to a more predictable way. Which essentially means the brushes are no longer probabilistic, but this new algorithm will allow for lossless compression, as well as a significant improvement to the lossy compression. I will release the code and put some results here once i am done with it
