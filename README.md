@@ -39,11 +39,15 @@ Another thing i added later is custom size functions, for this i had help from a
 <img src="https://github.com/EgeEken/PBC/assets/96302110/aed58c72-dbb5-475b-befe-8d986b8d2ae0" alt="Demonstration" width="30%" />
 <img src="https://github.com/EgeEken/PBC/assets/96302110/2982d7ad-c97e-487c-836b-d3c516dbb315" alt="Demonstration" width="60%" />
 
-## V3.0
+## V2.2 (Work in Progress)
 
-In this version, i changed the way seeds are applied, to a more predictable way. Which essentially means the brushes are no longer probabilistic, but this new algorithm will allow for lossless compression, as well as a significant improvement to the lossy compression. I will release the code and put some results here once i am done with it. For now it is still in development
+For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis on how the algorithm functions as is, to maybe get ideas on how to improve it. Here are some stuff i found:
 
+<img width="859" height="547" alt="image" src="https://github.com/user-attachments/assets/fce40e54-7b0a-4176-a539-5e10d950b9b2" />
 
+As expected, the loss goes down rapidly at the start, where large brush sizes are covering a big part of the image with each stroke, and as the brush size is procedurally lowered, the reduction in loss is more subtle, but this isn't a sign that the algorithm is stagnating, the smaller brush sizes are what allow for higher precision, if brush sizes were kept large, they would end up being useless after a couple thousand strokes.
+
+<img width="813" height="1606" alt="image" src="https://github.com/user-attachments/assets/8e1cb3a3-f431-4021-8226-c47e7b08abae" />
 
 
 
