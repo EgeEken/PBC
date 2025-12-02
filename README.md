@@ -43,11 +43,13 @@ Another thing i added later is custom size functions, for this i had help from a
 
 For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis on how the algorithm functions as is, to maybe get ideas on how to improve it. Here are some stuff i found:
 
+<img width="990" height="996" alt="image" src="https://github.com/user-attachments/assets/326e4bb3-8734-44b2-ab5b-882c20555d4a" />
+
 <img width="859" height="547" alt="image" src="https://github.com/user-attachments/assets/fce40e54-7b0a-4176-a539-5e10d950b9b2" />
 
-As expected, the loss goes down rapidly at the start, where large brush sizes are covering a big part of the image with each stroke, and as the brush size is procedurally lowered, the reduction in loss is more subtle, but this isn't a sign that the algorithm is stagnating, the smaller brush sizes are what allow for higher precision, if brush sizes were kept large, they would end up being useless after a couple thousand strokes.
+As expected, the loss goes down rapidly at the start, where large brush sizes are covering a big part of the image with each stroke, and as the brush size is procedurally lowered, the reduction in loss is more subtle, but this isn't a sign that the algorithm is stagnating, the smaller brush sizes are what allow for higher precision, if brush sizes were kept large, they would end up being useless after a couple thousand strokes. However, i think there's still a lot to gain from adding a "focus" mechanism that isolates channels, or even parts of the image. I'm working on that right now
 
-<img width="813" height="1606" alt="image" src="https://github.com/user-attachments/assets/8e1cb3a3-f431-4021-8226-c47e7b08abae" />
+
 
 
 
