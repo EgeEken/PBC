@@ -41,8 +41,9 @@ Another thing i added later is custom size functions, for this i had help from a
 
 ## V2.2 (Work in Progress)
 
-### WIP: Massive upgrade to the algorithm, quality improved, runtime reduced
-Comparison of V2.1 and V2.2 default settings on the same image, same stroke count (40000) as of 06/12/2025
+### WIP: Massive upgrade to the algorithm, features added, quality improved, runtime reduced
+Comparison of V2.1 and V2.2 default settings on the same image, same stroke count (40000), same file size / compression rate (17x) as of 06/12/2025
+
 <img src="https://github.com/user-attachments/assets/7f3af6b4-6dca-4163-b80d-811ab887e242" alt="Demonstration" width="40%" />
 <img src="https://github.com/user-attachments/assets/3175abfe-1dfc-456c-87bd-efcd746ede39" alt="Demonstration" width="40%" />
 
