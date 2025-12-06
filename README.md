@@ -41,6 +41,12 @@ Another thing i added later is custom size functions, for this i had help from a
 
 ## V2.2 (Work in Progress)
 
+### WIP: Massive upgrade to the algorithm, quality improved, runtime reduced
+Comparison of V2.1 and V2.2 default settings on the same image, same stroke count (40000) as of 06/12/2025
+<img src="https://github.com/user-attachments/assets/7f3af6b4-6dca-4163-b80d-811ab887e242" alt="Demonstration" width="40%" />
+<img src="https://github.com/user-attachments/assets/3175abfe-1dfc-456c-87bd-efcd746ede39" alt="Demonstration" width="40%" />
+
+
 For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis on how the algorithm functions as is, to maybe get ideas on how to improve it. Here are some stuff i found:
 
 <img width="990" height="996" alt="image" src="https://github.com/user-attachments/assets/326e4bb3-8734-44b2-ab5b-882c20555d4a" />
