@@ -7,7 +7,17 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 ### Current version compared to JPG at an equal rate of compression: 
 <img src="https://github.com/EgeEken/PBC/assets/96302110/c5b012e3-3008-4132-876b-5abdcdec9cd2" alt="Demonstration" width="40%" />
 
-# WORK IN PROGRESS (V2.1 released, currently working on V3.0)
+# WORK IN PROGRESS (V2.1 released, currently working on V2.2)
+## V2.2 visualizer preview (real time)
+### (18x compression)
+https://github.com/user-attachments/assets/23b36875-5c09-4624-8175-dcef8fd52215
+### (203x compression)
+https://github.com/user-attachments/assets/ee95ce52-e2c5-4336-b8ff-bc6eddc848f3
+
+
+
+
+
 ## V1.0
 
 This is the base model, it works by taking in an image, a size list, a multiplier list, and generating random positions to place "brush strokes" on, and then checking every combination of size and multipliers from the lists to find the best attributes for that specific spot, then encoding them as the indexes for the used size and multipliers. 
