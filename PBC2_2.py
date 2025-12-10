@@ -70,6 +70,66 @@ def process_quadrant_int(height, width, size, q_int, bitcount, padding):
 
     return row_start, col_start, row_end, col_end
 
+@njit(fastmath=True)
+def stroke_numba(target_layer, canvas_layer, h, w, row, col, size, mult_arr):
+    half = size // 2
+    
+    # Pre-allocate output array (Fixed size 4, integers)
+    # Numba loves fixed arrays.
+    stroke_indices = np.zeros(4, dtype=np.int32)
+    
+    # Unroll the loop manually or use range(4). 
+    # Do NOT create a list of slice objects.
+    
+    for k in range(4):
+        # Calculate bounds explicitly using integers
+        if k == 0:   # TL
+            r_s, r_e = row, row + half
+            c_s, c_e = col, col + half
+        elif k == 1: # TR
+            r_s, r_e = row, row + half
+            c_s, c_e = col + half, col + size
+        elif k == 2: # BL
+            r_s, r_e = row + half, row + size
+            c_s, c_e = col, col + half
+        elif k == 3: # BR
+            r_s, r_e = row + half, row + size
+            c_s, c_e = col + half, col + size
+            
+        # Basic boundary check (Integer math is instant)
+        if r_s >= h or c_s >= w: continue
+        if r_s >= r_e or c_s >= c_e: continue
+        
+        # Slicing directly on the array
+        t_slice = target_layer[r_s:r_e, c_s:c_e]
+        c_slice = canvas_layer[r_s:r_e, c_s:c_e]
+        
+        if t_slice.size == 0: continue
+
+        # Math Logic
+        diff = t_slice - c_slice
+        mean_diff = np.mean(diff)
+        
+        # Argmin manually is often faster than np.argmin for small arrays in Numba, 
+        # but np.argmin is acceptable here.
+        best_idx = np.argmin(np.abs(mult_arr - mean_diff))
+        best_mult = mult_arr[best_idx]
+        
+        # Update Canvas
+        if best_mult != 0:
+            # In-place addition with clipping
+            # Note: Creating a view 'c_slice' and modifying it modifies the original 'canvas_layer'
+            for rr in range(c_slice.shape[0]):
+                for cc in range(c_slice.shape[1]):
+                    val = c_slice[rr, cc] + best_mult
+                    if val > 255: val = 255
+                    elif val < 0: val = 0
+                    c_slice[rr, cc] = val
+        
+        stroke_indices[k] = best_idx
+
+    return stroke_indices, canvas_layer
+
 class PBC:
     """# Probabilistic Brush Compression (PBC) \n
     ---
@@ -93,7 +153,7 @@ class PBC:
         rgb = img.astype(float)
         rgb[:,:,[1,2]] -= 128
         rgb = rgb.dot(xform.T)
-        return np.clip(rgb, 0, 255).astype(np.uint8)
+        return np.clip(rgb, 0, 255)
     
     @classmethod
     def get_decay_curve(cls, length, start, end, cutoff, softness, progress, display_autos=False):
@@ -383,14 +443,23 @@ class PBC:
         return pd.DataFrame({"stroke_index": x, "size": y})
     
     @classmethod
-    def plot_curve_plt(cls, sr_start, sr_end, count, softness, progress, cutoff):
+    def plot_curve_plt(cls, sr_start, sr_end, stroke_count, softness, progress, cutoff, q_warmup=None, cycle_warmup=None):
         s_min, s_max = min(sr_start, sr_end), max(sr_start, sr_end)
-        x = range(count)
-        y, _ = cls.get_decay_curve(count, s_max, s_min, cutoff, softness, progress)
+        x = range(stroke_count)
+        y, _ = cls.get_decay_curve(stroke_count, s_max, s_min, cutoff, softness, progress)
         plt.plot(x, y)
+        # if theres warmups, add vertical lines for them, labeled
+        if q_warmup is not None:
+            plt.axvline(x=q_warmup, color='purple', linestyle='--', label=f'Quadrant Warmup = {q_warmup/stroke_count:.2f}')
+            plt.text(q_warmup, s_max*0.9, 'Quadrant Warmup', color='purple', verticalalignment='bottom')
+        if cycle_warmup is not None:
+            plt.axvline(x=cycle_warmup, color='orange', linestyle='--', label=f'Channel Cycle Warmup = {cycle_warmup/stroke_count:.2f}')
+            plt.text(cycle_warmup, s_max*0.8, 'Channel Cycle Warmup', color='orange', verticalalignment='bottom')
         plt.xlabel("Stroke Index")
         plt.ylabel("Brush Size")
+        plt.ylim(0, s_max * 1.1)
         plt.title("Brush Size Decay Curve")
+        plt.legend()
         plt.grid()
         plt.show()
     
@@ -496,14 +565,14 @@ class PBC:
 
         if downsample_rate > 1:
             original_size = img_pil.size
-            img = np.array(cls.downsample_image(img_pil, downsample_rate))
+            img = np.array(cls.downsample_image(img_pil, downsample_rate), dtype=np.int16)
             # (HEADER BITS) downsample flag (1=downsampled)
             bitstream += "1"
             # original width and height bits (16 bits each)
             bitstream += cls.encode_int(original_size[0], signed=False, bitcount=16)
             bitstream += cls.encode_int(original_size[1], signed=False, bitcount=16)
         else:
-            img = np.array(img_pil)
+            img = np.array(img_pil, dtype=np.int16)
             # (HEADER BITS) downsample flag (0=not downsampled)
             bitstream += "0"
 
@@ -543,12 +612,7 @@ class PBC:
         bitstream += cls.encode_int(start_color[1], signed=False, bitcount=8) # G
         bitstream += cls.encode_int(start_color[2], signed=False, bitcount=8) # B
 
-        canvas = np.stack([
-            np.full_like(r, start_color[0], dtype=float),
-            np.full_like(g, start_color[1], dtype=float),
-            np.full_like(b, start_color[2], dtype=float)
-        ], axis=2)
-
+        canvas = np.full((h, w, 3), start_color, dtype=np.int16)
 
         size_start = size_range[0]
         size_end = size_range[1]
@@ -583,8 +647,7 @@ class PBC:
         sizes, decay_params_encoding = cls.get_decay_curve(stroke_count, size_start, size_end,
                                     decay_params['cutoff'], decay_params['softness'], decay_params['progress'], display_autos=display_autos)
 
-        cls.plot_curve_plt(size_start, size_end, stroke_count, decay_params['softness'], decay_params['progress'], decay_params['cutoff'])
-
+        
         # (HEADER BITS) decay parameters bits
         bitstream += decay_params_encoding
 
@@ -615,6 +678,7 @@ class PBC:
         if display_autos:
             print(f'Calculated quadrant_warmup_time: {quadrant_warmup_time} strokes.')
 
+        
         # (HEADER BITS) quadrant warmup time bits
         bitstream += cls.encode_int(quadrant_warmup_time, signed=False, bitcount=20)
         # (HEADER BITS) strokes per quadrant bits
@@ -634,6 +698,8 @@ class PBC:
         # by default its 0 1 2 to cycle through 3 channels
         # but it can be modified dynamically to prioritize certain channels with more error
         # for example [0, 0, 1] would be that it does R R G R R G ...
+
+        cls.plot_curve_plt(size_start, size_end, stroke_count, decay_params['softness'], decay_params['progress'], decay_params['cutoff'], q_warmup=quadrant_warmup_time, cycle_warmup=channel_cycle_timer)
 
         # (HEADER BITS) channel cycle bool bit
         bitstream += "1" if channel_cycle else "0"
@@ -694,42 +760,49 @@ class PBC:
             else:
                 row, col = cls.get_stroke_params(i, h, w, size, quadrant_input=quadrant_inputs[channel_idx], quadrant_padding=quadrant_padding)
 
-            half = size // 2
-            # Slices are [Row, Col]
-            slices = [
-                (slice(row, row+half), slice(col, col+half)),
-                (slice(row, row+half), slice(col+half, col+size)),
-                (slice(row+half, row+size), slice(col, col+half)),
-                (slice(row+half, row+size), slice(col+half, col+size))
-            ]
-            
-            stroke_indices = []
-            for sl in slices:
-                # Basic boundary check
-                if sl[0].start >= h or sl[1].start >= w:
-                    stroke_indices.append(0)
-                    continue
-
-                if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
-                    stroke_indices.append(0)
-                    continue
+            if use_numba:
+                stroke_indices, canvas_layer = stroke_numba(target_layer, canvas_layer, h, w, row, col, size, mult_arr)
+            else:
+                half = size // 2
+                # Slices are [Row, Col]
+                slices = [
+                    (slice(row, row+half), slice(col, col+half)),
+                    (slice(row, row+half), slice(col+half, col+size)),
+                    (slice(row+half, row+size), slice(col, col+half)),
+                    (slice(row+half, row+size), slice(col+half, col+size))
+                ]
                 
-                # Extract region
-                target_slice = target_layer[sl]
-                canvas_slice = canvas_layer[sl]
+                stroke_indices = []
+                for sl in slices:
+                    # Basic boundary check (Never supposed to happen, but just in case)
+                    if sl[0].start >= h or sl[1].start >= w:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nSlice start out of bounds: {sl}, image size: ({h}, {w})\n----------\n\n\n")
+                        continue
 
-                if target_slice.size == 0: 
-                    stroke_indices.append(0)
-                    continue
+                    if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nInvalid slice with start >= stop: {sl}\n----------\n\n\n")
+                        continue
+                    
+                    # Extract region
+                    target_slice = target_layer[sl]
+                    canvas_slice = canvas_layer[sl]
 
-                diff = target_slice - canvas_slice
-                mean_diff = np.mean(diff)
-                
-                best_idx = np.argmin(np.abs(mult_arr - mean_diff))
-                best_mult = mult_arr[best_idx]
-                
-                canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
-                stroke_indices.append(best_idx)
+                    # Another safety check for empty slices (which should not happen)
+                    if target_slice.size == 0: 
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nEmpty slice encountered: {sl}\n----------\n\n\n")
+                        continue
+
+                    diff = target_slice - canvas_slice
+                    mean_diff = np.mean(diff)
+                    
+                    best_idx = np.argmin(np.abs(mult_arr - mean_diff))
+                    best_mult = mult_arr[best_idx]
+                    
+                    canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
+                    stroke_indices.append(best_idx)
 
             # (MAIN LOOP BITS) stroke indices bits
             for idx in stroke_indices:
@@ -754,6 +827,7 @@ class PBC:
 
         if color_space == "YCbCr":
             final_img = cls.ycbcr_to_rgb(canvas)
+            img = np.array(img_pil)
         else:
             final_img = canvas
 
@@ -821,14 +895,14 @@ class PBC:
 
         if downsample_rate > 1:
             original_size = img_pil.size
-            img = np.array(cls.downsample_image(img_pil, downsample_rate))
+            img = np.array(cls.downsample_image(img_pil, downsample_rate), dtype=np.int16)
             # (HEADER BITS) downsample flag (1=downsampled)
             bitstream += "1"
             # original width and height bits (16 bits each)
             bitstream += cls.encode_int(original_size[0], signed=False, bitcount=16)
             bitstream += cls.encode_int(original_size[1], signed=False, bitcount=16)
         else:
-            img = np.array(img_pil)
+            img = np.array(img_pil, dtype=np.int16)
             # (HEADER BITS) downsample flag (0=not downsampled)
             bitstream += "0"
 
@@ -868,12 +942,7 @@ class PBC:
         bitstream += cls.encode_int(start_color[1], signed=False, bitcount=8) # G
         bitstream += cls.encode_int(start_color[2], signed=False, bitcount=8) # B
 
-        canvas = np.stack([
-            np.full_like(r, start_color[0], dtype=float),
-            np.full_like(g, start_color[1], dtype=float),
-            np.full_like(b, start_color[2], dtype=float)
-        ], axis=2)
-
+        canvas = np.full((h, w, 3), start_color, dtype=np.int16)
 
         size_start = size_range[0]
         size_end = size_range[1]
@@ -1014,42 +1083,50 @@ class PBC:
             else:
                 row, col = cls.get_stroke_params(i, h, w, size, quadrant_input=quadrant_inputs[channel_idx], quadrant_padding=quadrant_padding)
 
-            half = size // 2
-            # Slices are [Row, Col]
-            slices = [
-                (slice(row, row+half), slice(col, col+half)),
-                (slice(row, row+half), slice(col+half, col+size)),
-                (slice(row+half, row+size), slice(col, col+half)),
-                (slice(row+half, row+size), slice(col+half, col+size))
-            ]
-            
-            stroke_indices = []
-            for sl in slices:
-                # Basic boundary check
-                if sl[0].start >= h or sl[1].start >= w:
-                    stroke_indices.append(0)
-                    continue
-
-                if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
-                    stroke_indices.append(0)
-                    continue
+            # APPLIES STROKE (WITH ITS 4 SLICES)
+            if use_numba:
+                stroke_indices, canvas_layer = stroke_numba(target_layer, canvas_layer, h, w, row, col, size, mult_arr)
+            else:
+                half = size // 2
+                # Slices are [Row, Col]
+                slices = [
+                    (slice(row, row+half), slice(col, col+half)),
+                    (slice(row, row+half), slice(col+half, col+size)),
+                    (slice(row+half, row+size), slice(col, col+half)),
+                    (slice(row+half, row+size), slice(col+half, col+size))
+                ]
                 
-                # Extract region
-                target_slice = target_layer[sl]
-                canvas_slice = canvas_layer[sl]
+                stroke_indices = []
+                for sl in slices:
+                    # Basic boundary check (Never supposed to happen, but just in case)
+                    if sl[0].start >= h or sl[1].start >= w:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nSlice start out of bounds: {sl}, image size: ({h}, {w})\n----------\n\n\n")
+                        continue
 
-                if target_slice.size == 0: 
-                    stroke_indices.append(0)
-                    continue
+                    if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nInvalid slice with start >= stop: {sl}\n----------\n\n\n")
+                        continue
+                    
+                    # Extract region
+                    target_slice = target_layer[sl]
+                    canvas_slice = canvas_layer[sl]
 
-                diff = target_slice - canvas_slice
-                mean_diff = np.mean(diff)
-                
-                best_idx = np.argmin(np.abs(mult_arr - mean_diff))
-                best_mult = mult_arr[best_idx]
-                
-                canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
-                stroke_indices.append(best_idx)
+                    # Another safety check for empty slices (which should not happen)
+                    if target_slice.size == 0: 
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nEmpty slice encountered: {sl}\n----------\n\n\n")
+                        continue
+
+                    diff = target_slice - canvas_slice
+                    mean_diff = np.mean(diff)
+                    
+                    best_idx = np.argmin(np.abs(mult_arr - mean_diff))
+                    best_mult = mult_arr[best_idx]
+                    
+                    canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
+                    stroke_indices.append(best_idx)
 
             # (MAIN LOOP BITS) stroke indices bits
             for idx in stroke_indices:
@@ -1061,12 +1138,13 @@ class PBC:
                 channel_cycle_timer -= 1
 
 
-        canvas = np.clip(canvas, 0, 255).astype(np.uint8)
+        canvas = np.clip(canvas, 0, 255)
 
         if color_space == "YCbCr":
-            final_img = cls.ycbcr_to_rgb(canvas)
+            final_img = cls.ycbcr_to_rgb(canvas).astype(np.uint8)
+            img = np.array(img_pil)
         else:
-            final_img = canvas
+            final_img = canvas.astype(np.uint8)
 
         
         final_img_pil = Image.fromarray(final_img)
