@@ -49,9 +49,9 @@ Another thing i added later is custom size functions, for this i had help from a
 <img src="https://github.com/EgeEken/PBC/assets/96302110/aed58c72-dbb5-475b-befe-8d986b8d2ae0" alt="Demonstration" width="30%" />
 <img src="https://github.com/EgeEken/PBC/assets/96302110/2982d7ad-c97e-487c-836b-d3c516dbb315" alt="Demonstration" width="60%" />
 
-## V2.2 (Work in Progress)
+## V2.2 (Work in Progress, Almost Done)
 
-### WIP: Massive upgrade to the algorithm, features added, quality improved, runtime reduced
+### WIP: Massive upgrade to the algorithm, code refactored, features added, quality improved, massively optimized, runtime reduced
 Comparison of V2.1 and V2.2 default settings on the same image, same stroke count (40000), same file size / compression rate (17x) as of 06/12/2025
 
 <img src="https://github.com/user-attachments/assets/7f3af6b4-6dca-4163-b80d-811ab887e242" alt="Demonstration" width="40%" />
@@ -67,7 +67,11 @@ For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis
 As expected, the loss goes down rapidly at the start, where large brush sizes are covering a big part of the image with each stroke, and as the brush size is procedurally lowered, the reduction in loss is more subtle, but this isn't a sign that the algorithm is stagnating, the smaller brush sizes are what allow for higher precision, if brush sizes were kept large, they would end up being useless after a couple thousand strokes. However, i think there's still a lot to gain from adding a "focus" mechanism that isolates channels, or even parts of the image. I'm working on that right now
 
 
+## V2.3 (Work in Progress, Just Started)
 
+### WIP: Massive upgrade to the algorithm quality, potentially lossless compression feature coming 
+After V2.2, i realised there is a lot of value to be gained from simple downsample layers before starting the brush strokes process, and made a primitive version of what it could look like to have that incorporated into the system, this version is currently far from completion but the proof of concept is very promising:
 
+<img width="950" height="522" alt="image" src="https://github.com/user-attachments/assets/810dfe9c-5576-47bf-adb0-caf3ea1efb63" />
 
-I think this is a very promising idea, i hope i get to improve it further
+Just by starting with a 16x downsampled layer of the original image, instead of a single starting color canvas, despite compensating for the added bits from the uncompressed downsampled layer by reducing stroke count, we can halve the MSE loss while maintaining the compression rate. This will be the main idea V2.3 is built on.
