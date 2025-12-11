@@ -1,18 +1,24 @@
 # Probabilistic Brush Compression (PBC)
 
-An unconventional, lossy image compression algorithm I designed, that compresses image data as a series of approved "brush stroke" instructions, carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
+An unconventional, lossy image compression algorithm I designed, that compresses image data as a series of approved "brush stroke" instructions, the core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
 
 
-### Current version: V2.1. Deployed on [Hugging Face Spaces/PBC_V2.1](https://huggingface.co/spaces/EgeEken/PBC_V2.1)
-### Current version compared to JPG at an equal rate of compression: 
-<img src="https://github.com/EgeEken/PBC/assets/96302110/c5b012e3-3008-4132-876b-5abdcdec9cd2" alt="Demonstration" width="40%" />
+### Current version: V2.2
+### Hugging Face Spaces Demo (outdated): V2.1. Deployed on [Hugging Face Spaces/PBC_V2.1](https://huggingface.co/spaces/EgeEken/PBC_V2.1)
 
-# WORK IN PROGRESS (V2.1 released, currently working on V2.2)
-## V2.2 visualizer preview (real time)
+
+## V2.2 Demonstration
 ### (18x compression)
+<img width="950" height="522" alt="image" src="https://github.com/user-attachments/assets/7261a093-7990-4b11-ae2f-b634584d29d3" />
+
 https://github.com/user-attachments/assets/23b36875-5c09-4624-8175-dcef8fd52215
+
+
 ### (203x compression)
+<img width="881" height="593" alt="image" src="https://github.com/user-attachments/assets/c6af5f7b-b43b-4fc1-927d-6ccdd49a5e67" />
+
 https://github.com/user-attachments/assets/ee95ce52-e2c5-4336-b8ff-bc6eddc848f3
+
 
 
 
@@ -49,9 +55,12 @@ Another thing i added later is custom size functions, for this i had help from a
 <img src="https://github.com/EgeEken/PBC/assets/96302110/aed58c72-dbb5-475b-befe-8d986b8d2ae0" alt="Demonstration" width="30%" />
 <img src="https://github.com/EgeEken/PBC/assets/96302110/2982d7ad-c97e-487c-836b-d3c516dbb315" alt="Demonstration" width="60%" />
 
-## V2.2 (Work in Progress, Almost Done)
+### V2.1 compared to JPG at an equal rate of compression: 
+<img src="https://github.com/EgeEken/PBC/assets/96302110/c5b012e3-3008-4132-876b-5abdcdec9cd2" alt="Demonstration" width="40%" />
 
-### WIP: Massive upgrade to the algorithm, code refactored, features added, quality improved, massively optimized, runtime reduced
+## V2.2
+
+### Huge upgrade to the algorithm, code refactored, features added, quality improved, massively optimized, runtime reduced
 Comparison of V2.1 and V2.2 default settings on the same image, same stroke count (40000), same file size / compression rate (17x) as of 06/12/2025
 
 <img src="https://github.com/user-attachments/assets/7f3af6b4-6dca-4163-b80d-811ab887e242" alt="Demonstration" width="40%" />
@@ -69,7 +78,7 @@ As expected, the loss goes down rapidly at the start, where large brush sizes ar
 
 ## V2.3 (Work in Progress, Just Started)
 
-### WIP: Massive upgrade to the algorithm quality, potentially lossless compression feature coming 
+### (WIP) Massive upgrade to the algorithm quality, potentially lossless compression feature coming 
 After V2.2, i realised there is a lot of value to be gained from simple downsample layers before starting the brush strokes process, and made a primitive version of what it could look like to have that incorporated into the system, this version is currently far from completion but the proof of concept is very promising:
 
 <img width="950" height="522" alt="image" src="https://github.com/user-attachments/assets/810dfe9c-5576-47bf-adb0-caf3ea1efb63" />
