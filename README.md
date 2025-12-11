@@ -6,8 +6,10 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 ### Current version: V2.2
 ### Hugging Face Spaces Demo (outdated): V2.1. Deployed on [Hugging Face Spaces/PBC_V2.1](https://huggingface.co/spaces/EgeEken/PBC_V2.1)
 
+---
+# Current version (V2.2) Demonstration
+---
 
-## V2.2 Demonstration
 ### (18x compression)
 <img width="950" height="522" alt="image" src="https://github.com/user-attachments/assets/7261a093-7990-4b11-ae2f-b634584d29d3" />
 
@@ -19,10 +21,9 @@ https://github.com/user-attachments/assets/23b36875-5c09-4624-8175-dcef8fd52215
 
 https://github.com/user-attachments/assets/ee95ce52-e2c5-4336-b8ff-bc6eddc848f3
 
-
-
-
-
+---
+# Development / Version History
+---
 
 ## V1.0
 
