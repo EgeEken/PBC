@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import time
 from numba import njit, uint64, uint32
+import cv2
 
 @njit(inline='always')
 def pcg_step(state):
@@ -129,6 +130,46 @@ def stroke_numba(target_layer, canvas_layer, h, w, row, col, size, mult_arr):
         stroke_indices[k] = best_idx
 
     return stroke_indices, canvas_layer
+
+@njit(fastmath=True)
+def stroke_numba_decompress(canvas_layer, h, w, row, col, size, mult_arr, stroke_indices):
+    half = size // 2
+    
+    for k in range(4):
+        # Calculate bounds explicitly using integers
+        if k == 0:   # TL
+            r_s, r_e = row, row + half
+            c_s, c_e = col, col + half
+        elif k == 1: # TR
+            r_s, r_e = row, row + half
+            c_s, c_e = col + half, col + size
+        elif k == 2: # BL
+            r_s, r_e = row + half, row + size
+            c_s, c_e = col, col + half
+        elif k == 3: # BR
+            r_s, r_e = row + half, row + size
+            c_s, c_e = col + half, col + size
+            
+        # Basic boundary check (Integer math is instant)
+        if r_s >= h or c_s >= w: continue
+        if r_s >= r_e or c_s >= c_e: continue
+        
+        c_slice = canvas_layer[r_s:r_e, c_s:c_e]
+        
+        best_idx = stroke_indices[k]
+        best_mult = mult_arr[best_idx]
+        
+        # Update Canvas
+        if best_mult != 0:
+            # In-place addition with clipping
+            for rr in range(c_slice.shape[0]):
+                for cc in range(c_slice.shape[1]):
+                    val = c_slice[rr, cc] + best_mult
+                    if val > 255: val = 255
+                    elif val < 0: val = 0
+                    c_slice[rr, cc] = val
+
+    return canvas_layer
 
 class PBC:
     """# Probabilistic Brush Compression (PBC) \n
@@ -504,12 +545,12 @@ class PBC:
             return img_pil
         new_width = img_pil.width // downsample_rate
         new_height = img_pil.height // downsample_rate
-        return img_pil.resize((int(new_width), int(new_height)))
+        return img_pil.resize((int(new_width), int(new_height)), Image.LANCZOS)
 
     @staticmethod
     def upsample_image(img_pil, original_size):
         """Upsamples the image to the original size."""
-        return img_pil.resize(original_size)
+        return img_pil.resize(original_size, Image.LANCZOS)
     
     @staticmethod
     def _bits_to_bytes(bitstring):
@@ -536,337 +577,6 @@ class PBC:
         if pad_len > 0:
             bitstring = bitstring[:-pad_len]
         return bitstring
-
-    @classmethod
-    def compress_stream(cls, img_pil, stroke_count=40000, size_range=(-1, -1), mult_list=[-10, 0, 5, 20], start_mode="Average",
-                 start_custom=(128, 128, 128), decay_params={'cutoff': -1, 'softness': -1, 'progress': -1},
-                 strokes_per_quadrant=100, quadrant_warmup_time=-1, quadrant_max_bits=8, quadrant_padding=4, quadrant_selection_criteria="Sum",
-                 channel_cycle="Smart", strokes_per_channel_cycle=100, channel_cycle_warmup_time=0.9, cycle_selection_criteria="Min",
-                 color_space="RGB", downsample_rate=-1, display_autos=False,
-                 save_filename=-1, use_numba=True, stream_interval=100):
-        """Generator version of compress that yields intermediate bitstreams."""
-
-        if img_pil is None:
-            return None, "Please upload an image first."
-        
-        if save_filename == -1:
-            save_filename = f"compressed_{int(time.time())}.pbc"
-
-        bitstream = ""
-        original_size = img_pil.size
-
-        if downsample_rate == -1:
-            if min(original_size) < 600:
-                downsample_rate = 1
-            else:
-                downsample_rate = min(original_size) / 500
-                if display_autos:
-                    print(f'Auto-calculated downsample_rate: {downsample_rate}')
-
-        if downsample_rate > 1:
-            original_size = img_pil.size
-            img = np.array(cls.downsample_image(img_pil, downsample_rate), dtype=np.int16)
-            # (HEADER BITS) downsample flag (1=downsampled)
-            bitstream += "1"
-            # original width and height bits (16 bits each)
-            bitstream += cls.encode_int(original_size[0], signed=False, bitcount=16)
-            bitstream += cls.encode_int(original_size[1], signed=False, bitcount=16)
-        else:
-            img = np.array(img_pil, dtype=np.int16)
-            # (HEADER BITS) downsample flag (0=not downsampled)
-            bitstream += "0"
-
-        if color_space == "YCbCr":
-            img = cls.rgb_to_ycbcr(img)
-            # (HEADER BITS) color space bit YCbCr=1
-            bitstream += "1"
-        else:
-            # (HEADER BITS) color space bit RGB=0
-            bitstream += "0"
-
-        h, w = img.shape[:2]
-        # (HEADER BITS) image size bits (max image height and width allowed is 65535 (16 bits each), should be enough for any reasonable use case)
-        bitstream += cls.encode_int(h, signed=False, bitcount=16) # unsigned, obviously
-        bitstream += cls.encode_int(w, signed=False, bitcount=16) # unsigned, obviously
-        r, g, b = img[:,:,0], img[:,:,1], img[:,:,2]
-
-        # (HEADER BITS) stroke count bits (stroke counts above 1M probably unfeasible, 20 bits should be enough)
-        bitstream += cls.encode_int(stroke_count, signed=False, bitcount=20) # unsigned, obviously
-        
-        if start_mode == "Black": start_color = (0, 0, 0) if color_space == "RGB" else (0, 128, 128)
-        elif start_mode == "White": start_color = (255, 255, 255) if color_space == "RGB" else (255, 128, 128)
-        elif start_mode == "Custom": start_color = start_custom
-        elif start_mode == "Average" or start_mode == "Mean": start_color = (int(np.mean(r)), int(np.mean(g)), int(np.mean(b)))
-        elif start_mode == "Median": start_color = (int(np.median(r)), int(np.median(g)), int(np.median(b)))
-        elif start_mode == "True Median": start_color = np.median(img.reshape(-1, 3), axis=0).astype(int)
-        elif start_mode == "Random": start_color = (np.random.randint(0,256), np.random.randint(0,256), np.random.randint(0,256))
-        else:
-            print(f'Warning: Unknown start_mode "{start_mode}", defaulting to "Average".')
-            start_color = (int(np.mean(r)), int(np.mean(g)), int(np.mean(b)))
-
-        if display_autos:
-            print(f'Start color selected: R={start_color[0]}, G={start_color[1]}, B={start_color[2]}')
-
-        # (HEADER BITS) start color bits (0-255 for each channel, 8 bits each)
-        bitstream += cls.encode_int(start_color[0], signed=False, bitcount=8) # R
-        bitstream += cls.encode_int(start_color[1], signed=False, bitcount=8) # G
-        bitstream += cls.encode_int(start_color[2], signed=False, bitcount=8) # B
-
-        canvas = np.full((h, w, 3), start_color, dtype=np.int16)
-
-        size_start = size_range[0]
-        size_end = size_range[1]
-        if size_start == -1:
-            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
-            a = 0.3
-            b = 1.00095
-            c = 7000
-            size_start = a + (1/b)**(stroke_count + c)
-            if display_autos:
-                print(f"Auto-calculated size start: {size_start:.3f}")
-        if size_end == -1:
-            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
-            a = 0.01
-            b = 1.00015
-            c = 10200
-            size_end = a + (1/b)**(stroke_count + c)
-            if display_autos:
-                print(f"Auto-calculated size end: {size_end:.3f}")
-
-        size_start = int(size_start * (min(h, w) - 2)) + 2
-        size_end = int(size_end * (min(h, w) - 2)) + 2
-
-        if display_autos:
-            print(f"Calculated size range: {size_start} to {size_end} pixels.")
-
-        # maximum and minimum sizes are the same bitcount as the height and width, since size cannot be larger than image dimensions
-        # (HEADER BITS) size start and end bits
-        bitstream += cls.encode_int(size_start, signed=False, bitcount=16)
-        bitstream += cls.encode_int(size_end, signed=False, bitcount=16)
-
-        sizes, decay_params_encoding = cls.get_decay_curve(stroke_count, size_start, size_end,
-                                    decay_params['cutoff'], decay_params['softness'], decay_params['progress'], display_autos=display_autos)
-
-        
-        # (HEADER BITS) decay parameters bits
-        bitstream += decay_params_encoding
-
-        encoded_strokes = []
-        mult_arr = np.array(mult_list)
-        multlist_len = len(mult_arr)
-        multlist_bitcount = int(np.ceil(np.log2(multlist_len)))
-        # (HEADER BITS) multlist length bits
-        # since we need to know how many multipliers there are to decode them later, there's no ending delimiter
-        bitstream += cls.encode_int(multlist_len, signed=False, bitcount=9) # max amount of multipliers possible: (-255, 255) so 512 multipliers, so 9 bits for the number
-        # (HEADER BITS) multlist bits
-        for mult in mult_arr:
-            bitstream += cls.encode_int(mult, signed=True, bitcount=9) # signed, since multipliers can be negative, 9 bits cover the -255 to 255 range
-
-        if quadrant_warmup_time == -1:
-            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
-            a = 0.75
-            b = 0.000014
-            c = -1000
-            d = 550000
-            quadrant_warmup_time = a - (b*(stroke_count + c) ** 2) / d
-            quadrant_warmup_time = max(0.0, min(quadrant_warmup_time, 1.0))
-            if display_autos:
-                print(f'Auto-calculated quadrant_warmup_time: {quadrant_warmup_time:.4f}')
-
-
-        quadrant_warmup_time = int(quadrant_warmup_time * stroke_count)
-        if display_autos:
-            print(f'Calculated quadrant_warmup_time: {quadrant_warmup_time} strokes.')
-
-        
-        # (HEADER BITS) quadrant warmup time bits
-        bitstream += cls.encode_int(quadrant_warmup_time, signed=False, bitcount=20)
-        # (HEADER BITS) strokes per quadrant bits
-        bitstream += cls.encode_int(strokes_per_quadrant, signed=False, bitcount=20)
-        # (HEADER BITS) quadrant max bits bits
-        bitstream += cls.encode_int(quadrant_max_bits, signed=False, bitcount=8) # max 255 bits should be way more than enough, default is 8
-        # (HEADER BITS) quadrant padding bits
-        bitstream += cls.encode_int(quadrant_padding, signed=False, bitcount=8) # max 255 pixel padding should be way more than enough, default is 4
-
-        quadrant_switch_counters = [quadrant_warmup_time//3, quadrant_warmup_time//3, quadrant_warmup_time//3]
-        quadrant_inputs = [None, None, None]
-
-        if not channel_cycle:
-            channel_cycle = None
-        channel_selector = [0, 1, 2] # R=0, G=1, B=2
-        channel_cycle_timer = int(channel_cycle_warmup_time * stroke_count)
-        # by default its 0 1 2 to cycle through 3 channels
-        # but it can be modified dynamically to prioritize certain channels with more error
-        # for example [0, 0, 1] would be that it does R R G R R G ...
-
-        cls.plot_curve_plt(size_start, size_end, stroke_count, decay_params['softness'], decay_params['progress'], decay_params['cutoff'], q_warmup=quadrant_warmup_time, cycle_warmup=channel_cycle_timer)
-
-        # (HEADER BITS) channel cycle bool bit
-        bitstream += "1" if channel_cycle else "0"
-        if channel_cycle:
-            # (HEADER BITS) strokes per channel cycle bits
-            bitstream += cls.encode_int(strokes_per_channel_cycle, signed=False, bitcount=20)
-            # (HEADER BITS) channel cycle warmup time bits
-            bitstream += cls.encode_int(int(channel_cycle_warmup_time * stroke_count), signed=False, bitcount=20)
-
-        header_bits = len(bitstream)
-        # print(f"Header bits: {header_bits} bits")
-        # (MAIN LOOP)
-
-        rng_state = None
-        if use_numba:
-            # Initialize Numba RNG state
-            rng_state = np.uint64(2003)
-
-        stream_timer = 0
-
-        for i in range(stroke_count):
-            channel_idx = channel_selector[i % 3]
-            target_layer = img[:, :, channel_idx]
-            canvas_layer = canvas[:, :, channel_idx]
-            size = sizes[i]
-
-            if quadrant_switch_counters[channel_idx] <= 0:
-                error_layer = np.abs(target_layer - canvas_layer)
-                quadrant_bitcount = cls.get_quadrant_bitcount(h, w, size, quadrant_max_bits)
-                quadrant_inputs[channel_idx] = cls.select_quadrant(error_layer, quadrant_bitcount, selection_criteria=quadrant_selection_criteria)
-                # (MAIN LOOP BITS) quadrant bits
-                bitstream += quadrant_inputs[channel_idx]
-                quadrant_switch_counters[channel_idx] = strokes_per_quadrant
-
-            if channel_cycle:
-                if channel_cycle_timer <= 0:
-                    # Re-evaluate channel priorities based on current error
-                    full_error_layer = np.abs(img - canvas)
-                    channel_selector = cls.channel_cycle_strategy(full_error_layer, strategy=channel_cycle, selection_criteria=cycle_selection_criteria)
-                    # (MAIN LOOP BITS) channel cycle bits
-                    for ch in channel_selector:
-                        bitstream += cls.encode_int(ch, signed=False, bitcount=2) # 2 bits to represent 0-2
-                    channel_cycle_timer = strokes_per_channel_cycle
-
-            # RETURNS ROW, COL
-            if use_numba:
-                # 1. PRE-CALCULATE BOUNDARIES IN PYTHON
-                # This avoids passing Strings/None to Numba
-                if quadrant_inputs[channel_idx] is None:
-                    r_s, c_s = 0, 0
-                    r_e, c_e = h - size, w - size
-                else:
-                    q_int = cls.decode_int(quadrant_inputs[channel_idx], signed=False)
-                    q_bitcount = len(quadrant_inputs[channel_idx])
-                    r_s, c_s, r_e, c_e = process_quadrant_int(h, w, size, q_int, q_bitcount, quadrant_padding)
-                rng_state, row, col = get_stroke_coords_rolling(rng_state, r_s, c_s, r_e, c_e)
-                rng_state = np.uint64(rng_state)
-            else:
-                row, col = cls.get_stroke_params(i, h, w, size, quadrant_input=quadrant_inputs[channel_idx], quadrant_padding=quadrant_padding)
-
-            if use_numba:
-                stroke_indices, canvas_layer = stroke_numba(target_layer, canvas_layer, h, w, row, col, size, mult_arr)
-            else:
-                half = size // 2
-                # Slices are [Row, Col]
-                slices = [
-                    (slice(row, row+half), slice(col, col+half)),
-                    (slice(row, row+half), slice(col+half, col+size)),
-                    (slice(row+half, row+size), slice(col, col+half)),
-                    (slice(row+half, row+size), slice(col+half, col+size))
-                ]
-                
-                stroke_indices = []
-                for sl in slices:
-                    # Basic boundary check (Never supposed to happen, but just in case)
-                    if sl[0].start >= h or sl[1].start >= w:
-                        stroke_indices.append(0)
-                        print(f"\n\n\n----------\nSlice start out of bounds: {sl}, image size: ({h}, {w})\n----------\n\n\n")
-                        continue
-
-                    if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
-                        stroke_indices.append(0)
-                        print(f"\n\n\n----------\nInvalid slice with start >= stop: {sl}\n----------\n\n\n")
-                        continue
-                    
-                    # Extract region
-                    target_slice = target_layer[sl]
-                    canvas_slice = canvas_layer[sl]
-
-                    # Another safety check for empty slices (which should not happen)
-                    if target_slice.size == 0: 
-                        stroke_indices.append(0)
-                        print(f"\n\n\n----------\nEmpty slice encountered: {sl}\n----------\n\n\n")
-                        continue
-
-                    diff = target_slice - canvas_slice
-                    mean_diff = np.mean(diff)
-                    
-                    best_idx = np.argmin(np.abs(mult_arr - mean_diff))
-                    best_mult = mult_arr[best_idx]
-                    
-                    canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
-                    stroke_indices.append(best_idx)
-
-            # (MAIN LOOP BITS) stroke indices bits
-            for idx in stroke_indices:
-                bitstream += cls.encode_int(idx, signed=False, bitcount=multlist_bitcount)
-
-            encoded_strokes.append(stroke_indices)
-            quadrant_switch_counters[channel_idx] -= 1
-            if channel_cycle:
-                channel_cycle_timer -= 1
-
-            if stream_timer <= 0:
-                stream_timer = stream_interval - 1
-                interim_img = np.clip(canvas, 0, 255).astype(np.uint8)
-                if color_space == "YCbCr":
-                    interim_img = cls.ycbcr_to_rgb(interim_img)
-                interim_losses = [int(np.mean((interim_img[:, :, channel_idx].astype(np.float32) - img[:, :, channel_idx].astype(np.float32)) ** 2)) for channel_idx in range(3)]
-                yield (Image.fromarray(interim_img), f"Processed {i}/{stroke_count} strokes. {((i)/stroke_count)*100:.2f}%", interim_losses, len(bitstream))
-            else:
-                stream_timer -= 1
-
-        canvas = np.clip(canvas, 0, 255).astype(np.uint8)
-
-        if color_space == "YCbCr":
-            final_img = cls.ycbcr_to_rgb(canvas)
-            img = np.array(img_pil)
-        else:
-            final_img = canvas
-
-        
-        final_img_pil = Image.fromarray(final_img)
-        if downsample_rate > 1:
-            final_img_pil = cls.upsample_image(final_img_pil, original_size)
-            img = np.array(img_pil)
-            final_img = np.array(final_img_pil)
-
-        total_bits = len(bitstream)
-
-        losses = []
-        for channel_idx in range(3):
-            full_diff = img[:, :, channel_idx].astype(np.float32) - final_img[:, :, channel_idx].astype(np.float32)
-            mse = np.mean(full_diff ** 2, dtype=np.float32)
-            losses.append(int(mse))
-
-        orig_size = img_pil.size[0]*img_pil.size[1]*3*8
-        bit_stats = f"\n========================\nBITSTREAM STATS:\n"
-        bit_stats += f"Header: {header_bits} bits\n"
-        bit_stats += f"Strokes: {total_bits - header_bits} bits\n"
-        bit_stats += f"Total: {total_bits/8/1024:.2f} KB from {orig_size/1024/8:.2f} KB original ({(total_bits/orig_size)*100:.2f}% size, {orig_size/total_bits:.2f}x compression)\n"
-
-        # BINARY SAVE
-        try:
-            with open(save_filename, "wb") as f:
-                b_data, pad_len = cls._bits_to_bytes(bitstream)
-                f.write(bytes([pad_len])) 
-                f.write(b_data)
-            bit_stats += f"Binary bitstream saved to {save_filename}\n"
-        except Exception as e:
-            bit_stats += f"Error saving bitstream: {e}\n"
-        
-        bit_stats += f"========================\n"
-
-        res = [final_img_pil, bit_stats, losses, total_bits]
-        yield (*res,)
-        return (*res,)
 
     @classmethod
     def compress(cls, img_pil, stroke_count=40000, size_range=(-1, -1), mult_list=[-10, 0, 5, 20], start_mode="Average",
@@ -1232,11 +942,7 @@ class PBC:
             else:
                 print(f"Start color: R={start_r}, G={start_g}, B={start_b}")
         # Initialize canvas
-        canvas = np.stack([
-            np.full((h, w), start_color[0], dtype=float),
-            np.full((h, w), start_color[1], dtype=float),
-            np.full((h, w), start_color[2], dtype=float)
-        ], axis=2)
+        canvas = np.full((h, w, 3), start_color, dtype=np.int16)
         # Size start and end
         size_start = cls.decode_int(bitstream[read_i:read_i+16], signed=False)
         read_i += 16
@@ -1387,37 +1093,48 @@ class PBC:
             else:
                 row, col = cls.get_stroke_params(i, h, w, size, quadrant_input=quadrant_inputs[channel_idx], quadrant_padding=quadrant_padding)
 
-            half = size // 2
-            slices = [
-                (slice(row, row+half), slice(col, col+half)),
-                (slice(row, row+half), slice(col+half, col+size)),
-                (slice(row+half, row+size), slice(col, col+half)),
-                (slice(row+half, row+size), slice(col+half, col+size))
-            ]
-            
-            for sl in slices:
-                if sl[0].start >= h or sl[1].start >= w:
-                    continue
-                if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
-                    continue
-                
-                mult_idx_bits = bitstream[read_i:read_i+multlist_bitcount]
-                mult_idx = cls.decode_int(mult_idx_bits, signed=False)
-                read_i += multlist_bitcount
-                
-                best_mult = mult_arr[mult_idx]
 
-                canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
+            if use_numba:
+                stroke_indices = []
+                for _ in range(4):
+                    mult_idx_bits = bitstream[read_i:read_i+multlist_bitcount]
+                    mult_idx = cls.decode_int(mult_idx_bits, signed=False)
+                    stroke_indices.append(mult_idx)
+                    read_i += multlist_bitcount 
+                canvas_layer = stroke_numba_decompress(canvas_layer, h, w, row, col, size, mult_arr, stroke_indices)
+            else:
+                half = size // 2
+                slices = [
+                    (slice(row, row+half), slice(col, col+half)),
+                    (slice(row, row+half), slice(col+half, col+size)),
+                    (slice(row+half, row+size), slice(col, col+half)),
+                    (slice(row+half, row+size), slice(col+half, col+size))
+                ]
+                
+                for sl in slices:
+                    if sl[0].start >= h or sl[1].start >= w:
+                        continue
+                    if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
+                        continue
+                    
+                    mult_idx_bits = bitstream[read_i:read_i+multlist_bitcount]
+                    mult_idx = cls.decode_int(mult_idx_bits, signed=False)
+                    read_i += multlist_bitcount
+                    
+                    best_mult = mult_arr[mult_idx]
+
+                    canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
+
             quadrant_switch_counters[channel_idx] -= 1
             if channel_cycle_flag == '1':
                 channel_cycle_timer -= 1
 
 
-        canvas = np.clip(canvas, 0, 255).astype(np.uint8)
+        canvas = np.clip(canvas, 0, 255)
         if ycbcr_flag == '1':
-            final_img = cls.ycbcr_to_rgb(canvas)
+            final_img = cls.ycbcr_to_rgb(canvas).astype(np.uint8)
         else:
-            final_img = canvas
+            final_img = canvas.astype(np.uint8)
         return Image.fromarray(final_img)
 
     @classmethod
@@ -1432,4 +1149,746 @@ class PBC:
             print(f"Error reading bitstream from {filename}: {e}")
             return None
         return cls.decompress(bitstream, verbose=verbose, use_numba=use_numba)
-    
+
+    @classmethod
+    def compress_stream(cls, img_pil, stroke_count=40000, size_range=(-1, -1), mult_list=[-10, 0, 5, 20], start_mode="Average",
+                 start_custom=(128, 128, 128), decay_params={'cutoff': -1, 'softness': -1, 'progress': -1},
+                 strokes_per_quadrant=100, quadrant_warmup_time=-1, quadrant_max_bits=8, quadrant_padding=4, quadrant_selection_criteria="Sum",
+                 channel_cycle="Smart", strokes_per_channel_cycle=100, channel_cycle_warmup_time=0.9, cycle_selection_criteria="Min",
+                 color_space="RGB", downsample_rate=-1, display_autos=False,
+                 save_filename=-1, use_numba=True, stream_interval=100):
+        """Generator version of compress that yields intermediate bitstreams."""
+
+        if img_pil is None:
+            return None, "Please upload an image first."
+        
+        if save_filename == -1:
+            save_filename = f"compressed_{int(time.time())}.pbc"
+
+        bitstream = ""
+        original_size = img_pil.size
+
+        if downsample_rate == -1:
+            if min(original_size) < 600:
+                downsample_rate = 1
+            else:
+                downsample_rate = min(original_size) / 500
+                if display_autos:
+                    print(f'Auto-calculated downsample_rate: {downsample_rate}')
+
+        if downsample_rate > 1:
+            original_size = img_pil.size
+            img = np.array(cls.downsample_image(img_pil, downsample_rate), dtype=np.int16)
+            # (HEADER BITS) downsample flag (1=downsampled)
+            bitstream += "1"
+            # original width and height bits (16 bits each)
+            bitstream += cls.encode_int(original_size[0], signed=False, bitcount=16)
+            bitstream += cls.encode_int(original_size[1], signed=False, bitcount=16)
+        else:
+            img = np.array(img_pil, dtype=np.int16)
+            # (HEADER BITS) downsample flag (0=not downsampled)
+            bitstream += "0"
+
+        if color_space == "YCbCr":
+            img = cls.rgb_to_ycbcr(img)
+            # (HEADER BITS) color space bit YCbCr=1
+            bitstream += "1"
+        else:
+            # (HEADER BITS) color space bit RGB=0
+            bitstream += "0"
+
+        h, w = img.shape[:2]
+        # (HEADER BITS) image size bits (max image height and width allowed is 65535 (16 bits each), should be enough for any reasonable use case)
+        bitstream += cls.encode_int(h, signed=False, bitcount=16) # unsigned, obviously
+        bitstream += cls.encode_int(w, signed=False, bitcount=16) # unsigned, obviously
+        r, g, b = img[:,:,0], img[:,:,1], img[:,:,2]
+
+        # (HEADER BITS) stroke count bits (stroke counts above 1M probably unfeasible, 20 bits should be enough)
+        bitstream += cls.encode_int(stroke_count, signed=False, bitcount=20) # unsigned, obviously
+        
+        if start_mode == "Black": start_color = (0, 0, 0) if color_space == "RGB" else (0, 128, 128)
+        elif start_mode == "White": start_color = (255, 255, 255) if color_space == "RGB" else (255, 128, 128)
+        elif start_mode == "Custom": start_color = start_custom
+        elif start_mode == "Average" or start_mode == "Mean": start_color = (int(np.mean(r)), int(np.mean(g)), int(np.mean(b)))
+        elif start_mode == "Median": start_color = (int(np.median(r)), int(np.median(g)), int(np.median(b)))
+        elif start_mode == "True Median": start_color = np.median(img.reshape(-1, 3), axis=0).astype(int)
+        elif start_mode == "Random": start_color = (np.random.randint(0,256), np.random.randint(0,256), np.random.randint(0,256))
+        else:
+            print(f'Warning: Unknown start_mode "{start_mode}", defaulting to "Average".')
+            start_color = (int(np.mean(r)), int(np.mean(g)), int(np.mean(b)))
+
+        if display_autos:
+            print(f'Start color selected: R={start_color[0]}, G={start_color[1]}, B={start_color[2]}')
+
+        # (HEADER BITS) start color bits (0-255 for each channel, 8 bits each)
+        bitstream += cls.encode_int(start_color[0], signed=False, bitcount=8) # R
+        bitstream += cls.encode_int(start_color[1], signed=False, bitcount=8) # G
+        bitstream += cls.encode_int(start_color[2], signed=False, bitcount=8) # B
+
+        canvas = np.full((h, w, 3), start_color, dtype=np.int16)
+
+        size_start = size_range[0]
+        size_end = size_range[1]
+        if size_start == -1:
+            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
+            a = 0.3
+            b = 1.00095
+            c = 7000
+            size_start = a + (1/b)**(stroke_count + c)
+            if display_autos:
+                print(f"Auto-calculated size start: {size_start:.3f}")
+        if size_end == -1:
+            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
+            a = 0.01
+            b = 1.00015
+            c = 10200
+            size_end = a + (1/b)**(stroke_count + c)
+            if display_autos:
+                print(f"Auto-calculated size end: {size_end:.3f}")
+
+        size_start = int(size_start * (min(h, w) - 2)) + 2
+        size_end = int(size_end * (min(h, w) - 2)) + 2
+
+        if display_autos:
+            print(f"Calculated size range: {size_start} to {size_end} pixels.")
+
+        # maximum and minimum sizes are the same bitcount as the height and width, since size cannot be larger than image dimensions
+        # (HEADER BITS) size start and end bits
+        bitstream += cls.encode_int(size_start, signed=False, bitcount=16)
+        bitstream += cls.encode_int(size_end, signed=False, bitcount=16)
+
+        sizes, decay_params_encoding = cls.get_decay_curve(stroke_count, size_start, size_end,
+                                    decay_params['cutoff'], decay_params['softness'], decay_params['progress'], display_autos=display_autos)
+
+        
+        # (HEADER BITS) decay parameters bits
+        bitstream += decay_params_encoding
+
+        encoded_strokes = []
+        mult_arr = np.array(mult_list)
+        multlist_len = len(mult_arr)
+        multlist_bitcount = int(np.ceil(np.log2(multlist_len)))
+        # (HEADER BITS) multlist length bits
+        # since we need to know how many multipliers there are to decode them later, there's no ending delimiter
+        bitstream += cls.encode_int(multlist_len, signed=False, bitcount=9) # max amount of multipliers possible: (-255, 255) so 512 multipliers, so 9 bits for the number
+        # (HEADER BITS) multlist bits
+        for mult in mult_arr:
+            bitstream += cls.encode_int(mult, signed=True, bitcount=9) # signed, since multipliers can be negative, 9 bits cover the -255 to 255 range
+
+        if quadrant_warmup_time == -1:
+            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
+            a = 0.75
+            b = 0.000014
+            c = -1000
+            d = 550000
+            quadrant_warmup_time = a - (b*(stroke_count + c) ** 2) / d
+            quadrant_warmup_time = max(0.0, min(quadrant_warmup_time, 1.0))
+            if display_autos:
+                print(f'Auto-calculated quadrant_warmup_time: {quadrant_warmup_time:.4f}')
+
+
+        quadrant_warmup_time = int(quadrant_warmup_time * stroke_count)
+        if display_autos:
+            print(f'Calculated quadrant_warmup_time: {quadrant_warmup_time} strokes.')
+
+        
+        # (HEADER BITS) quadrant warmup time bits
+        bitstream += cls.encode_int(quadrant_warmup_time, signed=False, bitcount=20)
+        # (HEADER BITS) strokes per quadrant bits
+        bitstream += cls.encode_int(strokes_per_quadrant, signed=False, bitcount=20)
+        # (HEADER BITS) quadrant max bits bits
+        bitstream += cls.encode_int(quadrant_max_bits, signed=False, bitcount=8) # max 255 bits should be way more than enough, default is 8
+        # (HEADER BITS) quadrant padding bits
+        bitstream += cls.encode_int(quadrant_padding, signed=False, bitcount=8) # max 255 pixel padding should be way more than enough, default is 4
+
+        quadrant_switch_counters = [quadrant_warmup_time//3, quadrant_warmup_time//3, quadrant_warmup_time//3]
+        quadrant_inputs = [None, None, None]
+
+        if not channel_cycle:
+            channel_cycle = None
+        channel_selector = [0, 1, 2] # R=0, G=1, B=2
+        channel_cycle_timer = int(channel_cycle_warmup_time * stroke_count)
+        # by default its 0 1 2 to cycle through 3 channels
+        # but it can be modified dynamically to prioritize certain channels with more error
+        # for example [0, 0, 1] would be that it does R R G R R G ...
+
+        cls.plot_curve_plt(size_start, size_end, stroke_count, decay_params['softness'], decay_params['progress'], decay_params['cutoff'], q_warmup=quadrant_warmup_time, cycle_warmup=channel_cycle_timer)
+
+        # (HEADER BITS) channel cycle bool bit
+        bitstream += "1" if channel_cycle else "0"
+        if channel_cycle:
+            # (HEADER BITS) strokes per channel cycle bits
+            bitstream += cls.encode_int(strokes_per_channel_cycle, signed=False, bitcount=20)
+            # (HEADER BITS) channel cycle warmup time bits
+            bitstream += cls.encode_int(int(channel_cycle_warmup_time * stroke_count), signed=False, bitcount=20)
+
+        header_bits = len(bitstream)
+        # print(f"Header bits: {header_bits} bits")
+        # (MAIN LOOP)
+
+        rng_state = None
+        if use_numba:
+            # Initialize Numba RNG state
+            rng_state = np.uint64(2003)
+
+        stream_timer = 0
+
+        for i in range(stroke_count):
+            channel_idx = channel_selector[i % 3]
+            target_layer = img[:, :, channel_idx]
+            canvas_layer = canvas[:, :, channel_idx]
+            size = sizes[i]
+
+            if quadrant_switch_counters[channel_idx] <= 0:
+                error_layer = np.abs(target_layer - canvas_layer)
+                quadrant_bitcount = cls.get_quadrant_bitcount(h, w, size, quadrant_max_bits)
+                quadrant_inputs[channel_idx] = cls.select_quadrant(error_layer, quadrant_bitcount, selection_criteria=quadrant_selection_criteria)
+                # (MAIN LOOP BITS) quadrant bits
+                bitstream += quadrant_inputs[channel_idx]
+                quadrant_switch_counters[channel_idx] = strokes_per_quadrant
+
+            if channel_cycle:
+                if channel_cycle_timer <= 0:
+                    # Re-evaluate channel priorities based on current error
+                    full_error_layer = np.abs(img - canvas)
+                    channel_selector = cls.channel_cycle_strategy(full_error_layer, strategy=channel_cycle, selection_criteria=cycle_selection_criteria)
+                    # (MAIN LOOP BITS) channel cycle bits
+                    for ch in channel_selector:
+                        bitstream += cls.encode_int(ch, signed=False, bitcount=2) # 2 bits to represent 0-2
+                    channel_cycle_timer = strokes_per_channel_cycle
+
+            # RETURNS ROW, COL
+            if use_numba:
+                # 1. PRE-CALCULATE BOUNDARIES IN PYTHON
+                # This avoids passing Strings/None to Numba
+                if quadrant_inputs[channel_idx] is None:
+                    r_s, c_s = 0, 0
+                    r_e, c_e = h - size, w - size
+                else:
+                    q_int = cls.decode_int(quadrant_inputs[channel_idx], signed=False)
+                    q_bitcount = len(quadrant_inputs[channel_idx])
+                    r_s, c_s, r_e, c_e = process_quadrant_int(h, w, size, q_int, q_bitcount, quadrant_padding)
+                rng_state, row, col = get_stroke_coords_rolling(rng_state, r_s, c_s, r_e, c_e)
+                rng_state = np.uint64(rng_state)
+            else:
+                row, col = cls.get_stroke_params(i, h, w, size, quadrant_input=quadrant_inputs[channel_idx], quadrant_padding=quadrant_padding)
+
+            if use_numba:
+                stroke_indices, canvas_layer = stroke_numba(target_layer, canvas_layer, h, w, row, col, size, mult_arr)
+            else:
+                half = size // 2
+                # Slices are [Row, Col]
+                slices = [
+                    (slice(row, row+half), slice(col, col+half)),
+                    (slice(row, row+half), slice(col+half, col+size)),
+                    (slice(row+half, row+size), slice(col, col+half)),
+                    (slice(row+half, row+size), slice(col+half, col+size))
+                ]
+                
+                stroke_indices = []
+                for sl in slices:
+                    # Basic boundary check (Never supposed to happen, but just in case)
+                    if sl[0].start >= h or sl[1].start >= w:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nSlice start out of bounds: {sl}, image size: ({h}, {w})\n----------\n\n\n")
+                        continue
+
+                    if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nInvalid slice with start >= stop: {sl}\n----------\n\n\n")
+                        continue
+                    
+                    # Extract region
+                    target_slice = target_layer[sl]
+                    canvas_slice = canvas_layer[sl]
+
+                    # Another safety check for empty slices (which should not happen)
+                    if target_slice.size == 0: 
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nEmpty slice encountered: {sl}\n----------\n\n\n")
+                        continue
+
+                    diff = target_slice - canvas_slice
+                    mean_diff = np.mean(diff)
+                    
+                    best_idx = np.argmin(np.abs(mult_arr - mean_diff))
+                    best_mult = mult_arr[best_idx]
+                    
+                    canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
+                    stroke_indices.append(best_idx)
+
+            # (MAIN LOOP BITS) stroke indices bits
+            for idx in stroke_indices:
+                bitstream += cls.encode_int(idx, signed=False, bitcount=multlist_bitcount)
+
+            encoded_strokes.append(stroke_indices)
+            quadrant_switch_counters[channel_idx] -= 1
+            if channel_cycle:
+                channel_cycle_timer -= 1
+
+            if stream_timer <= 0:
+                stream_timer = stream_interval - 1
+                interim_img = np.clip(canvas, 0, 255).astype(np.uint8)
+                if color_space == "YCbCr":
+                    interim_img = cls.ycbcr_to_rgb(interim_img)
+                interim_losses = [int(np.mean((interim_img[:, :, channel_idx].astype(np.float32) - img[:, :, channel_idx].astype(np.float32)) ** 2)) for channel_idx in range(3)]
+                yield (Image.fromarray(interim_img), f"Processed {i}/{stroke_count} strokes. {((i)/stroke_count)*100:.2f}%", interim_losses, len(bitstream))
+            else:
+                stream_timer -= 1
+
+        canvas = np.clip(canvas, 0, 255).astype(np.uint8)
+
+        if color_space == "YCbCr":
+            final_img = cls.ycbcr_to_rgb(canvas)
+            img = np.array(img_pil)
+        else:
+            final_img = canvas
+
+        
+        final_img_pil = Image.fromarray(final_img)
+        if downsample_rate > 1:
+            final_img_pil = cls.upsample_image(final_img_pil, original_size)
+            img = np.array(img_pil)
+            final_img = np.array(final_img_pil)
+
+        total_bits = len(bitstream)
+
+        losses = []
+        for channel_idx in range(3):
+            full_diff = img[:, :, channel_idx].astype(np.float32) - final_img[:, :, channel_idx].astype(np.float32)
+            mse = np.mean(full_diff ** 2, dtype=np.float32)
+            losses.append(int(mse))
+
+        orig_size = img_pil.size[0]*img_pil.size[1]*3*8
+        bit_stats = f"\n========================\nBITSTREAM STATS:\n"
+        bit_stats += f"Header: {header_bits} bits\n"
+        bit_stats += f"Strokes: {total_bits - header_bits} bits\n"
+        bit_stats += f"Total: {total_bits/8/1024:.2f} KB from {orig_size/1024/8:.2f} KB original ({(total_bits/orig_size)*100:.2f}% size, {orig_size/total_bits:.2f}x compression)\n"
+
+        # BINARY SAVE
+        try:
+            with open(save_filename, "wb") as f:
+                b_data, pad_len = cls._bits_to_bytes(bitstream)
+                f.write(bytes([pad_len])) 
+                f.write(b_data)
+            bit_stats += f"Binary bitstream saved to {save_filename}\n"
+        except Exception as e:
+            bit_stats += f"Error saving bitstream: {e}\n"
+        
+        bit_stats += f"========================\n"
+
+        res = [final_img_pil, bit_stats, losses, total_bits]
+        yield (*res,)
+        return (*res,)
+
+    @classmethod
+    def compress_and_generate_video(cls, img, stroke_count=40000, stream_interval=100, fps=60,
+         save_filename="compressed_output.pbc", video_filename="compression_evolution.mp4", **compress_kwargs):
+        """
+        Compress an image using PBC and generate a video showing the compression evolution.
+        """
+        # Collect all interim compressed images
+        frames = []
+        loss_history = [[] for _ in range(4)]  # R, G, B, Average
+
+        # Use a for loop to iterate over the generator
+        for interim_result in cls.compress_stream(
+            img,
+            stroke_count=stroke_count,
+            save_filename=save_filename,
+            stream_interval=stream_interval,
+            **compress_kwargs
+        ):
+            compressed_img, bit_info, losses, total_bits = interim_result
+            avg_loss = (losses[0] + losses[1] + losses[2]) / 3
+
+            # Print progress
+            interim_print = (
+                f"Progress update: {bit_info} | Size: {total_bits / 8 / 1024:.2f} KB\n"
+                f"Losses: {losses}\n"
+                f"Average MSE: {avg_loss:.2f}\n"
+            )
+            print(interim_print, end="\r", flush=True)
+
+            # Append losses
+            loss_history[0].append(losses[0])
+            loss_history[1].append(losses[1])
+            loss_history[2].append(losses[2])
+            loss_history[3].append(avg_loss)
+
+            # Convert PIL image to OpenCV format and add to frames
+            frame = cv2.cvtColor(np.array(compressed_img), cv2.COLOR_RGB2BGR)
+            frames.append(frame)
+
+        # If you want the final result, you can collect it after the loop
+        compressed_img, bit_info, losses, total_bits = interim_result
+
+        print("\nFinal Results:")
+        print(bit_info)
+        print(losses)
+        final_mse = int((losses[0] + losses[1] + losses[2]) / 3)
+        print(f"Final MSE: {final_mse}")
+        compression_rate = img.width * img.height * 3 * 8 / (total_bits)
+        print(f"Final Size: {total_bits / 8 / 1024:.2f} KB | Compression Rate: {compression_rate:.2f}x")
+
+        # Plot compression loss over time
+        try:
+            xticks = np.arange(0, stroke_count + 1, step=stream_interval)
+            plt.plot(xticks, loss_history[0], label="Red Channel", color="red")
+            plt.plot(xticks, loss_history[1], label="Green Channel", color="green")
+            plt.plot(xticks, loss_history[2], label="Blue Channel", color="blue")
+            plt.plot(xticks, loss_history[3], label="Average MSE", color="black", linestyle="--", linewidth=2)
+            plt.xlabel("Stroke Count")
+            plt.ylabel("Average MSE")
+            plt.legend()
+            plt.title(f"Compression Loss Over Time")
+            plt.show()
+        except ValueError:
+            xticks = np.arange(0, stroke_count + 1, step=stream_interval)
+            xticks = np.append(xticks, stroke_count)
+            plt.plot(xticks, loss_history[0], label="Red Channel", color="red")
+            plt.plot(xticks, loss_history[1], label="Green Channel", color="green")
+            plt.plot(xticks, loss_history[2], label="Blue Channel", color="blue")
+            plt.plot(xticks, loss_history[3], label="Average MSE", color="black", linestyle="--", linewidth=2)
+            plt.xlabel("Stroke Count")
+            plt.ylabel("Average MSE")
+            plt.legend()
+            plt.title(f"Compression Loss Over Time")
+            plt.show()
+
+
+        # Create a video from the collected frames
+        height, width, _ = frames[0].shape
+        fourcc = cv2.VideoWriter_fourcc(*'avc1')  # Codec for .mp4
+        video_writer = cv2.VideoWriter(video_filename, fourcc, fps, (width, height))
+
+        for frame in frames:
+            video_writer.write(frame)
+
+        video_writer.release()
+        print(f"Video saved as {video_filename}")
+
+        plt.figure(figsize=(12, 6))
+        plt.subplot(1, 2, 1)
+        plt.imshow(compressed_img)
+        plt.axis('off')
+        plt.title('Final Compressed Image')
+        plt.subplot(1, 2, 2)
+        plt.imshow(img)
+        plt.axis('off')
+        plt.title('Original Image')
+        plt.suptitle(f'Final MSE: {final_mse}\nCompression rate: {compression_rate:.2f}x', fontsize=16)
+        plt.show()
+
+    @classmethod
+    def just_compress(cls, img_pil, stroke_count=40000, size_range=(-1, -1), mult_list=[-10, 0, 5, 20], start_mode="Average",
+                 start_custom=(128, 128, 128), decay_params={'cutoff': -1, 'softness': -1, 'progress': -1},
+                 strokes_per_quadrant=100, quadrant_warmup_time=-1, quadrant_max_bits=8, quadrant_padding=4, quadrant_selection_criteria="Sum",
+                 channel_cycle="Smart", strokes_per_channel_cycle=100, channel_cycle_warmup_time=0.9, cycle_selection_criteria="Min",
+                 color_space="RGB", downsample_rate=-1, display_autos=False, use_numba=True):
+        """ 
+        Function to just take an image and return the compressed bitstream
+        without collecting additional info or constructing the image.
+        """
+        if img_pil is None:
+            return None, "Please upload an image first."
+        
+
+        bitstream = ""
+        original_size = img_pil.size
+
+        if downsample_rate == -1:
+            if min(original_size) < 600:
+                downsample_rate = 1
+            else:
+                downsample_rate = min(original_size) / 500
+                if display_autos:
+                    print(f'Auto-calculated downsample_rate: {downsample_rate}')
+
+        if downsample_rate > 1:
+            original_size = img_pil.size
+            img = np.array(cls.downsample_image(img_pil, downsample_rate), dtype=np.int16)
+            # (HEADER BITS) downsample flag (1=downsampled)
+            bitstream += "1"
+            # original width and height bits (16 bits each)
+            bitstream += cls.encode_int(original_size[0], signed=False, bitcount=16)
+            bitstream += cls.encode_int(original_size[1], signed=False, bitcount=16)
+        else:
+            img = np.array(img_pil, dtype=np.int16)
+            # (HEADER BITS) downsample flag (0=not downsampled)
+            bitstream += "0"
+
+        if color_space == "YCbCr":
+            img = cls.rgb_to_ycbcr(img)
+            # (HEADER BITS) color space bit YCbCr=1
+            bitstream += "1"
+        else:
+            # (HEADER BITS) color space bit RGB=0
+            bitstream += "0"
+
+        h, w = img.shape[:2]
+        # (HEADER BITS) image size bits (max image height and width allowed is 65535 (16 bits each), should be enough for any reasonable use case)
+        bitstream += cls.encode_int(h, signed=False, bitcount=16) # unsigned, obviously
+        bitstream += cls.encode_int(w, signed=False, bitcount=16) # unsigned, obviously
+        r, g, b = img[:,:,0], img[:,:,1], img[:,:,2]
+
+        # (HEADER BITS) stroke count bits (stroke counts above 1M probably unfeasible, 20 bits should be enough)
+        bitstream += cls.encode_int(stroke_count, signed=False, bitcount=20) # unsigned, obviously
+        
+        if start_mode == "Black": start_color = (0, 0, 0) if color_space == "RGB" else (0, 128, 128)
+        elif start_mode == "White": start_color = (255, 255, 255) if color_space == "RGB" else (255, 128, 128)
+        elif start_mode == "Custom": start_color = start_custom
+        elif start_mode == "Average" or start_mode == "Mean": start_color = (int(np.mean(r)), int(np.mean(g)), int(np.mean(b)))
+        elif start_mode == "Median": start_color = (int(np.median(r)), int(np.median(g)), int(np.median(b)))
+        elif start_mode == "True Median": start_color = np.median(img.reshape(-1, 3), axis=0).astype(int)
+        elif start_mode == "Random": start_color = (np.random.randint(0,256), np.random.randint(0,256), np.random.randint(0,256))
+        else:
+            print(f'Warning: Unknown start_mode "{start_mode}", defaulting to "Average".')
+            start_color = (int(np.mean(r)), int(np.mean(g)), int(np.mean(b)))
+
+        if display_autos:
+            print(f'Start color selected: R={start_color[0]}, G={start_color[1]}, B={start_color[2]}')
+
+        # (HEADER BITS) start color bits (0-255 for each channel, 8 bits each)
+        bitstream += cls.encode_int(start_color[0], signed=False, bitcount=8) # R
+        bitstream += cls.encode_int(start_color[1], signed=False, bitcount=8) # G
+        bitstream += cls.encode_int(start_color[2], signed=False, bitcount=8) # B
+
+        canvas = np.full((h, w, 3), start_color, dtype=np.int16)
+
+        size_start = size_range[0]
+        size_end = size_range[1]
+        if size_start == -1:
+            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
+            a = 0.3
+            b = 1.00095
+            c = 7000
+            size_start = a + (1/b)**(stroke_count + c)
+            if display_autos:
+                print(f"Auto-calculated size start: {size_start:.3f}")
+        if size_end == -1:
+            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
+            a = 0.01
+            b = 1.00015
+            c = 10200
+            size_end = a + (1/b)**(stroke_count + c)
+            if display_autos:
+                print(f"Auto-calculated size end: {size_end:.3f}")
+
+        size_start = int(size_start * (min(h, w) - 2)) + 2
+        size_end = int(size_end * (min(h, w) - 2)) + 2
+
+        if display_autos:
+            print(f"Calculated size range: {size_start} to {size_end} pixels.")
+
+        # maximum and minimum sizes are the same bitcount as the height and width, since size cannot be larger than image dimensions
+        # (HEADER BITS) size start and end bits
+        bitstream += cls.encode_int(size_start, signed=False, bitcount=16)
+        bitstream += cls.encode_int(size_end, signed=False, bitcount=16)
+
+        sizes, decay_params_encoding = cls.get_decay_curve(stroke_count, size_start, size_end,
+                                    decay_params['cutoff'], decay_params['softness'], decay_params['progress'], display_autos=display_autos)
+        
+        # (HEADER BITS) decay parameters bits
+        bitstream += decay_params_encoding
+
+        mult_arr = np.array(mult_list)
+        multlist_len = len(mult_arr)
+        multlist_bitcount = int(np.ceil(np.log2(multlist_len)))
+        # (HEADER BITS) multlist length bits
+        # since we need to know how many multipliers there are to decode them later, there's no ending delimiter
+        bitstream += cls.encode_int(multlist_len, signed=False, bitcount=9) # max amount of multipliers possible: (-255, 255) so 512 multipliers, so 9 bits for the number
+        # (HEADER BITS) multlist bits
+        for mult in mult_arr:
+            bitstream += cls.encode_int(mult, signed=True, bitcount=9) # signed, since multipliers can be negative, 9 bits cover the -255 to 255 range
+
+        if quadrant_warmup_time == -1:
+            # VALUES FROM TESTING OUT A FORMULA ON DESMOS TO FIT EXPERIMENTAL DATA
+            a = 0.75
+            b = 0.000014
+            c = -1000
+            d = 550000
+            quadrant_warmup_time = a - (b*(stroke_count + c) ** 2) / d
+            quadrant_warmup_time = max(0.0, min(quadrant_warmup_time, 1.0))
+            if display_autos:
+                print(f'Auto-calculated quadrant_warmup_time: {quadrant_warmup_time:.4f}')
+
+
+        quadrant_warmup_time = int(quadrant_warmup_time * stroke_count)
+        if display_autos:
+            print(f'Calculated quadrant_warmup_time: {quadrant_warmup_time} strokes.')
+
+        # (HEADER BITS) quadrant warmup time bits
+        bitstream += cls.encode_int(quadrant_warmup_time, signed=False, bitcount=20)
+        # (HEADER BITS) strokes per quadrant bits
+        bitstream += cls.encode_int(strokes_per_quadrant, signed=False, bitcount=20)
+        # (HEADER BITS) quadrant max bits bits
+        bitstream += cls.encode_int(quadrant_max_bits, signed=False, bitcount=8) # max 255 bits should be way more than enough, default is 8
+        # (HEADER BITS) quadrant padding bits
+        bitstream += cls.encode_int(quadrant_padding, signed=False, bitcount=8) # max 255 pixel padding should be way more than enough, default is 4
+
+        quadrant_switch_counters = [quadrant_warmup_time//3, quadrant_warmup_time//3, quadrant_warmup_time//3]
+        quadrant_inputs = [None, None, None]
+
+        if not channel_cycle:
+            channel_cycle = None
+        channel_selector = [0, 1, 2] # R=0, G=1, B=2
+        channel_cycle_timer = int(channel_cycle_warmup_time * stroke_count)
+        # by default its 0 1 2 to cycle through 3 channels
+        # but it can be modified dynamically to prioritize certain channels with more error
+        # for example [0, 0, 1] would be that it does R R G R R G ...
+
+        # (HEADER BITS) channel cycle bool bit
+        bitstream += "1" if channel_cycle else "0"
+        if channel_cycle:
+            # (HEADER BITS) strokes per channel cycle bits
+            bitstream += cls.encode_int(strokes_per_channel_cycle, signed=False, bitcount=20)
+            # (HEADER BITS) channel cycle warmup time bits
+            bitstream += cls.encode_int(int(channel_cycle_warmup_time * stroke_count), signed=False, bitcount=20)
+
+        
+        # (MAIN LOOP)
+        rng_state = None
+        if use_numba:
+            # Initialize Numba RNG state
+            rng_state = np.uint64(2003)
+
+        for i in range(stroke_count):
+            channel_idx = channel_selector[i % 3]
+            target_layer = img[:, :, channel_idx]
+            canvas_layer = canvas[:, :, channel_idx]
+            size = sizes[i]
+
+            if quadrant_switch_counters[channel_idx] <= 0:
+                error_layer = np.abs(target_layer - canvas_layer)
+                quadrant_bitcount = cls.get_quadrant_bitcount(h, w, size, quadrant_max_bits)
+                quadrant_inputs[channel_idx] = cls.select_quadrant(error_layer, quadrant_bitcount, selection_criteria=quadrant_selection_criteria)
+                # (MAIN LOOP BITS) quadrant bits
+                bitstream += quadrant_inputs[channel_idx]
+                quadrant_switch_counters[channel_idx] = strokes_per_quadrant
+            if channel_cycle:
+                if channel_cycle_timer <= 0:
+                    # Re-evaluate channel priorities based on current error
+                    full_error_layer = np.abs(img - canvas)
+                    channel_selector = cls.channel_cycle_strategy(full_error_layer, strategy=channel_cycle, selection_criteria=cycle_selection_criteria)
+                    # (MAIN LOOP BITS) channel cycle bits
+                    for ch in channel_selector:
+                        bitstream += cls.encode_int(ch, signed=False, bitcount=2) # 2 bits to represent 0-2
+                    channel_cycle_timer = strokes_per_channel_cycle
+
+            # RETURNS ROW, COL
+            if use_numba:
+                # 1. PRE-CALCULATE BOUNDARIES IN PYTHON
+                # This avoids passing Strings/None to Numba
+                if quadrant_inputs[channel_idx] is None:
+                    r_s, c_s = 0, 0
+                    r_e, c_e = h - size, w - size
+                else:
+                    q_int = cls.decode_int(quadrant_inputs[channel_idx], signed=False)
+                    q_bitcount = len(quadrant_inputs[channel_idx])
+                    r_s, c_s, r_e, c_e = process_quadrant_int(h, w, size, q_int, q_bitcount, quadrant_padding)
+                rng_state, row, col = get_stroke_coords_rolling(rng_state, r_s, c_s, r_e, c_e)
+                rng_state = np.uint64(rng_state)
+            else:
+                row, col = cls.get_stroke_params(i, h, w, size, quadrant_input=quadrant_inputs[channel_idx], quadrant_padding=quadrant_padding)
+
+            # APPLIES STROKE (WITH ITS 4 SLICES)
+            if use_numba:
+                stroke_indices, canvas_layer = stroke_numba(target_layer, canvas_layer, h, w, row, col, size, mult_arr)
+            else:
+                half = size // 2
+                # Slices are [Row, Col]
+                slices = [
+                    (slice(row, row+half), slice(col, col+half)),
+                    (slice(row, row+half), slice(col+half, col+size)),
+                    (slice(row+half, row+size), slice(col, col+half)),
+                    (slice(row+half, row+size), slice(col+half, col+size))
+                ]
+                
+                stroke_indices = []
+                for sl in slices:
+                    # Basic boundary check (Never supposed to happen, but just in case)
+                    if sl[0].start >= h or sl[1].start >= w:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nSlice start out of bounds: {sl}, image size: ({h}, {w})\n----------\n\n\n")
+                        continue
+
+                    if sl[0].start >= sl[0].stop or sl[1].start >= sl[1].stop:
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nInvalid slice with start >= stop: {sl}\n----------\n\n\n")
+                        continue
+                    
+                    # Extract region
+                    target_slice = target_layer[sl]
+                    canvas_slice = canvas_layer[sl]
+
+                    # Another safety check for empty slices (which should not happen)
+                    if target_slice.size == 0: 
+                        stroke_indices.append(0)
+                        print(f"\n\n\n----------\nEmpty slice encountered: {sl}\n----------\n\n\n")
+                        continue
+
+                    diff = target_slice - canvas_slice
+                    mean_diff = np.mean(diff)
+                    
+                    best_idx = np.argmin(np.abs(mult_arr - mean_diff))
+                    best_mult = mult_arr[best_idx]
+                    
+                    canvas_layer[sl] = np.clip(canvas_layer[sl] + best_mult, 0, 255)
+                    stroke_indices.append(best_idx)
+
+            # (MAIN LOOP BITS) stroke indices bits
+            for idx in stroke_indices:
+                bitstream += cls.encode_int(idx, signed=False, bitcount=multlist_bitcount)
+
+            quadrant_switch_counters[channel_idx] -= 1
+            if channel_cycle:
+                channel_cycle_timer -= 1
+
+        return bitstream
+
+    @classmethod
+    def just_compress_file(cls, img_path, save_path=-1, **compress_kwargs):
+        """ 
+        Function to just take an image file path and return the compressed bitstream
+        without collecting additional info or constructing the image.
+        """
+        img_pil = Image.open(img_path)
+        if save_path == -1:
+            save_path = f"compressed_{int(time.time())}.pbc"
+        bitstream = cls.just_compress(img_pil, **compress_kwargs)
+        # BINARY SAVE
+        try:
+            with open(save_path, "wb") as f:
+                b_data, pad_len = cls._bits_to_bytes(bitstream)
+                f.write(bytes([pad_len])) 
+                f.write(b_data)
+            print(f"Binary bitstream saved to {save_path}")
+        except Exception as e:
+            print(f"Error saving bitstream: {e}")
+        return bitstream
+
+    @classmethod
+    def simple_demo(cls, img, **compress_kwargs):
+        """
+        Simple demo function to compress an image and display results.
+        """
+        compressed_img, _, bitstream, losses = cls.compress(img, **compress_kwargs)
+
+        compression_rate = img.width * img.height * 3 * 8 / len(bitstream)
+        final_mse = int((losses[0] + losses[1] + losses[2]) / 3)
+        
+        plt.figure(figsize=(12, 6))
+        plt.subplot(1, 2, 1)
+        plt.imshow(compressed_img)
+        plt.axis('off')
+        plt.title('Final Compressed Image')
+        plt.subplot(1, 2, 2)
+        plt.imshow(img)
+        plt.axis('off')
+        plt.title('Original Image')
+        plt.suptitle(f'Final MSE: {final_mse}\nCompression rate: {compression_rate:.2f}x', fontsize=16)
+        plt.tight_layout()
+        plt.show()
+
+
