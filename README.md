@@ -32,6 +32,8 @@ This is the base model, it works by taking in an image, a size list, a multiplie
 <img src="https://github.com/EgeEken/PBC/assets/96302110/60513a43-f5ab-43e2-93c3-2011c1b61349" alt="Demonstration" width="40%" />
 <img src="https://github.com/EgeEken/PBC/assets/96302110/f582782f-4ae4-4790-95da-9f4c81dac18e" alt="Demonstration" width="40%" />
 
+---
+
 ## V2.0
 
 In this version the biggest difference is in the encoding speed, i achieved a great deal of optimization by using a function to find the best multiplier instead of checking each individual combination. And also by dividing each brush stroke into 4 quadrants, and saving the multipliers of each. This way every seed gets used, so there is no need to signify spaces/strokes like in V1.0, this allows for linear time complexity (O(n), as opposed to the exponential O(n^2) in V1.0).
@@ -43,13 +45,15 @@ In this version the biggest difference is in the encoding speed, i achieved a gr
 I also made a gradio demo for the compressor, where it is much easier and faster to test out different parameters before using the dedicated encoder to compress into a file.
 
 
-<img src="https://github.com/EgeEken/PBC/assets/96302110/79f04588-a7a9-44db-8962-4d924c68a7b7" alt="gradio_demo" width="60%" />
+<img src="https://github.com/EgeEken/PBC/assets/96302110/79f04588-a7a9-44db-8962-4d924c68a7b7" alt="gradio_demo" width="50%" />
+
+---
 
 ## V2.1
 
 This is essentially the same model as V2.0 but with a good amount of extra options that allow further customization in encoding. Such as the starting color options, cutoff value, and a bunch of new features to the gradio interface, which is also now hosted 24/7 on [Hugging Face Spaces/PBC_V2.1](https://huggingface.co/spaces/EgeEken/PBC_V2.1)
 
-<img src="https://github.com/EgeEken/EgeEken/assets/96302110/da61d3e8-434b-4679-925d-987f19d41771" alt="Demonstration" width="80%" />
+<img src="https://github.com/EgeEken/EgeEken/assets/96302110/da61d3e8-434b-4679-925d-987f19d41771" alt="Demonstration" width="70%" />
 
 Another thing i added later is custom size functions, for this i had help from a friend who studied more maths than i did, but essentially it is a function that allows for gradual transition from linear to sigmoid functions, with only 16 additional bits of info required for a lot of customization. The difference is pretty subtle, but worth the effort in my opinion, the difference is visible at the same rate of compression between a linear size function and a custom finetuned one.
 
@@ -58,6 +62,8 @@ Another thing i added later is custom size functions, for this i had help from a
 
 ### V2.1 compared to JPG at an equal rate of compression: 
 <img src="https://github.com/EgeEken/PBC/assets/96302110/c5b012e3-3008-4132-876b-5abdcdec9cd2" alt="Demonstration" width="40%" />
+
+---
 
 ## V2.2
 
@@ -68,20 +74,28 @@ Comparison of V2.1 and V2.2 default settings on the same image, same stroke coun
 <img src="https://github.com/user-attachments/assets/3175abfe-1dfc-456c-87bd-efcd746ede39" alt="Demonstration" width="40%" />
 
 
-For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis on how the algorithm functions as is, to maybe get ideas on how to improve it. Here are some stuff i found:
+For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis on how the algorithm functions as is, to maybe get ideas on how to improve it. I conducted a ton of experiments, finetuning parameters, observing the compression process to see points of weakness, 
 
-<img width="990" height="996" alt="image" src="https://github.com/user-attachments/assets/326e4bb3-8734-44b2-ab5b-882c20555d4a" />
-
-<img width="859" height="547" alt="image" src="https://github.com/user-attachments/assets/fce40e54-7b0a-4176-a539-5e10d950b9b2" />
-
-As expected, the loss goes down rapidly at the start, where large brush sizes are covering a big part of the image with each stroke, and as the brush size is procedurally lowered, the reduction in loss is more subtle, but this isn't a sign that the algorithm is stagnating, the smaller brush sizes are what allow for higher precision, if brush sizes were kept large, they would end up being useless after a couple thousand strokes. However, i think there's still a lot to gain from adding a "focus" mechanism that isolates channels, or even parts of the image. I'm working on that right now
-
+---
 
 ## V2.3 (Work in Progress, Just Started)
 
-### (WIP) Massive upgrade to the algorithm quality, potentially lossless compression feature coming 
+### (WIP) Big upgrade to the compression quality with very little cost to compression rate, potentially lossless compression feature coming 
 After V2.2, i realised there is a lot of value to be gained from simple downsample layers before starting the brush strokes process, and made a primitive version of what it could look like to have that incorporated into the system, this version is currently far from completion but the proof of concept is very promising:
 
 <img width="950" height="522" alt="image" src="https://github.com/user-attachments/assets/810dfe9c-5576-47bf-adb0-caf3ea1efb63" />
 
 Just by starting with a 16x downsampled layer of the original image, instead of a single starting color canvas, despite compensating for the added bits from the uncompressed downsampled layer by reducing stroke count, we can halve the MSE loss while maintaining the compression rate. This will be the main idea V2.3 is built on.
+
+So far, V2.3 has already passed a very important milestone, which is that it can achieve better MSE loss at an equal/higher rate of compression compared to JPEG, which is the standard algorithm for lossy image compression:
+
+### JPEG | 171x Compression | 209 MSE Loss 
+<img width="1224" height="918" alt="EGE_JPG_MILESTONE171x209-small" src="https://github.com/user-attachments/assets/8af3309f-5185-4e7c-98cf-fa1b97713fd4" />
+
+### PBC V2.3 Preview | 174x Compression | 164 MSE Loss
+<img width="1224" height="918" alt="EGE_V2_3_MILESTONE174x164-small" src="https://github.com/user-attachments/assets/b8a62ef9-f611-45a5-96f4-4b84036ee8ff" />
+
+Release shouldn't be too far away, but I have some more ideas to implement first
+
+
+
