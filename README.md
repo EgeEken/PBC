@@ -11,14 +11,14 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 ---
 
 ### (332x compression)
-<img width="950" height="452" alt="image" src="https://github.com/user-attachments/assets/09ac32bf-7b04-4335-96f7-7dac0ef38d9f" />
+<img width=60% alt="image" src="https://github.com/user-attachments/assets/09ac32bf-7b04-4335-96f7-7dac0ef38d9f" />
 
-https://github.com/user-attachments/assets/271245eb-eb68-4ac0-8227-c72cdb9527a4
+<video src="https://github.com/user-attachments/assets/271245eb-eb68-4ac0-8227-c72cdb9527a4"> </video>
 
 ### (167x compression)
-<img width="835" height="542" alt="image" src="https://github.com/user-attachments/assets/105912bb-a5f7-4136-a36b-7c997ac7fd95" />
+<img width=60% alt="image" src="https://github.com/user-attachments/assets/105912bb-a5f7-4136-a36b-7c997ac7fd95" /> 
 
-https://github.com/user-attachments/assets/dc0f9080-32b7-4fde-91e1-10febc6fdd81
+<video src="https://github.com/user-attachments/assets/dc0f9080-32b7-4fde-91e1-10febc6fdd81"> </video>
 
 ### Comparison to JPEG at equivalent compression rate
 
@@ -30,6 +30,23 @@ https://github.com/user-attachments/assets/dc0f9080-32b7-4fde-91e1-10febc6fdd81
 ---
 # Development / Version History
 ---
+
+## V0.0 (proof of concept)
+
+This was the proof of concept for the idea i had in my mind, i was disappointed to see such terrible results but the very fact that it worked at all was proof enough for me to continue improving it.
+
+<img alt="V0 0 proof of concept" src="https://github.com/user-attachments/assets/543bc587-084e-4241-9272-838225bc9fbb"  width="30%" />
+
+And after tweaking the structure a little, adding some of the base features that would later become the V1.0 model, i was able to make it reach this:
+
+<img alt="V0 1 better proof of concept" src="https://github.com/user-attachments/assets/6ecfbd5b-28db-46ae-8a27-8483407c08d8"  width="30%" />
+
+Still not good at all, but at this point i knew i was onto something, and later the project kept evolving, until it reached its current stage:
+
+<img width="873" height="158" alt="image" src="https://github.com/user-attachments/assets/8075f821-9892-4349-9da6-d740de61bbd8" />
+
+
+
 
 ## V1.0
 
