@@ -176,7 +176,7 @@ class PBC:
     """# Probabilistic Brush Compression (PBC) \n
     ---
     ### Developed by **Ege Eken** (https://github.com/EgeEken/PBC) \n
-    Current Version: **V2.2** (2025) \n\n
+    Current Version: **V2.3** (2025) \n\n
     ---
     This is a lossy image compression algorithm that compresses images into a series of brush stroke instructions.\n
     For more information, visit the [GitHub Repository](https://github.com/EgeEken/PBC)
@@ -1636,7 +1636,7 @@ class PBC:
         return (*res,)
 
     @classmethod
-    def compress_and_generate_video(cls, img, fps=60, stream_interval=-1, 
+    def compress_and_generate_video(cls, img, stroke_count=-1, fps=60, stream_interval=-1, video_length_seconds=4,
          save_filename="compressed_output.pbc", video_filename="compression_evolution.mp4", **compress_kwargs):
         """
         Compress an image using PBC and generate a video showing the compression evolution.
@@ -1645,7 +1645,6 @@ class PBC:
         frames = []
         loss_history = [[] for _ in range(4)]  # R, G, B, Average
 
-        stroke_count = compress_kwargs.get('stroke_count', -1)
         if stroke_count == -1:
             # Auto-calculate stroke_count if default
             original_size = img.size
@@ -1656,11 +1655,12 @@ class PBC:
 
         if stream_interval == -1:
             # adjust stream_interval to fit 5 seconds with given fps
-            stream_interval = stroke_count // (fps * 4)
+            stream_interval = stroke_count // (fps * video_length_seconds)
 
         # Use a for loop to iterate over the generator
         for interim_result in cls.compress_stream(
             img,
+            stroke_count=stroke_count,
             save_filename=save_filename,
             stream_interval=stream_interval,
             **compress_kwargs
