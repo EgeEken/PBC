@@ -3,27 +3,50 @@
 An unconventional, lossy image compression algorithm I designed, that compresses image data as a series of approved "brush stroke" instructions, the core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
 
 
-### Current version: V2.2
+### Current version: V2.3 (Latest Release)
 ### Hugging Face Spaces Demo (outdated): V2.1. Deployed on [Hugging Face Spaces/PBC_V2.1](https://huggingface.co/spaces/EgeEken/PBC_V2.1)
 
 ---
-# Current version (V2.2) Demonstration
+# Current version (V2.3) Demonstration
 ---
 
-### (18x compression)
-<img width="950" height="522" alt="image" src="https://github.com/user-attachments/assets/7261a093-7990-4b11-ae2f-b634584d29d3" />
+### (332x compression)
+<img width=60% alt="image" src="https://github.com/user-attachments/assets/09ac32bf-7b04-4335-96f7-7dac0ef38d9f" />
 
-https://github.com/user-attachments/assets/23b36875-5c09-4624-8175-dcef8fd52215
+<video src="https://github.com/user-attachments/assets/271245eb-eb68-4ac0-8227-c72cdb9527a4"> </video>
+
+### (167x compression)
+<img width=60% alt="image" src="https://github.com/user-attachments/assets/105912bb-a5f7-4136-a36b-7c997ac7fd95" /> 
+
+<video src="https://github.com/user-attachments/assets/dc0f9080-32b7-4fde-91e1-10febc6fdd81"> </video>
+
+### Comparison to JPEG at equivalent compression rate
+
+<img width="4623" height="1779" alt="image" src="https://github.com/user-attachments/assets/a0373b46-00b7-435f-9090-6540e88de6c6" />
+<img width="5370" height="1670" alt="image" src="https://github.com/user-attachments/assets/2867f5fc-d9d5-47c5-ae53-ffe1a4205c91" />
 
 
-### (203x compression)
-<img width="881" height="593" alt="image" src="https://github.com/user-attachments/assets/c6af5f7b-b43b-4fc1-927d-6ccdd49a5e67" />
-
-https://github.com/user-attachments/assets/ee95ce52-e2c5-4336-b8ff-bc6eddc848f3
 
 ---
 # Development / Version History
 ---
+
+## V0.0 (proof of concept)
+
+This was the proof of concept for the idea i had in my mind, i was disappointed to see such terrible results but the very fact that it worked at all was proof enough for me to continue improving it.
+
+<img alt="V0 0 proof of concept" src="https://github.com/user-attachments/assets/543bc587-084e-4241-9272-838225bc9fbb"  width="30%" />
+
+And after tweaking the structure a little, adding some of the base features that would later become the V1.0 model, i was able to make it reach this:
+
+<img alt="V0 1 better proof of concept" src="https://github.com/user-attachments/assets/6ecfbd5b-28db-46ae-8a27-8483407c08d8"  width="30%" />
+
+Still not good at all, but at this point i knew i was onto something, and later the project kept evolving, until it reached its current stage:
+
+<img width="873" height="158" alt="image" src="https://github.com/user-attachments/assets/8075f821-9892-4349-9da6-d740de61bbd8" />
+
+
+
 
 ## V1.0
 
@@ -73,21 +96,20 @@ Comparison of V2.1 and V2.2 default settings on the same image, same stroke coun
 <img src="https://github.com/user-attachments/assets/7f3af6b4-6dca-4163-b80d-811ab887e242" alt="Demonstration" width="40%" />
 <img src="https://github.com/user-attachments/assets/3175abfe-1dfc-456c-87bd-efcd746ede39" alt="Demonstration" width="40%" />
 
-
-For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis on how the algorithm functions as is, to maybe get ideas on how to improve it. I conducted a ton of experiments, finetuning parameters, observing the compression process to see points of weakness, 
+For some upgrades to V2.1, i had some ideas, but also wanted to do some analysis on how the algorithm functions as is, to maybe get ideas on how to improve it. I conducted a ton of experiments, finetuning parameters, observing the compression process to see points of weakness, eventually settled on these default parameters which worked pretty well on my experiment set. Also massive optimizations after refactoring the whole code using the Numba library and more appropriate data types.
 
 ---
 
-## V2.3 (Work in Progress, Just Started)
+## V2.3
 
-### (WIP) Big upgrade to the compression quality with very little cost to compression rate, potentially lossless compression feature coming 
-After V2.2, i realised there is a lot of value to be gained from simple downsample layers before starting the brush strokes process, and made a primitive version of what it could look like to have that incorporated into the system, this version is currently far from completion but the proof of concept is very promising:
+### Big upgrade to the compression quality with very little cost to compression rate
+After V2.2, i realised there is a lot of value to be gained from simple downsample layers before starting the brush strokes process. This simple change had a huge effect on output quality.
 
 <img width="950" height="522" alt="image" src="https://github.com/user-attachments/assets/810dfe9c-5576-47bf-adb0-caf3ea1efb63" />
 
-Just by starting with a 16x downsampled layer of the original image, instead of a single starting color canvas, despite compensating for the added bits from the uncompressed downsampled layer by reducing stroke count, we can halve the MSE loss while maintaining the compression rate. This will be the main idea V2.3 is built on.
+Just by starting with a 16x downsampled layer of the original image, instead of a single starting color canvas, despite compensating for the added bits from the uncompressed downsampled layer by reducing stroke count, we can halve the MSE loss while maintaining the compression rate. This is the main idea V2.3 is built on.
 
-So far, V2.3 has already passed a very important milestone, which is that it can achieve better MSE loss at an equal/higher rate of compression compared to JPEG, which is the standard algorithm for lossy image compression:
+At pre-release V2.3 had already passed a very important milestone, which is that it can achieve better MSE loss at an equal/higher rate of compression compared to JPEG, which is the standard algorithm for lossy image compression:
 
 ### JPEG | 171x Compression | 209 MSE Loss 
 <img width="1224" height="918" alt="EGE_JPG_MILESTONE171x209-small" src="https://github.com/user-attachments/assets/8af3309f-5185-4e7c-98cf-fa1b97713fd4" />
@@ -95,7 +117,12 @@ So far, V2.3 has already passed a very important milestone, which is that it can
 ### PBC V2.3 Preview | 174x Compression | 164 MSE Loss
 <img width="1224" height="918" alt="EGE_V2_3_MILESTONE174x164-small" src="https://github.com/user-attachments/assets/b8a62ef9-f611-45a5-96f4-4b84036ee8ff" />
 
-Release shouldn't be too far away, but I have some more ideas to implement first
+After some more parameter finetuning and stabilization, V2.3 is consistently better than JPEG at the ultra high compression space (below 10% in JPEG's quality setting) in any image over 4 MP in resolution.
 
+<img width="5370" height="1598" alt="image" src="https://github.com/user-attachments/assets/9c0d29b1-e1f0-4e89-9a41-ecb680cb49ac" />
+
+<img width="4623" height="1779" alt="image" src="https://github.com/user-attachments/assets/6eb7a5ed-1503-4454-86ff-4a6591f907e5" />
+
+<img width="4388" height="1779" alt="image" src="https://github.com/user-attachments/assets/25488ff8-63d9-4c4b-983e-1c9b8cfa1a38" />
 
 
