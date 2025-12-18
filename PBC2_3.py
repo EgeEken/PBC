@@ -626,6 +626,8 @@ class PBC:
         if save_filename == -1:
             save_filename = f"compressed.pbc"
 
+        if color_space == "YCbCr":
+            img_pil = Image.fromarray(np.array(img_pil.convert("YCbCr")))
         
 
         bitstream = ""
@@ -654,7 +656,6 @@ class PBC:
             bitstream += "0"
 
         if color_space == "YCbCr":
-            img = cls.rgb_to_ycbcr(img).astype(np.int16)
             # (HEADER BITS) color space bit YCbCr=1
             bitstream += "1"
         else:
@@ -727,8 +728,12 @@ class PBC:
             else:
                 canvas = np.array(img_pil.resize((n_w, n_h), downsample_alg), dtype=np.uint8)
             #bitstream += "1" * (n_h * n_w * 3 * 8)
+            if color_space == "YCbCr":
+                canvas = cls.ycbcr_to_rgb(canvas)
             bitstream += cls.array_to_bitstream(canvas)
             canvas = np.array(Image.fromarray(canvas).resize((w, h), downsample_alg), dtype=np.int16)
+            if color_space == "YCbCr":
+                canvas = cls.rgb_to_ycbcr(canvas).astype(np.int16)
             if display_autos:
                 print(f'Downsample initialize test enabled with rate {downsample_initialize_rate}, canvas initialized from downsampled image.')
         else:
@@ -933,6 +938,7 @@ class PBC:
 
         if color_space == "YCbCr":
             final_img = cls.ycbcr_to_rgb(canvas).astype(np.uint8)
+            img_pil = Image.fromarray(cls.ycbcr_to_rgb(np.array(img_pil)))
             img = np.array(img_pil)
         else:
             final_img = canvas.astype(np.uint8)
@@ -1054,6 +1060,8 @@ class PBC:
                 print(f"len(canvas_data_bits): {len(canvas_data_bits)}")
             canvas = cls.bitstream_to_array(canvas_data_bits, n_h, n_w, channels=3)
             canvas = np.array(Image.fromarray(canvas).resize((w, h), Image.LANCZOS), dtype=np.int16)
+            if ycbcr_flag == '1':
+                canvas = cls.rgb_to_ycbcr(canvas).astype(np.int16)
             read_i += (n_h * n_w * 3 * 8)
 
         # Size start and end
@@ -1252,7 +1260,8 @@ class PBC:
 
         canvas = np.clip(canvas, 0, 255)
         if ycbcr_flag == '1':
-            final_img = cls.ycbcr_to_rgb(canvas).astype(np.uint8)
+            final_img = cls.ycbcr_to_rgb(canvas)
+            #final_img = canvas.astype(np.uint8)
         else:
             final_img = canvas.astype(np.uint8)
         return Image.fromarray(final_img)
@@ -1283,7 +1292,7 @@ class PBC:
             return None, "Please upload an image first."
         
         if color_space == "YCbCr":
-            img_pil = img_pil.convert("YCbCr")
+            img_pil = Image.fromarray(np.array(img_pil.convert("YCbCr")))
         
         if save_filename == -1:
             save_filename = f"compressed.pbc"
@@ -1314,7 +1323,6 @@ class PBC:
             bitstream += "0"
 
         if color_space == "YCbCr":
-            img = cls.rgb_to_ycbcr(img).astype(np.int16)
             # (HEADER BITS) color space bit YCbCr=1
             bitstream += "1"
         else:
@@ -1387,8 +1395,12 @@ class PBC:
             else:
                 canvas = np.array(img_pil.resize((n_w, n_h), downsample_alg), dtype=np.uint8)
             #bitstream += "1" * (n_h * n_w * 3 * 8)
+            if color_space == "YCbCr":
+                canvas = cls.ycbcr_to_rgb(canvas)
             bitstream += cls.array_to_bitstream(canvas)
             canvas = np.array(Image.fromarray(canvas).resize((w, h), downsample_alg), dtype=np.int16)
+            if color_space == "YCbCr":
+                canvas = cls.rgb_to_ycbcr(canvas).astype(np.int16)
             if display_autos:
                 print(f'Downsample initialize test enabled with rate {downsample_initialize_rate}, canvas initialized from downsampled image.')
         else:
@@ -1651,7 +1663,7 @@ class PBC:
         return (*res,)
 
     @classmethod
-    def compress_and_generate_video(cls, img, stroke_count=-1, fps=60, stream_interval=-1, video_length_seconds=4,
+    def compress_and_generate_video(cls, img, fps=60, stream_interval=-1, 
          save_filename="compressed_output.pbc", video_filename="compression_evolution.mp4", **compress_kwargs):
         """
         Compress an image using PBC and generate a video showing the compression evolution.
@@ -1660,6 +1672,7 @@ class PBC:
         frames = []
         loss_history = [[] for _ in range(4)]  # R, G, B, Average
 
+        stroke_count = compress_kwargs.get('stroke_count', -1)
         if stroke_count == -1:
             # Auto-calculate stroke_count if default
             original_size = img.size
@@ -1670,12 +1683,11 @@ class PBC:
 
         if stream_interval == -1:
             # adjust stream_interval to fit 5 seconds with given fps
-            stream_interval = stroke_count // (fps * video_length_seconds)
+            stream_interval = stroke_count // (fps * 4)
 
         # Use a for loop to iterate over the generator
         for interim_result in cls.compress_stream(
             img,
-            stroke_count=stroke_count,
             save_filename=save_filename,
             stream_interval=stream_interval,
             **compress_kwargs
@@ -1776,6 +1788,9 @@ class PBC:
         original_size = img_pil.size
         ori_w, ori_h = original_size
 
+        if color_space == "YCbCr":
+            img_pil = Image.fromarray(np.array(img_pil.convert("YCbCr")))
+
         if downsample_rate == -1:
             if min(original_size) < 600:
                 downsample_rate = 1
@@ -1798,7 +1813,6 @@ class PBC:
             bitstream += "0"
 
         if color_space == "YCbCr":
-            img = cls.rgb_to_ycbcr(img).astype(np.int16)
             # (HEADER BITS) color space bit YCbCr=1
             bitstream += "1"
         else:
@@ -1870,9 +1884,13 @@ class PBC:
                 canvas = np.array(img_pil_downsampled.resize((n_w, n_h), downsample_alg), dtype=np.uint8)
             else:
                 canvas = np.array(img_pil.resize((n_w, n_h), downsample_alg), dtype=np.uint8)
+            if color_space == "YCbCr":
+                canvas = cls.ycbcr_to_rgb(canvas)
             #bitstream += "1" * (n_h * n_w * 3 * 8)
             bitstream += cls.array_to_bitstream(canvas)
             canvas = np.array(Image.fromarray(canvas).resize((w, h), downsample_alg), dtype=np.int16)
+            if color_space == "YCbCr":
+                canvas = cls.rgb_to_ycbcr(canvas).astype(np.int16)
             if display_autos:
                 print(f'Downsample initialize test enabled with rate {downsample_initialize_rate}, canvas initialized from downsampled image.')
         else:
