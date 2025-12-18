@@ -176,26 +176,37 @@ class PBC:
     """# Probabilistic Brush Compression (PBC) \n
     ---
     ### Developed by **Ege Eken** (https://github.com/EgeEken/PBC) \n
-    Current Version: **V2.2** (2025) \n\n
+    Current Version: **V2.3** (2025) \n\n
     ---
     This is a lossy image compression algorithm that compresses images into a series of brush stroke instructions.\n
     For more information, visit the [GitHub Repository](https://github.com/EgeEken/PBC)
     """
 
+    @classmethod
+    def preload_numba(cls):
+        """ Dummy compression simulation to preload Numba compiled functions."""
+        dummy_img = Image.fromarray(np.random.randint(0, 256, (16, 16, 3), dtype=np.uint8))
+        cls.compress(dummy_img, stroke_count=10, quadrant_warmup_time=0.0)
+
+
     @staticmethod
     def rgb_to_ycbcr(img):
-        xform = np.array([[.299, .587, .114], [-.1687, -.3313, .5], [.5, -.4187, -.0813]])
+        xform = np.array([[0.299, 0.587, 0.114],
+                        [-0.168736, -0.331264, 0.5],
+                        [0.5, -0.418688, -0.081312]])
         ycbcr = img.dot(xform.T)
-        ycbcr[:,:,[1,2]] += 128
-        return ycbcr
+        ycbcr[:, :, [1, 2]] += 128
+        return np.clip(ycbcr, 0, 255).astype(np.uint8)
 
     @staticmethod
     def ycbcr_to_rgb(img):
-        xform = np.array([[1, 0, 1.402], [1, -0.34414, -.71414], [1, 1.772, 0]])
+        xform = np.array([[1, 0, 1.402],
+                        [1, -0.344136, -0.714136],
+                        [1, 1.772, 0]])
         rgb = img.astype(float)
-        rgb[:,:,[1,2]] -= 128
+        rgb[:, :, [1, 2]] -= 128
         rgb = rgb.dot(xform.T)
-        return np.clip(rgb, 0, 255)
+        return np.clip(rgb, 0, 255).astype(np.uint8)
     
     @classmethod
     def get_decay_curve(cls, length, start, end, cutoff, softness, progress, display_autos=False):
@@ -478,11 +489,12 @@ class PBC:
         return res
 
     @classmethod
-    def plot_curve_gradio(cls, sr_start, sr_end, count, softness, progress, cutoff):
+    def plot_curve_gradio(cls, sr_start, sr_end, stroke_count, softness, progress, cutoff, sample_count=100):
         s_min, s_max = min(sr_start, sr_end), max(sr_start, sr_end)
-        x = np.linspace(0, count, 100)
-        y, _ = cls.get_decay_curve(100, s_max, s_min, cutoff, softness, progress)
-        return pd.DataFrame({"stroke_index": x, "size": y})
+        x = np.linspace(0, stroke_count - 1, sample_count, dtype=int)
+        y, _ = cls.get_decay_curve(stroke_count, s_max, s_min, cutoff, softness, progress)
+        y_sampled = y[x]
+        return pd.DataFrame({"x": x, "y": y_sampled})
     
     @classmethod
     def plot_curve_plt(cls, sr_start, sr_end, stroke_count, softness, progress, cutoff, q_warmup=None, cycle_warmup=None):
@@ -642,7 +654,7 @@ class PBC:
             bitstream += "0"
 
         if color_space == "YCbCr":
-            img = cls.rgb_to_ycbcr(img)
+            img = cls.rgb_to_ycbcr(img).astype(np.int16)
             # (HEADER BITS) color space bit YCbCr=1
             bitstream += "1"
         else:
@@ -1270,6 +1282,9 @@ class PBC:
         if img_pil is None:
             return None, "Please upload an image first."
         
+        if color_space == "YCbCr":
+            img_pil = img_pil.convert("YCbCr")
+        
         if save_filename == -1:
             save_filename = f"compressed.pbc"
 
@@ -1299,7 +1314,7 @@ class PBC:
             bitstream += "0"
 
         if color_space == "YCbCr":
-            img = cls.rgb_to_ycbcr(img)
+            img = cls.rgb_to_ycbcr(img).astype(np.int16)
             # (HEADER BITS) color space bit YCbCr=1
             bitstream += "1"
         else:
@@ -1783,7 +1798,7 @@ class PBC:
             bitstream += "0"
 
         if color_space == "YCbCr":
-            img = cls.rgb_to_ycbcr(img)
+            img = cls.rgb_to_ycbcr(img).astype(np.int16)
             # (HEADER BITS) color space bit YCbCr=1
             bitstream += "1"
         else:
