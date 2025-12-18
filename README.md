@@ -4,7 +4,7 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 
 
 ### Current version: V2.3 (Latest Release)
-### Hugging Face Spaces Demo (outdated): V2.1. Deployed on [Hugging Face Spaces/PBC_V2.1](https://huggingface.co/spaces/EgeEken/PBC_V2.1)
+### Hugging Face Spaces Demo: V2.3. Deployed on [Hugging Face Spaces/PBC_V2.3](https://huggingface.co/spaces/EgeEken/PBC_V2.3)
 
 ---
 # Current version (V2.3) Demonstration
@@ -25,6 +25,9 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 <img width="4623" height="1779" alt="image" src="https://github.com/user-attachments/assets/a0373b46-00b7-435f-9090-6540e88de6c6" />
 <img width="5370" height="1670" alt="image" src="https://github.com/user-attachments/assets/2867f5fc-d9d5-47c5-ae53-ffe1a4205c91" />
 
+### Hugging Face Spaces Demo
+
+<img width="944" height="548" alt="image" src="https://github.com/user-attachments/assets/16a5ddf7-d833-454c-8142-d05a09982e22" />
 
 
 ---
