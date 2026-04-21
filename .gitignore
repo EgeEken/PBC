@@ -1,0 +1,23 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# Environments
+.venv/
+venv/
+__pypackages__/
+
+# PDM local interpreter pointer
+.pdm-python
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
