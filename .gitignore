@@ -21,3 +21,10 @@ __pypackages__/
 
 # OS files
 .DS_Store
+
+# all images in test_images except eiffel.png
+test_images/*
+!test_images/eiffel.png
+
+# Compressed files
+*.pbc

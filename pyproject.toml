@@ -11,7 +11,7 @@ dependencies = [
     "matplotlib>=3.7",
     "numba>=0.59",
     "opencv-python>=4.8",
-    "gradio>=5.0",
+    "gradio>=6.1",
 ]
 authors = [
     {name = "EgeEken", email = "egeeken.tr@gmail.com"},
