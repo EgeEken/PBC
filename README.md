@@ -1,10 +1,11 @@
 # Probabilistic Brush Compression (PBC)
 
-An unconventional, lossy image compression algorithm I designed, that compresses image data as a series of approved "brush stroke" instructions, the core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
+An unconventional lossy image compression algorithm I designed. It compresses image data as a series of approved "brush stroke" instructions. The core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
 
 
-### Current version: V2.3 (Latest Release)
-### Hugging Face Spaces Demo: V2.3. Deployed on [Hugging Face Spaces/PBC_V2.3](https://huggingface.co/spaces/EgeEken/PBC_V2.3)
+### Latest Release: V2.3
+### Demo deployed on [Hugging Face Spaces](https://egeeken-pbc.hf.space/)
+<img width="943" height="559" alt="image" src="https://github.com/user-attachments/assets/95ba847b-e452-4282-b4a6-6376e37aefac" />
 
 ---
 # Current version (V2.3) Demonstration
@@ -24,11 +25,6 @@ An unconventional, lossy image compression algorithm I designed, that compresses
 
 <img width="4623" height="1779" alt="image" src="https://github.com/user-attachments/assets/a0373b46-00b7-435f-9090-6540e88de6c6" />
 <img width="5370" height="1670" alt="image" src="https://github.com/user-attachments/assets/2867f5fc-d9d5-47c5-ae53-ffe1a4205c91" />
-
-### Hugging Face Spaces Demo
-
-<img width="944" height="548" alt="image" src="https://github.com/user-attachments/assets/16a5ddf7-d833-454c-8142-d05a09982e22" />
-
 
 ---
 # Development / Version History
