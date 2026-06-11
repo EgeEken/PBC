@@ -1,6 +1,6 @@
 # Probabilistic Brush Compression (PBC)
 
-An unconventional lossy image compression algorithm I designed. It compresses image data as a series of approved "brush stroke" instructions. The core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
+An unconventional lossy image compression algorithm I designed. It compresses image data as a series of approved "brush stroke" instructions. The core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving a lot of space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
 
 
 ### Latest Release: V2.4

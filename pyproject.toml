@@ -26,7 +26,3 @@ dev = [
 
 [tool.pdm]
 distribution = false
-
-[tool.pdm.scripts]
-gradio = "python PBC2_3_gradio.py"
-notebook = "jupyter notebook PBC_Notebook.ipynb"
