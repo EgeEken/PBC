@@ -3,12 +3,12 @@
 An unconventional lossy image compression algorithm I designed. It compresses image data as a series of approved "brush stroke" instructions. The core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
 
 
-### Latest Release: V2.3
+### Latest Release: V2.4
 ### Demo deployed on [Hugging Face Spaces](https://egeeken-pbc.hf.space/)
 <img width="943" height="559" alt="image" src="https://github.com/user-attachments/assets/95ba847b-e452-4282-b4a6-6376e37aefac" />
 
 ---
-# Current version (V2.3) Demonstration
+# Current version (V2.4) Demonstration
 ---
 
 ### (332x compression)
@@ -123,5 +123,16 @@ After some more parameter finetuning and stabilization, V2.3 is consistently bet
 <img width="4623" height="1779" alt="image" src="https://github.com/user-attachments/assets/6eb7a5ed-1503-4454-86ff-4a6591f907e5" />
 
 <img width="4388" height="1779" alt="image" src="https://github.com/user-attachments/assets/25488ff8-63d9-4c4b-983e-1c9b8cfa1a38" />
+
+---
+
+## V2.4
+
+### Optimization and refactoring update, as well as a new fancy demo website. And some hyperparameter tuning tools and research.
+The codebase had gotten messy over the course of like a year of adding new features and testing stuff, so i started fromn scratch to rebuild 2.3 and make some optimizations along the way. Quality-wise nothing has changed between V2.3 and V2.4, but encode and decode speeds have been increased around 20-50%.
+
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/c5a49f78-4ce9-4399-ad8c-f7dee116da33" />
+
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/af63b41d-306e-4e7e-871f-a00e935f779b" />
 
 
