@@ -12,6 +12,8 @@ dependencies = [
     "numba>=0.59",
     "opencv-python>=4.8",
     "gradio>=6.1",
+    "optuna>=4.9.0",
+    "optuna-dashboard>=0.20.0",
 ]
 authors = [
     {name = "EgeEken", email = "egeeken.tr@gmail.com"},
