@@ -60,11 +60,11 @@ class PBC3Config:
     color_space: str = "RGB"
     downsample_cell_size: int = 8
     mask_size: int = 9
-    palette_max: int = 255
     palette_bitcount: int = 3
     positive_bias: bool = True
     patch_count: int = 0
     random_seed: int = 2003
+    palette_max: int = None
 
 
 @dataclass
@@ -113,11 +113,7 @@ class PBC3Result:
         info_ax.axis("off")
         image_ax.axis("off")
 
-        title_ax.text(
-            0.5, 0.5, "PBC3 Result",
-            ha="center", va="center",
-            fontsize=16, fontweight="bold",
-        )
+        title_ax.text(0.5, 0.5, "PBC3 Result", ha="center", va="center", fontsize=16, fontweight="bold")
 
         mse = "N/A" if self.mse is None else f"{self.mse:.2f}"
         seconds = "N/A" if self.encode_seconds is None else f"{self.encode_seconds:.3f}s"
@@ -165,71 +161,83 @@ class PBC3:
     def _ceil_div(a, b):
         return (a + b - 1) // b
 
-    @classmethod
-    def _range_counts(cls, mask_size, positive_bias=True):
-        side_bits = max(0, mask_size - 1)
-        if positive_bias:
-            pos_count = (side_bits + 1) // 2
-        else:
-            pos_count = side_bits // 2
-        neg_count = side_bits - pos_count
-        return pos_count, neg_count
+    @staticmethod
+    def _palette_bounds(values):
+        min_value = int(np.min(values))
+        max_value = int(np.max(values))
+        negative_max = min(255, max(0, -min_value))
+        positive_max = min(255, max(0, max_value))
+        return negative_max, positive_max
 
     @classmethod
-    def _mask_index_for_value(cls, value, mask_size, palette_max=255, positive_bias=True):
+    def _range_counts(cls, mask_size, negative_max=255, positive_max=255, positive_bias=True):
+        side_bits = max(0, mask_size - 1)
+        negative_max = max(0, int(negative_max))
+        positive_max = max(0, int(positive_max))
+        if side_bits == 0 or (negative_max == 0 and positive_max == 0):
+            return 0, 0
+        if negative_max == 0:
+            return side_bits, 0
+        if positive_max == 0:
+            return 0, side_bits
+        raw_pos = side_bits * positive_max / (positive_max + negative_max)
+        pos_count = math.ceil(raw_pos) if positive_bias else math.floor(raw_pos)
+        pos_count = min(side_bits - 1, max(1, pos_count))
+        return pos_count, side_bits - pos_count
+
+    @classmethod
+    def _mask_index_for_value(cls, value, mask_size, negative_max=255, positive_max=255, positive_bias=True):
         if value == 0:
             return 0
-        pos_count, neg_count = cls._range_counts(mask_size, positive_bias)
+        pos_count, neg_count = cls._range_counts(mask_size, negative_max, positive_max, positive_bias)
         if value > 0:
-            if pos_count == 0:
+            if pos_count == 0 or positive_max <= 0:
                 return None
-            mag = min(int(value), palette_max)
-            bin_i = min((mag - 1) * pos_count // palette_max, pos_count - 1)
-            return 1 + 2 * bin_i
-        if neg_count == 0:
+            mag = min(int(value), positive_max)
+            bin_i = min((mag - 1) * pos_count // positive_max, pos_count - 1)
+            return 1 + bin_i
+        if neg_count == 0 or negative_max <= 0:
             return None
-        mag = min(int(-value), palette_max)
-        bin_i = min((mag - 1) * neg_count // palette_max, neg_count - 1)
-        return 2 + 2 * bin_i
+        mag = min(int(-value), negative_max)
+        bin_i = min((mag - 1) * neg_count // negative_max, neg_count - 1)
+        return 1 + pos_count + bin_i
 
     @classmethod
-    def _range_for_mask_index(cls, index, mask_size, palette_max=255, positive_bias=True):
-        pos_count, neg_count = cls._range_counts(mask_size, positive_bias)
+    def _range_for_mask_index(cls, index, mask_size, negative_max=255, positive_max=255, positive_bias=True):
+        pos_count, neg_count = cls._range_counts(mask_size, negative_max, positive_max, positive_bias)
         if index == 0:
             return 0, 0
-        if index % 2 == 1:
-            bin_i = (index - 1) // 2
-            if bin_i >= pos_count:
-                return None
-            start = 1 + (bin_i * palette_max) // pos_count
-            end = ((bin_i + 1) * palette_max) // pos_count
+        if 1 <= index <= pos_count:
+            bin_i = index - 1
+            start = 1 + (bin_i * positive_max) // pos_count
+            end = ((bin_i + 1) * positive_max) // pos_count
             return start, end
-        bin_i = (index - 2) // 2
-        if bin_i >= neg_count:
-            return None
-        low_mag = 1 + (bin_i * palette_max) // neg_count
-        high_mag = ((bin_i + 1) * palette_max) // neg_count
-        return -high_mag, -low_mag
+        bin_i = index - 1 - pos_count
+        if 0 <= bin_i < neg_count:
+            low_mag = 1 + (bin_i * negative_max) // neg_count
+            high_mag = ((bin_i + 1) * negative_max) // neg_count
+            return -high_mag, -low_mag
+        return None
 
     @classmethod
-    def _mask_from_values(cls, values, mask_size, palette_max=255, positive_bias=True):
+    def _mask_from_values(cls, values, mask_size, negative_max=255, positive_max=255, positive_bias=True):
         mask = [0] * mask_size
         mask[0] = 1
         flat = np.rint(values).astype(np.int32).ravel()
         for value in flat:
-            value = int(np.clip(value, -palette_max, palette_max))
-            idx = cls._mask_index_for_value(value, mask_size, palette_max, positive_bias)
+            value = int(np.clip(value, -negative_max, positive_max))
+            idx = cls._mask_index_for_value(value, mask_size, negative_max, positive_max, positive_bias)
             if idx is not None and idx < mask_size:
                 mask[idx] = 1
         return mask
 
     @classmethod
-    def _active_value_count(cls, mask, palette_max=255, positive_bias=True):
+    def _active_value_count(cls, mask, negative_max=255, positive_max=255, positive_bias=True):
         count = 0
         for i, bit in enumerate(mask):
             if not bit:
                 continue
-            r = cls._range_for_mask_index(i, len(mask), palette_max, positive_bias)
+            r = cls._range_for_mask_index(i, len(mask), negative_max, positive_max, positive_bias)
             if r is None:
                 continue
             start, end = r
@@ -237,20 +245,20 @@ class PBC3:
         return max(1, count)
 
     @classmethod
-    def resolve_palette_bitcount(cls, mask, max_bitcount, palette_max=255, positive_bias=True):
-        value_count = cls._active_value_count(mask, palette_max, positive_bias)
+    def resolve_palette_bitcount(cls, mask, max_bitcount, negative_max=255, positive_max=255, positive_bias=True):
+        value_count = cls._active_value_count(mask, negative_max, positive_max, positive_bias)
         needed = max(1, math.ceil(math.log2(value_count)))
         return min(int(max_bitcount), needed)
 
     @classmethod
-    def palette_generator(cls, mask, max_bitcount, palette_max=255, positive_bias=True):
-        bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, palette_max, positive_bias)
+    def palette_generator(cls, mask, max_bitcount, negative_max=255, positive_max=255, positive_bias=True):
+        bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
         size = 1 << bitcount
         active_ranges = []
         for i, bit in enumerate(mask):
             if not bit:
                 continue
-            r = cls._range_for_mask_index(i, len(mask), palette_max, positive_bias)
+            r = cls._range_for_mask_index(i, len(mask), negative_max, positive_max, positive_bias)
             if r is not None:
                 active_ranges.append(r)
 
@@ -259,7 +267,7 @@ class PBC3:
             palette.append(0)
             active_ranges = [r for r in active_ranges if r != (0, 0)]
 
-        value_count = cls._active_value_count(mask, palette_max, positive_bias)
+        value_count = cls._active_value_count(mask, negative_max, positive_max, positive_bias)
         if size >= value_count:
             for start, end in active_ranges:
                 palette.extend(range(start, end + 1))
@@ -316,8 +324,8 @@ class PBC3:
         canvas_layer[y:y + h, x:x + w] += patch
 
     @classmethod
-    def _write_patch(cls, bw, channel, x, y, w, h, mask, palette_max, max_bitcount, mode, cell_size, indices, channel_bits, positive_bias):
-        bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, palette_max, positive_bias)
+    def _write_patch(cls, bw, channel, x, y, w, h, mask, negative_max, positive_max, max_bitcount, mode, cell_size, indices, channel_bits, positive_bias):
+        bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
         bw.write(channel, channel_bits)
         bw.write(x, 16)
         bw.write(y, 16)
@@ -326,7 +334,8 @@ class PBC3:
         bw.write(len(mask), 10)
         for bit in mask:
             bw.write(bit, 1)
-        bw.write(palette_max, 8)
+        bw.write(negative_max, 8)
+        bw.write(positive_max, 8)
         bw.write(max_bitcount, 4)
         bw.write(mode, 2)
         bw.write(cell_size, 16)
@@ -342,9 +351,10 @@ class PBC3:
         h = br.read(16)
         mask_size = br.read(10)
         mask = [br.read(1) for _ in range(mask_size)]
-        palette_max = br.read(8)
+        negative_max = br.read(8)
+        positive_max = br.read(8)
         max_bitcount = br.read(4)
-        bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, palette_max, positive_bias)
+        bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
         mode = br.read(2)
         cell_size = br.read(16)
         gw = cls._ceil_div(w, cell_size)
@@ -353,9 +363,19 @@ class PBC3:
         for gy in range(gh):
             for gx in range(gw):
                 indices[gy, gx] = br.read(bitcount)
-        palette = cls.palette_generator(mask, max_bitcount, palette_max, positive_bias)
+        palette = cls.palette_generator(mask, max_bitcount, negative_max, positive_max, positive_bias)
         values = palette[indices]
         return channel, x, y, w, h, cell_size, values, mode
+
+    @classmethod
+    def _make_patch(cls, channel, x, y, w, h, cell_size, residual, config):
+        small = cls.signed_resample_cells(residual, cell_size)
+        negative_max, positive_max = cls._palette_bounds(small)
+        mask = cls._mask_from_values(small, config.mask_size, negative_max, positive_max, config.positive_bias)
+        palette = cls.palette_generator(mask, config.palette_bitcount, negative_max, positive_max, config.positive_bias)
+        indices = cls.quantize_signed(np.clip(small, -negative_max, positive_max), palette)
+        values = palette[indices]
+        return (channel, x, y, w, h, mask, negative_max, positive_max, config.palette_bitcount, cls.MODE_RAW, cell_size, indices), values
 
     @classmethod
     def compress(cls, image, config=None, **kwargs):
@@ -374,8 +394,6 @@ class PBC3:
             raise ValueError("mask_size must be in 1..1023")
         if config.palette_bitcount < 1 or config.palette_bitcount > 9:
             raise ValueError("palette_bitcount must be in 1..9")
-        if config.palette_max < 1 or config.palette_max > 255:
-            raise ValueError("palette_max must be in 1..255")
 
         color_id = cls.COLOR_SPACES[config.color_space]
         channel_bits = max(1, math.ceil(math.log2(channels)))
@@ -387,13 +405,9 @@ class PBC3:
         patches = []
         for c in range(channels):
             residual = arr[:, :, c].astype(np.int16) - base_values[c]
-            small = cls.signed_resample_cells(residual, config.downsample_cell_size)
-            mask = cls._mask_from_values(small, config.mask_size, config.palette_max, config.positive_bias)
-            palette = cls.palette_generator(mask, config.palette_bitcount, config.palette_max, config.positive_bias)
-            indices = cls.quantize_signed(np.clip(small, -config.palette_max, config.palette_max), palette)
-            values = palette[indices]
+            patch, values = cls._make_patch(c, 0, 0, w, h, config.downsample_cell_size, residual, config)
             cls.apply_grid(canvas[:, :, c], 0, 0, w, h, config.downsample_cell_size, values)
-            patches.append((c, 0, 0, w, h, mask, config.palette_max, config.palette_bitcount, cls.MODE_RAW, config.downsample_cell_size, indices))
+            patches.append(patch)
 
         rng = np.random.default_rng(config.random_seed)
         for _ in range(config.patch_count):
@@ -405,13 +419,9 @@ class PBC3:
             cell = int(rng.choice([1, 2, 4, 8, 16, 32]))
             cell = max(1, min(cell, pw, ph))
             residual = arr[y:y + ph, x:x + pw, c].astype(np.int16) - np.clip(canvas[y:y + ph, x:x + pw, c], 0, 255).astype(np.int16)
-            small = cls.signed_resample_cells(residual, cell)
-            mask = cls._mask_from_values(small, config.mask_size, config.palette_max, config.positive_bias)
-            palette = cls.palette_generator(mask, config.palette_bitcount, config.palette_max, config.positive_bias)
-            indices = cls.quantize_signed(np.clip(small, -config.palette_max, config.palette_max), palette)
-            values = palette[indices]
+            patch, values = cls._make_patch(c, x, y, pw, ph, cell, residual, config)
             cls.apply_grid(canvas[:, :, c], x, y, pw, ph, cell, values)
-            patches.append((c, x, y, pw, ph, mask, config.palette_max, config.palette_bitcount, cls.MODE_RAW, cell, indices))
+            patches.append(patch)
 
         bw = BitWriter()
         bw.write(w, 16)
