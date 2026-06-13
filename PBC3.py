@@ -59,12 +59,28 @@ class BitReader:
 class PBC3Config:
     color_space: str = "RGB"
     downsample_cell_size: int = 8
+    downsample_palette_bitcount: int = 5
+    patch_palette_bitcount: int = 3
     mask_size: int = 9
-    palette_bitcount: int = 3
     positive_bias: bool = True
     patch_count: int = 0
+    search_depth: int = 256
+    proposal_depth: int = 24
+    top_k: int = 16
+    anchor_block_size: int = 8
+    min_patch_size: int = 8
+    max_patch_size: int = 256
+    min_cell_size: int = 4
+    max_cell_size: int = 64
+    cell_sizes_per_candidate: int = 3
     random_seed: int = 2003
+    palette_bitcount: int = None
     palette_max: int = None
+
+    def __post_init__(self):
+        if self.palette_bitcount is not None:
+            self.downsample_palette_bitcount = self.palette_bitcount
+            self.patch_palette_bitcount = self.palette_bitcount
 
 
 @dataclass
@@ -108,33 +124,29 @@ class PBC3Result:
         title_ax = fig.add_subplot(gs[0])
         info_ax = fig.add_subplot(gs[1])
         image_ax = fig.add_subplot(gs[2])
-
         title_ax.axis("off")
         info_ax.axis("off")
         image_ax.axis("off")
-
         title_ax.text(0.5, 0.5, "PBC3 Result", ha="center", va="center", fontsize=16, fontweight="bold")
-
         mse = "N/A" if self.mse is None else f"{self.mse:.2f}"
         seconds = "N/A" if self.encode_seconds is None else f"{self.encode_seconds:.3f}s"
         info = (
-            f"MSE: {mse}   |   "
-            f"Compressed: {self.compressed_kb:.2f} KB   |   "
-            f"Original RGB: {self.original_kb:.2f} KB\n"
-            f"Compression: {self.compression_rate:.2f}x ({self.compressed_percent:.2f}%)   |   "
-            f"Time: {seconds}"
+            f"MSE: {mse}   |   Compressed: {self.compressed_kb:.2f} KB   |   Original RGB: {self.original_kb:.2f} KB\n"
+            f"Compression: {self.compression_rate:.2f}x ({self.compressed_percent:.2f}%)   |   Time: {seconds}"
         )
         info_ax.text(
             0.5, 0.5, info,
-            ha="center", va="center",
-            color="white",
-            fontsize=10,
-            linespacing=1.35,
+            ha="center", va="center", color="white", fontsize=10, linespacing=1.35,
             bbox=dict(boxstyle="round,pad=0.5", facecolor="black", alpha=0.72, edgecolor="none"),
         )
-
         image_ax.imshow(self.image)
         plt.show()
+
+    def verify(self) -> bool:
+        if self.data is None:
+            raise ValueError("result has no compressed data to verify")
+        decompressed = PBC3.decompress(self.data)
+        return np.array_equal(np.asarray(self.image), np.asarray(decompressed.image))
 
 
 class PBC3:
@@ -165,9 +177,7 @@ class PBC3:
     def _palette_bounds(values):
         min_value = int(np.min(values))
         max_value = int(np.max(values))
-        negative_max = min(255, max(0, -min_value))
-        positive_max = min(255, max(0, max_value))
-        return negative_max, positive_max
+        return min(255, max(0, -min_value)), min(255, max(0, max_value))
 
     @classmethod
     def _range_counts(cls, mask_size, negative_max=255, positive_max=255, positive_bias=True):
@@ -177,13 +187,17 @@ class PBC3:
         if side_bits == 0 or (negative_max == 0 and positive_max == 0):
             return 0, 0
         if negative_max == 0:
-            return side_bits, 0
+            return min(side_bits, positive_max), 0
         if positive_max == 0:
-            return 0, side_bits
+            return 0, min(side_bits, negative_max)
         raw_pos = side_bits * positive_max / (positive_max + negative_max)
         pos_count = math.ceil(raw_pos) if positive_bias else math.floor(raw_pos)
-        pos_count = min(side_bits - 1, max(1, pos_count))
-        return pos_count, side_bits - pos_count
+        pos_count = min(side_bits - 1, max(1, pos_count), positive_max)
+        neg_count = min(side_bits - pos_count, negative_max)
+        if neg_count == 0 and negative_max > 0 and side_bits > pos_count:
+            neg_count = 1
+            pos_count = max(1, pos_count - 1)
+        return pos_count, neg_count
 
     @classmethod
     def _mask_index_for_value(cls, value, mask_size, negative_max=255, positive_max=255, positive_bias=True):
@@ -211,12 +225,12 @@ class PBC3:
             bin_i = index - 1
             start = 1 + (bin_i * positive_max) // pos_count
             end = ((bin_i + 1) * positive_max) // pos_count
-            return start, end
+            return (start, end) if start <= end else None
         bin_i = index - 1 - pos_count
         if 0 <= bin_i < neg_count:
             low_mag = 1 + (bin_i * negative_max) // neg_count
             high_mag = ((bin_i + 1) * negative_max) // neg_count
-            return -high_mag, -low_mag
+            return (-high_mag, -low_mag) if high_mag >= low_mag else None
         return None
 
     @classmethod
@@ -238,10 +252,9 @@ class PBC3:
             if not bit:
                 continue
             r = cls._range_for_mask_index(i, len(mask), negative_max, positive_max, positive_bias)
-            if r is None:
-                continue
-            start, end = r
-            count += end - start + 1
+            if r is not None:
+                start, end = r
+                count += end - start + 1
         return max(1, count)
 
     @classmethod
@@ -256,11 +269,10 @@ class PBC3:
         size = 1 << bitcount
         active_ranges = []
         for i, bit in enumerate(mask):
-            if not bit:
-                continue
-            r = cls._range_for_mask_index(i, len(mask), negative_max, positive_max, positive_bias)
-            if r is not None:
-                active_ranges.append(r)
+            if bit:
+                r = cls._range_for_mask_index(i, len(mask), negative_max, positive_max, positive_bias)
+                if r is not None:
+                    active_ranges.append(r)
 
         palette = []
         if mask and mask[0]:
@@ -282,17 +294,13 @@ class PBC3:
         counts = [0] * len(active_ranges)
         for i in range(remaining):
             counts[i % len(active_ranges)] += 1
-
         for (start, end), count in zip(active_ranges, counts):
-            if count <= 0:
-                continue
             if count == 1:
                 palette.append(int(round((start + end) / 2)))
-            else:
+            elif count > 1:
                 for j in range(count):
                     t = (j + 1) / (count + 1)
                     palette.append(int(round(start + (end - start) * t)))
-
         if len(palette) < size:
             palette.extend([palette[-1] if palette else 0] * (size - len(palette)))
         return np.array(palette[:size], dtype=np.int16)
@@ -322,6 +330,12 @@ class PBC3:
     def apply_grid(cls, canvas_layer, x, y, w, h, cell_size, values):
         patch = cls.signed_resample(values, h, w).astype(np.int32)
         canvas_layer[y:y + h, x:x + w] += patch
+
+    @classmethod
+    def _patch_bits(cls, channel_bits, mask, negative_max, positive_max, max_bitcount, cell_size, w, h, positive_bias):
+        bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
+        grid_bits = cls._ceil_div(w, cell_size) * cls._ceil_div(h, cell_size) * bitcount
+        return channel_bits + 64 + 10 + len(mask) + 8 + 8 + 4 + 2 + 16 + grid_bits
 
     @classmethod
     def _write_patch(cls, bw, channel, x, y, w, h, mask, negative_max, positive_max, max_bitcount, mode, cell_size, indices, channel_bits, positive_bias):
@@ -368,14 +382,138 @@ class PBC3:
         return channel, x, y, w, h, cell_size, values, mode
 
     @classmethod
-    def _make_patch(cls, channel, x, y, w, h, cell_size, residual, config):
+    def _make_patch(cls, channel, x, y, w, h, cell_size, residual, mask_size, max_bitcount, positive_bias):
         small = cls.signed_resample_cells(residual, cell_size)
         negative_max, positive_max = cls._palette_bounds(small)
-        mask = cls._mask_from_values(small, config.mask_size, negative_max, positive_max, config.positive_bias)
-        palette = cls.palette_generator(mask, config.palette_bitcount, negative_max, positive_max, config.positive_bias)
+        mask = cls._mask_from_values(small, mask_size, negative_max, positive_max, positive_bias)
+        palette = cls.palette_generator(mask, max_bitcount, negative_max, positive_max, positive_bias)
         indices = cls.quantize_signed(np.clip(small, -negative_max, positive_max), palette)
         values = palette[indices]
-        return (channel, x, y, w, h, mask, negative_max, positive_max, config.palette_bitcount, cls.MODE_RAW, cell_size, indices), values
+        patch = (channel, x, y, w, h, mask, negative_max, positive_max, max_bitcount, cls.MODE_RAW, cell_size, indices)
+        return patch, values
+
+    @classmethod
+    def _top_anchors(cls, visible_error, top_k, block_size):
+        h, w, channels = visible_error.shape
+        block_size = max(1, int(block_size))
+        anchors = []
+        for c in range(channels):
+            for y0 in range(0, h, block_size):
+                y1 = min(h, y0 + block_size)
+                for x0 in range(0, w, block_size):
+                    x1 = min(w, x0 + block_size)
+                    score = float(np.mean(visible_error[y0:y1, x0:x1, c]))
+                    anchors.append((score, c, (y0 + y1 - 1) // 2, (x0 + x1 - 1) // 2))
+        if not anchors:
+            return []
+        k = min(top_k, len(anchors))
+        idx = np.argpartition(np.array([a[0] for a in anchors]), -k)[-k:]
+        selected = [anchors[i] for i in idx]
+        selected.sort(key=lambda a: a[0], reverse=True)
+        return [(c, y, x) for _, c, y, x in selected]
+
+    @classmethod
+    def _sample_box(cls, rng, anchor, image_w, image_h, config):
+        c, ay, ax = anchor
+        min_size = max(1, int(config.min_patch_size))
+        max_w = max(min_size, min(int(config.max_patch_size), image_w))
+        max_h = max(min_size, min(int(config.max_patch_size), image_h))
+        w = int(round(2 ** rng.uniform(math.log2(min_size), math.log2(max_w))))
+        h = int(round(2 ** rng.uniform(math.log2(min_size), math.log2(max_h))))
+        w = min(max(1, w), image_w)
+        h = min(max(1, h), image_h)
+        x_min = max(0, ax - w + 1)
+        x_max = min(ax, image_w - w)
+        y_min = max(0, ay - h + 1)
+        y_max = min(ay, image_h - h)
+        x = int(rng.integers(x_min, x_max + 1)) if x_min <= x_max else max(0, min(ax, image_w - w))
+        y = int(rng.integers(y_min, y_max + 1)) if y_min <= y_max else max(0, min(ay, image_h - h))
+        return c, x, y, w, h
+
+    @staticmethod
+    def _pre_score(visible_error_patch, hidden_residual_patch):
+        mean_error = float(np.mean(visible_error_patch))
+        if mean_error <= 0:
+            return 0.0
+        area = visible_error_patch.size
+        std = float(np.std(hidden_residual_patch))
+        return mean_error * math.log2(area + 1) / (1.0 + std / 32.0)
+
+    @classmethod
+    def _base_cell_size(cls, residual_patch, config):
+        mean_abs = float(np.mean(np.abs(residual_patch)))
+        if mean_abs <= 0:
+            return int(config.max_cell_size)
+        gx = float(np.mean(np.abs(np.diff(residual_patch, axis=1)))) if residual_patch.shape[1] > 1 else 0.0
+        gy = float(np.mean(np.abs(np.diff(residual_patch, axis=0)))) if residual_patch.shape[0] > 1 else 0.0
+        ratio = (gx + gy) / (mean_abs + 1.0)
+        if ratio < 0.25:
+            return 32
+        if ratio < 0.5:
+            return 16
+        if ratio < 1.0:
+            return 8
+        return 4
+
+    @classmethod
+    def _candidate_cell_sizes(cls, base, config):
+        offsets = [0, 1, -1, 2, -2, 3, -3]
+        cells = []
+        for off in offsets:
+            if len(cells) >= max(1, int(config.cell_sizes_per_candidate)):
+                break
+            cell = int(round(base * (2 ** off)))
+            cell = max(int(config.min_cell_size), min(int(config.max_cell_size), cell))
+            if cell not in cells:
+                cells.append(cell)
+        return cells
+
+    @classmethod
+    def _select_patch(cls, target, canvas, config, rng, channel_bits):
+        visible_canvas = np.clip(canvas, 0, 255).astype(np.int32)
+        visible_error = np.abs(target - visible_canvas).astype(np.float32)
+        anchors = cls._top_anchors(visible_error, config.top_k, config.anchor_block_size)
+        if not anchors:
+            return None, None
+
+        h, w, _ = target.shape
+        boxes = []
+        for i in range(max(1, int(config.search_depth))):
+            box = cls._sample_box(rng, anchors[i % len(anchors)], w, h, config)
+            c, x, y, bw, bh = box
+            score = cls._pre_score(
+                visible_error[y:y + bh, x:x + bw, c],
+                target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c],
+            )
+            if score > 0:
+                boxes.append((score, box))
+        if not boxes:
+            return None, None
+        boxes.sort(key=lambda item: item[0], reverse=True)
+        boxes = boxes[:max(1, int(config.proposal_depth))]
+
+        best_score = 0.0
+        best_patch = None
+        best_values = None
+        for _, (c, x, y, bw, bh) in boxes:
+            hidden_residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
+            base_cell = cls._base_cell_size(hidden_residual, config)
+            for cell_size in cls._candidate_cell_sizes(base_cell, config):
+                cell_size = max(1, min(cell_size, bw, bh))
+                patch, values = cls._make_patch(c, x, y, bw, bh, cell_size, hidden_residual, config.mask_size, config.patch_palette_bitcount, config.positive_bias)
+                delta = cls.signed_resample(values, bh, bw).astype(np.int32)
+                before = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c], 0, 255)
+                after = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c] + delta, 0, 255)
+                reduction = float(np.sum(before.astype(np.int64) ** 2) - np.sum(after.astype(np.int64) ** 2))
+                if reduction <= 0:
+                    continue
+                bits = cls._patch_bits(channel_bits, patch[5], patch[6], patch[7], patch[8], patch[10], bw, bh, config.positive_bias)
+                score = reduction / max(1, bits)
+                if score > best_score:
+                    best_score = score
+                    best_patch = patch
+                    best_values = values
+        return best_patch, best_values
 
     @classmethod
     def compress(cls, image, config=None, **kwargs):
@@ -387,13 +525,14 @@ class PBC3:
         t0 = time.perf_counter()
         img = cls._to_image(image).convert(config.color_space)
         arr = np.asarray(img, dtype=np.uint8)
+        target = arr.astype(np.int32)
         h, w, channels = arr.shape
         if w > 65535 or h > 65535:
             raise ValueError("this prototype stores width/height as uint16")
         if config.mask_size < 1 or config.mask_size > 1023:
             raise ValueError("mask_size must be in 1..1023")
-        if config.palette_bitcount < 1 or config.palette_bitcount > 9:
-            raise ValueError("palette_bitcount must be in 1..9")
+        if not (1 <= config.downsample_palette_bitcount <= 9 and 1 <= config.patch_palette_bitcount <= 9):
+            raise ValueError("palette bitcounts must be in 1..9")
 
         color_id = cls.COLOR_SPACES[config.color_space]
         channel_bits = max(1, math.ceil(math.log2(channels)))
@@ -404,23 +543,18 @@ class PBC3:
 
         patches = []
         for c in range(channels):
-            residual = arr[:, :, c].astype(np.int16) - base_values[c]
-            patch, values = cls._make_patch(c, 0, 0, w, h, config.downsample_cell_size, residual, config)
+            residual = target[:, :, c] - canvas[:, :, c]
+            patch, values = cls._make_patch(c, 0, 0, w, h, config.downsample_cell_size, residual, config.mask_size, config.downsample_palette_bitcount, config.positive_bias)
             cls.apply_grid(canvas[:, :, c], 0, 0, w, h, config.downsample_cell_size, values)
             patches.append(patch)
 
         rng = np.random.default_rng(config.random_seed)
-        for _ in range(config.patch_count):
-            c = int(rng.integers(0, channels))
-            pw = int(rng.integers(max(1, w // 16), max(2, w // 3)))
-            ph = int(rng.integers(max(1, h // 16), max(2, h // 3)))
-            x = int(rng.integers(0, max(1, w - pw + 1)))
-            y = int(rng.integers(0, max(1, h - ph + 1)))
-            cell = int(rng.choice([1, 2, 4, 8, 16, 32]))
-            cell = max(1, min(cell, pw, ph))
-            residual = arr[y:y + ph, x:x + pw, c].astype(np.int16) - np.clip(canvas[y:y + ph, x:x + pw, c], 0, 255).astype(np.int16)
-            patch, values = cls._make_patch(c, x, y, pw, ph, cell, residual, config)
-            cls.apply_grid(canvas[:, :, c], x, y, pw, ph, cell, values)
+        for _ in range(max(0, int(config.patch_count))):
+            patch, values = cls._select_patch(target, canvas, config, rng, channel_bits)
+            if patch is None:
+                break
+            c, x, y, pw, ph = patch[:5]
+            cls.apply_grid(canvas[:, :, c], x, y, pw, ph, patch[10], values)
             patches.append(patch)
 
         bw = BitWriter()
