@@ -79,6 +79,7 @@ class PBC3Config:
     cell_sizes_per_candidate: int = 3
     patch_slot_cost_start: int = 8000
     patch_slot_cost_end: int = 500
+    channel_cycle: str = "Off"
     random_seed: int = 2003
     debug_mode: bool = False
     debug_print: bool = True
@@ -90,6 +91,7 @@ class PBC3Config:
         if self.palette_bitcount is not None:
             self.downsample_palette_bitcount = self.palette_bitcount
             self.patch_palette_bitcount = self.palette_bitcount
+        self.channel_cycle = str(self.channel_cycle)
 
 
 @dataclass
@@ -158,11 +160,8 @@ class PBC3Result:
             f"MSE: {mse}   |   Compressed: {self.compressed_kb:.2f} KB   |   Original RGB: {self.original_kb:.2f} KB\n"
             f"Compression: {self.compression_rate:.2f}x ({self.compressed_percent:.2f}%)   |   Time: {seconds}{debug}"
         )
-        info_ax.text(
-            0.5, 0.5, info,
-            ha="center", va="center", color="white", fontsize=10, linespacing=1.35,
-            bbox=dict(boxstyle="round,pad=0.5", facecolor="black", alpha=0.72, edgecolor="none"),
-        )
+        info_ax.text(0.5, 0.5, info, ha="center", va="center", color="white", fontsize=10, linespacing=1.35,
+                     bbox=dict(boxstyle="round,pad=0.5", facecolor="black", alpha=0.72, edgecolor="none"))
         image_ax.imshow(self.image)
         plt.show()
 
@@ -381,6 +380,20 @@ class PBC3:
         return float(config.patch_slot_cost_start) * (1 - progress) + float(config.patch_slot_cost_end) * progress
 
     @classmethod
+    def _channel_error_score(cls, target, canvas, channel, mode):
+        err = np.abs(target[:, :, channel] - np.clip(canvas[:, :, channel], 0, 255))
+        if str(mode).lower() == "max":
+            return float(np.max(err))
+        return float(np.sum(err))
+
+    @classmethod
+    def _choose_channel(cls, scores, step, channels, mode):
+        mode = str(mode).lower()
+        if mode in {"sum", "max"}:
+            return int(np.argmax(scores))
+        return (step - 1) % channels
+
+    @classmethod
     def _write_patch(cls, bw, channel, x, y, w, h, mask, negative_max, positive_max, max_bitcount, mode, cell_size, indices, channel_bits, positive_bias):
         bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
         bw.write(channel, channel_bits)
@@ -485,10 +498,6 @@ class PBC3:
     def _pre_score(visible_error_patch, hidden_residual_patch):
         mean_error = float(np.mean(visible_error_patch))
         return mean_error, mean_error, 0.0
-        if mean_error <= 0:
-            return 0.0, mean_error, 0.0
-        std = float(np.std(hidden_residual_patch))
-        return mean_error * math.log2(visible_error_patch.size + 1) / (1.0 + std / 32.0), mean_error, std
 
     @classmethod
     def _base_cell_size(cls, residual_patch, config):
@@ -524,17 +533,15 @@ class PBC3:
         return kind + " " + " ".join(f"{k}={v}" for k, v in items.items())
 
     @classmethod
-    def _select_patch(cls, target, canvas, config, rng, channel_bits, step, canvas_patches, debug_lines, timings):
+    def _select_patch(cls, target, canvas, config, rng, channel_bits, step, canvas_patches, debug_lines, timings, current_channel, channel_score):
         t = time.perf_counter()
-        visible_canvas = np.clip(canvas, 0, 255).astype(np.int32)
-        visible_error = np.abs(target - visible_canvas).astype(np.float32)
+        visible_canvas_channel = np.clip(canvas[:, :, current_channel], 0, 255).astype(np.int32)
+        visible_error_channel = np.abs(target[:, :, current_channel] - visible_canvas_channel).astype(np.float32)
         cls._add_time(timings, "visible_error", time.perf_counter() - t)
 
-        current_channel = (step - 1) % target.shape[2]
         slot_cost = cls._patch_slot_cost(config, step)
-
         t = time.perf_counter()
-        anchors = cls._top_anchors(visible_error[:, :, current_channel], config.top_k, config.anchor_block_size, current_channel)
+        anchors = cls._top_anchors(visible_error_channel, config.top_k, config.anchor_block_size, current_channel)
         cls._add_time(timings, "anchors", time.perf_counter() - t)
         if not anchors:
             return None, None
@@ -545,10 +552,10 @@ class PBC3:
         for i in range(max(1, int(config.search_depth))):
             c, x, y, bw, bh, ax, ay = cls._sample_box(rng, anchors[i % len(anchors)], w, h, config)
             hidden = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
-            score, avg, std = cls._pre_score(visible_error[y:y + bh, x:x + bw, c], hidden)
+            score, avg, std = cls._pre_score(visible_error_channel[y:y + bh, x:x + bw], hidden)
             if config.debug_mode:
                 debug_lines.append(cls._debug_line(
-                    "SEARCH", patch_step=step, canvas_patches=canvas_patches, search=i, channel=c,
+                    "SEARCH", patch_step=step, canvas_patches=canvas_patches, search=i, channel=c, channel_score=f"{channel_score:.4f}",
                     anchor_x=ax, anchor_y=ay, x=x, y=y, w=bw, h=bh,
                     avg_error=f"{avg:.4f}", std=f"{std:.4f}", pre_score=f"{score:.6f}",
                 ))
@@ -662,6 +669,8 @@ class PBC3:
             raise ValueError("mask_size must be in 1..1023")
         if not (1 <= config.downsample_palette_bitcount <= 9 and 1 <= config.patch_palette_bitcount <= 9):
             raise ValueError("palette bitcounts must be in 1..9")
+        if str(config.channel_cycle).lower() not in {"off", "sum", "max"}:
+            raise ValueError('channel_cycle must be "Off", "Sum", or "Max"')
 
         color_id = cls.COLOR_SPACES[config.color_space]
         channel_bits = max(1, math.ceil(math.log2(channels)))
@@ -681,19 +690,22 @@ class PBC3:
                 debug_lines.append(cls._debug_line("INIT", stream_patch=len(patches), channel=c, x=0, y=0, w=w, h=h, cell_size=config.downsample_cell_size))
         cls._add_time(timings, "init_layer", time.perf_counter() - t)
 
+        channel_scores = [cls._channel_error_score(target, canvas, c, config.channel_cycle) for c in range(channels)]
         rng = np.random.default_rng(config.random_seed)
         t_patch_total = time.perf_counter()
         for step in range(1, max(0, int(config.patch_count)) + 1):
-            patch, values = cls._select_patch(target, canvas, config, rng, channel_bits, step, len(patches), debug_lines, timings)
+            current_channel = cls._choose_channel(channel_scores, step, channels, config.channel_cycle)
+            patch, values = cls._select_patch(target, canvas, config, rng, channel_bits, step, len(patches), debug_lines, timings, current_channel, channel_scores[current_channel])
             if patch is None:
                 break
             t = time.perf_counter()
             c, x, y, pw, ph = patch[:5]
             cls.apply_grid(canvas[:, :, c], x, y, pw, ph, patch[10], values)
             patches.append(patch)
+            channel_scores[c] = cls._channel_error_score(target, canvas, c, config.channel_cycle)
             cls._add_time(timings, "apply_selected", time.perf_counter() - t)
             if config.debug_mode:
-                debug_lines.append(cls._debug_line("APPLIED", patch_step=step, stream_patch=len(patches), channel=c, x=x, y=y, w=pw, h=ph, cell_size=patch[10]))
+                debug_lines.append(cls._debug_line("APPLIED", patch_step=step, stream_patch=len(patches), channel=c, channel_score=f"{channel_scores[c]:.4f}", x=x, y=y, w=pw, h=ph, cell_size=patch[10]))
             if config.debug_print:
                 print("|", end="", flush=True)
         if config.debug_print:

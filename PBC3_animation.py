@@ -1,7 +1,16 @@
 import os
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 from PBC3 import PBC3, BitReader
+
+
+def _font(size):
+    for name in ("DejaVuSans.ttf", "Arial.ttf"):
+        try:
+            return ImageFont.truetype(name, size)
+        except Exception:
+            pass
+    return ImageFont.load_default()
 
 
 def _colorize_channel(channel, c):
@@ -25,7 +34,7 @@ def _error_image(error, channel=None):
     return _colorize_channel(arr, channel)
 
 
-def _draw_patch(draw, box, scale, offset, color="red", width=3):
+def _draw_patch(draw, box, scale, offset, color="red", width=4):
     if box is None:
         return
     x, y, w, h = box
@@ -35,63 +44,74 @@ def _draw_patch(draw, box, scale, offset, color="red", width=3):
         draw.rectangle([rect[0] - i, rect[1] - i, rect[2] + i, rect[3] + i], outline=color)
 
 
-def _make_frame(canvas, color_space, patch_info, separated_channels, title, scale=2, target=None, show_errors=False):
+def _fit(img, max_w, max_h):
+    scale = min(max_w / img.width, max_h / img.height)
+    out_w = max(1, int(img.width * scale))
+    out_h = max(1, int(img.height * scale))
+    return img.resize((out_w, out_h), Image.Resampling.NEAREST), scale
+
+
+def _make_frame(canvas, color_space, patch_info, separated_channels, title, target=None, show_errors=False, output_size=(3840, 2160)):
     arr = np.clip(canvas, 0, 255).astype(np.uint8)
     rgb = Image.fromarray(arr, color_space).convert("RGB")
     error = None if target is None else target.astype(np.int32) - arr.astype(np.int32)
 
     if not separated_channels:
-        panels = [(rgb, "RGB")]
+        panels = [(rgb, False)]
         if show_errors:
             if error is None:
                 raise ValueError("show_errors=True requires original_image")
-            panels.append((_error_image(error), "RGB error mean(|delta|)"))
-        cols, rows = (1, len(panels))
+            panels.append((_error_image(error), True))
+        cols, rows = 1, len(panels)
     else:
         panels = [
-            (_colorize_channel(arr[:, :, 0], 0), "R"),
-            (_colorize_channel(arr[:, :, 1], 1), "G"),
-            (_colorize_channel(arr[:, :, 2], 2), "B"),
-            (rgb, "RGB"),
+            (_colorize_channel(arr[:, :, 0], 0), False),
+            (_colorize_channel(arr[:, :, 1], 1), False),
+            (_colorize_channel(arr[:, :, 2], 2), False),
+            (rgb, False),
         ]
         if show_errors:
             if error is None:
                 raise ValueError("show_errors=True requires original_image")
             panels.extend([
-                (_error_image(error[:, :, 0], 0), "R error"),
-                (_error_image(error[:, :, 1], 1), "G error"),
-                (_error_image(error[:, :, 2], 2), "B error"),
-                (_error_image(error), "RGB error mean"),
+                (_error_image(error[:, :, 0], 0), True),
+                (_error_image(error[:, :, 1], 1), True),
+                (_error_image(error[:, :, 2], 2), True),
+                (_error_image(error), True),
             ])
         cols, rows = 4, 2 if show_errors else 1
 
-    h, w = arr.shape[:2]
-    panel_w, panel_h = w * scale, h * scale
-    title_h = 54
-    label_h = 24
-    gap = 12
-    row_gap = 14
-    frame_w = panel_w * cols + gap * (cols - 1)
-    frame_h = title_h + rows * (label_h + panel_h) + row_gap * (rows - 1)
-    frame = Image.new("RGB", (frame_w, frame_h), "white")
+    frame_w, frame_h = output_size
+    frame = Image.new("RGB", output_size, "black")
     draw = ImageDraw.Draw(frame)
-    draw.text((8, 8), title, fill="black")
+    title_h = 120
+    gap = 18
+    margin = 36
+    title_font = _font(46)
+    draw.text((margin, 34), title, fill="white", font=title_font)
 
+    area_w = frame_w - margin * 2
+    area_h = frame_h - title_h - margin
+    cell_w = (area_w - gap * (cols - 1)) // cols
+    cell_h = (area_h - gap * (rows - 1)) // rows
     active_channel = patch_info[0] if patch_info is not None else None
     patch_box = patch_info[1:5] if patch_info is not None else None
-    for i, (panel, label) in enumerate(panels):
+
+    for i, (panel, is_error) in enumerate(panels):
         col = i % cols
         row = i // cols
-        x0 = col * (panel_w + gap)
-        y_label = title_h + row * (label_h + panel_h + row_gap)
-        y0 = y_label + label_h
-        panel = panel.resize((panel_w, panel_h), Image.Resampling.NEAREST)
-        draw.text((x0 + 4, y_label), label, fill="black")
-        frame.paste(panel, (x0, y0))
-        is_rgb_panel = (separated_channels and col == 3) or (not separated_channels and label.startswith("RGB"))
+        x0 = margin + col * (cell_w + gap)
+        y0 = title_h + row * (cell_h + gap)
+        fitted, scale = _fit(panel, cell_w, cell_h)
+        px = x0 + (cell_w - fitted.width) // 2
+        py = y0 + (cell_h - fitted.height) // 2
+        frame.paste(fitted, (px, py))
+
+        is_rgb_panel = (separated_channels and col == 3) or (not separated_channels and i == 0)
         is_active_channel_panel = separated_channels and col == active_channel
-        if patch_box is not None and (is_rgb_panel or is_active_channel_panel):
-            _draw_patch(draw, patch_box, scale, (x0, y0))
+        if patch_box is not None and not is_error and (is_rgb_panel or is_active_channel_panel):
+            _draw_patch(draw, patch_box, scale, (px, py))
+
     return frame
 
 
@@ -101,7 +121,7 @@ def _even_rgb_array(frame):
     pad_h = h % 2
     pad_w = w % 2
     if pad_h or pad_w:
-        arr = np.pad(arr, ((0, pad_h), (0, pad_w), (0, 0)), mode="constant", constant_values=255)
+        arr = np.pad(arr, ((0, pad_h), (0, pad_w), (0, 0)), mode="constant", constant_values=0)
     return arr
 
 
@@ -115,20 +135,17 @@ def _write_mp4(frames, output_path, fps):
     except Exception as e:
         raise RuntimeError("MP4 writing needs ffmpeg. Try: pip install imageio-ffmpeg") from e
 
-    arrays = [_even_rgb_array(frame) for frame in frames]
-    h, w = arrays[0].shape[:2]
-    arrays = [arr if arr.shape[:2] == (h, w) else np.asarray(Image.fromarray(arr).resize((w, h))) for arr in arrays]
     writer = imageio.get_writer(
         output_path,
         fps=fps,
         codec="libx264",
         quality=8,
-        macro_block_size=1,
+        macro_block_size=16,
         ffmpeg_params=["-pix_fmt", "yuv420p", "-movflags", "+faststart"],
     )
     try:
-        for arr in arrays:
-            writer.append_data(arr)
+        for frame in frames:
+            writer.append_data(_even_rgb_array(frame))
     finally:
         writer.close()
     return output_path
@@ -169,11 +186,11 @@ def animate_pbc3(
     output_path="pbc3_animation.mp4",
     fps=3,
     separated_channels=True,
-    scale=2,
     max_patches=None,
     fallback_to_gif=True,
     show_errors=False,
     original_image=None,
+    output_size=(3840, 2160),
 ):
     if isinstance(data, str):
         with open(data, "rb") as f:
@@ -194,15 +211,17 @@ def animate_pbc3(
     for c, base in enumerate(base_values):
         canvas[:, :, c] = base
 
+    frames = []
+    size_kb = len(data) / 1024
     limit = patch_count if max_patches is None else min(int(max_patches), patch_count)
-    frames = [_make_frame(canvas, color_space, None, separated_channels, "Patch 0 | average-color canvas", scale, target, show_errors)]
+    frames.append(_make_frame(canvas, color_space, None, separated_channels, f"Patch 0/{patch_count} | Current Size: {size_kb:.2f} KB", target, show_errors, output_size))
 
     for i in range(1, limit + 1):
         channel, x, y, pw, ph, cell_size, values, mode = PBC3._read_patch(br, channel_bits, positive_bias)
         if mode != PBC3.MODE_RAW:
             raise ValueError(f"unsupported patch mode {mode}")
         PBC3.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
-        title = f"Patch {i}/{patch_count} | channel={channel} | box=({x},{y},{pw},{ph}) | cell={cell_size}"
-        frames.append(_make_frame(canvas, color_space, (channel, x, y, pw, ph, cell_size), separated_channels, title, scale, target, show_errors))
+        title = f"Patch {i}/{patch_count} | Current Size: {size_kb:.2f} KB | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size}"
+        frames.append(_make_frame(canvas, color_space, (channel, x, y, pw, ph, cell_size), separated_channels, title, target, show_errors, output_size))
 
     return _write_frames(frames, output_path, fps, fallback_to_gif=fallback_to_gif)
