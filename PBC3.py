@@ -82,10 +82,10 @@ class PBC3Config:
     cell_sizes_per_candidate: int = 3
     patch_slot_cost_start: int = 8000
     patch_slot_cost_end: int = 500
-    channel_cycle: str = "Off"
+    channel_cycle: str = "Max"
     random_seed: int = 2003
     debug_mode: bool = False
-    debug_print: bool = True
+    debug_print: bool = False
     debug_path: str = None
     palette_bitcount: int = None
     palette_max: int = None
