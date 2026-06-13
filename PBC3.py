@@ -81,6 +81,7 @@ class PBC3Config:
     patch_slot_cost_end: int = 500
     random_seed: int = 2003
     debug_mode: bool = False
+    debug_print: bool = True
     debug_path: str = None
     palette_bitcount: int = None
     palette_max: int = None
@@ -483,6 +484,7 @@ class PBC3:
     @staticmethod
     def _pre_score(visible_error_patch, hidden_residual_patch):
         mean_error = float(np.mean(visible_error_patch))
+        return mean_error, mean_error, 0.0
         if mean_error <= 0:
             return 0.0, mean_error, 0.0
         std = float(np.std(hidden_residual_patch))
@@ -692,8 +694,9 @@ class PBC3:
             cls._add_time(timings, "apply_selected", time.perf_counter() - t)
             if config.debug_mode:
                 debug_lines.append(cls._debug_line("APPLIED", patch_step=step, stream_patch=len(patches), channel=c, x=x, y=y, w=pw, h=ph, cell_size=patch[10]))
+            if config.debug_print:
                 print("|", end="", flush=True)
-        if config.debug_mode:
+        if config.debug_print:
             print()
         cls._add_time(timings, "patch_loop_total", time.perf_counter() - t_patch_total)
 
