@@ -60,21 +60,24 @@ class BitReader:
 
 @dataclass
 class PBC3Config:
-    color_space: str = "RGB"
+    color_space: str = "YCbCr"
     downsample_rate: float = -1
-    downsample_cell_size: int = 8
-    downsample_palette_bitcount: int = 5
-    patch_palette_bitcount: int = 3
-    mask_size: int = 9
+    downsample_cell_size: int = 12
+    downsample_palette_bitcount: int = 6
+    patch_palette_bitcount: int = 2
+    patch_count_mode: str = "constant"
+    dynamic_patch_bitcount_min: int = 2
+    dynamic_patch_bitcount_max: int = 3
+    mask_size: int = 4
     positive_bias: bool = True
-    patch_count: int = 0
-    search_depth: int = 256
-    proposal_depth: int = 24
-    top_k: int = 16
+    patch_count: int = 50
+    search_depth: int = 400
+    proposal_depth: int = 50
+    top_k: int = 20
     anchor_block_size: int = 8
-    min_patch_size: int = 8
-    max_patch_size: int = 256
-    min_cell_size: int = 4
+    min_patch_size: int = 16
+    max_patch_size: int = 400
+    min_cell_size: int = 1
     max_cell_size: int = 64
     cell_sizes_per_candidate: int = 3
     patch_slot_cost_start: int = 8000
@@ -92,6 +95,7 @@ class PBC3Config:
             self.downsample_palette_bitcount = self.palette_bitcount
             self.patch_palette_bitcount = self.palette_bitcount
         self.channel_cycle = str(self.channel_cycle)
+        self.patch_count_mode = str(self.patch_count_mode)
 
 
 @dataclass
@@ -527,6 +531,16 @@ class PBC3:
             if cell not in cells:
                 cells.append(cell)
         return cells
+    
+    @classmethod
+    def _patch_bitcounts(cls, config):
+        mode = str(config.patch_count_mode).lower()
+        if mode != "dynamic":
+            return [int(config.patch_palette_bitcount)]
+
+        lo = max(1, min(9, int(config.dynamic_patch_bitcount_min)))
+        hi = max(lo, min(9, int(config.dynamic_patch_bitcount_max)))
+        return list(range(lo, hi + 1))
 
     @classmethod
     def _debug_line(cls, kind, **items):
@@ -567,41 +581,92 @@ class PBC3:
         boxes.sort(key=lambda item: item[0], reverse=True)
         boxes = boxes[:max(1, int(config.proposal_depth))]
 
+        bitcounts = cls._patch_bitcounts(config)
+
         best_score = 0.0
         best_patch = None
         best_values = None
         t = time.perf_counter()
+
         for proposal_i, (pre_score, (c, x, y, bw, bh)) in enumerate(boxes):
             hidden_residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
             base_cell = cls._base_cell_size(hidden_residual, config)
+            before = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c], 0, 255)
+
             for cell_size in cls._candidate_cell_sizes(base_cell, config):
                 cell_size = max(1, min(cell_size, bw, bh))
-                patch, values = cls._make_patch(c, x, y, bw, bh, cell_size, hidden_residual, config.mask_size, config.patch_palette_bitcount, config.positive_bias)
-                delta = cls.signed_resample(values, bh, bw).astype(np.int32)
-                before = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c], 0, 255)
-                after = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c] + delta, 0, 255)
-                reduction = float(np.sum(before.astype(np.int64) ** 2) - np.sum(after.astype(np.int64) ** 2))
-                bits = cls._patch_bits(channel_bits, patch[5], patch[6], patch[7], patch[8], patch[10], bw, bh, config.positive_bias)
-                raw_score = reduction / max(1, bits) if reduction > 0 else 0.0
-                score = reduction / max(1.0, bits + slot_cost) if reduction > 0 else 0.0
-                if config.debug_mode:
-                    debug_lines.append(cls._debug_line(
-                        "CANDIDATE", patch_step=step, canvas_patches=canvas_patches, proposal=proposal_i, channel=c,
-                        x=x, y=y, w=bw, h=bh, cell_size=cell_size, mask_size=config.mask_size,
-                        bitcount=config.patch_palette_bitcount, neg_min=-patch[6], pos_max=patch[7], bits=bits,
-                        slot_cost=f"{slot_cost:.2f}", reduction=f"{reduction:.4f}", raw_score=f"{raw_score:.8f}",
-                        score=f"{score:.8f}", pre_score=f"{pre_score:.6f}",
-                    ))
-                if score > best_score:
-                    best_score = score
-                    best_patch = patch
-                    best_values = values
+
+                for bitcount in bitcounts:
+                    patch, values = cls._make_patch(
+                        c,
+                        x,
+                        y,
+                        bw,
+                        bh,
+                        cell_size,
+                        hidden_residual,
+                        config.mask_size,
+                        bitcount,
+                        config.positive_bias,
+                    )
+
+                    delta = cls.signed_resample(values, bh, bw).astype(np.int32)
+                    after = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c] + delta, 0, 255)
+
+                    reduction = float(
+                        np.sum(before.astype(np.int64) ** 2)
+                        - np.sum(after.astype(np.int64) ** 2)
+                    )
+
+                    bits = cls._patch_bits(
+                        channel_bits,
+                        patch[5],
+                        patch[6],
+                        patch[7],
+                        patch[8],
+                        patch[10],
+                        bw,
+                        bh,
+                        config.positive_bias,
+                    )
+
+                    raw_score = reduction / max(1, bits) if reduction > 0 else 0.0
+                    score = reduction / max(1.0, bits + slot_cost) if reduction > 0 else 0.0
+
+                    if config.debug_mode:
+                        debug_lines.append(cls._debug_line(
+                            "CANDIDATE",
+                            patch_step=step,
+                            canvas_patches=canvas_patches,
+                            proposal=proposal_i,
+                            channel=c,
+                            x=x,
+                            y=y,
+                            w=bw,
+                            h=bh,
+                            cell_size=cell_size,
+                            mask_size=config.mask_size,
+                            bitcount=bitcount,
+                            neg_min=-patch[6],
+                            pos_max=patch[7],
+                            bits=bits,
+                            slot_cost=f"{slot_cost:.2f}",
+                            reduction=f"{reduction:.4f}",
+                            raw_score=f"{raw_score:.8f}",
+                            score=f"{score:.8f}",
+                            pre_score=f"{pre_score:.6f}",
+                        ))
+
+                    if score > best_score:
+                        best_score = score
+                        best_patch = patch
+                        best_values = values
         cls._add_time(timings, "fill_score", time.perf_counter() - t)
         if config.debug_mode and best_patch is not None:
             c, x, y, bw, bh = best_patch[:5]
             debug_lines.append(cls._debug_line(
                 "SELECTED", patch_step=step, canvas_patches=canvas_patches, channel=c,
-                x=x, y=y, w=bw, h=bh, cell_size=best_patch[10], slot_cost=f"{slot_cost:.2f}", score=f"{best_score:.8f}",
+                x=x, y=y, w=bw, h=bh, cell_size=best_patch[10], bitcount=best_patch[8], slot_cost=f"{slot_cost:.2f}", score=f"{best_score:.8f}",
             ))
         return best_patch, best_values
 
@@ -671,6 +736,8 @@ class PBC3:
             raise ValueError("palette bitcounts must be in 1..9")
         if str(config.channel_cycle).lower() not in {"off", "sum", "max"}:
             raise ValueError('channel_cycle must be "Off", "Sum", or "Max"')
+        if str(config.patch_count_mode).lower() not in {"constant", "dynamic"}:
+            raise ValueError('patch_count_mode must be "constant" or "dynamic"')
 
         color_id = cls.COLOR_SPACES[config.color_space]
         channel_bits = max(1, math.ceil(math.log2(channels)))

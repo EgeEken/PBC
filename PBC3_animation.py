@@ -13,25 +13,70 @@ def _font(size):
     return ImageFont.load_default()
 
 
-def _colorize_channel(channel, c):
+def _colorize_rgb_channel(channel, c):
     arr = np.clip(channel, 0, 255).astype(np.uint8)
     out = np.zeros((arr.shape[0], arr.shape[1], 3), dtype=np.uint8)
     out[:, :, c % 3] = arr
     return Image.fromarray(out, "RGB")
 
 
-def _error_image(error, channel=None):
+def _colorize_ycbcr_channel(channel, c):
+    arr = np.clip(channel, 0, 255).astype(np.uint8)
+    if c == 0:
+        return Image.fromarray(np.stack([arr, arr, arr], axis=2), "RGB")
+
+    d = arr.astype(np.int16) - 128
+    mag = np.clip(np.abs(d) * 2, 0, 255).astype(np.uint8)
+    out = np.zeros((*arr.shape, 3), dtype=np.uint8)
+    if c == 1:
+        pos = d >= 0
+        out[pos, 2] = mag[pos]
+        out[~pos, 0] = mag[~pos]
+        out[~pos, 1] = mag[~pos]
+    else:
+        pos = d >= 0
+        out[pos, 0] = mag[pos]
+        out[~pos, 1] = mag[~pos]
+        out[~pos, 2] = mag[~pos]
+    return Image.fromarray(out, "RGB")
+
+
+def _colorize_channel(channel, c, color_space):
+    if str(color_space).lower() == "ycbcr":
+        return _colorize_ycbcr_channel(channel, c)
+    return _colorize_rgb_channel(channel, c)
+
+
+def _error_image(error, color_space, channel=None):
     err = np.asarray(error, dtype=np.float32)
     if err.ndim == 3:
         err = np.mean(np.abs(err), axis=2)
-    else:
-        err = np.abs(err)
-    m = float(np.max(err))
-    err = (err * (255.0 / m)) if m > 0 else err
-    arr = np.clip(err, 0, 255).astype(np.uint8)
-    if channel is None:
+        m = float(np.max(err))
+        arr = np.clip(err * (255.0 / m), 0, 255).astype(np.uint8) if m > 0 else np.zeros(err.shape, dtype=np.uint8)
         return Image.fromarray(np.stack([arr, arr, arr], axis=2), "RGB")
-    return _colorize_channel(arr, channel)
+
+    signed = err
+    mag = np.abs(signed)
+    m = float(np.max(mag))
+    arr = np.clip(mag * (255.0 / m), 0, 255).astype(np.uint8) if m > 0 else np.zeros(mag.shape, dtype=np.uint8)
+    if str(color_space).lower() != "ycbcr" or channel == 0:
+        return _colorize_channel(arr, 0 if channel is None else channel, color_space)
+
+    d = np.sign(signed).astype(np.int16) * arr.astype(np.int16)
+    if channel == 1:
+        out = np.zeros((*arr.shape, 3), dtype=np.uint8)
+        pos = d >= 0
+        out[pos, 2] = arr[pos]
+        out[~pos, 0] = arr[~pos]
+        out[~pos, 1] = arr[~pos]
+        return Image.fromarray(out, "RGB")
+
+    out = np.zeros((*arr.shape, 3), dtype=np.uint8)
+    pos = d >= 0
+    out[pos, 0] = arr[pos]
+    out[~pos, 1] = arr[~pos]
+    out[~pos, 2] = arr[~pos]
+    return Image.fromarray(out, "RGB")
 
 
 def _draw_patch(draw, box, scale, offset, color="red", width=4):
@@ -61,23 +106,23 @@ def _make_frame(canvas, color_space, patch_info, separated_channels, title, targ
         if show_errors:
             if error is None:
                 raise ValueError("show_errors=True requires original_image")
-            panels.append((_error_image(error), True))
+            panels.append((_error_image(error, color_space), True))
         cols, rows = 1, len(panels)
     else:
         panels = [
-            (_colorize_channel(arr[:, :, 0], 0), False),
-            (_colorize_channel(arr[:, :, 1], 1), False),
-            (_colorize_channel(arr[:, :, 2], 2), False),
+            (_colorize_channel(arr[:, :, 0], 0, color_space), False),
+            (_colorize_channel(arr[:, :, 1], 1, color_space), False),
+            (_colorize_channel(arr[:, :, 2], 2, color_space), False),
             (rgb, False),
         ]
         if show_errors:
             if error is None:
                 raise ValueError("show_errors=True requires original_image")
             panels.extend([
-                (_error_image(error[:, :, 0], 0), True),
-                (_error_image(error[:, :, 1], 1), True),
-                (_error_image(error[:, :, 2], 2), True),
-                (_error_image(error), True),
+                (_error_image(error[:, :, 0], color_space, 0), True),
+                (_error_image(error[:, :, 1], color_space, 1), True),
+                (_error_image(error[:, :, 2], color_space, 2), True),
+                (_error_image(error, color_space), True),
             ])
         cols, rows = 4, 2 if show_errors else 1
 
@@ -87,8 +132,7 @@ def _make_frame(canvas, color_space, patch_info, separated_channels, title, targ
     title_h = 120
     gap = 18
     margin = 36
-    title_font = _font(46)
-    draw.text((margin, 34), title, fill="white", font=title_font)
+    draw.text((margin, 34), title, fill="white", font=_font(46))
 
     area_w = frame_w - margin * 2
     area_h = frame_h - title_h - margin
@@ -212,16 +256,47 @@ def animate_pbc3(
         canvas[:, :, c] = base
 
     frames = []
-    size_kb = len(data) / 1024
     limit = patch_count if max_patches is None else min(int(max_patches), patch_count)
-    frames.append(_make_frame(canvas, color_space, None, separated_channels, f"Patch 0/{patch_count} | Current Size: {size_kb:.2f} KB", target, show_errors, output_size))
+
+    current_bytes = 5 + br.i
+    current_kb = current_bytes / 1024
+    frames.append(_make_frame(
+        canvas,
+        color_space,
+        None,
+        separated_channels,
+        f"Patch 0/{patch_count} | Current Size: {current_kb:.2f} KB | (+0.00 KB)",
+        target,
+        show_errors,
+        output_size,
+    ))
 
     for i in range(1, limit + 1):
+        previous_bytes = current_bytes
+
         channel, x, y, pw, ph, cell_size, values, mode = PBC3._read_patch(br, channel_bits, positive_bias)
         if mode != PBC3.MODE_RAW:
             raise ValueError(f"unsupported patch mode {mode}")
+
+        current_bytes = 5 + br.i
+        current_kb = current_bytes / 1024
+        delta_kb = (current_bytes - previous_bytes) / 1024
+
         PBC3.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
-        title = f"Patch {i}/{patch_count} | Current Size: {size_kb:.2f} KB | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size}"
-        frames.append(_make_frame(canvas, color_space, (channel, x, y, pw, ph, cell_size), separated_channels, title, target, show_errors, output_size))
+
+        title = (
+            f"Patch {i}/{patch_count} | Current Size: {current_kb:.2f} KB "
+            f"| (+{delta_kb:.2f} KB) | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size}"
+        )
+        frames.append(_make_frame(
+            canvas,
+            color_space,
+            (channel, x, y, pw, ph, cell_size),
+            separated_channels,
+            title,
+            target,
+            show_errors,
+            output_size,
+        ))
 
     return _write_frames(frames, output_path, fps, fallback_to_gif=fallback_to_gif)
