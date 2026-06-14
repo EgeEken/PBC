@@ -1,3 +1,12 @@
+
+# ====================================================================================================
+#
+#           PBC v3.0 - Probabilistic Brush Compression
+#           Lossy Image Compression Algorithm by EgeEken (github.com/EgeEken)
+#           3.0 Update - 2026-06 - Whole algorithm overhaul
+#
+# ====================================================================================================
+
 from dataclasses import dataclass, field
 import time
 import math
@@ -62,6 +71,7 @@ class BitReader:
 class PBC3Config:
     color_space: str = "YCbCr"
     downsample_rate: float = -1
+    auto_downsample_max_pixels: int = 250_000
     downsample_cell_size: int = 12
     downsample_palette_bitcount: int = 6
     patch_palette_bitcount: int = 2
@@ -199,10 +209,18 @@ class PBC3:
         timings[key] = timings.get(key, 0.0) + seconds
 
     @classmethod
-    def _auto_downsample_rate(cls, image_size, downsample_rate):
-        if downsample_rate == -1:
-            return 1 if min(image_size) < 600 else min(image_size) / 500
-        return float(downsample_rate)
+    def _auto_downsample_rate(cls, image_size, downsample_rate, max_pixels):
+        if downsample_rate != -1:
+            return float(downsample_rate)
+
+        w, h = image_size
+        pixels = w * h
+        max_pixels = max(1, int(max_pixels))
+
+        if pixels <= max_pixels:
+            return 1.0
+
+        return math.sqrt(pixels / max_pixels)
 
     @classmethod
     def _downsample_image(cls, img, rate):
@@ -499,9 +517,8 @@ class PBC3:
         return c, x, y, w, h, ax, ay
 
     @staticmethod
-    def _pre_score(visible_error_patch, hidden_residual_patch):
-        mean_error = float(np.mean(visible_error_patch))
-        return mean_error, mean_error, 0.0
+    def _pre_score(visible_error_patch):
+        return float(np.mean(visible_error_patch))
 
     @classmethod
     def _base_cell_size(cls, residual_patch, config):
@@ -565,13 +582,12 @@ class PBC3:
         t = time.perf_counter()
         for i in range(max(1, int(config.search_depth))):
             c, x, y, bw, bh, ax, ay = cls._sample_box(rng, anchors[i % len(anchors)], w, h, config)
-            hidden = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
-            score, avg, std = cls._pre_score(visible_error_channel[y:y + bh, x:x + bw], hidden)
+            score = cls._pre_score(visible_error_channel[y:y + bh, x:x + bw])
             if config.debug_mode:
                 debug_lines.append(cls._debug_line(
                     "SEARCH", patch_step=step, canvas_patches=canvas_patches, search=i, channel=c, channel_score=f"{channel_score:.4f}",
                     anchor_x=ax, anchor_y=ay, x=x, y=y, w=bw, h=bh,
-                    avg_error=f"{avg:.4f}", std=f"{std:.4f}", pre_score=f"{score:.6f}",
+                    pre_score=f"{score:.6f}",
                 ))
             if score > 0:
                 boxes.append((score, (c, x, y, bw, bh)))
@@ -720,7 +736,11 @@ class PBC3:
         t = time.perf_counter()
         original_img = cls._to_image(image).convert(config.color_space)
         original_w, original_h = original_img.size
-        rate = cls._auto_downsample_rate(original_img.size, config.downsample_rate)
+        rate = cls._auto_downsample_rate(
+            original_img.size,
+            config.downsample_rate,
+            config.auto_downsample_max_pixels,
+        )
         img, original_size = cls._downsample_image(original_img, rate)
         downsampled = img.size != original_img.size
         arr = np.asarray(img, dtype=np.uint8)
@@ -732,6 +752,8 @@ class PBC3:
             raise ValueError("this prototype stores dimensions as uint16")
         if config.mask_size < 1 or config.mask_size > 1023:
             raise ValueError("mask_size must be in 1..1023")
+        if config.auto_downsample_max_pixels < 1:
+            raise ValueError("auto_downsample_max_pixels must be >= 1")
         if not (1 <= config.downsample_palette_bitcount <= 9 and 1 <= config.patch_palette_bitcount <= 9):
             raise ValueError("palette bitcounts must be in 1..9")
         if str(config.channel_cycle).lower() not in {"off", "sum", "max"}:
@@ -805,7 +827,18 @@ class PBC3:
             debug_path = config.debug_path or f"debug_{ts}.txt"
             with open(debug_path, "w", encoding="utf-8") as f:
                 f.write(cls._debug_line("CONFIG", **{k: v for k, v in config.__dict__.items() if k not in {"debug_path"}}) + "\n")
-                f.write(cls._debug_line("IMAGE", original_w=original_w, original_h=original_h, working_w=w, working_h=h, downsample_rate=f"{rate:.6f}", downsampled=int(downsampled)) + "\n")
+                f.write(cls._debug_line(
+                    "IMAGE",
+                    original_w=original_w,
+                    original_h=original_h,
+                    working_w=w,
+                    working_h=h,
+                    original_pixels=original_w * original_h,
+                    working_pixels=w * h,
+                    auto_downsample_max_pixels=config.auto_downsample_max_pixels,
+                    downsample_rate=f"{rate:.6f}",
+                    downsampled=int(downsampled),
+                ) + "\n")
                 for k, v in timings.items():
                     f.write(cls._debug_line("TIMER", phase=k, seconds=f"{v:.6f}") + "\n")
                 for line in debug_lines:
