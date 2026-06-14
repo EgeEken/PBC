@@ -83,6 +83,7 @@ class PBC3Config:
     patch_count: int = 50
     search_depth: int = 400
     proposal_depth: int = 50
+    exact_depth: int = 10
     top_k: int = 20
     anchor_block_size: int = 8
     min_patch_size: int = 16
@@ -388,11 +389,35 @@ class PBC3:
         patch = cls.signed_resample(values, h, w).astype(np.int32)
         canvas_layer[y:y + h, x:x + w] += patch
 
+    @staticmethod
+    def _integral(a):
+        return np.pad(a.astype(np.int64).cumsum(0).cumsum(1), ((1, 0), (1, 0)))
+
+    @classmethod
+    def _cell_edges(cls, start, length, cell_size):
+        n = cls._ceil_div(length, cell_size)
+        edges = start + np.arange(n + 1) * cell_size
+        edges[n] = start + length
+        return edges
+
+    @classmethod
+    def _box_cell_bound(cls, integral, x, y, bw, bh, cell_size):
+        xe = cls._cell_edges(x, bw, cell_size)
+        ye = cls._cell_edges(y, bh, cell_size)
+        corners = integral[np.ix_(ye, xe)].astype(np.float64)
+        cell_sum = corners[1:, 1:] - corners[:-1, 1:] - corners[1:, :-1] + corners[:-1, :-1]
+        counts = (np.diff(ye)[:, None] * np.diff(xe)[None, :]).astype(np.float64)
+        return float(np.sum(cell_sum * cell_sum / counts))
+
     @classmethod
     def _patch_bits(cls, channel_bits, mask, negative_max, positive_max, max_bitcount, cell_size, w, h, positive_bias):
         bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
         grid_bits = cls._ceil_div(w, cell_size) * cls._ceil_div(h, cell_size) * bitcount
         return channel_bits + 64 + 10 + len(mask) + 8 + 8 + 4 + 2 + 16 + grid_bits
+
+    @classmethod
+    def _patch_header_bits(cls, channel_bits, mask_size):
+        return channel_bits + 64 + 10 + mask_size + 8 + 8 + 4 + 2 + 16
 
     @classmethod
     def _patch_slot_cost(cls, config, step):
@@ -516,10 +541,6 @@ class PBC3:
         y = int(rng.integers(y_min, y_max + 1)) if y_min <= y_max else max(0, min(ay, image_h - h))
         return c, x, y, w, h, ax, ay
 
-    @staticmethod
-    def _pre_score(visible_error_patch):
-        return float(np.mean(visible_error_patch))
-
     @classmethod
     def _base_cell_size(cls, residual_patch, config):
         mean_abs = float(np.mean(np.abs(residual_patch)))
@@ -548,7 +569,7 @@ class PBC3:
             if cell not in cells:
                 cells.append(cell)
         return cells
-    
+
     @classmethod
     def _patch_bitcounts(cls, config):
         mode = str(config.patch_count_mode).lower()
@@ -567,12 +588,15 @@ class PBC3:
     def _select_patch(cls, target, canvas, config, rng, channel_bits, step, canvas_patches, debug_lines, timings, current_channel, channel_score):
         t = time.perf_counter()
         visible_canvas_channel = np.clip(canvas[:, :, current_channel], 0, 255).astype(np.int32)
-        visible_error_channel = np.abs(target[:, :, current_channel] - visible_canvas_channel).astype(np.float32)
+        visible_error = (target[:, :, current_channel] - visible_canvas_channel).astype(np.int64)
+        abs_error = np.abs(visible_error)
+        integral_signed = cls._integral(visible_error)
+        integral_abs = cls._integral(abs_error)
         cls._add_time(timings, "visible_error", time.perf_counter() - t)
 
         slot_cost = cls._patch_slot_cost(config, step)
         t = time.perf_counter()
-        anchors = cls._top_anchors(visible_error_channel, config.top_k, config.anchor_block_size, current_channel)
+        anchors = cls._top_anchors(abs_error.astype(np.float32), config.top_k, config.anchor_block_size, current_channel)
         cls._add_time(timings, "anchors", time.perf_counter() - t)
         if not anchors:
             return None, None
@@ -582,7 +606,9 @@ class PBC3:
         t = time.perf_counter()
         for i in range(max(1, int(config.search_depth))):
             c, x, y, bw, bh, ax, ay = cls._sample_box(rng, anchors[i % len(anchors)], w, h, config)
-            score = cls._pre_score(visible_error_channel[y:y + bh, x:x + bw])
+            area = bw * bh
+            box_sum = integral_abs[y + bh, x + bw] - integral_abs[y, x + bw] - integral_abs[y + bh, x] + integral_abs[y, x]
+            score = float(box_sum) / area
             if config.debug_mode:
                 debug_lines.append(cls._debug_line(
                     "SEARCH", patch_step=step, canvas_patches=canvas_patches, search=i, channel=c, channel_score=f"{channel_score:.4f}",
@@ -598,85 +624,101 @@ class PBC3:
         boxes = boxes[:max(1, int(config.proposal_depth))]
 
         bitcounts = cls._patch_bitcounts(config)
+        header_bits = cls._patch_header_bits(channel_bits, config.mask_size)
+        mid_bitcount = int(config.patch_palette_bitcount)
+
+        t = time.perf_counter()
+        mid_candidates = []
+        for pre_score, (c, x, y, bw, bh) in boxes:
+            hidden_residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
+            base_cell = cls._base_cell_size(hidden_residual, config)
+            for cell_size in cls._candidate_cell_sizes(base_cell, config):
+                cell_size = max(1, min(cell_size, bw, bh))
+                bound = cls._box_cell_bound(integral_signed, x, y, bw, bh, cell_size)
+                if bound <= 0:
+                    continue
+                grid_cells = cls._ceil_div(bw, cell_size) * cls._ceil_div(bh, cell_size)
+                est_bits = header_bits + grid_cells * mid_bitcount
+                mid_score = bound / max(1.0, est_bits + slot_cost)
+                mid_candidates.append((mid_score, (c, x, y, bw, bh, cell_size)))
+        mid_candidates.sort(key=lambda item: item[0], reverse=True)
+        mid_candidates = mid_candidates[:max(1, int(config.exact_depth))]
+        cls._add_time(timings, "mid_score", time.perf_counter() - t)
 
         best_score = 0.0
         best_patch = None
         best_values = None
         t = time.perf_counter()
 
-        for proposal_i, (pre_score, (c, x, y, bw, bh)) in enumerate(boxes):
+        for proposal_i, (mid_score, (c, x, y, bw, bh, cell_size)) in enumerate(mid_candidates):
             hidden_residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
-            base_cell = cls._base_cell_size(hidden_residual, config)
             before = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c], 0, 255)
 
-            for cell_size in cls._candidate_cell_sizes(base_cell, config):
-                cell_size = max(1, min(cell_size, bw, bh))
+            for bitcount in bitcounts:
+                patch, values = cls._make_patch(
+                    c,
+                    x,
+                    y,
+                    bw,
+                    bh,
+                    cell_size,
+                    hidden_residual,
+                    config.mask_size,
+                    bitcount,
+                    config.positive_bias,
+                )
 
-                for bitcount in bitcounts:
-                    patch, values = cls._make_patch(
-                        c,
-                        x,
-                        y,
-                        bw,
-                        bh,
-                        cell_size,
-                        hidden_residual,
-                        config.mask_size,
-                        bitcount,
-                        config.positive_bias,
-                    )
+                delta = cls.signed_resample(values, bh, bw).astype(np.int32)
+                after = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c] + delta, 0, 255)
 
-                    delta = cls.signed_resample(values, bh, bw).astype(np.int32)
-                    after = target[y:y + bh, x:x + bw, c] - np.clip(canvas[y:y + bh, x:x + bw, c] + delta, 0, 255)
+                reduction = float(
+                    np.sum(before.astype(np.int64) ** 2)
+                    - np.sum(after.astype(np.int64) ** 2)
+                )
 
-                    reduction = float(
-                        np.sum(before.astype(np.int64) ** 2)
-                        - np.sum(after.astype(np.int64) ** 2)
-                    )
+                bits = cls._patch_bits(
+                    channel_bits,
+                    patch[5],
+                    patch[6],
+                    patch[7],
+                    patch[8],
+                    patch[10],
+                    bw,
+                    bh,
+                    config.positive_bias,
+                )
 
-                    bits = cls._patch_bits(
-                        channel_bits,
-                        patch[5],
-                        patch[6],
-                        patch[7],
-                        patch[8],
-                        patch[10],
-                        bw,
-                        bh,
-                        config.positive_bias,
-                    )
+                raw_score = reduction / max(1, bits) if reduction > 0 else 0.0
+                score = reduction / max(1.0, bits + slot_cost) if reduction > 0 else 0.0
 
-                    raw_score = reduction / max(1, bits) if reduction > 0 else 0.0
-                    score = reduction / max(1.0, bits + slot_cost) if reduction > 0 else 0.0
+                if config.debug_mode:
+                    debug_lines.append(cls._debug_line(
+                        "CANDIDATE",
+                        patch_step=step,
+                        canvas_patches=canvas_patches,
+                        proposal=proposal_i,
+                        channel=c,
+                        x=x,
+                        y=y,
+                        w=bw,
+                        h=bh,
+                        cell_size=cell_size,
+                        mask_size=config.mask_size,
+                        bitcount=bitcount,
+                        neg_min=-patch[6],
+                        pos_max=patch[7],
+                        bits=bits,
+                        slot_cost=f"{slot_cost:.2f}",
+                        reduction=f"{reduction:.4f}",
+                        raw_score=f"{raw_score:.8f}",
+                        score=f"{score:.8f}",
+                        mid_score=f"{mid_score:.8f}",
+                    ))
 
-                    if config.debug_mode:
-                        debug_lines.append(cls._debug_line(
-                            "CANDIDATE",
-                            patch_step=step,
-                            canvas_patches=canvas_patches,
-                            proposal=proposal_i,
-                            channel=c,
-                            x=x,
-                            y=y,
-                            w=bw,
-                            h=bh,
-                            cell_size=cell_size,
-                            mask_size=config.mask_size,
-                            bitcount=bitcount,
-                            neg_min=-patch[6],
-                            pos_max=patch[7],
-                            bits=bits,
-                            slot_cost=f"{slot_cost:.2f}",
-                            reduction=f"{reduction:.4f}",
-                            raw_score=f"{raw_score:.8f}",
-                            score=f"{score:.8f}",
-                            pre_score=f"{pre_score:.6f}",
-                        ))
-
-                    if score > best_score:
-                        best_score = score
-                        best_patch = patch
-                        best_values = values
+                if score > best_score:
+                    best_score = score
+                    best_patch = patch
+                    best_values = values
         cls._add_time(timings, "fill_score", time.perf_counter() - t)
         if config.debug_mode and best_patch is not None:
             c, x, y, bw, bh = best_patch[:5]
