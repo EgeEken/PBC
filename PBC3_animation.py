@@ -275,8 +275,6 @@ def animate_pbc3(
         previous_bytes = current_bytes
 
         channel, x, y, pw, ph, cell_size, values, mode = PBC3._read_patch(br, channel_bits, positive_bias)
-        if mode != PBC3.MODE_RAW:
-            raise ValueError(f"unsupported patch mode {mode}")
 
         current_bytes = 5 + br.i
         current_kb = current_bytes / 1024
@@ -284,9 +282,10 @@ def animate_pbc3(
 
         PBC3.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
 
+        mode_name = {PBC3.MODE_RAW: "raw", PBC3.MODE_ZERO_RUN: "zero-run", PBC3.MODE_RLE: "rle"}.get(mode, str(mode))
         title = (
             f"Patch {i}/{patch_count} | Current Size: {current_kb:.2f} KB "
-            f"| (+{delta_kb:.2f} KB) | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size}"
+            f"| (+{delta_kb:.2f} KB) | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size} grid={mode_name}"
         )
         frames.append(_make_frame(
             canvas,
