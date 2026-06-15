@@ -69,45 +69,45 @@ class BitReader:
 
 @dataclass
 class PBC3Config:
-    color_space: str = "YCbCr"
-    downsample_rate: float = -1
-    auto_downsample_max_pixels: int = 250_000
-    downsample_cell_size: int = 12
-    downsample_palette_bitcount: int = 6
-    patch_palette_bitcount: int = 2
-    patch_bitcount_mode: str = "constant"     # "constant" | "dynamic"
-    dynamic_patch_bitcount_min: int = 2
-    dynamic_patch_bitcount_max: int = 3
-    mask_size: int = 4
-    positive_bias: bool = True
-    patch_count: int = 50
+    patch_count: int = 20
     search_depth: int = 200
     proposal_depth: int = 50
     exact_depth: int = 10
-    top_k: int = 20
-    anchor_block_size: int = 8
     min_patch_size: int = 16
     max_patch_size: int = 400
     min_cell_size: int = 1
     max_cell_size: int = 64
     cell_sizes_per_candidate: int = 3
+    top_k: int = 20
     search_q_start: float = 0.4               # stage-1 pre-score quality weight
     search_q_end: float = 0.1
+    q_init: float = 0.7                       # downsample-init RD weight
     q_start: float = 0.9                      # mid + exact scorer quality weight
-    q_end: float = 0.5
-    q_init: float = 0.9                       # downsample-init RD weight
-    palette_mode: str = "generated"           # "generated" | "explicit" | "auto"
-    explicit_palette_max_bitcount: int = 3
-    palette_difference_threshold: int = 0
-    palette_threshold_mode: str = "constant"  # "constant" | "linear"
+    q_end: float = 0.9
+    color_space: str = "YCbCr"
+    channel_cycle: str = "Sum"
     auto_downsample_init: bool = True
     init_search_depth: int = 20
-    channel_cycle: str = "Sum"
+    downsample_init_cell_size: int = 12
+    downsample_palette_bitcount: int = 6
+    downsample_rate: float = -1
+    auto_downsample_max_pixels: int = 250_000
+    patch_palette_bitcount: int = 2
+    patch_bitcount_mode: str = "constant"     # "constant" | "dynamic"
+    palette_mode: str = "generated"           # "generated" | "explicit" | "auto"
+    palette_difference_threshold: int = 0
+    palette_difference_threshold_mode: str = "constant"  # "constant" | "linear"
+    explicit_palette_max_bitcount: int = 3
+    palette_max: int = None
+    mask_size: int = 4
+    anchor_block_size: int = 8
+    dynamic_patch_bitcount_min: int = 2
+    dynamic_patch_bitcount_max: int = 3
+    positive_bias: bool = True
     random_seed: int = 2003
     debug_mode: bool = False
     debug_print: bool = False
     debug_path: str = None
-    palette_max: int = None
 
     def __post_init__(self):
         self.channel_cycle = str(self.channel_cycle)
@@ -602,7 +602,7 @@ class PBC3:
         base = int(config.palette_difference_threshold)
         if base <= 0:
             return 0
-        if str(config.palette_threshold_mode).lower() != "linear" or config.patch_count <= 1:
+        if str(config.palette_difference_threshold_mode).lower() != "linear" or config.patch_count <= 1:
             return base
         progress = (step - 1) / max(1, config.patch_count - 1)
         if progress >= 0.9:
@@ -1055,7 +1055,7 @@ class PBC3:
                 if config.debug_print:
                     print(f"[auto-init] channel {c}: cell={init_cell}, bitcount={init_bits}")
             else:
-                init_cell, init_bits = config.downsample_cell_size, config.downsample_palette_bitcount
+                init_cell, init_bits = config.downsample_init_cell_size, config.downsample_palette_bitcount
                 residual = target[:, :, c] - canvas[:, :, c]
                 patch, values = cls._make_patch(c, 0, 0, w, h, init_cell, residual, config, init_bits, cls.PALETTE_GENERATED, 0)
             cls.apply_grid(canvas[:, :, c], 0, 0, w, h, init_cell, values)
