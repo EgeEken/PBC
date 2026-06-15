@@ -28,3 +28,7 @@ test_images/*
 
 # Compressed files
 *.pbc
+
+hpt_data/
+
+benchmark_results/
