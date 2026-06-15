@@ -185,6 +185,8 @@ class PBC3:
     MAGIC = b"PBC3"
     VERSION = 1
     MODE_RAW = 0
+    MODE_ZERO_RUN = 1
+    MODE_RLE = 2
     COLOR_SPACES = {"RGB": 0, "YCbCr": 1}
     COLOR_SPACE_NAMES = {0: "RGB", 1: "YCbCr"}
     RESAMPLE_FILTER = Image.Resampling.BICUBIC
@@ -439,6 +441,104 @@ class PBC3:
         if mode in {"sum", "max"}:
             return int(np.argmax(scores))
         return (step - 1) % channels
+    
+    @staticmethod
+    def _runs(flat):
+        if flat.size == 0:
+            return []
+        changes = np.nonzero(np.diff(flat))[0] + 1
+        starts = np.concatenate(([0], changes))
+        ends = np.concatenate((changes, [flat.size]))
+        return [(int(flat[s]), int(e - s)) for s, e in zip(starts, ends)]
+
+    @staticmethod
+    def _rle_chunk_count(runs, rl_bits):
+        cap = 1 << rl_bits
+        return sum((length + cap - 1) // cap for _, length in runs)
+
+    @staticmethod
+    def _zero_run_token_count(flat, rl_bits):
+        cap = (1 << rl_bits) - 1
+        n = flat.size
+        i = 0
+        tokens = 0
+        while i < n:
+            z = 0
+            while i < n and z < cap and flat[i] == 0:
+                z += 1
+                i += 1
+            if i < n:
+                i += 1
+            tokens += 1
+        return tokens
+
+    @classmethod
+    def _choose_grid_encoding(cls, flat, bitcount):
+        best_mode, best_rl, best_bits = cls.MODE_RAW, 0, flat.size * bitcount
+        runs = cls._runs(flat)
+        for rl_bits in range(1, 13):
+            rle_bits = 4 + cls._rle_chunk_count(runs, rl_bits) * (bitcount + rl_bits)
+            if rle_bits < best_bits:
+                best_mode, best_rl, best_bits = cls.MODE_RLE, rl_bits, rle_bits
+            zr_bits = 4 + cls._zero_run_token_count(flat, rl_bits) * (bitcount + rl_bits)
+            if zr_bits < best_bits:
+                best_mode, best_rl, best_bits = cls.MODE_ZERO_RUN, rl_bits, zr_bits
+        return best_mode, best_rl
+
+    @classmethod
+    def _write_grid(cls, bw, flat, bitcount, mode, rl_bits):
+        if mode == cls.MODE_RAW:
+            for value in flat:
+                bw.write(int(value), bitcount)
+            return
+        bw.write(rl_bits, 4)
+        n = flat.size
+        if mode == cls.MODE_ZERO_RUN:
+            cap = (1 << rl_bits) - 1
+            i = 0
+            while i < n:
+                z = 0
+                while i < n and z < cap and flat[i] == 0:
+                    z += 1
+                    i += 1
+                if i < n:
+                    bw.write(z, rl_bits)
+                    bw.write(int(flat[i]), bitcount)
+                    i += 1
+                else:
+                    bw.write(z - 1, rl_bits)
+                    bw.write(0, bitcount)
+        else:
+            for value, length in cls._runs(flat):
+                cap = 1 << rl_bits
+                while length > 0:
+                    chunk = min(length, cap)
+                    bw.write(int(value), bitcount)
+                    bw.write(chunk - 1, rl_bits)
+                    length -= chunk
+
+    @classmethod
+    def _read_grid(cls, br, n, bitcount, mode, rl_bits):
+        flat = np.zeros(n, dtype=np.uint16)
+        if mode == cls.MODE_RAW:
+            for k in range(n):
+                flat[k] = br.read(bitcount)
+        elif mode == cls.MODE_ZERO_RUN:
+            i = 0
+            while i < n:
+                i += br.read(rl_bits)
+                flat[i] = br.read(bitcount)
+                i += 1
+        elif mode == cls.MODE_RLE:
+            i = 0
+            while i < n:
+                value = br.read(bitcount)
+                run = br.read(rl_bits) + 1
+                flat[i:i + run] = value
+                i += run
+        else:
+            raise ValueError(f"unsupported patch mode {mode}")
+        return flat
 
     @classmethod
     def _write_patch(cls, bw, channel, x, y, w, h, mask, negative_max, positive_max, max_bitcount, mode, cell_size, indices, channel_bits, positive_bias):
@@ -454,10 +554,11 @@ class PBC3:
         bw.write(negative_max, 8)
         bw.write(positive_max, 8)
         bw.write(max_bitcount, 4)
-        bw.write(mode, 2)
+        flat = indices.ravel().astype(np.int64)
+        chosen_mode, rl_bits = cls._choose_grid_encoding(flat, bitcount)
+        bw.write(chosen_mode, 2)
         bw.write(cell_size, 16)
-        for value in indices.ravel():
-            bw.write(int(value), bitcount)
+        cls._write_grid(bw, flat, bitcount, chosen_mode, rl_bits)
 
     @classmethod
     def _read_patch(cls, br, channel_bits, positive_bias=True):
@@ -476,10 +577,9 @@ class PBC3:
         cell_size = br.read(16)
         gw = cls._ceil_div(w, cell_size)
         gh = cls._ceil_div(h, cell_size)
-        indices = np.zeros((gh, gw), dtype=np.uint16)
-        for gy in range(gh):
-            for gx in range(gw):
-                indices[gy, gx] = br.read(bitcount)
+        rl_bits = br.read(4) if mode != cls.MODE_RAW else 0
+        flat = cls._read_grid(br, gh * gw, bitcount, mode, rl_bits)
+        indices = flat.reshape(gh, gw)
         palette = cls.palette_generator(mask, max_bitcount, negative_max, positive_max, positive_bias)
         values = palette[indices]
         return channel, x, y, w, h, cell_size, values, mode
@@ -906,8 +1006,6 @@ class PBC3:
         patches_to_read = patch_count if max_patches is None else min(int(max_patches), patch_count)
         for _ in range(patches_to_read):
             channel, x, y, pw, ph, cell_size, values, mode = cls._read_patch(br, channel_bits, positive_bias)
-            if mode != cls.MODE_RAW:
-                raise ValueError(f"unsupported patch mode {mode}")
             cls.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
         return canvas, color_space, downsampled, original_w, original_h, w, h, patch_count
 
