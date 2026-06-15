@@ -11,6 +11,8 @@ from dataclasses import dataclass, field
 import time
 import math
 import os
+import zlib
+import lzma
 import numpy as np
 from PIL import Image
 from matplotlib import pyplot as plt
@@ -89,8 +91,8 @@ class PBC3Config:
     min_cell_size: int = 1
     max_cell_size: int = 64
     cell_sizes_per_candidate: int = 3
-    search_q_start: float = 0.5               # stage-1 pre-score quality weight
-    search_q_end: float = 0.25
+    search_q_start: float = 0.4               # stage-1 pre-score quality weight
+    search_q_end: float = 0.1
     q_start: float = 0.9                      # mid + exact scorer quality weight
     q_end: float = 0.5
     q_init: float = 0.9                       # downsample-init RD weight
@@ -98,9 +100,9 @@ class PBC3Config:
     explicit_palette_max_bitcount: int = 3
     palette_difference_threshold: int = 0
     palette_threshold_mode: str = "constant"  # "constant" | "linear"
-    auto_downsample_init: bool = False
+    auto_downsample_init: bool = True
     init_search_depth: int = 20
-    channel_cycle: str = "Max"
+    channel_cycle: str = "Sum"
     random_seed: int = 2003
     debug_mode: bool = False
     debug_print: bool = False
@@ -185,12 +187,16 @@ class PBC3Result:
 
 class PBC3:
     MAGIC = b"PBC3"
-    VERSION = 1
+    VERSION = 0
     MODE_RAW = 0
     MODE_ZERO_RUN = 1
     MODE_RLE = 2
     PALETTE_GENERATED = 0
     PALETTE_EXPLICIT = 1
+    ENTROPY_STORE = 0
+    ENTROPY_ZLIB = 1
+    ENTROPY_LZMA = 2
+    _LZMA_FILTERS = [{"id": lzma.FILTER_LZMA2, "preset": 6}]
     COLOR_SPACES = {"RGB": 0, "YCbCr": 1}
     COLOR_SPACE_NAMES = {0: "RGB", 1: "YCbCr"}
     RESAMPLE_FILTER = Image.Resampling.BICUBIC
@@ -229,6 +235,32 @@ class PBC3:
             return float(end)
         p = (step - 1) / max(1, count - 1)
         return float(start) * (1 - p) + float(end) * p
+
+    @classmethod
+    def _entropy_pack(cls, body):
+        x = lzma.compress(body, format=lzma.FORMAT_RAW, filters=cls._LZMA_FILTERS)
+        if len(x) < len(body):
+            return cls.ENTROPY_LZMA, x
+        return cls.ENTROPY_STORE, body
+
+    @classmethod
+    def _entropy_unpack(cls, method, body):
+        if method == cls.ENTROPY_STORE:
+            return body
+        if method == cls.ENTROPY_ZLIB:
+            return zlib.decompress(body)
+        if method == cls.ENTROPY_LZMA:
+            return lzma.decompress(body, format=lzma.FORMAT_RAW, filters=cls._LZMA_FILTERS)
+        raise ValueError(f"unknown entropy method {method}")
+
+    @classmethod
+    def _open_body(cls, data):
+        if data[:4] != cls.MAGIC:
+            raise ValueError("not a PBC3 file")
+        version = data[4]
+        if version not in (0, 1, 2):
+            raise ValueError(f"unsupported PBC3 version {version}")
+        return version, cls._entropy_unpack(data[5], data[6:])
 
     @classmethod
     def _auto_downsample_rate(cls, image_size, downsample_rate, max_pixels):
@@ -492,16 +524,7 @@ class PBC3:
 
     @classmethod
     def _choose_grid_encoding(cls, flat, bitcount):
-        best_mode, best_rl, best_bits = cls.MODE_RAW, 0, flat.size * bitcount
-        runs = cls._runs(flat)
-        for rl_bits in range(1, 13):
-            rle_bits = 4 + cls._rle_chunk_count(runs, rl_bits) * (bitcount + rl_bits)
-            if rle_bits < best_bits:
-                best_mode, best_rl, best_bits = cls.MODE_RLE, rl_bits, rle_bits
-            zr_bits = 4 + cls._zero_run_token_count(flat, rl_bits) * (bitcount + rl_bits)
-            if zr_bits < best_bits:
-                best_mode, best_rl, best_bits = cls.MODE_ZERO_RUN, rl_bits, zr_bits
-        return best_mode, best_rl
+        return cls.MODE_RAW, 0
 
     @classmethod
     def _write_grid(cls, bw, flat, bitcount, mode, rl_bits):
@@ -814,8 +837,10 @@ class PBC3:
         clampc = lambda v: max(lo_c, min(hi_c, int(v)))
         clampb = lambda v: max(1, min(max_b, int(v)))
         raw = [(cell0, bits0), (cell0, bits0 - 1), (cell0, bits0 + 1),
-               (cell0 // 2, bits0), (cell0 * 2, bits0),
-               (cell0 // 2, bits0 + 1), (cell0 * 2, bits0 - 1)]
+               (cell0 // 2, bits0), (cell0 * 2, bits0), (cell0 // 2, bits0 - 1),
+               (cell0 * 2, bits0 + 1), (cell0 // 4, bits0), (cell0 * 4, bits0),
+               (cell0 // 2, bits0 + 1), (cell0 * 2, bits0 - 1), (cell0, bits0 + 2),
+               (cell0, bits0 - 2), (cell0 // 4, bits0 + 1), (cell0 * 4, bits0 - 1)]
         out = []
         for cell, bits in raw:
             pair = (clampc(cell), clampb(bits))
@@ -964,13 +989,9 @@ class PBC3:
 
     @classmethod
     def _read_header(cls, br, version):
-        if version == 0:
-            downsampled = False
-            original_w = original_h = None
-        else:
-            downsampled = bool(br.read(1))
-            original_w = br.read(16) if downsampled else None
-            original_h = br.read(16) if downsampled else None
+        downsampled = bool(br.read(1))
+        original_w = br.read(16) if downsampled else None
+        original_h = br.read(16) if downsampled else None
         w = br.read(16)
         h = br.read(16)
         color_id = br.read(2)
@@ -1031,7 +1052,8 @@ class PBC3:
         for c in range(channels):
             if config.auto_downsample_init:
                 patch, values, init_cell, init_bits = cls._select_init(c, target, canvas, w, h, config, channel_bits)
-                print(f"[auto-init] channel {c}: cell={init_cell}, bitcount={init_bits}")
+                if config.debug_print:
+                    print(f"[auto-init] channel {c}: cell={init_cell}, bitcount={init_bits}")
             else:
                 init_cell, init_bits = config.downsample_cell_size, config.downsample_palette_bitcount
                 residual = target[:, :, c] - canvas[:, :, c]
@@ -1069,7 +1091,8 @@ class PBC3:
         cls._write_header(bw, w, h, original_w, original_h, downsampled, color_id, channels, channel_bits, config.positive_bias, len(patches), base_values)
         for patch in patches:
             cls._write_patch(bw, patch, channel_bits)
-        data = cls.MAGIC + bytes([cls.VERSION]) + bw.finish()
+        method, body = cls._entropy_pack(bw.finish())
+        data = cls.MAGIC + bytes([cls.VERSION, method]) + body
         cls._add_time(timings, "serialize", time.perf_counter() - t)
 
         t = time.perf_counter()
@@ -1105,12 +1128,8 @@ class PBC3:
         if isinstance(data, str):
             with open(data, "rb") as f:
                 data = f.read()
-        if data[:4] != cls.MAGIC:
-            raise ValueError("not a PBC3 file")
-        version = data[4]
-        if version not in (0, cls.VERSION):
-            raise ValueError(f"unsupported PBC3 version {version}")
-        br = BitReader(data[5:])
+        version, body = cls._open_body(data)
+        br = BitReader(body)
         downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values = cls._read_header(br, version)
         canvas = np.zeros((h, w, channels), dtype=np.int32)
         for c, base in enumerate(base_values):

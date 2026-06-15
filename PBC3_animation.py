@@ -239,11 +239,8 @@ def animate_pbc3(
     if isinstance(data, str):
         with open(data, "rb") as f:
             data = f.read()
-    if data[:4] != PBC3.MAGIC:
-        raise ValueError("not a PBC3 file")
-
-    version = data[4]
-    br = BitReader(data[5:])
+    version, body = PBC3._open_body(data)
+    br = BitReader(body)
     downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values = PBC3._read_header(br, version)
     if channels != 3 and separated_channels:
         separated_channels = False
@@ -258,14 +255,16 @@ def animate_pbc3(
     frames = []
     limit = patch_count if max_patches is None else min(int(max_patches), patch_count)
 
-    current_bytes = 5 + br.i
+    # Note: entropy coding is global, so per-patch byte sizes are reported on the
+    # pre-entropy (uncompressed) stream; the final file is smaller after packing.
+    current_bytes = br.i
     current_kb = current_bytes / 1024
     frames.append(_make_frame(
         canvas,
         color_space,
         None,
         separated_channels,
-        f"Patch 0/{patch_count} | Current Size: {current_kb:.2f} KB | (+0.00 KB)",
+        f"Patch 0/{patch_count} | Stream Size: {current_kb:.2f} KB | (+0.00 KB)",
         target,
         show_errors,
         output_size,
@@ -276,7 +275,7 @@ def animate_pbc3(
 
         channel, x, y, pw, ph, cell_size, values, mode = PBC3._read_patch(br, channel_bits, positive_bias)
 
-        current_bytes = 5 + br.i
+        current_bytes = br.i
         current_kb = current_bytes / 1024
         delta_kb = (current_bytes - previous_bytes) / 1024
 
@@ -284,7 +283,7 @@ def animate_pbc3(
 
         mode_name = {PBC3.MODE_RAW: "raw", PBC3.MODE_ZERO_RUN: "zero-run", PBC3.MODE_RLE: "rle"}.get(mode, str(mode))
         title = (
-            f"Patch {i}/{patch_count} | Current Size: {current_kb:.2f} KB "
+            f"Patch {i}/{patch_count} | Stream Size: {current_kb:.2f} KB "
             f"| (+{delta_kb:.2f} KB) | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size} grid={mode_name}"
         )
         frames.append(_make_frame(
