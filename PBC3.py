@@ -11,7 +11,6 @@ from dataclasses import dataclass, field
 import time
 import math
 import os
-import zlib
 import lzma
 import numpy as np
 from PIL import Image
@@ -113,6 +112,21 @@ class PBC3Config:
         self.channel_cycle = str(self.channel_cycle)
         self.patch_bitcount_mode = str(self.patch_bitcount_mode)
 
+    # fast mode init
+    @classmethod
+    def fast(cls):
+        return cls(
+            patch_count=10,
+            search_depth=100,
+            proposal_depth=10,
+            exact_depth=5,
+            cell_sizes_per_candidate=1,
+            search_q_start=0.35,
+            q_init=0.5,
+            init_search_depth=10,
+            auto_downsample_max_pixels=200_000,
+        )
+
 
 @dataclass
 class PBC3Result:
@@ -189,12 +203,9 @@ class PBC3:
     MAGIC = b"PBC3"
     VERSION = 0
     MODE_RAW = 0
-    MODE_ZERO_RUN = 1
-    MODE_RLE = 2
     PALETTE_GENERATED = 0
     PALETTE_EXPLICIT = 1
     ENTROPY_STORE = 0
-    ENTROPY_ZLIB = 1
     ENTROPY_LZMA = 2
     _LZMA_FILTERS = [{"id": lzma.FILTER_LZMA2, "preset": lzma.PRESET_EXTREME}]
     COLOR_SPACES = {"RGB": 0, "YCbCr": 1}
@@ -247,8 +258,6 @@ class PBC3:
     def _entropy_unpack(cls, method, body):
         if method == cls.ENTROPY_STORE:
             return body
-        if method == cls.ENTROPY_ZLIB:
-            return zlib.decompress(body)
         if method == cls.ENTROPY_LZMA:
             return lzma.decompress(body, format=lzma.FORMAT_RAW, filters=cls._LZMA_FILTERS)
         raise ValueError(f"unknown entropy method {method}")
@@ -258,7 +267,7 @@ class PBC3:
         if data[:4] != cls.MAGIC:
             raise ValueError("not a PBC3 file")
         version = data[4]
-        if version not in (0, 1, 2):
+        if version != cls.VERSION:
             raise ValueError(f"unsupported PBC3 version {version}")
         return version, cls._entropy_unpack(data[5], data[6:])
 
@@ -492,93 +501,16 @@ class PBC3:
         counts = (np.diff(ye)[:, None] * np.diff(xe)[None, :]).astype(np.float64)
         return float(np.sum(cell_sum * cell_sum / counts))
 
-    @staticmethod
-    def _runs(flat):
-        if flat.size == 0:
-            return []
-        changes = np.nonzero(np.diff(flat))[0] + 1
-        starts = np.concatenate(([0], changes))
-        ends = np.concatenate((changes, [flat.size]))
-        return [(int(flat[s]), int(e - s)) for s, e in zip(starts, ends)]
-
-    @staticmethod
-    def _rle_chunk_count(runs, rl_bits):
-        cap = 1 << rl_bits
-        return sum((length + cap - 1) // cap for _, length in runs)
-
-    @staticmethod
-    def _zero_run_token_count(flat, rl_bits):
-        cap = (1 << rl_bits) - 1
-        n = flat.size
-        i = 0
-        tokens = 0
-        while i < n:
-            z = 0
-            while i < n and z < cap and flat[i] == 0:
-                z += 1
-                i += 1
-            if i < n:
-                i += 1
-            tokens += 1
-        return tokens
+    @classmethod
+    def _write_grid(cls, bw, flat, bitcount):
+        for value in flat:
+            bw.write(int(value), bitcount)
 
     @classmethod
-    def _choose_grid_encoding(cls, flat, bitcount):
-        return cls.MODE_RAW, 0
-
-    @classmethod
-    def _write_grid(cls, bw, flat, bitcount, mode, rl_bits):
-        if mode == cls.MODE_RAW:
-            for value in flat:
-                bw.write(int(value), bitcount)
-            return
-        bw.write(rl_bits, 4)
-        n = flat.size
-        if mode == cls.MODE_ZERO_RUN:
-            cap = (1 << rl_bits) - 1
-            i = 0
-            while i < n:
-                z = 0
-                while i < n and z < cap and flat[i] == 0:
-                    z += 1
-                    i += 1
-                if i < n:
-                    bw.write(z, rl_bits)
-                    bw.write(int(flat[i]), bitcount)
-                    i += 1
-                else:
-                    bw.write(z - 1, rl_bits)
-                    bw.write(0, bitcount)
-        else:
-            cap = 1 << rl_bits
-            for value, length in cls._runs(flat):
-                while length > 0:
-                    chunk = min(length, cap)
-                    bw.write(int(value), bitcount)
-                    bw.write(chunk - 1, rl_bits)
-                    length -= chunk
-
-    @classmethod
-    def _read_grid(cls, br, n, bitcount, mode, rl_bits):
+    def _read_grid(cls, br, n, bitcount):
         flat = np.zeros(n, dtype=np.uint16)
-        if mode == cls.MODE_RAW:
-            for k in range(n):
-                flat[k] = br.read(bitcount)
-        elif mode == cls.MODE_ZERO_RUN:
-            i = 0
-            while i < n:
-                i += br.read(rl_bits)
-                flat[i] = br.read(bitcount)
-                i += 1
-        elif mode == cls.MODE_RLE:
-            i = 0
-            while i < n:
-                value = br.read(bitcount)
-                run = br.read(rl_bits) + 1
-                flat[i:i + run] = value
-                i += run
-        else:
-            raise ValueError(f"unsupported patch mode {mode}")
+        for k in range(n):
+            flat[k] = br.read(bitcount)
         return flat
 
     @classmethod
@@ -658,10 +590,9 @@ class PBC3:
             bw.write(patch["pos"], 8)
             bw.write(patch["max_bitcount"], 4)
         flat = patch["indices"].ravel().astype(np.int64)
-        grid_mode, rl_bits = cls._choose_grid_encoding(flat, bitcount)
-        bw.write(grid_mode, 2)
+        bw.write(cls.MODE_RAW, 2)
         bw.write(patch["cell_size"], 16)
-        cls._write_grid(bw, flat, bitcount, grid_mode, rl_bits)
+        cls._write_grid(bw, flat, bitcount)
 
     @classmethod
     def _read_patch(cls, br, channel_bits, positive_bias=True):
@@ -690,8 +621,7 @@ class PBC3:
         cell_size = br.read(16)
         gw = cls._ceil_div(w, cell_size)
         gh = cls._ceil_div(h, cell_size)
-        rl_bits = br.read(4) if grid_mode != cls.MODE_RAW else 0
-        flat = cls._read_grid(br, gh * gw, bitcount, grid_mode, rl_bits)
+        flat = cls._read_grid(br, gh * gw, bitcount)
         indices = flat.reshape(gh, gw)
         values = palette[indices]
         return channel, x, y, w, h, cell_size, values, grid_mode
@@ -988,7 +918,7 @@ class PBC3:
             bw.write(base, 8)
 
     @classmethod
-    def _read_header(cls, br, version):
+    def _read_header(cls, br):
         downsampled = bool(br.read(1))
         original_w = br.read(16) if downsampled else None
         original_h = br.read(16) if downsampled else None
@@ -1130,7 +1060,7 @@ class PBC3:
                 data = f.read()
         version, body = cls._open_body(data)
         br = BitReader(body)
-        downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values = cls._read_header(br, version)
+        downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values = cls._read_header(br)
         canvas = np.zeros((h, w, channels), dtype=np.int32)
         for c, base in enumerate(base_values):
             canvas[:, :, c] = base
