@@ -196,7 +196,7 @@ class PBC3:
     ENTROPY_STORE = 0
     ENTROPY_ZLIB = 1
     ENTROPY_LZMA = 2
-    _LZMA_FILTERS = [{"id": lzma.FILTER_LZMA2, "preset": 6}]
+    _LZMA_FILTERS = [{"id": lzma.FILTER_LZMA2, "preset": lzma.PRESET_EXTREME}]
     COLOR_SPACES = {"RGB": 0, "YCbCr": 1}
     COLOR_SPACE_NAMES = {0: "RGB", 1: "YCbCr"}
     RESAMPLE_FILTER = Image.Resampling.BICUBIC
