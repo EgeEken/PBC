@@ -241,7 +241,7 @@ def animate_pbc3(
             data = f.read()
     version, body = PBC3._open_body(data)
     br = BitReader(body)
-    downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values = PBC3._read_header(br, version)
+    downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values = PBC3._read_header(br)
     if channels != 3 and separated_channels:
         separated_channels = False
     if show_errors and original_image is None:
@@ -280,11 +280,9 @@ def animate_pbc3(
         delta_kb = (current_bytes - previous_bytes) / 1024
 
         PBC3.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
-
-        mode_name = {PBC3.MODE_RAW: "raw", PBC3.MODE_ZERO_RUN: "zero-run", PBC3.MODE_RLE: "rle"}.get(mode, str(mode))
         title = (
             f"Patch {i}/{patch_count} | Stream Size: {current_kb:.2f} KB "
-            f"| (+{delta_kb:.2f} KB) | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size} grid={mode_name}"
+            f"| (+{delta_kb:.2f} KB) | ch={channel} box=({x},{y},{pw},{ph}) cell={cell_size}"
         )
         frames.append(_make_frame(
             canvas,

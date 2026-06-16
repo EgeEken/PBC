@@ -86,7 +86,7 @@ class PBC3Config:
     color_space: str = "YCbCr"
     channel_cycle: str = "Sum"
     auto_downsample_init: bool = True
-    init_search_depth: int = 20
+    init_search_depth: int = 7
     downsample_init_cell_size: int = 12
     downsample_palette_bitcount: int = 6
     downsample_rate: float = -1
@@ -97,7 +97,7 @@ class PBC3Config:
     palette_difference_threshold: int = 0
     palette_difference_threshold_mode: str = "constant"  # "constant" | "linear"
     explicit_palette_max_bitcount: int = 3
-    palette_max: int = None
+    quality_target_mae: float = 0.0           # >0: stop a channel once its mean abs error drops to/below this
     mask_size: int = 4
     anchor_block_size: int = 8
     dynamic_patch_bitcount_min: int = 2
@@ -112,7 +112,7 @@ class PBC3Config:
         self.channel_cycle = str(self.channel_cycle)
         self.patch_bitcount_mode = str(self.patch_bitcount_mode)
 
-    # fast mode init
+    # fast mode init (overrides only; everything else uses defaults)
     @classmethod
     def fast(cls):
         return cls(
@@ -123,7 +123,7 @@ class PBC3Config:
             cell_sizes_per_candidate=1,
             search_q_start=0.35,
             q_init=0.5,
-            init_search_depth=10,
+            init_search_depth=7,
             auto_downsample_max_pixels=200_000,
         )
 
@@ -142,12 +142,13 @@ class PBC3Result:
     working_height: int = None
     timings: dict = field(default_factory=dict)
     debug_path: str = None
+    channels: int = 3
 
     @property
     def original_bits(self):
         w = self.original_width or self.image.width
         h = self.original_height or self.image.height
-        return w * h * 3 * 8
+        return w * h * self.channels * 8
 
     @property
     def compressed_kb(self):
@@ -190,7 +191,7 @@ class PBC3Result:
         seconds = "N/A" if self.encode_seconds is None else f"{self.encode_seconds:.3f}s"
         debug = f"   |   Debug: {os.path.basename(self.debug_path)}" if self.debug_path else ""
         info = (
-            f"MSE: {mse}   |   Compressed: {self.compressed_kb:.2f} KB   |   Original RGB: {self.original_kb:.2f} KB\n"
+            f"MSE: {mse}   |   Compressed: {self.compressed_kb:.2f} KB   |   Original: {self.original_kb:.2f} KB\n"
             f"Compression: {self.compression_rate:.2f}x ({self.compressed_percent:.2f}%)   |   Time: {seconds}{debug}"
         )
         info_ax.text(0.5, 0.5, info, ha="center", va="center", color="white", fontsize=10, linespacing=1.35,
@@ -202,7 +203,6 @@ class PBC3Result:
 class PBC3:
     MAGIC = b"PBC3"
     VERSION = 0
-    MODE_RAW = 0
     PALETTE_GENERATED = 0
     PALETTE_EXPLICIT = 1
     ENTROPY_STORE = 0
@@ -222,7 +222,12 @@ class PBC3:
         arr = np.asarray(image)
         if arr.dtype != np.uint8:
             arr = np.clip(arr, 0, 255).astype(np.uint8)
-        return Image.fromarray(arr, "RGB")
+        mode = "RGBA" if arr.ndim == 3 and arr.shape[-1] == 4 else "RGB"
+        return Image.fromarray(arr, mode)
+
+    @staticmethod
+    def _has_alpha(img):
+        return img.mode in ("RGBA", "LA", "PA") or (img.mode == "P" and "transparency" in img.info)
 
     @staticmethod
     def _ceil_div(a, b):
@@ -285,11 +290,10 @@ class PBC3:
     @classmethod
     def _downsample_image(cls, img, rate):
         if rate <= 1:
-            return img.copy(), img.size
-        original_size = img.size
-        w = max(1, int(round(original_size[0] / rate)))
-        h = max(1, int(round(original_size[1] / rate)))
-        return img.resize((w, h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP), original_size
+            return img.copy()
+        w = max(1, int(round(img.size[0] / rate)))
+        h = max(1, int(round(img.size[1] / rate)))
+        return img.resize((w, h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
 
     @staticmethod
     def _palette_bounds(values):
@@ -518,7 +522,7 @@ class PBC3:
         w, h, cell = patch["w"], patch["h"], patch["cell_size"]
         bitcount = patch["bitcount"]
         grid_bits = cls._ceil_div(w, cell) * cls._ceil_div(h, cell) * bitcount
-        base = channel_bits + 64 + 16 + 2 + 1
+        base = channel_bits + 64 + 16 + 1
         if patch["palette_mode"] == cls.PALETTE_EXPLICIT:
             header = base + 4 + (1 << bitcount) * 9
         else:
@@ -527,7 +531,7 @@ class PBC3:
 
     @classmethod
     def _patch_header_bits(cls, channel_bits, mask_size):
-        return channel_bits + 64 + 10 + mask_size + 8 + 8 + 4 + 2 + 16 + 1
+        return channel_bits + 64 + 10 + mask_size + 8 + 8 + 4 + 16 + 1
 
     @classmethod
     def _palette_threshold(cls, config, step):
@@ -561,11 +565,18 @@ class PBC3:
         return float(np.sum(err))
 
     @classmethod
-    def _choose_channel(cls, scores, step, channels, mode):
+    def _channel_mae(cls, target, canvas, channel):
+        return float(np.mean(np.abs(target[:, :, channel] - np.clip(canvas[:, :, channel], 0, 255))))
+
+    @classmethod
+    def _choose_channel(cls, scores, step, channels, mode, done=None):
+        allowed = [c for c in range(channels) if not (done and done[c])]
+        if not allowed:
+            return None
         mode = str(mode).lower()
         if mode in {"sum", "max"}:
-            return int(np.argmax(scores))
-        return (step - 1) % channels
+            return max(allowed, key=lambda c: scores[c])
+        return allowed[(step - 1) % len(allowed)]
 
     @classmethod
     def _write_patch(cls, bw, patch, channel_bits):
@@ -590,7 +601,6 @@ class PBC3:
             bw.write(patch["pos"], 8)
             bw.write(patch["max_bitcount"], 4)
         flat = patch["indices"].ravel().astype(np.int64)
-        bw.write(cls.MODE_RAW, 2)
         bw.write(patch["cell_size"], 16)
         cls._write_grid(bw, flat, bitcount)
 
@@ -617,14 +627,13 @@ class PBC3:
             max_bitcount = br.read(4)
             bitcount = cls.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
             palette = cls.palette_generator(mask, max_bitcount, negative_max, positive_max, positive_bias)
-        grid_mode = br.read(2)
         cell_size = br.read(16)
         gw = cls._ceil_div(w, cell_size)
         gh = cls._ceil_div(h, cell_size)
         flat = cls._read_grid(br, gh * gw, bitcount)
         indices = flat.reshape(gh, gw)
         values = palette[indices]
-        return channel, x, y, w, h, cell_size, values, grid_mode
+        return channel, x, y, w, h, cell_size, values
 
     @classmethod
     def _make_patch(cls, channel, x, y, w, h, cell_size, residual, config, max_bitcount, palette_mode, threshold):
@@ -802,7 +811,7 @@ class PBC3:
         return kind + " " + " ".join(f"{k}={v}" for k, v in items.items())
 
     @classmethod
-    def _select_patch(cls, target, canvas, config, rng, channel_bits, step, canvas_patches, debug_lines, timings, current_channel, channel_score):
+    def _select_patch(cls, target, canvas, config, rng, channel_bits, step, canvas_patches, debug_lines, timings, current_channel):
         t = time.perf_counter()
         visible_canvas_channel = np.clip(canvas[:, :, current_channel], 0, 255).astype(np.int32)
         visible_error = (target[:, :, current_channel] - visible_canvas_channel).astype(np.int64)
@@ -902,7 +911,7 @@ class PBC3:
         return best_patch, best_values
 
     @classmethod
-    def _write_header(cls, bw, w, h, original_w, original_h, downsampled, color_id, channels, channel_bits, positive_bias, patch_count, base_values):
+    def _write_header(cls, bw, w, h, original_w, original_h, downsampled, color_id, channels, channel_bits, positive_bias, has_alpha, patch_count, base_values):
         bw.write(int(downsampled), 1)
         if downsampled:
             bw.write(original_w, 16)
@@ -913,6 +922,7 @@ class PBC3:
         bw.write(channels, 8)
         bw.write(channel_bits, 4)
         bw.write(int(positive_bias), 1)
+        bw.write(int(has_alpha), 1)
         bw.write(patch_count, 32)
         for base in base_values:
             bw.write(base, 8)
@@ -928,10 +938,11 @@ class PBC3:
         channels = br.read(8)
         channel_bits = br.read(4)
         positive_bias = bool(br.read(1))
+        has_alpha = bool(br.read(1))
         patch_count = br.read(32)
         color_space = cls.COLOR_SPACE_NAMES[color_id]
         base_values = [br.read(8) for _ in range(channels)]
-        return downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values
+        return downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, has_alpha, patch_count, base_values
 
     @classmethod
     def compress(cls, image, config=None, **kwargs):
@@ -945,12 +956,25 @@ class PBC3:
         debug_lines = []
 
         t = time.perf_counter()
-        original_img = cls._to_image(image).convert(config.color_space)
-        original_w, original_h = original_img.size
-        rate = cls._auto_downsample_rate(original_img.size, config.downsample_rate, config.auto_downsample_max_pixels)
-        img, original_size = cls._downsample_image(original_img, rate)
-        downsampled = img.size != original_img.size
-        arr = np.asarray(img, dtype=np.uint8)
+        src = cls._to_image(image)
+        has_alpha = cls._has_alpha(src)
+        if has_alpha:
+            rgba = src.convert("RGBA")
+            color_img = rgba.convert("RGB").convert(config.color_space)
+            alpha_img = rgba.getchannel("A")
+            orig_compare = rgba
+        else:
+            color_img = src.convert(config.color_space)
+            alpha_img = None
+            orig_compare = src.convert("RGB")
+        original_w, original_h = color_img.size
+        rate = cls._auto_downsample_rate(color_img.size, config.downsample_rate, config.auto_downsample_max_pixels)
+        color_ds = cls._downsample_image(color_img, rate)
+        downsampled = color_ds.size != color_img.size
+        arr = np.asarray(color_ds, dtype=np.uint8)
+        if has_alpha:
+            alpha_ds = alpha_img.resize(color_ds.size, cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP) if downsampled else alpha_img
+            arr = np.dstack([arr, np.asarray(alpha_ds, dtype=np.uint8)])
         target = arr.astype(np.int32)
         h, w, channels = arr.shape
         cls._add_time(timings, "setup_downsample", time.perf_counter() - t)
@@ -995,11 +1019,19 @@ class PBC3:
         cls._add_time(timings, "init_layer", time.perf_counter() - t)
 
         channel_scores = [cls._channel_error_score(target, canvas, c, config.channel_cycle) for c in range(channels)]
+        quality_target = float(config.quality_target_mae)
+        done = [False] * channels
         rng = np.random.default_rng(config.random_seed)
         t_patch_total = time.perf_counter()
         for step in range(1, max(0, int(config.patch_count)) + 1):
-            current_channel = cls._choose_channel(channel_scores, step, channels, config.channel_cycle)
-            patch, values = cls._select_patch(target, canvas, config, rng, channel_bits, step, len(patches), debug_lines, timings, current_channel, channel_scores[current_channel])
+            if quality_target > 0:
+                for c in range(channels):
+                    if not done[c] and cls._channel_mae(target, canvas, c) <= quality_target:
+                        done[c] = True
+            current_channel = cls._choose_channel(channel_scores, step, channels, config.channel_cycle, done)
+            if current_channel is None:
+                break
+            patch, values = cls._select_patch(target, canvas, config, rng, channel_bits, step, len(patches), debug_lines, timings, current_channel)
             if patch is None:
                 break
             t = time.perf_counter()
@@ -1018,7 +1050,7 @@ class PBC3:
 
         t = time.perf_counter()
         bw = BitWriter()
-        cls._write_header(bw, w, h, original_w, original_h, downsampled, color_id, channels, channel_bits, config.positive_bias, len(patches), base_values)
+        cls._write_header(bw, w, h, original_w, original_h, downsampled, color_id, channels, channel_bits, config.positive_bias, has_alpha, len(patches), base_values)
         for patch in patches:
             cls._write_patch(bw, patch, channel_bits)
         method, body = cls._entropy_pack(bw.finish())
@@ -1026,13 +1058,12 @@ class PBC3:
         cls._add_time(timings, "serialize", time.perf_counter() - t)
 
         t = time.perf_counter()
-        out_arr = np.clip(canvas, 0, 255).astype(np.uint8)
-        out_img = Image.fromarray(out_arr, config.color_space).convert("RGB")
+        out_img = cls._canvas_to_image(canvas, config.color_space, has_alpha)
         if downsampled:
             out_img = out_img.resize((original_w, original_h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
-        target_rgb = np.asarray(original_img.convert("RGB"), dtype=np.float32)
-        out_rgb = np.asarray(out_img, dtype=np.float32)
-        mse = float(np.mean((target_rgb - out_rgb) ** 2))
+        target_arr = np.asarray(orig_compare, dtype=np.float32)
+        out_arr = np.asarray(out_img, dtype=np.float32)
+        mse = float(np.mean((target_arr - out_arr) ** 2))
         cls._add_time(timings, "finalize_mse", time.perf_counter() - t)
 
         debug_path = None
@@ -1045,13 +1076,22 @@ class PBC3:
                 f.write(cls._debug_line("CONFIG", **{k: v for k, v in config.__dict__.items() if k not in {"debug_path"}}) + "\n")
                 f.write(cls._debug_line("IMAGE", original_w=original_w, original_h=original_h, working_w=w, working_h=h,
                                         original_pixels=original_w * original_h, working_pixels=w * h,
-                                        downsample_rate=f"{rate:.6f}", downsampled=int(downsampled)) + "\n")
+                                        downsample_rate=f"{rate:.6f}", downsampled=int(downsampled), has_alpha=int(has_alpha)) + "\n")
                 for k, v in timings.items():
                     f.write(cls._debug_line("TIMER", phase=k, seconds=f"{v:.6f}") + "\n")
                 for line in debug_lines:
                     f.write(line + "\n")
 
-        return PBC3Result(out_img, data, config, mse, total_seconds, len(data) * 8, original_w, original_h, w, h, timings, debug_path)
+        return PBC3Result(out_img, data, config, mse, total_seconds, len(data) * 8, original_w, original_h, w, h, timings, debug_path, channels=channels)
+
+    @classmethod
+    def _canvas_to_image(cls, canvas, color_space, has_alpha):
+        arr = np.clip(canvas, 0, 255).astype(np.uint8)
+        if has_alpha:
+            color = Image.fromarray(arr[:, :, :3], color_space).convert("RGB").convert("RGBA")
+            color.putalpha(Image.fromarray(arr[:, :, 3], "L"))
+            return color
+        return Image.fromarray(arr, color_space).convert("RGB")
 
     @classmethod
     def _decode_to_canvas(cls, data, max_patches=None):
@@ -1060,15 +1100,15 @@ class PBC3:
                 data = f.read()
         version, body = cls._open_body(data)
         br = BitReader(body)
-        downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, patch_count, base_values = cls._read_header(br)
+        downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, has_alpha, patch_count, base_values = cls._read_header(br)
         canvas = np.zeros((h, w, channels), dtype=np.int32)
         for c, base in enumerate(base_values):
             canvas[:, :, c] = base
         patches_to_read = patch_count if max_patches is None else min(int(max_patches), patch_count)
         for _ in range(patches_to_read):
-            channel, x, y, pw, ph, cell_size, values, mode = cls._read_patch(br, channel_bits, positive_bias)
+            channel, x, y, pw, ph, cell_size, values = cls._read_patch(br, channel_bits, positive_bias)
             cls.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
-        return canvas, color_space, downsampled, original_w, original_h, w, h, patch_count
+        return canvas, color_space, downsampled, original_w, original_h, w, h, has_alpha, channels, patch_count
 
     @classmethod
     def decompress(cls, data, max_patches=None):
@@ -1076,13 +1116,12 @@ class PBC3:
         if isinstance(data, str):
             with open(data, "rb") as f:
                 data = f.read()
-        canvas, color_space, downsampled, original_w, original_h, w, h, patch_count = cls._decode_to_canvas(data, max_patches=max_patches)
-        arr = np.clip(canvas, 0, 255).astype(np.uint8)
-        img = Image.fromarray(arr, color_space).convert("RGB")
+        canvas, color_space, downsampled, original_w, original_h, w, h, has_alpha, channels, patch_count = cls._decode_to_canvas(data, max_patches=max_patches)
+        img = cls._canvas_to_image(canvas, color_space, has_alpha)
         if downsampled:
             img = img.resize((original_w, original_h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
         cfg = PBC3Config(color_space=color_space)
-        return PBC3Result(img, data, cfg, None, time.perf_counter() - t0, len(data) * 8, original_w or w, original_h or h, w, h)
+        return PBC3Result(img, data, cfg, None, time.perf_counter() - t0, len(data) * 8, original_w or w, original_h or h, w, h, channels=channels)
 
     @classmethod
     def encode_file(cls, input_path, output_path, config=None, **kwargs):

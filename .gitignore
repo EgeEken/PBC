@@ -28,6 +28,7 @@ test_images/*
 
 # Compressed files
 *.pbc
+!GOLDEN_FILE.pbc
 
 hpt_data/
 
