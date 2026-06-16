@@ -7,196 +7,13 @@
 #
 # ====================================================================================================
 
-from dataclasses import dataclass, field
 import time
 import math
-import os
 import lzma
 import numpy as np
 from PIL import Image
-from matplotlib import pyplot as plt
 
-
-class BitWriter:
-    def __init__(self):
-        self.data = bytearray()
-        self.acc = 0
-        self.nbits = 0
-
-    def write(self, value, bitcount):
-        value = int(value)
-        if bitcount <= 0:
-            return
-        if value < 0 or value >= (1 << bitcount):
-            raise ValueError(f"value {value} does not fit in {bitcount} bits")
-        self.acc = (self.acc << bitcount) | value
-        self.nbits += bitcount
-        while self.nbits >= 8:
-            shift = self.nbits - 8
-            self.data.append((self.acc >> shift) & 255)
-            self.acc &= (1 << shift) - 1
-            self.nbits -= 8
-
-    def finish(self):
-        if self.nbits:
-            self.data.append((self.acc << (8 - self.nbits)) & 255)
-            self.acc = 0
-            self.nbits = 0
-        return bytes(self.data)
-
-
-class BitReader:
-    def __init__(self, data):
-        self.data = data
-        self.i = 0
-        self.acc = 0
-        self.nbits = 0
-
-    def read(self, bitcount):
-        while self.nbits < bitcount:
-            if self.i >= len(self.data):
-                raise EOFError("bitstream ended early")
-            self.acc = (self.acc << 8) | self.data[self.i]
-            self.i += 1
-            self.nbits += 8
-        shift = self.nbits - bitcount
-        value = (self.acc >> shift) & ((1 << bitcount) - 1)
-        self.acc &= (1 << shift) - 1
-        self.nbits -= bitcount
-        return value
-
-
-@dataclass
-class PBC3Config:
-    patch_count: int = 20
-    search_depth: int = 200
-    proposal_depth: int = 50
-    exact_depth: int = 10
-    min_patch_size: int = 16
-    max_patch_size: int = 400
-    min_cell_size: int = 1
-    max_cell_size: int = 64
-    cell_sizes_per_candidate: int = 3
-    top_k: int = 20
-    search_q_start: float = 0.4
-    search_q_end: float = 0.1
-    q_init: float = 0.7
-    q_start: float = 0.9
-    q_end: float = 0.9
-    color_space: str = "YCbCr"
-    channel_cycle: str = "Sum"
-    auto_downsample_init: bool = True
-    init_search_depth: int = 7
-    downsample_init_cell_size: int = 12
-    downsample_palette_bitcount: int = 6
-    downsample_rate: float = -1
-    auto_downsample_max_pixels: int = 250_000
-    patch_palette_bitcount: int = 2
-    patch_bitcount_mode: str = "constant"     # "constant" | "dynamic"
-    palette_mode: str = "generated"           # "generated" | "explicit" | "auto"
-    palette_difference_threshold: int = 0
-    palette_difference_threshold_mode: str = "constant"  # "constant" | "linear"
-    explicit_palette_max_bitcount: int = 3
-    quality_target_mae: float = 0.0  # >0: stop a channel once its mean abs error drops to/below this
-    mask_size: int = 4
-    anchor_block_size: int = 8
-    dynamic_patch_bitcount_min: int = 2
-    dynamic_patch_bitcount_max: int = 3
-    positive_bias: bool = True
-    random_seed: int = 2003
-    debug_mode: bool = False
-    debug_print: bool = False
-    debug_path: str = None
-
-    def __post_init__(self):
-        self.channel_cycle = str(self.channel_cycle)
-        self.patch_bitcount_mode = str(self.patch_bitcount_mode)
-
-    @classmethod
-    def fast(cls):
-        return cls(
-            patch_count=10,
-            search_depth=100,
-            proposal_depth=10,
-            exact_depth=5,
-            cell_sizes_per_candidate=1,
-            search_q_start=0.35,
-            q_init=0.5,
-            init_search_depth=7,
-            auto_downsample_max_pixels=200_000,
-        )
-
-
-@dataclass
-class PBC3Result:
-    image: Image.Image
-    data: bytes
-    config: PBC3Config
-    mse: float
-    encode_seconds: float
-    total_bits: int
-    original_width: int = None
-    original_height: int = None
-    working_width: int = None
-    working_height: int = None
-    timings: dict = field(default_factory=dict)
-    debug_path: str = None
-    channels: int = 3
-
-    @property
-    def original_bits(self):
-        w = self.original_width or self.image.width
-        h = self.original_height or self.image.height
-        return w * h * self.channels * 8
-
-    @property
-    def compressed_kb(self):
-        return self.total_bits / 8 / 1024
-
-    @property
-    def original_kb(self):
-        return self.original_bits / 8 / 1024
-
-    @property
-    def compression_rate(self):
-        return self.original_bits / self.total_bits if self.total_bits else float("inf")
-
-    @property
-    def compressed_percent(self):
-        return self.total_bits / self.original_bits * 100 if self.original_bits else 0
-
-    def save(self, path):
-        if self.data is None:
-            raise ValueError("result has no compressed data to save")
-        with open(path, "wb") as f:
-            f.write(self.data)
-
-    def verify(self):
-        if self.data is None:
-            return False
-        decoded = PBC3.decompress(self.data).image
-        return np.array_equal(np.asarray(self.image), np.asarray(decoded))
-
-    def show(self):
-        fig = plt.figure(figsize=(8, 7.4), dpi=130)
-        gs = fig.add_gridspec(3, 1, height_ratios=[0.09, 0.16, 1.0], hspace=0.04)
-        title_ax = fig.add_subplot(gs[0])
-        info_ax = fig.add_subplot(gs[1])
-        image_ax = fig.add_subplot(gs[2])
-        for ax in (title_ax, info_ax, image_ax):
-            ax.axis("off")
-        title_ax.text(0.5, 0.5, "PBC3 Result", ha="center", va="center", fontsize=16, fontweight="bold")
-        mse = "N/A" if self.mse is None else f"{self.mse:.2f}"
-        seconds = "N/A" if self.encode_seconds is None else f"{self.encode_seconds:.3f}s"
-        debug = f"   |   Debug: {os.path.basename(self.debug_path)}" if self.debug_path else ""
-        info = (
-            f"MSE: {mse}   |   Compressed: {self.compressed_kb:.2f} KB   |   Original: {self.original_kb:.2f} KB\n"
-            f"Compression: {self.compression_rate:.2f}x ({self.compressed_percent:.2f}%)   |   Time: {seconds}{debug}"
-        )
-        info_ax.text(0.5, 0.5, info, ha="center", va="center", color="white", fontsize=10, linespacing=1.35,
-                     bbox=dict(boxstyle="round,pad=0.5", facecolor="black", alpha=0.72, edgecolor="none"))
-        image_ax.imshow(self.image)
-        plt.show()
+from pbc3_types import BitWriter, BitReader, PBC3Config, PBC3Result  # noqa: F401 (re-exported)
 
 
 class PBC3:
@@ -357,7 +174,6 @@ class PBC3:
 
     @classmethod
     def _mask_from_values(cls, values, mask_size, negative_max=255, positive_max=255, positive_bias=True):
-        # Vectorized equivalent of looping _mask_index_for_value over every cell.
         mask = [0] * mask_size
         mask[0] = 1
         pos_count, neg_count = cls._range_counts(mask_size, negative_max, positive_max, positive_bias)
@@ -958,17 +774,14 @@ class PBC3:
         return downsampled, original_w, original_h, w, h, color_space, channels, channel_bits, positive_bias, has_alpha, patch_count, base_values
 
     @classmethod
-    def compress(cls, image, config=None, **kwargs):
+    def prepare(cls, image, config=None, **kwargs):
+        """Build the working-resolution target once so it can be reused across many
+        compress() runs on the same image (skips setup_downsample per run). Reuse is
+        valid only while color_space / downsample settings stay the same."""
         if config is None:
             config = PBC3Config(**kwargs)
         elif kwargs:
             config = PBC3Config(**{**config.__dict__, **kwargs})
-
-        t0 = time.perf_counter()
-        timings = {}
-        debug_lines = []
-
-        t = time.perf_counter()
         src = cls._to_image(image)
         has_alpha = cls._has_alpha(src)
         if has_alpha:
@@ -988,8 +801,32 @@ class PBC3:
         if has_alpha:
             alpha_ds = alpha_img.resize(color_ds.size, cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP) if downsampled else alpha_img
             arr = np.dstack([arr, np.asarray(alpha_ds, dtype=np.uint8)])
-        target = arr.astype(np.int32)
         h, w, channels = arr.shape
+        return {
+            "arr": arr, "target": arr.astype(np.int32), "h": h, "w": w, "channels": channels,
+            "original_w": original_w, "original_h": original_h, "downsampled": downsampled,
+            "has_alpha": has_alpha, "orig_compare": orig_compare, "rate": rate,
+            "color_id": cls.COLOR_SPACES[config.color_space], "color_space": config.color_space,
+        }
+
+    @classmethod
+    def compress(cls, image, config=None, *, mse_full_res=True, reuse=None, **kwargs):
+        if config is None:
+            config = PBC3Config(**kwargs)
+        elif kwargs:
+            config = PBC3Config(**{**config.__dict__, **kwargs})
+
+        t0 = time.perf_counter()
+        timings = {}
+        debug_lines = []
+
+        t = time.perf_counter()
+        prep = reuse if reuse is not None else cls.prepare(image, config)
+        arr, target = prep["arr"], prep["target"]
+        h, w, channels = prep["h"], prep["w"], prep["channels"]
+        original_w, original_h = prep["original_w"], prep["original_h"]
+        downsampled, has_alpha = prep["downsampled"], prep["has_alpha"]
+        orig_compare, color_id, rate = prep["orig_compare"], prep["color_id"], prep["rate"]
         cls._add_time(timings, "setup_downsample", time.perf_counter() - t)
 
         if w > 65535 or h > 65535 or original_w > 65535 or original_h > 65535:
@@ -1007,7 +844,6 @@ class PBC3:
         if str(config.palette_mode).lower() not in {"generated", "explicit", "auto"}:
             raise ValueError('palette_mode must be "generated", "explicit", or "auto"')
 
-        color_id = cls.COLOR_SPACES[config.color_space]
         channel_bits = max(1, math.ceil(math.log2(channels)))
         base_values = [int(round(float(np.mean(arr[:, :, c])))) for c in range(channels)]
         canvas = np.zeros((h, w, channels), dtype=np.int32)
@@ -1072,11 +908,12 @@ class PBC3:
 
         t = time.perf_counter()
         out_img = cls._canvas_to_image(canvas, config.color_space, has_alpha)
-        if downsampled:
-            out_img = out_img.resize((original_w, original_h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
-        target_arr = np.asarray(orig_compare, dtype=np.float32)
-        out_arr = np.asarray(out_img, dtype=np.float32)
-        mse = float(np.mean((target_arr - out_arr) ** 2))
+        if mse_full_res:
+            if downsampled:
+                out_img = out_img.resize((original_w, original_h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
+            mse = float(np.mean((np.asarray(orig_compare, dtype=np.float32) - np.asarray(out_img, dtype=np.float32)) ** 2))
+        else:
+            mse = float(np.mean((arr.astype(np.float32) - np.clip(canvas, 0, 255).astype(np.float32)) ** 2))
         cls._add_time(timings, "finalize_mse", time.perf_counter() - t)
 
         debug_path = None
