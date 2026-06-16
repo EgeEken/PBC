@@ -78,10 +78,10 @@ class PBC3Config:
     max_cell_size: int = 64
     cell_sizes_per_candidate: int = 3
     top_k: int = 20
-    search_q_start: float = 0.4               # stage-1 pre-score quality weight
+    search_q_start: float = 0.4
     search_q_end: float = 0.1
-    q_init: float = 0.7                       # downsample-init RD weight
-    q_start: float = 0.9                      # mid + exact scorer quality weight
+    q_init: float = 0.7
+    q_start: float = 0.9
     q_end: float = 0.9
     color_space: str = "YCbCr"
     channel_cycle: str = "Sum"
@@ -97,7 +97,7 @@ class PBC3Config:
     palette_difference_threshold: int = 0
     palette_difference_threshold_mode: str = "constant"  # "constant" | "linear"
     explicit_palette_max_bitcount: int = 3
-    quality_target_mae: float = 0.0           # >0: stop a channel once its mean abs error drops to/below this
+    quality_target_mae: float = 0.0  # >0: stop a channel once its mean abs error drops to/below this
     mask_size: int = 4
     anchor_block_size: int = 8
     dynamic_patch_bitcount_min: int = 2
@@ -112,7 +112,6 @@ class PBC3Config:
         self.channel_cycle = str(self.channel_cycle)
         self.patch_bitcount_mode = str(self.patch_bitcount_mode)
 
-    # fast mode init (overrides only; everything else uses defaults)
     @classmethod
     def fast(cls):
         return cls(
@@ -212,6 +211,7 @@ class PBC3:
     COLOR_SPACE_NAMES = {0: "RGB", 1: "YCbCr"}
     RESAMPLE_FILTER = Image.Resampling.BICUBIC
     RESAMPLE_REDUCING_GAP = None
+    USE_NUMBA_RESAMPLE = False  # opt-in numba bicubic (pbc3_resample.py); PIL by default
 
     @staticmethod
     def _to_image(image):
@@ -357,14 +357,26 @@ class PBC3:
 
     @classmethod
     def _mask_from_values(cls, values, mask_size, negative_max=255, positive_max=255, positive_bias=True):
+        # Vectorized equivalent of looping _mask_index_for_value over every cell.
         mask = [0] * mask_size
         mask[0] = 1
-        flat = np.rint(values).astype(np.int32).ravel()
-        for value in flat:
-            value = int(np.clip(value, -negative_max, positive_max))
-            idx = cls._mask_index_for_value(value, mask_size, negative_max, positive_max, positive_bias)
-            if idx is not None and idx < mask_size:
-                mask[idx] = 1
+        pos_count, neg_count = cls._range_counts(mask_size, negative_max, positive_max, positive_bias)
+        flat = np.clip(np.rint(np.asarray(values)).astype(np.int32).ravel(), -negative_max, positive_max)
+        if pos_count > 0 and positive_max > 0:
+            pos = flat[flat > 0]
+            if pos.size:
+                bins = 1 + np.minimum((np.minimum(pos, positive_max) - 1) * pos_count // positive_max, pos_count - 1)
+                for b in np.unique(bins):
+                    if b < mask_size:
+                        mask[int(b)] = 1
+        if neg_count > 0 and negative_max > 0:
+            neg = flat[flat < 0]
+            if neg.size:
+                mag = np.minimum(-neg, negative_max)
+                bins = 1 + pos_count + np.minimum((mag - 1) * neg_count // negative_max, neg_count - 1)
+                for b in np.unique(bins):
+                    if b < mask_size:
+                        mask[int(b)] = 1
         return mask
 
     @classmethod
@@ -424,8 +436,6 @@ class PBC3:
 
     @classmethod
     def _top_values_palette(cls, small, bitcount, threshold):
-        """Explicit palette: bin values (width=threshold) to seed centroids, then
-        refine with weighted 1-D Lloyd k-means. Index 0 is pinned to 0."""
         size = 1 << bitcount
         flat = np.clip(np.rint(np.asarray(small)).astype(np.int32).ravel(), -255, 255)
         vals, counts = np.unique(flat, return_counts=True)
@@ -469,11 +479,16 @@ class PBC3:
     @classmethod
     def signed_resample(cls, values, out_h, out_w):
         values = np.asarray(values, dtype=np.float32)
+        out_h, out_w = int(out_h), int(out_w)
         if values.shape == (out_h, out_w):
             return np.rint(values).astype(np.int16)
-        img = Image.fromarray(values)
-        resized = img.resize((int(out_w), int(out_h)), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
-        return np.rint(np.asarray(resized, dtype=np.float32)).astype(np.int16)
+        if cls.USE_NUMBA_RESAMPLE:
+            from pbc3_resample import resample_bicubic
+            out = resample_bicubic(values, out_h, out_w)
+        else:
+            resized = Image.fromarray(values).resize((out_w, out_h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
+            out = np.asarray(resized, dtype=np.float32)
+        return np.rint(out).astype(np.int16)
 
     @classmethod
     def signed_resample_cells(cls, values, cell_size):
@@ -746,8 +761,6 @@ class PBC3:
 
     @classmethod
     def _auto_init_candidates(cls, residual, w, h, config):
-        """Heuristic ordered (cell, bits) candidates: higher spatial frequency ->
-        smaller cell, higher variance -> more bits. Bounded set for a cheap search."""
         mean_abs = float(np.mean(np.abs(residual))) + 1.0
         gx = float(np.mean(np.abs(np.diff(residual, axis=1)))) if residual.shape[1] > 1 else 0.0
         gy = float(np.mean(np.abs(np.diff(residual, axis=0)))) if residual.shape[0] > 1 else 0.0
