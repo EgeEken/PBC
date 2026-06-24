@@ -28,3 +28,5 @@ test_images/*
 
 # Compressed files
 *.pbc
+
+testing.ipynb
