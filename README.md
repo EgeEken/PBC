@@ -3,29 +3,32 @@
 An unconventional lossy image compression algorithm I designed. It compresses image data as a series of approved "brush stroke" instructions. The core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving a lot of space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
 
 
-### Current latest version: V3.0 (pre-release)
-### Pre-Release Demo deployed on [Hugging Face Spaces](https://egeeken-pbc.hf.space/)
+### Current latest version: V3.0
+### Demo deployed on [Hugging Face Spaces](https://egeeken-pbc.hf.space/)
 <img width="1515" height="863" alt="image" src="https://github.com/user-attachments/assets/e607263a-f323-4696-925f-838a3589ed21" />
 
 
 ---
-# Current version (V2.4) Demonstration
+# Current version (V3.0) Demonstration
 ---
 
-### (332x compression)
-<img width=60% alt="image" src="https://github.com/user-attachments/assets/09ac32bf-7b04-4335-96f7-7dac0ef38d9f" />
+<img width="630" height="514" alt="image" src="https://github.com/user-attachments/assets/f27fc40f-d5d6-41f1-8ec4-f9a0c82744c9" />
+<video src="https://github.com/user-attachments/assets/6a4755dd-f81c-4411-b674-6e1823d601de"> </video>
 
-<video src="https://github.com/user-attachments/assets/271245eb-eb68-4ac0-8227-c72cdb9527a4"> </video>
+### Comparison to JPEG
 
-### (167x compression)
-<img width=60% alt="image" src="https://github.com/user-attachments/assets/105912bb-a5f7-4136-a36b-7c997ac7fd95" /> 
+Much higher quality with 3 times smaller file size (this is as small as JPEG can go)
+<img width="1238" height="536" alt="image" src="https://github.com/user-attachments/assets/e480cef1-1811-40c5-a098-c4a03c6def35" />
+Zoomed in
+<img width="1180" height="390" alt="image" src="https://github.com/user-attachments/assets/766e6f84-19cd-4463-bae6-1992e093e409" />
 
-<video src="https://github.com/user-attachments/assets/dc0f9080-32b7-4fde-91e1-10febc6fdd81"> </video>
+### Comparison to AVIF (The state of the art in extreme image compression)
 
-### Comparison to JPEG at equivalent compression rate
+Can compress further than AVIF, while almost matching its rate distortion at the lowest file sizes, but AVIF is still better.
+<img width="1220" height="476" alt="image" src="https://github.com/user-attachments/assets/8298ad8e-6b31-442b-b936-11dc90de4acd" />
+Unique benefit to PBC algorithm: The algorithm achieves essentially perfect reconstruction of blurry unfocused backgrounds at a nearly negligible cost. This is a benefit of the iterative residual encoding over the transformative encoding most of the state of the art uses which causes artifacts for these unfocused sections of an image at low quality settings.
+<img width="1181" height="389" alt="image" src="https://github.com/user-attachments/assets/c83e6177-407e-4c53-86b6-cec3061874b9" />
 
-<img width="4623" height="1779" alt="image" src="https://github.com/user-attachments/assets/a0373b46-00b7-435f-9090-6540e88de6c6" />
-<img width="5370" height="1670" alt="image" src="https://github.com/user-attachments/assets/2867f5fc-d9d5-47c5-ae53-ffe1a4205c91" />
 
 ---
 # Development / Version History
@@ -136,4 +139,48 @@ The codebase had gotten messy over the course of like a year of adding new featu
 
 <img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/af63b41d-306e-4e7e-871f-a00e935f779b" />
 
+---
 
+## V3.0
+
+### Complete algorithm overhaul, masssive gains in quality, compression and speed. 
+
+Changed the guided random placements of PBC2 into a grid-patch system that eliminates residual error one patch at a time. Maximizing quality gained per bit added using a search algorithm. Parts of the search algorithm are then distilled into a supervised tiny neural network, which is then placed in a RL training environment to maximize its efficiency further.
+
+### Quality and Compression
+
+PBC3.0 achieves much higher quality than PBC2.4, at even smaller file sizes. The quality ceiling has been raised massively, although there still is one, lossless encoding is not yet available (Intended feature for 3.1 or maybe 3.2 depending on the rate of progress)
+
+<img width="563" height="310" alt="image" src="https://github.com/user-attachments/assets/b2c6c110-90d4-4d65-b777-23ea55b4683c" />
+
+
+PBC3.0 now very favorably compares to JPEG's higher compression settings, especially at higher resolutions. Achieving up to 20 times better compression while conserving more quality.
+
+<img width="1220" height="555" alt="image" src="https://github.com/user-attachments/assets/8ee12fce-0718-49ea-83a8-eb7b792743da" />
+
+<img width="1229" height="552" alt="image" src="https://github.com/user-attachments/assets/8ea8ab83-03ad-4488-baa4-6f1029625fcf" />
+
+
+Rate distortion chart comparing PBC3.0 (red) to JPEG (blue) for 12 MP images. While the quality ceiling is still a problem to tackle, on the extreme compression space PBC completely dominates.
+
+<img width="1201" height="524" alt="image" src="https://github.com/user-attachments/assets/f1464b74-057f-42a9-aad1-5c4bd7e548b0" />
+
+
+Rate distortion chart comparing PBC3.0 to various state of the art image compression codecs. While the state of the art for lossy compression is still far ahead of PBC, the gap has closed up much more compared to PBC2.4, and more improvements are still on the way.
+
+<img width="1199" height="526" alt="image" src="https://github.com/user-attachments/assets/94f5cec5-a7de-4f41-b812-92a60514af8d" />
+
+
+### Speed
+
+PBC3.0 architecture is much more efficient than 2.4, achieving much better speed. In it's current state (coded in python, no multi-threading) it's already comparable to the state of the art image codecs.
+
+<img width="740" height="274" alt="image" src="https://github.com/user-attachments/assets/efc850cb-44bd-4c9e-90bd-426915a643cc" />
+
+Outliers (JXL encoding under q3 and JPEG2000 decoding over q70 are *incredibly* slow) removed, PBC3 remains competitive
+
+<img width="744" height="273" alt="image" src="https://github.com/user-attachments/assets/db471235-ea37-4644-8812-c9a6566cf96e" />
+
+The roadmap for improvements has a bunch of obvious speedups, so expect these results to get much better.
+
+### 
