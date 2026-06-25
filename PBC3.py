@@ -16,7 +16,6 @@ from pbc3_types import BitWriter, BitReader, PBC3Config, PBC3Result
 from pbc3_kernels import NUMBA_AVAILABLE as _NUMBA, box_cell_bound as _nb_box_cell_bound, base_cell_size as _nb_base_cell_size, anchor_block_scores as _nb_anchor_block_scores
 from pbc3_heads import ChannelState, DownsampleInitHead, SearchHead, FillerHead
 
-
 class PBC3:
     MAGIC = b"PBC3"
     VERSION = 0
@@ -642,6 +641,10 @@ class PBC3:
             current_channel = cls._choose_channel(scores, step, channels, config.channel_cycle)
             boxes = None if filler.learned is not None else search.propose(target, canvas, config, rng, step, current_channel, timings)
             patch, values = filler.select(target, canvas, config, rng, channel_bits, step, current_channel, boxes, len(patches), debug_lines, timings)
+            # TODO: CHECK THIS AGAIN AFTER BENCHMARK CHECK
+            #if patch is None and filler.learned is not None:
+            #    boxes = search.propose(target, canvas, config, rng, step, current_channel, timings)
+            #    patch, values = filler.select_heuristic(target, canvas, config, channel_bits, step, boxes, len(patches), debug_lines, timings)
             if patch is None:
                 break
             t = time.perf_counter(); c = patch["channel"]
