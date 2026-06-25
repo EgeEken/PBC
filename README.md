@@ -5,7 +5,8 @@ An unconventional lossy image compression algorithm I designed. It compresses im
 
 ### Current latest version: V3.0
 ### Demo deployed on [Hugging Face Spaces](https://egeeken-pbc.hf.space/)
-<img width="1515" height="863" alt="image" src="https://github.com/user-attachments/assets/e607263a-f323-4696-925f-838a3589ed21" />
+<img width="1359" height="821" alt="image" src="https://github.com/user-attachments/assets/5582a25f-7b21-4525-bf92-d94c94a94799" />
+
 
 
 ---
@@ -19,14 +20,14 @@ An unconventional lossy image compression algorithm I designed. It compresses im
 
 Much higher quality with 3 times smaller file size (this is as small as JPEG can go)
 <img width="1238" height="536" alt="image" src="https://github.com/user-attachments/assets/e480cef1-1811-40c5-a098-c4a03c6def35" />
-Zoomed in
+Zoomed in (I want to reiterate: The PBC file on the right is 3 times smaller than the JPEG on the left)
 <img width="1180" height="390" alt="image" src="https://github.com/user-attachments/assets/766e6f84-19cd-4463-bae6-1992e093e409" />
 
 ### Comparison to AVIF (The state of the art in extreme image compression)
 
 Can compress further than AVIF, while almost matching its rate distortion at the lowest file sizes, but AVIF is still better.
 <img width="1220" height="476" alt="image" src="https://github.com/user-attachments/assets/8298ad8e-6b31-442b-b936-11dc90de4acd" />
-Unique benefit to PBC algorithm: The algorithm achieves essentially perfect reconstruction of blurry unfocused backgrounds at a nearly negligible cost. This is a benefit of the iterative residual encoding over the transformative encoding most of the state of the art uses which causes artifacts for these unfocused sections of an image at low quality settings.
+Unique benefit to PBC architecture: The algorithm achieves essentially perfect reconstruction of blurry unfocused backgrounds at a nearly negligible cost. This is a benefit of the iterative residual encoding over the transformative encoding most of the established codecs use, which causes artifacts for these unfocused sections of an image at low quality settings.
 <img width="1181" height="389" alt="image" src="https://github.com/user-attachments/assets/c83e6177-407e-4c53-86b6-cec3061874b9" />
 
 
@@ -173,13 +174,14 @@ Rate distortion chart comparing PBC3.0 to various state of the art image compres
 
 ### Speed
 
-PBC3.0 architecture is much more efficient than 2.4, achieving much better speed. In it's current state (coded in python, no multi-threading) it's already comparable to the state of the art image codecs.
+PBC3.0 architecture is much more efficient than 2.4, achieving much better speed. In it's current state (coded in python, no multi-threading) it's already comparable to the state of the art image codecs, encoding faster than AVIF and JPEG XL.
 
 <img width="740" height="274" alt="image" src="https://github.com/user-attachments/assets/efc850cb-44bd-4c9e-90bd-426915a643cc" />
 
 Outliers (JXL encoding under q3 and JPEG2000 decoding over q70 are *incredibly* slow) removed, PBC3 remains competitive
 
-<img width="744" height="273" alt="image" src="https://github.com/user-attachments/assets/db471235-ea37-4644-8812-c9a6566cf96e" />
+<img width="1027" height="399" alt="image" src="https://github.com/user-attachments/assets/1c860ae8-5efb-4445-84c0-4a6b2778089b" />
+
 
 The roadmap for improvements has a bunch of obvious speedups, so expect these results to get much better.
 
