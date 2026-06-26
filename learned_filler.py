@@ -117,7 +117,17 @@ def propose_boxes(target, canvas, config, rng, channel, step):
 
 # ========= rl_state.py  END ================
 
-_CACHE = {}
+_MODEL_CACHE = {}
+
+
+def _load_npz_cached(path):
+    key = os.path.abspath(path)
+    data = _MODEL_CACHE.get(key)
+    if data is None:
+        with np.load(path, allow_pickle=True) as npz:
+            data = {name: npz[name] for name in npz.files}
+        _MODEL_CACHE[key] = data
+    return data
 
 
 def _silu(x):
@@ -146,18 +156,10 @@ class LearnedFiller:
 
     @classmethod
     def load(cls, path, top_k=1, q_override=-1.0, candidates=1, device=None):
-        key = os.path.abspath(path)
-        inst = _CACHE.get(key)
-        if inst is None:
-            npz = np.load(path, allow_pickle=True)
-            inst = FactoredFiller(npz, q_override) if "head_sizes" in npz.files \
-                else cls(npz, top_k, q_override, candidates)
-            _CACHE[key] = inst
-        if isinstance(inst, FactoredFiller):
-            inst.set_lambda(q_override)
-        else:
-            inst.top_k = int(top_k); inst.q_override = float(q_override); inst.candidates = int(candidates)
-        return inst
+        npz = _load_npz_cached(path)
+        if "head_sizes" in npz:
+            return FactoredFiller(npz, q_override)
+        return cls(npz, top_k, q_override, candidates)
 
     def _forward(self, x):
         h = x

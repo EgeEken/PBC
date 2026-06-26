@@ -14,7 +14,7 @@ class ChannelState:
 
     @property
     def visible_canvas(self):
-        return np.clip(self.canvas, 0, 255).astype(np.int32)
+        return np.clip(self.canvas, 0, 255)
 
     def update_score(self, mode="Sum"):
         if self.target is None:
@@ -34,8 +34,24 @@ class DownsampleInitHead:
     def __init__(self, codec):
         self.codec = codec
 
+    def auto_init_candidates(self, residual, w, h, config):
+        mean_abs = float(np.mean(np.abs(residual))) + 1.0
+        gx = float(np.mean(np.abs(np.diff(residual, axis=1)))) if residual.shape[1] > 1 else 0.0
+        gy = float(np.mean(np.abs(np.diff(residual, axis=0)))) if residual.shape[0] > 1 else 0.0
+        freq = (gx + gy) / mean_abs; std = float(np.std(residual))
+        cell0 = 4 if freq >= 1.0 else 8 if freq >= 0.5 else 12 if freq >= 0.25 else 16 if freq >= 0.12 else 24
+        bits0 = 3 if std < 6 else 4 if std < 12 else 5 if std < 24 else 6
+        lo_c, hi_c = max(1, int(config.min_cell_size)), min(int(config.max_cell_size), max(w, h))
+        max_b = int(config.downsample_palette_bitcount)
+        out = []
+        for cell, bits in [(cell0, bits0), (cell0, bits0 - 1), (cell0, bits0 + 1), (cell0 // 2, bits0), (cell0 * 2, bits0), (cell0 // 2, bits0 - 1), (cell0 * 2, bits0 + 1), (cell0 // 4, bits0), (cell0 * 4, bits0), (cell0 // 2, bits0 + 1), (cell0 * 2, bits0 - 1), (cell0, bits0 + 2), (cell0, bits0 - 2), (cell0 // 4, bits0 + 1), (cell0 * 4, bits0 - 1)]:
+            pair = (max(lo_c, min(hi_c, int(cell))), max(1, min(max_b, int(bits))))
+            if pair not in out:
+                out.append(pair)
+        return out
+
     def candidates(self, residual, w, h, config):
-        return self.codec._auto_init_candidates(residual, w, h, config)[:max(1, int(config.init_search_depth))]
+        return self.auto_init_candidates(residual, w, h, config)[:max(1, int(config.init_search_depth))]
 
     def select(self, channel, target, canvas, w, h, config, channel_bits):
         codec = self.codec
@@ -106,19 +122,36 @@ class FillerHead:
     def __init__(self, codec, config=None, channel_bits=None, image_shape=None, init_patches=None, original_size=None):
         self.codec = codec
         self.learned = None
-        if config is not None and getattr(config, "learned_filler_enabled", False):
-            from learned_filler import LearnedFiller
-            self.learned = LearnedFiller.load(
-                config.learned_filler_model_path,
-                top_k=config.learned_filler_top_k,
-                q_override=config.learned_filler_q,
-                candidates=getattr(config, "learned_filler_candidates", 1),
-            )
+        if config is None or not getattr(config, "learned_filler_enabled", False):
+            return
+
+        from learned_filler import LearnedFiller
+        self.learned = LearnedFiller.load(
+            config.learned_filler_model_path,
+            top_k=config.learned_filler_top_k,
+            q_override=config.learned_filler_q,
+            candidates=getattr(config, "learned_filler_candidates", 1),
+        )
+        if hasattr(self.learned, "begin_encode"):
+            h, w, channels = image_shape
+            original_w, original_h = original_size
+            self.learned.begin_encode(config, channels, channel_bits, w, h, original_w, original_h, init_patches or [])
 
     def select(self, target, canvas, config, rng, channel_bits, step, current_channel, boxes, canvas_patches, debug_lines, timings):
         if self.learned is not None:
             return self.learned.select_patch(target, canvas, config, rng, channel_bits, step, current_channel)
         return self.select_heuristic(target, canvas, config, channel_bits, step, boxes, canvas_patches, debug_lines, timings)
+    
+    def candidate_cell_sizes(self, base, config):
+        cells = []
+        for off in [0, 1, -1, 2, -2, 3, -3]:
+            if len(cells) >= max(1, int(config.cell_sizes_per_candidate)):
+                break
+            cell = int(round(base * (2 ** off)))
+            cell = max(int(config.min_cell_size), min(int(config.max_cell_size), cell))
+            if cell not in cells:
+                cells.append(cell)
+        return cells
 
     def select_heuristic(self, target, canvas, config, channel_bits, step, boxes, canvas_patches, debug_lines, timings):
         codec = self.codec
@@ -140,7 +173,7 @@ class FillerHead:
         for c, x, y, bw, bh in boxes:
             hidden_residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
             base_cell = codec._base_cell_size(hidden_residual, config)
-            for cell_size in codec._candidate_cell_sizes(base_cell, config):
+            for cell_size in self.candidate_cell_sizes(base_cell, config):
                 cell_size = max(1, min(cell_size, bw, bh))
                 bound = codec._box_cell_bound(integral_signed, x, y, bw, bh, cell_size)
                 if bound <= 0:

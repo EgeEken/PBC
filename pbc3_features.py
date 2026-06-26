@@ -72,9 +72,10 @@ def extract_cheap(names, target, canvas, box, step, q, image_w, image_h, patch_c
         "pos_frac": (flat > 0).mean(), "neg_frac": (flat < 0).mean(), "zeroish_frac": (absflat < 2).mean(),
         "target_mean": t.mean(), "target_std": t.std(), "canvas_mean": cv.mean(), "canvas_std": cv.std(),
     }
-    if {"mean_abs_dx", "grad_energy"} & set(names):
+    nameset = set(names)
+    if {"mean_abs_dx", "grad_energy"} & nameset:
         d["mean_abs_dx"] = float(np.abs(np.diff(res, axis=1)).mean()) if bw > 1 else 0.0
-    if {"mean_abs_dy", "grad_energy"} & set(names):
+    if {"mean_abs_dy", "grad_energy"} & nameset:
         d["mean_abs_dy"] = float(np.abs(np.diff(res, axis=0)).mean()) if bh > 1 else 0.0
     if "grad_energy" in names:
         d["grad_energy"] = d["mean_abs_dx"] + d["mean_abs_dy"]

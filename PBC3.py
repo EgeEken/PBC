@@ -469,35 +469,6 @@ class PBC3:
         return 4
 
     @classmethod
-    def _candidate_cell_sizes(cls, base, config):
-        cells = []
-        for off in [0, 1, -1, 2, -2, 3, -3]:
-            if len(cells) >= max(1, int(config.cell_sizes_per_candidate)):
-                break
-            cell = int(round(base * (2 ** off)))
-            cell = max(int(config.min_cell_size), min(int(config.max_cell_size), cell))
-            if cell not in cells:
-                cells.append(cell)
-        return cells
-
-    @classmethod
-    def _auto_init_candidates(cls, residual, w, h, config):
-        mean_abs = float(np.mean(np.abs(residual))) + 1.0
-        gx = float(np.mean(np.abs(np.diff(residual, axis=1)))) if residual.shape[1] > 1 else 0.0
-        gy = float(np.mean(np.abs(np.diff(residual, axis=0)))) if residual.shape[0] > 1 else 0.0
-        freq = (gx + gy) / mean_abs; std = float(np.std(residual))
-        cell0 = 4 if freq >= 1.0 else 8 if freq >= 0.5 else 12 if freq >= 0.25 else 16 if freq >= 0.12 else 24
-        bits0 = 3 if std < 6 else 4 if std < 12 else 5 if std < 24 else 6
-        lo_c, hi_c = max(1, int(config.min_cell_size)), min(int(config.max_cell_size), max(w, h))
-        max_b = int(config.downsample_palette_bitcount)
-        out = []
-        for cell, bits in [(cell0, bits0), (cell0, bits0 - 1), (cell0, bits0 + 1), (cell0 // 2, bits0), (cell0 * 2, bits0), (cell0 // 2, bits0 - 1), (cell0 * 2, bits0 + 1), (cell0 // 4, bits0), (cell0 * 4, bits0), (cell0 // 2, bits0 + 1), (cell0 * 2, bits0 - 1), (cell0, bits0 + 2), (cell0, bits0 - 2), (cell0 // 4, bits0 + 1), (cell0 * 4, bits0 - 1)]:
-            pair = (max(lo_c, min(hi_c, int(cell))), max(1, min(max_b, int(bits))))
-            if pair not in out:
-                out.append(pair)
-        return out
-
-    @classmethod
     def _select_init(cls, c, target, canvas, w, h, config, channel_bits):
         return DownsampleInitHead(cls).select(c, target, canvas, w, h, config, channel_bits)
 
@@ -630,15 +601,17 @@ class PBC3:
         cls._add_time(timings, "init_layer", time.perf_counter() - t)
         if frame_every:
             yield {"event": "frame", "step": 0, "total": int(config.patch_count), "image": cls._canvas_to_image(canvas, config.color_space, has_alpha)}
-        channel_states = [ChannelState(c, target, canvas) for c in range(channels)]
+        channel_scores = [
+            float(np.sum(np.abs(target[:, :, c] - np.clip(canvas[:, :, c], 0, 255))))
+            for c in range(channels)
+        ]
         quality_target = float(config.quality_target_mae)
         filler = FillerHead(cls, config, channel_bits, (h, w, channels), patches, (original_w, original_h))
         search = SearchHead(cls)
         rng = np.random.default_rng(config.random_seed)
         applied = 0; t_patch_total = time.perf_counter()
         for step in range(1, max(0, int(config.patch_count)) + 1):
-            scores = [st.score for st in channel_states]
-            current_channel = cls._choose_channel(scores, step, channels, config.channel_cycle)
+            current_channel = cls._choose_channel(channel_scores, step, channels, config.channel_cycle)
             boxes = None if filler.learned is not None else search.propose(target, canvas, config, rng, step, current_channel, timings)
             patch, values = filler.select(target, canvas, config, rng, channel_bits, step, current_channel, boxes, len(patches), debug_lines, timings)
             # TODO: CHECK THIS AGAIN AFTER BENCHMARK CHECK
@@ -649,16 +622,20 @@ class PBC3:
                 break
             t = time.perf_counter(); c = patch["channel"]
             cls.apply_grid(canvas[:, :, c], patch["x"], patch["y"], patch["w"], patch["h"], patch["cell_size"], values)
-            patches.append(patch); channel_states[c].update_score(config.channel_cycle)
+            patches.append(patch)
+            channel_scores[c] = float(np.sum(np.abs(target[:, :, c] - np.clip(canvas[:, :, c], 0, 255))))
             cls._add_time(timings, "apply_selected", time.perf_counter() - t)
             applied += 1
             if warmup_on and not did_warmup and applied == warmup_patches:
                 ts = time.perf_counter(); canvas = cls._resize_canvas(canvas, warm_w, warm_h); target = warm_target
-                channel_states = [ChannelState(c, target, canvas) for c in range(channels)]
+                channel_scores = [
+                    float(np.sum(np.abs(target[:, :, c] - np.clip(canvas[:, :, c], 0, 255))))
+                    for c in range(channels)
+                ]
                 warmup_split = len(patches); did_warmup = True
                 cls._add_time(timings, "warmup_switch", time.perf_counter() - ts)
             if config.debug_mode:
-                debug_lines.append(cls._debug_line("APPLIED", patch_step=step, stream_patch=len(patches), channel=c, channel_score=f"{channel_states[c].score:.4f}", x=patch["x"], y=patch["y"], w=patch["w"], h=patch["h"], cell_size=patch["cell_size"]))
+                debug_lines.append(cls._debug_line("APPLIED", patch_step=step, stream_patch=len(patches), channel=c, channel_score=f"{channel_scores[c]:.4f}", x=patch["x"], y=patch["y"], w=patch["w"], h=patch["h"], cell_size=patch["cell_size"]))
             if config.debug_print:
                 print("|", end="", flush=True)
             if frame_every and applied % frame_every == 0:
@@ -717,7 +694,7 @@ class PBC3:
             if warmup_on and idx == warmup_split:
                 canvas = cls._resize_canvas(canvas, warm_w, warm_h)
             channel, x, y, pw, ph, cell_size, values, _ = cls._read_patch(br, channel_bits, positive_bias)
-            ChannelState(channel, None, canvas).apply(cls, {"x": x, "y": y, "w": pw, "h": ph, "cell_size": cell_size}, values)
+            cls.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
         return canvas, color_space, downsampled, original_w, original_h, canvas.shape[1], canvas.shape[0], has_alpha, channels, patch_count
 
     @classmethod
