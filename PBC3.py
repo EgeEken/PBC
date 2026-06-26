@@ -28,7 +28,6 @@ class PBC3:
     COLOR_SPACE_NAMES = {0: "RGB", 1: "YCbCr"}
     RESAMPLE_FILTER = Image.Resampling.BICUBIC
     RESAMPLE_REDUCING_GAP = None
-    USE_NUMBA_RESAMPLE = False
 
     @staticmethod
     def _to_image(image):
@@ -268,12 +267,8 @@ class PBC3:
         out_h, out_w = int(out_h), int(out_w)
         if values.shape == (out_h, out_w):
             return np.rint(values).astype(np.int16)
-        if cls.USE_NUMBA_RESAMPLE:
-            from pbc3_resample import resample_bicubic
-            out = resample_bicubic(values, out_h, out_w)
-        else:
-            resized = Image.fromarray(values).resize((out_w, out_h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
-            out = np.asarray(resized, dtype=np.float32)
+        resized = Image.fromarray(values).resize((out_w, out_h), cls.RESAMPLE_FILTER, reducing_gap=cls.RESAMPLE_REDUCING_GAP)
+        out = np.asarray(resized, dtype=np.float32)
         return np.rint(out).astype(np.int16)
 
     @classmethod
