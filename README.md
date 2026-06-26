@@ -155,7 +155,7 @@ PBC3.0 achieves much higher quality than PBC2.4, at even smaller file sizes. The
 <img width="563" height="310" alt="image" src="https://github.com/user-attachments/assets/b2c6c110-90d4-4d65-b777-23ea55b4683c" />
 
 
-PBC3.0 now very favorably compares to JPEG's higher compression settings, especially at higher resolutions. Achieving up to 20 times better compression while conserving more quality.
+PBC3.0 now very favorably compares to JPEG's higher compression settings, especially at higher resolutions. Achieving up to 10 times better compression while also conserving more quality.
 
 <img width="1220" height="555" alt="image" src="https://github.com/user-attachments/assets/8ee12fce-0718-49ea-83a8-eb7b792743da" />
 
@@ -174,7 +174,7 @@ Rate distortion chart comparing PBC3.0 to various state of the art image compres
 
 ### Speed
 
-PBC3.0 architecture is much more efficient than 2.4, achieving much better speed. In it's current state (coded in python, no multi-threading) it's already comparable to the state of the art image codecs, encoding faster than AVIF and JPEG XL.
+PBC3.0 architecture is much more efficient than 2.4, achieving much better speed. In it's current state, coded in python, single threaded, it's already comparable to the state of the art image codecs, encoding faster than AVIF and JPEG XL.
 
 <img width="740" height="274" alt="image" src="https://github.com/user-attachments/assets/efc850cb-44bd-4c9e-90bd-426915a643cc" />
 
