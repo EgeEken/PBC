@@ -1,15 +1,19 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+
 import numpy as np
 from PIL import Image
 
 
 class BitWriter:
-    def __init__(self):
+    """## Small helper for writing arbitrary-width integer fields"""
+
+    def __init__(self) -> None:
         self.data = bytearray()
         self.acc = 0
         self.nbits = 0
 
-    def write(self, value, bitcount):
+    def write(self, value: int, bitcount: int) -> None:
+        """## Writes one unsigned integer using bitcount bits"""
         value = int(value)
         if bitcount <= 0:
             return
@@ -23,7 +27,8 @@ class BitWriter:
             self.acc &= (1 << shift) - 1
             self.nbits -= 8
 
-    def finish(self):
+    def finish(self) -> bytes:
+        """## Flushes the last partial byte and returns the written bytes"""
         if self.nbits:
             self.data.append((self.acc << (8 - self.nbits)) & 255)
             self.acc = 0
@@ -32,13 +37,16 @@ class BitWriter:
 
 
 class BitReader:
-    def __init__(self, data):
+    """## Small helper for reading arbitrary-width integer fields"""
+
+    def __init__(self, data: bytes) -> None:
         self.data = data
         self.i = 0
         self.acc = 0
         self.nbits = 0
 
-    def read(self, bitcount):
+    def read(self, bitcount: int) -> int:
+        """## Reads one unsigned integer using bitcount bits"""
         while self.nbits < bitcount:
             if self.i >= len(self.data):
                 raise EOFError("bitstream ended early")
@@ -54,6 +62,8 @@ class BitReader:
 
 @dataclass
 class PBC3Config:
+    """## User-facing encoder settings and presets"""
+
     patch_count: int = 50
     search_depth: int = 200
     proposal_depth: int = 50
@@ -91,11 +101,12 @@ class PBC3Config:
     learned_filler_candidates: int = 1
     use_lzma: bool = True
     random_seed: int = 2003
+    compute_final_mse: bool = True
     debug_mode: bool = False
     debug_print: bool = False
     debug_path: str = None
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         cycle = str(self.channel_cycle).strip().lower().replace("_", " ")
         if cycle in {"off", "cycle", "round robin", "roundrobin"}:
             self.channel_cycle = "Mod"
@@ -108,102 +119,152 @@ class PBC3Config:
 
     @classmethod
     def _preset(cls, **values):
+        """## Builds a preset and applies keyword overrides last"""
         values.update(values.pop("overrides", {}))
         return cls(**values)
 
     @classmethod
     def compression(cls, **kwargs):
-        return cls._preset(patch_count=50, search_q_start=0.5, search_q_end=0.2, init_search_depth=3,
-                           q_init=0.7, q_start=0.8, q_end=0.8, quality_target_mae=0.0,
-                           learned_filler_enabled=True, learned_filler_q=0.4, overrides=kwargs)
+        """## Lower-quality preset with the learned filler biased toward smaller output"""
+        return cls._preset(
+            patch_count=50,
+            search_q_start=0.5,
+            search_q_end=0.2,
+            init_search_depth=3,
+            q_init=0.7,
+            q_start=0.8,
+            q_end=0.8,
+            quality_target_mae=0.0,
+            learned_filler_enabled=True,
+            learned_filler_q=0.4,
+            overrides=kwargs,
+        )
 
     @classmethod
     def balanced(cls, **kwargs):
-        return cls._preset(patch_count=50, search_q_start=0.5, search_q_end=0.2, init_search_depth=3,
-                           q_init=0.7, q_start=0.8, q_end=0.8, quality_target_mae=0.0,
-                           learned_filler_enabled=True, learned_filler_q=0.6, overrides=kwargs)
+        """## Default preset for a middle ground between size and quality"""
+        return cls._preset(
+            patch_count=50,
+            search_q_start=0.5,
+            search_q_end=0.2,
+            init_search_depth=3,
+            q_init=0.7,
+            q_start=0.8,
+            q_end=0.8,
+            quality_target_mae=0.0,
+            learned_filler_enabled=True,
+            learned_filler_q=0.6,
+            overrides=kwargs,
+        )
 
     @classmethod
     def quality(cls, **kwargs):
-        return cls._preset(patch_count=50, search_q_start=0.5, search_q_end=0.2, init_search_depth=3,
-                           q_init=0.7, q_start=0.8, q_end=0.8, quality_target_mae=0.0,
-                           learned_filler_enabled=True, learned_filler_q=0.8, overrides=kwargs)
+        """## Higher-quality preset with the learned filler biased toward RD gain"""
+        return cls._preset(
+            patch_count=50,
+            search_q_start=0.5,
+            search_q_end=0.2,
+            init_search_depth=3,
+            q_init=0.7,
+            q_start=0.8,
+            q_end=0.8,
+            quality_target_mae=0.0,
+            learned_filler_enabled=True,
+            learned_filler_q=0.8,
+            overrides=kwargs,
+        )
 
     @classmethod
     def high_quality(cls, **kwargs):
-        return cls._preset(patch_count=20, search_q_start=0.7, search_q_end=0.2, init_search_depth=3,
-                           q_init=0.7, q_start=0.8, q_end=0.8, quality_target_mae=0.0,
-                           learned_filler_enabled=True, learned_filler_q=0.95, overrides=kwargs)
+        """## Highest-quality shipped preset, using fewer but stronger learned patches"""
+        return cls._preset(
+            patch_count=20,
+            search_q_start=0.7,
+            search_q_end=0.2,
+            init_search_depth=3,
+            q_init=0.7,
+            q_start=0.8,
+            q_end=0.8,
+            quality_target_mae=0.0,
+            learned_filler_enabled=True,
+            learned_filler_q=0.95,
+            overrides=kwargs,
+        )
 
 
 @dataclass
 class PBC3Result:
+    """## Returned compression/decompression result and a few convenience stats"""
+
     image: Image.Image
     data: bytes
     config: PBC3Config
-    mse: float
+    mse: float | None
     encode_seconds: float
     total_bits: int
     original_width: int = None
     original_height: int = None
     working_width: int = None
     working_height: int = None
-    timings: dict = field(default_factory=dict)
     debug_path: str = None
     channels: int = 3
 
     @property
-    def time(self):
+    def time(self) -> float:
         return self.encode_seconds
 
     @property
-    def encode_time(self):
+    def encode_time(self) -> float:
         return self.encode_seconds
 
     @property
-    def decode_time(self):
+    def decode_time(self) -> float:
         return self.encode_seconds
 
     @property
-    def decode_seconds(self):
+    def decode_seconds(self) -> float:
         return self.encode_seconds
 
     @property
-    def original_bits(self):
+    def original_bits(self) -> int:
         w = self.original_width or self.image.width
         h = self.original_height or self.image.height
         return w * h * self.channels * 8
 
     @property
-    def compressed_kb(self):
+    def compressed_kb(self) -> float:
         return self.total_bits / 8 / 1024
 
     @property
-    def original_kb(self):
+    def original_kb(self) -> float:
         return self.original_bits / 8 / 1024
 
     @property
-    def compression_rate(self):
+    def compression_rate(self) -> float:
         return self.original_bits / self.total_bits if self.total_bits else float("inf")
 
     @property
-    def compressed_percent(self):
+    def compressed_percent(self) -> float:
         return self.total_bits / self.original_bits * 100 if self.original_bits else 0
 
-    def save(self, path):
+    def save(self, path: str) -> None:
+        """## Writes the compressed byte stream to disk"""
         if self.data is None:
             raise ValueError("result has no compressed data to save")
         with open(path, "wb") as f:
             f.write(self.data)
 
-    def verify(self):
+    def verify(self) -> bool:
+        """## Decodes the byte stream and checks that it matches this result image"""
         from PBC3 import PBC3
+
         if self.data is None:
             return False
         decoded = PBC3.decompress(self.data).image
         return np.array_equal(np.asarray(self.image), np.asarray(decoded))
 
-    def show(self, subtitle=None):
+    def show(self, subtitle: str = None) -> None:
+        """## Shows the reconstructed image with a compact stats header"""
         import os
         from matplotlib import pyplot as plt
 
@@ -222,7 +283,16 @@ class PBC3Result:
             f"MSE: {mse}   |   Compressed: {self.compressed_kb:.2f} KB   |   Original: {self.original_kb:.2f} KB\n"
             f"Compression: {self.compression_rate:.2f}x ({self.compressed_percent:.2f}%)   |   Time: {seconds}{debug}"
         )
-        info_ax.text(0.5, 0.5, info, ha="center", va="center", color="white", fontsize=10, linespacing=1.35,
-                     bbox=dict(boxstyle="round,pad=0.5", facecolor="black", alpha=0.72, edgecolor="none"))
+        info_ax.text(
+            0.5,
+            0.5,
+            info,
+            ha="center",
+            va="center",
+            color="white",
+            fontsize=10,
+            linespacing=1.35,
+            bbox=dict(boxstyle="round,pad=0.5", facecolor="black", alpha=0.72, edgecolor="none"),
+        )
         image_ax.imshow(self.image)
         plt.show()
