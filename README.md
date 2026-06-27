@@ -176,11 +176,12 @@ Rate distortion chart comparing PBC3.0 to various state of the art image compres
 
 PBC3.0 architecture is much more efficient than 2.4, achieving much better speed. In it's current state, coded in python, single threaded, it's already comparable to the state of the art image codecs, encoding faster than AVIF and JPEG XL.
 
-<img width="740" height="274" alt="image" src="https://github.com/user-attachments/assets/efc850cb-44bd-4c9e-90bd-426915a643cc" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/ddecb843-5ebc-4257-bf1b-5207a8a4aafd" />
 
-Outliers (JXL encoding under q3 and JPEG2000 decoding over q70 are *incredibly* slow) removed, PBC3 remains competitive
 
-<img width="1027" height="399" alt="image" src="https://github.com/user-attachments/assets/1c860ae8-5efb-4445-84c0-4a6b2778089b" />
+Outliers (JXL encoding under q3, avif over q90, and JPEG2000 decoding over q70 are *incredibly* slow) removed, PBC3 remains competitive
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/dd1b89a2-c7c7-4ac7-9bb7-b94eb6094dcf" />
 
 
 The roadmap for improvements has a bunch of obvious speedups, so expect these results to get much better.
