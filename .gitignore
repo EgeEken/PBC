@@ -30,3 +30,7 @@ test_images/*
 *.pbc
 
 testing.ipynb
+
+# Added by cargo
+
+/target
