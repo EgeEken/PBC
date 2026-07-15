@@ -153,6 +153,8 @@ Changed the guided random placements of PBC2 into a grid-patch system that elimi
 PBC3.0 achieves much higher quality than PBC2.4, at even smaller file sizes. The quality ceiling has been raised massively, although there still is one, lossless encoding is not yet available (Intended feature for 3.1 or maybe 3.2 depending on the rate of progress)
 
 <img width="563" height="310" alt="image" src="https://github.com/user-attachments/assets/b2c6c110-90d4-4d65-b777-23ea55b4683c" />
+<img width="563" alt="pbc24-vs-pbc30" src="https://github.com/user-attachments/assets/43ae730e-bb3b-4f0c-b896-b3de3f97c126" />
+
 
 
 PBC3.0 now very favorably compares to JPEG's higher compression settings, especially at higher resolutions. Achieving up to 10 times better compression while also conserving more quality.
