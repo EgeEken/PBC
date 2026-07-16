@@ -157,11 +157,20 @@ PBC3.0 achieves much higher quality than PBC2.4, at even smaller file sizes. The
 
 
 
-PBC3.0 now very favorably compares to JPEG's higher compression settings, especially at higher resolutions. Achieving up to 10 times better compression while also conserving more quality.
+PBC3.0 now very favorably compares to JPEG's higher compression settings, especially at higher resolutions. Achieving many times better compression while also conserving more quality.
+
+7 times smaller, 5 times better quality:
+
+<img width="1229" height="552" alt="image" src="https://github.com/user-attachments/assets/8ea8ab83-03ad-4488-baa4-6f1029625fcf" />
+
+10 times smaller, 6 times better quality:
 
 <img width="1220" height="555" alt="image" src="https://github.com/user-attachments/assets/8ee12fce-0718-49ea-83a8-eb7b792743da" />
 
-<img width="1229" height="552" alt="image" src="https://github.com/user-attachments/assets/8ea8ab83-03ad-4488-baa4-6f1029625fcf" />
+50 times smaller, still better quality:
+
+<img width="629" height="524" alt="image" src="https://github.com/user-attachments/assets/35c0779b-aa88-48aa-9b76-ed38941590a6" />
+
 
 
 Rate distortion chart comparing PBC3.0 (red) to JPEG (blue) for 12 MP images. While the quality ceiling is still a problem to tackle, on the extreme compression space PBC completely dominates.
