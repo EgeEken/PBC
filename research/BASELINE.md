@@ -1,5 +1,7 @@
 # Baseline and history
 
+Pass 8 update: benchmark/UI support is deployed at HF `27f6c65225a5496fa065deb586c7e405ecdffc84`. The direct release/development measurement ran at its parent `e3f947bb6b3c3e081ce0f0bb3ea801b8201c3226`. Production codec source remains identical to `cd0d569`; no RD experiment or default change is deployed. The 480 measured calls compare authentic release `2e59f1b06980aa467da0cde94fa33c3f9a0d4d51` with integrated defaults, retaining each RNG and internal MSE. They supersede any inference from earlier preceding-HF optimization ratios about release-to-development speed.
+
 Pass 6 update: the root runtime now includes the exact integration deployed at HF `cd0d5691647a4f02cf765454a2d3b0abfde8f3b7`, parent `eee83b8f10f6f3404bca1c2c178e27fc4e8a1aa0`. The previous eight-module codec is preserved under `research_pass6/baseline/`. The provenance below describes the original research snapshot; it is not a claim that the current integrated root is still the Pass 5 source.
 
 `research/experiments` starts at original GitHub `main`, `162feed4a85b81f0d2494e05bd39d8e159788e7c`, preserving its 65 existing commits. At setup, GitHub `rust` was `93e9c0591a710397bb3f09d2d51473313ce23db6` and `v3.0` was `1ef5155ac6a0037e02b0130b6b5091f0c1f791c3`. These branches are unchanged.

@@ -1,0 +1,89 @@
+{
+  "latest_run": "20260715_144225",
+  "latest_count": 800,
+  "latest_status": "complete coverage (inferred)",
+  "latest_timestamp": 1784126546.0959623,
+  "exact_matches_latest": true,
+  "pbc_only": true,
+  "all_history_count": 6200,
+  "all_history_runs": [
+    {
+      "run_id": "20260715_144225",
+      "first_ts": 1784126546.0959623,
+      "last_ts": 1784127172.8588557,
+      "count": 800,
+      "images": 20,
+      "trials": 10,
+      "points": 4,
+      "codecs": [
+        "PBC3"
+      ],
+      "coverage_complete": true,
+      "status": "complete coverage (inferred)"
+    },
+    {
+      "run_id": "20260624_150209",
+      "first_ts": 1782313398.819332,
+      "last_ts": 1782325650.3059092,
+      "count": 4500,
+      "images": 20,
+      "trials": 5,
+      "points": 45,
+      "codecs": [
+        "AVIF",
+        "JPEG",
+        "JPEG2000",
+        "JXL",
+        "PNG",
+        "WEBP"
+      ],
+      "coverage_complete": true,
+      "status": "complete coverage (inferred)"
+    },
+    {
+      "run_id": "20260624_134736",
+      "first_ts": 1782308928.1174743,
+      "last_ts": 1782311367.8413029,
+      "count": 900,
+      "images": 20,
+      "trials": 1,
+      "points": 45,
+      "codecs": [
+        "AVIF",
+        "JPEG",
+        "JPEG2000",
+        "JXL",
+        "PNG",
+        "WEBP"
+      ],
+      "coverage_complete": true,
+      "status": "complete coverage (inferred)"
+    }
+  ],
+  "mp_min_10_count": 240,
+  "missing_labeled": true,
+  "served_javascript_exact": true,
+  "unauthenticated_research_status": 403,
+  "database_download_readable": true,
+  "database_after_sha256": "48f73a898571602747ec5ba555473a62ad8bb53138d78ed8f42f630189de20e1",
+  "database_after_bytes": 974848,
+  "database_after_runs": [
+    [
+      "20260624_134736",
+      900
+    ],
+    [
+      "20260624_150209",
+      4500
+    ],
+    [
+      "20260715_144225",
+      800
+    ]
+  ],
+  "restored_backup": false,
+  "health": {
+    "ok": true,
+    "boot_id": "1793022256.840"
+  }
+}

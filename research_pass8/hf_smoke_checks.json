@@ -1,0 +1,17 @@
+{
+  "revision": "e3f947bb6b3c3e081ce0f0bb3ea801b8201c3226",
+  "measured_calls": 8,
+  "presets": [
+    "compression",
+    "balanced",
+    "quality",
+    "high_quality"
+  ],
+  "sources": [
+    "release",
+    "development"
+  ],
+  "all_preview_decode_equal": true,
+  "both_internal_mse_enabled": true,
+  "deterministic": true
+}

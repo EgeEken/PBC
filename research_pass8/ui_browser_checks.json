@@ -1,0 +1,11 @@
+{
+  "deployment": "27f6c65225a5496fa065deb586c7e405ecdffc84",
+  "latest_samples": 800,
+  "explicit_pbc_run": "20260715_144225",
+  "explicit_samples": 800,
+  "historical_composite_samples": 6200,
+  "mp_min_10_samples": 240,
+  "rapid_selection_preserved": true,
+  "only_pbc_in_selected_charts": true,
+  "screenshot_sha256": "8c15d3c6d97b4a2b3b95e8fa23afa052494d36fb9932b0ed1a81a8f4f371d55a"
+}

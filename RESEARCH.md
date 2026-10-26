@@ -1,4 +1,4 @@
-# PBC research through Pass 7
+# PBC research through Pass 8
 
 The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the validated runtime mechanisms without changing the stream, model, preset or release version.
 
@@ -13,12 +13,14 @@ The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the v
 | Pass 6 grid feedback | One fixed-palette decoder-aware feedback step was screened independently on initialization and selected iterative patches. Mean RGB MSE gains were only 0.087%/0.157%; initialization cost +10.75% encode. Neither variant was promoted. | `research_pass6/PBC_GRID_REFINEMENT.md` |
 | Pass 7 benchmark audit | Run selector prevents historical composites by default. Live PBC3 data has one 800-row run; its mean is 0.768602/0.117958 s. Optional HF deployment deferred because a rebuild risks replacing live records with the repository database. | `research_pass7/PBC_SPEED_BENCHMARK_AUDIT.md` |
 | Pass 7 stop recovery | Deployed legacy model has no STOP head (S1 inapplicable). S2 rescues six patches but gives MSE −0.140%, bpp +0.275%, encode +3.526%, no demonstrated matched-rate improvement. Stopped after six-image screen. | `research_pass7/PBC_STOP_POLICY_RESULTS.md` |
+| Pass 8 actual release comparison | Same HF CPU, 20 images × four presets × two authentic defaults × three repeats. Development aggregate encode/decode times are 24.80%/48.39% lower; MSE +0.763%, bpp +2.670%. Per-image regressions remain. | `research_pass8/PBC30_VS_DEV31_HF_BENCHMARK.md` |
+| Pass 8 Speed Benchmark UI | Run selector deployed with stale-response/polling fix. Database backed up before accepted resets; selected runs remain separate from historical composite data. Public codec unchanged. | `research_pass8/PBC_BENCHMARK_UI_DEPLOYMENT.md` |
 
 Pass 5 averages per-image/preset medians. Timing CV was roughly 17–20%; all 32 case medians and all three complete-trial means favored both optimized modes. The public Balanced RGBA response matches the predeployment HF response. Separate Windows/HF baseline differences were already observed in Pass 1 and remain documented; they do not constitute an optimization pair. Memory observations are cumulative process high-water marks, not variant-specific peak comparisons.
 
 The allocator remains experimental. `mario64.png`, `eiffel.png`, and `pigeon.JPG` have measured dominance failures; Monet's direct and interpolated comparisons disagree. Do not promote it as a universal high-quality or all-metric release improvement. The cache cost branch stopped at its negative gate.
 
-Pass 5's grid/search prototypes remain archived. Pass 6 integrates grid I/O in `pbc3_stream.py` and explicit per-encode state in `pbc3_ops.SearchState`, forwarded through the regular learned/heuristic proposal paths. Public compression retains its presets and internal metric. The active bounded HF helper is `research_pass6/hf_runtime_job.py`; its unchanged control is isolated under `research_pass6/baseline/`.
+Pass 5's grid/search prototypes remain archived. Pass 6 integrates grid I/O in `pbc3_stream.py` and explicit per-encode state in `pbc3_ops.SearchState`, forwarded through the regular learned/heuristic proposal paths. Public compression retains its presets and internal metric. Pass 8's active authenticated helper is `research_pass8/hf_release_job.py`, comparing immutable release/current defaults. Pass 6's preceding-HF control remains isolated under `research_pass6/baseline/` for its distinct historical question.
 
 Earlier multistage/proposal experiments are preserved as named `pbc31_*` implementations, tests and their two reports. Their original HF commit IDs are recorded in `research/provenance.json`; their generated result dumps and unrelated HF history are not imported.
 
