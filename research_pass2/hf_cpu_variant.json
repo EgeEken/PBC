@@ -1,0 +1,7 @@
+{
+  "disabled_numpy_features": "AVX2,FMA3",
+  "remote_equal": false,
+  "local_equal": false,
+  "stream_sha256": "24d0669fe77a4730207400331a90a187c07127c160b34075c6b51751e155990e",
+  "first_difference_from_remote": 9
+}

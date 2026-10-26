@@ -1,0 +1,102 @@
+[
+  {
+    "dataset": "hpt_data",
+    "preset": "compression",
+    "mse": -1.3071286071181687,
+    "bpp": -4.685157779966708,
+    "raw_bytes": 2.3230816704381763,
+    "final_bytes": 3.2143591148866113,
+    "encode_seconds": -4.573278426605542,
+    "decode_seconds": -8.914896486859913
+  },
+  {
+    "dataset": "hpt_data",
+    "preset": "balanced",
+    "mse": 0.8132314231840354,
+    "bpp": 2.1415674627164316,
+    "raw_bytes": -5.21308905267055,
+    "final_bytes": -2.898893253573709,
+    "encode_seconds": -12.93844413887123,
+    "decode_seconds": -14.955023925835476
+  },
+  {
+    "dataset": "hpt_data",
+    "preset": "quality",
+    "mse": -0.1463385773288972,
+    "bpp": 10.186796838138479,
+    "raw_bytes": 0.6639564008004806,
+    "final_bytes": 3.838255118375611,
+    "encode_seconds": -19.375776959626435,
+    "decode_seconds": -19.649383313811843
+  },
+  {
+    "dataset": "hpt_data",
+    "preset": "high_quality",
+    "mse": 0.5598030252871311,
+    "bpp": -1.3572476311089265,
+    "raw_bytes": -2.9322245405556835,
+    "final_bytes": -2.1811315725694613,
+    "encode_seconds": -15.028975831941004,
+    "decode_seconds": -25.73402005036033
+  },
+  {
+    "dataset": "hpt_data",
+    "preset": "all",
+    "mse": -0.19332286939128807,
+    "bpp": 2.091078306550953,
+    "raw_bytes": -2.0924907686207916,
+    "final_bytes": -0.230484933384989,
+    "encode_seconds": -13.603590411994304,
+    "decode_seconds": -19.54306646783175
+  },
+  {
+    "dataset": "hpt_data_val",
+    "preset": "compression",
+    "mse": 4.774625004748678,
+    "bpp": -7.424112886308798,
+    "raw_bytes": -1.9832189168573655,
+    "final_bytes": -9.960509852987176,
+    "encode_seconds": -15.657768163140629,
+    "decode_seconds": -15.007953323851098
+  },
+  {
+    "dataset": "hpt_data_val",
+    "preset": "balanced",
+    "mse": -8.890604577165762,
+    "bpp": 3.8166272323170825,
+    "raw_bytes": 6.459887158480515,
+    "final_bytes": 18.459749675124826,
+    "encode_seconds": 6.8643510909036864,
+    "decode_seconds": -13.295141319199233
+  },
+  {
+    "dataset": "hpt_data_val",
+    "preset": "quality",
+    "mse": 9.60690764503289,
+    "bpp": -3.326944084157102,
+    "raw_bytes": -4.718521148745425,
+    "final_bytes": -0.493419487452762,
+    "encode_seconds": -17.190703384169016,
+    "decode_seconds": -19.886129639290505
+  },
+  {
+    "dataset": "hpt_data_val",
+    "preset": "high_quality",
+    "mse": 3.119651578470628,
+    "bpp": 4.276598480694238,
+    "raw_bytes": -4.812479989401275,
+    "final_bytes": -4.1217564072857815,
+    "encode_seconds": -18.840614984518133,
+    "decode_seconds": -27.7516499913825
+  },
+  {
+    "dataset": "hpt_data_val",
+    "preset": "all",
+    "mse": 1.503669050898493,
+    "bpp": 0.43552304119389706,
+    "raw_bytes": -3.2762124089560696,
+    "final_bytes": -0.747258510865878,
+    "encode_seconds": -12.50819266817943,
+    "decode_seconds": -20.994935274158856
+  }
+]

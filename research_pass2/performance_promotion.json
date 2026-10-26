@@ -1,0 +1,8 @@
+{
+  "variants": [
+    "grid_numpy",
+    "skip_final_mse"
+  ],
+  "reason": "All 24 screen cases preserve bytes/pixels/patches for all three candidates. Grid IO: encode -4.95%, decode -43.06%, decode wins 24/24. Existing optional metric skip: encode -13.51%, wins 21/24. Channel reduction -2.58%, wins only 15/24, near repeat noise; not promoted under two-variant budget. No combined variant.",
+  "historical_decision_commit": "3e9e8c94b7497ecefc5e482a66fde697dfad6e19"
+}

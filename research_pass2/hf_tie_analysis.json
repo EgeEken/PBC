@@ -1,0 +1,13 @@
+{
+  "remote_box_in_local_200_pool": false,
+  "remote_box_rank_in_local_top50": null,
+  "remote_width_height_in_local_pool": true,
+  "top20_anchor_tied_scores": [
+    12.53125,
+    13.0625
+  ],
+  "cutoff_anchor_score_multiplicity": 2,
+  "top_proposal_score_tie_count": 1,
+  "first_second_proposal_score_gap": 0.001904842528470077,
+  "source": "Replay only retained common prefix/local recorded RNG state; no encode and no remote request"
+}

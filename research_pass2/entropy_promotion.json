@@ -1,0 +1,6 @@
+{
+  "representations": [],
+  "lzma": [],
+  "reason": "No candidate promoted. Both lossless transforms increase post-LZMA size in every source/preset aggregate. Preset 1 is a latency/rate tradeoff; preset 6 is near neutral or larger and can exceed production decoder dictionary; 64k is a memory tradeoff with negligible/lost rate, not an RD gain. Screen only, no holdout tuning.",
+  "historical_decision_commit": "3e9e8c94b7497ecefc5e482a66fde697dfad6e19"
+}

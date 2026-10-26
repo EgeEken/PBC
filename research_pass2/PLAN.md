@@ -1,0 +1,15 @@
+# Pass 2 fixed screening plan
+
+All artifacts remain under research_pass2. Production source/defaults/models and Pass 1 files are read-only controls. No network image requests, deployment, commits, training or push.
+
+Primary timing: one numerical thread, persistent isolated subprocesses pinned to the first available logical CPU; warm all source/configuration paths, rotate source/variant order per image and repeat. Dataset loading/scoring/parsing/writes excluded from full compress/decompress wall timings. Original-size EXIF-normalized RGB scoring uses squared float32 differences and float64 reduction (integer differences are exact here). Save complete files, raw bytes, expanded configs, hashes, patches, dimensions and repeated latencies.
+
+A: all 25 images/four presets, release versus current with only RNG constructor replaced by NumPy default_rng, three interleaved repeats. Frozen Pass 1 release artifacts are additional identity controls. Component profiling is separate from uninstrumented timing. HF discrepancy investigation uses retained artifacts only.
+
+B screen, chosen before candidate measurements: cat.jpg (8.5 MP animal photograph/fine fur, large 250k roundtrip loss); monet.jpg (textured artwork); flower.jpg (large smooth/bokeh photograph); cathedral.png (architecture/edges); googlewiki.png (text/synthetic); stockpoint.jpg (snow/urban photograph, relatively low 250k roundtrip loss). Release and engineering controls, Quality and High Quality, 250k/500k/1M single-stage limits, two repeats. Follow with at most three targeted hypotheses: High Quality allocation budget 50; Quality learned q=0.95; High Quality search_q_start=0.5. Add only measured rate points that help bracket observed overlapping rates. Fix promotion decisions before holdout.
+
+C: frozen release/current streams, initial six-image/four-preset analysis; account exact syntax and analyze indices before selecting at most three independent transforms. Bounded LZMA sweep includes exact production preset=PRESET_EXTREME (this is preset 0 extreme, not preset 6 extreme), presets 1 and 6, and one smaller dictionary. Alternate representations use an explicit research-only magic and matching isolated decoder; verify reconstructed v0 raw semantics and pixels. At most two candidates promoted.
+
+D: maximum three independent candidates: allocation-free exact channel-error reduction; vectorized MSB grid bit I/O; existing compute_final_mse=False API control. This last option already exists and requires no production edit. Avoid the rejected integral fusion/search changes. Screen all presets on six images, then promote at most two output-preserving improvements. Full dataset confirmation uses fixed variants, independent results, three repeats.
+
+Promotion is evidence-dependent. RD point dominance is per image; interpolate only within measured neighboring nondominated points. Sparse curves and initialization-only points are not a continuous-rate guarantee. No negative screen establishes fundamental impossibility.

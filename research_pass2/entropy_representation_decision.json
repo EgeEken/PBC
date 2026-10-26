@@ -1,0 +1,8 @@
+{
+  "methods": [
+    "horizontal_delta",
+    "column_order"
+  ],
+  "evidence": "C1 unweighted patch means: zero-index fraction 0.550, horizontal/vertical repeats 0.581/0.590, correlations 0.390/0.402; choose modular row prediction and column traversal independently. No RLE added.",
+  "historical_decision_commit": "3e9e8c94b7497ecefc5e482a66fde697dfad6e19"
+}
