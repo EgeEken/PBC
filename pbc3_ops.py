@@ -11,6 +11,35 @@ RESAMPLE_REDUCING_GAP = None
 PALETTE_GENERATED = 0
 
 
+class SearchState:
+    def __init__(self):
+        self.target = self.canvas = None
+        self.errors = {}
+        self.totals = {}
+
+    def error(self, target, canvas, channel):
+        if target is not self.target or canvas is not self.canvas:
+            self.target, self.canvas = target, canvas
+            self.errors.clear()
+            self.totals.clear()
+        if channel not in self.errors:
+            error = np.abs(target[:, :, channel] - np.clip(canvas[:, :, channel], 0, 255))
+            self.errors[channel] = error
+            self.totals[channel] = int(np.sum(error))
+        return self.errors[channel]
+
+    def score(self, target, canvas, channel):
+        self.error(target, canvas, channel)
+        return float(self.totals[channel])
+
+    def update(self, target, canvas, channel, x, y, w, h):
+        error = self.error(target, canvas, channel)
+        region = error[y:y + h, x:x + w]
+        previous = int(np.sum(region))
+        region[:] = np.abs(target[y:y + h, x:x + w, channel] - np.clip(canvas[y:y + h, x:x + w, channel], 0, 255))
+        self.totals[channel] += int(np.sum(region)) - previous
+
+
 _UINT64_MASK = (1 << 64) - 1
 _UINT32_SCALE = 1.0 / 4294967296.0
 
@@ -582,12 +611,13 @@ def sample_box(rng, anchor, image_w: int, image_h: int, config) -> tuple[int, in
     return c, x, y, w, h, ax, ay
 
 
-def search_boxes(target, canvas, config, rng, channel: int, depth: int, search_q: float, ordered=False, trace=None):
+def search_boxes(target, canvas, config, rng, channel: int, depth: int, search_q: float, ordered=False, trace=None, abs_error=None):
     """Samples error-centered boxes and keeps the best prescores."""
     h_img, w_img, _ = target.shape
     with timed(trace, "action.search.visible_error"):
-        visible = np.clip(canvas[:, :, channel], 0, 255).astype(np.int32)
-        abs_error = np.abs(target[:, :, channel] - visible)
+        if abs_error is None:
+            visible = np.clip(canvas[:, :, channel], 0, 255).astype(np.int32)
+            abs_error = np.abs(target[:, :, channel] - visible)
     with timed(trace, "action.search.integral_error"):
         integral_abs = integral(abs_error)
     with timed(trace, "action.search.anchors"):

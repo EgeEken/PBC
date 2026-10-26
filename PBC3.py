@@ -353,7 +353,8 @@ class PBC3:
                 }
 
         with timed(trace, "encode.initial_error_scores"):
-            channel_scores = [cls._channel_sum_error(target, canvas, c) for c in range(channels)]
+            search_state = ops.SearchState()
+            channel_scores = [search_state.score(target, canvas, c) for c in range(channels)]
         quality_target = float(config.quality_target_mae)
         with timed(trace, "encode.filler_initialize"):
             filler = FillerHead(config, channel_bits, (h, w, channels), patches, (original_w, original_h), trace=trace)
@@ -369,13 +370,15 @@ class PBC3:
                     with timed(trace, "head.search", step=step, channel=current_channel):
                         boxes = (
                             None if filler.learned is not None
-                            else search.propose(target, canvas, config, rng, step, current_channel, trace=trace)
+                            else search.propose(target, canvas, config, rng, step, current_channel, trace=trace,
+                                abs_error=search_state.error(target, canvas, current_channel))
                         )
                 with timed(trace, "encode.patch.fill", step=step, channel=current_channel):
                     with timed(trace, "head.filler", step=step, channel=current_channel):
                         patch, values, delta = filler.select(
                             target, canvas, config, rng, channel_bits, step, current_channel,
                             boxes, len(patches), debug_lines, trace=trace,
+                            abs_error=search_state.error(target, canvas, current_channel),
                         )
                 if patch is None:
                     break
@@ -393,7 +396,8 @@ class PBC3:
                         )
                 patches.append(patch)
                 with timed(trace, "encode.patch.score", step=step, channel=c):
-                    channel_scores[c] = cls._channel_sum_error(target, canvas, c)
+                    search_state.update(target, canvas, c, patch["x"], patch["y"], patch["w"], patch["h"])
+                    channel_scores[c] = search_state.score(target, canvas, c)
                 applied += 1
                 if trace is not None:
                     trace.count("patches_accepted")
@@ -402,7 +406,7 @@ class PBC3:
                     with timed(trace, "encode.warmup_resize", step=step, width=warm_w, height=warm_h):
                         canvas = cls._resize_canvas(canvas, warm_w, warm_h)
                         target = warm_target
-                        channel_scores = [cls._channel_sum_error(target, canvas, c) for c in range(channels)]
+                        channel_scores = [search_state.score(target, canvas, c) for c in range(channels)]
                         warmup_split = len(patches)
                         did_warmup = True
                 if config.debug_mode:

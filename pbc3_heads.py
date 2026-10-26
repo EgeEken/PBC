@@ -79,15 +79,15 @@ class SearchHead:
         """## Returns the search quality/bit-cost mix for this patch step"""
         return ops.interp(config.search_q_start, config.search_q_end, step, config.patch_count)
 
-    def propose(self, target, canvas, config, rng, step: int, channel: int, trace=None):
+    def propose(self, target, canvas, config, rng, step: int, channel: int, trace=None, abs_error=None):
         """## Returns candidate boxes using the configured search depth"""
         with timed(trace, "action.search.quality_mix"):
             search_q = self.q_for_step(config, step)
-        return self.search(target, canvas, config, rng, channel, config.search_depth, search_q, trace=trace)
+        return self.search(target, canvas, config, rng, channel, config.search_depth, search_q, trace=trace, abs_error=abs_error)
 
-    def search(self, target, canvas, config, rng, channel: int, depth: int, search_q: float, trace=None) -> list[tuple[int, int, int, int, int]]:
+    def search(self, target, canvas, config, rng, channel: int, depth: int, search_q: float, trace=None, abs_error=None) -> list[tuple[int, int, int, int, int]]:
         """## Samples boxes around strong error anchors and keeps the best prescores"""
-        return ops.search_boxes(target, canvas, config, rng, channel, depth, search_q, trace=trace)
+        return ops.search_boxes(target, canvas, config, rng, channel, depth, search_q, trace=trace, abs_error=abs_error)
 
 
 class FillerHead:
@@ -111,11 +111,11 @@ class FillerHead:
             with timed(trace, "action.filler.begin_policy_encode"):
                 self.learned.begin_encode(config, channels, channel_bits, w, h, original_w, original_h, init_patches or [])
 
-    def select(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, boxes, canvas_patches: int, debug_lines, trace=None):
+    def select(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, boxes, canvas_patches: int, debug_lines, trace=None, abs_error=None):
         """## Returns the next patch/value pair, or (None, None) when encoding should stop"""
         if self.learned is not None:
             with timed(trace, "action.filler.learned_select", step=step):
-                return self.learned.select_patch(target, canvas, config, rng, channel_bits, step, current_channel, trace=trace)
+                return self.learned.select_patch(target, canvas, config, rng, channel_bits, step, current_channel, trace=trace, abs_error=abs_error)
         with timed(trace, "action.filler.heuristic_select", step=step):
             return self.select_heuristic(target, canvas, config, channel_bits, step, boxes, canvas_patches, debug_lines, trace=trace)
 

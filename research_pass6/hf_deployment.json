@@ -1,0 +1,25 @@
+{
+  "base": "eee83b8f10f6f3404bca1c2c178e27fc4e8a1aa0",
+  "commit": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7",
+  "files": [
+    "PBC3.py",
+    "pbc3_ops.py",
+    "pbc3_heads.py",
+    "learned_filler.py",
+    "pbc3_stream.py",
+    "server.py",
+    "pbc3_benchmark.py",
+    "research_pass6/worker.py",
+    "research_pass6/hf_runtime_job.py",
+    "research_pass6/baseline/learned_filler.py",
+    "research_pass6/baseline/PBC3.py",
+    "research_pass6/baseline/pbc3_features.py",
+    "research_pass6/baseline/pbc3_heads.py",
+    "research_pass6/baseline/pbc3_ops.py",
+    "research_pass6/baseline/pbc3_stream.py",
+    "research_pass6/baseline/pbc3_trace.py",
+    "research_pass6/baseline/pbc3_types.py",
+    "research_pass6/runtime_manifest.json"
+  ],
+  "rollback": "Create and push a non-destructive revert of cd0d5691647a4f02cf765454a2d3b0abfde8f3b7 to HF main; preserve unrelated work."
+}

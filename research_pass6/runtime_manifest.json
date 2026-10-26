@@ -1,0 +1,27 @@
+{
+  "source_lf": {
+    "PBC3.py": "e9ad7727d52a963670997d0f63d4387ed057ec0a602af2b9238723af477b5988",
+    "pbc3_ops.py": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e",
+    "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+    "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+    "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+    "server.py": "6bfc181202e2ad0c330c8cb8f610f17cca73a5a3fb76bc8e1c285a4dc3dabb84",
+    "pbc3_benchmark.py": "ca9b2f839193716e10a6dfd3c0910fc2915ec3d91ca4d7eb4a8223dcfb41efc7",
+    "research_pass6/worker.py": "696e91a9cd82e427dbcd677c9a49bc1010220eebedcc8874e6d5f628ec4e156f",
+    "research_pass6/hf_runtime_job.py": "ecccfd8b1875701bc41eead113d277a13e74df72beaaa1f61e20e93139fa4f97",
+    "research_pass6/baseline/learned_filler.py": "f86a0e4090a8c725b0f0c542b8d27387c01bbbb4ee4620b41193da196621122c",
+    "research_pass6/baseline/PBC3.py": "b58e2a931bb6ebb908028279790c7fc479ff3ce748227ec6cabd35994cce5ebd",
+    "research_pass6/baseline/pbc3_features.py": "f6f19e560072636bc733b5b0885daace4ea724bd0100672dfcd0a2628c293c33",
+    "research_pass6/baseline/pbc3_heads.py": "4f4d84d699d0270bd3d60749b94546613b0ea1bd4eab8d201e22d47dab6da42d",
+    "research_pass6/baseline/pbc3_ops.py": "07b33b8fb4828c1fe984105737ec246436c6d67680f152189b49eb3818abd021",
+    "research_pass6/baseline/pbc3_stream.py": "a2342d081ee1399dc0794185fca3999f75eaf6d9ad42160cd636ededccc30edd",
+    "research_pass6/baseline/pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+    "research_pass6/baseline/pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f"
+  },
+  "assets": {
+    "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "hpt_data/cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "hpt_data/flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+    "hpt_data/googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+  }
+}

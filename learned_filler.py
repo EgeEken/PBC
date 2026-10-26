@@ -89,10 +89,10 @@ def extract_state(target, canvas, box, step: int, image_w: int, image_h: int, pa
     return np.concatenate([box_feats, prog]).astype(np.float32)
 
 
-def propose_boxes(target, canvas, config, rng, channel: int, step: int, trace=None) -> list[tuple[int, int, int, int, int]]:
+def propose_boxes(target, canvas, config, rng, channel: int, step: int, trace=None, abs_error=None) -> list[tuple[int, int, int, int, int]]:
     """## Returns candidate boxes sorted by the learned filler's prescore front-end"""
     search_q = ops.interp(config.search_q_start, config.search_q_end, step, config.patch_count)
-    return ops.search_boxes(target, canvas, config, rng, channel, config.search_depth, search_q, ordered=True, trace=trace)
+    return ops.search_boxes(target, canvas, config, rng, channel, config.search_depth, search_q, ordered=True, trace=trace, abs_error=abs_error)
 
 
 def _load_npz_cached(path: str) -> dict:
@@ -164,11 +164,11 @@ class LearnedFiller:
             fn = lambda b: extract_features(target, canvas, b, step, q, w_img, h_img, patch_count, channels)
         return np.stack([fn(b) for b in boxes])
 
-    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, trace=None):
+    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, trace=None, abs_error=None):
         """## Picks the best learned legacy patch for the current channel"""
         h_img, w_img, channels = target.shape
         with timed(trace, "action.filler.policy.propose_boxes"):
-            boxes = propose_boxes(target, canvas, config, rng, current_channel, step, trace=trace)[:max(1, self.candidates)]
+            boxes = propose_boxes(target, canvas, config, rng, current_channel, step, trace=trace, abs_error=abs_error)[:max(1, self.candidates)]
         if not boxes:
             return None, None, None
         q = self.q_override if self.q_override >= 0 else ops.interp(config.q_start, config.q_end, step, config.patch_count)
@@ -248,14 +248,14 @@ class FactoredFiller:
                 outputs.append(h @ W.T + b)
         return outputs
 
-    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, trace=None):
+    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, trace=None, abs_error=None):
         """## Picks one factored-policy patch, or stops the encode"""
         h_img, w_img, channels = target.shape
         if step == 1 and self._pixels is None:
             self._reset(max(1, h_img * w_img))
         pixels = self._pixels or max(1, h_img * w_img)
         with timed(trace, "action.filler.policy.propose_boxes"):
-            boxes = propose_boxes(target, canvas, config, rng, current_channel, step, trace=trace)
+            boxes = propose_boxes(target, canvas, config, rng, current_channel, step, trace=trace, abs_error=abs_error)
         if not boxes:
             return None, None, None
 

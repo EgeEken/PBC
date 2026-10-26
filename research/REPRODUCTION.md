@@ -1,5 +1,7 @@
 # Reproduction and dependencies
 
+Pass 6 runtime integration is active. Use `research_pass6/worker.py --source baseline` for the preserved pre-integration control and `--source integrated` for the current codec; these are isolated processes, with the same source model and input convention. `research_pass6/check_integration.py` verifies the saved 100-case local archive plus focused edge/concurrency tests. Its archive path refers to the original local HF checkout. The existing authenticated server now uses `research_pass6/hf_runtime_job.py` and its current manifest. Historical Pass 5 source manifests intentionally describe the old source and must not be substituted for this new worker.
+
 The code is present for review without shipping image datasets or generated evidence. This setup does not run experiments. Keep results outside commits.
 
 For the recorded local research environment, use Python 3.13 and `python -m pip install -r requirements-research.txt`. This pins the numerical packages recorded for Pass 1–5; the headless OpenCV wheel provides the same `cv2` import. Linux/HF Pass 5 used Python 3.11.17, NumPy 2.4.6, Numba 0.68.0 and Pillow 11.3.0. Do not assume Windows and HF trajectories are byte-identical. `research/environments.json` records both environments.

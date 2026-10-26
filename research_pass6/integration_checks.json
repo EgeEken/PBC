@@ -1,0 +1,153 @@
+{
+  "grid_cases": 272,
+  "proposal_rng_checks": 20,
+  "frozen_cases": 100,
+  "edges": [
+    {
+      "case": 0,
+      "exact": true
+    },
+    {
+      "case": 1,
+      "exact": true
+    },
+    {
+      "case": 2,
+      "exact": true
+    },
+    {
+      "case": 3,
+      "exact": true
+    },
+    {
+      "case": 4,
+      "exact": true
+    },
+    {
+      "case": 5,
+      "exact": true
+    },
+    {
+      "case": 6,
+      "exact": true
+    },
+    {
+      "case": 7,
+      "exact": true
+    },
+    {
+      "case": 8,
+      "exact": true
+    },
+    {
+      "case": 9,
+      "exact": true
+    },
+    {
+      "case": 10,
+      "exact": true
+    },
+    {
+      "case": 11,
+      "exact": true
+    },
+    {
+      "case": 12,
+      "exact": true
+    },
+    {
+      "case": 13,
+      "exact": true
+    },
+    {
+      "case": 14,
+      "exact": true
+    },
+    {
+      "case": 15,
+      "exact": true
+    },
+    {
+      "case": 16,
+      "exact": true
+    },
+    {
+      "case": 17,
+      "exact": true
+    },
+    {
+      "case": 18,
+      "exact": true
+    },
+    {
+      "case": 19,
+      "exact": true
+    }
+  ],
+  "malformed_cases": 9,
+  "concurrent": {
+    "cases": 4,
+    "exact": true
+  },
+  "metadata": {
+    "baseline": {
+      "source": "baseline",
+      "pid": 7552,
+      "cpu": 0,
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMBA_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "versions": {
+        "numpy": "2.2.6",
+        "numba": "0.62.1",
+        "Pillow": "11.3.0"
+      },
+      "modules": {
+        "pbc3_trace": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\pbc3_trace.py",
+        "pbc3_ops": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\pbc3_ops.py",
+        "pbc3_types": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\pbc3_types.py",
+        "pbc3_stream": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\pbc3_stream.py",
+        "pbc3_features": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\pbc3_features.py",
+        "learned_filler": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\learned_filler.py",
+        "pbc3_heads": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\pbc3_heads.py",
+        "PBC3": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass6\\baseline\\PBC3.py"
+      }
+    },
+    "integrated": {
+      "source": "integrated",
+      "pid": 10856,
+      "cpu": 0,
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMBA_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "versions": {
+        "numpy": "2.2.6",
+        "numba": "0.62.1",
+        "Pillow": "11.3.0"
+      },
+      "modules": {
+        "pbc3_trace": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_trace.py",
+        "pbc3_ops": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_ops.py",
+        "pbc3_types": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_types.py",
+        "pbc3_stream": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_stream.py",
+        "pbc3_features": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_features.py",
+        "learned_filler": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\learned_filler.py",
+        "pbc3_heads": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_heads.py",
+        "PBC3": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\PBC3.py"
+      }
+    }
+  },
+  "all_exact": true
+}
