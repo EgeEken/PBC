@@ -1,0 +1,48 @@
+{
+  "base": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7",
+  "commit": "e3f947bb6b3c3e081ce0f0bb3ea801b8201c3226",
+  "files": [
+    "server.py",
+    "pbc3_benchmark.py",
+    "static/benchmark.js",
+    "research_pass8/worker.py",
+    "research_pass8/hf_release_job.py",
+    "research_pass1/release/learned_filler.py",
+    "research_pass1/release/PBC3.py",
+    "research_pass1/release/pbc3_features.py",
+    "research_pass1/release/pbc3_heads.py",
+    "research_pass1/release/pbc3_ops.py",
+    "research_pass1/release/pbc3_types.py",
+    "research_pass8/runtime_manifest.json",
+    "research_pass6/runtime_manifest.json"
+  ],
+  "verified_release_sources": {
+    "learned_filler.py": {
+      "git_blob": "7287f7e7446e2b4c1eae882b324264007b8ec7b7",
+      "sha256": "6a1d5b4ba77ffd7e5038dc7d8a44898cf5605316db742c2991f3b6b73eef0a08"
+    },
+    "PBC3.py": {
+      "git_blob": "96e56fafc79743a0a08427afd41e2d47c00d74fa",
+      "sha256": "ab3988d9d39a1937c545a89b827fbb0b6982a573f498e5c81686b42cd501bd34"
+    },
+    "pbc3_features.py": {
+      "git_blob": "00ad98287ff553c3a5e34cea9e3784d8d5d4c282",
+      "sha256": "a5e74cd7497081694fee015a5605357367fc5c850875ee56c21ab61dc52a013e"
+    },
+    "pbc3_heads.py": {
+      "git_blob": "028874375a34cff1bdc0b4ec9df5f1910ec38dd9",
+      "sha256": "6f26c54b143eaa2b306343db6335685043baf4e7c1a5b188d3c5f7032cf65476"
+    },
+    "pbc3_ops.py": {
+      "git_blob": "750ff2a1e55872c0eed7a947f050da4918a07323",
+      "sha256": "5778344d8a0eacee26019804ca988af022131f6c414ac6bcc196012a038fc401"
+    },
+    "pbc3_types.py": {
+      "git_blob": "d6f287a80deba9a02a93d6c8899ccb5c3360b2f1",
+      "sha256": "cc3c092cd100591765fb824a0ef93b9d01f169cbfe440f4b67efb1180d7638c9"
+    }
+  },
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "production_codec_unchanged": true,
+  "rollback": "Non-destructive revert of this benchmark-only HF commit; never reset or force-push."
+}

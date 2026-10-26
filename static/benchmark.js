@@ -4,7 +4,7 @@ window.BenchmarkPage = (function () {
   const $ = (id) => document.getElementById(id);
   const CODECS = ["PBC3", "JPEG", "JPEG2000", "WEBP", "JXL", "AVIF", "PNG"];
   const COLORS = { PBC3: "#ff4d3d", JPEG: "#7d8cff", JPEG2000: "#4fa3ff", WEBP: "#54c0ff", JXL: "#c084fc", AVIF: "#34d39a", PNG: "#ef19ef" };
-  const S = { built: false, poll: null, points: [], filtered: [], show: Object.fromEntries(CODECS.map(c => [c, true])), logx: false, logy: false, fsKind: null };
+  const S = { built: false, poll: null, points: [], filtered: [], show: Object.fromEntries(CODECS.map(c => [c, true])), logx: false, logy: false, fsKind: null, resultsRequest: 0 };
 
   const FS_STYLE = `
     .sw-plot-box{position:relative;}
@@ -207,18 +207,21 @@ window.BenchmarkPage = (function () {
 
   async function refreshResults() {
     if (!S.built) return;
+    const request = ++S.resultsRequest;
     const qs = new URLSearchParams();
     const selection = $("bm-run-select").value;
     qs.set("run_id", selection);
     if ($("bm-mpmin").value !== "") qs.set("mp_min", $("bm-mpmin").value);
     if ($("bm-mpmax").value !== "") qs.set("mp_max", $("bm-mpmax").value);
     const d = await (await fetch("/api/benchmark/results?" + qs.toString())).json();
+    if (request !== S.resultsRequest) return;
     const selector = $("bm-run-select");
-    selector.replaceChildren();
-    for (const [value, label] of [["latest", "Latest complete run (coverage inferred)"], ["all", "All historical runs — composite"], ...(d.runs || []).map(r => [r.run_id, `${r.run_id} · ${r.status} · ${r.codecs.join(", ")}`])]) {
-      selector.add(new Option(label, value));
+    const options = [["latest", "Latest complete run (coverage inferred)"], ["all", "All historical runs — composite"], ...(d.runs || []).map(r => [r.run_id, `${r.run_id} · ${r.status} · ${r.codecs.join(", ")}`])];
+    if (!options.some(([value]) => value === selection)) options.push([selection, `${selection} · missing run`]);
+    if (JSON.stringify([...selector.options].map(o => [o.value, o.text])) !== JSON.stringify(options)) {
+      selector.replaceChildren();
+      for (const [value, label] of options) selector.add(new Option(label, value));
     }
-    if (![...selector.options].some(o => o.value === selection)) selector.add(new Option(`${selection} · missing run`, selection));
     selector.value = selection;
     const run = (d.runs || []).find(r => r.run_id === d.selected_run);
     $("bm-run-info").textContent = (run

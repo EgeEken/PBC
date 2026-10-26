@@ -1,0 +1,9 @@
+{
+  "base": "e3f947bb6b3c3e081ce0f0bb3ea801b8201c3226",
+  "commit": "27f6c65225a5496fa065deb586c7e405ecdffc84",
+  "files": [
+    "static/benchmark.js",
+    "research_pass8/runtime_manifest.json"
+  ],
+  "production_codec_unchanged": true
+}

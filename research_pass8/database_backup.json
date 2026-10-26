@@ -1,0 +1,22 @@
+{
+  "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass8\\benchmark_before.db",
+  "bytes": 974848,
+  "sha256": "f9bc134f62e07fa29bc48a25ac8dcf8750964f5d149851b84b2e3a2696634a5c",
+  "quick_check": "ok",
+  "rows": 6200,
+  "runs": [
+    [
+      "20260624_134736",
+      900
+    ],
+    [
+      "20260624_150209",
+      4500
+    ],
+    [
+      "20261026_122641",
+      800
+    ]
+  ],
+  "utc": "2026-10-26T13:30:57.971079+00:00"
+}
