@@ -1,0 +1,19 @@
+{
+  "hf_revision": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "health": {
+    "ok": true,
+    "boot_id": "1793027219.492"
+  },
+  "public_current_rng_stream_unchanged": true,
+  "public_internal_mse_enabled": true,
+  "prior_v0_stream_sha256": "2f7ef0a8dcdd22444a65ba03f3e2955dde57844d36db7fa269567ca38bcd9414",
+  "prior_v0_decode_pixels_equal": true,
+  "prior_v0_pixels_sha256": "6762b473012c82cf1de553a964dfed84e5eb990e6d8dc83065628fcab9445d5c",
+  "dimensions": [
+    814,
+    812
+  ],
+  "prior_v0_source": "Retained Pass 1 live Balanced RGBA response",
+  "public_requests": 2,
+  "http_latency_used_for_benchmark": false
+}

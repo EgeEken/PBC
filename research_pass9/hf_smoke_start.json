@@ -1,0 +1,45 @@
+{
+  "spec": {
+    "images": [
+      "cat.jpg",
+      "eiffel.png",
+      "googlewiki.png"
+    ],
+    "presets": [
+      "compression",
+      "balanced",
+      "quality",
+      "high_quality"
+    ],
+    "variants": [
+      "release",
+      "dev_release_rng",
+      "dev_current_rng"
+    ],
+    "repeats": 1
+  },
+  "response": {
+    "started": true,
+    "research": true,
+    "spec": {
+      "images": [
+        "cat.jpg",
+        "eiffel.png",
+        "googlewiki.png"
+      ],
+      "presets": [
+        "compression",
+        "balanced",
+        "quality",
+        "high_quality"
+      ],
+      "variants": [
+        "release",
+        "dev_release_rng",
+        "dev_current_rng"
+      ],
+      "repeats": 1
+    }
+  },
+  "utc": "2026-10-26T15:07:52.496212+00:00"
+}

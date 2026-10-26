@@ -1,0 +1,81 @@
+{
+  "spec": {
+    "images": [
+      "cathedral.png",
+      "coast.jpg",
+      "ducklings.jpg",
+      "field.jpg",
+      "flag.jpg",
+      "flower.jpg",
+      "flowers.jpg",
+      "mario64.png",
+      "monet.jpg",
+      "monkey.png",
+      "panorama.png",
+      "park.jpg",
+      "perlman.png",
+      "ratedistortion.png",
+      "seagull.jpg",
+      "stockpoint.jpg",
+      "sunset.jpg",
+      "15k_kills.png",
+      "ducks.jpg",
+      "old_man_standing.jpg",
+      "pigeon.JPG",
+      "pigeons.JPG"
+    ],
+    "presets": [
+      "compression",
+      "balanced",
+      "quality",
+      "high_quality"
+    ],
+    "variants": [
+      "release",
+      "dev_release_rng"
+    ],
+    "repeats": 1
+  },
+  "response": {
+    "started": true,
+    "research": true,
+    "spec": {
+      "images": [
+        "cathedral.png",
+        "coast.jpg",
+        "ducklings.jpg",
+        "field.jpg",
+        "flag.jpg",
+        "flower.jpg",
+        "flowers.jpg",
+        "mario64.png",
+        "monet.jpg",
+        "monkey.png",
+        "panorama.png",
+        "park.jpg",
+        "perlman.png",
+        "ratedistortion.png",
+        "seagull.jpg",
+        "stockpoint.jpg",
+        "sunset.jpg",
+        "15k_kills.png",
+        "ducks.jpg",
+        "old_man_standing.jpg",
+        "pigeon.JPG",
+        "pigeons.JPG"
+      ],
+      "presets": [
+        "compression",
+        "balanced",
+        "quality",
+        "high_quality"
+      ],
+      "variants": [
+        "release",
+        "dev_release_rng"
+      ],
+      "repeats": 1
+    }
+  },
+  "utc": "2026-10-26T15:09:00.794451+00:00"
+}

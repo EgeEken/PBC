@@ -1,0 +1,28 @@
+{
+  "sha": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "runtime": {
+    "stage": "RUNNING",
+    "hardware": {
+      "current": "cpu-basic",
+      "requested": "cpu-basic"
+    },
+    "gcTimeout": 172800,
+    "replicas": {
+      "current": 1,
+      "requested": 1
+    },
+    "devMode": false,
+    "domains": [
+      {
+        "domain": "egeeken-pbc.hf.space",
+        "stage": "READY"
+      }
+    ],
+    "sha": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+    "pySpacesVersion": "0.51.3"
+  },
+  "health": {
+    "ok": true,
+    "boot_id": "1793027219.492"
+  }
+}

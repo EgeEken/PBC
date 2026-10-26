@@ -1,0 +1,55 @@
+{
+  "spec": {
+    "images": [
+      "cat.jpg",
+      "eiffel.png",
+      "flower.jpg",
+      "googlewiki.png",
+      "mario64.png",
+      "monet.jpg",
+      "ratedistortion.png",
+      "seagull.jpg"
+    ],
+    "presets": [
+      "compression",
+      "balanced",
+      "quality",
+      "high_quality"
+    ],
+    "variants": [
+      "release",
+      "dev_release_rng",
+      "dev_current_rng"
+    ],
+    "repeats": 3
+  },
+  "response": {
+    "started": true,
+    "research": true,
+    "spec": {
+      "images": [
+        "cat.jpg",
+        "eiffel.png",
+        "flower.jpg",
+        "googlewiki.png",
+        "mario64.png",
+        "monet.jpg",
+        "ratedistortion.png",
+        "seagull.jpg"
+      ],
+      "presets": [
+        "compression",
+        "balanced",
+        "quality",
+        "high_quality"
+      ],
+      "variants": [
+        "release",
+        "dev_release_rng",
+        "dev_current_rng"
+      ],
+      "repeats": 3
+    }
+  },
+  "utc": "2026-10-26T15:12:33.362364+00:00"
+}

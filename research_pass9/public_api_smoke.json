@@ -1,0 +1,43 @@
+{
+  "status": 200,
+  "input": "existing deployed hpt_data/googlewiki.png",
+  "preset": "balanced",
+  "final_bytes": 51493,
+  "stream_sha256": "2f7ef0a8dcdd22444a65ba03f3e2955dde57844d36db7fa269567ca38bcd9414",
+  "pixels_sha256": "6762b473012c82cf1de553a964dfed84e5eb990e6d8dc83065628fcab9445d5c",
+  "preview_equals_decode": true,
+  "mse": 637.4357306253858,
+  "displayed_mse": 637.44,
+  "image_mode": "RGBA",
+  "public_stream_equals_local_unchanged_rgba_baseline": true,
+  "benchmark_rgb_stream_compared": false,
+  "reason": "Public API preserves source alpha; benchmark deliberately converts inputs to RGB.",
+  "compressed_kb": 50.29,
+  "width": 814,
+  "height": 812,
+  "public_config_retains_internal_mse": true,
+  "http_latency_used_for_performance": false,
+  "response_fields": [
+    "compressed_kb",
+    "compression_percent",
+    "compression_rate",
+    "height",
+    "mse",
+    "original_file_kb",
+    "original_raw_kb",
+    "params",
+    "pbc_base64",
+    "reconstructed_image",
+    "stage_timings",
+    "time_seconds",
+    "width"
+  ],
+  "server_stage_timings": {
+    "read_decode": 0.153,
+    "build_config": 0.0,
+    "compress": 0.319,
+    "mse": 0.0,
+    "png_reconstructed": 0.048,
+    "encode_payload": 0.0
+  }
+}

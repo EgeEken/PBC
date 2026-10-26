@@ -11,6 +11,6 @@
   ],
   "public_rng_default": "current",
   "codec_change": "Explicit per-encode RNG selection only; no decoder or other algorithm change.",
-  "deployed": false,
-  "evaluation_status": "Deferred by user after local gate; prepared commit not pushed"
+  "deployed": true,
+  "evaluation_status": "Completed: HF 100-case equivalence and 288-pair three-way benchmark passed; current public RNG retained"
 }

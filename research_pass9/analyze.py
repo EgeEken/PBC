@@ -84,20 +84,30 @@ def main():
         metadata[name]={**meta,'warmups':[{k:v for k,v in r.items() if k!='trajectory'} for r in meta['warmups']]}
     output=dict(summaries=summaries,rows=compact,per_image=per_cases,equivalence=pairs,quality_restoration=restoration,
         pass8_output_continuity=continuity,trial_means=trial_means,metadata=metadata,
+        performance_measured_pairs=288,total_measured_pairs=sum(len(r['rows']) for r in raw.values()),
+        warmup_pairs=sum(len(r['metadata']['warmups']) for r in raw.values()),
         raw_sha256={name:hashlib.sha256((HERE/('hf_'+name+'.json')).read_bytes()).hexdigest() for name in raw})
     (HERE/'comparison_summary.json').write_text(json.dumps(output,indent=2)+'\n',encoding='utf-8',newline='\n')
     speed=['| Preset | Release encode | Dev release-RNG encode | Dev current encode | Release decode | Dev release-RNG decode | Dev current decode |','| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
-    reductions=['| Preset | Release-RNG encode vs release | Current encode vs release | Release-RNG encode vs current | Release-RNG decode vs release | Current decode vs release | Release-RNG decode vs current |','| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
-    rd=['| Preset | MSE release / release-RNG / current | Bpp release / release-RNG / current | Total patches release / release-RNG / current | Iterative patches release / release-RNG / current |','| --- | ---: | ---: | ---: | ---: |']
+    reductions=['| Preset | Release-RNG dev encode reduction vs 3.0 | Release-RNG dev decode reduction vs 3.0 | Current-RNG dev encode reduction vs 3.0 | Current-RNG dev decode reduction vs 3.0 |','| --- | ---: | ---: | ---: | ---: |']
+    rng=['| Preset | Release-RNG encode reduction vs current | Release-RNG decode reduction vs current |','| --- | ---: | ---: |']
+    rd=['| Preset | Release MSE | Dev release-RNG MSE | Dev current-RNG MSE | Release bpp | Dev release-RNG bpp | Dev current-RNG bpp |','| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+    patches=['| Preset | Total patches release / release-RNG / current | Iterative patches release / release-RNG / current |','| --- | ---: | ---: |']
+    variation=['| Preset | Variant | Encode wins/losses | Decode wins/losses | Mean case encode CV | Mean case decode CV | Encode reduction range vs release | Decode reduction range vs release |','| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
     for preset,s in summaries.items():
         speed.append('| '+LABELS[preset]+' | '+' | '.join(f'{s[source][metric]:.6f}' for metric in METRICS[:2] for source in SOURCES)+' |')
-        reductions.append('| '+LABELS[preset]+' | '+' | '.join(f'{s["reductions"][metric][key]:+.2f}%' for metric in METRICS[:2] for key in ('dev_release_rng_vs_release','dev_current_rng_vs_release','dev_release_rng_vs_dev_current_rng'))+' |')
-        rd.append('| '+LABELS[preset]+' | '+' | '.join(' / '.join(f'{s[source][metric]:.6f}' for source in SOURCES) for metric in ('mse','bpp','patches','iterative_patches'))+' |')
+        reductions.append('| '+LABELS[preset]+' | '+' | '.join(f'{s["reductions"][metric][key]:+.2f}%' for key in ('dev_release_rng_vs_release','dev_current_rng_vs_release') for metric in METRICS[:2])+' |')
+        rng.append('| '+LABELS[preset]+' | '+' | '.join(f'{s["reductions"][metric]["dev_release_rng_vs_dev_current_rng"]:+.2f}%' for metric in METRICS[:2])+' |')
+        rd.append('| '+LABELS[preset]+' | '+' | '.join(f'{s[source][metric]:.6f}' for metric in ('mse','bpp') for source in SOURCES)+' |')
+        patches.append('| '+LABELS[preset]+' | '+' | '.join(' / '.join(f'{s[source][metric]:.2f}' for source in SOURCES) for metric in ('patches','iterative_patches'))+' |')
+        for source in SOURCES[1:]:
+            e,d=[s['variation'][m][source] for m in METRICS[:2]]
+            variation.append(f'| {LABELS[preset]} | {source} | {e["wins"]}/{e["cases"]-e["wins"]} | {d["wins"]}/{d["cases"]-d["wins"]} | {e["mean_case_cv_percent"]:.2f}% | {d["mean_case_cv_percent"]:.2f}% | {e["minimum"]:+.2f}% to {e["maximum"]:+.2f}% | {d["minimum"]:+.2f}% to {d["maximum"]:+.2f}% |')
     per=['| Image | Preset | Encode seconds release / release-RNG / current | Decode seconds release / release-RNG / current | Release-RNG encode/decode reduction vs release | Release-RNG encode reduction vs current | Patches release / release-RNG / current |','| --- | --- | ---: | ---: | ---: | ---: | ---: |']
     for p in per_cases:
         v=p['variants']
         per.append('| '+p['image']+' | '+LABELS[p['preset']]+' | '+' | '.join(' / '.join(f'{v[s][m]:.6f}' for s in SOURCES) for m in METRICS[:2])+f' | {p["release_rng_encode_reduction_vs_release"]:+.2f}% / {p["release_rng_decode_reduction_vs_release"]:+.2f}% | {p["release_rng_encode_reduction_vs_current"]:+.2f}% | '+' / '.join(str(v[s]['patches']) for s in SOURCES)+' |')
-    for name,lines in (('speed_table',speed),('reduction_table',reductions),('rd_table',rd),('per_image_results',per)):
+    for name,lines in (('speed_table',speed),('reduction_table',reductions),('rng_comparison_table',rng),('rd_table',rd),('patch_counts',patches),('variation_table',variation),('per_image_results',per)):
         (HERE/(name+'.md')).write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
     print('\n'.join(speed)); print('\n'.join(reductions)); print(json.dumps(restoration,indent=2))
 

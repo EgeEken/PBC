@@ -1,0 +1,17 @@
+{
+  "prepared_child": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "parent": "27f6c65225a5496fa065deb586c7e405ecdffc84",
+  "changed_files": [
+    "PBC3.py",
+    "pbc3_benchmark.py",
+    "research_pass9/hf_release_job.py",
+    "research_pass9/runtime_manifest.json",
+    "research_pass9/worker.py",
+    "server.py"
+  ],
+  "prepared_tree_matches_research_source": true,
+  "manifest_sources_verified": 19,
+  "assets_verified": 26,
+  "prior_local_gate_valid": true,
+  "local_gate_repeated": false
+}

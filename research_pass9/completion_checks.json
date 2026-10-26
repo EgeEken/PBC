@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-26T15:21:11.665426+00:00",
+  "sha": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "runtime": {
+    "stage": "RUNNING",
+    "hardware": {
+      "current": "cpu-basic",
+      "requested": "cpu-basic"
+    },
+    "gcTimeout": 172800,
+    "replicas": {
+      "current": 1,
+      "requested": 1
+    },
+    "devMode": false,
+    "domains": [
+      {
+        "domain": "egeeken-pbc.hf.space",
+        "stage": "READY"
+      }
+    ],
+    "sha": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+    "pySpacesVersion": "0.51.3"
+  },
+  "health": {
+    "ok": true,
+    "boot_id": "1793027219.492"
+  },
+  "jobs": {
+    "/api/benchmark/status": {
+      "running": false,
+      "done": 288,
+      "total": 288,
+      "error": null,
+      "run_id": null
+    },
+    "/api/quick_rd/status": {
+      "running": false,
+      "done": 0,
+      "total": null,
+      "error": null
+    },
+    "/api/sweeps/run/status": {
+      "running": false,
+      "done": 0,
+      "total": null,
+      "error": null
+    },
+    "/api/train/status": {
+      "running": false
+    }
+  },
+  "public_default_rng": "current",
+  "public_default_changed": false,
+  "local_gate_repeated": false,
+  "new_compression_experiment": false,
+  "saved_evidence_checked": true,
+  "source_isolation_verified": true,
+  "equivalence_cases": 100,
+  "timed_source_cases": 96,
+  "performance_measured_pairs": 288,
+  "three_trial_aggregate_direction_verified": true
+}
