@@ -1,0 +1,14 @@
+{
+  "base": "27f6c65225a5496fa065deb586c7e405ecdffc84",
+  "commit": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "files": [
+    "PBC3.py",
+    "server.py",
+    "pbc3_benchmark.py",
+    "research_pass9/worker.py",
+    "research_pass9/hf_release_job.py",
+    "research_pass9/runtime_manifest.json"
+  ],
+  "public_rng_default": "current",
+  "codec_change": "Explicit per-encode RNG selection only; no decoder or other algorithm change."
+}

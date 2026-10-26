@@ -822,7 +822,7 @@ async def benchmark_start(request: Request):
         if not hmac.compare_digest(request.headers.get("x-pbc-benchmark-token", ""), expected):
             raise HTTPException(status_code=403, detail="Research benchmark authorization required")
         try:
-            from research_pass8.hf_release_job import validate
+            from research_pass9.hf_release_job import validate
             spec = validate(body["research"])
         except (ValueError, TypeError) as error:
             raise HTTPException(status_code=400, detail=str(error))

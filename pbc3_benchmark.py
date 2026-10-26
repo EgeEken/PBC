@@ -334,7 +334,7 @@ def results(mp_min=None, mp_max=None, run_id="latest"):
 
 def start_research(spec):
     global _THREAD
-    from research_pass8.hf_release_job import validate
+    from research_pass9.hf_release_job import validate
     spec = validate(spec)
     with _LOCK:
         if _STATE["running"]:
@@ -349,11 +349,11 @@ def start_research(spec):
         import sys
         import uuid
         from pathlib import Path
-        output = Path(PROJECT_DIR) / "research_pass8" / "hf_runs" / uuid.uuid4().hex
+        output = Path(PROJECT_DIR) / "research_pass9" / "hf_runs" / uuid.uuid4().hex
         try:
             output.mkdir(parents=True, exist_ok=False)
             with (output / "stderr.log").open("w") as log:
-                process = subprocess.Popen([sys.executable, str(Path(PROJECT_DIR) / "research_pass8" / "hf_release_job.py"),
+                process = subprocess.Popen([sys.executable, str(Path(PROJECT_DIR) / "research_pass9" / "hf_release_job.py"),
                     "--spec-json", json.dumps(spec)], cwd=PROJECT_DIR, stdout=subprocess.PIPE,
                     stderr=log, text=True)
                 deadline = time.monotonic() + 1800

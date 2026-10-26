@@ -280,6 +280,17 @@ research_pass8/variation_table.md
 research_pass8/verify_ui_api.py
 research_pass8/worker.py
 research_pass8/write_benchmark_report.py
+research_pass9/PBC_RELEASE_RNG_RESTORATION.md
+research_pass9/README.md
+research_pass9/analyze.py
+research_pass9/check_local.py
+research_pass9/hf_deployment.json
+research_pass9/hf_release_job.py
+research_pass9/local_equivalence.json
+research_pass9/prepare_deployment.py
+research_pass9/run_hf.py
+research_pass9/runtime_manifest.json
+research_pass9/worker.py
 server.py
 static/app.js
 static/benchmark.js

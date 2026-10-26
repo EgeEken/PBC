@@ -274,17 +274,19 @@ class PBC3:
         return float(np.sum(np.abs(target[:, :, c] - np.clip(canvas[:, :, c], 0, 255))))
 
     @classmethod
-    def compress(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, **kwargs) -> PBC3Result:
+    def compress(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, rng_mode="current", **kwargs) -> PBC3Result:
         """## Compresses an image and returns the final result"""
         result = None
-        for ev in cls.compress_stream(image, config, reuse=reuse, trace=trace, frame_every=0, **kwargs):
+        for ev in cls.compress_stream(image, config, reuse=reuse, trace=trace, rng_mode=rng_mode, frame_every=0, **kwargs):
             if ev["event"] == "done":
                 result = ev["result"]
         return result
 
     @classmethod
-    def compress_stream(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, frame_every: int = 25, **kwargs):
+    def compress_stream(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, rng_mode="current", frame_every: int = 25, **kwargs):
         """## Compresses an image and yields optional preview frames plus the final result"""
+        if rng_mode not in ("current", "release"):
+            raise ValueError("rng_mode must be current or release")
         config = _config(config, kwargs)
         owns_trace = trace is True
         trace = TimingTrace("encode", {"patch_count_requested": int(config.patch_count)}) if owns_trace else trace
@@ -360,7 +362,7 @@ class PBC3:
             filler = FillerHead(config, channel_bits, (h, w, channels), patches, (original_w, original_h), trace=trace)
         with timed(trace, "encode.search_initialize"):
             search = SearchHead()
-            rng = ops.PBC3Rng(config.random_seed)
+            rng = np.random.default_rng(config.random_seed) if rng_mode == "release" else ops.PBC3Rng(config.random_seed)
         applied = 0
         for step in range(1, max(0, int(config.patch_count)) + 1):
             with timed(trace, "encode.patch.total", step=step):
