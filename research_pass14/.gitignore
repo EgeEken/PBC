@@ -1,0 +1,7 @@
+__pycache__/
+*.json
+*.log
+native_cases/*.pbc
+native_cases/*.png
+native_cases/*.raw
+native_cases/*.txt
