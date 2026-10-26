@@ -1,0 +1,1589 @@
+{
+  "percentile": 98,
+  "repeats": 3,
+  "rows": [
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 301.37181305021295,
+      "internal_mse": 301.37181305021295,
+      "final_bytes": 64907,
+      "raw_bytes": 154816,
+      "bpp": 0.06090848009849406,
+      "patches": 20,
+      "stream_sha256": "f41645a5216d2f1aba75bda59ea4bc7b6e65af765f7d27a5b603ad69b99e79c2",
+      "pixels_sha256": "c04d9dab29e1e8b8c91c73c9be2aed078d0e733236c031e1a6976c7362d208a3",
+      "trajectory_sha256": "4febf21b5ddcd45e4bdb4901d9db5458eea45103f5901e30a51bf1ed93482b79",
+      "encode_seconds": 0.46732209995388985,
+      "decode_seconds": 0.07268790004309267,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.46732209995388985,
+        0.5008461000397801,
+        0.44232549995649606
+      ],
+      "decode_seconds_samples": [
+        0.07360000000335276,
+        0.07268790004309267,
+        0.06722630001604557
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "mode": "robust",
+      "width": 3576,
+      "height": 2384,
+      "mse": 295.49732607921817,
+      "internal_mse": 295.49732607921817,
+      "final_bytes": 75422,
+      "raw_bytes": 163381,
+      "bpp": 0.0707757158085972,
+      "patches": 35,
+      "stream_sha256": "1262cf5b3f0811e6df5f4e5ece08364ae7ad4be27c0ada95f4706cfbddf9986e",
+      "pixels_sha256": "08e6534169509499a3995090daa550efbddcd765e3a35616cf2f86ff5d438573",
+      "trajectory_sha256": "b5dcab6202fc70d9b48a9afa4d4fbd0afec47269b58968f2a1d6943c5cc0313f",
+      "encode_seconds": 0.5833970999810845,
+      "decode_seconds": 0.07238250004593283,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 35,
+        "bounds_changed": 20,
+        "exact_candidates": 20,
+        "accepted": 5,
+        "local_sse_reduction": 420204,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.04549410019535571,
+        "accepted_positions": [
+          [
+            "iterative",
+            3
+          ],
+          [
+            "iterative",
+            10
+          ],
+          [
+            "iterative",
+            11
+          ],
+          [
+            "iterative",
+            16
+          ],
+          [
+            "iterative",
+            25
+          ]
+        ],
+        "encode_scope_seconds": 0.6358876000158489
+      },
+      "encode_seconds_samples": [
+        0.6358876000158489,
+        0.5833970999810845,
+        0.5536572000710294
+      ],
+      "decode_seconds_samples": [
+        0.07238250004593283,
+        0.07312409998849034,
+        0.07109069998841733
+      ],
+      "first_geometry_change": 7,
+      "first_quantized_change": 5,
+      "patch_count_changed": true
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 293.34386217744196,
+      "internal_mse": 293.34386217744196,
+      "final_bytes": 75995,
+      "raw_bytes": 209614,
+      "bpp": 0.07131341681305647,
+      "patches": 20,
+      "stream_sha256": "caf90eddd3083de6379096c57308fbec941f1037f1166b2b15415bd8a2adb439",
+      "pixels_sha256": "ed8b25bc0053b793d797a7b7dd2e39d3f32806051be8b6b41b9b79b7f64988db",
+      "trajectory_sha256": "f5f1a30c9f364c42ac437021643aab5dc6167de604247b712d0cecad6c3abbda",
+      "encode_seconds": 0.5457890999969095,
+      "decode_seconds": 0.07719840004574507,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.5661633999552578,
+        0.5457890999969095,
+        0.5209915000014007
+      ],
+      "decode_seconds_samples": [
+        0.0788264999864623,
+        0.07719840004574507,
+        0.0759527999907732
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "mode": "robust",
+      "width": 3576,
+      "height": 2384,
+      "mse": 289.25483649385166,
+      "internal_mse": 289.25483649385166,
+      "final_bytes": 88024,
+      "raw_bytes": 215410,
+      "bpp": 0.08260138432202753,
+      "patches": 23,
+      "stream_sha256": "7e2371fea65b7c17a3309502e6179bff194a38b69e5dc5fe89dc6fbd24d047ea",
+      "pixels_sha256": "952e429edc59e39ef2821ddf90cdae66702327648eca43d98f6cc8bdddb5343e",
+      "trajectory_sha256": "c692d611bef87fab882905f7e4fc22ad88ee59c52eaaddab7e356618d9561afc",
+      "encode_seconds": 0.5846203999826685,
+      "decode_seconds": 0.0772366999881342,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 23,
+        "bounds_changed": 22,
+        "exact_candidates": 22,
+        "accepted": 5,
+        "local_sse_reduction": 81391,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.05650430009700358,
+        "accepted_positions": [
+          [
+            "iterative",
+            7
+          ],
+          [
+            "iterative",
+            16
+          ],
+          [
+            "iterative",
+            18
+          ],
+          [
+            "iterative",
+            19
+          ],
+          [
+            "iterative",
+            20
+          ]
+        ],
+        "encode_scope_seconds": 0.6099995999829844
+      },
+      "encode_seconds_samples": [
+        0.6099995999829844,
+        0.5846203999826685,
+        0.5739913999568671
+      ],
+      "decode_seconds_samples": [
+        0.07866749993991107,
+        0.0772366999881342,
+        0.0724145999411121
+      ],
+      "first_geometry_change": 11,
+      "first_quantized_change": 9,
+      "patch_count_changed": true
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 44.30529831770591,
+      "internal_mse": 44.30529831770591,
+      "final_bytes": 30743,
+      "raw_bytes": 61947,
+      "bpp": 0.028849113403300153,
+      "patches": 16,
+      "stream_sha256": "821dcda787ca636008a56ec1cc67012cd39cf15e7b428416ac864c002c2d1f6a",
+      "pixels_sha256": "7f1fc10b7330cb93803ff4d2a3e48b7d7c8933e1bded1b9b13a5c12f8ff9de70",
+      "trajectory_sha256": "b0abba39b677a080cae6159bb886b6f577c20d21f5020a4e0e51cd8f79be8c3d",
+      "encode_seconds": 0.41632059996481985,
+      "decode_seconds": 0.06744680006522685,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.4166075000539422,
+        0.41632059996481985,
+        0.3988395999185741
+      ],
+      "decode_seconds_samples": [
+        0.07047219993546605,
+        0.06744680006522685,
+        0.06292040005791932
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "mode": "robust",
+      "width": 3576,
+      "height": 2384,
+      "mse": 45.23593207294216,
+      "internal_mse": 45.23593207294216,
+      "final_bytes": 30741,
+      "raw_bytes": 60608,
+      "bpp": 0.02884723661096347,
+      "patches": 11,
+      "stream_sha256": "f39b8a3b51fa1b5846f0a1df009bec99a88c2543b39cd7e75b003436c625a995",
+      "pixels_sha256": "8bbcd446b5b294d9dae7cb9d23a755002e7f67d2dc7f42ca8e9b770e5732ec94",
+      "trajectory_sha256": "f4262ea455332f1c53bbb7c0adefa5cca44447dff7ae273d6049a44367e58831",
+      "encode_seconds": 0.42716289998497814,
+      "decode_seconds": 0.06409480003640056,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 11,
+        "bounds_changed": 11,
+        "exact_candidates": 11,
+        "accepted": 3,
+        "local_sse_reduction": 17699,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.03132149996235967,
+        "accepted_positions": [
+          [
+            "iterative",
+            5
+          ],
+          [
+            "iterative",
+            7
+          ],
+          [
+            "iterative",
+            8
+          ]
+        ],
+        "encode_scope_seconds": 0.445842600078322
+      },
+      "encode_seconds_samples": [
+        0.445842600078322,
+        0.42716289998497814,
+        0.4087017000420019
+      ],
+      "decode_seconds_samples": [
+        0.07164239999838173,
+        0.06409480003640056,
+        0.06263590010348707
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": 7,
+      "patch_count_changed": true
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 34.56010943576115,
+      "internal_mse": 34.56010943576115,
+      "final_bytes": 53001,
+      "raw_bytes": 132183,
+      "bpp": 0.04973593531822891,
+      "patches": 23,
+      "stream_sha256": "d11c77dcb3b9f0af1e381411162c2fde97708474ecec4f7a059f5787fde80a42",
+      "pixels_sha256": "6bf03f25e36105abbb211063f4265ae1b95f92272c437bd6a7bc995cebb51996",
+      "trajectory_sha256": "07daa12bb2ad5a74152a2dcce89299f86df0cc2afaf740625d1b0ce98c445305",
+      "encode_seconds": 0.5244703000644222,
+      "decode_seconds": 0.07367440010420978,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.5627661000471562,
+        0.5244703000644222,
+        0.5134050999768078
+      ],
+      "decode_seconds_samples": [
+        0.07801619998645037,
+        0.07367440010420978,
+        0.07181720004882663
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "mode": "robust",
+      "width": 3576,
+      "height": 2384,
+      "mse": 34.8670410710979,
+      "internal_mse": 34.8670410710979,
+      "final_bytes": 56262,
+      "raw_bytes": 132183,
+      "bpp": 0.05279604522318814,
+      "patches": 23,
+      "stream_sha256": "4f381a6ea844adbd82c8f1bb36446c182b06027459fc6533fb51df23446f176d",
+      "pixels_sha256": "525f1b676e17b80a914c7e77949c3b09ad08bdd01ec3688e592e086ee5770339",
+      "trajectory_sha256": "fefb52e1a00f2486d689aa92f626aea08341f4b4255587efe9d84436d6ee680c",
+      "encode_seconds": 0.5732281999662519,
+      "decode_seconds": 0.08696689992211759,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 23,
+        "bounds_changed": 14,
+        "exact_candidates": 14,
+        "accepted": 5,
+        "local_sse_reduction": 75817,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.05327750032301992,
+        "accepted_positions": [
+          [
+            "iterative",
+            2
+          ],
+          [
+            "iterative",
+            5
+          ],
+          [
+            "iterative",
+            6
+          ],
+          [
+            "iterative",
+            15
+          ],
+          [
+            "iterative",
+            16
+          ]
+        ],
+        "encode_scope_seconds": 0.6881630000425503
+      },
+      "encode_seconds_samples": [
+        0.6881630000425503,
+        0.5732281999662519,
+        0.5506366000045091
+      ],
+      "decode_seconds_samples": [
+        0.09147530002519488,
+        0.08696689992211759,
+        0.0691383999073878
+      ],
+      "first_geometry_change": 7,
+      "first_quantized_change": 4,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "mode": "control",
+      "width": 900,
+      "height": 939,
+      "mse": 93.28879816984184,
+      "internal_mse": 93.28879816984184,
+      "final_bytes": 57941,
+      "raw_bytes": 86404,
+      "bpp": 0.5484889362205656,
+      "patches": 36,
+      "stream_sha256": "de4261ff845875cac13407643dd5cef7621de66331ad4b06cab1e1fc74007ba6",
+      "pixels_sha256": "d0ceefe59ff4f108697265ee65ae6844a9c71d0d1c3ad8c7bc34c7e96e00534c",
+      "trajectory_sha256": "50d54b4e5ad84eb0e6d65e7d2a3114d0e197653a2eac0ffb7eb71b8cc842869c",
+      "encode_seconds": 0.2852913000388071,
+      "decode_seconds": 0.02028439997229725,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.3927280999487266,
+        0.27564239990897477,
+        0.2852913000388071
+      ],
+      "decode_seconds_samples": [
+        0.02767059998586774,
+        0.020106600015424192,
+        0.02028439997229725
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "mode": "robust",
+      "width": 900,
+      "height": 939,
+      "mse": 90.44521358419122,
+      "internal_mse": 90.44521358419122,
+      "final_bytes": 69097,
+      "raw_bytes": 87176,
+      "bpp": 0.6540953733286001,
+      "patches": 53,
+      "stream_sha256": "2f25431440878203e4d9a9ac42bdd2f10f7da699ecb39c958d59818e073c2788",
+      "pixels_sha256": "a755d7c2ec833a484fbf523ab49d189e01386b24ba1b7479c495281837215c41",
+      "trajectory_sha256": "7c0dd3a6ac840ff090e30da3af17344c015a42fad355e5a71d3012cdd3af5498",
+      "encode_seconds": 0.39810120000038296,
+      "decode_seconds": 0.02283610007725656,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 53,
+        "bounds_changed": 43,
+        "exact_candidates": 42,
+        "accepted": 20,
+        "local_sse_reduction": 359510,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.0448084999807179,
+        "accepted_positions": [
+          [
+            "init",
+            2
+          ],
+          [
+            "iterative",
+            1
+          ],
+          [
+            "iterative",
+            2
+          ],
+          [
+            "iterative",
+            3
+          ],
+          [
+            "iterative",
+            9
+          ],
+          [
+            "iterative",
+            11
+          ],
+          [
+            "iterative",
+            12
+          ],
+          [
+            "iterative",
+            13
+          ],
+          [
+            "iterative",
+            14
+          ],
+          [
+            "iterative",
+            15
+          ],
+          [
+            "iterative",
+            16
+          ],
+          [
+            "iterative",
+            20
+          ],
+          [
+            "iterative",
+            23
+          ],
+          [
+            "iterative",
+            24
+          ],
+          [
+            "iterative",
+            27
+          ],
+          [
+            "iterative",
+            29
+          ],
+          [
+            "iterative",
+            35
+          ],
+          [
+            "iterative",
+            40
+          ],
+          [
+            "iterative",
+            45
+          ],
+          [
+            "iterative",
+            49
+          ]
+        ],
+        "encode_scope_seconds": 0.43757040007039905
+      },
+      "encode_seconds_samples": [
+        0.43757040007039905,
+        0.39279630000237375,
+        0.39810120000038296
+      ],
+      "decode_seconds_samples": [
+        0.0261195000493899,
+        0.021970100002363324,
+        0.02283610007725656
+      ],
+      "first_geometry_change": 6,
+      "first_quantized_change": 2,
+      "patch_count_changed": true
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 900,
+      "height": 939,
+      "mse": 58.21135999684456,
+      "internal_mse": 58.21135999684456,
+      "final_bytes": 121740,
+      "raw_bytes": 242904,
+      "bpp": 1.1524316648917288,
+      "patches": 23,
+      "stream_sha256": "9f1fbde1c28f7e50d899934c6ac7cccd25867cce2c3d434243977ff5f85ac8e8",
+      "pixels_sha256": "666c6bc2a17db4b1fb3da1db65965fd8531e678ba419d259235af6d32d7adefb",
+      "trajectory_sha256": "b6597a104ca6e9a8cc9a3e86fb1bbe9b49412efb5e386029de6d6e0129ab4aad",
+      "encode_seconds": 0.33092300000134856,
+      "decode_seconds": 0.028700500028207898,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.3716776000801474,
+        0.33092300000134856,
+        0.32612470001913607
+      ],
+      "decode_seconds_samples": [
+        0.03155829990282655,
+        0.028700500028207898,
+        0.027080500032752752
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "mode": "robust",
+      "width": 900,
+      "height": 939,
+      "mse": 58.304129294363584,
+      "internal_mse": 58.304129294363584,
+      "final_bytes": 148578,
+      "raw_bytes": 203207,
+      "bpp": 1.4064891728789493,
+      "patches": 23,
+      "stream_sha256": "740a6d9f05bfca8cd141ed0d972f755b8f294ac3e0c3688b545a7820992ae292",
+      "pixels_sha256": "76c139dfe01ba23915dc468507e6cbc0f2cbd8c0e62dd74f9331ff6a8f8a913c",
+      "trajectory_sha256": "969a579c92e734f70fcf2ce5fba5963fdffd00900dee0a712d04101f000517d6",
+      "encode_seconds": 0.35466179996728897,
+      "decode_seconds": 0.030973499990068376,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 23,
+        "bounds_changed": 19,
+        "exact_candidates": 19,
+        "accepted": 8,
+        "local_sse_reduction": 141893,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.05510940030217171,
+        "accepted_positions": [
+          [
+            "init",
+            2
+          ],
+          [
+            "iterative",
+            1
+          ],
+          [
+            "iterative",
+            3
+          ],
+          [
+            "iterative",
+            7
+          ],
+          [
+            "iterative",
+            9
+          ],
+          [
+            "iterative",
+            10
+          ],
+          [
+            "iterative",
+            16
+          ],
+          [
+            "iterative",
+            17
+          ]
+        ],
+        "encode_scope_seconds": 0.42348180001135916
+      },
+      "encode_seconds_samples": [
+        0.42348180001135916,
+        0.35466179996728897,
+        0.3429798000724986
+      ],
+      "decode_seconds_samples": [
+        0.03333760006353259,
+        0.030973499990068376,
+        0.030753400060348213
+      ],
+      "first_geometry_change": 4,
+      "first_quantized_change": 2,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "mode": "control",
+      "width": 1152,
+      "height": 864,
+      "mse": 136.20310021754972,
+      "internal_mse": 136.20310021754972,
+      "final_bytes": 73040,
+      "raw_bytes": 154256,
+      "bpp": 0.5870627572016461,
+      "patches": 53,
+      "stream_sha256": "7eb07376874e85a52a2d493a3697d5979488c5c441d66f28501d6be3ccaf136a",
+      "pixels_sha256": "5a923b2f50bad609aa4f38a79b3dc83e8233ecc243160d72b9834e33d29bcd53",
+      "trajectory_sha256": "6eba2218979aede09ab56d048e88684c4964b7659379a73600dd0e43cd9f6a5e",
+      "encode_seconds": 0.3941969000734389,
+      "decode_seconds": 0.033041999908164144,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.5830065000336617,
+        0.3941969000734389,
+        0.39041150000412017
+      ],
+      "decode_seconds_samples": [
+        0.03475849993992597,
+        0.033041999908164144,
+        0.025504100020043552
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "mode": "robust",
+      "width": 1152,
+      "height": 864,
+      "mse": 133.20440899884258,
+      "internal_mse": 133.20440899884258,
+      "final_bytes": 74581,
+      "raw_bytes": 162374,
+      "bpp": 0.5994486239711934,
+      "patches": 53,
+      "stream_sha256": "e7a8297e6d153b5481d55ca642b9417a85c8645f9754bd72153a9b69dd96ca7a",
+      "pixels_sha256": "4a1d56464ce1d3bfe593168ff7f8cfdf221c3edac281e4b8ff38a76736b597d2",
+      "trajectory_sha256": "2fafd667fa537a7916d246d71acd4ac26cb48e307262cfe8cf48d140c9d44d1b",
+      "encode_seconds": 0.47393440001178533,
+      "decode_seconds": 0.026718300068750978,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 53,
+        "bounds_changed": 48,
+        "exact_candidates": 48,
+        "accepted": 6,
+        "local_sse_reduction": 14755,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.052829700405709445,
+        "accepted_positions": [
+          [
+            "init",
+            0
+          ],
+          [
+            "iterative",
+            29
+          ],
+          [
+            "iterative",
+            30
+          ],
+          [
+            "iterative",
+            35
+          ],
+          [
+            "iterative",
+            38
+          ],
+          [
+            "iterative",
+            48
+          ]
+        ],
+        "encode_scope_seconds": 0.5870878000278026
+      },
+      "encode_seconds_samples": [
+        0.5870878000278026,
+        0.47393440001178533,
+        0.4666064000921324
+      ],
+      "decode_seconds_samples": [
+        0.03715369990095496,
+        0.02563490008469671,
+        0.026718300068750978
+      ],
+      "first_geometry_change": 7,
+      "first_quantized_change": 0,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 1152,
+      "height": 864,
+      "mse": 133.72078316561644,
+      "internal_mse": 133.72078316561644,
+      "final_bytes": 90279,
+      "raw_bytes": 294675,
+      "bpp": 0.7256221064814815,
+      "patches": 23,
+      "stream_sha256": "a0726c4094cf6cbaf840e9cbc60350d1f43870c43a69631d4cadfadf3ae71e0b",
+      "pixels_sha256": "f3e5964cb72998ce1f6457be931722338349a4dc34dac7ee2e74acf7aa270fe7",
+      "trajectory_sha256": "69339bf266fc5acdb8bd70868514ee234b1e4f2dbfecf1e7c3aa125dfbb4c19f",
+      "encode_seconds": 0.38997459993697703,
+      "decode_seconds": 0.03143109998200089,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.5695684000384063,
+        0.38997459993697703,
+        0.3808427000185475
+      ],
+      "decode_seconds_samples": [
+        0.04407760000322014,
+        0.02885280002374202,
+        0.03143109998200089
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "mode": "robust",
+      "width": 1152,
+      "height": 864,
+      "mse": 134.0281709480024,
+      "internal_mse": 134.0281709480024,
+      "final_bytes": 91365,
+      "raw_bytes": 287065,
+      "bpp": 0.734350887345679,
+      "patches": 23,
+      "stream_sha256": "ba4eb9c879de1e70a8158b189d13908ba748b1fb9e795b56ff398b479b5e91bc",
+      "pixels_sha256": "5b30e01ed922627f61b60247821e7e503e7b2108e7f3d6f961393eeb4870f47b",
+      "trajectory_sha256": "e62871149e6852375150576ffa05756d31fc8257184758f192f37cff33ab30d4",
+      "encode_seconds": 0.4311871000099927,
+      "decode_seconds": 0.030198600026778877,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 23,
+        "bounds_changed": 22,
+        "exact_candidates": 22,
+        "accepted": 1,
+        "local_sse_reduction": 4119,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.05546009982936084,
+        "accepted_positions": [
+          [
+            "init",
+            0
+          ]
+        ],
+        "encode_scope_seconds": 0.4707734000403434
+      },
+      "encode_seconds_samples": [
+        0.4707734000403434,
+        0.4311871000099927,
+        0.4208451999584213
+      ],
+      "decode_seconds_samples": [
+        0.03194489993620664,
+        0.029527899925597012,
+        0.030198600026778877
+      ],
+      "first_geometry_change": 7,
+      "first_quantized_change": 0,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "mode": "control",
+      "width": 487,
+      "height": 487,
+      "mse": 25.55880265408492,
+      "internal_mse": 25.55880265408492,
+      "final_bytes": 54927,
+      "raw_bytes": 121520,
+      "bpp": 1.852754786671108,
+      "patches": 20,
+      "stream_sha256": "3b349ae93182128ca40197b85a44913176aa166ecccd7465d2263302128400b1",
+      "pixels_sha256": "63efc22148d715446aef741b59806da5404113fba21a986627f3857759c50c74",
+      "trajectory_sha256": "576f571d567aea3f8a6a884051ae8338be4225cefae4e139b1d70ee4ebdc9c14",
+      "encode_seconds": 0.1926136000547558,
+      "decode_seconds": 0.013148199999704957,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.22524050006177276,
+        0.1926136000547558,
+        0.1872761999256909
+      ],
+      "decode_seconds_samples": [
+        0.020710700075142086,
+        0.013148199999704957,
+        0.011991600040346384
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "mode": "robust",
+      "width": 487,
+      "height": 487,
+      "mse": 25.208457541528052,
+      "internal_mse": 25.208457541528052,
+      "final_bytes": 56163,
+      "raw_bytes": 123132,
+      "bpp": 1.8944465760702285,
+      "patches": 18,
+      "stream_sha256": "3961fc5ec82aabd9f0e7c96b67f5788b8917c27822d8c36649bdeb5008326f8c",
+      "pixels_sha256": "0fb87506cc1e4b18cac91f80fa9762525b2e4e53f7c27a142bce2a3265ab0919",
+      "trajectory_sha256": "04caad93b4f52d976e1c290f208cb32deba80e5c672184c6ff7c67d5e2d39b94",
+      "encode_seconds": 0.21595139999408275,
+      "decode_seconds": 0.013450999977067113,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 18,
+        "bounds_changed": 17,
+        "exact_candidates": 17,
+        "accepted": 2,
+        "local_sse_reduction": 11210,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.035469899885356426,
+        "accepted_positions": [
+          [
+            "iterative",
+            10
+          ],
+          [
+            "iterative",
+            12
+          ]
+        ],
+        "encode_scope_seconds": 0.23354799998924136
+      },
+      "encode_seconds_samples": [
+        0.23354799998924136,
+        0.21595139999408275,
+        0.215466900030151
+      ],
+      "decode_seconds_samples": [
+        0.013450999977067113,
+        0.012413899996317923,
+        0.013471399899572134
+      ],
+      "first_geometry_change": 13,
+      "first_quantized_change": 12,
+      "patch_count_changed": true
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 487,
+      "height": 487,
+      "mse": 19.692243365139063,
+      "internal_mse": 19.692243365139063,
+      "final_bytes": 83967,
+      "raw_bytes": 336193,
+      "bpp": 2.8323094502232586,
+      "patches": 21,
+      "stream_sha256": "d9091d72020d0af9ef3e1ff473f513566f06362344e7fad7c5e7df384715e253",
+      "pixels_sha256": "3e3f4e5cabb8c2a7d915004c5afa26615130bcaf9d7a2c4143c254780ad75719",
+      "trajectory_sha256": "aea2acac6487015f64663794767a1ea84268ff86243a2e022d3ca6e388aba8b3",
+      "encode_seconds": 0.4104352999711409,
+      "decode_seconds": 0.02031129994429648,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.4348805999616161,
+        0.40407749998848885,
+        0.4104352999711409
+      ],
+      "decode_seconds_samples": [
+        0.024983300012536347,
+        0.02031129994429648,
+        0.020297800074331462
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "mode": "robust",
+      "width": 487,
+      "height": 487,
+      "mse": 19.870497409020572,
+      "internal_mse": 19.870497409020572,
+      "final_bytes": 91310,
+      "raw_bytes": 335923,
+      "bpp": 3.079997807470622,
+      "patches": 19,
+      "stream_sha256": "1e26734fcf95e53a4c5c3753851edc404642cb67ad6d5c18ac17d4f2ef927131",
+      "pixels_sha256": "1bd182c1e7007438842b6283230abdba5bcfd8472c939dd30a9c074147e4c305",
+      "trajectory_sha256": "11726f1f40624e631fb020f27be0754f2fe7d8157d60733feceaa1ef4c56a37a",
+      "encode_seconds": 0.448530999943614,
+      "decode_seconds": 0.022917900001630187,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 19,
+        "bounds_changed": 18,
+        "exact_candidates": 18,
+        "accepted": 4,
+        "local_sse_reduction": 68607,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.05755530030000955,
+        "accepted_positions": [
+          [
+            "iterative",
+            4
+          ],
+          [
+            "iterative",
+            11
+          ],
+          [
+            "iterative",
+            14
+          ],
+          [
+            "iterative",
+            15
+          ]
+        ],
+        "encode_scope_seconds": 0.48099039995577186
+      },
+      "encode_seconds_samples": [
+        0.48099039995577186,
+        0.448530999943614,
+        0.4390851000789553
+      ],
+      "decode_seconds_samples": [
+        0.03663390001747757,
+        0.021017500082962215,
+        0.022917900001630187
+      ],
+      "first_geometry_change": 16,
+      "first_quantized_change": 6,
+      "patch_count_changed": true
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "mode": "control",
+      "width": 814,
+      "height": 812,
+      "mse": 796.752410101548,
+      "internal_mse": 796.752410101548,
+      "final_bytes": 82554,
+      "raw_bytes": 182004,
+      "bpp": 0.9991890681545854,
+      "patches": 53,
+      "stream_sha256": "e8291065923b26a7f5d0d40956122651da7b709422eb7038fbf383245f547010",
+      "pixels_sha256": "d6d7cd466d902a7dfb503e81330a19c50335139c6b3539d12fa07789277f8243",
+      "trajectory_sha256": "6a9ba9340e3a834ab7ca9da2857bfc6e21098df679ed90cd2e19df8b0fb3ef77",
+      "encode_seconds": 0.3876616000197828,
+      "decode_seconds": 0.02244039997458458,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.4705118000274524,
+        0.3876616000197828,
+        0.3705560000380501
+      ],
+      "decode_seconds_samples": [
+        0.031250600004568696,
+        0.021645699976943433,
+        0.02244039997458458
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "mode": "robust",
+      "width": 814,
+      "height": 812,
+      "mse": 799.3872179389421,
+      "internal_mse": 799.3872179389421,
+      "final_bytes": 83236,
+      "raw_bytes": 181393,
+      "bpp": 1.0074436281332833,
+      "patches": 53,
+      "stream_sha256": "316a48168e675d379be27da45cfd6881940bfee7c083e7150c082696d2ee87b1",
+      "pixels_sha256": "87079bcd5887b82fbe5376a78767adf375920f19ac16bc24408d59b856483b8c",
+      "trajectory_sha256": "b48e3a2928e445a7c44544151afffc3ff432d07d0b35be9b07f5c20c8dcb208c",
+      "encode_seconds": 0.44868050003424287,
+      "decode_seconds": 0.022959199966862798,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 53,
+        "bounds_changed": 52,
+        "exact_candidates": 52,
+        "accepted": 23,
+        "local_sse_reduction": 332578,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.051191099686548114,
+        "accepted_positions": [
+          [
+            "iterative",
+            7
+          ],
+          [
+            "iterative",
+            10
+          ],
+          [
+            "iterative",
+            11
+          ],
+          [
+            "iterative",
+            13
+          ],
+          [
+            "iterative",
+            14
+          ],
+          [
+            "iterative",
+            17
+          ],
+          [
+            "iterative",
+            20
+          ],
+          [
+            "iterative",
+            22
+          ],
+          [
+            "iterative",
+            23
+          ],
+          [
+            "iterative",
+            24
+          ],
+          [
+            "iterative",
+            28
+          ],
+          [
+            "iterative",
+            29
+          ],
+          [
+            "iterative",
+            30
+          ],
+          [
+            "iterative",
+            31
+          ],
+          [
+            "iterative",
+            33
+          ],
+          [
+            "iterative",
+            34
+          ],
+          [
+            "iterative",
+            35
+          ],
+          [
+            "iterative",
+            36
+          ],
+          [
+            "iterative",
+            38
+          ],
+          [
+            "iterative",
+            40
+          ],
+          [
+            "iterative",
+            44
+          ],
+          [
+            "iterative",
+            45
+          ],
+          [
+            "iterative",
+            46
+          ]
+        ],
+        "encode_scope_seconds": 0.4923719000071287
+      },
+      "encode_seconds_samples": [
+        0.4923719000071287,
+        0.44868050003424287,
+        0.4153230000520125
+      ],
+      "decode_seconds_samples": [
+        0.022959199966862798,
+        0.021552100079134107,
+        0.024152599973604083
+      ],
+      "first_geometry_change": 10,
+      "first_quantized_change": 9,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 814,
+      "height": 812,
+      "mse": 703.7049670584154,
+      "internal_mse": 703.7049670584154,
+      "final_bytes": 184839,
+      "raw_bytes": 514368,
+      "bpp": 2.237191513053582,
+      "patches": 23,
+      "stream_sha256": "c7f966ff1d58dc59bfa2b75f56964128a73761e81332187f529911ca4ff656c7",
+      "pixels_sha256": "bd08a9573333f0e8b9451f7bb73158293e6a35cdaf8679da3a33abe5a134f5f0",
+      "trajectory_sha256": "dd25dc3753402c7d8dad3d796c2a56ab32f190735728d97d88cebdaad5051482",
+      "encode_seconds": 0.4753795999567956,
+      "decode_seconds": 0.034221199923194945,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.4959767999825999,
+        0.4753795999567956,
+        0.4615817000158131
+      ],
+      "decode_seconds_samples": [
+        0.034221199923194945,
+        0.03455500002019107,
+        0.03336849994957447
+      ],
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "mode": "robust",
+      "width": 814,
+      "height": 812,
+      "mse": 708.2621624647487,
+      "internal_mse": 708.2621624647487,
+      "final_bytes": 191088,
+      "raw_bytes": 496454,
+      "bpp": 2.312826036963968,
+      "patches": 23,
+      "stream_sha256": "e58678f9f79b6410a0339a215ac89d11809647cb441effc2b8fcb5d5080feb12",
+      "pixels_sha256": "a44f3b62baf8b6799c6cf0637c579233ab5ce7a4a253e45da07a084e8f174b81",
+      "trajectory_sha256": "0ff260a4647ab544b82e0fa7be7f91c9f576051e067d90fef76f0bb2bb9a0625",
+      "encode_seconds": 0.531472000060603,
+      "decode_seconds": 0.03477900009602308,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 23,
+        "bounds_changed": 18,
+        "exact_candidates": 18,
+        "accepted": 4,
+        "local_sse_reduction": 114061,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.06579030014108866,
+        "accepted_positions": [
+          [
+            "iterative",
+            3
+          ],
+          [
+            "iterative",
+            5
+          ],
+          [
+            "iterative",
+            6
+          ],
+          [
+            "iterative",
+            14
+          ]
+        ],
+        "encode_scope_seconds": 0.5322506999364123
+      },
+      "encode_seconds_samples": [
+        0.5322506999364123,
+        0.531472000060603,
+        0.5047704000025988
+      ],
+      "decode_seconds_samples": [
+        0.03769100003410131,
+        0.03477900009602308,
+        0.03350010002031922
+      ],
+      "first_geometry_change": 10,
+      "first_quantized_change": 5,
+      "patch_count_changed": false
+    }
+  ],
+  "metadata": {
+    "control": {
+      "source": "integrated",
+      "pid": 44296,
+      "cpu": 0,
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMBA_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "versions": {
+        "numpy": "2.2.6",
+        "numba": "0.62.1",
+        "Pillow": "11.3.0"
+      },
+      "modules": {
+        "pbc3_trace": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_trace.py",
+        "pbc3_ops": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_ops.py",
+        "pbc3_types": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_types.py",
+        "pbc3_stream": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_stream.py",
+        "pbc3_features": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_features.py",
+        "learned_filler": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\learned_filler.py",
+        "pbc3_heads": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_heads.py",
+        "PBC3": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\PBC3.py"
+      }
+    },
+    "robust": {
+      "source": "init",
+      "pid": 34496,
+      "cpu": 0,
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMBA_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "versions": {
+        "numpy": "2.2.6",
+        "numba": "0.62.1",
+        "Pillow": "11.3.0"
+      },
+      "modules": {
+        "pbc3_trace": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_trace.py",
+        "pbc3_ops": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_ops.py",
+        "pbc3_types": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_types.py",
+        "pbc3_stream": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_stream.py",
+        "pbc3_features": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_features.py",
+        "learned_filler": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\learned_filler.py",
+        "pbc3_heads": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_heads.py",
+        "PBC3": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\PBC3.py"
+      }
+    }
+  },
+  "warmups": [
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "source": "integrated",
+      "trial": -1,
+      "mode": "RGB",
+      "width": 814,
+      "height": 812,
+      "mse": 796.752410101548,
+      "internal_mse": 796.752410101548,
+      "final_bytes": 82554,
+      "raw_bytes": 182004,
+      "bpp": 0.9991890681545854,
+      "patches": 53,
+      "stream_sha256": "e8291065923b26a7f5d0d40956122651da7b709422eb7038fbf383245f547010",
+      "pixels_sha256": "d6d7cd466d902a7dfb503e81330a19c50335139c6b3539d12fa07789277f8243",
+      "trajectory_sha256": "6a9ba9340e3a834ab7ca9da2857bfc6e21098df679ed90cd2e19df8b0fb3ef77",
+      "encode_seconds": 1.0590151000069454,
+      "decode_seconds": 0.027913999976590276,
+      "preview_equal": true,
+      "stats": {}
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "source": "init",
+      "trial": -1,
+      "mode": "RGB",
+      "width": 814,
+      "height": 812,
+      "mse": 799.3872179389421,
+      "internal_mse": 799.3872179389421,
+      "final_bytes": 83236,
+      "raw_bytes": 181393,
+      "bpp": 1.0074436281332833,
+      "patches": 53,
+      "stream_sha256": "316a48168e675d379be27da45cfd6881940bfee7c083e7150c082696d2ee87b1",
+      "pixels_sha256": "87079bcd5887b82fbe5376a78767adf375920f19ac16bc24408d59b856483b8c",
+      "trajectory_sha256": "b48e3a2928e445a7c44544151afffc3ff432d07d0b35be9b07f5c20c8dcb208c",
+      "encode_seconds": 1.1215518999379128,
+      "decode_seconds": 0.030757499975152314,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 53,
+        "bounds_changed": 52,
+        "exact_candidates": 52,
+        "accepted": 23,
+        "local_sse_reduction": 332578,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.05349800013937056,
+        "accepted_positions": [
+          [
+            "iterative",
+            7
+          ],
+          [
+            "iterative",
+            10
+          ],
+          [
+            "iterative",
+            11
+          ],
+          [
+            "iterative",
+            13
+          ],
+          [
+            "iterative",
+            14
+          ],
+          [
+            "iterative",
+            17
+          ],
+          [
+            "iterative",
+            20
+          ],
+          [
+            "iterative",
+            22
+          ],
+          [
+            "iterative",
+            23
+          ],
+          [
+            "iterative",
+            24
+          ],
+          [
+            "iterative",
+            28
+          ],
+          [
+            "iterative",
+            29
+          ],
+          [
+            "iterative",
+            30
+          ],
+          [
+            "iterative",
+            31
+          ],
+          [
+            "iterative",
+            33
+          ],
+          [
+            "iterative",
+            34
+          ],
+          [
+            "iterative",
+            35
+          ],
+          [
+            "iterative",
+            36
+          ],
+          [
+            "iterative",
+            38
+          ],
+          [
+            "iterative",
+            40
+          ],
+          [
+            "iterative",
+            44
+          ],
+          [
+            "iterative",
+            45
+          ],
+          [
+            "iterative",
+            46
+          ]
+        ],
+        "encode_scope_seconds": 1.1215596999973059
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "source": "integrated",
+      "trial": -1,
+      "mode": "RGB",
+      "width": 814,
+      "height": 812,
+      "mse": 703.7049670584154,
+      "internal_mse": 703.7049670584154,
+      "final_bytes": 184839,
+      "raw_bytes": 514368,
+      "bpp": 2.237191513053582,
+      "patches": 23,
+      "stream_sha256": "c7f966ff1d58dc59bfa2b75f56964128a73761e81332187f529911ca4ff656c7",
+      "pixels_sha256": "bd08a9573333f0e8b9451f7bb73158293e6a35cdaf8679da3a33abe5a134f5f0",
+      "trajectory_sha256": "dd25dc3753402c7d8dad3d796c2a56ab32f190735728d97d88cebdaad5051482",
+      "encode_seconds": 0.509482100023888,
+      "decode_seconds": 0.03725799999665469,
+      "preview_equal": true,
+      "stats": {}
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "source": "init",
+      "trial": -1,
+      "mode": "RGB",
+      "width": 814,
+      "height": 812,
+      "mse": 708.2621624647487,
+      "internal_mse": 708.2621624647487,
+      "final_bytes": 191088,
+      "raw_bytes": 496454,
+      "bpp": 2.312826036963968,
+      "patches": 23,
+      "stream_sha256": "e58678f9f79b6410a0339a215ac89d11809647cb441effc2b8fcb5d5080feb12",
+      "pixels_sha256": "a44f3b62baf8b6799c6cf0637c579233ab5ce7a4a253e45da07a084e8f174b81",
+      "trajectory_sha256": "0ff260a4647ab544b82e0fa7be7f91c9f576051e067d90fef76f0bb2bb9a0625",
+      "encode_seconds": 0.6251296000555158,
+      "decode_seconds": 0.03790650004521012,
+      "preview_equal": true,
+      "stats": {
+        "percentile": 98,
+        "considered": 23,
+        "bounds_changed": 18,
+        "exact_candidates": 18,
+        "accepted": 4,
+        "local_sse_reduction": 114061,
+        "raw_bits_saved": 0,
+        "palette_seconds": 0.12210020027123392,
+        "accepted_positions": [
+          [
+            "iterative",
+            3
+          ],
+          [
+            "iterative",
+            5
+          ],
+          [
+            "iterative",
+            6
+          ],
+          [
+            "iterative",
+            14
+          ]
+        ],
+        "encode_scope_seconds": 0.6251376000000164
+      }
+    }
+  ],
+  "provenance": {
+    "source_lf": {
+      "research_pass8/palette.py": "c6260034799c59138f8f2ec7f19294f35ba829b0a6c1739d50e3e54e1b1af857",
+      "research_pass8/palette_scope.py": "a9241147bfedda31d22848d698e7ca65c11152fe5ea4b31e3d00d9e78733b30b",
+      "research_pass8/palette_worker.py": "710943a829f92861e89fdc898e38d876d8711bb0dfa1c333cf3b0af3e14cc881",
+      "research_pass8/screen_palette.py": "194d8db5067b23d6a744a1e7eb9d060d16890cc541b4e3d6d08488ed2234e249",
+      "research_pass6/worker.py": "696e91a9cd82e427dbcd677c9a49bc1010220eebedcc8874e6d5f628ec4e156f",
+      "PBC3.py": "e9ad7727d52a963670997d0f63d4387ed057ec0a602af2b9238723af477b5988",
+      "pbc3_ops.py": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e"
+    },
+    "inputs": {
+      "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+      "mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e",
+      "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+    },
+    "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "raw_sha256": "4011df082aad1cd2273580f1652601b2f6e7c75962901e8cc4ffe2fca0cf7d53"
+  }
+}

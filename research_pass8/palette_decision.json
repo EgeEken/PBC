@@ -1,0 +1,386 @@
+{
+  "decision": "Reject after six-image screen; no broader confirmation or RD deployment.",
+  "means": {
+    "control": {
+      "mse": 220.05946230918016,
+      "bpp": 0.9288214357109197,
+      "encode_seconds": 0.401698166669424,
+      "decode_seconds": 0.04121554999922713,
+      "patches": 27.583333333333332
+    },
+    "robust": {
+      "mse": 219.4637828247291,
+      "bpp": 0.993676540677275,
+      "encode_seconds": 0.4559106666614146,
+      "decode_seconds": 0.04212620834975193,
+      "patches": 29.75
+    }
+  },
+  "aggregate_change_percent": {
+    "mse": -0.2706902389928323,
+    "bpp": 6.982515957624846,
+    "encode_seconds": 13.49582957808333,
+    "decode_seconds": 2.209501876213893,
+    "patches": 7.85498489425982
+  },
+  "mean_case_change_percent": {
+    "mse": -0.3918639111797832,
+    "bpp": 8.16578354581369,
+    "encode_seconds": 14.191933812662676,
+    "decode_seconds": 2.434970867047061
+  },
+  "strict_rd_wins": 0,
+  "mse_wins": 5,
+  "worst_mse_change_percent": 2.1005021759764153,
+  "worst_bpp_change_percent": 22.045342533267622,
+  "mean_timing_cv_percent": {
+    "control": {
+      "encode_seconds": 10.352019968513323,
+      "decode_seconds": 12.42376466739163
+    },
+    "robust": {
+      "encode_seconds": 7.050003456520428,
+      "decode_seconds": 9.553538187404623
+    }
+  },
+  "considered": 357,
+  "accepted": 86,
+  "pairs": [
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "control": {
+        "mse": 301.37181305021295,
+        "bpp": 0.06090848009849406,
+        "encode_seconds": 0.46732209995388985,
+        "decode_seconds": 0.07268790004309267,
+        "patches": 20
+      },
+      "robust": {
+        "mse": 295.49732607921817,
+        "bpp": 0.0707757158085972,
+        "encode_seconds": 0.5833970999810845,
+        "decode_seconds": 0.07238250004593283,
+        "patches": 35
+      },
+      "change_percent": {
+        "mse": -1.9492489730670304,
+        "bpp": 16.200101683947786,
+        "encode_seconds": 24.838328861110483,
+        "decode_seconds": -0.4201524558816283
+      },
+      "considered": 35,
+      "accepted": 5,
+      "palette_seconds": 0.04549410019535571,
+      "strict_rd_win": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "control": {
+        "mse": 293.34386217744196,
+        "bpp": 0.07131341681305647,
+        "encode_seconds": 0.5457890999969095,
+        "decode_seconds": 0.07719840004574507,
+        "patches": 20
+      },
+      "robust": {
+        "mse": 289.25483649385166,
+        "bpp": 0.08260138432202753,
+        "encode_seconds": 0.5846203999826685,
+        "decode_seconds": 0.0772366999881342,
+        "patches": 23
+      },
+      "change_percent": {
+        "mse": -1.3939359948553776,
+        "bpp": 15.828672939009136,
+        "encode_seconds": 7.114707858031388,
+        "decode_seconds": 0.04961235254414831
+      },
+      "considered": 23,
+      "accepted": 5,
+      "palette_seconds": 0.05650430009700358,
+      "strict_rd_win": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "control": {
+        "mse": 44.30529831770591,
+        "bpp": 0.028849113403300153,
+        "encode_seconds": 0.41632059996481985,
+        "decode_seconds": 0.06744680006522685,
+        "patches": 16
+      },
+      "robust": {
+        "mse": 45.23593207294216,
+        "bpp": 0.02884723661096347,
+        "encode_seconds": 0.42716289998497814,
+        "decode_seconds": 0.06409480003640056,
+        "patches": 11
+      },
+      "change_percent": {
+        "mse": 2.1005021759764153,
+        "bpp": -0.006505545977952831,
+        "encode_seconds": 2.6043150449616137,
+        "decode_seconds": -4.969842936335933
+      },
+      "considered": 11,
+      "accepted": 3,
+      "palette_seconds": 0.03132149996235967,
+      "strict_rd_win": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "control": {
+        "mse": 34.56010943576115,
+        "bpp": 0.04973593531822891,
+        "encode_seconds": 0.5244703000644222,
+        "decode_seconds": 0.07367440010420978,
+        "patches": 23
+      },
+      "robust": {
+        "mse": 34.8670410710979,
+        "bpp": 0.05279604522318814,
+        "encode_seconds": 0.5732281999662519,
+        "decode_seconds": 0.08696689992211759,
+        "patches": 23
+      },
+      "change_percent": {
+        "mse": 0.8881095585280496,
+        "bpp": 6.152714099733947,
+        "encode_seconds": 9.296598853326987,
+        "decode_seconds": 18.042223349095554
+      },
+      "considered": 23,
+      "accepted": 5,
+      "palette_seconds": 0.05327750032301992,
+      "strict_rd_win": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "control": {
+        "mse": 93.28879816984184,
+        "bpp": 0.5484889362205656,
+        "encode_seconds": 0.2852913000388071,
+        "decode_seconds": 0.02028439997229725,
+        "patches": 36
+      },
+      "robust": {
+        "mse": 90.44521358419122,
+        "bpp": 0.6540953733286001,
+        "encode_seconds": 0.39810120000038296,
+        "decode_seconds": 0.02283610007725656,
+        "patches": 53
+      },
+      "change_percent": {
+        "mse": -3.048152234176693,
+        "bpp": 19.25406879411815,
+        "encode_seconds": 39.542004942397746,
+        "decode_seconds": 12.579618369013668
+      },
+      "considered": 53,
+      "accepted": 20,
+      "palette_seconds": 0.0448084999807179,
+      "strict_rd_win": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "control": {
+        "mse": 58.21135999684456,
+        "bpp": 1.1524316648917288,
+        "encode_seconds": 0.33092300000134856,
+        "decode_seconds": 0.028700500028207898,
+        "patches": 23
+      },
+      "robust": {
+        "mse": 58.304129294363584,
+        "bpp": 1.4064891728789493,
+        "encode_seconds": 0.35466179996728897,
+        "decode_seconds": 0.030973499990068376,
+        "patches": 23
+      },
+      "change_percent": {
+        "mse": 0.15936631187460915,
+        "bpp": 22.045342533267622,
+        "encode_seconds": 7.17351165251241,
+        "decode_seconds": 7.919722512243665
+      },
+      "considered": 23,
+      "accepted": 8,
+      "palette_seconds": 0.05510940030217171,
+      "strict_rd_win": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "control": {
+        "mse": 136.20310021754972,
+        "bpp": 0.5870627572016461,
+        "encode_seconds": 0.3941969000734389,
+        "decode_seconds": 0.033041999908164144,
+        "patches": 53
+      },
+      "robust": {
+        "mse": 133.20440899884258,
+        "bpp": 0.5994486239711934,
+        "encode_seconds": 0.47393440001178533,
+        "decode_seconds": 0.026718300068750978,
+        "patches": 53
+      },
+      "change_percent": {
+        "mse": -2.201632131660358,
+        "bpp": 2.109802847754638,
+        "encode_seconds": 20.227835359306813,
+        "decode_seconds": -19.13836891528676
+      },
+      "considered": 53,
+      "accepted": 6,
+      "palette_seconds": 0.052829700405709445,
+      "strict_rd_win": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "control": {
+        "mse": 133.72078316561644,
+        "bpp": 0.7256221064814815,
+        "encode_seconds": 0.38997459993697703,
+        "decode_seconds": 0.03143109998200089,
+        "patches": 23
+      },
+      "robust": {
+        "mse": 134.0281709480024,
+        "bpp": 0.734350887345679,
+        "encode_seconds": 0.4311871000099927,
+        "decode_seconds": 0.030198600026778877,
+        "patches": 23
+      },
+      "change_percent": {
+        "mse": 0.22987285529525447,
+        "bpp": 1.2029375602299552,
+        "encode_seconds": 10.567995987347878,
+        "decode_seconds": -3.921275284440584
+      },
+      "considered": 23,
+      "accepted": 1,
+      "palette_seconds": 0.05546009982936084,
+      "strict_rd_win": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "control": {
+        "mse": 25.55880265408492,
+        "bpp": 1.852754786671108,
+        "encode_seconds": 0.1926136000547558,
+        "decode_seconds": 0.013148199999704957,
+        "patches": 20
+      },
+      "robust": {
+        "mse": 25.208457541528052,
+        "bpp": 1.8944465760702285,
+        "encode_seconds": 0.21595139999408275,
+        "decode_seconds": 0.013450999977067113,
+        "patches": 18
+      },
+      "change_percent": {
+        "mse": -1.3707414909003068,
+        "bpp": 2.2502594352504124,
+        "encode_seconds": 12.116382193517229,
+        "decode_seconds": 2.3029766612080005
+      },
+      "considered": 18,
+      "accepted": 2,
+      "palette_seconds": 0.035469899885356426,
+      "strict_rd_win": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "control": {
+        "mse": 19.692243365139063,
+        "bpp": 2.8323094502232586,
+        "encode_seconds": 0.4104352999711409,
+        "decode_seconds": 0.02031129994429648,
+        "patches": 21
+      },
+      "robust": {
+        "mse": 19.870497409020572,
+        "bpp": 3.079997807470622,
+        "encode_seconds": 0.448530999943614,
+        "decode_seconds": 0.022917900001630187,
+        "patches": 19
+      },
+      "change_percent": {
+        "mse": 0.905199273522439,
+        "bpp": 8.745102242547652,
+        "encode_seconds": 9.28177960695673,
+        "decode_seconds": 12.833250774112347
+      },
+      "considered": 19,
+      "accepted": 4,
+      "palette_seconds": 0.05755530030000955,
+      "strict_rd_win": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "control": {
+        "mse": 796.752410101548,
+        "bpp": 0.9991890681545854,
+        "encode_seconds": 0.3876616000197828,
+        "decode_seconds": 0.02244039997458458,
+        "patches": 53
+      },
+      "robust": {
+        "mse": 799.3872179389421,
+        "bpp": 1.0074436281332833,
+        "encode_seconds": 0.44868050003424287,
+        "decode_seconds": 0.022959199966862798,
+        "patches": 53
+      },
+      "change_percent": {
+        "mse": 0.33069342545926084,
+        "bpp": 0.8261259296944878,
+        "encode_seconds": 15.740248714689887,
+        "decode_seconds": 2.311901716840148
+      },
+      "considered": 53,
+      "accepted": 23,
+      "palette_seconds": 0.051191099686548114,
+      "strict_rd_win": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "control": {
+        "mse": 703.7049670584154,
+        "bpp": 2.237191513053582,
+        "encode_seconds": 0.4753795999567956,
+        "decode_seconds": 0.034221199923194945,
+        "patches": 23
+      },
+      "robust": {
+        "mse": 708.2621624647487,
+        "bpp": 2.312826036963968,
+        "encode_seconds": 0.531472000060603,
+        "decode_seconds": 0.03477900009602308,
+        "patches": 23
+      },
+      "change_percent": {
+        "mse": 0.6476002898463395,
+        "bpp": 3.380780030188446,
+        "encode_seconds": 11.799496677792941,
+        "decode_seconds": 1.629984261452111
+      },
+      "considered": 23,
+      "accepted": 4,
+      "palette_seconds": 0.06579030014108866,
+      "strict_rd_win": false
+    }
+  ]
+}

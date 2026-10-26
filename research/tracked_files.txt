@@ -241,8 +241,11 @@ research_pass7/test_stop_policy.py
 research_pass7/worker.py
 research_pass8/PBC30_VS_DEV31_HF_BENCHMARK.md
 research_pass8/PBC_BENCHMARK_UI_DEPLOYMENT.md
+research_pass8/PBC_PASS8_SUMMARY.md
+research_pass8/PBC_ROBUST_PALETTE_RESULTS.md
 research_pass8/README.md
 research_pass8/analyze_comparison.py
+research_pass8/analyze_palette.py
 research_pass8/check_support.py
 research_pass8/comparison_summary.json
 research_pass8/database_backup.json
@@ -251,6 +254,13 @@ research_pass8/hf_deployment.json
 research_pass8/hf_release_job.py
 research_pass8/hf_smoke_checks.json
 research_pass8/hf_ui_deployment.json
+research_pass8/palette.py
+research_pass8/palette_decision.json
+research_pass8/palette_feasibility.json
+research_pass8/palette_feasibility.py
+research_pass8/palette_scope.py
+research_pass8/palette_screen.json
+research_pass8/palette_worker.py
 research_pass8/per_image_results.md
 research_pass8/prepare_deployment.py
 research_pass8/prepare_ui_deployment.py
@@ -258,6 +268,7 @@ research_pass8/public_api_smoke.json
 research_pass8/rd_table.md
 research_pass8/run_hf.py
 research_pass8/runtime_manifest.json
+research_pass8/screen_palette.py
 research_pass8/selector_race_checks.json
 research_pass8/speed_table.md
 research_pass8/support_checks.json

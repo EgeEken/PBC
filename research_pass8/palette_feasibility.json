@@ -1,0 +1,127 @@
+{
+  "controls": [
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "stream_sha256": "f41645a5216d2f1aba75bda59ea4bc7b6e65af765f7d27a5b603ad69b99e79c2",
+      "patches": 20,
+      "input_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e"
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "stream_sha256": "caf90eddd3083de6379096c57308fbec941f1037f1166b2b15415bd8a2adb439",
+      "patches": 20,
+      "input_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e"
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "stream_sha256": "821dcda787ca636008a56ec1cc67012cd39cf15e7b428416ac864c002c2d1f6a",
+      "patches": 16,
+      "input_sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72"
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "stream_sha256": "d11c77dcb3b9f0af1e381411162c2fde97708474ecec4f7a059f5787fde80a42",
+      "patches": 23,
+      "input_sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72"
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "stream_sha256": "de4261ff845875cac13407643dd5cef7621de66331ad4b06cab1e1fc74007ba6",
+      "patches": 36,
+      "input_sha256": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7"
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "stream_sha256": "9f1fbde1c28f7e50d899934c6ac7cccd25867cce2c3d434243977ff5f85ac8e8",
+      "patches": 23,
+      "input_sha256": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7"
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "stream_sha256": "7eb07376874e85a52a2d493a3697d5979488c5c441d66f28501d6be3ccaf136a",
+      "patches": 53,
+      "input_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9"
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "stream_sha256": "a0726c4094cf6cbaf840e9cbc60350d1f43870c43a69631d4cadfadf3ae71e0b",
+      "patches": 23,
+      "input_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9"
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "stream_sha256": "3b349ae93182128ca40197b85a44913176aa166ecccd7465d2263302128400b1",
+      "patches": 20,
+      "input_sha256": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "stream_sha256": "d9091d72020d0af9ef3e1ff473f513566f06362344e7fad7c5e7df384715e253",
+      "patches": 21,
+      "input_sha256": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "stream_sha256": "e8291065923b26a7f5d0d40956122651da7b709422eb7038fbf383245f547010",
+      "patches": 53,
+      "input_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "stream_sha256": "c7f966ff1d58dc59bfa2b75f56964128a73761e81332187f529911ca4ff656c7",
+      "patches": 23,
+      "input_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+    }
+  ],
+  "summary": {
+    "98": {
+      "patches": 331,
+      "bounds_changed": 296,
+      "distortion_wins_no_more_bits": 85,
+      "bits_wins_no_more_distortion": 0,
+      "lower_sse_more_bits": 0,
+      "lower_bits_more_sse": 3,
+      "useful_images": 6,
+      "useful_local_sse_reduction": 1573415,
+      "evaluated_baseline_sse": 1458242896,
+      "gate_pass": true
+    },
+    "95": {
+      "patches": 331,
+      "bounds_changed": 310,
+      "distortion_wins_no_more_bits": 35,
+      "bits_wins_no_more_distortion": 0,
+      "lower_sse_more_bits": 0,
+      "lower_bits_more_sse": 9,
+      "useful_images": 6,
+      "useful_local_sse_reduction": 315200,
+      "evaluated_baseline_sse": 1458242896,
+      "gate_pass": false
+    }
+  },
+  "percentiles": [
+    98,
+    95
+  ],
+  "gate": "At least 10% useful patches, four images, and 0.1% summed evaluated local SSE opportunity; local opportunity is not final-file RD.",
+  "searches": 0,
+  "roundtrip_patch_checks": 662,
+  "raw_sha256": "c0dbf566916e768e6d83e0a4664917c7445821e35b54653213d882155ee90b02",
+  "source_lf": {
+    "research_pass8/palette.py": "c6260034799c59138f8f2ec7f19294f35ba829b0a6c1739d50e3e54e1b1af857",
+    "research_pass8/palette_feasibility.py": "1c6ee0a9c24080e72ed927bfa6d01b1c093ff284b617a7d44c2cd6c048e4a92c",
+    "pbc3_ops.py": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e"
+  }
+}
