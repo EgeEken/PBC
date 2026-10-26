@@ -1,0 +1,10 @@
+{
+  "component": "local public API response checker",
+  "error": "The existing reconstructed_image response is a data:image/png;base64 URL. The first checker passed its prefix to b64decode.",
+  "first_remote_public_response": "HTTP 200 and parsed JSON; failed local preview interpretation before complete verification",
+  "fix": "Strip the data URL prefix and preserve source RGBA in the public checker. The public handler preserves alpha, while benchmark inputs intentionally convert to RGB. Verify the cached remote response against the unchanged local RGBA implementation and independently decoded RGBA preview/MSE. No further public compression request is needed.",
+  "deployed_source_change_required": false,
+  "hf_smoke_exactness_and_timings_affected": false,
+  "resume": "Reuse successful six-row HF smoke. Two client assertion failures required two additional token rotations/restarts after the initial deployment setup; no repeat commit or push. The final scoped token uses domain-separated HMAC of the existing HF credential and revision so retries can reproduce it without saving a secret or rotating unnecessarily. The HF credential itself is never sent to the app. The cached second public response verifies successfully. Run the bounded representative job.",
+  "public_compression_requests_total": 2
+}

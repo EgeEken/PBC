@@ -1,0 +1,68 @@
+{
+  "research_pass1/baseline.jsonl": {
+    "bytes": 3299070,
+    "sha256": "6089a8dc602ff89c6f7ae513c26e9c6931b77d4e74b76684cf0f3f90272aa2d1",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass2/quality_confirmation.json": {
+    "bytes": 9965439,
+    "sha256": "2f9fd7d979dc046155ca313a39dc3d0707b7c069224398404cc6a318fc658d82",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass2/rd_raw_points.json": {
+    "bytes": 949002,
+    "sha256": "f3cb388303efecdc5ae71167d1e43a7de72fe7a7da796e04dd130452919a8980",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass3/allocation_full.json": {
+    "bytes": 16851945,
+    "sha256": "22209855914e1fe7e399304e36e9d21d612f834028351d4ace87775537c257e7",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass3/performance_full.json": {
+    "bytes": 27172041,
+    "sha256": "8ff43de41d93bf26d8473bf69bdf3a6fc291592dc31f0a849a99e468120fa3b7",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass3/search_full.json": {
+    "bytes": 13708312,
+    "sha256": "17d099b5a5d1058849cf202aaee31a1c997d6051a978b63d3900c766f26ac3cc",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass4/runtime_full.json": {
+    "bytes": 27367446,
+    "sha256": "840b9b7f03d23e323c5c8637fee093c644f79e70ffe217b353ba108d3020add7",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass4/matched_confirmation.json": {
+    "bytes": 3324630,
+    "sha256": "f712cfb015ae8244cc04178112a8f97b9a70ac053effb4602721614210bd3689",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass4/efficiency_screen.json": {
+    "bytes": 2555589,
+    "sha256": "55991d726596b1231638db437eccc8340dc1c9c56ff9f449f90a57b7e675fa97",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass5/hf_representative.json": {
+    "bytes": 737466,
+    "sha256": "92a21acad279e9d7850f59f277f859a6297bd3297a35c77d6ad493760783ffa2",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  },
+  "research_pass5/hf_rows.csv": {
+    "bytes": 463213,
+    "sha256": "eccef4c782da2936ea9fe6bb5c1ce2e563b86edf745d796d0ab961ce894abda7",
+    "included": false,
+    "location": "Retained in the original local HF research checkout; not uploaded to GitHub"
+  }
+}

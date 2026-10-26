@@ -1,0 +1,447 @@
+{
+  "all": {
+    "baseline": {
+      "cases": 32,
+      "encode_seconds": 0.5308136459374566,
+      "encode_seconds_baseline": 0.5308136459374566,
+      "encode_seconds_change_percent": 0.0,
+      "encode_seconds_wins": 0,
+      "encode_seconds_mean_cv_percent": 16.52582426922968,
+      "encode_seconds_worst_change_percent": 0.0,
+      "encode_seconds_all_calls_mean": 0.553880051447905,
+      "encode_seconds_all_calls_mean_change_percent": 0.0,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "decode_seconds": 0.0983954009374628,
+      "decode_seconds_baseline": 0.0983954009374628,
+      "decode_seconds_change_percent": 0.0,
+      "decode_seconds_wins": 0,
+      "decode_seconds_mean_cv_percent": 18.17586742619679,
+      "decode_seconds_worst_change_percent": 0.0,
+      "decode_seconds_all_calls_mean": 0.10605070552081959,
+      "decode_seconds_all_calls_mean_change_percent": 0.0,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      }
+    },
+    "all_mse": {
+      "cases": 32,
+      "encode_seconds": 0.44719267971876775,
+      "encode_seconds_baseline": 0.5308136459374566,
+      "encode_seconds_change_percent": -15.75335654210772,
+      "encode_seconds_wins": 32,
+      "encode_seconds_mean_cv_percent": 17.028251770444566,
+      "encode_seconds_worst_change_percent": -2.638630261955477,
+      "encode_seconds_all_calls_mean": 0.46510862138543035,
+      "encode_seconds_all_calls_mean_change_percent": -16.027193943962427,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -16.16290172114333,
+        "1": -17.080565394749435,
+        "2": -14.714258306119843
+      },
+      "decode_seconds": 0.05987682075004841,
+      "decode_seconds_baseline": 0.0983954009374628,
+      "decode_seconds_change_percent": -39.146728221470084,
+      "decode_seconds_wins": 32,
+      "decode_seconds_mean_cv_percent": 20.209224212770998,
+      "decode_seconds_worst_change_percent": -2.7867231812598425,
+      "decode_seconds_all_calls_mean": 0.06326712253126725,
+      "decode_seconds_all_calls_mean_change_percent": -40.3425727150426,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -41.810149989772796,
+        "1": -40.024914648163644,
+        "2": -39.39151051812657
+      }
+    },
+    "all": {
+      "cases": 32,
+      "encode_seconds": 0.38933547946875535,
+      "encode_seconds_baseline": 0.5308136459374566,
+      "encode_seconds_change_percent": -26.65307637652009,
+      "encode_seconds_wins": 32,
+      "encode_seconds_mean_cv_percent": 17.582075841996186,
+      "encode_seconds_worst_change_percent": -2.151410734376291,
+      "encode_seconds_all_calls_mean": 0.41048466934372624,
+      "encode_seconds_all_calls_mean_change_percent": -25.889248354283033,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -27.433316613077807,
+        "1": -24.890682816000652,
+        "2": -25.567023827225388
+      },
+      "decode_seconds": 0.05635633631247572,
+      "decode_seconds_baseline": 0.0983954009374628,
+      "decode_seconds_change_percent": -42.72462353368107,
+      "decode_seconds_wins": 32,
+      "decode_seconds_mean_cv_percent": 18.464041632875137,
+      "decode_seconds_worst_change_percent": -2.3479479186238716,
+      "decode_seconds_all_calls_mean": 0.06047208752081682,
+      "decode_seconds_all_calls_mean_change_percent": -42.97813746373889,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -43.002385507753395,
+        "1": -43.673695720677486,
+        "2": -42.135907410362506
+      }
+    }
+  },
+  "compression": {
+    "baseline": {
+      "cases": 8,
+      "encode_seconds": 0.43460539174986934,
+      "encode_seconds_baseline": 0.43460539174986934,
+      "encode_seconds_change_percent": 0.0,
+      "encode_seconds_wins": 0,
+      "encode_seconds_mean_cv_percent": 15.50092341787608,
+      "encode_seconds_worst_change_percent": 0.0,
+      "encode_seconds_all_calls_mean": 0.44251952512496473,
+      "encode_seconds_all_calls_mean_change_percent": 0.0,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "decode_seconds": 0.06509676474996695,
+      "decode_seconds_baseline": 0.06509676474996695,
+      "decode_seconds_change_percent": 0.0,
+      "decode_seconds_wins": 0,
+      "decode_seconds_mean_cv_percent": 15.215353437041102,
+      "decode_seconds_worst_change_percent": 0.0,
+      "decode_seconds_all_calls_mean": 0.0710638118749974,
+      "decode_seconds_all_calls_mean_change_percent": 0.0,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      }
+    },
+    "all_mse": {
+      "cases": 8,
+      "encode_seconds": 0.3871103862500149,
+      "encode_seconds_baseline": 0.43460539174986934,
+      "encode_seconds_change_percent": -10.928305631143543,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 17.196956427108308,
+      "encode_seconds_worst_change_percent": -6.464214321551598,
+      "encode_seconds_all_calls_mean": 0.3972539564166671,
+      "encode_seconds_all_calls_mean_change_percent": -10.22905569997502,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -12.099143096673505,
+        "1": -12.356536741900804,
+        "2": -6.063744977831364
+      },
+      "decode_seconds": 0.05238516199995047,
+      "decode_seconds_baseline": 0.06509676474996695,
+      "decode_seconds_change_percent": -19.527241943345473,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 16.331584427099695,
+      "decode_seconds_worst_change_percent": -6.636305962835943,
+      "decode_seconds_all_calls_mean": 0.05771487112497198,
+      "decode_seconds_all_calls_mean_change_percent": -18.784442317147953,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -18.518959674452084,
+        "1": -19.88760315866046,
+        "2": -17.766127391780053
+      }
+    },
+    "all": {
+      "cases": 8,
+      "encode_seconds": 0.32338693962498155,
+      "encode_seconds_baseline": 0.43460539174986934,
+      "encode_seconds_change_percent": -25.590674721517935,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 17.026039747123477,
+      "encode_seconds_worst_change_percent": -13.339887519918214,
+      "encode_seconds_all_calls_mean": 0.3389140044583125,
+      "encode_seconds_all_calls_mean_change_percent": -23.41264391382385,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -25.307353188142212,
+        "1": -22.120213518585686,
+        "2": -22.96008436985304
+      },
+      "decode_seconds": 0.054380331375000424,
+      "decode_seconds_baseline": 0.06509676474996695,
+      "decode_seconds_change_percent": -16.462313320988763,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 19.793062126235686,
+      "decode_seconds_worst_change_percent": -2.3479479186238716,
+      "decode_seconds_all_calls_mean": 0.057827466583338115,
+      "decode_seconds_all_calls_mean_change_percent": -18.625999566336617,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -17.866910297347104,
+        "1": -18.27115857402789,
+        "2": -19.719206719238326
+      }
+    }
+  },
+  "balanced": {
+    "baseline": {
+      "cases": 8,
+      "encode_seconds": 0.5241368597500013,
+      "encode_seconds_baseline": 0.5241368597500013,
+      "encode_seconds_change_percent": 0.0,
+      "encode_seconds_wins": 0,
+      "encode_seconds_mean_cv_percent": 16.350591469816354,
+      "encode_seconds_worst_change_percent": 0.0,
+      "encode_seconds_all_calls_mean": 0.5435155581250039,
+      "encode_seconds_all_calls_mean_change_percent": 0.0,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "decode_seconds": 0.08192919374999974,
+      "decode_seconds_baseline": 0.08192919374999974,
+      "decode_seconds_change_percent": 0.0,
+      "decode_seconds_wins": 0,
+      "decode_seconds_mean_cv_percent": 17.17789929194844,
+      "decode_seconds_worst_change_percent": 0.0,
+      "decode_seconds_all_calls_mean": 0.08676861287500515,
+      "decode_seconds_all_calls_mean_change_percent": 0.0,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      }
+    },
+    "all_mse": {
+      "cases": 8,
+      "encode_seconds": 0.436314677875032,
+      "encode_seconds_baseline": 0.5241368597500013,
+      "encode_seconds_change_percent": -16.75558210442557,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 21.66641888323025,
+      "encode_seconds_worst_change_percent": -9.883357257514646,
+      "encode_seconds_all_calls_mean": 0.4610141490000312,
+      "encode_seconds_all_calls_mean_change_percent": -15.179217575589266,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -16.71473605781585,
+        "1": -12.74715464107885,
+        "2": -16.474211495486944
+      },
+      "decode_seconds": 0.05927368362517882,
+      "decode_seconds_baseline": 0.08192919374999974,
+      "decode_seconds_change_percent": -27.6525486067303,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 26.176057549944858,
+      "decode_seconds_worst_change_percent": -2.7867231812598425,
+      "decode_seconds_all_calls_mean": 0.062446586500072954,
+      "decode_seconds_all_calls_mean_change_percent": -28.03090376697549,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -31.703781199952928,
+        "1": -28.76067342957279,
+        "2": -23.66679449776179
+      }
+    },
+    "all": {
+      "cases": 8,
+      "encode_seconds": 0.38382649537504676,
+      "encode_seconds_baseline": 0.5241368597500013,
+      "encode_seconds_change_percent": -26.769795286269073,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 19.596900902872605,
+      "encode_seconds_worst_change_percent": -12.259927480698906,
+      "encode_seconds_all_calls_mean": 0.407297922583363,
+      "encode_seconds_all_calls_mean_change_percent": -25.06232498873785,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -26.795928021887615,
+        "1": -23.60143020316925,
+        "2": -25.09802097222401
+      },
+      "decode_seconds": 0.05467132899997296,
+      "decode_seconds_baseline": 0.08192919374999974,
+      "decode_seconds_change_percent": -33.27002683951943,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 17.246611207775956,
+      "decode_seconds_worst_change_percent": -11.051029374069298,
+      "decode_seconds_all_calls_mean": 0.05824731370830705,
+      "decode_seconds_all_calls_mean_change_percent": -32.87052566782941,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -31.934385845304945,
+        "1": -36.10171179696577,
+        "2": -29.758291009335956
+      }
+    }
+  },
+  "quality": {
+    "baseline": {
+      "cases": 8,
+      "encode_seconds": 0.5404149709999615,
+      "encode_seconds_baseline": 0.5404149709999615,
+      "encode_seconds_change_percent": 0.0,
+      "encode_seconds_wins": 0,
+      "encode_seconds_mean_cv_percent": 19.55114362203343,
+      "encode_seconds_worst_change_percent": 0.0,
+      "encode_seconds_all_calls_mean": 0.581867388583324,
+      "encode_seconds_all_calls_mean_change_percent": 0.0,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "decode_seconds": 0.0997509475000129,
+      "decode_seconds_baseline": 0.0997509475000129,
+      "decode_seconds_change_percent": 0.0,
+      "decode_seconds_wins": 0,
+      "decode_seconds_mean_cv_percent": 21.09908194471672,
+      "decode_seconds_worst_change_percent": 0.0,
+      "decode_seconds_all_calls_mean": 0.10754791250002427,
+      "decode_seconds_all_calls_mean_change_percent": 0.0,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      }
+    },
+    "all_mse": {
+      "cases": 8,
+      "encode_seconds": 0.4473673033750174,
+      "encode_seconds_baseline": 0.5404149709999615,
+      "encode_seconds_change_percent": -17.21781827264566,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 15.75503894557711,
+      "encode_seconds_worst_change_percent": -2.71481846986088,
+      "encode_seconds_all_calls_mean": 0.4626432982917284,
+      "encode_seconds_all_calls_mean_change_percent": -20.48990760280812,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -18.160563317557145,
+        "1": -24.807554891945195,
+        "2": -17.46495044869487
+      },
+      "decode_seconds": 0.06134823399997913,
+      "decode_seconds_baseline": 0.0997509475000129,
+      "decode_seconds_change_percent": -38.498595213873834,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 16.74944811829907,
+      "decode_seconds_worst_change_percent": -14.666742935971133,
+      "decode_seconds_all_calls_mean": 0.06227512666663415,
+      "decode_seconds_all_calls_mean_change_percent": -42.09545753236252,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -39.7556210046646,
+        "1": -44.95581573527052,
+        "2": -40.76014063545932
+      }
+    },
+    "all": {
+      "cases": 8,
+      "encode_seconds": 0.39342617662492785,
+      "encode_seconds_baseline": 0.5404149709999615,
+      "encode_seconds_change_percent": -27.199245443376906,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 14.51296729716171,
+      "encode_seconds_worst_change_percent": -2.151410734376291,
+      "encode_seconds_all_calls_mean": 0.4036600583749153,
+      "encode_seconds_all_calls_mean_change_percent": -30.626794645132303,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -29.423559083140958,
+        "1": -33.97362651437148,
+        "2": -27.717008322442215
+      },
+      "decode_seconds": 0.056261174374924394,
+      "decode_seconds_baseline": 0.0997509475000129,
+      "decode_seconds_change_percent": -43.598355920461685,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 16.132708023184552,
+      "decode_seconds_worst_change_percent": -19.389621591689178,
+      "decode_seconds_all_calls_mean": 0.060400108249988683,
+      "decode_seconds_all_calls_mean_change_percent": -43.83888366966207,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -44.45564432334016,
+        "1": -45.01128591074085,
+        "2": -41.895600295754384
+      }
+    }
+  },
+  "high_quality": {
+    "baseline": {
+      "cases": 8,
+      "encode_seconds": 0.6240973612499943,
+      "encode_seconds_baseline": 0.6240973612499943,
+      "encode_seconds_change_percent": 0.0,
+      "encode_seconds_wins": 0,
+      "encode_seconds_mean_cv_percent": 14.700638567192856,
+      "encode_seconds_worst_change_percent": 0.0,
+      "encode_seconds_all_calls_mean": 0.6476177339583273,
+      "encode_seconds_all_calls_mean_change_percent": 0.0,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "decode_seconds": 0.1468046977498716,
+      "decode_seconds_baseline": 0.1468046977498716,
+      "decode_seconds_change_percent": 0.0,
+      "decode_seconds_wins": 0,
+      "decode_seconds_mean_cv_percent": 19.211135031080893,
+      "decode_seconds_worst_change_percent": 0.0,
+      "decode_seconds_all_calls_mean": 0.15882248483325156,
+      "decode_seconds_all_calls_mean_change_percent": 0.0,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      }
+    },
+    "all_mse": {
+      "cases": 8,
+      "encode_seconds": 0.5179783513750067,
+      "encode_seconds_baseline": 0.6240973612499943,
+      "encode_seconds_change_percent": -17.003598551104837,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 13.494592825862593,
+      "encode_seconds_worst_change_percent": -2.638630261955477,
+      "encode_seconds_all_calls_mean": 0.5395230818332948,
+      "encode_seconds_all_calls_mean_change_percent": -16.691119846941717,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -16.858259559822653,
+        "1": -16.575309712078912,
+        "2": -16.66337992725474
+      },
+      "decode_seconds": 0.06650020337508522,
+      "decode_seconds_baseline": 0.1468046977498716,
+      "decode_seconds_change_percent": -54.70158353625071,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 21.57980675574037,
+      "decode_seconds_worst_change_percent": -16.895995838321742,
+      "decode_seconds_all_calls_mean": 0.0706319058333899,
+      "decode_seconds_all_calls_mean_change_percent": -55.52776679728526,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -59.366395455302204,
+        "1": -51.810469808822646,
+        "2": -56.4063425875928
+      }
+    },
+    "all": {
+      "cases": 8,
+      "encode_seconds": 0.45670230625006525,
+      "encode_seconds_baseline": 0.6240973612499943,
+      "encode_seconds_change_percent": -26.821945643970714,
+      "encode_seconds_wins": 8,
+      "encode_seconds_mean_cv_percent": 19.192395420826955,
+      "encode_seconds_worst_change_percent": -17.305245388292732,
+      "encode_seconds_all_calls_mean": 0.4920666919583141,
+      "encode_seconds_all_calls_mean_change_percent": -24.018959618240252,
+      "encode_seconds_trial_mean_change_percent": {
+        "0": -27.737503224317482,
+        "1": -19.196624975417166,
+        "2": -25.85255651983468
+      },
+      "decode_seconds": 0.0601125105000051,
+      "decode_seconds_baseline": 0.1468046977498716,
+      "decode_seconds_change_percent": -59.05273371944415,
+      "decode_seconds_wins": 8,
+      "decode_seconds_mean_cv_percent": 20.683785174304347,
+      "decode_seconds_worst_change_percent": -28.4813510443098,
+      "decode_seconds_all_calls_mean": 0.06541346154163345,
+      "decode_seconds_all_calls_mean_change_percent": -58.813475553973774,
+      "decode_seconds_trial_mean_change_percent": {
+        "0": -59.593187423296925,
+        "1": -58.1980041623999,
+        "2": -58.830216743109155
+      }
+    }
+  }
+}

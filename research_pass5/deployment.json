@@ -1,0 +1,17 @@
+{
+  "base_revision": "7faa6365186d201f44b842f100645b60273ffd4c",
+  "commit": "eee83b8f10f6f3404bca1c2c178e27fc4e8a1aa0",
+  "local_branch": "codex/pass5-hf-runtime",
+  "target": "https://huggingface.co/spaces/EgeEken/PBC",
+  "target_ref": "refs/heads/main",
+  "files": [
+    "server.py",
+    "pbc3_benchmark.py",
+    "research_pass5/hf_candidate_grid.py",
+    "research_pass5/hf_candidate_search.py",
+    "research_pass5/hf_runtime_job.py",
+    "research_pass5/hf_runtime_manifest.json"
+  ],
+  "method": "Isolated index from HF main; current checkout/index/branch and unrelated commits are preserved.",
+  "rollback": "git revert eee83b8f10f6f3404bca1c2c178e27fc4e8a1aa0; push the revert to HF main. Delete PBC_RESEARCH_BENCHMARK_TOKEN to disable research runs."
+}

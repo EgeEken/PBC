@@ -1,0 +1,8 @@
+[
+  "server.py",
+  "pbc3_benchmark.py",
+  "research_pass5/hf_candidate_grid.py",
+  "research_pass5/hf_candidate_search.py",
+  "research_pass5/hf_runtime_job.py",
+  "research_pass5/hf_runtime_manifest.json"
+]

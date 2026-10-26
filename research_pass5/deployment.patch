@@ -1,0 +1,586 @@
+diff --git a/pbc3_benchmark.py b/pbc3_benchmark.py
+index fc49f69..eba9175 100644
+--- a/pbc3_benchmark.py
++++ b/pbc3_benchmark.py
+@@ -302,3 +302,58 @@ def results(mp_min=None, mp_max=None):
+         return {"exists": True, "rows": rows, "points": points, "count": len(rows)}
+     finally:
+         con.close()
++
++
++def start_research(spec):
++    global _THREAD
++    from research_pass5.hf_runtime_job import validate
++    spec = validate(spec)
++    with _LOCK:
++        if _STATE["running"]:
++            return {"error": "A benchmark is already running."}
++        _STOP.clear()
++        _STATE.update(running=True, done=0, total=None, current={"research": True},
++            started=time.time(), error=None, log=[], research_result=None)
++
++    def run():
++        import json
++        import subprocess
++        import sys
++        import uuid
++        from pathlib import Path
++        output = Path(PROJECT_DIR) / "research_pass5" / "hf_runs" / uuid.uuid4().hex
++        try:
++            output.mkdir(parents=True, exist_ok=False)
++            with (output / "stderr.log").open("w") as log:
++                process = subprocess.Popen([sys.executable, str(Path(PROJECT_DIR) / "research_pass5" / "hf_runtime_job.py"),
++                    "--spec-json", json.dumps(spec)], cwd=PROJECT_DIR, stdout=subprocess.PIPE,
++                    stderr=log, text=True)
++                deadline = time.monotonic() + 1200
++                while True:
++                    try:
++                        stdout, _ = process.communicate(timeout=0.25)
++                        break
++                    except subprocess.TimeoutExpired:
++                        if _STOP.is_set() or time.monotonic() > deadline:
++                            process.terminate()
++                            try:
++                                process.communicate(timeout=5)
++                            except subprocess.TimeoutExpired:
++                                process.kill()
++                                process.communicate()
++                            raise RuntimeError("Research benchmark stopped or timed out")
++                if process.returncode:
++                    raise RuntimeError("Research worker failed: " + (output / "stderr.log").read_text()[-4000:])
++            result = json.loads(stdout)
++            (output / "results.json").write_text(json.dumps(result, indent=2))
++            with _LOCK:
++                _STATE.update(research_result=result, done=len(result["rows"]), total=len(result["rows"]))
++        except Exception as error:
++            with _LOCK:
++                _STATE["error"] = str(error)
++        finally:
++            with _LOCK:
++                _STATE.update(running=False, current=None)
++    _THREAD = threading.Thread(target=run, daemon=True)
++    _THREAD.start()
++    return {"started": True, "research": True, "spec": spec}
+diff --git a/research_pass5/hf_candidate_grid.py b/research_pass5/hf_candidate_grid.py
+new file mode 100644
+index 0000000..3031571
+--- /dev/null
++++ b/research_pass5/hf_candidate_grid.py
+@@ -0,0 +1,201 @@
++"""PBC3 bitstream framing, separate from the image algorithm."""
++
++import operator
++
++import numpy as np
++
++import pbc3_ops as ops
++from pbc3_types import BitReader, BitWriter
++
++
++def _write_grid_scalar(bw: BitWriter, values, bitcount: int) -> None:
++    """Writes a flat grid of palette indices."""
++    acc = bw.acc
++    nbits = bw.nbits
++    data = bw.data
++    bitmask = (1 << bitcount) - 1
++    for value in values:
++        acc = (acc << bitcount) | (int(value) & bitmask)
++        nbits += bitcount
++        while nbits >= 8:
++            shift = nbits - 8
++            data.append((acc >> shift) & 255)
++            acc &= (1 << shift) - 1
++            nbits = shift
++    bw.acc = acc
++    bw.nbits = nbits
++
++
++def _read_grid_scalar(br: BitReader, count: int, bitcount: int) -> np.ndarray:
++    """Reads a flat grid of palette indices."""
++    values = np.empty(count, dtype=np.uint16)
++    data = br.data
++    data_len = len(data)
++    data_index = br.i
++    acc = br.acc
++    nbits = br.nbits
++    bitmask = (1 << bitcount) - 1
++    for i in range(count):
++        while nbits < bitcount:
++            if data_index >= data_len:
++                raise EOFError("bitstream ended early")
++            acc = (acc << 8) | data[data_index]
++            data_index += 1
++            nbits += 8
++        shift = nbits - bitcount
++        values[i] = (acc >> shift) & bitmask
++        acc &= (1 << shift) - 1
++        nbits = shift
++    br.i = data_index
++    br.acc = acc
++    br.nbits = nbits
++    return values
++
++
++def write_header(bw, w, h, original_w, original_h, downsampled, color_id, channels,
++                 channel_bits, positive_bias, has_alpha, patch_count, base_values, warmup=None):
++    """Writes the image-level stream header."""
++    bw.write(int(downsampled), 1)
++    if downsampled:
++        bw.write(original_w, 16)
++        bw.write(original_h, 16)
++    bw.write(w, 16)
++    bw.write(h, 16)
++    bw.write(color_id, 2)
++    bw.write(channels, 8)
++    bw.write(channel_bits, 4)
++    bw.write(int(positive_bias), 1)
++    bw.write(int(has_alpha), 1)
++    bw.write(patch_count, 32)
++    for base in base_values:
++        bw.write(base, 8)
++    bw.write(int(warmup is not None), 1)
++    if warmup is not None:
++        warm_w, warm_h, warm_split = warmup
++        bw.write(warm_w, 16)
++        bw.write(warm_h, 16)
++        bw.write(warm_split, 32)
++
++
++def read_header(br, color_space_names):
++    """Reads the image-level stream header."""
++    downsampled = bool(br.read(1))
++    original_w = br.read(16) if downsampled else None
++    original_h = br.read(16) if downsampled else None
++    w = br.read(16)
++    h = br.read(16)
++    color_id = br.read(2)
++    channels = br.read(8)
++    channel_bits = br.read(4)
++    positive_bias = bool(br.read(1))
++    has_alpha = bool(br.read(1))
++    patch_count = br.read(32)
++    base_values = [br.read(8) for _ in range(channels)]
++    warmup_on = bool(br.read(1))
++    warm_w = warm_h = warmup_split = None
++    if warmup_on:
++        warm_w = br.read(16)
++        warm_h = br.read(16)
++        warmup_split = br.read(32)
++    return (
++        downsampled, original_w, original_h, w, h, color_space_names[color_id], channels,
++        channel_bits, positive_bias, has_alpha, patch_count, base_values, warmup_on, warm_w,
++        warm_h, warmup_split,
++    )
++
++
++def write_patch(bw, patch, channel_bits: int) -> None:
++    """Writes one generated-palette patch."""
++    bw.write(patch["channel"], channel_bits)
++    bw.write(patch["x"], 16)
++    bw.write(patch["y"], 16)
++    bw.write(patch["w"], 16)
++    bw.write(patch["h"], 16)
++    bw.write(0, 1)
++    mask = patch["mask"]
++    bw.write(len(mask), 10)
++    for bit in mask:
++        bw.write(bit, 1)
++    bw.write(patch["neg"], 8)
++    bw.write(patch["pos"], 8)
++    bw.write(patch["max_bitcount"], 4)
++    bw.write(patch["cell_size"], 16)
++    write_grid(bw, patch["indices"].ravel().astype(np.int64), patch["bitcount"])
++
++
++def read_patch(br, channel_bits: int, positive_bias: bool = True):
++    """Reads one generated-palette patch and returns its decoded values."""
++    channel = br.read(channel_bits)
++    x, y = br.read(16), br.read(16)
++    w, h = br.read(16), br.read(16)
++    if br.read(1) != 0:
++        raise ValueError("explicit palette patches were removed in PBC3 3.0 release cleanup")
++    mask = [br.read(1) for _ in range(br.read(10))]
++    negative_max, positive_max = br.read(8), br.read(8)
++    max_bitcount = br.read(4)
++    bitcount = ops.resolve_palette_bitcount(mask, max_bitcount, negative_max, positive_max, positive_bias)
++    palette = ops.palette_generator(mask, max_bitcount, negative_max, positive_max, positive_bias)
++    cell_size = br.read(16)
++    gw, gh = ops.ceil_div(w, cell_size), ops.ceil_div(h, cell_size)
++    indices = read_grid(br, gh * gw, bitcount).reshape(gh, gw)
++    return channel, x, y, w, h, cell_size, palette[indices], bitcount
++
++
++def _read_grid_numpy(br, count, bitcount):
++    count, bitcount = operator.index(count), operator.index(bitcount)
++    if count < 0 or bitcount < 0:
++        raise ValueError('negative grid count or bit width')
++    if bitcount > 16:
++        raise ValueError('grid bit width exceeds uint16')
++    if not count or not bitcount:
++        return np.zeros(count, dtype=np.uint16)
++    start = br.i * 8 - br.nbits
++    end = start + count * bitcount
++    byte_end = (end + 7) // 8
++    if byte_end > len(br.data):
++        raise EOFError('bitstream ended early')
++    data = br.data if isinstance(br.data, (bytes, bytearray)) else bytes(br.data)
++    packed = np.frombuffer(data, dtype=np.uint8, count=byte_end - start // 8, offset=start // 8)
++    bits = np.unpackbits(packed)[start % 8:start % 8 + count * bitcount]
++    weights = 1 << np.arange(bitcount - 1, -1, -1, dtype=np.uint16)
++    values = (bits.reshape(count, bitcount) @ weights).astype(np.uint16)
++    br.i = byte_end
++    br.nbits = byte_end * 8 - end
++    br.acc = br.data[byte_end - 1] & ((1 << br.nbits) - 1)
++    return values
++
++
++def _write_grid_numpy(bw, values, bitcount):
++    bitcount = operator.index(bitcount)
++    if not 0 <= bitcount <= 16:
++        raise ValueError('grid bit width must be in 0..16')
++    if not bitcount:
++        return
++    values = np.asarray(values)
++    if values.ndim != 1 or values.dtype.kind not in 'iub':
++        raise ValueError('grid values must be a flat integer array')
++    values = values.astype(np.uint16, copy=False)
++    shifts = np.arange(bitcount - 1, -1, -1, dtype=np.uint16)
++    bits = ((values[:, None] >> shifts) & 1).astype(np.uint8).ravel()
++    if bw.nbits:
++        prefix = ((bw.acc >> np.arange(bw.nbits - 1, -1, -1)) & 1).astype(np.uint8)
++        bits = np.concatenate((prefix, bits))
++    whole = len(bits) // 8 * 8
++    bw.data.extend(np.packbits(bits[:whole]).tobytes())
++    bw.nbits = len(bits) - whole
++    bw.acc = 0
++    for bit in bits[whole:]:
++        bw.acc = (bw.acc << 1) | int(bit)
++
++
++GRID_IO_MODE = "scalar"
++_GRID_READERS = {"scalar": _read_grid_scalar, "numpy": _read_grid_numpy}
++_GRID_WRITERS = {"scalar": _write_grid_scalar, "numpy": _write_grid_numpy}
++
++
++def read_grid(br, count, bitcount):
++    return _GRID_READERS[GRID_IO_MODE](br, count, bitcount)
++
++
++def write_grid(bw, values, bitcount):
++    return _GRID_WRITERS[GRID_IO_MODE](bw, values, bitcount)
+diff --git a/research_pass5/hf_candidate_search.py b/research_pass5/hf_candidate_search.py
+new file mode 100644
+index 0000000..96c1642
+--- /dev/null
++++ b/research_pass5/hf_candidate_search.py
+@@ -0,0 +1,111 @@
++from contextlib import contextmanager
++import copy
++import inspect
++
++import numpy as np
++
++
++class SearchReuse:
++    def __init__(self, incremental, verify=False):
++        self.incremental = incremental
++        self.verify = verify
++        self.target = self.canvas = None
++        self.errors = {}
++        self.totals = {}
++        self.counters = {}
++
++    def count(self, key, value=1):
++        self.counters[key] = self.counters.get(key, 0) + value
++
++    def owner(self, target, canvas):
++        if target is not self.target or canvas is not self.canvas:
++            self.errors.clear()
++            self.totals.clear()
++            self.target, self.canvas = target, canvas
++            self.count('state_initializations')
++
++    def score(self, target, canvas, channel):
++        self.owner(target, canvas)
++        if not self.incremental or channel not in self.errors:
++            error = np.abs(target[:, :, channel] - np.clip(canvas[:, :, channel], 0, 255))
++            self.errors[channel] = error
++            self.totals[channel] = int(np.sum(error))
++            self.count('full_map_refreshes')
++        if self.verify:
++            actual = np.abs(target[:, :, channel] - np.clip(canvas[:, :, channel], 0, 255))
++            assert np.array_equal(actual, self.errors[channel])
++            assert int(np.sum(actual)) == self.totals[channel]
++            self.count('verified_totals')
++        return float(self.totals[channel])
++
++    def error(self, target, canvas, channel):
++        self.owner(target, canvas)
++        if channel not in self.errors:
++            self.score(target, canvas, channel)
++        error = self.errors[channel]
++        if self.verify:
++            expected = np.abs(target[:, :, channel] - np.clip(canvas[:, :, channel], 0, 255).astype(np.int32))
++            assert np.array_equal(error, expected)
++            self.count('verified_search_maps')
++        self.count('reused_search_maps')
++        return error
++
++    def update(self, layer, x, y, w, h):
++        if self.canvas is None:
++            return
++        offset = layer.ctypes.data - self.canvas.ctypes.data
++        channel, remainder = divmod(offset, self.canvas.itemsize)
++        if remainder or channel not in range(self.canvas.shape[2]) or layer.shape != self.canvas.shape[:2] or layer.strides != self.canvas[:, :, 0].strides:
++            self.target = self.canvas = None
++            self.errors.clear()
++            self.totals.clear()
++            self.count('owner_invalidations')
++            return
++        if channel not in self.errors:
++            return
++        region = self.errors[channel][y:y + h, x:x + w]
++        old_sum = int(np.sum(region))
++        error = np.abs(self.target[y:y + h, x:x + w, channel] - np.clip(layer[y:y + h, x:x + w], 0, 255))
++        region[:] = error
++        self.totals[channel] += int(np.sum(error)) - old_sum
++        self.count('rectangle_updates')
++        self.count('updated_pixels', w * h)
++        self.count('full_pixels_avoided', self.canvas.shape[0] * self.canvas.shape[1] - w * h)
++
++    @contextmanager
++    def enabled(self):
++        from PBC3 import PBC3
++        import pbc3_ops as ops
++        old_search, old_delta, old_grid = ops.search_boxes, ops.apply_delta, ops.apply_grid
++        score_descriptor = PBC3.__dict__['_channel_sum_error']
++        code = inspect.getsource(old_search)
++        needle = 'visible = np.clip(canvas[:, :, channel], 0, 255).astype(np.int32)\n        abs_error = np.abs(target[:, :, channel] - visible)'
++        assert code.count(needle) == 1
++        code = code.replace(needle, 'abs_error = cached_error(target, canvas, channel)')
++        namespace = dict(vars(ops), cached_error=self.error)
++        exec(compile(code, __file__, 'exec'), namespace)
++        reused_search = namespace['search_boxes']
++        def search(target, canvas, config, rng, channel, depth, search_q, ordered=False, trace=None):
++            if self.verify:
++                cloned = copy.deepcopy(rng)
++                expected = old_search(target, canvas, config, cloned, channel, depth, search_q, ordered=ordered)
++            result = reused_search(target, canvas, config, rng, channel, depth, search_q, ordered=ordered, trace=trace)
++            if self.verify:
++                assert result == expected and rng.state == cloned.state
++                self.count('verified_proposal_lists_and_rng')
++            return result
++        def apply_delta(layer, x, y, w, h, delta):
++            old_delta(layer, x, y, w, h, delta)
++            self.update(layer, x, y, w, h)
++        def apply_grid(layer, x, y, w, h, cell, values, trace=None):
++            old_grid(layer, x, y, w, h, cell, values, trace=trace)
++            self.update(layer, x, y, w, h)
++        try:
++            PBC3._channel_sum_error = staticmethod(self.score)
++            ops.search_boxes = search
++            if self.incremental:
++                ops.apply_delta, ops.apply_grid = apply_delta, apply_grid
++            yield self.counters
++        finally:
++            PBC3._channel_sum_error = score_descriptor
++            ops.search_boxes, ops.apply_delta, ops.apply_grid = old_search, old_delta, old_grid
+diff --git a/research_pass5/hf_runtime_job.py b/research_pass5/hf_runtime_job.py
+new file mode 100644
+index 0000000..552f194
+--- /dev/null
++++ b/research_pass5/hf_runtime_job.py
+@@ -0,0 +1,136 @@
++import argparse
++from contextlib import contextmanager
++import hashlib
++import importlib.metadata
++import json
++import os
++from pathlib import Path
++import platform
++import sys
++import time
++
++ROOT = Path(__file__).resolve().parents[1]
++HERE = Path(__file__).resolve().parent
++THREADS = {k:'1' for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS','NUMBA_NUM_THREADS','VECLIB_MAXIMUM_THREADS')}
++MODES = ('baseline','all_mse','all')
++PRESETS = ('compression','balanced','quality','high_quality')
++INPUTS = ('cat.jpg','monet.jpg','flower.jpg','cathedral.png','googlewiki.png','stockpoint.jpg','mario64.png','eiffel.png')
++
++
++def validate(spec):
++    if not isinstance(spec,dict):
++        raise ValueError('research must be an object')
++    if set(spec)-{'images','presets','variants','repeats'}:
++        raise ValueError('Unknown research fields')
++    for key,allowed,limit in (('images',INPUTS,8),('presets',PRESETS,4),('variants',MODES,3)):
++        value=spec.get(key)
++        if not isinstance(value,list) or not 1<=len(value)<=limit or any(not isinstance(v,str) for v in value) or len(set(value))!=len(value) or any(v not in allowed for v in value):
++            raise ValueError('Invalid '+key)
++    if type(spec.get('repeats')) is not int or not 1<=spec['repeats']<=3:
++        raise ValueError('repeats must be 1..3')
++    if 'baseline' not in spec['variants']:
++        raise ValueError('baseline is required')
++    return spec
++
++
++def digest(data):
++    return hashlib.sha256(data).hexdigest()
++
++
++@contextmanager
++def enabled(mode):
++    from PBC3 import PBC3
++    import pbc3_stream as stream
++    import hf_candidate_grid as grid
++    from hf_candidate_search import SearchReuse
++    descriptor=PBC3.__dict__['_read_grid']
++    old_read,old_write=stream.read_grid,stream.write_grid
++    grid.GRID_IO_MODE='numpy'
++    try:
++        if mode in ('all_mse','all'):
++            stream.read_grid,stream.write_grid=grid.read_grid,grid.write_grid
++            PBC3._read_grid=staticmethod(grid.read_grid)
++        yield
++    finally:
++        stream.read_grid,stream.write_grid=old_read,old_write
++        PBC3._read_grid=descriptor
++
++
++def run(spec):
++    os.environ.update(THREADS)
++    sys.path.insert(0,str(ROOT))
++    import numpy as np
++    from PIL import Image, ImageOps
++    from PBC3 import PBC3
++    from pbc3_types import PBC3Config,BitReader
++    from hf_candidate_search import SearchReuse
++    if hasattr(os,'sched_getaffinity'):
++        affinity=sorted(os.sched_getaffinity(0))
++        os.sched_setaffinity(0,{affinity[0]})
++    else:
++        import psutil
++        affinity=psutil.Process().cpu_affinity()
++        psutil.Process().cpu_affinity([affinity[0]])
++    manifest=json.loads((HERE/'hf_runtime_manifest.json').read_text())
++    assert all(digest((ROOT/p).read_text(encoding='utf-8').encode())==value for p,value in manifest['source_lf'].items())
++    assert digest((ROOT/'patch_policy.npz').read_bytes())==manifest['model_sha256']
++    assert all(digest((ROOT/'hpt_data'/name).read_bytes())==value for name,value in manifest['inputs'].items())
++    model=ROOT/'patch_policy.npz'
++    metadata=dict(worker_pid=os.getpid(),label=os.environ.get('PBC_RESEARCH_HOST_LABEL','UNSPECIFIED_HOST'),spec=spec,
++        python=sys.version,platform=platform.platform(),cpu=platform.processor(),affinity=[affinity[0]],
++        versions={n:importlib.metadata.version(n) for n in ('numpy','numba','Pillow')},
++        threads=THREADS,manifest=manifest,warmup='one complete encode/decode per mode/preset; input googlewiki; all measured modes share this worker',
++        module_paths={n:str(Path(m.__file__).resolve()) for n,m in sys.modules.copy().items() if getattr(m,'__file__',None) and (n=='PBC3' or n.startswith('pbc3_') or n=='learned_filler')})
++    def evaluate(name,preset,mode,trial):
++        with Image.open(ROOT/'hpt_data'/name) as opened:
++            image=ImageOps.exif_transpose(opened).convert('RGB')
++        cfg=getattr(PBC3Config,preset)(learned_filler_model_path=str(model),compute_final_mse=mode != 'all')
++        with enabled(mode):
++            started=time.perf_counter()
++            if mode in ('all_mse','all'):
++                state=SearchReuse(incremental=True)
++                with state.enabled():
++                    result=PBC3.compress(image,config=cfg)
++            else:
++                result=PBC3.compress(image,config=cfg)
++            encode=time.perf_counter()-started
++            started=time.perf_counter()
++            decoded=PBC3.decompress(result.data)
++            decode=time.perf_counter()-started
++        assert decoded.image.size==image.size
++        peak_rss_kib=None
++        if sys.platform == 'linux':
++            import resource
++            peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
++        pixels=np.asarray(decoded.image.convert('RGB'))
++        error=np.subtract(np.asarray(image),pixels,dtype=np.float32)
++        _,body=PBC3._open_body(result.data)
++        header=PBC3._read_header(BitReader(body))
++        return dict(image=name,preset=preset,variant=mode,trial=trial,
++            config=vars(cfg),width=image.width,height=image.height,working_width=header[3],working_height=header[4],
++            initialization_patches=header[6],iterative_patches=header[10]-header[6],
++            final_bytes=len(result.data),raw_bytes=len(body)+6,bpp=8*len(result.data)/(image.width*image.height),
++            mse=float(np.mean(error**2,dtype=np.float64)),internal_mse=result.mse,
++            encode_seconds=encode,decode_seconds=decode,peak_process_rss_kib=peak_rss_kib,stream_sha256=digest(result.data),pixels_sha256=digest(pixels.tobytes()),
++            input_sha256=digest((ROOT/'hpt_data'/name).read_bytes()))
++    metadata['warmups']=[evaluate('googlewiki.png',p,v,-1) for p in spec['presets'] for v in spec['variants']]
++    rows=[]
++    for trial in range(spec['repeats']):
++        for i,name in enumerate(spec['images']):
++            for p,preset in enumerate(spec['presets']):
++                order=spec['variants']
++                offset=(trial+i+p)%len(order)
++                for mode in order[offset:]+order[:offset]:
++                    rows.append(evaluate(name,preset,mode,trial))
++    for row in rows:
++        baseline=next(r for r in rows if (r['image'],r['preset'],r['trial'],r['variant'])==(row['image'],row['preset'],row['trial'],'baseline'))
++        assert all(row[k]==baseline[k] for k in ('stream_sha256','pixels_sha256','mse','bpp','initialization_patches','iterative_patches'))
++    assert all(r['internal_mse'] is None if r['variant']=='all' else r['internal_mse'] is not None for r in rows)
++    return dict(metadata=metadata,rows=rows,exact=True,measurement='Full compress/decompress wall time, including search state setup/cleanup; excludes loading, independent metrics, IPC and HTTP. No DB writes.')
++
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser()
++    parser.add_argument('--spec-json',required=True)
++    args=parser.parse_args()
++    print(json.dumps(run(validate(json.loads(args.spec_json)))))
+diff --git a/research_pass5/hf_runtime_manifest.json b/research_pass5/hf_runtime_manifest.json
+new file mode 100644
+index 0000000..81f5248
+--- /dev/null
++++ b/research_pass5/hf_runtime_manifest.json
+@@ -0,0 +1,26 @@
++{
++  "source_lf": {
++    "PBC3.py": "b58e2a931bb6ebb908028279790c7fc479ff3ce748227ec6cabd35994cce5ebd",
++    "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
++    "pbc3_ops.py": "07b33b8fb4828c1fe984105737ec246436c6d67680f152189b49eb3818abd021",
++    "pbc3_heads.py": "4f4d84d699d0270bd3d60749b94546613b0ea1bd4eab8d201e22d47dab6da42d",
++    "pbc3_features.py": "f6f19e560072636bc733b5b0885daace4ea724bd0100672dfcd0a2628c293c33",
++    "learned_filler.py": "f86a0e4090a8c725b0f0c542b8d27387c01bbbb4ee4620b41193da196621122c",
++    "pbc3_stream.py": "a2342d081ee1399dc0794185fca3999f75eaf6d9ad42160cd636ededccc30edd",
++    "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
++    "research_pass5/hf_candidate_grid.py": "66f7803e438e70fd048cafcdda936bcd2a7a4a09da41037550da38da620900a6",
++    "research_pass5/hf_candidate_search.py": "15592c9c7f088897752857219023a8af41655084738041353e601307d6674823",
++    "research_pass5/hf_runtime_job.py": "67f862f01a9209589f3733ef61706bc8527cc34ded0316c4b0ced92f8dfe1927"
++  },
++  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
++  "inputs": {
++    "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
++    "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
++    "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
++    "cathedral.png": "d7a3859fcbbe118daf8f3ea1f2daf120d6d38be474ab2ee845d6802675b21bf1",
++    "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
++    "stockpoint.jpg": "3175eac094fa5b7f9641eb0873ddc3b9b544259c5620e3f1a3b82ad982f1e030",
++    "mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
++    "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
++  }
++}
+diff --git a/server.py b/server.py
+index de8252d..4a60114 100644
+--- a/server.py
++++ b/server.py
+@@ -814,6 +814,20 @@ def benchmark_status():
+ @app.post("/api/benchmark/start")
+ async def benchmark_start(request: Request):
+     body = await request.json()
++    if "research" in body:
++        import hmac
++        expected = os.environ.get("PBC_RESEARCH_BENCHMARK_TOKEN", "")
++        if not expected:
++            raise HTTPException(status_code=404, detail="Research benchmark disabled")
++        if not hmac.compare_digest(request.headers.get("x-pbc-benchmark-token", ""), expected):
++            raise HTTPException(status_code=403, detail="Research benchmark authorization required")
++        try:
++            from research_pass5.hf_runtime_job import validate
++            spec = validate(body["research"])
++        except (ValueError, TypeError) as error:
++            raise HTTPException(status_code=400, detail=str(error))
++        return _guarded_benchmark_start("benchmark", pbc3_benchmark.start_research,
++            pbc3_benchmark.status, spec)
+     return _guarded_benchmark_start(
+         "benchmark",
+         pbc3_benchmark.start,

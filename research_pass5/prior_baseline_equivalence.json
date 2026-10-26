@@ -1,0 +1,226 @@
+[
+  {
+    "image": "cat.jpg",
+    "preset": "compression",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "cat.jpg",
+    "preset": "balanced",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "cat.jpg",
+    "preset": "quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "cat.jpg",
+    "preset": "high_quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "monet.jpg",
+    "preset": "compression",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "monet.jpg",
+    "preset": "balanced",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "monet.jpg",
+    "preset": "quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "monet.jpg",
+    "preset": "high_quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "flower.jpg",
+    "preset": "compression",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "flower.jpg",
+    "preset": "balanced",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "flower.jpg",
+    "preset": "quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "flower.jpg",
+    "preset": "high_quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "cathedral.png",
+    "preset": "compression",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "cathedral.png",
+    "preset": "balanced",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "cathedral.png",
+    "preset": "quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "cathedral.png",
+    "preset": "high_quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "googlewiki.png",
+    "preset": "compression",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "googlewiki.png",
+    "preset": "balanced",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "googlewiki.png",
+    "preset": "quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "googlewiki.png",
+    "preset": "high_quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "stockpoint.jpg",
+    "preset": "compression",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "stockpoint.jpg",
+    "preset": "balanced",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "stockpoint.jpg",
+    "preset": "quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "stockpoint.jpg",
+    "preset": "high_quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "mario64.png",
+    "preset": "compression",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "mario64.png",
+    "preset": "balanced",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "mario64.png",
+    "preset": "quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "mario64.png",
+    "preset": "high_quality",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "eiffel.png",
+    "preset": "compression",
+    "stream_equal": true,
+    "pixels_equal": true,
+    "mse_equal": true
+  },
+  {
+    "image": "eiffel.png",
+    "preset": "balanced",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "eiffel.png",
+    "preset": "quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  },
+  {
+    "image": "eiffel.png",
+    "preset": "high_quality",
+    "stream_equal": false,
+    "pixels_equal": false,
+    "mse_equal": false
+  }
+]

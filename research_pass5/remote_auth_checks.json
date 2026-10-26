@@ -1,0 +1,5 @@
+{
+  "missing_token": 403,
+  "wrong_token": 403,
+  "path_traversal": 400
+}

@@ -814,6 +814,20 @@ def benchmark_status():
 @app.post("/api/benchmark/start")
 async def benchmark_start(request: Request):
     body = await request.json()
+    if "research" in body:
+        import hmac
+        expected = os.environ.get("PBC_RESEARCH_BENCHMARK_TOKEN", "")
+        if not expected:
+            raise HTTPException(status_code=404, detail="Research benchmark disabled")
+        if not hmac.compare_digest(request.headers.get("x-pbc-benchmark-token", ""), expected):
+            raise HTTPException(status_code=403, detail="Research benchmark authorization required")
+        try:
+            from research_pass5.hf_runtime_job import validate
+            spec = validate(body["research"])
+        except (ValueError, TypeError) as error:
+            raise HTTPException(status_code=400, detail=str(error))
+        return _guarded_benchmark_start("benchmark", pbc3_benchmark.start_research,
+            pbc3_benchmark.status, spec)
     return _guarded_benchmark_start(
         "benchmark",
         pbc3_benchmark.start,

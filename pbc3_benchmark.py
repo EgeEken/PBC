@@ -302,3 +302,58 @@ def results(mp_min=None, mp_max=None):
         return {"exists": True, "rows": rows, "points": points, "count": len(rows)}
     finally:
         con.close()
+
+
+def start_research(spec):
+    global _THREAD
+    from research_pass5.hf_runtime_job import validate
+    spec = validate(spec)
+    with _LOCK:
+        if _STATE["running"]:
+            return {"error": "A benchmark is already running."}
+        _STOP.clear()
+        _STATE.update(running=True, done=0, total=None, current={"research": True},
+            started=time.time(), error=None, log=[], research_result=None)
+
+    def run():
+        import json
+        import subprocess
+        import sys
+        import uuid
+        from pathlib import Path
+        output = Path(PROJECT_DIR) / "research_pass5" / "hf_runs" / uuid.uuid4().hex
+        try:
+            output.mkdir(parents=True, exist_ok=False)
+            with (output / "stderr.log").open("w") as log:
+                process = subprocess.Popen([sys.executable, str(Path(PROJECT_DIR) / "research_pass5" / "hf_runtime_job.py"),
+                    "--spec-json", json.dumps(spec)], cwd=PROJECT_DIR, stdout=subprocess.PIPE,
+                    stderr=log, text=True)
+                deadline = time.monotonic() + 1200
+                while True:
+                    try:
+                        stdout, _ = process.communicate(timeout=0.25)
+                        break
+                    except subprocess.TimeoutExpired:
+                        if _STOP.is_set() or time.monotonic() > deadline:
+                            process.terminate()
+                            try:
+                                process.communicate(timeout=5)
+                            except subprocess.TimeoutExpired:
+                                process.kill()
+                                process.communicate()
+                            raise RuntimeError("Research benchmark stopped or timed out")
+                if process.returncode:
+                    raise RuntimeError("Research worker failed: " + (output / "stderr.log").read_text()[-4000:])
+            result = json.loads(stdout)
+            (output / "results.json").write_text(json.dumps(result, indent=2))
+            with _LOCK:
+                _STATE.update(research_result=result, done=len(result["rows"]), total=len(result["rows"]))
+        except Exception as error:
+            with _LOCK:
+                _STATE["error"] = str(error)
+        finally:
+            with _LOCK:
+                _STATE.update(running=False, current=None)
+    _THREAD = threading.Thread(target=run, daemon=True)
+    _THREAD.start()
+    return {"started": True, "research": True, "spec": spec}

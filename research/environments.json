@@ -1,0 +1,19 @@
+{
+  "local": {
+    "numpy": "2.2.6",
+    "numba": "0.62.1",
+    "Pillow": "11.3.0",
+    "psutil": "7.1.0",
+    "opencv-python": "4.12.0.88",
+    "matplotlib": "3.10.7",
+    "optuna": "4.9.0"
+  },
+  "local_python": "3.13.5",
+  "hf_python": "3.11.17",
+  "hf": {
+    "numpy": "2.4.6",
+    "numba": "0.68.0",
+    "Pillow": "11.3.0"
+  },
+  "note": "Recorded observations, not newly run benchmarks. Docker dependencies remain unchanged and mostly unpinned."
+}
