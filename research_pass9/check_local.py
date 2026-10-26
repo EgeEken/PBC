@@ -29,7 +29,7 @@ def main():
     image=Image.fromarray(np.random.default_rng(7).integers(0,256,(48,64,3),dtype=np.uint8))
     config=PBC3Config.balanced(learned_filler_model_path=str(ROOT/'patch_policy.npz'),patch_count=5)
     expected={mode:PBC3.compress(image,config=config,rng_mode=mode).data for mode in ('current','release')}
-    assert PBC3.compress(image,config=config).data==expected['current']
+    assert PBC3.compress(image,config=config).data==expected['release']
     assert list(PBC3.compress_stream(image,config=config,rng_mode='release',frame_every=0))[-1]['result'].data==expected['release']
     modes=('release','current','release','current')
     with ThreadPoolExecutor(max_workers=4) as pool:

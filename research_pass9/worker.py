@@ -53,7 +53,7 @@ def main():
                 config=getattr(PBC3Config,job['preset'])(learned_filler_model_path=str(model))
                 assert config.compute_final_mse
                 started=time.perf_counter()
-                encoded=PBC3.compress(image,config=config,**({'rng_mode':'release'} if source=='dev_release_rng' else {}))
+                encoded=PBC3.compress(image,config=config,**({'rng_mode':'release' if source=='dev_release_rng' else 'current'} if source!='release' else {}))
                 encode_seconds=time.perf_counter()-started
                 started=time.perf_counter()
                 decoded=PBC3.decompress(encoded.data)

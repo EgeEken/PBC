@@ -46,6 +46,7 @@ requirements-research.txt
 requirements_docker.txt
 research/BASELINE.md
 research/EXCLUSIONS.md
+research/HISTORICAL_EXECUTION.md
 research/REPRODUCTION.md
 research/assets.json
 research/environments.json
@@ -77,6 +78,15 @@ research_pass1/rng_diagnostic.py
 research_pass1/run_diagnostics.py
 research_pass1/runtime_source_manifest.json
 research_pass1/validate_backend.py
+research_pass10/README.md
+research_pass10/benchmark_checks.json
+research_pass10/check_benchmark.py
+research_pass10/check_codec.py
+research_pass10/check_public_api.py
+research_pass10/hf_deployment.json
+research_pass10/local_checks.json
+research_pass10/prepare_deployment.py
+research_pass10/run_hf.py
 research_pass2/PBC_ENTROPY_RESEARCH.md
 research_pass2/PBC_PASS2_SUMMARY.md
 research_pass2/PBC_PERFORMANCE_RESULTS.md

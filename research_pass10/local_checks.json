@@ -1,0 +1,69 @@
+{
+  "encodes": 20,
+  "release_identical_cases": 4,
+  "unseen_synthetic_cases": 3,
+  "custom_preserved_cases": 2,
+  "default_equals_explicit_release": true,
+  "streaming_cases": 2,
+  "mixed_concurrent_calls": 2,
+  "invalid_rng_rejected": true,
+  "existing_v0_decode": true,
+  "internal_mse_correct": true,
+  "worker_modes_explicit": true,
+  "rows": [
+    {
+      "name": "photo",
+      "preset": "compression",
+      "stream_sha256": "fd41e4087e0782242fbc666f44eac651bbc79543a4b70ac697e5b29886aa1c4c",
+      "pixels_sha256": "4801f2f8e79d57d9dd238da462c1debea1c3096f341d0b38ede757d19582a71f",
+      "mse": 433.81161180802667,
+      "final_bytes": 7036,
+      "bpp": 0.006602555440445626,
+      "patches": 19,
+      "image_mode": "RGB",
+      "width": 3576,
+      "height": 2384
+    },
+    {
+      "name": "rgba",
+      "preset": "balanced",
+      "stream_sha256": "76524fc52e77d9cc7d8e1d737d5ea14cd8f39cce6efa007eec826fdf4569cb76",
+      "pixels_sha256": "4d6c070380256a9280a694bd09b68602893bc0b17fe6809f9a3b3b400b5cebe4",
+      "mse": 6.7677001953125,
+      "final_bytes": 346,
+      "bpp": 0.4505208333333333,
+      "patches": 11,
+      "image_mode": "RGBA",
+      "width": 96,
+      "height": 64
+    },
+    {
+      "name": "graphics",
+      "preset": "quality",
+      "stream_sha256": "232fdd9ea4e18e260c256fefc64f7664dfacd1d37211a6879efa75093e9382ef",
+      "pixels_sha256": "e553e95c0a797e4830a2aedf9b0e0610c4b2ad669f61bd9c0432043567a384cc",
+      "mse": 36.24859787263434,
+      "final_bytes": 5651,
+      "bpp": 3.7470368835474512,
+      "patches": 20,
+      "image_mode": "RGB",
+      "width": 127,
+      "height": 95
+    },
+    {
+      "name": "native",
+      "preset": "high_quality",
+      "stream_sha256": "c7c0c5553bc5ca8a7838e62c90deba46613d6270f84dd430d86afc79bc715196",
+      "pixels_sha256": "5040b4f9c60deef4261e00f45e2552141caef3662159829bdd3cd18ee8fbb2ec",
+      "mse": 19.58371040723982,
+      "final_bytes": 664,
+      "bpp": 24.036199095022624,
+      "patches": 6,
+      "image_mode": "RGB",
+      "width": 17,
+      "height": 13
+    }
+  ],
+  "release_reference": "2e59f1b06980aa467da0cde94fa33c3f9a0d4d51",
+  "previous_default_reference": "e6c8eca726b3048a92514bd09d31fca0b3e00fd7"
+}

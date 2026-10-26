@@ -1,9 +1,9 @@
 {
   "release_revision": "2e59f1b06980aa467da0cde94fa33c3f9a0d4d51",
-  "base_hf_revision": "27f6c65225a5496fa065deb586c7e405ecdffc84",
-  "public_rng_default": "current",
+  "base_hf_revision": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "public_rng_default": "release",
   "source_lf": {
-    "PBC3.py": "0c744923b440bfc362ecfc17502cae3ed47677e0a2544e15adacdd0e9f8896a8",
+    "PBC3.py": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
     "pbc3_ops.py": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e",
     "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
     "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
@@ -12,15 +12,15 @@
     "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
     "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
     "server.py": "e4066e5b3764ed969f99941315be9d8c9d87660376e4d801741c88f7dae503f3",
-    "pbc3_benchmark.py": "680801fc02d87f50217ecfb9587f8dd4599e792b49d8acfac21befec4de62525",
-    "static/benchmark.js": "df59f4afed7fb650931aee4792070261fd37a0eb7ff0a2fc3f8fd82e27447106",
+    "pbc3_benchmark.py": "264844e43a7329f89bdad94643b24beaf09a4b85b0e45c4126b817afff7160e4",
+    "static/benchmark.js": "e7e05ab8074d687bcce95592106a726c31bc3dfccd795ea58518d30b18d3ee24",
     "research_pass1/release/learned_filler.py": "6a1d5b4ba77ffd7e5038dc7d8a44898cf5605316db742c2991f3b6b73eef0a08",
     "research_pass1/release/PBC3.py": "ab3988d9d39a1937c545a89b827fbb0b6982a573f498e5c81686b42cd501bd34",
     "research_pass1/release/pbc3_features.py": "a5e74cd7497081694fee015a5605357367fc5c850875ee56c21ab61dc52a013e",
     "research_pass1/release/pbc3_heads.py": "6f26c54b143eaa2b306343db6335685043baf4e7c1a5b188d3c5f7032cf65476",
     "research_pass1/release/pbc3_ops.py": "5778344d8a0eacee26019804ca988af022131f6c414ac6bcc196012a038fc401",
     "research_pass1/release/pbc3_types.py": "cc3c092cd100591765fb824a0ef93b9d01f169cbfe440f4b67efb1180d7638c9",
-    "research_pass9/worker.py": "3d2aec5c3c1f4396f0f0f3e74dcfe0547b794723e2f46d334347352a6a7fc307",
+    "research_pass9/worker.py": "52fe88508029cf1d2977bf964b5b01999aa64e86ff4883a792c41ea9aca4715f",
     "research_pass9/hf_release_job.py": "8ddfc08ca3da2e4992f8d4efe061af58cae4c9e5f09c38400876ae6e3a0c72f4"
   },
   "assets": {
@@ -50,5 +50,6 @@
     "hpt_data_val/pigeon.JPG": "2e61640bdeae1c67d7b26a010deb7495477183cc30ffbbb2dde76ae8ae7477ee",
     "hpt_data_val/pigeons.JPG": "f51db7c65634348b7364e97f9c0fd0045cdf51f6ab9ed3d4ada080b42feeaa7c",
     "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
-  }
+  },
+  "development_baseline": "pbc31_release_rng_baseline"
 }

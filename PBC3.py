@@ -274,7 +274,7 @@ class PBC3:
         return float(np.sum(np.abs(target[:, :, c] - np.clip(canvas[:, :, c], 0, 255))))
 
     @classmethod
-    def compress(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, rng_mode="current", **kwargs) -> PBC3Result:
+    def compress(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, rng_mode="release", **kwargs) -> PBC3Result:
         """## Compresses an image and returns the final result"""
         result = None
         for ev in cls.compress_stream(image, config, reuse=reuse, trace=trace, rng_mode=rng_mode, frame_every=0, **kwargs):
@@ -283,7 +283,7 @@ class PBC3:
         return result
 
     @classmethod
-    def compress_stream(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, rng_mode="current", frame_every: int = 25, **kwargs):
+    def compress_stream(cls, image, config: PBC3Config = None, *, reuse=None, trace=None, rng_mode="release", frame_every: int = 25, **kwargs):
         """## Compresses an image and yields optional preview frames plus the final result"""
         if rng_mode not in ("current", "release"):
             raise ValueError("rng_mode must be current or release")

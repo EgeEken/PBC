@@ -1,0 +1,52 @@
+{
+  "historical_rows_preserved": 6200,
+  "historical_provenance_not_relabelled": true,
+  "nullable_schema_upgrade": true,
+  "new_coverage_verified": true,
+  "incomplete_trailing_trial_rejected": true,
+  "read_queries_do_not_write": true,
+  "mp_filter_preserved": true,
+  "public_form_cannot_select_rng_or_disable_mse": true,
+  "entry_points": {
+    "server.py": [
+      {
+        "line": 390,
+        "call": "compress",
+        "inherits_default": true
+      },
+      {
+        "line": 431,
+        "call": "compress_stream",
+        "inherits_default": true
+      }
+    ],
+    "pbc3_benchmark.py": [
+      {
+        "line": 146,
+        "call": "compress",
+        "inherits_default": true
+      }
+    ],
+    "pbc3_quick_rd.py": [
+      {
+        "line": 94,
+        "call": "compress",
+        "inherits_default": true
+      }
+    ],
+    "pbc3_sweep.py": [
+      {
+        "line": 171,
+        "call": "compress",
+        "inherits_default": true
+      }
+    ],
+    "pbc3_rl_a20.py": [
+      {
+        "line": 400,
+        "call": "compress",
+        "inherits_default": true
+      }
+    ]
+  }
+}

@@ -1,7 +1,10 @@
 import glob
+import hashlib
 import io
+import json
 import math
 import os
+from pathlib import Path
 import sqlite3
 import threading
 import time
@@ -10,7 +13,7 @@ import numpy as np
 from PIL import Image, ImageOps
 
 from PBC3 import PBC3, preload_numba
-from pbc3_types import PBC3Config
+from pbc3_types import PBC3Config, BitReader
 
 try:
     import pillow_jxl  # noqa: F401
@@ -83,6 +86,11 @@ def _connect():
     """)
     con.execute("CREATE INDEX IF NOT EXISTS idx_results_codec ON results(codec, variant, q)")
     con.execute("CREATE INDEX IF NOT EXISTS idx_results_mp ON results(mp)")
+    columns = {r[1] for r in con.execute("PRAGMA table_info(results)")}
+    for name, kind in (("patches", "INTEGER"), ("stream_sha256", "TEXT")):
+        if name not in columns:
+            con.execute(f"ALTER TABLE results ADD COLUMN {name} {kind}")
+    con.execute("CREATE TABLE IF NOT EXISTS run_metadata (run_id TEXT PRIMARY KEY, metadata TEXT NOT NULL)")
     con.commit()
     return con
 
@@ -140,9 +148,12 @@ def _eval_pbc3(arr, preset):
     t = time.perf_counter()
     dec = PBC3.decompress(res.data)
     dec_s = time.perf_counter() - t
+    assert dec.image.size == (arr.shape[1], arr.shape[0])
     recon = np.asarray(dec.image.convert("RGB").resize((arr.shape[1], arr.shape[0])))
     mse = _mse(arr, recon)
-    return enc, dec_s, float(len(res.data) * 8 / pixels), mse, _psnr(mse)
+    _, body = PBC3._open_body(res.data)
+    patches = PBC3._read_header(BitReader(body))[10]
+    return enc, dec_s, float(len(res.data) * 8 / pixels), mse, _psnr(mse), patches, hashlib.sha256(res.data).hexdigest()
 
 
 def _eval_codec(arr, fmt, q):
@@ -204,8 +215,8 @@ def stop():
 def _insert(con, row):
     con.execute("""
         INSERT INTO results
-        (ts, run_id, trial, codec, variant, q, image, mp, encode_seconds, decode_seconds, bpp, mse, psnr)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (ts, run_id, trial, codec, variant, q, image, mp, encode_seconds, decode_seconds, bpp, mse, psnr, patches, stream_sha256)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, row)
 
 
@@ -227,6 +238,15 @@ def _run(codecs, n_trials):
         done = 0
         con = _connect()
         try:
+            metadata = dict(n_trials=n_trials, images=[im["name"] for im in images], codecs=codecs)
+            if "PBC3" in codecs:
+                metadata.update(baseline_id="pbc31_release_rng_baseline",
+                    label="PBC 3.1 development — release-compatible RNG", rng_mode="release", seed=2003,
+                    source_sha256={name: hashlib.sha256((Path(PROJECT_DIR) / name).read_bytes()).hexdigest()
+                    for name in ("PBC3.py", "pbc3_ops.py", "pbc3_heads.py", "learned_filler.py", "pbc3_stream.py", "pbc3_features.py", "pbc3_types.py", "pbc3_trace.py")},
+                    model_sha256=hashlib.sha256((Path(PROJECT_DIR) / "patch_policy.npz").read_bytes()).hexdigest())
+            con.execute("INSERT INTO run_metadata VALUES (?, ?)", (run_id, json.dumps(metadata)))
+            con.commit()
             for trial in range(1, n_trials + 1):
                 for codec, variant, q in jobs:
                     if _STOP.is_set():
@@ -240,11 +260,12 @@ def _run(codecs, n_trials):
                             return
                         try:
                             if codec == "PBC3":
-                                enc, dec, bpp, mse, psnr = _eval_pbc3(im["arr"], variant)
+                                enc, dec, bpp, mse, psnr, patches, stream_hash = _eval_pbc3(im["arr"], variant)
                             else:
                                 fmt = "PNG" if codec == "PNG" else codec
                                 enc, dec, bpp, mse, psnr = _eval_codec(im["arr"], fmt, q)
-                            _insert(con, (time.time(), run_id, trial, codec, variant, q, im["name"], im["mp"], enc, dec, bpp, mse, psnr))
+                                patches = stream_hash = None
+                            _insert(con, (time.time(), run_id, trial, codec, variant, q, im["name"], im["mp"], enc, dec, bpp, mse, psnr, patches, stream_hash))
                             con.commit()
                         except Exception as e:
                             _log(f"{codec} {variant} failed on {im['name']}: {e}")
@@ -287,6 +308,7 @@ def results(mp_min=None, mp_max=None, run_id="latest"):
     con.row_factory = sqlite3.Row
     try:
         records = con.execute("SELECT run_id, ts, trial, codec, variant, image FROM results ORDER BY ts DESC").fetchall()
+        metadata = {r["run_id"]: json.loads(r["metadata"]) for r in con.execute("SELECT * FROM run_metadata")} if con.execute("SELECT 1 FROM sqlite_master WHERE name='run_metadata' AND type='table'").fetchone() else {}
         groups = {}
         for row in records:
             groups.setdefault(row["run_id"], []).append(row)
@@ -296,14 +318,16 @@ def results(mp_min=None, mp_max=None, run_id="latest"):
             codecs = sorted({r["codec"] for r in group})
             images = {r["image"] for r in group}
             trials = sorted({r["trial"] for r in group})
-            expected_points = {(c, v) for c, v, _ in _jobs(codecs)}
+            planned = metadata.get(name)
+            expected_points = {(c, v) for c, v, _ in _jobs(planned["codecs"] if planned else codecs)}
             keys = {(r["trial"], r["codec"], r["variant"], r["image"]) for r in group}
-            expected = {(t, c, v, im) for t in range(1, max(trials) + 1) for c, v in expected_points for im in images}
+            expected = {(t, c, v, im) for t in range(1, planned["n_trials"] + 1 if planned else max(trials) + 1)
+                for c, v in expected_points for im in (planned["images"] if planned else images)}
             running = state["running"] and state.get("run_id") == name
             complete = keys == expected and len(keys) == len(group) and not running
             runs.append(dict(run_id=name, first_ts=min(r["ts"] for r in group), last_ts=max(r["ts"] for r in group),
                 count=len(group), images=len(images), trials=len(trials), points=len(expected_points), codecs=codecs,
-                coverage_complete=complete, status="running" if running else ("complete coverage (inferred)" if complete else "incomplete coverage")))
+                metadata=planned, coverage_complete=complete, status="running" if running else (("complete" if planned else "complete coverage (inferred)") if complete else "incomplete coverage")))
         selected = next((r["run_id"] for r in runs if r["coverage_complete"]), None) if run_id == "latest" else run_id
         if run_id == "all":
             selected = None
@@ -327,7 +351,7 @@ def results(mp_min=None, mp_max=None, run_id="latest"):
         return {"exists": True, "rows": rows, "points": points, "count": len(rows), "runs": runs,
             "selection": run_id, "selected_run": selected,
             "selection_status": "historical composite" if run_id == "all" else next((r["status"] for r in runs if r["run_id"] == selected), "missing run / no complete coverage"),
-            "coverage_note": "Coverage is inferred from observed images, codecs and trials. Original requested totals and completion markers were not stored; an entirely missing image, codec or trailing trial cannot be detected."}
+            "coverage_note": "New runs retain requested image/trial coverage and codec/RNG metadata. Historical coverage is inferred; entirely missing images, codecs or trailing trials cannot be detected."}
     finally:
         con.close()
 

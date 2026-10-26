@@ -18,9 +18,9 @@ def main():
             for trial in range(1,trials+1):
                 for preset in benchmark.PBC3_PRESETS:
                     for image,mp in [('a',1),('b',2)]:
-                        benchmark._insert(con,(ts,name,trial,'PBC3',preset,None,image,mp,timing,timing/10,.5,10.,30.))
-        benchmark._insert(con,(3,'partial',1,'PBC3','quality',None,'a',1.,99.,99.,.5,10.,30.))
-        benchmark._insert(con,(.5,'other',1,'PNG','lossless',0,'a',1.,100.,100.,4.,0.,99.))
+                        benchmark._insert(con,(ts,name,trial,'PBC3',preset,None,image,mp,timing,timing/10,.5,10.,30.,None,None))
+        benchmark._insert(con,(3,'partial',1,'PBC3','quality',None,'a',1.,99.,99.,.5,10.,30.,None,None))
+        benchmark._insert(con,(.5,'other',1,'PNG','lossless',0,'a',1.,100.,100.,4.,0.,99.,None,None))
         con.commit()
         con.close()
         before = hashlib.sha256(Path(benchmark.DB_PATH).read_bytes()).hexdigest()

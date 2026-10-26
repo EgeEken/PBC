@@ -1,0 +1,16 @@
+{
+  "base": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "commit": "98ade0c8072a4571e9674eaac3d91f861e3b9867",
+  "files": [
+    "PBC3.py",
+    "pbc3_benchmark.py",
+    "static/benchmark.js",
+    "research_pass9/worker.py",
+    "research_pass9/runtime_manifest.json"
+  ],
+  "baseline_id": "pbc31_release_rng_baseline",
+  "public_rng_default": "release",
+  "stream_version": 0,
+  "codec_change": "Only compress/compress_stream default selection; previous custom generator remains explicit.",
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+}
