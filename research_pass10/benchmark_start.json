@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-26T17:23:32.764069+00:00",
+  "response": {
+    "started": true,
+    "codecs": [
+      "PBC3"
+    ],
+    "n_trials": 3
+  },
+  "hf_revision": "98ade0c8072a4571e9674eaac3d91f861e3b9867"
+}

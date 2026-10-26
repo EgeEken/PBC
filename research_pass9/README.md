@@ -1,5 +1,7 @@
 # Release-compatible RNG with optimized runtime
 
+Pass 10 subsequently promoted release RNG as the public/default path. The default descriptions and deployment commands below describe Pass 9 historically; see research/HISTORICAL_EXECUTION.md and research_pass10/README.md. The active three-way worker now explicitly selects both development modes, preserving their original meaning.
+
 Only `PBC3.compress(..., rng_mode="release")` or `compress_stream` with that option selects NumPy `default_rng(config.random_seed)`. The omitted/default mode remains `"current"`, using the existing custom PCG32 generator. Each call owns its generator; no global replacement or state is used. Presets and the public API do not select the new option.
 
 `release` imports the immutable six-module release under `research_pass1/release`; `dev_release_rng` uses the integrated root with the explicit option; `dev_current_rng` omits the option. All use the immutable original model and internal MSE. No other algorithm is changed.

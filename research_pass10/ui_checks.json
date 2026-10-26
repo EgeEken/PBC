@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "run_id": "20261026_172335",
+  "baseline_label_visible": true,
+  "selected_samples": 240,
+  "historical_labels_preserved": true,
+  "pbc_only_plots": true,
+  "served_frontend_tested": true
+}

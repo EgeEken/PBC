@@ -1,4 +1,4 @@
-# PBC research through Pass 9
+# PBC research through Pass 10 baseline promotion
 
 The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the validated runtime mechanisms without changing the stream, model, preset or release version.
 
@@ -18,12 +18,13 @@ The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the v
 | Pass 8 robust palette bounds | 98th-percentile sign-conditioned clipping passed fixed-state feasibility but failed forward screening: MSE −0.271%, bpp +6.983%, encode +13.496%, no strict RD wins. No broader confirmation or deployment. | `research_pass8/PBC_ROBUST_PALETTE_RESULTS.md` |
 | Pass 9 release RNG | Release RNG matches immutable release on 100/100 HF cases. Same-stream HF timing: encode −28.83%, decode −64.38%, exact MSE/bpp restoration; recommend as the development baseline. Public default remains current. | `research_pass9/PBC_PASS9_SUMMARY.md` |
 | Existing public speed run log | User-authorized stop at 996/9,800 calls; database backed up. One complete trial gives PBC3 0.534392/0.082203 s. Screenshot PNG bar has only five images; complete PNG mean is 1.878271/0.164118 s. | `research_pass9/PBC_EXISTING_SPEED_RUN_LOG.md` |
+| Pass 10 baseline promotion | Release RNG is the live public/utility default at HF 98ade0c. Focused acceptance passes; PBC-only run 20261026_172335 completes 240 calls with every file matching release. Frozen baseline pbc31_release_rng_baseline; no official release or new RD algorithm. | `research_pass10/PBC31_BASELINE_PROMOTION.md` |
 
 Pass 5 averages per-image/preset medians. Timing CV was roughly 17–20%; all 32 case medians and all three complete-trial means favored both optimized modes. The public Balanced RGBA response matches the predeployment HF response. Separate Windows/HF baseline differences were already observed in Pass 1 and remain documented; they do not constitute an optimization pair. Memory observations are cumulative process high-water marks, not variant-specific peak comparisons.
 
 The allocator remains experimental. `mario64.png`, `eiffel.png`, and `pigeon.JPG` have measured dominance failures; Monet's direct and interpolated comparisons disagree. Do not promote it as a universal high-quality or all-metric release improvement. The cache cost branch stopped at its negative gate.
 
-Pass 5's grid/search prototypes remain archived. Pass 6 integrates grid I/O in `pbc3_stream.py` and explicit per-encode state in `pbc3_ops.SearchState`, forwarded through the regular learned/heuristic proposal paths. Public compression retains its presets and internal metric. Pass 9's active authenticated helper is `research_pass9/hf_release_job.py`, comparing immutable release, optimized release RNG and optimized current RNG. HF runs at `4237d954`; the live public RNG remains current. Future RD research should explicitly use `rng_mode="release"` as its primary control; current RNG remains selectable to reproduce historical experiments. Pass 6's preceding-HF control remains isolated under `research_pass6/baseline/` for its distinct historical question.
+Pass 5's grid/search prototypes remain archived. Pass 6 integrates grid I/O in `pbc3_stream.py` and explicit per-encode state in `pbc3_ops.SearchState`, forwarded through the regular learned/heuristic proposal paths. Public compression retains its presets and internal metric. Pass 9's active authenticated helper is `research_pass9/hf_release_job.py`, comparing immutable release, optimized release RNG and optimized current RNG. HF now runs at `98ade0c`; release RNG is the public default. Future RD research must use the frozen `pbc31_release_rng_baseline` source/manifest as its primary control; explicit current RNG remains available for historical reproduction. Pass 6's preceding-HF control remains isolated under `research_pass6/baseline/` for its distinct historical question.
 
 Earlier multistage/proposal experiments are preserved as named `pbc31_*` implementations, tests and their two reports. Their original HF commit IDs are recorded in `research/provenance.json`; their generated result dumps and unrelated HF history are not imported.
 

@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-26T17:29:16.109916+00:00",
+  "hf_revision": "98ade0c8072a4571e9674eaac3d91f861e3b9867",
+  "runtime": {
+    "stage": "RUNNING",
+    "hardware": {
+      "current": "cpu-basic",
+      "requested": "cpu-basic"
+    },
+    "gcTimeout": 172800,
+    "replicas": {
+      "current": 1,
+      "requested": 1
+    },
+    "devMode": false,
+    "domains": [
+      {
+        "domain": "egeeken-pbc.hf.space",
+        "stage": "READY"
+      }
+    ],
+    "sha": "98ade0c8072a4571e9674eaac3d91f861e3b9867",
+    "pySpacesVersion": "0.51.3"
+  },
+  "health": {
+    "ok": true,
+    "boot_id": "1793035230.497"
+  },
+  "jobs": {
+    "/api/benchmark/status": {
+      "running": false,
+      "done": 240,
+      "total": 240,
+      "error": null,
+      "run_id": "20261026_172335"
+    },
+    "/api/quick_rd/status": {
+      "running": false,
+      "done": 0,
+      "total": null,
+      "error": null
+    },
+    "/api/sweeps/run/status": {
+      "running": false,
+      "done": 0,
+      "total": null,
+      "error": null
+    },
+    "/api/train/status": {
+      "running": false
+    }
+  },
+  "latest_run": "20261026_172335",
+  "latest_samples": 240,
+  "served_js_matches_tested_source": true,
+  "served_js_sha256": "e7e05ab8074d687bcce95592106a726c31bc3dfccd795ea58518d30b18d3ee24",
+  "database": {
+    "bytes": 1040384,
+    "sha256": "1df81e864c35a20daaabe110f597be5e1b67830596d779083dbdc7f21cfbc56e",
+    "rows": 6440,
+    "new_run_rows": 240,
+    "quick_check": "ok",
+    "all_6200_historical_rows_unchanged": true,
+    "older_backup_restored": false
+  },
+  "source_github_revision": "8006f30debfc4a57289df06df21636aeb52baffd",
+  "public_default_rng": "release"
+}

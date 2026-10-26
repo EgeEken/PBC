@@ -1,7 +1,7 @@
 {
   "description": "Published research snapshot; this manifest excludes itself. Models reuse an existing GitHub blob.",
   "github_base": "162feed4a85b81f0d2494e05bd39d8e159788e7c",
-  "hf_deployment": "4237d954f4e1a04951c822c738113a53bbd58e9b",
+  "hf_deployment": "98ade0c8072a4571e9674eaac3d91f861e3b9867",
   "files": {
     ".gitattributes": {
       "bytes": 31,
@@ -74,9 +74,9 @@
       "git_blob": "053f6b2a2e876093c9932a60230b0763955509fc"
     },
     "RESEARCH.md": {
-      "bytes": 6562,
-      "sha256": "4f229386c2c7369cd73a19af743a4ff8b1cedc1897ec7851447c7a30bbf9a4a7",
-      "git_blob": "9e460fda1e8f6eb0634b4646125f6d8656935a6b"
+      "bytes": 6943,
+      "sha256": "7b16fb3cb9c9039cd47f18027be9a46e5a222c4b768a8d354199bf9908c3eca9",
+      "git_blob": "358368142da98973df5bcd1e528d490c9ba12dd5"
     },
     "learned_filler.py": {
       "bytes": 14201,
@@ -234,9 +234,9 @@
       "git_blob": "b60e0cc669a7857c8569011847517ed64cd88670"
     },
     "research/BASELINE.md": {
-      "bytes": 4566,
-      "sha256": "d2fe4509652d18624e0cce3ca7d9d8ffef80c80072af503130146007a56b0b05",
-      "git_blob": "07d951caf783a855196a786b4ace033df7b79e0e"
+      "bytes": 5270,
+      "sha256": "f2b511870b32a662861a12baaa6d6395362e6506f02d961a78985ee23c4bf23f",
+      "git_blob": "a33dc23c4c416e7ccb61147b97f86589aef30836"
     },
     "research/EXCLUSIONS.md": {
       "bytes": 2351,
@@ -249,9 +249,9 @@
       "git_blob": "5efe79e6a31d7609b71db47b4cd4c397a8dccb3f"
     },
     "research/REPRODUCTION.md": {
-      "bytes": 7215,
-      "sha256": "ac6df14a6c6e79a047e7d10ba291dec1deaaa2ee22e5b524396c16db71bc8dea",
-      "git_blob": "264ceb5c2ca9e674e9f294f18746c3e1d0a86a3c"
+      "bytes": 7977,
+      "sha256": "dda61f13e5c3b52a7bcb6eb922e73edd2a22d075b4149a7b0b9408654a3452e4",
+      "git_blob": "328b76c3d8f7b22776f95040e3794738500f1b5b"
     },
     "research/assets.json": {
       "bytes": 3957,
@@ -279,9 +279,9 @@
       "git_blob": "3338030417cc33655eae0f6e15736b7deebb86db"
     },
     "research/tracked_files.txt": {
-      "bytes": 10969,
-      "sha256": "a16a7040dae4c5be33dc96fe4aa9c9d4473869745369133b224a5a555aea39da",
-      "git_blob": "2f58299b2e61ef9ff8559f9520218884792cd66f"
+      "bytes": 11496,
+      "sha256": "93823317ea8d34254904919e04807c46c40697518bbbcdf11c0a3fa2b9f5bd21",
+      "git_blob": "e312e79092f5c687adaa8e97981f58a90c537407"
     },
     "research/verify_snapshot.py": {
       "bytes": 664,
@@ -398,15 +398,40 @@
       "sha256": "bb52fb12cf6bbcc7440bb0e38520bc1d600a3832a6a8efcbe8844bb74e5531a9",
       "git_blob": "86741cbb5ec9ff568d5107bfc6b7c1a6c5e96901"
     },
+    "research_pass10/PBC31_BASELINE_PROMOTION.md": {
+      "bytes": 13538,
+      "sha256": "378d85e2cb188fa8b8da917ea77e0855fb5ccbd9c7ccb4630e95e631f6ca6536",
+      "git_blob": "f302c0b728fc3ec446b2c2d51ca81def6eeb835c"
+    },
     "research_pass10/README.md": {
       "bytes": 2591,
       "sha256": "1a1f02c42279201551c353f1105e43288648f9eb1da354ecfc22a7e006c14875",
       "git_blob": "9bf33a63c596e12f47d0a4c7224f1f819b76fca3"
     },
+    "research_pass10/analyze.py": {
+      "bytes": 5994,
+      "sha256": "abd2bc14ed450f085a38f260016fedc65a03970be14af58f8afbacb7b73a4895",
+      "git_blob": "beae4daa30c50ded3be7eb39449d9de369004378"
+    },
+    "research_pass10/baseline_manifest.json": {
+      "bytes": 9275,
+      "sha256": "f2ef848ad93a4abb3f43eed58d76642afa75cd57b07036ae4ea024f52a32e048",
+      "git_blob": "09f1576a403bfbf9fa6e8a1cf37dc8661eaf6513"
+    },
     "research_pass10/benchmark_checks.json": {
       "bytes": 1099,
       "sha256": "c35a46d687c2bbdede7f7179fa1bfc5be1b4dce6a6a89e68462a852c868ea62c",
       "git_blob": "182a2a569358e873684166a0b77b38f2a3c05d59"
+    },
+    "research_pass10/benchmark_start.json": {
+      "bytes": 205,
+      "sha256": "bda8067d79b0105242590ce5110bcb221a832639ec1f58adf3e82c64e21f7a0c",
+      "git_blob": "ac2c66859ceeef7f43a2ea0af546093cad99dd08"
+    },
+    "research_pass10/benchmark_summary.json": {
+      "bytes": 59437,
+      "sha256": "9fd878264170e4df6e2ba072eed51a11a2747eff31b04da464618ee49aa792ba",
+      "git_blob": "fdf6fea657faab93194f3164e0e671bb3b946d58"
     },
     "research_pass10/check_benchmark.py": {
       "bytes": 3602,
@@ -423,10 +448,40 @@
       "sha256": "542f9819377fcb641042286c4046fbe324aee59f3b40a8f479f690705f54a2b5",
       "git_blob": "380310a9928ad8215c34caab12ad5f20dd11b36a"
     },
+    "research_pass10/check_ui.cjs": {
+      "bytes": 1983,
+      "sha256": "7e3a27d9e25b6cec8479814895c07afdabd4e2aed8968e3b5cbf554344e0d6a1",
+      "git_blob": "c41915522af25f85e51acb73d91f5971c23c8a70"
+    },
+    "research_pass10/completion_checks.json": {
+      "bytes": 1658,
+      "sha256": "ebf81929128b00303f66dd4c06e59f23d8f9348576ee26a4b41200d74e1f4d7c",
+      "git_blob": "b8f6a6a1e0bf3b6525fb200049ee55723c13919b"
+    },
+    "research_pass10/database_backup.json": {
+      "bytes": 302,
+      "sha256": "0a944dd3175adfdbc896726e4e601afda65cebbaa082a27ab9ca6fc94f5fa3ce",
+      "git_blob": "8fb31c3087df459a4fda2b4514152ab0c440f2f1"
+    },
+    "research_pass10/hf_before.json": {
+      "bytes": 493,
+      "sha256": "4bd85af1026ef387d0a0f23e2e397d27bd28c09b55c4cbf55e9ca63e032b5121",
+      "git_blob": "ff40a6d8f4f725f7d0a65c939d55d0f655994a30"
+    },
+    "research_pass10/hf_deployed.json": {
+      "bytes": 560,
+      "sha256": "08976dfadf558287dbcad2b70458bb4edbdb0db1df429ead4ba4f497a549b811",
+      "git_blob": "34aea66d52274b4439c9d8072da4a218cbf7e922"
+    },
     "research_pass10/hf_deployment.json": {
       "bytes": 578,
       "sha256": "6628f2965e4890944a102728a05541b17c9630e6c34dcc4c6cdc36771ae7ff92",
       "git_blob": "247db21d88772a58c6026d1c53583b1d914ff8cb"
+    },
+    "research_pass10/hf_variants_start.json": {
+      "bytes": 563,
+      "sha256": "3a646a126696cbcd6d273b24ee6aab2ec2ba8dc252c388c32d324798ae8d9f1f",
+      "git_blob": "d1447dd60db3a6e93ab5b816d8cfc73d568a877d"
     },
     "research_pass10/local_checks.json": {
       "bytes": 2207,
@@ -438,10 +493,30 @@
       "sha256": "cf4c7e3cfa8951ae151b65b5fc65b7b9b6974d1f0e9078fce2616980ae2d7b52",
       "git_blob": "6bfb91dc96f9932f35557b5bf262ca35eba3ade9"
     },
+    "research_pass10/public_checks.json": {
+      "bytes": 3189,
+      "sha256": "1ffba527a41b2a154639e8adeb97a595bd095556a481757d6a88f1399d91d8ce",
+      "git_blob": "b7b47a3255e315f2a79b721a4a50afead47f469e"
+    },
     "research_pass10/run_hf.py": {
       "bytes": 4415,
       "sha256": "aab637885eb05be6e95007fadb2b48ebd3b495fe3d50812bf6d010c7ce0c3345",
       "git_blob": "2b5f6a6454565ebf40db7f45902afcfb70d56eba"
+    },
+    "research_pass10/speed_table.md": {
+      "bytes": 483,
+      "sha256": "549530d6f947c9794151693385ec02299400e55a265dfed7383c8d5d14cd897f",
+      "git_blob": "50211e656e21d21e340f276ac9a25fa3199f9173"
+    },
+    "research_pass10/ui_checks.json": {
+      "bytes": 212,
+      "sha256": "7860043802fc55cf752b59323d4fec212ddc9b4fbfb1b224977780790b1fc7ac",
+      "git_blob": "67299a46a5df17ced7b0d45ac81dfe8d9e278316"
+    },
+    "research_pass10/variant_checks.json": {
+      "bytes": 24626,
+      "sha256": "e6e29acda1ee618b3012244ed9ed33092d9f57326ce45253a9b6230162ef40a6",
+      "git_blob": "294784e5fc515ae82c98ae6c42da334833fc22c0"
     },
     "research_pass2/PBC_ENTROPY_RESEARCH.md": {
       "bytes": 10382,
@@ -1479,9 +1554,9 @@
       "git_blob": "05157f7f1203a75288a8592dfa4257205f110a62"
     },
     "research_pass9/README.md": {
-      "bytes": 4101,
-      "sha256": "3549b435aa8a0722570b117bec37edd53cdfd7925e724aef6a27c3363b219038",
-      "git_blob": "849d7d1dad61dab35686cd422304e7389ddc1b04"
+      "bytes": 4435,
+      "sha256": "bfdbe9630182c22f78fa631a1d98dae57c4cd03beabb0883c294107cb5a558b3",
+      "git_blob": "162ddb6fc191f6b12a0a022e2a26ae4596ef40d7"
     },
     "research_pass9/active_run_backup.json": {
       "bytes": 672,
@@ -1724,6 +1799,7 @@
       "git_blob": "66c3c0e8cdd0bd3bbf4c10bd04b91056917b2ede"
     }
   },
-  "hf_codec_revision": "4237d954f4e1a04951c822c738113a53bbd58e9b",
-  "research_codec_change": "Pass 9 explicit per-encode release RNG deployed; live current RNG default retained"
+  "hf_codec_revision": "98ade0c8072a4571e9674eaac3d91f861e3b9867",
+  "research_codec_change": "Pass 10 release RNG default promoted; explicit historical custom control retained",
+  "frozen_baseline_source": "8006f30debfc4a57289df06df21636aeb52baffd"
 }

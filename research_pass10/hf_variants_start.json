@@ -1,0 +1,35 @@
+{
+  "spec": {
+    "images": [
+      "googlewiki.png"
+    ],
+    "presets": [
+      "balanced"
+    ],
+    "variants": [
+      "release",
+      "dev_release_rng",
+      "dev_current_rng"
+    ],
+    "repeats": 1
+  },
+  "response": {
+    "started": true,
+    "research": true,
+    "spec": {
+      "images": [
+        "googlewiki.png"
+      ],
+      "presets": [
+        "balanced"
+      ],
+      "variants": [
+        "release",
+        "dev_release_rng",
+        "dev_current_rng"
+      ],
+      "repeats": 1
+    }
+  },
+  "utc": "2026-10-26T17:22:50.030237+00:00"
+}

@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "hf_revision": "98ade0c8072a4571e9674eaac3d91f861e3b9867",
+  "presets": [
+    {
+      "preset": "compression",
+      "mode": "RGB",
+      "stream_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+      "release_equal": true,
+      "mse": 1005.0220131685649,
+      "displayed_mse": 1005.02
+    },
+    {
+      "preset": "balanced",
+      "mode": "RGB",
+      "stream_sha256": "c92bb171c4e266d05e7edad068b9de0a5ddbd3365880dba08ba91b614c83f4e2",
+      "release_equal": true,
+      "mse": 845.4413844543155,
+      "displayed_mse": 845.44
+    },
+    {
+      "preset": "quality",
+      "mode": "RGB",
+      "stream_sha256": "fe081eba2528b41e5666da2241def4953e6de7e4c30a8ccc7ccb73ca13234892",
+      "release_equal": true,
+      "mse": 776.5006722463619,
+      "displayed_mse": 776.5
+    },
+    {
+      "preset": "high_quality",
+      "mode": "RGB",
+      "stream_sha256": "94fadcfc9b485a8cfc614aef7a8df20d82769122040a602af3521141da9b3e8a",
+      "release_equal": true,
+      "mse": 714.4317985136951,
+      "displayed_mse": 714.43
+    },
+    {
+      "preset": "balanced",
+      "mode": "RGBA",
+      "stream_sha256": "76524fc52e77d9cc7d8e1d737d5ea14cd8f39cce6efa007eec826fdf4569cb76",
+      "release_equal": true,
+      "mse": 6.7677001953125,
+      "displayed_mse": 6.77
+    }
+  ],
+  "streaming_release_equivalent": true,
+  "streaming_frames": 5,
+  "streaming_reference": {
+    "config": {
+      "patch_count": 150,
+      "search_depth": 200,
+      "proposal_depth": 50,
+      "exact_depth": 10,
+      "min_patch_size": 16,
+      "max_patch_size": 48,
+      "min_cell_size": 1,
+      "max_cell_size": 16,
+      "cell_sizes_per_candidate": 3,
+      "top_k": 20,
+      "search_q_start": 0.6,
+      "search_q_end": 0.4,
+      "q_init": 0.5,
+      "q_start": 0.7,
+      "q_end": 0.6,
+      "color_space": "YCbCr",
+      "channel_cycle": "Sum",
+      "auto_downsample_init": false,
+      "init_search_depth": 3,
+      "downsample_init_cell_size": 12,
+      "downsample_palette_bitcount": 6,
+      "downsample_rate": -1,
+      "auto_downsample_max_pixels": 250000,
+      "warmup_ratio": -1,
+      "warm_downsample_max_pixels": 750000,
+      "patch_palette_bitcount": 2,
+      "quality_target_mae": 0.0,
+      "mask_size": 4,
+      "anchor_block_size": 8,
+      "positive_bias": true,
+      "learned_filler_enabled": true,
+      "learned_filler_model_path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\patch_policy.npz",
+      "learned_filler_top_k": 1,
+      "learned_filler_q": 0.95,
+      "learned_filler_candidates": 1,
+      "use_lzma": true,
+      "random_seed": 2003,
+      "compute_final_mse": true,
+      "debug_mode": false,
+      "debug_print": false,
+      "debug_path": null
+    },
+    "stream_sha256": "7ef6b5b255e29018fa3b23aaed68e5e7bfa4c5410956b90a6ef7f06ce1d65a42",
+    "pixels_sha256": "c059fb1b35e2839f8c647da865afd66da671a3d14b2f0e2a073d9577de8c81c0"
+  },
+  "custom_form_field_cannot_override_default": true,
+  "existing_v0_decode": true,
+  "unauthorized_rejected": 403,
+  "invalid_rejected": 400,
+  "health": {
+    "ok": true,
+    "boot_id": "1793035230.497"
+  },
+  "http_timings_used_for_benchmark": false
+}
