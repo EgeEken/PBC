@@ -2,6 +2,7 @@ import os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from PBC3 import PBC3, BitReader
+import pbc3_ops as ops
 
 
 def _font(size):
@@ -309,7 +310,7 @@ def animate_pbc3(
         raise ValueError("show_errors=True requires original_image=...")
 
     target = _working_target(original_image, color_space, w, h) if show_errors else None
-    canvas = np.zeros((h, w, channels), dtype=np.int32)
+    canvas = np.zeros((h, w, channels), dtype=np.int16)
     for c, base in enumerate(base_values):
         canvas[:, :, c] = base
 
@@ -345,7 +346,7 @@ def animate_pbc3(
 
         tc = target.shape[2] if target is not None else 0
         prev_mse = float(np.mean((canvas[:, :, :tc] - target) ** 2)) if target is not None else None
-        PBC3.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
+        ops.apply_grid(canvas[:, :, channel], x, y, pw, ph, cell_size, values)
         now_mse = float(np.mean((canvas[:, :, :tc] - target) ** 2)) if target is not None else None
         parts = [f"Patch {i}/{patch_count}", f"Stream Size: {current_kb:.2f} KB", f"(+{delta_kb:.2f} KB)"]
         if now_mse is not None:

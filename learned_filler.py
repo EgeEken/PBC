@@ -6,6 +6,7 @@ import numpy as np
 
 import pbc3_ops as ops
 from pbc3_features import FEATURE_NAMES, SORT_FEATURES, extract_cheap, extract_features
+from pbc3_trace import timed
 
 CELL_SIZES = [1, 2, 4, 8, 16, 32]
 BITCOUNTS = [1, 2, 3, 4, 5]
@@ -33,41 +34,47 @@ def lambda_for_q(q: float, lmin: float = 0.05, lmax: float = 5.0) -> float:
     return lmin * (lmax / lmin) ** (1.0 - q)
 
 
-def _score_patch(target, canvas, box, channel_bits: int, patch, values) -> tuple[float, float]:
+def _score_patch(target, canvas, box, channel_bits: int, patch, values, trace=None) -> tuple[float, float, np.ndarray]:
     """## Returns exact SSE reduction and bit cost for a patch"""
     c, x, y, bw, bh = box
     canvas_box = canvas[y:y + bh, x:x + bw, c]
     target_box = target[y:y + bh, x:x + bw, c]
-    delta = ops.signed_resample(values, bh, bw).astype(np.int32)
-    before = target_box - np.clip(canvas_box, 0, 255)
-    after = target_box - np.clip(canvas_box + delta, 0, 255)
-    before_sse = float(np.sum(before.astype(np.int64) ** 2))
-    reduction = before_sse - float(np.sum(after.astype(np.int64) ** 2))
-    bits = float(ops.patch_bits_for(patch, channel_bits))
-    return reduction, bits
+    with timed(trace, "action.filler.score.resample"):
+        delta = ops.signed_resample(values, bh, bw, trace=trace, purpose="candidate_reconstruction")
+    with timed(trace, "action.filler.score.reduction"):
+        before = target_box - np.clip(canvas_box, 0, 255)
+        after = target_box - np.clip(canvas_box + delta, 0, 255)
+        before_sse = float(np.sum(before.astype(np.int64) ** 2))
+        reduction = before_sse - float(np.sum(after.astype(np.int64) ** 2))
+    with timed(trace, "action.filler.score.bit_cost"):
+        bits = float(ops.patch_bits_for(patch, channel_bits))
+    if trace is not None:
+        trace.count("candidates_exact_scored")
+    return reduction, bits, delta
 
 
-def build_action(target, canvas, box, config, channel_bits: int, idx: int):
+def _build_action(target, canvas, box, config, channel_bits, cell_size, bitcount, trace=None):
+    c, x, y, bw, bh = box
+    cell = max(1, min(cell_size, bw, bh))
+    with timed(trace, "action.filler.build.residual"):
+        residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
+    with timed(trace, "action.filler.build.make_patch", cell_size=cell, bitcount=bitcount):
+        patch, values = ops.make_patch(c, x, y, bw, bh, cell, residual, config, bitcount, trace=trace)
+    with timed(trace, "action.filler.build.score_patch"):
+        reduction, bits, delta = _score_patch(target, canvas, box, channel_bits, patch, values, trace=trace)
+    return patch, values, delta, reduction, bits
+
+
+def build_action(target, canvas, box, config, channel_bits: int, idx: int, trace=None):
     """## Builds and scores one legacy single-index action"""
-    c, x, y, bw, bh = box
-    cs, bc = ACTIONS[idx]
-    cell = max(1, min(cs, bw, bh))
-    residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
-    patch, values = ops.make_patch(c, x, y, bw, bh, cell, residual, config, bc)
-    reduction, bits = _score_patch(target, canvas, box, channel_bits, patch, values)
-    return patch, values, reduction, bits
+    cell_size, bitcount = ACTIONS[idx]
+    return _build_action(target, canvas, box, config, channel_bits, cell_size, bitcount, trace=trace)
 
 
-def build_action_factored(target, canvas, box, config, channel_bits: int, cs_idx: int, bc_idx: int, ms_idx: int):
+def build_action_factored(target, canvas, box, config, channel_bits: int, cs_idx: int, bc_idx: int, ms_idx: int, trace=None):
     """## Builds and scores one factored action: cell size, bitcount, and mask size"""
-    c, x, y, bw, bh = box
-    cs, bc, ms = CELL_SIZES[cs_idx], BITCOUNTS[bc_idx], MASK_SIZES[ms_idx]
-    cell = max(1, min(cs, bw, bh))
-    cfg = dataclasses.replace(config, mask_size=ms)
-    residual = target[y:y + bh, x:x + bw, c] - canvas[y:y + bh, x:x + bw, c]
-    patch, values = ops.make_patch(c, x, y, bw, bh, cell, residual, cfg, bc)
-    reduction, bits = _score_patch(target, canvas, box, channel_bits, patch, values)
-    return patch, values, reduction, bits
+    cfg = dataclasses.replace(config, mask_size=MASK_SIZES[ms_idx])
+    return _build_action(target, canvas, box, cfg, channel_bits, CELL_SIZES[cs_idx], BITCOUNTS[bc_idx], trace=trace)
 
 
 def extract_state(target, canvas, box, step: int, image_w: int, image_h: int, patch_count: int, channels: int, lam: float, bits_spent: float, pixels: int) -> np.ndarray:
@@ -82,32 +89,10 @@ def extract_state(target, canvas, box, step: int, image_w: int, image_h: int, pa
     return np.concatenate([box_feats, prog]).astype(np.float32)
 
 
-def propose_boxes(target, canvas, config, rng, channel: int, step: int) -> list[tuple[int, int, int, int, int]]:
+def propose_boxes(target, canvas, config, rng, channel: int, step: int, trace=None) -> list[tuple[int, int, int, int, int]]:
     """## Returns candidate boxes sorted by the learned filler's prescore front-end"""
-    h_img, w_img, _ = target.shape
     search_q = ops.interp(config.search_q_start, config.search_q_end, step, config.patch_count)
-    visible = np.clip(canvas[:, :, channel], 0, 255).astype(np.int32)
-    abs_error = np.abs(target[:, :, channel] - visible).astype(np.int64)
-    integral_abs = ops.integral(abs_error)
-    anchors = ops.top_anchors(abs_error.astype(np.float32), config.top_k, config.anchor_block_size, channel)
-    if not anchors:
-        return []
-
-    specs, sums, areas = [], [], []
-    for i in range(max(1, int(config.search_depth))):
-        c, x, y, bw, bh, _, _ = ops.sample_box(rng, anchors[i % len(anchors)], w_img, h_img, config)
-        s = integral_abs[y + bh, x + bw] - integral_abs[y, x + bw] - integral_abs[y + bh, x] + integral_abs[y, x]
-        if s <= 0:
-            continue
-        sums.append(float(s))
-        areas.append(float(bw * bh))
-        specs.append((c, x, y, bw, bh))
-    if not specs:
-        return []
-
-    pre = search_q * ops.norm(sums) - (1.0 - search_q) * ops.norm(areas)
-    keep = sorted(ops.select_top_indices(pre, config.proposal_depth), key=lambda i: pre[i], reverse=True)
-    return [specs[i] for i in keep]
+    return ops.search_boxes(target, canvas, config, rng, channel, config.search_depth, search_q, ordered=True, trace=trace)
 
 
 def _load_npz_cached(path: str) -> dict:
@@ -126,6 +111,13 @@ def _silu(x):
     return x / (1.0 + np.exp(-x))
 
 
+def _mlp(x, weights):
+    """## Runs the exported SiLU trunk"""
+    for W, b in weights:
+        x = _silu(x @ W.T + b)
+    return x
+
+
 class LearnedFiller:
     """## Torch-free numpy inference for the legacy single-action learned filler"""
 
@@ -134,8 +126,10 @@ class LearnedFiller:
         self.Wa, self.ba = npz["Wa"], npz["ba"]
         self.Wv, self.bv = npz["Wv"], npz["bv"]
         if self.hidden > 0:
-            self.W0, self.b0 = npz["W0"], npz["b0"]
-            self.W2, self.b2 = npz["W2"], npz["b2"]
+            if "layer_count" in npz:
+                self.layers = [(npz[f"W{i}"], npz[f"b{i}"]) for i in range(int(npz["layer_count"]))]
+            else:
+                self.layers = [(npz["W0"], npz["b0"]), (npz["W2"], npz["b2"])]
         self.feat_mean, self.feat_std = npz["feat_mean"], npz["feat_std"]
         self.lmin, self.lmax = float(npz["lmin"]), float(npz["lmax"])
         self.cheap = bool(npz["cheap"])
@@ -152,13 +146,15 @@ class LearnedFiller:
             return FactoredFiller(npz, q_override)
         return cls(npz, top_k, q_override, candidates)
 
-    def _forward(self, x) -> tuple[np.ndarray, np.ndarray]:
+    def _forward(self, x, trace=None) -> tuple[np.ndarray, np.ndarray]:
         """## Runs the legacy action and value heads"""
-        h = x
-        if self.hidden > 0:
-            h = _silu(h @ self.W0.T + self.b0)
-            h = _silu(h @ self.W2.T + self.b2)
-        return h @ self.Wa.T + self.ba, h @ self.Wv.T + self.bv[None, :]
+        with timed(trace, "action.filler.policy.trunk_forward"):
+            h = _mlp(x, self.layers) if self.hidden > 0 else x
+        with timed(trace, "action.filler.policy.action_head_forward"):
+            action_logits = h @ self.Wa.T + self.ba
+        with timed(trace, "action.filler.policy.value_head_forward"):
+            value = h @ self.Wv.T + self.bv[None, :]
+        return action_logits, value
 
     def _featurize(self, target, canvas, boxes, step: int, q: float, w_img: int, h_img: int, patch_count: int, channels: int) -> np.ndarray:
         """## Builds the model feature matrix for candidate boxes"""
@@ -168,31 +164,40 @@ class LearnedFiller:
             fn = lambda b: extract_features(target, canvas, b, step, q, w_img, h_img, patch_count, channels)
         return np.stack([fn(b) for b in boxes])
 
-    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int):
+    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, trace=None):
         """## Picks the best learned legacy patch for the current channel"""
         h_img, w_img, channels = target.shape
-        boxes = propose_boxes(target, canvas, config, rng, current_channel, step)[:max(1, self.candidates)]
+        with timed(trace, "action.filler.policy.propose_boxes"):
+            boxes = propose_boxes(target, canvas, config, rng, current_channel, step, trace=trace)[:max(1, self.candidates)]
         if not boxes:
-            return None, None
+            return None, None, None
         q = self.q_override if self.q_override >= 0 else ops.interp(config.q_start, config.q_end, step, config.patch_count)
 
-        feats = self._featurize(target, canvas, boxes, step, q, w_img, h_img, config.patch_count, channels).astype(np.float32)
-        feats = (feats - self.feat_mean) / self.feat_std
-        logits, value = self._forward(feats)
-        best_action = logits.argmax(1)
-        order = value[:, 0].argsort()[::-1]
+        with timed(trace, "action.filler.policy.feature_extract"):
+            feats = self._featurize(target, canvas, boxes, step, q, w_img, h_img, config.patch_count, channels).astype(np.float32)
+        with timed(trace, "action.filler.policy.feature_normalize"):
+            feats = (feats - self.feat_mean) / self.feat_std
+        with timed(trace, "action.filler.policy.forward"):
+            logits, value = self._forward(feats, trace=trace)
+        with timed(trace, "action.filler.policy.select_action_head"):
+            best_action = logits.argmax(1)
+        with timed(trace, "action.filler.policy.select_value_order"):
+            order = value[:, 0].argsort()[::-1]
 
         lam = lambda_for_q(q, self.lmin, self.lmax)
         best, best_score = None, -np.inf
         for bi in order[:max(1, self.top_k)]:
             box = boxes[int(bi)]
-            patch, values, reduction, bits = build_action(target, canvas, box, config, channel_bits, int(best_action[bi]))
+            action_index = int(best_action[bi])
+            with timed(trace, "action.filler.policy.evaluate_action", candidate=int(bi), action_index=action_index, cell_size=ACTIONS[action_index][0], bitcount=ACTIONS[action_index][1]):
+                patch, values, delta, reduction, bits = build_action(target, canvas, box, config, channel_bits, action_index, trace=trace)
             if reduction <= 0:
                 continue
-            score = reduction - lam * bits
+            with timed(trace, "action.filler.policy.rd_score", candidate=int(bi)):
+                score = reduction - lam * bits
             if score > best_score:
-                best_score, best = score, (patch, values)
-        return best if best is not None else (None, None)
+                best_score, best = score, (patch, values, delta)
+        return best if best is not None else (None, None, None)
 
 
 class FactoredFiller:
@@ -232,35 +237,51 @@ class FactoredFiller:
         self._reset(max(1, int(original_w) * int(original_h)))
         self._bits = float(init_bits)
 
-    def _forward(self, x) -> list[np.ndarray]:
+    def _forward(self, x, trace=None) -> list[np.ndarray]:
         """## Runs the factored policy heads"""
-        h = _silu(x @ self.W0.T + self.b0)
-        h = _silu(h @ self.W2.T + self.b2)
-        return [h @ W.T + b for W, b in self.heads]
+        with timed(trace, "action.filler.policy.trunk_forward"):
+            h = _mlp(x, [(self.W0, self.b0), (self.W2, self.b2)])
+        names = ["cell_size", "bitcount", "mask_size", "stop"]
+        outputs = []
+        for name, (W, b) in zip(names, self.heads):
+            with timed(trace, f"action.filler.policy.{name}_head_forward"):
+                outputs.append(h @ W.T + b)
+        return outputs
 
-    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int):
+    def select_patch(self, target, canvas, config, rng, channel_bits: int, step: int, current_channel: int, trace=None):
         """## Picks one factored-policy patch, or stops the encode"""
         h_img, w_img, channels = target.shape
         if step == 1 and self._pixels is None:
             self._reset(max(1, h_img * w_img))
         pixels = self._pixels or max(1, h_img * w_img)
-        boxes = propose_boxes(target, canvas, config, rng, current_channel, step)
+        with timed(trace, "action.filler.policy.propose_boxes"):
+            boxes = propose_boxes(target, canvas, config, rng, current_channel, step, trace=trace)
         if not boxes:
-            return None, None
+            return None, None, None
 
         box = boxes[0]
-        st = extract_state(
-            target, canvas, box, step, w_img, h_img, config.patch_count,
-            channels, self._lambda(config), self._bits, pixels,
-        ).astype(np.float32)
-        st = (st - self.feat_mean) / self.feat_std
-        logits = self._forward(st)
-        idxs = [int(np.argmax(l)) for l in logits]
-        if len(idxs) > STOP_AXIS and idxs[STOP_AXIS] == STOP_STOP:
-            return None, None
+        with timed(trace, "action.filler.policy.state_extract"):
+            st = extract_state(
+                target, canvas, box, step, w_img, h_img, config.patch_count,
+                channels, self._lambda(config), self._bits, pixels,
+            ).astype(np.float32)
+        with timed(trace, "action.filler.policy.state_normalize"):
+            st = (st - self.feat_mean) / self.feat_std
+        with timed(trace, "action.filler.policy.forward"):
+            logits = self._forward(st, trace=trace)
+        head_names = ["cell_size", "bitcount", "mask_size", "stop"]
+        idxs = []
+        for head_index, (head_name, values) in enumerate(zip(head_names, logits)):
+            with timed(trace, f"action.filler.policy.head.{head_name}", head_index=head_index):
+                idxs.append(int(np.argmax(values)))
+        with timed(trace, "action.filler.policy.stop_check"):
+            should_stop = len(idxs) > STOP_AXIS and idxs[STOP_AXIS] == STOP_STOP
+        if should_stop:
+            return None, None, None
 
-        patch, values, reduction, bits = build_action_factored(target, canvas, box, config, channel_bits, idxs[0], idxs[1], idxs[2])
+        with timed(trace, "action.filler.policy.evaluate_factored_action", cell_size=CELL_SIZES[idxs[0]], bitcount=BITCOUNTS[idxs[1]], mask_size=MASK_SIZES[idxs[2]]):
+            patch, values, delta, reduction, bits = build_action_factored(target, canvas, box, config, channel_bits, idxs[0], idxs[1], idxs[2], trace=trace)
         if reduction <= 0:
-            return None, None
+            return None, None, None
         self._bits += bits
-        return patch, values
+        return patch, values, delta

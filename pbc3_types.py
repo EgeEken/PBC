@@ -62,8 +62,6 @@ class BitReader:
 
 @dataclass
 class PBC3Config:
-    """## User-facing encoder settings and presets"""
-
     patch_count: int = 50
     search_depth: int = 200
     proposal_depth: int = 50
@@ -105,6 +103,10 @@ class PBC3Config:
     debug_mode: bool = False
     debug_print: bool = False
     debug_path: str = None
+    reuse_selected_delta: bool = True
+    residual_projection_mode: str = "bicubic"
+    cell_selection_mode: str = "gradient"
+    representability_threshold: float = 0.0
 
     def __post_init__(self) -> None:
         cycle = str(self.channel_cycle).strip().lower().replace("_", " ")
@@ -116,16 +118,25 @@ class PBC3Config:
             self.channel_cycle = "Mod"
         else:
             self.channel_cycle = str(self.channel_cycle)
+        mode = str(self.residual_projection_mode).strip().lower()
+        if mode not in {"bicubic", "cell_mean"}:
+            raise ValueError("residual_projection_mode must be 'bicubic' or 'cell_mean'")
+        self.residual_projection_mode = mode
+        selection_mode = str(self.cell_selection_mode).strip().lower()
+        if selection_mode not in {"gradient", "hybrid"}:
+            raise ValueError("cell_selection_mode must be 'gradient' or 'hybrid'")
+        self.cell_selection_mode = selection_mode
+        self.representability_threshold = float(self.representability_threshold)
+        if not 0.0 <= self.representability_threshold <= 1.0:
+            raise ValueError("representability_threshold must be in 0..1")
 
     @classmethod
     def _preset(cls, **values):
-        """## Builds a preset and applies keyword overrides last"""
         values.update(values.pop("overrides", {}))
         return cls(**values)
 
     @classmethod
     def compression(cls, **kwargs):
-        """## Lower-quality preset with the learned filler biased toward smaller output"""
         return cls._preset(
             patch_count=50,
             search_q_start=0.5,
@@ -142,7 +153,6 @@ class PBC3Config:
 
     @classmethod
     def balanced(cls, **kwargs):
-        """## Default preset for a middle ground between size and quality"""
         return cls._preset(
             patch_count=50,
             search_q_start=0.5,
@@ -159,7 +169,6 @@ class PBC3Config:
 
     @classmethod
     def quality(cls, **kwargs):
-        """## Higher-quality preset with the learned filler biased toward RD gain"""
         return cls._preset(
             patch_count=50,
             search_q_start=0.5,
@@ -176,7 +185,6 @@ class PBC3Config:
 
     @classmethod
     def high_quality(cls, **kwargs):
-        """## Highest-quality shipped preset, using fewer but stronger learned patches"""
         return cls._preset(
             patch_count=20,
             search_q_start=0.7,
@@ -194,8 +202,6 @@ class PBC3Config:
 
 @dataclass
 class PBC3Result:
-    """## Returned compression/decompression result and a few convenience stats"""
-
     image: Image.Image
     data: bytes
     config: PBC3Config
@@ -208,6 +214,7 @@ class PBC3Result:
     working_height: int = None
     debug_path: str = None
     channels: int = 3
+    timings: dict | None = None
 
     @property
     def time(self) -> float:
@@ -248,14 +255,12 @@ class PBC3Result:
         return self.total_bits / self.original_bits * 100 if self.original_bits else 0
 
     def save(self, path: str) -> None:
-        """## Writes the compressed byte stream to disk"""
         if self.data is None:
             raise ValueError("result has no compressed data to save")
         with open(path, "wb") as f:
             f.write(self.data)
 
     def verify(self) -> bool:
-        """## Decodes the byte stream and checks that it matches this result image"""
         from PBC3 import PBC3
 
         if self.data is None:
@@ -264,7 +269,6 @@ class PBC3Result:
         return np.array_equal(np.asarray(self.image), np.asarray(decoded))
 
     def show(self, subtitle: str = None) -> None:
-        """## Shows the reconstructed image with a compact stats header"""
         import os
         from matplotlib import pyplot as plt
 

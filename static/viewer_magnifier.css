@@ -1,0 +1,38 @@
+.viewer-img-frame{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  max-width:92vw;
+  max-height:78vh;
+  border-radius:8px;
+  border:1px solid var(--border2);
+  cursor:zoom-in;
+  background:#000;
+}
+
+.viewer-img-frame img{
+  display:block;
+  max-width:92vw;
+  max-height:78vh;
+  object-fit:contain;
+  border:0!important;
+  border-radius:0!important;
+  user-select:none;
+  -webkit-user-drag:none;
+  will-change:transform;
+}
+
+.viewer-img-frame.magnifying{cursor:zoom-out;}
+
+.viewer-stage.dual.row .cmp-cell .viewer-img-frame,
+.viewer-stage.dual.row .cmp-cell .viewer-img-frame img{
+  max-width:47vw;
+  max-height:72vh;
+}
+
+.viewer-stage.dual.col .cmp-cell .viewer-img-frame,
+.viewer-stage.dual.col .cmp-cell .viewer-img-frame img{
+  max-width:90vw;
+  max-height:35vh;
+}

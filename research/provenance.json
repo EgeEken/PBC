@@ -1,0 +1,30 @@
+{
+  "github": {
+    "repository": "EgeEken/PBC",
+    "base": "162feed4a85b81f0d2494e05bd39d8e159788e7c",
+    "branch": "research/experiments",
+    "protected_refs": {
+      "main": "162feed4a85b81f0d2494e05bd39d8e159788e7c",
+      "rust": "93e9c0591a710397bb3f09d2d51473313ce23db6",
+      "v3.0": "1ef5155ac6a0037e02b0130b6b5091f0c1f791c3"
+    },
+    "inherited_history_commits": 65
+  },
+  "hf": {
+    "repository": "https://huggingface.co/spaces/EgeEken/PBC",
+    "deployed_revision": "eee83b8f10f6f3404bca1c2c178e27fc4e8a1aa0",
+    "baseline_revision": "7faa6365186d201f44b842f100645b60273ffd4c",
+    "local_experimental_revision": "3e9e8c94b7497ecefc5e482a66fde697dfad6e19",
+    "local_source_commits": [
+      "039174f144981ae09830f98a225299c1299d2067",
+      "b2de015caefcc4415c2bb147e7b05eec85d2b316",
+      "3e9e8c94b7497ecefc5e482a66fde697dfad6e19"
+    ],
+    "merge_base_with_github": null,
+    "history_imported": false
+  },
+  "immutable_release": "2e59f1b06980aa467da0cde94fa33c3f9a0d4d51",
+  "model_reused_from_github": true,
+  "new_binary_assets": false,
+  "benchmarks_run_during_setup": 0
+}

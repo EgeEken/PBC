@@ -1,8 +1,9 @@
 
 import math
 import numpy as np
-from numba import njit
+from numba import njit, uint32, uint64
 from PIL import Image
+from pbc3_trace import timed
 
 
 RESAMPLE_FILTER = Image.Resampling.BICUBIC
@@ -10,7 +11,56 @@ RESAMPLE_REDUCING_GAP = None
 PALETTE_GENERATED = 0
 
 
-# ===== CORE MATH =====
+_UINT64_MASK = (1 << 64) - 1
+_UINT32_SCALE = 1.0 / 4294967296.0
+
+
+@njit(inline="always", cache=True)
+def pcg_step(state):
+    old_state = state
+    state = uint64(old_state * uint64(6364136223846793005) + uint64(1442695040888963407))
+    xorshifted = uint32(((old_state >> uint64(18)) ^ old_state) >> uint64(27))
+    rot = uint32(old_state >> uint64(59))
+    out = uint32((xorshifted >> rot) | (xorshifted << ((-rot) & uint32(31))))
+    return state, out
+
+
+class PBC3Rng:
+    def __init__(self, seed: int):
+        self.state = (int(seed) + 0x853C49E6748FEA9B) & _UINT64_MASK
+        self.next_uint32()
+
+    def next_uint32(self) -> int:
+        old_state = self.state
+        self.state = (old_state * 6364136223846793005 + 1442695040888963407) & _UINT64_MASK
+        xorshifted = (((old_state >> 18) ^ old_state) >> 27) & 0xFFFFFFFF
+        rot = (old_state >> 59) & 31
+        return ((xorshifted >> rot) | ((xorshifted << ((-rot) & 31)) & 0xFFFFFFFF)) & 0xFFFFFFFF
+
+    def uniform(self, low: float = 0.0, high: float = 1.0) -> float:
+        return float(low) + (float(high) - float(low)) * (self.next_uint32() * _UINT32_SCALE)
+
+    def integers(self, low: int, high: int = None) -> int:
+        if high is None:
+            low, high = 0, low
+        low, high = int(low), int(high)
+        if high <= low:
+            return low
+        return low + self.next_uint32() % (high - low)
+
+
+def bicubic_resample_2d(values, out_h: int, out_w: int) -> np.ndarray:
+    """Resamples a signed grid with the production PIL bicubic filter."""
+    arr = np.ascontiguousarray(values, dtype=np.float32)
+    out_h, out_w = int(out_h), int(out_w)
+    if arr.shape == (out_h, out_w):
+        return arr.copy()
+    return np.asarray(
+        Image.frombuffer("F", (arr.shape[1], arr.shape[0]), arr, "raw", "F", 0, 1)
+        .resize((out_w, out_h), Image.Resampling.BICUBIC),
+        dtype=np.float32,
+    )
+
 
 def ceil_div(a: int, b: int) -> int:
     """## Returns ceil(a / b) for integer cell/grid math"""
@@ -38,16 +88,6 @@ def integral(a) -> np.ndarray:
     """## Returns a padded integral image for fast rectangle sums"""
     return np.pad(a.astype(np.int64).cumsum(0).cumsum(1), ((1, 0), (1, 0)))
 
-
-def cell_edges(start: int, length: int, cell_size: int) -> np.ndarray:
-    """## Returns the edge coordinates of patch cells, clamped to the patch end"""
-    n = ceil_div(length, cell_size)
-    edges = start + np.arange(n + 1) * cell_size
-    edges[n] = start + length
-    return edges
-
-
-# ===== NUMBA KERNELS =====
 
 @njit(cache=True)
 def _box_cell_bound_kernel(integral_arr, x, y, bw, bh, cell_size):
@@ -101,6 +141,53 @@ def _base_cell_size_kernel(res, max_cell):
     if ratio < 1.0:
         return 8
     return 4
+
+
+@njit(cache=True)
+def _cell_mean_kernel(values, cell_size):
+    h, w = values.shape
+    ny = (h + cell_size - 1) // cell_size
+    nx = (w + cell_size - 1) // cell_size
+    out = np.empty((ny, nx), dtype=np.float32)
+    for iy in range(ny):
+        y0 = iy * cell_size
+        y1 = min(h, y0 + cell_size)
+        for ix in range(nx):
+            x0 = ix * cell_size
+            x1 = min(w, x0 + cell_size)
+            total = 0.0
+            for y in range(y0, y1):
+                for x in range(x0, x1):
+                    total += values[y, x]
+            out[iy, ix] = total / ((y1 - y0) * (x1 - x0))
+    return out
+
+
+@njit(cache=True)
+def _cell_representability_kernel(values, cell_size):
+    h, w = values.shape
+    total_energy = 0.0
+    for y in range(h):
+        for x in range(w):
+            total_energy += values[y, x] * values[y, x]
+    if total_energy <= 0.0:
+        return 1.0
+
+    ny = (h + cell_size - 1) // cell_size
+    nx = (w + cell_size - 1) // cell_size
+    captured = 0.0
+    for iy in range(ny):
+        y0 = iy * cell_size
+        y1 = min(h, y0 + cell_size)
+        for ix in range(nx):
+            x0 = ix * cell_size
+            x1 = min(w, x0 + cell_size)
+            total = 0.0
+            for y in range(y0, y1):
+                for x in range(x0, x1):
+                    total += values[y, x]
+            captured += total * total / ((y1 - y0) * (x1 - x0))
+    return min(1.0, max(0.0, captured / total_energy))
 
 
 @njit(cache=True)
@@ -227,8 +314,6 @@ def _quantize_signed_kernel(vals, pal):
         out[i] = best_i
     return out
 
-# ===== PALETTE OPS =====
-
 
 def palette_bounds(values) -> tuple[int, int]:
     """## Returns negative max (min or 0) and positive max (true max)
@@ -246,14 +331,10 @@ def range_counts(mask_size, negative_max=255, positive_max=255, positive_bias=Tr
     negative_max = max(0, int(negative_max))
     positive_max = max(0, int(positive_max))
     if side_bits == 0 or (negative_max == 0 and positive_max == 0):
-        # The reason it's 0,0 if mask size is 1 is that the only range that can be represented by it is the 0 bin
-        # This actually just makes mask size 1 useless for palette generation.
         return 0, 0
     if negative_max == 0:
-        # Obviously if there are no negative values, all bins should be positive
         return min(side_bits, positive_max), 0
     if positive_max == 0:
-        # Obviously same
         return 0, min(side_bits, negative_max)
     raw_pos = side_bits * positive_max / (positive_max + negative_max)
     pos_count = math.ceil(raw_pos) if positive_bias else math.floor(raw_pos)
@@ -370,17 +451,11 @@ def quantize_signed(values, palette):
 
 
 
-# ===== IMAGE / GRID OPS =====
-
-def signed_resample(values, out_h: int, out_w: int) -> np.ndarray:
+def signed_resample(values, out_h: int, out_w: int, trace=None, purpose: str = None) -> np.ndarray:
     """## Resizes a signed grid to a patch-sized int16 delta image"""
-    values = np.asarray(values, dtype=np.float32)
-    out_h, out_w = int(out_h), int(out_w)
-    if values.shape == (out_h, out_w):
-        return np.rint(values).astype(np.int16)
-    resized = Image.fromarray(values).resize((out_w, out_h), RESAMPLE_FILTER, reducing_gap=RESAMPLE_REDUCING_GAP)
-    out = np.asarray(resized, dtype=np.float32)
-    return np.rint(out).astype(np.int16)
+    if trace is not None and purpose:
+        trace.count(f"signed_resample.{purpose}")
+    return np.rint(bicubic_resample_2d(values, int(out_h), int(out_w))).astype(np.int16)
 
 
 def signed_resample_cells(values, cell_size: int) -> np.ndarray:
@@ -389,9 +464,41 @@ def signed_resample_cells(values, cell_size: int) -> np.ndarray:
     return signed_resample(values, ceil_div(h, cell_size), ceil_div(w, cell_size))
 
 
-def apply_grid(canvas_layer, x: int, y: int, w: int, h: int, cell_size: int, values) -> None:
+def project_residual_to_grid(values, cell_size: int, mode: str = "bicubic") -> np.ndarray:
+    """Projects a signed residual patch onto the stored coarse grid."""
+    cell_size = int(cell_size)
+    if cell_size < 1:
+        raise ValueError("cell_size must be >= 1")
+    mode = str(mode).strip().lower()
+    if mode == "bicubic":
+        return signed_resample_cells(values, cell_size)
+    if mode == "cell_mean":
+        return _cell_mean_kernel(np.ascontiguousarray(values, dtype=np.float32), cell_size)
+    raise ValueError(f"unknown residual projection mode: {mode}")
+
+
+def cell_representability(residual_patch, cell_size: int) -> float:
+    """Returns the fraction of residual energy representable by scalar cells."""
+    cell_size = int(cell_size)
+    if cell_size < 1:
+        raise ValueError("cell_size must be >= 1")
+    return float(_cell_representability_kernel(
+        np.ascontiguousarray(residual_patch, dtype=np.float64), cell_size
+    ))
+
+
+def apply_grid(canvas_layer, x: int, y: int, w: int, h: int, cell_size: int, values, trace=None) -> None:
     """## Applies a signed patch grid into one canvas channel"""
-    canvas_layer[y:y + h, x:x + w] += signed_resample(values, h, w).astype(np.int32)
+    delta = signed_resample(values, h, w, trace=trace, purpose="selected_patch_application")
+    canvas_layer[y:y + h, x:x + w] += delta
+
+
+def apply_delta(canvas_layer, x: int, y: int, w: int, h: int, delta) -> None:
+    """## Applies an already reconstructed signed patch delta"""
+    delta = np.asarray(delta, dtype=np.int16)
+    if delta.shape != (int(h), int(w)):
+        raise ValueError(f"delta shape must be {(int(h), int(w))}, got {delta.shape}")
+    canvas_layer[y:y + h, x:x + w] += delta
 
 
 def image_mse(reference, reconstructed) -> float:
@@ -407,8 +514,6 @@ def final_mse(reference_image, reconstructed_image) -> float:
     """## Returns final image MSE from two PIL images or image-like arrays"""
     return image_mse(np.asarray(reference_image, dtype=np.float32), np.asarray(reconstructed_image, dtype=np.float32))
 
-
-# ===== SEARCH OPS =====
 
 def box_cell_bound(integral_arr, x: int, y: int, bw: int, bh: int, cell_size: int) -> float:
     """## Returns the best-case signed-error energy for a box/cell-size pair"""
@@ -433,7 +538,7 @@ def top_anchors(visible_error_channel, top_k: int, block_size: int, channel: int
         idx = idx[np.argsort(flat[idx])[::-1]]
         return [(channel, int(i) // w, int(i) % w) for i in idx]
 
-    scores, ys, xs = _anchor_block_scores_kernel(np.ascontiguousarray(visible_error_channel, dtype=np.float64), block_size)
+    scores, ys, xs = _anchor_block_scores_kernel(np.ascontiguousarray(visible_error_channel), block_size)
     if scores.size == 0:
         return []
     k = min(int(top_k), scores.size)
@@ -477,14 +582,47 @@ def sample_box(rng, anchor, image_w: int, image_h: int, config) -> tuple[int, in
     return c, x, y, w, h, ax, ay
 
 
+def search_boxes(target, canvas, config, rng, channel: int, depth: int, search_q: float, ordered=False, trace=None):
+    """Samples error-centered boxes and keeps the best prescores."""
+    h_img, w_img, _ = target.shape
+    with timed(trace, "action.search.visible_error"):
+        visible = np.clip(canvas[:, :, channel], 0, 255).astype(np.int32)
+        abs_error = np.abs(target[:, :, channel] - visible)
+    with timed(trace, "action.search.integral_error"):
+        integral_abs = integral(abs_error)
+    with timed(trace, "action.search.anchors"):
+        anchors = top_anchors(abs_error, config.top_k, config.anchor_block_size, channel)
+    if not anchors:
+        return []
+
+    specs, sums, areas = [], [], []
+    with timed(trace, "action.search.sample_boxes", depth=int(depth)):
+        for i in range(max(1, int(depth))):
+            c, x, y, bw, bh, _, _ = sample_box(rng, anchors[i % len(anchors)], w_img, h_img, config)
+            total = integral_abs[y + bh, x + bw] - integral_abs[y, x + bw] - integral_abs[y + bh, x] + integral_abs[y, x]
+            if total <= 0:
+                continue
+            sums.append(float(total))
+            areas.append(float(bw * bh))
+            specs.append((c, x, y, bw, bh))
+    if not specs:
+        return []
+
+    with timed(trace, "action.search.prescore"):
+        scores = search_q * norm(sums) - (1.0 - search_q) * norm(areas)
+    with timed(trace, "action.search.select_top_boxes"):
+        keep = select_top_indices(scores, config.proposal_depth)
+    if ordered:
+        keep = sorted(keep, key=lambda i: scores[i], reverse=True)
+    return [specs[i] for i in keep]
+
+
 def base_cell_size(residual_patch, config) -> int:
     """## Returns the rough cell size suggested by local residual frequency"""
     if residual_patch.size == 0:
         return int(config.max_cell_size)
     return int(_base_cell_size_kernel(np.ascontiguousarray(residual_patch, dtype=np.float64), int(config.max_cell_size)))
 
-
-# ===== PATCH OPS =====
 
 def patch_bits_for(patch, channel_bits: int) -> int:
     """## Returns the serialized bit cost of a complete patch"""
@@ -497,9 +635,16 @@ def patch_header_bits(channel_bits: int, mask_size: int) -> int:
     return channel_bits + 64 + 10 + mask_size + 8 + 8 + 4 + 16 + 1
 
 
-def make_patch(channel: int, x: int, y: int, w: int, h: int, cell_size: int, residual, config, max_bitcount: int):
+def make_patch(channel: int, x: int, y: int, w: int, h: int, cell_size: int, residual, config, max_bitcount: int, trace=None):
     """## Builds a generated-palette patch and the signed values it will apply"""
-    small = signed_resample_cells(residual, cell_size)
+    mode = str(getattr(config, "residual_projection_mode", "bicubic")).strip().lower()
+    if trace is not None:
+        trace.count("candidates_built")
+        trace.count("grid_coefficients_processed", ceil_div(h, cell_size) * ceil_div(w, cell_size))
+        trace.count(f"projection.{mode}")
+        if mode == "bicubic":
+            trace.count("signed_resample.projection")
+    small = np.rint(project_residual_to_grid(residual, cell_size, mode)).astype(np.int16)
     negative_max, positive_max = palette_bounds(small)
     mask = mask_from_values(small, config.mask_size, negative_max, positive_max, config.positive_bias)
     pal = palette_generator(mask, max_bitcount, negative_max, positive_max, config.positive_bias)

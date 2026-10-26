@@ -1,0 +1,114 @@
+{
+  "model": {
+    "sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "bytes": 104903,
+    "existing_github_blob": "df8ea77d1c804c8fad35ecb6e3cd0e0267300081",
+    "paths": [
+      "patch_policy.npz",
+      "old_pbc/patch_policy.npz",
+      "research_pass1/release/patch_policy.npz"
+    ]
+  },
+  "inputs": {
+    "hpt_data/cat.jpg": {
+      "bytes": 8425823,
+      "sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e"
+    },
+    "hpt_data/cathedral.png": {
+      "bytes": 18291201,
+      "sha256": "d7a3859fcbbe118daf8f3ea1f2daf120d6d38be474ab2ee845d6802675b21bf1"
+    },
+    "hpt_data/coast.jpg": {
+      "bytes": 8413193,
+      "sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2"
+    },
+    "hpt_data/ducklings.jpg": {
+      "bytes": 2916352,
+      "sha256": "3f9857490373bd56a5ca9d173998aea94a3d356fa2bbeef4ca41728584f1da43"
+    },
+    "hpt_data/eiffel.png": {
+      "bytes": 356645,
+      "sha256": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+    },
+    "hpt_data/field.jpg": {
+      "bytes": 3440640,
+      "sha256": "c14f283e160ca729615378dbed4ddaeaa36768401105081fcb5ae3efb578e982"
+    },
+    "hpt_data/flag.jpg": {
+      "bytes": 1270451,
+      "sha256": "6eeb01e6c10985fc5d71fa2f8bd223250391f7780cfb3b8d615bdba24f2de1e5"
+    },
+    "hpt_data/flower.jpg": {
+      "bytes": 6878458,
+      "sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72"
+    },
+    "hpt_data/flowers.jpg": {
+      "bytes": 2981888,
+      "sha256": "9f8b040449e59975e26d6ddc8d4a48b366e8fda7aa7161b9eecf0223bb5d9b40"
+    },
+    "hpt_data/googlewiki.png": {
+      "bytes": 266651,
+      "sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+    },
+    "hpt_data/mario64.png": {
+      "bytes": 478250,
+      "sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9"
+    },
+    "hpt_data/monet.jpg": {
+      "bytes": 481797,
+      "sha256": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7"
+    },
+    "hpt_data/monkey.png": {
+      "bytes": 235351,
+      "sha256": "c0dd08960b30afb33f1a34f2528905d39fd492cc11d2362fcc3d666944972566"
+    },
+    "hpt_data/panorama.png": {
+      "bytes": 2893665,
+      "sha256": "67c9cf7b3c451dad7d49386553bcc11572b95cf636ea6a4a6c38e9c12ffcd95d"
+    },
+    "hpt_data/park.jpg": {
+      "bytes": 8175909,
+      "sha256": "96640a11a732044b81d575b84af1d05cda79fcb6b39bc097a8455145fc5c0ef4"
+    },
+    "hpt_data/perlman.png": {
+      "bytes": 3224404,
+      "sha256": "d1104b1539e3264ac3cf9783bcc8fd34cb6f3266b5ae4d7301e01cde748a16a9"
+    },
+    "hpt_data/ratedistortion.png": {
+      "bytes": 15597,
+      "sha256": "e2fc378ea28312d303c38934d88968913f1018744e7d68f92dfaf7c5bb0a6c10"
+    },
+    "hpt_data/seagull.jpg": {
+      "bytes": 1444021,
+      "sha256": "d44f39a33b0c39d2ab6442dd3a606f6becb5ac3e91165a4a48c37b1aca5c2639"
+    },
+    "hpt_data/stockpoint.jpg": {
+      "bytes": 84909,
+      "sha256": "3175eac094fa5b7f9641eb0873ddc3b9b544259c5620e3f1a3b82ad982f1e030"
+    },
+    "hpt_data/sunset.jpg": {
+      "bytes": 12561761,
+      "sha256": "e6ed612e51170d488dca3fdc5978a152c68c4a9173e972351719d3f59b96c0b6"
+    },
+    "hpt_data_val/15k_kills.png": {
+      "bytes": 17699,
+      "sha256": "c8bdaac8f41d7231e7d8ed2ed280b3fc430d5b5222a0577c6ae6c1863678759c"
+    },
+    "hpt_data_val/ducks.jpg": {
+      "bytes": 2541756,
+      "sha256": "0af7df42c1dd22d4cf022d5200560d30c876acd20846bdfd54b7e92fdee825c1"
+    },
+    "hpt_data_val/old_man_standing.jpg": {
+      "bytes": 8302,
+      "sha256": "a4a8b1d0b718c5faf41b6b9f57097ddb0be74adffd967bfeedd0e776d3b1922c"
+    },
+    "hpt_data_val/pigeon.JPG": {
+      "bytes": 2785280,
+      "sha256": "2e61640bdeae1c67d7b26a010deb7495477183cc30ffbbb2dde76ae8ae7477ee"
+    },
+    "hpt_data_val/pigeons.JPG": {
+      "bytes": 2523136,
+      "sha256": "f51db7c65634348b7364e97f9c0fd0045cdf51f6ab9ed3d4ada080b42feeaa7c"
+    }
+  }
+}

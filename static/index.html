@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PBC · Probabilistic Brush Compression</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css?v=20260622b">
+<link rel="stylesheet" href="/sweep.css?v=20260622b">
+<link rel="stylesheet" href="/viewer_magnifier.css?v=20260622b">
+<style>
+  #hold-jpeg { --hc:#7d8cff; }
+  #hold-jp2 { --hc:#4fa3ff; }
+  #hold-webp { --hc:#54c0ff; }
+  #hold-jxl  { --hc:#c084fc; }
+  #hold-avif { --hc:#34d39a; }
+  #hold-jpeg, #hold-jp2, #hold-webp, #hold-jxl, #hold-avif { border-color: var(--hc); color: var(--hc); }
+  #hold-jpeg.holding, #hold-webp.holding, #hold-jxl.holding, #hold-avif.holding { background: var(--hc); border-color: var(--hc); color: #fff; }
+  .compare-codecs { display:flex; flex-direction:column; gap:7px; margin-top:2px; }
+  .compare-codec-row { display:flex; flex-wrap:wrap; gap:8px; }
+  .compare-codec-row [data-act="cmp-jpeg"] { order: 1; }
+  .compare-codec-row [data-act="cmp-jp2"] { order: 2; }
+  .compare-codec-row [data-act="cmp-webp"] { order: 3; }
+  .compare-codec-row [data-act="cmp-jxl"] { order: 4; }
+  .compare-codec-row [data-act="cmp-avif"] { order: 5; }
+
+  .viewer-controls #viewer-sbs { order: 0; }
+  .viewer-controls #hold-original { order: 1; }
+  .viewer-controls #hold-jpeg { order: 2; }
+  .viewer-controls #hold-jp2 { order: 3; }
+  .viewer-controls #hold-webp { order: 4; }
+  .viewer-controls #hold-jxl { order: 5; }
+  .viewer-controls #hold-avif { order: 6; }
+
+  /* Training Lab */
+  .tr-fields { display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem 1.3rem; align-items:end; }
+  .tr-fields .tr-f { display:flex; flex-direction:column; gap:.45rem; font-size:12.5px; color:var(--muted); }
+  .tr-fields .tr-f.full { grid-column:1/-1; }
+  .tr-fields .tr-f span { color:var(--muted); display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; }
+  .tr-fields .tr-f span b { font-style:normal; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--red); }
+  .tr-fields .tr-f input:not([type=range]):not([type=checkbox]), .tr-fields .tr-f select {
+    background:var(--surface); border:1px solid var(--border); border-radius:7px; color:var(--text);
+    font-family:'JetBrains Mono',monospace; font-size:13px; padding:9px 11px; outline:none; transition:border-color .15s; width:100%;
+  }
+  .tr-fields .tr-f input[type=file] { color:var(--muted); font-size:11px; }
+  .tr-fields .tr-f input:not([type=range]):not([type=checkbox]):focus, .tr-fields .tr-f select:focus { border-color:var(--red-dim); }
+  .tr-slider-row { display:flex; align-items:center; gap:.7rem; }
+  .tr-slider-row .num { width:96px!important; flex:none; text-align:right; }
+  .tr-check { height:38px; flex-direction:row!important; align-items:center; justify-content:flex-start; gap:.5rem!important; }
+  .tr-check input { width:16px; height:16px; accent-color:var(--red); }
+  .tr-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  .tr-ck { border-top:1px solid rgba(255,255,255,.08); padding:14px 0; }
+  .tr-presets { display:flex; flex-wrap:wrap; gap:10px 18px; padding:10px 0; color:var(--text); }
+  .tr-presets input { accent-color:var(--red); }
+  .tr-log-tail { max-height:240px; overflow:auto; white-space:pre-wrap; background:rgba(255,255,255,.04); padding:12px; border-radius:10px; color:var(--muted); font:11px 'JetBrains Mono',monospace; }
+  .tr-chart-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .tr-chart-grid > div { min-width:0; min-height:290px; }
+  .tr-chart-grid .tr-chart-wide { grid-column:1/-1; }
+  .tr-sort { display:flex; align-items:center; gap:7px; color:var(--muted); font-size:12px; }
+  .tr-sort select { background:var(--surface); border:1px solid var(--border); border-radius:6px; color:var(--text); padding:5px; }
+  .tr-baseline-line { padding:9px 0 12px; color:var(--muted); font:12px 'JetBrains Mono',monospace; }
+  .tr-better { color:#34d399; }
+  .tr-close { color:#fbbf24; }
+  .tr-worse { color:#f87171; }
+  .tr-best-group { margin:0 0 18px; }
+  .tr-best-group h4 { margin:0 0 8px; color:var(--text); }
+  .tr-best-row { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.08); font:12px 'JetBrains Mono',monospace; }
+  .tr-table-wrap { overflow-x:auto; }
+  .tr-table { width:100%; border-collapse:collapse; font:12px 'JetBrains Mono',monospace; }
+  .tr-table th, .tr-table td { padding:9px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:right; white-space:nowrap; }
+  .tr-table th:first-child, .tr-table td:first-child { text-align:left; }
+  .tr-checkpoint-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:10px; }
+  .tr-filter { width:100%; max-width:460px; margin:8px 0 14px; background:var(--surface); border:1px solid var(--border); border-radius:7px; color:var(--text); padding:9px 11px; font:13px 'JetBrains Mono',monospace; }
+  .tr-checkpoint { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px; border:1px solid var(--border); border-radius:9px; background:var(--surface); }
+  .tr-checkpoint b, .tr-checkpoint small { display:block; }
+  .tr-checkpoint small { margin-top:5px; color:var(--muted); font:11px 'JetBrains Mono',monospace; }
+  .tr-card-title { margin:0 0 1rem; font-size:15px; color:var(--text); }
+  .tr-output-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:1.4rem; }
+  .tr-viewer .viewer-controls { flex-wrap:wrap; justify-content:center; }
+  #hold-tr-c { --hc:#ff8a3d; } #hold-tr-b { --hc:#38bdf8; } #hold-tr-q { --hc:#a855f7; } #hold-tr-hq { --hc:#34d399; } #hold-tr-model { --hc:#ff3b41; }
+  #hold-tr-c, #hold-tr-b, #hold-tr-q, #hold-tr-hq, #hold-tr-model { border-color:var(--hc); color:var(--hc); }
+  #hold-tr-c.holding, #hold-tr-b.holding, #hold-tr-q.holding, #hold-tr-hq.holding, #hold-tr-model.holding { background:var(--hc); color:#fff; border-color:var(--hc); }
+  @media (max-width:760px){ .tr-fields{grid-template-columns:1fr;} .tr-chart-grid{grid-template-columns:1fr;} .tr-chart-grid .tr-chart-wide{grid-column:auto;} .tr-sort{margin-top:8px;} }
+</style>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👁️</text></svg>">
+</head>
+<body>
+
+<!-- ===================== LANDING ===================== -->
+<section id="landing" class="section landing">
+  <div class="landing-grid">
+    <div class="landing-left">
+      <p class="eyebrow">PBC · v3.0</p>
+      <h1 class="title">Probabilistic <em>Brush</em> Compression.</h1>
+      <p class="lede">
+        An unconventional lossy image compression algorithm. 
+        <br><br>
+        It compresses image data as a series of very small "brush stroke" instructions 
+        that can be added together to iteratively "paint" the image.
+      </p>
+      <ul class="feature-list">
+        <li><span class="fb">•</span> Beats JPEG in extreme compression</li>
+        <li><span class="fb">•</span> Faster encoding than AVIF / JpegXL / Jpeg2000</li>
+        <li><span class="fb">•</span> Interpretable algorithm, Tunable quality</li>
+        <li><span class="fb">•</span> Powered by RL-trained tiny neural network optimizing stroke parameters</li>
+      </ul>
+      <button id="enter-btn" class="primary-btn">
+        Open the demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <button id="enter-sweep" class="sweep-link-btn">
+        Sweep Experiments
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <button id="enter-train" class="sweep-link-btn">
+        Training Lab
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <a class="repo" href="https://github.com/EgeEken/PBC" target="_blank" rel="noopener">github.com/EgeEken/PBC ↗</a>
+    </div>
+
+    <div class="landing-right" id="landing-right">
+      <div id="roster" class="roster"></div>
+      <div class="cycle-timer"><span id="cycle-fill"></span></div>
+      <p class="roster-hint">hold click on a canvas to paint it back</p>
+      <p class="roster-note">This is<span class="x">n't</span> the actual algorithm,<span class="x"> but</span> a quick, <span class="x">interactive, </span>representative demo</p>
+      <label class="real-toggle"><input type="checkbox" id="use-real"> Use actual algorithm</label>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRAINING LAB ===================== -->
+<section id="train-lab" class="section app" hidden>
+  <header class="app-header">
+    <div class="app-brand" id="train-back"><span class="dot"></span> PBC · Training Lab</div>
+    <nav class="app-nav">
+      <span class="nav-item active" data-tr-tab="run">Training Run</span>
+      <span class="nav-item" data-tr-tab="checkpoints">Checkpoints</span>
+    </nav>
+  </header>
+  <div id="view-train" class="view"></div>
+  <div id="view-train-checkpoints" class="view" hidden></div>
+</section>
+
+<!-- ===================== DEMO ===================== -->
+<section id="app" class="section app" hidden>
+  <header class="app-header">
+    <div class="app-brand" id="back-home">
+      <span class="dot"></span> PBC
+    </div>
+    <nav class="app-nav">
+      <span class="nav-item" data-view="decode">Decode</span>
+      <span class="nav-item active" data-view="compress">Compress</span>
+      <span class="nav-item" data-view="registry">Registry <i id="reg-count">0</i></span>
+    </nav>
+  </header>
+
+  <!-- COMPRESS VIEW -->
+  <div id="view-compress" class="view">
+    <div class="compose">
+      <div class="input-card">
+        <label class="field-label">Source image</label>
+        <div id="dropzone" class="dropzone">
+          <input id="file-input" type="file" accept="image/*" hidden>
+          <img id="preview" class="preview" hidden>
+          <div id="dropzone-empty" class="dropzone-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <p>Drop an image, or <span>browse</span></p>
+            <small>PNG · JPG · WEBP</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-col">
+        <button id="compress-btn" class="compress-orb" disabled>
+          <span class="orb-label">Compress</span>
+        </button>
+        <p id="orb-status" class="orb-status"></p>
+      </div>
+    </div>
+
+    <div class="params">
+      <div class="params-head">
+        <span class="field-label">Parameters</span>
+        <div class="seg" id="param-mode">
+          <button class="seg-btn active" data-mode="Auto">Auto</button>
+          <button class="seg-btn" data-mode="Semi">Semi-Auto</button>
+          <button class="seg-btn" data-mode="Manual">Manual</button>
+        </div>
+      </div>
+      <div id="params-body"></div>
+    </div>
+  </div>
+
+  <!-- DECODE VIEW -->
+  <div id="view-decode" class="view" hidden>
+    <div class="compose">
+      <div class="input-card">
+        <label class="field-label">Compressed file</label>
+        <div id="decode-zone" class="dropzone">
+          <input id="decode-input" type="file" accept=".pbc" hidden>
+          <div id="decode-empty" class="dropzone-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h10l6 6v10a0 0 0 0 1 0 0H4z"/><path d="M14 4v6h6"/></svg>
+            <p>Drop a <span>.pbc</span> file, or <span>browse</span></p>
+            <small id="decode-name">PBC binary</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-col">
+        <button id="decode-btn" class="compress-orb" disabled>
+          <span class="orb-label">Decode</span>
+        </button>
+        <p id="decode-status" class="orb-status"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGISTRY VIEW -->
+  <div id="view-registry" class="view" hidden>
+    <div id="registry-empty" class="registry-empty">
+      <p>No compressions yet.</p>
+      <small>Compressed and decoded images will be stored here.</small>
+    </div>
+    <div id="registry-grid" class="registry-grid"></div>
+  </div>
+</section>
+
+<!-- ===================== SWEEP LAB ===================== -->
+<section id="sweep-lab" class="section app" hidden>
+  <header class="app-header">
+    <div class="app-brand" id="sweep-back"><span class="dot"></span> PBC · Sweeps</div>
+    <nav class="app-nav">
+      <span class="nav-item active" data-sweep-tab="benchmark">Speed Benchmark</span>
+      <span class="nav-item" data-sweep-tab="quickrd">Quick RD Benchmark</span>
+      <span class="nav-item" data-sweep-tab="runner">Sweep Runner</span>
+      <span class="nav-item" data-sweep-tab="analyzer">Sweep Analyzer</span>
+    </nav>
+  </header>
+  <div id="view-benchmark" class="view"></div>
+  <div id="view-quick-rd" class="view" hidden></div>
+  <div id="view-runner" class="view" hidden></div>
+  <div id="view-sweep" class="view" hidden></div>
+</section>
+
+<!-- LAST RESULT FLY-IN PANEL -->
+<aside id="last-result" class="last-result" hidden>
+  <button id="lr-close" class="lr-close" aria-label="Close">×</button>
+  <p class="lr-title">Latest result</p>
+  <div class="lr-media"><img id="lr-img"></div>
+  <div class="lr-stats">
+    <span><i id="lr-rate"></i> compression</span>
+    <span><i id="lr-size"></i></span>
+  </div>
+  <p class="lr-hint">Stored in the <b>Registry</b>, top-right ↗</p>
+</aside>
+
+<!-- FULLSCREEN VIEWER -->
+<div id="viewer" class="viewer" hidden>
+  <button id="viewer-close" class="viewer-close" aria-label="Close">×</button>
+  <button id="viewer-prev" class="viewer-nav prev" aria-label="Previous">‹</button>
+  <button id="viewer-next" class="viewer-nav next" aria-label="Next">›</button>
+  <div id="viewer-stage" class="viewer-stage"></div>
+  <p id="viewer-caption" class="viewer-caption"></p>
+  <div class="viewer-controls">
+    <label class="sbs-toggle"><input type="checkbox" id="viewer-sbs"> Side by side</label>
+    <button id="hold-original" class="hold-btn" hidden>Hold for original</button>
+    <button id="hold-jpeg" class="hold-btn" hidden>Hold for JPEG</button>
+    <button id="hold-jp2" class="hold-btn" hidden>Hold for JPEG2000</button>
+    <button id="hold-webp" class="hold-btn" hidden>Hold for WEBP</button>
+    <button id="hold-jxl" class="hold-btn" hidden>Hold for JXL</button>
+    <button id="hold-avif" class="hold-btn" hidden>Hold for AVIF</button>
+  </div>
+</div>
+
+<!-- ANIMATION VIEWER -->
+<div id="anim-viewer" class="viewer anim-viewer" hidden>
+  <button id="anim-close" class="viewer-close" aria-label="Close">×</button>
+  <div id="anim-stage" class="anim-stage">
+    <video id="anim-video" loop playsinline></video>
+    <img id="anim-gif" hidden>
+  </div>
+  <p class="anim-hint">Click the video to play / pause · drag the scrubber to seek</p>
+  <div class="viewer-controls">
+    <button id="anim-download" class="hold-btn anim-dl">Download</button>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="/app.js?v=20260625a"></script>
+<script src="/viewer_magnifier.js?v=20260622b"></script>
+<script src="/sweep.js?v=20260622b"></script>
+<script src="/benchmark.js?v=20260625f"></script>
+<script src="/quick_rd.js?v=20260625e"></script>
+<script src="/sweep_runner.js?v=20260624a"></script>
+<script src="/train.js?v=20260718a"></script>
+</body>
+</html>
