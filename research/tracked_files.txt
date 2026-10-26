@@ -188,6 +188,8 @@ research_pass5/remote_auth_checks.json
 research_pass5/report.py
 research_pass5/run_hf.py
 research_pass5/timing_summary.json
+research_pass6/PBC_GRID_REFINEMENT.md
+research_pass6/PBC_PASS6_SUMMARY.md
 research_pass6/PBC_RUNTIME_INTEGRATION.md
 research_pass6/api_checks.json
 research_pass6/baseline/PBC3.py
@@ -206,10 +208,18 @@ research_pass6/hf_runtime_results.json
 research_pass6/integration_checks.json
 research_pass6/integration_rows.json
 research_pass6/prepare_deployment.py
+research_pass6/refinement.py
+research_pass6/refinement_analysis.py
+research_pass6/refinement_decision.json
+research_pass6/refinement_provenance.json
+research_pass6/refinement_screen.json
+research_pass6/refinement_tests.json
 research_pass6/runtime_analysis.py
 research_pass6/runtime_configs.json
 research_pass6/runtime_manifest.json
+research_pass6/screen_refinement.py
 research_pass6/starting_sources.json
+research_pass6/test_refinement.py
 research_pass6/worker.py
 server.py
 static/app.js

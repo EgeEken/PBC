@@ -26,5 +26,11 @@
   "immutable_release": "2e59f1b06980aa467da0cde94fa33c3f9a0d4d51",
   "model_reused_from_github": true,
   "new_binary_assets": false,
-  "benchmarks_run_during_setup": 0
+  "benchmarks_run_during_setup": 0,
+  "latest_runtime": {
+    "hf_revision": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7",
+    "github_integration": "794a46cec03a6ccb9747ae0fbfcbf6710df7d970",
+    "preintegration_hf": "eee83b8f10f6f3404bca1c2c178e27fc4e8a1aa0",
+    "research_pass": 6
+  }
 }

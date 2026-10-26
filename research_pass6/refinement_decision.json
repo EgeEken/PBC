@@ -1,0 +1,447 @@
+{
+  "promoted": [],
+  "full_main_confirmation": false,
+  "holdout_evaluated": false,
+  "quality500k35_evaluated": false,
+  "combined_variant_evaluated": false,
+  "feedback_strengths_tested": [
+    0.5
+  ],
+  "reason": "Final RGB mean MSE improves only 0.087%/0.157%. Initialization costs 10.75% mean encode; iterative gains are inconsistent and its best quality change costs 28% bitrate. Stop both variants after the six-image screen.",
+  "averages": {
+    "integrated": {
+      "mse": 220.05946230918016,
+      "bpp": 0.9288214357109197,
+      "encode_seconds": 0.3882879916539726,
+      "decode_seconds": 0.03884082500007935
+    },
+    "init": {
+      "mse": 219.867920882047,
+      "bpp": 0.9115208508182714,
+      "encode_seconds": 0.4300376583317605,
+      "decode_seconds": 0.03957027499563992
+    },
+    "iter": {
+      "mse": 219.71449092445556,
+      "bpp": 0.9212086542031783,
+      "encode_seconds": 0.39103180831686285,
+      "decode_seconds": 0.03937550832051784
+    }
+  },
+  "summary": {
+    "init": {
+      "aggregate_change": {
+        "mse": -0.08704075940350053,
+        "bpp": -1.8626384176207544,
+        "encode_seconds": 10.752242555827895,
+        "decode_seconds": 1.8780496952860437
+      },
+      "operations": {
+        "attempted": 36,
+        "accepted": 36,
+        "accepted_index_changes": 32230,
+        "extra_projections": 36,
+        "extra_reconstructions": 36,
+        "local_sse_reduction": 49438754,
+        "evaluated_original_sse": 1368410790
+      },
+      "cv_percent": {
+        "encode_seconds": 3.544146396550363,
+        "decode_seconds": 5.314162191903539
+      },
+      "near_5pct_cases": 8,
+      "near_5pct_mse_wins": 4,
+      "near_5pct_mean_mse_change": -1.3114258739948106,
+      "strict_rd_wins": 4,
+      "promoted": false
+    },
+    "iter": {
+      "aggregate_change": {
+        "mse": -0.15676280451868418,
+        "bpp": -0.8196173360183634,
+        "encode_seconds": 0.7066447384073138,
+        "decode_seconds": 1.3766013477761962
+      },
+      "operations": {
+        "attempted": 27,
+        "accepted": 27,
+        "accepted_index_changes": 9127,
+        "extra_projections": 27,
+        "extra_reconstructions": 27,
+        "local_sse_reduction": 1520862,
+        "evaluated_original_sse": 30363043
+      },
+      "cv_percent": {
+        "encode_seconds": 2.7321261859700927,
+        "decode_seconds": 5.356003569526438
+      },
+      "near_5pct_cases": 10,
+      "near_5pct_mse_wins": 4,
+      "near_5pct_mean_mse_change": 0.025780275509367234,
+      "strict_rd_wins": 3,
+      "promoted": false
+    }
+  },
+  "comparisons": [
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "variant": "init",
+      "change": {
+        "mse": -0.40356744937263267,
+        "bpp": -10.299351379666287,
+        "encode_seconds": 37.62969235655969,
+        "decode_seconds": 4.330171181329656
+      },
+      "first_geometry_change": 5,
+      "first_quantized_change": 0,
+      "baseline_patches": 20,
+      "candidate_patches": 53
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "variant": "init",
+      "change": {
+        "mse": -0.3001419326177701,
+        "bpp": 10.051977103756826,
+        "encode_seconds": 6.687546303924141,
+        "decode_seconds": 3.498117999590611
+      },
+      "first_geometry_change": 5,
+      "first_quantized_change": 0,
+      "baseline_patches": 20,
+      "candidate_patches": 18
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "variant": "init",
+      "change": {
+        "mse": -0.36990882745525644,
+        "bpp": -0.9010181179455512,
+        "encode_seconds": 42.21414914995849,
+        "decode_seconds": 2.486096079369182
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 16,
+      "candidate_patches": 53
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "variant": "init",
+      "change": {
+        "mse": 2.6730539311938806,
+        "bpp": -7.147034961604493,
+        "encode_seconds": 2.2807865214808265,
+        "decode_seconds": 0.9118445344130421
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "variant": "init",
+      "change": {
+        "mse": -6.13442804008828,
+        "bpp": 3.1238673823372087,
+        "encode_seconds": 26.653266262764586,
+        "decode_seconds": 9.88533931437463
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 36,
+      "candidate_patches": 49
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "variant": "init",
+      "change": {
+        "mse": -3.700971887319937,
+        "bpp": -1.30359783144407,
+        "encode_seconds": 16.333645008208553,
+        "decode_seconds": 6.706486870505035
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "variant": "init",
+      "change": {
+        "mse": 3.29961023532912,
+        "bpp": -4.508488499452357,
+        "encode_seconds": -1.6996466472162686,
+        "decode_seconds": -8.59274040056115
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 53,
+      "candidate_patches": 53
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "variant": "init",
+      "change": {
+        "mse": -7.163393459247914,
+        "bpp": 3.7860410505211606,
+        "encode_seconds": 5.152388881250203,
+        "decode_seconds": -2.69560173198099
+      },
+      "first_geometry_change": 4,
+      "first_quantized_change": 0,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "variant": "init",
+      "change": {
+        "mse": 1.4699151791392362,
+        "bpp": -1.487428769093535,
+        "encode_seconds": 13.472035380147718,
+        "decode_seconds": 0.3667056987344264
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 20,
+      "candidate_patches": 23
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "variant": "init",
+      "change": {
+        "mse": -19.666560299144198,
+        "bpp": -6.292948420212707,
+        "encode_seconds": -21.06216464048155,
+        "decode_seconds": -0.5363901456305831
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 21,
+      "candidate_patches": 23
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "variant": "init",
+      "change": {
+        "mse": 0.7144486734038447,
+        "bpp": 4.995518085132167,
+        "encode_seconds": 8.22764353265184,
+        "decode_seconds": -2.9123216431617083
+      },
+      "first_geometry_change": 3,
+      "first_quantized_change": 0,
+      "baseline_patches": 53,
+      "candidate_patches": 53
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "variant": "init",
+      "change": {
+        "mse": 1.3933211342807006,
+        "bpp": -2.320938762923419,
+        "encode_seconds": 1.075846401164915,
+        "decode_seconds": 3.3068098364267495
+      },
+      "first_geometry_change": 5,
+      "first_quantized_change": 0,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "variant": "iter",
+      "change": {
+        "mse": -0.01123772756651542,
+        "bpp": 0.027731985764245515,
+        "encode_seconds": 0.1654378302121673,
+        "decode_seconds": 2.1875444417761347
+      },
+      "first_geometry_change": null,
+      "first_quantized_change": 8,
+      "baseline_patches": 20,
+      "candidate_patches": 20
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "variant": "iter",
+      "change": {
+        "mse": 0.012740243454301137,
+        "bpp": -0.053950917823542,
+        "encode_seconds": -1.8415959984459995,
+        "decode_seconds": -2.0512949542811576
+      },
+      "first_geometry_change": 10,
+      "first_quantized_change": 6,
+      "baseline_patches": 20,
+      "candidate_patches": 17
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "variant": "iter",
+      "change": {
+        "mse": 1.6694772809972447,
+        "bpp": -2.237907816413498,
+        "encode_seconds": -0.44435580515217454,
+        "decode_seconds": 7.45628617678562
+      },
+      "first_geometry_change": 8,
+      "first_quantized_change": 4,
+      "baseline_patches": 16,
+      "candidate_patches": 13
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "variant": "iter",
+      "change": {
+        "mse": -10.966074393301927,
+        "bpp": 28.27116469500577,
+        "encode_seconds": -0.8229538419071813,
+        "decode_seconds": 1.0148738507233412
+      },
+      "first_geometry_change": 7,
+      "first_quantized_change": 4,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "variant": "iter",
+      "change": {
+        "mse": 1.3733402803178363,
+        "bpp": -2.977166427918043,
+        "encode_seconds": 14.16055937039513,
+        "decode_seconds": 15.123590676180033
+      },
+      "first_geometry_change": 8,
+      "first_quantized_change": 6,
+      "baseline_patches": 36,
+      "candidate_patches": 47
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "variant": "iter",
+      "change": {
+        "mse": 0.27615665708864423,
+        "bpp": -3.8804008542796087,
+        "encode_seconds": 2.4968067817083828,
+        "decode_seconds": -2.795393139430402
+      },
+      "first_geometry_change": 7,
+      "first_quantized_change": 5,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "variant": "iter",
+      "change": {
+        "mse": -1.3959978163575082,
+        "bpp": -0.7968236582694521,
+        "encode_seconds": 0.561078355228295,
+        "decode_seconds": -3.4219768087139335
+      },
+      "first_geometry_change": 18,
+      "first_quantized_change": 7,
+      "baseline_patches": 53,
+      "candidate_patches": 53
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "variant": "iter",
+      "change": {
+        "mse": -0.1947914207785506,
+        "bpp": -5.1218998881245925,
+        "encode_seconds": -1.8786205204687656,
+        "decode_seconds": -4.724123090734411
+      },
+      "first_geometry_change": 11,
+      "first_quantized_change": 4,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "variant": "iter",
+      "change": {
+        "mse": -0.7635466666505386,
+        "bpp": 0.00910299124292635,
+        "encode_seconds": 0.3258939793010951,
+        "decode_seconds": 5.381443933128316
+      },
+      "first_geometry_change": null,
+      "first_quantized_change": 6,
+      "baseline_patches": 20,
+      "candidate_patches": 20
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "variant": "iter",
+      "change": {
+        "mse": -0.9031294961897918,
+        "bpp": -0.07145664368144455,
+        "encode_seconds": -0.9049161685334872,
+        "decode_seconds": -0.48857319809808564
+      },
+      "first_geometry_change": null,
+      "first_quantized_change": 5,
+      "baseline_patches": 21,
+      "candidate_patches": 21
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "variant": "iter",
+      "change": {
+        "mse": 0.0,
+        "bpp": 0.0,
+        "encode_seconds": 0.26719667772865385,
+        "decode_seconds": 0.9993175805348198
+      },
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "baseline_patches": 53,
+      "candidate_patches": 53
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "variant": "iter",
+      "change": {
+        "mse": 0.0,
+        "bpp": 0.0,
+        "encode_seconds": 1.805909743652423,
+        "decode_seconds": 0.4251832158300939
+      },
+      "first_geometry_change": null,
+      "first_quantized_change": null,
+      "baseline_patches": 23,
+      "candidate_patches": 23
+    }
+  ]
+}

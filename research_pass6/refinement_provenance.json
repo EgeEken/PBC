@@ -1,0 +1,37 @@
+{
+  "runtime_github": "794a46cec03a6ccb9747ae0fbfcbf6710df7d970",
+  "hf_runtime": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7",
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "sources": {
+    "refinement.py": "ac016a6003c8d9234a07ed3f3c6646a9c7265fddd5347f2219ef2b33ee704615",
+    "screen_refinement.py": "ab35c53fc58fa91e9146a29d3ddbe7832bbdb175129f6a46d85ed867afae6512",
+    "refinement_analysis.py": "355d92ca0f2a2c8825c9c9da8d535314b94ce116ecb4aa8fcb8698ea1b5c28e1",
+    "worker.py": "696e91a9cd82e427dbcd677c9a49bc1010220eebedcc8874e6d5f628ec4e156f"
+  },
+  "inputs": {
+    "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+    "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+    "mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+    "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e",
+    "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+  },
+  "raw_local": {
+    "path": "research_pass6/refinement_raw.jsonl",
+    "bytes": 411783,
+    "sha256": "df97df166e34dfb9d5e49381e02a38392279e4a1f3505dc1f84133f0b0a5cf6b",
+    "included_in_git": false
+  },
+  "strength": 0.5,
+  "main_images": 6,
+  "presets": [
+    "quality",
+    "high_quality"
+  ],
+  "repeats": 3,
+  "metric_required": true,
+  "feedback_rounds": 1,
+  "iterative_max_attempts": 3,
+  "allocator_used": false,
+  "holdout_used": false
+}
