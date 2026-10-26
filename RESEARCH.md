@@ -1,4 +1,4 @@
-# PBC research through Pass 6
+# PBC research through Pass 7
 
 The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the validated runtime mechanisms without changing the stream, model, preset or release version.
 
@@ -11,6 +11,8 @@ The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the v
 | Pass 5 actual HF cpu-basic timing | Eight images × four presets × three variants × three repeats: 288 measured calls. Retained internal MSE: encode −15.75%, decode −39.15%. Skipped MSE: encode −26.65%, decode −42.72%. All optimized outputs match the same HF baseline. | `research_pass5/PBC_HF_BENCHMARK_RESULTS.md`, `timing_summary.json` |
 | Pass 6 runtime integration | Direct NumPy grid I/O and per-encode search state replace production monkeypatches. Local 100-case plus compatibility/concurrency gates pass. Deployed HF smoke: retained MSE encode −17.61%, decode −47.97% on six cases. | `research_pass6/PBC_RUNTIME_INTEGRATION.md` |
 | Pass 6 grid feedback | One fixed-palette decoder-aware feedback step was screened independently on initialization and selected iterative patches. Mean RGB MSE gains were only 0.087%/0.157%; initialization cost +10.75% encode. Neither variant was promoted. | `research_pass6/PBC_GRID_REFINEMENT.md` |
+| Pass 7 benchmark audit | Run selector prevents historical composites by default. Live PBC3 data has one 800-row run; its mean is 0.768602/0.117958 s. Optional HF deployment deferred because a rebuild risks replacing live records with the repository database. | `research_pass7/PBC_SPEED_BENCHMARK_AUDIT.md` |
+| Pass 7 stop recovery | Deployed legacy model has no STOP head (S1 inapplicable). S2 rescues six patches but gives MSE −0.140%, bpp +0.275%, encode +3.526%, no demonstrated matched-rate improvement. Stopped after six-image screen. | `research_pass7/PBC_STOP_POLICY_RESULTS.md` |
 
 Pass 5 averages per-image/preset medians. Timing CV was roughly 17–20%; all 32 case medians and all three complete-trial means favored both optimized modes. The public Balanced RGBA response matches the predeployment HF response. Separate Windows/HF baseline differences were already observed in Pass 1 and remain documented; they do not constitute an optimization pair. Memory observations are cumulative process high-water marks, not variant-specific peak comparisons.
 

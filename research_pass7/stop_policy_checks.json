@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "mode": "diagnose",
+      "first": 0,
+      "second": 1,
+      "proposals": 3,
+      "accepted": false,
+      "builds": 1
+    },
+    {
+      "mode": "S1",
+      "first": 0,
+      "second": 1,
+      "proposals": 3,
+      "accepted": false,
+      "builds": 1
+    },
+    {
+      "mode": "S2",
+      "first": 0,
+      "second": 1,
+      "proposals": 3,
+      "accepted": true,
+      "builds": 2
+    },
+    {
+      "mode": "S2",
+      "first": 0,
+      "second": 0,
+      "proposals": 3,
+      "accepted": false,
+      "builds": 2
+    },
+    {
+      "mode": "S2",
+      "first": 1,
+      "second": 1,
+      "proposals": 3,
+      "accepted": true,
+      "builds": 1
+    },
+    {
+      "mode": "S2",
+      "first": 0,
+      "second": 1,
+      "proposals": 1,
+      "accepted": false,
+      "builds": 1
+    },
+    {
+      "mode": "S2",
+      "first": 0,
+      "second": 1,
+      "proposals": 0,
+      "accepted": false,
+      "builds": 0
+    }
+  ],
+  "single_proposal_pool": true,
+  "no_third_proposal": true,
+  "hooks_restored": true
+}

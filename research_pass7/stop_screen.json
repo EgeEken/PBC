@@ -1,0 +1,2274 @@
+{
+  "config": {
+    "cases": [
+      {
+        "image": "cat.jpg",
+        "preset": "quality"
+      },
+      {
+        "image": "cat.jpg",
+        "preset": "high_quality"
+      },
+      {
+        "image": "flower.jpg",
+        "preset": "quality"
+      },
+      {
+        "image": "flower.jpg",
+        "preset": "high_quality"
+      },
+      {
+        "image": "monet.jpg",
+        "preset": "quality"
+      },
+      {
+        "image": "monet.jpg",
+        "preset": "high_quality"
+      },
+      {
+        "image": "mario64.png",
+        "preset": "quality"
+      },
+      {
+        "image": "mario64.png",
+        "preset": "high_quality"
+      },
+      {
+        "image": "eiffel.png",
+        "preset": "quality"
+      },
+      {
+        "image": "eiffel.png",
+        "preset": "high_quality"
+      },
+      {
+        "image": "googlewiki.png",
+        "preset": "quality"
+      },
+      {
+        "image": "googlewiki.png",
+        "preset": "high_quality"
+      },
+      {
+        "image": "cat.jpg",
+        "preset": "compression"
+      },
+      {
+        "image": "googlewiki.png",
+        "preset": "balanced"
+      }
+    ],
+    "modes": [
+      "control",
+      "S1",
+      "S2"
+    ],
+    "repeats": 3,
+    "second_proposal_respects_stop": true
+  },
+  "metadata": {
+    "control": {
+      "source": "integrated",
+      "pid": 32252,
+      "cpu": 0,
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMBA_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "versions": {
+        "numpy": "2.2.6",
+        "numba": "0.62.1",
+        "Pillow": "11.3.0"
+      },
+      "modules": {
+        "pbc3_trace": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_trace.py",
+        "pbc3_ops": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_ops.py",
+        "pbc3_types": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_types.py",
+        "pbc3_stream": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_stream.py",
+        "pbc3_features": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_features.py",
+        "learned_filler": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\learned_filler.py",
+        "pbc3_heads": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_heads.py",
+        "PBC3": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\PBC3.py"
+      }
+    },
+    "S1": {
+      "source": "init",
+      "pid": 37788,
+      "cpu": 0,
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMBA_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "versions": {
+        "numpy": "2.2.6",
+        "numba": "0.62.1",
+        "Pillow": "11.3.0"
+      },
+      "modules": {
+        "pbc3_trace": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_trace.py",
+        "pbc3_ops": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_ops.py",
+        "pbc3_types": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_types.py",
+        "pbc3_stream": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_stream.py",
+        "pbc3_features": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_features.py",
+        "learned_filler": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\learned_filler.py",
+        "pbc3_heads": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_heads.py",
+        "PBC3": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\PBC3.py"
+      }
+    },
+    "S2": {
+      "source": "init",
+      "pid": 23264,
+      "cpu": 0,
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMBA_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "versions": {
+        "numpy": "2.2.6",
+        "numba": "0.62.1",
+        "Pillow": "11.3.0"
+      },
+      "modules": {
+        "pbc3_trace": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_trace.py",
+        "pbc3_ops": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_ops.py",
+        "pbc3_types": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_types.py",
+        "pbc3_stream": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_stream.py",
+        "pbc3_features": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_features.py",
+        "learned_filler": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\learned_filler.py",
+        "pbc3_heads": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\pbc3_heads.py",
+        "PBC3": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\PBC3.py"
+      }
+    }
+  },
+  "provenance": {
+    "source_lf": {
+      "PBC3.py": "e9ad7727d52a963670997d0f63d4387ed057ec0a602af2b9238723af477b5988",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "pbc3_ops.py": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+      "research_pass7/stop_policy.py": "8a641b676eec61f6b35525c4067e23c64dda2cad6f3f6176e70d3a726a988fc3",
+      "research_pass7/worker.py": "0e406bec2514608d7173de7c908fdb2fa37e52fa3d499cc44d8a4aed3a2ac102",
+      "research_pass7/screen_stop_policy.py": "61e4e7714fc80559e42e25959b4b43028a27fece3283d1c42a1521418ce2ff83",
+      "research_pass6/worker.py": "696e91a9cd82e427dbcd677c9a49bc1010220eebedcc8874e6d5f628ec4e156f"
+    },
+    "inputs": {
+      "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+      "mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e",
+      "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+    },
+    "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "raw_sha256": "56ff1a49ce282ceb2e26e64b6b7b2ac4b66cc2a1acd64b92d080185c7941de1e"
+  },
+  "warmup_calls": 6,
+  "rows": [
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 301.37181305021295,
+      "internal_mse": 301.37181305021295,
+      "final_bytes": 64907,
+      "raw_bytes": 154816,
+      "bpp": 0.06090848009849406,
+      "patches": 20,
+      "stream_sha256": "f41645a5216d2f1aba75bda59ea4bc7b6e65af765f7d27a5b603ad69b99e79c2",
+      "pixels_sha256": "c04d9dab29e1e8b8c91c73c9be2aed078d0e733236c031e1a6976c7362d208a3",
+      "trajectory_sha256": "4febf21b5ddcd45e4bdb4901d9db5458eea45103f5901e30a51bf1ed93482b79",
+      "encode_seconds": 0.4575114999897778,
+      "decode_seconds": 0.06834019999951124,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.4818550000200048,
+        0.4575114999897778,
+        0.43642539996653795
+      ],
+      "decode_seconds_samples": [
+        0.07289840001612902,
+        0.06834019999951124,
+        0.06437040003947914
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "mode": "S1",
+      "width": 3576,
+      "height": 2384,
+      "mse": 301.37181305021295,
+      "internal_mse": 301.37181305021295,
+      "final_bytes": 64907,
+      "raw_bytes": 154816,
+      "bpp": 0.06090848009849406,
+      "patches": 20,
+      "stream_sha256": "f41645a5216d2f1aba75bda59ea4bc7b6e65af765f7d27a5b603ad69b99e79c2",
+      "pixels_sha256": "c04d9dab29e1e8b8c91c73c9be2aed078d0e733236c031e1a6976c7362d208a3",
+      "trajectory_sha256": "4febf21b5ddcd45e4bdb4901d9db5458eea45103f5901e30a51bf1ed93482b79",
+      "encode_seconds": 0.5023739000316709,
+      "decode_seconds": 0.06591860007029027,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 17,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 18,
+            "remaining": 33,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.5127748000668362
+      },
+      "encode_seconds_samples": [
+        0.5127748000668362,
+        0.5023739000316709,
+        0.43719840003177524
+      ],
+      "decode_seconds_samples": [
+        0.07590439997147769,
+        0.06530300003942102,
+        0.06591860007029027
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "mode": "S2",
+      "width": 3576,
+      "height": 2384,
+      "mse": 299.8196136294536,
+      "internal_mse": 299.8196136294536,
+      "final_bytes": 66637,
+      "raw_bytes": 157754,
+      "bpp": 0.06253190546972359,
+      "patches": 32,
+      "stream_sha256": "88fddb9c95df08b0bfb634245f1a7195e24e7df7b9706459b25b38407b139fba",
+      "pixels_sha256": "d7c9f0c4a451f8f29d2bd3996d76af0c82adbd107daff297cf5fc905ca14aab2",
+      "trajectory_sha256": "d6a0465ae14ea7490a78318a92e02b38050c1c23b6207de4315f283252d5415e",
+      "encode_seconds": 0.5366696999408305,
+      "decode_seconds": 0.07519529992714524,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 29,
+        "stop_head": 0,
+        "nonpositive": 3,
+        "no_proposals": 0,
+        "alternatives": 3,
+        "attempts": 3,
+        "rescued": 2,
+        "second_nonpositive": 1,
+        "extra_inference_seconds": 0.0012248001294210553,
+        "extra_construction_seconds": 0.000690799904987216,
+        "extra_total_seconds": 0.001924400101415813,
+        "events": [
+          {
+            "step": 18,
+            "remaining": 33,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 52164.0
+          },
+          {
+            "step": 25,
+            "remaining": 26,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 49890.0
+          },
+          {
+            "step": 30,
+            "remaining": 21,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false,
+            "second_reduction": 0.0
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.553203699993901
+      },
+      "encode_seconds_samples": [
+        0.553203699993901,
+        0.5366696999408305,
+        0.4863823999185115
+      ],
+      "decode_seconds_samples": [
+        0.0756694000447169,
+        0.07240960001945496,
+        0.07519529992714524
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": true
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 293.34386217744196,
+      "internal_mse": 293.34386217744196,
+      "final_bytes": 75995,
+      "raw_bytes": 209614,
+      "bpp": 0.07131341681305647,
+      "patches": 20,
+      "stream_sha256": "caf90eddd3083de6379096c57308fbec941f1037f1166b2b15415bd8a2adb439",
+      "pixels_sha256": "ed8b25bc0053b793d797a7b7dd2e39d3f32806051be8b6b41b9b79b7f64988db",
+      "trajectory_sha256": "f5f1a30c9f364c42ac437021643aab5dc6167de604247b712d0cecad6c3abbda",
+      "encode_seconds": 0.5245095000136644,
+      "decode_seconds": 0.07252549997065216,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.5436824000207707,
+        0.5045642000623047,
+        0.5245095000136644
+      ],
+      "decode_seconds_samples": [
+        0.07150990003719926,
+        0.07252549997065216,
+        0.07372039998881519
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "mode": "S1",
+      "width": 3576,
+      "height": 2384,
+      "mse": 293.34386217744196,
+      "internal_mse": 293.34386217744196,
+      "final_bytes": 75995,
+      "raw_bytes": 209614,
+      "bpp": 0.07131341681305647,
+      "patches": 20,
+      "stream_sha256": "caf90eddd3083de6379096c57308fbec941f1037f1166b2b15415bd8a2adb439",
+      "pixels_sha256": "ed8b25bc0053b793d797a7b7dd2e39d3f32806051be8b6b41b9b79b7f64988db",
+      "trajectory_sha256": "f5f1a30c9f364c42ac437021643aab5dc6167de604247b712d0cecad6c3abbda",
+      "encode_seconds": 0.4956645000493154,
+      "decode_seconds": 0.07193949993234128,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 17,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 18,
+            "remaining": 3,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 20,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.5358809999888763
+      },
+      "encode_seconds_samples": [
+        0.5358809999888763,
+        0.49492189998272806,
+        0.4956645000493154
+      ],
+      "decode_seconds_samples": [
+        0.07839399995282292,
+        0.06918470002710819,
+        0.07193949993234128
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "mode": "S2",
+      "width": 3576,
+      "height": 2384,
+      "mse": 293.34386217744196,
+      "internal_mse": 293.34386217744196,
+      "final_bytes": 75995,
+      "raw_bytes": 209614,
+      "bpp": 0.07131341681305647,
+      "patches": 20,
+      "stream_sha256": "caf90eddd3083de6379096c57308fbec941f1037f1166b2b15415bd8a2adb439",
+      "pixels_sha256": "ed8b25bc0053b793d797a7b7dd2e39d3f32806051be8b6b41b9b79b7f64988db",
+      "trajectory_sha256": "f5f1a30c9f364c42ac437021643aab5dc6167de604247b712d0cecad6c3abbda",
+      "encode_seconds": 0.5365302000427619,
+      "decode_seconds": 0.07190750003792346,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 17,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 1,
+        "rescued": 0,
+        "second_nonpositive": 1,
+        "extra_inference_seconds": 0.0002775000175461173,
+        "extra_construction_seconds": 0.0001680999994277954,
+        "extra_total_seconds": 0.0004480000352486968,
+        "events": [
+          {
+            "step": 18,
+            "remaining": 3,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false,
+            "second_reduction": 0.0
+          }
+        ],
+        "requested_budget": 20,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.5567315999651328
+      },
+      "encode_seconds_samples": [
+        0.5567315999651328,
+        0.5365302000427619,
+        0.51558079989627
+      ],
+      "decode_seconds_samples": [
+        0.08125920000020415,
+        0.07190750003792346,
+        0.07070089993067086
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 44.30529831770591,
+      "internal_mse": 44.30529831770591,
+      "final_bytes": 30743,
+      "raw_bytes": 61947,
+      "bpp": 0.028849113403300153,
+      "patches": 16,
+      "stream_sha256": "821dcda787ca636008a56ec1cc67012cd39cf15e7b428416ac864c002c2d1f6a",
+      "pixels_sha256": "7f1fc10b7330cb93803ff4d2a3e48b7d7c8933e1bded1b9b13a5c12f8ff9de70",
+      "trajectory_sha256": "b0abba39b677a080cae6159bb886b6f577c20d21f5020a4e0e51cd8f79be8c3d",
+      "encode_seconds": 0.3896234999410808,
+      "decode_seconds": 0.06727830006275326,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.42718709993641824,
+        0.38606619997881353,
+        0.3896234999410808
+      ],
+      "decode_seconds_samples": [
+        0.06857949995901436,
+        0.06276240001898259,
+        0.06727830006275326
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "mode": "S1",
+      "width": 3576,
+      "height": 2384,
+      "mse": 44.30529831770591,
+      "internal_mse": 44.30529831770591,
+      "final_bytes": 30743,
+      "raw_bytes": 61947,
+      "bpp": 0.028849113403300153,
+      "patches": 16,
+      "stream_sha256": "821dcda787ca636008a56ec1cc67012cd39cf15e7b428416ac864c002c2d1f6a",
+      "pixels_sha256": "7f1fc10b7330cb93803ff4d2a3e48b7d7c8933e1bded1b9b13a5c12f8ff9de70",
+      "trajectory_sha256": "b0abba39b677a080cae6159bb886b6f577c20d21f5020a4e0e51cd8f79be8c3d",
+      "encode_seconds": 0.4082967999856919,
+      "decode_seconds": 0.06504430004861206,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 13,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 14,
+            "remaining": 37,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.4055983000434935
+      },
+      "encode_seconds_samples": [
+        0.4055983000434935,
+        0.4082967999856919,
+        0.4245204000035301
+      ],
+      "decode_seconds_samples": [
+        0.06504430004861206,
+        0.06874629994854331,
+        0.06345080002211034
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "mode": "S2",
+      "width": 3576,
+      "height": 2384,
+      "mse": 44.30529831770591,
+      "internal_mse": 44.30529831770591,
+      "final_bytes": 30743,
+      "raw_bytes": 61947,
+      "bpp": 0.028849113403300153,
+      "patches": 16,
+      "stream_sha256": "821dcda787ca636008a56ec1cc67012cd39cf15e7b428416ac864c002c2d1f6a",
+      "pixels_sha256": "7f1fc10b7330cb93803ff4d2a3e48b7d7c8933e1bded1b9b13a5c12f8ff9de70",
+      "trajectory_sha256": "b0abba39b677a080cae6159bb886b6f577c20d21f5020a4e0e51cd8f79be8c3d",
+      "encode_seconds": 0.40439010004047304,
+      "decode_seconds": 0.0645746000809595,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 13,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 1,
+        "rescued": 0,
+        "second_nonpositive": 1,
+        "extra_inference_seconds": 0.0006251001032069325,
+        "extra_construction_seconds": 0.0002986999461427331,
+        "extra_total_seconds": 0.0009261000668630004,
+        "events": [
+          {
+            "step": 14,
+            "remaining": 37,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false,
+            "second_reduction": 0.0
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.40439010004047304
+      },
+      "encode_seconds_samples": [
+        0.40439010004047304,
+        0.41495290002785623,
+        0.3800076999468729
+      ],
+      "decode_seconds_samples": [
+        0.0666895000031218,
+        0.0645746000809595,
+        0.06303979991935194
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 34.56010943576115,
+      "internal_mse": 34.56010943576115,
+      "final_bytes": 53001,
+      "raw_bytes": 132183,
+      "bpp": 0.04973593531822891,
+      "patches": 23,
+      "stream_sha256": "d11c77dcb3b9f0af1e381411162c2fde97708474ecec4f7a059f5787fde80a42",
+      "pixels_sha256": "6bf03f25e36105abbb211063f4265ae1b95f92272c437bd6a7bc995cebb51996",
+      "trajectory_sha256": "07daa12bb2ad5a74152a2dcce89299f86df0cc2afaf740625d1b0ce98c445305",
+      "encode_seconds": 0.5338607999728993,
+      "decode_seconds": 0.07195240003056824,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.6009095999179408,
+        0.5338607999728993,
+        0.4969992999685928
+      ],
+      "decode_seconds_samples": [
+        0.07823970005847514,
+        0.07195240003056824,
+        0.06911139993462712
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "mode": "S1",
+      "width": 3576,
+      "height": 2384,
+      "mse": 34.56010943576115,
+      "internal_mse": 34.56010943576115,
+      "final_bytes": 53001,
+      "raw_bytes": 132183,
+      "bpp": 0.04973593531822891,
+      "patches": 23,
+      "stream_sha256": "d11c77dcb3b9f0af1e381411162c2fde97708474ecec4f7a059f5787fde80a42",
+      "pixels_sha256": "6bf03f25e36105abbb211063f4265ae1b95f92272c437bd6a7bc995cebb51996",
+      "trajectory_sha256": "07daa12bb2ad5a74152a2dcce89299f86df0cc2afaf740625d1b0ce98c445305",
+      "encode_seconds": 0.5398721999954432,
+      "decode_seconds": 0.07025099999736995,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.5398721999954432
+      },
+      "encode_seconds_samples": [
+        0.5398721999954432,
+        0.5583355000708252,
+        0.4854361000470817
+      ],
+      "decode_seconds_samples": [
+        0.07388059992808849,
+        0.07025099999736995,
+        0.06810500007122755
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "mode": "S2",
+      "width": 3576,
+      "height": 2384,
+      "mse": 34.56010943576115,
+      "internal_mse": 34.56010943576115,
+      "final_bytes": 53001,
+      "raw_bytes": 132183,
+      "bpp": 0.04973593531822891,
+      "patches": 23,
+      "stream_sha256": "d11c77dcb3b9f0af1e381411162c2fde97708474ecec4f7a059f5787fde80a42",
+      "pixels_sha256": "6bf03f25e36105abbb211063f4265ae1b95f92272c437bd6a7bc995cebb51996",
+      "trajectory_sha256": "07daa12bb2ad5a74152a2dcce89299f86df0cc2afaf740625d1b0ce98c445305",
+      "encode_seconds": 0.5214645999949425,
+      "decode_seconds": 0.07273610006086528,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.5214645999949425
+      },
+      "encode_seconds_samples": [
+        0.5214645999949425,
+        0.5494087999686599,
+        0.502683800063096
+      ],
+      "decode_seconds_samples": [
+        0.07215069991070777,
+        0.07273610006086528,
+        0.07528460002504289
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "mode": "control",
+      "width": 900,
+      "height": 939,
+      "mse": 93.28879816984184,
+      "internal_mse": 93.28879816984184,
+      "final_bytes": 57941,
+      "raw_bytes": 86404,
+      "bpp": 0.5484889362205656,
+      "patches": 36,
+      "stream_sha256": "de4261ff845875cac13407643dd5cef7621de66331ad4b06cab1e1fc74007ba6",
+      "pixels_sha256": "d0ceefe59ff4f108697265ee65ae6844a9c71d0d1c3ad8c7bc34c7e96e00534c",
+      "trajectory_sha256": "50d54b4e5ad84eb0e6d65e7d2a3114d0e197653a2eac0ffb7eb71b8cc842869c",
+      "encode_seconds": 0.2896359999431297,
+      "decode_seconds": 0.02065909991506487,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.2896359999431297,
+        0.2942344000330195,
+        0.27758039999753237
+      ],
+      "decode_seconds_samples": [
+        0.01995900005567819,
+        0.02065909991506487,
+        0.022814600029960275
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "mode": "S1",
+      "width": 900,
+      "height": 939,
+      "mse": 93.28879816984184,
+      "internal_mse": 93.28879816984184,
+      "final_bytes": 57941,
+      "raw_bytes": 86404,
+      "bpp": 0.5484889362205656,
+      "patches": 36,
+      "stream_sha256": "de4261ff845875cac13407643dd5cef7621de66331ad4b06cab1e1fc74007ba6",
+      "pixels_sha256": "d0ceefe59ff4f108697265ee65ae6844a9c71d0d1c3ad8c7bc34c7e96e00534c",
+      "trajectory_sha256": "50d54b4e5ad84eb0e6d65e7d2a3114d0e197653a2eac0ffb7eb71b8cc842869c",
+      "encode_seconds": 0.2783729999791831,
+      "decode_seconds": 0.020871700020506978,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 33,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 34,
+            "remaining": 17,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.28082890005316585
+      },
+      "encode_seconds_samples": [
+        0.28082890005316585,
+        0.27832049992866814,
+        0.2783729999791831
+      ],
+      "decode_seconds_samples": [
+        0.02146249997895211,
+        0.020871700020506978,
+        0.02071449998766184
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "mode": "S2",
+      "width": 900,
+      "height": 939,
+      "mse": 92.47529168145782,
+      "internal_mse": 92.47529168145782,
+      "final_bytes": 58646,
+      "raw_bytes": 87149,
+      "bpp": 0.555162702638741,
+      "patches": 53,
+      "stream_sha256": "647c01d616c9b96c01cb206324312e105877727daf1a5becc212ae237a52c1a4",
+      "pixels_sha256": "a43d121bd6e372ccaec25b4f3353a59f331ec0aef010da3d1533c95c9c675850",
+      "trajectory_sha256": "dde785ef10063ab2ca3ce0284a2bcc932825f62f857d9db323ced11292459ba2",
+      "encode_seconds": 0.34817500005010515,
+      "decode_seconds": 0.023056300007738173,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 50,
+        "stop_head": 0,
+        "nonpositive": 2,
+        "no_proposals": 0,
+        "alternatives": 2,
+        "attempts": 2,
+        "rescued": 2,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0006794000510126352,
+        "extra_construction_seconds": 0.00040380004793405533,
+        "extra_total_seconds": 0.0010896000312641263,
+        "events": [
+          {
+            "step": 34,
+            "remaining": 17,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 595.0
+          },
+          {
+            "step": 48,
+            "remaining": 3,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 288.0
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.3958065001061186
+      },
+      "encode_seconds_samples": [
+        0.3958065001061186,
+        0.34024170006159693,
+        0.34817500005010515
+      ],
+      "decode_seconds_samples": [
+        0.024556600023061037,
+        0.022162300068885088,
+        0.023056300007738173
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": true
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 900,
+      "height": 939,
+      "mse": 58.21135999684456,
+      "internal_mse": 58.21135999684456,
+      "final_bytes": 121740,
+      "raw_bytes": 242904,
+      "bpp": 1.1524316648917288,
+      "patches": 23,
+      "stream_sha256": "9f1fbde1c28f7e50d899934c6ac7cccd25867cce2c3d434243977ff5f85ac8e8",
+      "pixels_sha256": "666c6bc2a17db4b1fb3da1db65965fd8531e678ba419d259235af6d32d7adefb",
+      "trajectory_sha256": "b6597a104ca6e9a8cc9a3e86fb1bbe9b49412efb5e386029de6d6e0129ab4aad",
+      "encode_seconds": 0.3215321000898257,
+      "decode_seconds": 0.02777269994840026,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.34199179999995977,
+        0.3204789999872446,
+        0.3215321000898257
+      ],
+      "decode_seconds_samples": [
+        0.028766100062057376,
+        0.02777269994840026,
+        0.027054299949668348
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "mode": "S1",
+      "width": 900,
+      "height": 939,
+      "mse": 58.21135999684456,
+      "internal_mse": 58.21135999684456,
+      "final_bytes": 121740,
+      "raw_bytes": 242904,
+      "bpp": 1.1524316648917288,
+      "patches": 23,
+      "stream_sha256": "9f1fbde1c28f7e50d899934c6ac7cccd25867cce2c3d434243977ff5f85ac8e8",
+      "pixels_sha256": "666c6bc2a17db4b1fb3da1db65965fd8531e678ba419d259235af6d32d7adefb",
+      "trajectory_sha256": "b6597a104ca6e9a8cc9a3e86fb1bbe9b49412efb5e386029de6d6e0129ab4aad",
+      "encode_seconds": 0.3373282999964431,
+      "decode_seconds": 0.029241900076158345,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.3373282999964431
+      },
+      "encode_seconds_samples": [
+        0.3373282999964431,
+        0.3407380999997258,
+        0.3287315999623388
+      ],
+      "decode_seconds_samples": [
+        0.027521600015461445,
+        0.029914900078438222,
+        0.029241900076158345
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "mode": "S2",
+      "width": 900,
+      "height": 939,
+      "mse": 58.21135999684456,
+      "internal_mse": 58.21135999684456,
+      "final_bytes": 121740,
+      "raw_bytes": 242904,
+      "bpp": 1.1524316648917288,
+      "patches": 23,
+      "stream_sha256": "9f1fbde1c28f7e50d899934c6ac7cccd25867cce2c3d434243977ff5f85ac8e8",
+      "pixels_sha256": "666c6bc2a17db4b1fb3da1db65965fd8531e678ba419d259235af6d32d7adefb",
+      "trajectory_sha256": "b6597a104ca6e9a8cc9a3e86fb1bbe9b49412efb5e386029de6d6e0129ab4aad",
+      "encode_seconds": 0.310046200058423,
+      "decode_seconds": 0.02749280002899468,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.34031780005898327
+      },
+      "encode_seconds_samples": [
+        0.34031780005898327,
+        0.310046200058423,
+        0.30228529998566955
+      ],
+      "decode_seconds_samples": [
+        0.02957450004760176,
+        0.02749280002899468,
+        0.02661699999589473
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "mode": "control",
+      "width": 1152,
+      "height": 864,
+      "mse": 136.20310021754972,
+      "internal_mse": 136.20310021754972,
+      "final_bytes": 73040,
+      "raw_bytes": 154256,
+      "bpp": 0.5870627572016461,
+      "patches": 53,
+      "stream_sha256": "7eb07376874e85a52a2d493a3697d5979488c5c441d66f28501d6be3ccaf136a",
+      "pixels_sha256": "5a923b2f50bad609aa4f38a79b3dc83e8233ecc243160d72b9834e33d29bcd53",
+      "trajectory_sha256": "6eba2218979aede09ab56d048e88684c4964b7659379a73600dd0e43cd9f6a5e",
+      "encode_seconds": 0.3951147999614477,
+      "decode_seconds": 0.0272096999688074,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.4024920000229031,
+        0.3818036000011489,
+        0.3951147999614477
+      ],
+      "decode_seconds_samples": [
+        0.0272096999688074,
+        0.0261664999416098,
+        0.028622900019399822
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "mode": "S1",
+      "width": 1152,
+      "height": 864,
+      "mse": 136.20310021754972,
+      "internal_mse": 136.20310021754972,
+      "final_bytes": 73040,
+      "raw_bytes": 154256,
+      "bpp": 0.5870627572016461,
+      "patches": 53,
+      "stream_sha256": "7eb07376874e85a52a2d493a3697d5979488c5c441d66f28501d6be3ccaf136a",
+      "pixels_sha256": "5a923b2f50bad609aa4f38a79b3dc83e8233ecc243160d72b9834e33d29bcd53",
+      "trajectory_sha256": "6eba2218979aede09ab56d048e88684c4964b7659379a73600dd0e43cd9f6a5e",
+      "encode_seconds": 0.3904878000030294,
+      "decode_seconds": 0.02887799998279661,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 50,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 50,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.3993208999745548
+      },
+      "encode_seconds_samples": [
+        0.3993208999745548,
+        0.3904878000030294,
+        0.3732142999069765
+      ],
+      "decode_seconds_samples": [
+        0.02887799998279661,
+        0.026477299979887903,
+        0.029694800032302737
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "mode": "S2",
+      "width": 1152,
+      "height": 864,
+      "mse": 136.20310021754972,
+      "internal_mse": 136.20310021754972,
+      "final_bytes": 73040,
+      "raw_bytes": 154256,
+      "bpp": 0.5870627572016461,
+      "patches": 53,
+      "stream_sha256": "7eb07376874e85a52a2d493a3697d5979488c5c441d66f28501d6be3ccaf136a",
+      "pixels_sha256": "5a923b2f50bad609aa4f38a79b3dc83e8233ecc243160d72b9834e33d29bcd53",
+      "trajectory_sha256": "6eba2218979aede09ab56d048e88684c4964b7659379a73600dd0e43cd9f6a5e",
+      "encode_seconds": 0.39751759998034686,
+      "decode_seconds": 0.027915599988773465,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 50,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 50,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.39751759998034686
+      },
+      "encode_seconds_samples": [
+        0.39751759998034686,
+        0.39819430001080036,
+        0.39141420007217675
+      ],
+      "decode_seconds_samples": [
+        0.025149900000542402,
+        0.027915599988773465,
+        0.030255199992097914
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 1152,
+      "height": 864,
+      "mse": 133.72078316561644,
+      "internal_mse": 133.72078316561644,
+      "final_bytes": 90279,
+      "raw_bytes": 294675,
+      "bpp": 0.7256221064814815,
+      "patches": 23,
+      "stream_sha256": "a0726c4094cf6cbaf840e9cbc60350d1f43870c43a69631d4cadfadf3ae71e0b",
+      "pixels_sha256": "f3e5964cb72998ce1f6457be931722338349a4dc34dac7ee2e74acf7aa270fe7",
+      "trajectory_sha256": "69339bf266fc5acdb8bd70868514ee234b1e4f2dbfecf1e7c3aa125dfbb4c19f",
+      "encode_seconds": 0.38595809997059405,
+      "decode_seconds": 0.03150799998547882,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.3973573000403121,
+        0.38595809997059405,
+        0.36848860001191497
+      ],
+      "decode_seconds_samples": [
+        0.03006190003361553,
+        0.03150799998547882,
+        0.03189270000439137
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "mode": "S1",
+      "width": 1152,
+      "height": 864,
+      "mse": 133.72078316561644,
+      "internal_mse": 133.72078316561644,
+      "final_bytes": 90279,
+      "raw_bytes": 294675,
+      "bpp": 0.7256221064814815,
+      "patches": 23,
+      "stream_sha256": "a0726c4094cf6cbaf840e9cbc60350d1f43870c43a69631d4cadfadf3ae71e0b",
+      "pixels_sha256": "f3e5964cb72998ce1f6457be931722338349a4dc34dac7ee2e74acf7aa270fe7",
+      "trajectory_sha256": "69339bf266fc5acdb8bd70868514ee234b1e4f2dbfecf1e7c3aa125dfbb4c19f",
+      "encode_seconds": 0.39134309999644756,
+      "decode_seconds": 0.03073399991262704,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.3977186999982223
+      },
+      "encode_seconds_samples": [
+        0.3977186999982223,
+        0.39134309999644756,
+        0.36964059993624687
+      ],
+      "decode_seconds_samples": [
+        0.032844900037162006,
+        0.0301212000194937,
+        0.03073399991262704
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "mode": "S2",
+      "width": 1152,
+      "height": 864,
+      "mse": 133.72078316561644,
+      "internal_mse": 133.72078316561644,
+      "final_bytes": 90279,
+      "raw_bytes": 294675,
+      "bpp": 0.7256221064814815,
+      "patches": 23,
+      "stream_sha256": "a0726c4094cf6cbaf840e9cbc60350d1f43870c43a69631d4cadfadf3ae71e0b",
+      "pixels_sha256": "f3e5964cb72998ce1f6457be931722338349a4dc34dac7ee2e74acf7aa270fe7",
+      "trajectory_sha256": "69339bf266fc5acdb8bd70868514ee234b1e4f2dbfecf1e7c3aa125dfbb4c19f",
+      "encode_seconds": 0.38850819994695485,
+      "decode_seconds": 0.028845699969679117,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.39650769997388124
+      },
+      "encode_seconds_samples": [
+        0.39650769997388124,
+        0.37689439998939633,
+        0.38850819994695485
+      ],
+      "decode_seconds_samples": [
+        0.030694999964907765,
+        0.028845699969679117,
+        0.02877440000884235
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "mode": "control",
+      "width": 487,
+      "height": 487,
+      "mse": 25.55880265408492,
+      "internal_mse": 25.55880265408492,
+      "final_bytes": 54927,
+      "raw_bytes": 121520,
+      "bpp": 1.852754786671108,
+      "patches": 20,
+      "stream_sha256": "3b349ae93182128ca40197b85a44913176aa166ecccd7465d2263302128400b1",
+      "pixels_sha256": "63efc22148d715446aef741b59806da5404113fba21a986627f3857759c50c74",
+      "trajectory_sha256": "576f571d567aea3f8a6a884051ae8338be4225cefae4e139b1d70ee4ebdc9c14",
+      "encode_seconds": 0.20081930002197623,
+      "decode_seconds": 0.013181299902498722,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.2120433000382036,
+        0.20081930002197623,
+        0.19563780003227293
+      ],
+      "decode_seconds_samples": [
+        0.02164479997009039,
+        0.013181299902498722,
+        0.012612199992872775
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "mode": "S1",
+      "width": 487,
+      "height": 487,
+      "mse": 25.55880265408492,
+      "internal_mse": 25.55880265408492,
+      "final_bytes": 54927,
+      "raw_bytes": 121520,
+      "bpp": 1.852754786671108,
+      "patches": 20,
+      "stream_sha256": "3b349ae93182128ca40197b85a44913176aa166ecccd7465d2263302128400b1",
+      "pixels_sha256": "63efc22148d715446aef741b59806da5404113fba21a986627f3857759c50c74",
+      "trajectory_sha256": "576f571d567aea3f8a6a884051ae8338be4225cefae4e139b1d70ee4ebdc9c14",
+      "encode_seconds": 0.20621169998776168,
+      "decode_seconds": 0.012982700020074844,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 17,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 18,
+            "remaining": 33,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.20708820002619177
+      },
+      "encode_seconds_samples": [
+        0.20708820002619177,
+        0.19209090003278106,
+        0.20621169998776168
+      ],
+      "decode_seconds_samples": [
+        0.01336119999177754,
+        0.012941400054842234,
+        0.012982700020074844
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "mode": "S2",
+      "width": 487,
+      "height": 487,
+      "mse": 24.231609808476936,
+      "internal_mse": 24.231609808476936,
+      "final_bytes": 55484,
+      "raw_bytes": 122490,
+      "bpp": 1.8715430768776695,
+      "patches": 28,
+      "stream_sha256": "5bfd1104657fe19a2ec1f5fa65d7ce98168cbbe483714ec595b44ae6de249d70",
+      "pixels_sha256": "5b1beb3371d456497c1ba557232b06794973d3e23b555111b44af99ea12bd0a8",
+      "trajectory_sha256": "acccc8f6ff72d39d7d9b3180aafde9f7befaf9a7cdd7384b1433d42c87998955",
+      "encode_seconds": 0.23897740000393242,
+      "decode_seconds": 0.01473309996072203,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 25,
+        "stop_head": 0,
+        "nonpositive": 2,
+        "no_proposals": 0,
+        "alternatives": 2,
+        "attempts": 2,
+        "rescued": 1,
+        "second_nonpositive": 1,
+        "extra_inference_seconds": 0.0006207999540492892,
+        "extra_construction_seconds": 0.00041010009590536356,
+        "extra_total_seconds": 0.001034799963235855,
+        "events": [
+          {
+            "step": 18,
+            "remaining": 33,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 25783.0
+          },
+          {
+            "step": 26,
+            "remaining": 25,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": -60.0,
+            "rescued": false,
+            "second_reduction": -155.0
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.25837139994837344
+      },
+      "encode_seconds_samples": [
+        0.25837139994837344,
+        0.2331901000579819,
+        0.23897740000393242
+      ],
+      "decode_seconds_samples": [
+        0.01473309996072203,
+        0.013071499997749925,
+        0.015781299909576774
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": true
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 487,
+      "height": 487,
+      "mse": 19.692243365139063,
+      "internal_mse": 19.692243365139063,
+      "final_bytes": 83967,
+      "raw_bytes": 336193,
+      "bpp": 2.8323094502232586,
+      "patches": 21,
+      "stream_sha256": "d9091d72020d0af9ef3e1ff473f513566f06362344e7fad7c5e7df384715e253",
+      "pixels_sha256": "3e3f4e5cabb8c2a7d915004c5afa26615130bcaf9d7a2c4143c254780ad75719",
+      "trajectory_sha256": "aea2acac6487015f64663794767a1ea84268ff86243a2e022d3ca6e388aba8b3",
+      "encode_seconds": 0.40238220000173897,
+      "decode_seconds": 0.02228020003531128,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.41809259995352477,
+        0.40238220000173897,
+        0.39936899999156594
+      ],
+      "decode_seconds_samples": [
+        0.022492600022815168,
+        0.02228020003531128,
+        0.018153599929064512
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "mode": "S1",
+      "width": 487,
+      "height": 487,
+      "mse": 19.692243365139063,
+      "internal_mse": 19.692243365139063,
+      "final_bytes": 83967,
+      "raw_bytes": 336193,
+      "bpp": 2.8323094502232586,
+      "patches": 21,
+      "stream_sha256": "d9091d72020d0af9ef3e1ff473f513566f06362344e7fad7c5e7df384715e253",
+      "pixels_sha256": "3e3f4e5cabb8c2a7d915004c5afa26615130bcaf9d7a2c4143c254780ad75719",
+      "trajectory_sha256": "aea2acac6487015f64663794767a1ea84268ff86243a2e022d3ca6e388aba8b3",
+      "encode_seconds": 0.3968371000373736,
+      "decode_seconds": 0.01887079991865903,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 18,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 19,
+            "remaining": 2,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 20,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.4114638000028208
+      },
+      "encode_seconds_samples": [
+        0.4114638000028208,
+        0.3939210999524221,
+        0.3968371000373736
+      ],
+      "decode_seconds_samples": [
+        0.023012799909338355,
+        0.01887079991865903,
+        0.01875150005798787
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "mode": "S2",
+      "width": 487,
+      "height": 487,
+      "mse": 19.679051646716054,
+      "internal_mse": 19.679051646716054,
+      "final_bytes": 84074,
+      "raw_bytes": 336323,
+      "bpp": 2.8359186908913054,
+      "patches": 23,
+      "stream_sha256": "57b0117fa8a45afd1a368888ec852d8b68dba6d39c1809ccb7602528eb673954",
+      "pixels_sha256": "c6a7db044c9faa6163fba84e788009cbbf1320b04a0c62a6981f67937fa1c9ec",
+      "trajectory_sha256": "be5e7888ed0c47e8f57d3d0301ded1cb67a45b99668a3bd1678c06d6f20aacf5",
+      "encode_seconds": 0.40549230005126446,
+      "decode_seconds": 0.021714800037443638,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 1,
+        "rescued": 1,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.00024809991009533405,
+        "extra_construction_seconds": 0.0001066999975591898,
+        "extra_total_seconds": 0.0003564999205991626,
+        "events": [
+          {
+            "step": 19,
+            "remaining": 2,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 3445.0
+          }
+        ],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.4127009999938309
+      },
+      "encode_seconds_samples": [
+        0.4127009999938309,
+        0.40070009999908507,
+        0.40549230005126446
+      ],
+      "decode_seconds_samples": [
+        0.021714800037443638,
+        0.02223749994300306,
+        0.019188899896107614
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": true
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "mode": "control",
+      "width": 814,
+      "height": 812,
+      "mse": 796.752410101548,
+      "internal_mse": 796.752410101548,
+      "final_bytes": 82554,
+      "raw_bytes": 182004,
+      "bpp": 0.9991890681545854,
+      "patches": 53,
+      "stream_sha256": "e8291065923b26a7f5d0d40956122651da7b709422eb7038fbf383245f547010",
+      "pixels_sha256": "d6d7cd466d902a7dfb503e81330a19c50335139c6b3539d12fa07789277f8243",
+      "trajectory_sha256": "6a9ba9340e3a834ab7ca9da2857bfc6e21098df679ed90cd2e19df8b0fb3ef77",
+      "encode_seconds": 0.38785429997369647,
+      "decode_seconds": 0.024275199975818396,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.38785429997369647,
+        0.3928012999240309,
+        0.3775855000130832
+      ],
+      "decode_seconds_samples": [
+        0.02923360001295805,
+        0.024275199975818396,
+        0.022049900027923286
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "mode": "S1",
+      "width": 814,
+      "height": 812,
+      "mse": 796.752410101548,
+      "internal_mse": 796.752410101548,
+      "final_bytes": 82554,
+      "raw_bytes": 182004,
+      "bpp": 0.9991890681545854,
+      "patches": 53,
+      "stream_sha256": "e8291065923b26a7f5d0d40956122651da7b709422eb7038fbf383245f547010",
+      "pixels_sha256": "d6d7cd466d902a7dfb503e81330a19c50335139c6b3539d12fa07789277f8243",
+      "trajectory_sha256": "6a9ba9340e3a834ab7ca9da2857bfc6e21098df679ed90cd2e19df8b0fb3ef77",
+      "encode_seconds": 0.3843831999693066,
+      "decode_seconds": 0.024664800032041967,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 50,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 50,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.40335420006886125
+      },
+      "encode_seconds_samples": [
+        0.40335420006886125,
+        0.3694296000758186,
+        0.3843831999693066
+      ],
+      "decode_seconds_samples": [
+        0.026794100063852966,
+        0.024664800032041967,
+        0.02278430003207177
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "mode": "S2",
+      "width": 814,
+      "height": 812,
+      "mse": 796.752410101548,
+      "internal_mse": 796.752410101548,
+      "final_bytes": 82554,
+      "raw_bytes": 182004,
+      "bpp": 0.9991890681545854,
+      "patches": 53,
+      "stream_sha256": "e8291065923b26a7f5d0d40956122651da7b709422eb7038fbf383245f547010",
+      "pixels_sha256": "d6d7cd466d902a7dfb503e81330a19c50335139c6b3539d12fa07789277f8243",
+      "trajectory_sha256": "6a9ba9340e3a834ab7ca9da2857bfc6e21098df679ed90cd2e19df8b0fb3ef77",
+      "encode_seconds": 0.3777369000017643,
+      "decode_seconds": 0.02191569993738085,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 50,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 50,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.3777369000017643
+      },
+      "encode_seconds_samples": [
+        0.3777369000017643,
+        0.3696127999573946,
+        0.391683500027284
+      ],
+      "decode_seconds_samples": [
+        0.02236609999090433,
+        0.02191569993738085,
+        0.021423200028948486
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "mode": "control",
+      "width": 814,
+      "height": 812,
+      "mse": 703.7049670584154,
+      "internal_mse": 703.7049670584154,
+      "final_bytes": 184839,
+      "raw_bytes": 514368,
+      "bpp": 2.237191513053582,
+      "patches": 23,
+      "stream_sha256": "c7f966ff1d58dc59bfa2b75f56964128a73761e81332187f529911ca4ff656c7",
+      "pixels_sha256": "bd08a9573333f0e8b9451f7bb73158293e6a35cdaf8679da3a33abe5a134f5f0",
+      "trajectory_sha256": "dd25dc3753402c7d8dad3d796c2a56ab32f190735728d97d88cebdaad5051482",
+      "encode_seconds": 0.4831173000857234,
+      "decode_seconds": 0.03355060005560517,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.540939399972558,
+        0.4831173000857234,
+        0.45503079995978624
+      ],
+      "decode_seconds_samples": [
+        0.03854119998868555,
+        0.03320679999887943,
+        0.03355060005560517
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "mode": "S1",
+      "width": 814,
+      "height": 812,
+      "mse": 703.7049670584154,
+      "internal_mse": 703.7049670584154,
+      "final_bytes": 184839,
+      "raw_bytes": 514368,
+      "bpp": 2.237191513053582,
+      "patches": 23,
+      "stream_sha256": "c7f966ff1d58dc59bfa2b75f56964128a73761e81332187f529911ca4ff656c7",
+      "pixels_sha256": "bd08a9573333f0e8b9451f7bb73158293e6a35cdaf8679da3a33abe5a134f5f0",
+      "trajectory_sha256": "dd25dc3753402c7d8dad3d796c2a56ab32f190735728d97d88cebdaad5051482",
+      "encode_seconds": 0.48591779998969287,
+      "decode_seconds": 0.03397670004051179,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.5172701000701636
+      },
+      "encode_seconds_samples": [
+        0.5172701000701636,
+        0.48591779998969287,
+        0.45927009999286383
+      ],
+      "decode_seconds_samples": [
+        0.03397670004051179,
+        0.03364909999072552,
+        0.03720440005417913
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "mode": "S2",
+      "width": 814,
+      "height": 812,
+      "mse": 703.7049670584154,
+      "internal_mse": 703.7049670584154,
+      "final_bytes": 184839,
+      "raw_bytes": 514368,
+      "bpp": 2.237191513053582,
+      "patches": 23,
+      "stream_sha256": "c7f966ff1d58dc59bfa2b75f56964128a73761e81332187f529911ca4ff656c7",
+      "pixels_sha256": "bd08a9573333f0e8b9451f7bb73158293e6a35cdaf8679da3a33abe5a134f5f0",
+      "trajectory_sha256": "dd25dc3753402c7d8dad3d796c2a56ab32f190735728d97d88cebdaad5051482",
+      "encode_seconds": 0.47468479990493506,
+      "decode_seconds": 0.03548940003383905,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 20,
+        "stop_head": 0,
+        "nonpositive": 0,
+        "no_proposals": 0,
+        "alternatives": 0,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [],
+        "requested_budget": 20,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.47468479990493506
+      },
+      "encode_seconds_samples": [
+        0.47468479990493506,
+        0.4540828999597579,
+        0.5042463999707252
+      ],
+      "decode_seconds_samples": [
+        0.03548940003383905,
+        0.03585770004428923,
+        0.033671599929220974
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "compression",
+      "mode": "control",
+      "width": 3576,
+      "height": 2384,
+      "mse": 422.8449136503486,
+      "internal_mse": 422.8449136503486,
+      "final_bytes": 8067,
+      "raw_bytes": 19435,
+      "bpp": 0.007570041890004955,
+      "patches": 37,
+      "stream_sha256": "e52d1e8360496d4711fac75c787e5a9e1e9b89a9fc284cf33d13c8ca1af8ffee",
+      "pixels_sha256": "f5c0added75457434364753971c8b40ea0cb0e9960e85df28aa33e1aebd463e9",
+      "trajectory_sha256": "ae82b4264447d8b995f27c1b6277a0b2247762d3a53a5cebc59d25acd9867634",
+      "encode_seconds": 0.5019268000032753,
+      "decode_seconds": 0.06830659997649491,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.5332292999373749,
+        0.49903389997780323,
+        0.5019268000032753
+      ],
+      "decode_seconds_samples": [
+        0.08662379998713732,
+        0.06615910003893077,
+        0.06830659997649491
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "compression",
+      "mode": "S1",
+      "width": 3576,
+      "height": 2384,
+      "mse": 422.8449136503486,
+      "internal_mse": 422.8449136503486,
+      "final_bytes": 8067,
+      "raw_bytes": 19435,
+      "bpp": 0.007570041890004955,
+      "patches": 37,
+      "stream_sha256": "e52d1e8360496d4711fac75c787e5a9e1e9b89a9fc284cf33d13c8ca1af8ffee",
+      "pixels_sha256": "f5c0added75457434364753971c8b40ea0cb0e9960e85df28aa33e1aebd463e9",
+      "trajectory_sha256": "ae82b4264447d8b995f27c1b6277a0b2247762d3a53a5cebc59d25acd9867634",
+      "encode_seconds": 0.5033165999921039,
+      "decode_seconds": 0.06480159994680434,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 34,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 35,
+            "remaining": 16,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.5579859999706969
+      },
+      "encode_seconds_samples": [
+        0.5579859999706969,
+        0.4845195000525564,
+        0.5033165999921039
+      ],
+      "decode_seconds_samples": [
+        0.06812269997317344,
+        0.06480159994680434,
+        0.06347870000172406
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "compression",
+      "mode": "S2",
+      "width": 3576,
+      "height": 2384,
+      "mse": 421.68650064718054,
+      "internal_mse": 421.68650064718054,
+      "final_bytes": 8388,
+      "raw_bytes": 19833,
+      "bpp": 0.00787126706004234,
+      "patches": 53,
+      "stream_sha256": "b43af6197d66fb45acd46fc08bdf8e94662526d4e4f16e6e1a7a02aebc0ff0d5",
+      "pixels_sha256": "723e0343a1db58c9939055b01c682962fbd353c2f4dcac6d9b077992a35c111e",
+      "trajectory_sha256": "da69f448c1a079934b2de0413685c4e4a0e9049566d224b0923f4ab18c36ae9f",
+      "encode_seconds": 0.6021553999744356,
+      "decode_seconds": 0.06987690005917102,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 50,
+        "stop_head": 0,
+        "nonpositive": 4,
+        "no_proposals": 0,
+        "alternatives": 4,
+        "attempts": 4,
+        "rescued": 4,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0013627001317217946,
+        "extra_construction_seconds": 0.0008158996934071183,
+        "extra_total_seconds": 0.002186899888329208,
+        "events": [
+          {
+            "step": 35,
+            "remaining": 16,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 18118.0
+          },
+          {
+            "step": 46,
+            "remaining": 5,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 6496.0
+          },
+          {
+            "step": 49,
+            "remaining": 2,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 45649.0
+          },
+          {
+            "step": 50,
+            "remaining": 1,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 591.0
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": true,
+        "encode_scope_seconds": 0.6021553999744356
+      },
+      "encode_seconds_samples": [
+        0.6021553999744356,
+        0.6538313999772072,
+        0.5697115999646485
+      ],
+      "decode_seconds_samples": [
+        0.06987690005917102,
+        0.07436959992628545,
+        0.06503779999911785
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": true
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "balanced",
+      "mode": "control",
+      "width": 814,
+      "height": 812,
+      "mse": 839.7217172389586,
+      "internal_mse": 839.7217172389586,
+      "final_bytes": 53170,
+      "raw_bytes": 122514,
+      "bpp": 0.6435409883685745,
+      "patches": 30,
+      "stream_sha256": "3ad9e25ec535e266f62aee22c559c9269af0c2147cb230064a5c38a5dcb744c2",
+      "pixels_sha256": "2f45f89ac998d332e0662af599b4ac5187e72d605fac4414ed9b56177f6de50c",
+      "trajectory_sha256": "0f01090df9249fc58dab561d25aa6641fadc3cf2667218dac05e6ea3a79e6a9e",
+      "encode_seconds": 0.2732541000004858,
+      "decode_seconds": 0.02041959995403886,
+      "preview_equal": true,
+      "stats": {},
+      "encode_seconds_samples": [
+        0.2732541000004858,
+        0.2596145999850705,
+        0.2815502999583259
+      ],
+      "decode_seconds_samples": [
+        0.02041959995403886,
+        0.019096800009720027,
+        0.02054519997909665
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "balanced",
+      "mode": "S1",
+      "width": 814,
+      "height": 812,
+      "mse": 839.7217172389586,
+      "internal_mse": 839.7217172389586,
+      "final_bytes": 53170,
+      "raw_bytes": 122514,
+      "bpp": 0.6435409883685745,
+      "patches": 30,
+      "stream_sha256": "3ad9e25ec535e266f62aee22c559c9269af0c2147cb230064a5c38a5dcb744c2",
+      "pixels_sha256": "2f45f89ac998d332e0662af599b4ac5187e72d605fac4414ed9b56177f6de50c",
+      "trajectory_sha256": "0f01090df9249fc58dab561d25aa6641fadc3cf2667218dac05e6ea3a79e6a9e",
+      "encode_seconds": 0.28017879999242723,
+      "decode_seconds": 0.020866300095804036,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S1",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 27,
+        "stop_head": 0,
+        "nonpositive": 1,
+        "no_proposals": 0,
+        "alternatives": 1,
+        "attempts": 0,
+        "rescued": 0,
+        "second_nonpositive": 0,
+        "extra_inference_seconds": 0.0,
+        "extra_construction_seconds": 0.0,
+        "extra_total_seconds": 0.0,
+        "events": [
+          {
+            "step": 28,
+            "remaining": 23,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": false
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.28968160005752
+      },
+      "encode_seconds_samples": [
+        0.28968160005752,
+        0.2672378000570461,
+        0.28017879999242723
+      ],
+      "decode_seconds_samples": [
+        0.020866300095804036,
+        0.020223099971190095,
+        0.020986100076697767
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": false
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "balanced",
+      "mode": "S2",
+      "width": 814,
+      "height": 812,
+      "mse": 838.9377645110404,
+      "internal_mse": 838.9377645110404,
+      "final_bytes": 53709,
+      "raw_bytes": 123273,
+      "bpp": 0.6500647535130294,
+      "patches": 42,
+      "stream_sha256": "8cda903fc94e0bd694ac4b6cd0e58e8f2343968efe96160c80ec764d04a59c9f",
+      "pixels_sha256": "94fb0070cc5acbef2079d6600c230dae1a2e1e822cf03664d5e6aba4245603fe",
+      "trajectory_sha256": "8f56e044e539852e643b9c8c221e33a707d09d3b5a4c0be67d5047143c42a7e6",
+      "encode_seconds": 0.3352106000529602,
+      "decode_seconds": 0.019832300022244453,
+      "preview_equal": true,
+      "stats": {
+        "mode": "S2",
+        "policy": "legacy single-action/value; no stop head",
+        "accepted": 39,
+        "stop_head": 0,
+        "nonpositive": 4,
+        "no_proposals": 0,
+        "alternatives": 4,
+        "attempts": 4,
+        "rescued": 3,
+        "second_nonpositive": 1,
+        "extra_inference_seconds": 0.0010077999904751778,
+        "extra_construction_seconds": 0.0005862999241799116,
+        "extra_total_seconds": 0.001601999974809587,
+        "events": [
+          {
+            "step": 28,
+            "remaining": 23,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 81.0
+          },
+          {
+            "step": 38,
+            "remaining": 13,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": 0.0,
+            "rescued": true,
+            "second_reduction": 476.0
+          },
+          {
+            "step": 39,
+            "remaining": 12,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": -148.0,
+            "rescued": true,
+            "second_reduction": 659.0
+          },
+          {
+            "step": 40,
+            "remaining": 11,
+            "reason": "nonpositive",
+            "proposals": 50,
+            "top_reduction": -45.0,
+            "rescued": false,
+            "second_reduction": 0.0
+          }
+        ],
+        "requested_budget": 50,
+        "budget_exhausted": false,
+        "encode_scope_seconds": 0.34112460003234446
+      },
+      "encode_seconds_samples": [
+        0.34112460003234446,
+        0.3352106000529602,
+        0.3193971000146121
+      ],
+      "decode_seconds_samples": [
+        0.0211484000319615,
+        0.01948330004233867,
+        0.019832300022244453
+      ],
+      "first_trajectory_change": null,
+      "patch_count_changed": true
+    }
+  ]
+}

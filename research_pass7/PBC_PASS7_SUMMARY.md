@@ -1,0 +1,11 @@
+# Pass 7
+
+The Speed Benchmark pools historical runs. The live database has one PBC3 run (20 main images, four presets, ten trials), with means **0.768602 s encode / 0.117958 s decode**. Its PBC3 all-history means are identical; the misleading composite is with June measurements of other codecs. The described 0.704/0.108 screenshot is not reproduced by the complete unfiltered database. Deployed source hashes and timestamps identify the integrated codec; the workload, ordering, affinity/threads, warmup and arithmetic aggregation differ from Pass 5/6 same-runtime paired controls.
+
+The reviewed backend/UI correction selects the latest complete observed coverage, an explicit run, or clearly labeled historical composite. Timestamp, counts and inferred/incomplete/missing status are visible. The read-only two-run fixture passes. The existing HF revision remains **`cd0d5691647a4f02cf765454a2d3b0abfde8f3b7`**: a rebuild could replace the live October rows with the older repository database, so the optional deployment was deferred to preserve records. Production codec source/defaults are unchanged.
+
+The active model is a legacy action/value policy with **no STOP head**. Six of 12 Quality/HQ cases stop early at zero exact gain with 50 proposals available. S1 cannot trigger and remains byte-identical. S2 tries only the second existing box, accepts positive exact gain, and changes four files. Aggregate MSE −0.140%, bpp +0.275%, encode +3.526%; no strict RD wins or demonstrated matched-rate improvement. Three affected Quality encodes cost 17–20% more. Stop this direction; no full main/holdout confirmation, RD deployment or release claim.
+
+The next operational task is durable benchmark storage with completion/revision provenance. The next bounded RD question is why the actual legacy action head chooses zero-gain actions, rather than deeper proposal fallback or training a nonexistent stop head.
+
+Source, compact outcomes and both reports are in this directory. Full databases, responses, raw trajectories/rows, caches and datasets stay ignored locally. The benchmark correction is [003fbb365c5c50afb44fc2e9b2ecfbd17b7bf67e](https://github.com/EgeEken/PBC/commit/003fbb365c5c50afb44fc2e9b2ecfbd17b7bf67e); stop-policy research is a separate commit whose exact URL is supplied in the handoff. GitHub protected branches/tags and HF main were not changed.
