@@ -195,6 +195,13 @@ Outliers (JXL encoding under q3, avif over q90, and JPEG2000 decoding over q70 a
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/dd1b89a2-c7c7-4ac7-9bb7-b94eb6094dcf" />
 
 
-The roadmap for improvements has a bunch of obvious speedups, so expect these results to get much better.
+## V3.1
+
+### Bunch of performance optimizations, leading to significantly better encode and decode speeds with no RD cost
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/0f4e1cc1-7941-4b8a-bcef-85853a7aeb74" />
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/1f4690cc-5d4c-4294-9a4e-12c874bb9ac7" />
+
 
 ### 
