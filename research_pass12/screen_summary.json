@@ -1,0 +1,233 @@
+{
+  "baseline_id": "pbc31_release_rng_baseline",
+  "baseline_source": "8006f30debfc4a57289df06df21636aeb52baffd",
+  "research_head_at_run": "b339f23576cda5c372c3fe9f3e37866e1d274b11",
+  "hf_baseline": "98ade0c8072a4571e9674eaac3d91f861e3b9867",
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "source_sha256": {
+    "PBC3.py": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
+    "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+    "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+    "pbc3_ops.py": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e",
+    "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+    "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+    "pbc3_features.py": "f6f19e560072636bc733b5b0885daace4ea724bd0100672dfcd0a2628c293c33",
+    "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+  },
+  "environment": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "numpy": "2.2.6",
+    "numba": "0.62.1",
+    "pillow": "11.3.0",
+    "thread_env": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "NUMBA_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "warmups": "one untimed 96x96 RGB encode per preset/color-space pair; two measured interleaved repeats per image/preset/color-space",
+    "timing_scope": "full PBC3.compress and PBC3.decompress calls; source loading and independent RGB scoring outside timers",
+    "rng": "NumPy default_rng seed 2003, explicitly rng_mode=release"
+  },
+  "cases": 16,
+  "main_holdout_confirmation": "not run: screen had no strict RD wins and RGB bpp increased on every screen case",
+  "baseline_reproduction": {
+    "ycbcr_matches_pass10": 6,
+    "ycbcr_cases": 16,
+    "mismatches": [
+      {
+        "image": "cat.jpg",
+        "preset": "high_quality"
+      },
+      {
+        "image": "flower.jpg",
+        "preset": "quality"
+      },
+      {
+        "image": "monet.jpg",
+        "preset": "quality"
+      },
+      {
+        "image": "monet.jpg",
+        "preset": "high_quality"
+      },
+      {
+        "image": "googlewiki.png",
+        "preset": "quality"
+      },
+      {
+        "image": "mario64.png",
+        "preset": "quality"
+      },
+      {
+        "image": "eiffel.png",
+        "preset": "high_quality"
+      },
+      {
+        "image": "stockpoint.jpg",
+        "preset": "quality"
+      },
+      {
+        "image": "stockpoint.jpg",
+        "preset": "high_quality"
+      },
+      {
+        "image": "ratedistortion.png",
+        "preset": "quality"
+      }
+    ]
+  },
+  "counts": {
+    "rgb_quality_for_rate": 14,
+    "strict_rgb_loss": 2
+  },
+  "preset_summary": {
+    "quality": {
+      "ycbcr_mse": 182.54011272681873,
+      "rgb_mse": 161.7960997771376,
+      "ycbcr_bpp": 0.5917131057485988,
+      "rgb_bpp": 1.5015624982964169,
+      "ycbcr_encode_seconds": 0.3650531375024002,
+      "rgb_encode_seconds": 0.5141260375021375,
+      "ycbcr_decode_seconds": 0.03339072502421914,
+      "rgb_decode_seconds": 0.0412781562336022,
+      "ycbcr_raw_bytes": 111098.375,
+      "rgb_raw_bytes": 254464.625,
+      "ycbcr_final_bytes": 47427.5,
+      "rgb_final_bytes": 117251.625,
+      "ycbcr_patches": 32.5,
+      "rgb_patches": 48,
+      "ycbcr_iterative_patches": 29.5,
+      "rgb_iterative_patches": 45,
+      "ycbcr_cells_per_patch": 7668.633274923605,
+      "rgb_cells_per_patch": 9918.0212201019,
+      "mse_change_percent": -11.364084660518248,
+      "bpp_change_percent": 153.76529329982188,
+      "encode_change_percent": 40.835945424180096,
+      "decode_change_percent": 23.621623081445865,
+      "mse_improvements": 7,
+      "bpp_increases": 8,
+      "categories": {
+        "rgb_quality_for_rate": 7,
+        "strict_rgb_loss": 1
+      },
+      "channel_counts": {
+        "YCbCr": {
+          "0": 145,
+          "1": 63,
+          "2": 28
+        },
+        "RGB": {
+          "0": 142,
+          "1": 117,
+          "2": 101
+        }
+      },
+      "bitcount_histogram": {
+        "YCbCr": {
+          "1": 9,
+          "2": 91,
+          "3": 31,
+          "4": 68,
+          "5": 37
+        },
+        "RGB": {
+          "1": 6,
+          "2": 84,
+          "3": 67,
+          "4": 118,
+          "5": 85
+        }
+      }
+    },
+    "high_quality": {
+      "ycbcr_mse": 158.27344438584186,
+      "rgb_mse": 152.36901535186232,
+      "ycbcr_bpp": 1.108884468036657,
+      "rgb_bpp": 1.7866070186392782,
+      "ycbcr_encode_seconds": 0.454108956248092,
+      "rgb_encode_seconds": 0.4634150625061011,
+      "ycbcr_decode_seconds": 0.04305164377001347,
+      "rgb_decode_seconds": 0.042859325010795146,
+      "ycbcr_raw_bytes": 260679.375,
+      "rgb_raw_bytes": 365863.625,
+      "ycbcr_final_bytes": 84733.625,
+      "rgb_final_bytes": 148617.375,
+      "ycbcr_patches": 21.5,
+      "rgb_patches": 23,
+      "ycbcr_iterative_patches": 18.5,
+      "rgb_iterative_patches": 20,
+      "ycbcr_cells_per_patch": 25443.50625,
+      "rgb_cells_per_patch": 28272.56875,
+      "mse_change_percent": -3.7305241298632663,
+      "bpp_change_percent": 61.11750774204345,
+      "encode_change_percent": 2.0493113227489257,
+      "decode_change_percent": -0.446716414002013,
+      "mse_improvements": 7,
+      "bpp_increases": 8,
+      "categories": {
+        "rgb_quality_for_rate": 7,
+        "strict_rgb_loss": 1
+      },
+      "channel_counts": {
+        "YCbCr": {
+          "0": 95,
+          "1": 31,
+          "2": 22
+        },
+        "RGB": {
+          "0": 54,
+          "1": 58,
+          "2": 48
+        }
+      },
+      "bitcount_histogram": {
+        "YCbCr": {
+          "2": 30,
+          "3": 16,
+          "4": 39,
+          "5": 63
+        },
+        "RGB": {
+          "3": 11,
+          "4": 42,
+          "5": 104,
+          "2": 3
+        }
+      }
+    }
+  },
+  "class_summary": {
+    "photography": {
+      "quality": {
+        "mse_change_percent": -10.276796682220157,
+        "bpp_change_percent": 194.0285721829598,
+        "cases": 4
+      },
+      "high_quality": {
+        "mse_change_percent": -4.332737484627513,
+        "bpp_change_percent": 122.28043411679059,
+        "cases": 4
+      }
+    },
+    "graphics_synthetic": {
+      "quality": {
+        "mse_change_percent": -11.87628233537199,
+        "bpp_change_percent": 146.66913181134169,
+        "cases": 4
+      },
+      "high_quality": {
+        "mse_change_percent": -3.4537391311723176,
+        "bpp_change_percent": 47.88725350323326,
+        "cases": 4
+      }
+    }
+  }
+}
