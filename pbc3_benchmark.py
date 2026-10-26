@@ -211,7 +211,7 @@ def _insert(con, row):
 
 def _run(codecs, n_trials):
     with _LOCK:
-        _STATE.update(running=True, done=0, total=None, current=None, started=time.time(), error=None, log=[])
+        _STATE.update(running=True, done=0, total=None, current=None, started=time.time(), error=None, log=[], run_id=None)
     try:
         images = dataset()
         if not images:
@@ -222,6 +222,7 @@ def _run(codecs, n_trials):
         run_id = time.strftime("%Y%m%d_%H%M%S")
         with _LOCK:
             _STATE["total"] = total
+            _STATE["run_id"] = run_id
         _log(f"loaded {len(images)} images · {len(jobs)} data points · {n_trials} trial(s)")
         done = 0
         con = _connect()
@@ -279,12 +280,36 @@ def reset_pbc():
         con.close()
 
 
-def results(mp_min=None, mp_max=None):
+def results(mp_min=None, mp_max=None, run_id="latest"):
     if not os.path.exists(DB_PATH):
-        return {"exists": False, "rows": [], "points": []}
-    con = _connect()
+        return {"exists": False, "rows": [], "points": [], "runs": [], "selection": run_id, "selected_run": None}
+    con = sqlite3.connect("file:" + DB_PATH.replace("\\", "/") + "?mode=ro", uri=True)
+    con.row_factory = sqlite3.Row
     try:
+        records = con.execute("SELECT run_id, ts, trial, codec, variant, image FROM results ORDER BY ts DESC").fetchall()
+        groups = {}
+        for row in records:
+            groups.setdefault(row["run_id"], []).append(row)
+        runs = []
+        state = status()
+        for name, group in groups.items():
+            codecs = sorted({r["codec"] for r in group})
+            images = {r["image"] for r in group}
+            trials = sorted({r["trial"] for r in group})
+            expected_points = {(c, v) for c, v, _ in _jobs(codecs)}
+            keys = {(r["trial"], r["codec"], r["variant"], r["image"]) for r in group}
+            expected = {(t, c, v, im) for t in range(1, max(trials) + 1) for c, v in expected_points for im in images}
+            running = state["running"] and state.get("run_id") == name
+            complete = keys == expected and len(keys) == len(group) and not running
+            runs.append(dict(run_id=name, first_ts=min(r["ts"] for r in group), last_ts=max(r["ts"] for r in group),
+                count=len(group), images=len(images), trials=len(trials), points=len(expected_points), codecs=codecs,
+                coverage_complete=complete, status="running" if running else ("complete coverage (inferred)" if complete else "incomplete coverage")))
+        selected = next((r["run_id"] for r in runs if r["coverage_complete"]), None) if run_id == "latest" else run_id
+        if run_id == "all":
+            selected = None
         where, args = [], []
+        if run_id != "all":
+            where.append("run_id = ?"); args.append(selected)
         if mp_min is not None:
             where.append("mp >= ?"); args.append(float(mp_min))
         if mp_max is not None:
@@ -299,7 +324,10 @@ def results(mp_min=None, mp_max=None):
             GROUP BY codec, variant, q
             ORDER BY codec, q, variant
         """, args)]
-        return {"exists": True, "rows": rows, "points": points, "count": len(rows)}
+        return {"exists": True, "rows": rows, "points": points, "count": len(rows), "runs": runs,
+            "selection": run_id, "selected_run": selected,
+            "selection_status": "historical composite" if run_id == "all" else next((r["status"] for r in runs if r["run_id"] == selected), "missing run / no complete coverage"),
+            "coverage_note": "Coverage is inferred from observed images, codecs and trials. Original requested totals and completion markers were not stored; an entirely missing image, codec or trailing trial cannot be detected."}
     finally:
         con.close()
 
@@ -313,7 +341,7 @@ def start_research(spec):
             return {"error": "A benchmark is already running."}
         _STOP.clear()
         _STATE.update(running=True, done=0, total=None, current={"research": True},
-            started=time.time(), error=None, log=[], research_result=None)
+            started=time.time(), error=None, log=[], research_result=None, run_id=None)
 
     def run():
         import json

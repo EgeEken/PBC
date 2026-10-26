@@ -1,0 +1,153 @@
+{
+  "captured_utc": "2026-10-26T12:47:23.548968+00:00",
+  "sha": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7",
+  "runtime": {
+    "stage": "RUNNING",
+    "hardware": {
+      "current": "cpu-basic",
+      "requested": "cpu-basic"
+    },
+    "gcTimeout": 172800,
+    "replicas": {
+      "current": 1,
+      "requested": 1
+    },
+    "devMode": false,
+    "domains": [
+      {
+        "domain": "egeeken-pbc.hf.space",
+        "stage": "READY"
+      }
+    ],
+    "sha": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7",
+    "pySpacesVersion": "0.51.3"
+  },
+  "source_hashes": {
+    "PBC3.py": {
+      "deployed_lf_sha256": "e9ad7727d52a963670997d0f63d4387ed057ec0a602af2b9238723af477b5988",
+      "before_sha256": "e9ad7727d52a963670997d0f63d4387ed057ec0a602af2b9238723af477b5988"
+    },
+    "pbc3_ops.py": {
+      "deployed_lf_sha256": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e",
+      "before_sha256": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e"
+    },
+    "pbc3_heads.py": {
+      "deployed_lf_sha256": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "before_sha256": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482"
+    },
+    "pbc3_stream.py": {
+      "deployed_lf_sha256": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+      "before_sha256": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94"
+    },
+    "learned_filler.py": {
+      "deployed_lf_sha256": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "before_sha256": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50"
+    },
+    "pbc3_types.py": {
+      "deployed_lf_sha256": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+      "before_sha256": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f"
+    },
+    "server.py": {
+      "deployed_lf_sha256": "6bfc181202e2ad0c330c8cb8f610f17cca73a5a3fb76bc8e1c285a4dc3dabb84",
+      "before_sha256": "6bfc181202e2ad0c330c8cb8f610f17cca73a5a3fb76bc8e1c285a4dc3dabb84"
+    },
+    "pbc3_benchmark.py": {
+      "deployed_lf_sha256": "ca9b2f839193716e10a6dfd3c0910fc2915ec3d91ca4d7eb4a8223dcfb41efc7",
+      "before_sha256": "ca9b2f839193716e10a6dfd3c0910fc2915ec3d91ca4d7eb4a8223dcfb41efc7"
+    },
+    "Dockerfile": {
+      "deployed_lf_sha256": "dcfc511dc4ac175474b65037c32f51aa9280c2b4a46df5cab2b515a79cec652c",
+      "before_sha256": "dcfc511dc4ac175474b65037c32f51aa9280c2b4a46df5cab2b515a79cec652c"
+    }
+  },
+  "health": {
+    "ok": true,
+    "boot_id": "1793016255.805"
+  },
+  "storage": null,
+  "live_dataset": {
+    "count": 20,
+    "images": [
+      {
+        "name": "cat.jpg",
+        "mp": 8.5252
+      },
+      {
+        "name": "cathedral.png",
+        "mp": 11.9954
+      },
+      {
+        "name": "coast.jpg",
+        "mp": 12.0077
+      },
+      {
+        "name": "ducklings.jpg",
+        "mp": 12.0077
+      },
+      {
+        "name": "eiffel.png",
+        "mp": 0.2372
+      },
+      {
+        "name": "field.jpg",
+        "mp": 12.0077
+      },
+      {
+        "name": "flag.jpg",
+        "mp": 6.4685
+      },
+      {
+        "name": "flower.jpg",
+        "mp": 8.5252
+      },
+      {
+        "name": "flowers.jpg",
+        "mp": 12.0077
+      },
+      {
+        "name": "googlewiki.png",
+        "mp": 0.661
+      },
+      {
+        "name": "mario64.png",
+        "mp": 0.9953
+      },
+      {
+        "name": "monet.jpg",
+        "mp": 0.8451
+      },
+      {
+        "name": "monkey.png",
+        "mp": 0.306
+      },
+      {
+        "name": "panorama.png",
+        "mp": 1.9984
+      },
+      {
+        "name": "park.jpg",
+        "mp": 8.5276
+      },
+      {
+        "name": "perlman.png",
+        "mp": 4.0895
+      },
+      {
+        "name": "ratedistortion.png",
+        "mp": 0.1995
+      },
+      {
+        "name": "seagull.jpg",
+        "mp": 4.7001
+      },
+      {
+        "name": "stockpoint.jpg",
+        "mp": 1.1271
+      },
+      {
+        "name": "sunset.jpg",
+        "mp": 12.0077
+      }
+    ]
+  }
+}

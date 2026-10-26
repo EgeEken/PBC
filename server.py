@@ -843,8 +843,8 @@ def benchmark_stop():
 
 
 @app.get("/api/benchmark/results")
-def benchmark_results(mp_min: float = None, mp_max: float = None):
-    return pbc3_benchmark.results(mp_min, mp_max)
+def benchmark_results(mp_min: float = None, mp_max: float = None, run_id: str = "latest"):
+    return pbc3_benchmark.results(mp_min, mp_max, run_id)
 
 
 @app.post("/api/benchmark/reset_pbc")

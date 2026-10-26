@@ -164,9 +164,9 @@
       "git_blob": "76aa7d0047faf6e7a28f102c4b57bdf874ed31c9"
     },
     "pbc3_benchmark.py": {
-      "bytes": 12644,
-      "sha256": "ca9b2f839193716e10a6dfd3c0910fc2915ec3d91ca4d7eb4a8223dcfb41efc7",
-      "git_blob": "6dc210c3d812c6eb26db4bf3f87f2ecaf19d9309"
+      "bytes": 14923,
+      "sha256": "39400b87428c421dba7ee01eb600b20df8ab5b474b2928b714596d1dca5cd42b",
+      "git_blob": "cc15e9617ed1fbba20b55e3164cad6860cbc3fd9"
     },
     "pbc3_features.py": {
       "bytes": 5372,
@@ -274,9 +274,9 @@
       "git_blob": "3338030417cc33655eae0f6e15736b7deebb86db"
     },
     "research/tracked_files.txt": {
-      "bytes": 7220,
-      "sha256": "f083a8f21586c09592a47ea370d1ccb91ff61577ce86684a40b047d9f7cdb1e5",
-      "git_blob": "7a43c5b5814d49a8674ea8957a8eeb2bd100763f"
+      "bytes": 7480,
+      "sha256": "efa0ddfa68abec9de1563ad7dd859aaa9298c7f02dd185d1c667d53c3674bb5e",
+      "git_blob": "5c52404bf41c44610ce16048eec54bd78d012d2e"
     },
     "research/verify_snapshot.py": {
       "bytes": 664,
@@ -1090,8 +1090,8 @@
     },
     "research_pass6/runtime_manifest.json": {
       "bytes": 2152,
-      "sha256": "299c09c135f0a224b1ddb3f93b8634f54a46bfd27e986cad06db8e538ae68527",
-      "git_blob": "d60cd4e55f7f4ef377d441c2cc090af2e7616d37"
+      "sha256": "140d5d7caa9d70d3b9ea26592ce4dc3413349d4fcc36c753e87a706da1a83b04",
+      "git_blob": "3b317c35ddd2863be9454bf0482041a527d39858"
     },
     "research_pass6/screen_refinement.py": {
       "bytes": 4155,
@@ -1113,10 +1113,45 @@
       "sha256": "696e91a9cd82e427dbcd677c9a49bc1010220eebedcc8874e6d5f628ec4e156f",
       "git_blob": "82a41c44dd6c315e113f1ce231a1abac09f25506"
     },
+    "research_pass7/PBC_SPEED_BENCHMARK_AUDIT.md": {
+      "bytes": 8297,
+      "sha256": "fc69d388aa708d6d4b7a5c1f8215d24182e5fb4ec6400bac057524a3a5778ec0",
+      "git_blob": "c617cd7e06d91eb9dca597dd0a9d9efd242b7176"
+    },
+    "research_pass7/active_path_audit.json": {
+      "bytes": 4041,
+      "sha256": "20e0445b4abafd21c99e8b475c6073ebe13c7dbcbdbbe0190713c2ff748ec070",
+      "git_blob": "02c36b7f93ede2b22eb943748fa71c7316979033"
+    },
+    "research_pass7/audit_database.py": {
+      "bytes": 2414,
+      "sha256": "404fdeff45c6f4e57a8cc1f48095af6c75b2b638abe0ff79365f9de1e509c835",
+      "git_blob": "579ea0cc82946f738569ce76a5a88f8c95d72c1b"
+    },
+    "research_pass7/capture_audit.py": {
+      "bytes": 1735,
+      "sha256": "a4031815852737fb40aa3521522186f84f1c3732f3ef46b841878243a1f7e4f3",
+      "git_blob": "52a223c03e5a4956de8905af8e23e44df8f7247e"
+    },
+    "research_pass7/database_audit.json": {
+      "bytes": 5744,
+      "sha256": "288ab2400eaf2531b26720259b123a55a3d270fb1ba568dd9471478d782b9d22",
+      "git_blob": "c74f8d7bc51f74d84b3156c9b78aa6c2163caab5"
+    },
+    "research_pass7/run_selection_checks.json": {
+      "bytes": 1315,
+      "sha256": "8d5ae769582ae5e8a3b93196ae80c9dff9bff276b1903cc228619254317090e7",
+      "git_blob": "f654808d09ecf8c72be2d2d5ba10fd935f448857"
+    },
+    "research_pass7/test_run_selection.py": {
+      "bytes": 2863,
+      "sha256": "f4fde4669b6be05cba70d072595c67328dbf0cb84012b03a21cf4437bb80f1d3",
+      "git_blob": "652fea04f8e4844e5e32c2b9b7e2bd2cc93ec737"
+    },
     "server.py": {
-      "bytes": 35393,
-      "sha256": "6bfc181202e2ad0c330c8cb8f610f17cca73a5a3fb76bc8e1c285a4dc3dabb84",
-      "git_blob": "9c1d9e47880bf0fd7b4f666a67b58779e08877d6"
+      "bytes": 35425,
+      "sha256": "157bf7f5409573708a43acdceccb26a9fd5ed52a1d4d14fba1272faccdc3737a",
+      "git_blob": "c02928c20417d02d6cdbc2214d448d627e208248"
     },
     "static/app.js": {
       "bytes": 59388,
@@ -1124,9 +1159,9 @@
       "git_blob": "7f0f914a37b46a47e7adb30b8975012b6f4b2949"
     },
     "static/benchmark.js": {
-      "bytes": 17457,
-      "sha256": "341d7fbab99d0ed3c10e517607501ad24f34f3cd958b6d19c876fd466ab404a1",
-      "git_blob": "8699f2b3bb3a593c139fc16224cbc5677441a638"
+      "bytes": 18955,
+      "sha256": "f1985a74de91af4da85eba47fe8977e640047950804a7c74e507ccbd12ac94bc",
+      "git_blob": "165acda8e856a2c34f3417bfd3c4c579fe3e2994"
     },
     "static/index.html": {
       "bytes": 16146,

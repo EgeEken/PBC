@@ -1,0 +1,61 @@
+{
+  "fixture_passed": true,
+  "database_unchanged": true,
+  "weighted_seconds": 10.04,
+  "live_copy_runs": [
+    {
+      "run_id": "20261026_122641",
+      "first_ts": 1793017603.2612045,
+      "last_ts": 1793018415.8781726,
+      "count": 800,
+      "images": 20,
+      "trials": 10,
+      "points": 4,
+      "codecs": [
+        "PBC3"
+      ],
+      "coverage_complete": true,
+      "status": "complete coverage (inferred)"
+    },
+    {
+      "run_id": "20260624_150209",
+      "first_ts": 1782313398.819332,
+      "last_ts": 1782325650.3059092,
+      "count": 4500,
+      "images": 20,
+      "trials": 5,
+      "points": 45,
+      "codecs": [
+        "AVIF",
+        "JPEG",
+        "JPEG2000",
+        "JXL",
+        "PNG",
+        "WEBP"
+      ],
+      "coverage_complete": true,
+      "status": "complete coverage (inferred)"
+    },
+    {
+      "run_id": "20260624_134736",
+      "first_ts": 1782308928.1174743,
+      "last_ts": 1782311367.8413029,
+      "count": 900,
+      "images": 20,
+      "trials": 1,
+      "points": 45,
+      "codecs": [
+        "AVIF",
+        "JPEG",
+        "JPEG2000",
+        "JXL",
+        "PNG",
+        "WEBP"
+      ],
+      "coverage_complete": true,
+      "status": "complete coverage (inferred)"
+    }
+  ],
+  "latest_selected": "20261026_122641",
+  "latest_samples": 800
+}

@@ -70,7 +70,9 @@ window.BenchmarkPage = (function () {
       <h3 class="bm-section-title">Benchmark Database Results</h3>
 
       <div class="sw-card">
-        <h3>Dataset range</h3>
+        <h3>Run and dataset range</h3>
+        <div class="sw-f"><label>Run</label><select id="bm-run-select" class="sw-input"><option value="latest">Latest complete run (coverage inferred)</option><option value="all">All historical runs — composite</option></select></div>
+        <div id="bm-run-info" class="sw-muted" style="margin:8px 0"></div>
         <div class="sw-row" style="gap:16px">
           <div class="sw-f"><label>MP ≥</label><input id="bm-mpmin" class="sw-input" type="number" step="0.1" placeholder="any"></div>
           <div class="sw-f"><label>MP ≤</label><input id="bm-mpmax" class="sw-input" type="number" step="0.1" placeholder="any"></div>
@@ -145,6 +147,7 @@ window.BenchmarkPage = (function () {
         : "No images found in hpt_data/.";
     });
     S.built = true;
+    $("bm-run-select").onchange = refreshResults;
   }
 
   function renderCodecChecks(id, state, onchange) {
@@ -205,9 +208,22 @@ window.BenchmarkPage = (function () {
   async function refreshResults() {
     if (!S.built) return;
     const qs = new URLSearchParams();
+    const selection = $("bm-run-select").value;
+    qs.set("run_id", selection);
     if ($("bm-mpmin").value !== "") qs.set("mp_min", $("bm-mpmin").value);
     if ($("bm-mpmax").value !== "") qs.set("mp_max", $("bm-mpmax").value);
     const d = await (await fetch("/api/benchmark/results?" + qs.toString())).json();
+    const selector = $("bm-run-select");
+    selector.replaceChildren();
+    for (const [value, label] of [["latest", "Latest complete run (coverage inferred)"], ["all", "All historical runs — composite"], ...(d.runs || []).map(r => [r.run_id, `${r.run_id} · ${r.status} · ${r.codecs.join(", ")}`])]) {
+      selector.add(new Option(label, value));
+    }
+    if (![...selector.options].some(o => o.value === selection)) selector.add(new Option(`${selection} · missing run`, selection));
+    selector.value = selection;
+    const run = (d.runs || []).find(r => r.run_id === d.selected_run);
+    $("bm-run-info").textContent = (run
+      ? `${run.run_id} · ${new Date(run.first_ts * 1000).toISOString()} · ${run.status} · ${run.trials} trial(s), ${run.images} images, ${run.count} total samples · ${d.count} selected samples. `
+      : `${d.selection_status || "No runs"} · ${d.count || 0} selected samples. `) + (d.coverage_note || "") + (selection === "all" ? " Historical codecs may come from different runs and CPU conditions." : "");
     S.points = (d.points || []).map(p => ({ ...p, psnr: +p.psnr || psnr(+p.mse), eff: (+p.psnr || psnr(+p.mse)) / Math.max(+p.bpp, 1e-9) }));
     applyFilters();
     renderPlots();
