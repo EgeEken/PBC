@@ -1,4 +1,4 @@
-# PBC research through Pass 8
+# PBC research through Pass 9 local gate
 
 The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the validated runtime mechanisms without changing the stream, model, preset or release version.
 
@@ -16,6 +16,8 @@ The initial snapshot recorded Passes 1–5. Pass 6 subsequently integrated the v
 | Pass 8 actual release comparison | Same HF CPU, 20 images × four presets × two authentic defaults × three repeats. Development aggregate encode/decode times are 24.80%/48.39% lower; MSE +0.763%, bpp +2.670%. Per-image regressions remain. | `research_pass8/PBC30_VS_DEV31_HF_BENCHMARK.md` |
 | Pass 8 Speed Benchmark UI | Run selector deployed with stale-response/polling fix. Database backed up before accepted resets; selected runs remain separate from historical composite data. Public codec unchanged. | `research_pass8/PBC_BENCHMARK_UI_DEPLOYMENT.md` |
 | Pass 8 robust palette bounds | 98th-percentile sign-conditioned clipping passed fixed-state feasibility but failed forward screening: MSE −0.271%, bpp +6.983%, encode +13.496%, no strict RD wins. No broader confirmation or deployment. | `research_pass8/PBC_ROBUST_PALETTE_RESULTS.md` |
+| Pass 9 release RNG | Explicit per-encode release RNG matches immutable release on 100/100 local main/holdout cases. Public default remains current. HF deployment/comparison deferred at the user's request to log findings for now. | `research_pass9/PBC_PASS9_SUMMARY.md` |
+| Existing public speed run log | User-authorized stop at 996/9,800 calls; database backed up. One complete trial gives PBC3 0.534392/0.082203 s. Screenshot PNG bar has only five images; complete PNG mean is 1.878271/0.164118 s. | `research_pass9/PBC_EXISTING_SPEED_RUN_LOG.md` |
 
 Pass 5 averages per-image/preset medians. Timing CV was roughly 17–20%; all 32 case medians and all three complete-trial means favored both optimized modes. The public Balanced RGBA response matches the predeployment HF response. Separate Windows/HF baseline differences were already observed in Pass 1 and remain documented; they do not constitute an optimization pair. Memory observations are cumulative process high-water marks, not variant-specific peak comparisons.
 

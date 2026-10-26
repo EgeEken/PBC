@@ -74,9 +74,9 @@
       "git_blob": "053f6b2a2e876093c9932a60230b0763955509fc"
     },
     "RESEARCH.md": {
-      "bytes": 5755,
-      "sha256": "ae019ab88a3d91f93bef9d3fdf02fd5b53490742a6250d03096ffc828977c44b",
-      "git_blob": "862f4221777cfba3d7239d483df691480244ef0b"
+      "bytes": 6319,
+      "sha256": "927a4ac44febebeda641d6b105d3a10fcfdd6ac8041e71eafec007120c1b2750",
+      "git_blob": "e1755242276394bd224f04a501132afff01b048c"
     },
     "learned_filler.py": {
       "bytes": 14201,
@@ -234,9 +234,9 @@
       "git_blob": "b60e0cc669a7857c8569011847517ed64cd88670"
     },
     "research/BASELINE.md": {
-      "bytes": 3847,
-      "sha256": "e546363c3ff0eed38d1c2ab068c77ca3cdb2b741b0572b61dca741ccf4073ca5",
-      "git_blob": "5e07ef96bf7ee4b1e4fb459427cad7f7fe7c4cb5"
+      "bytes": 4445,
+      "sha256": "b8903b9485bfb436c05671a4affa7c8fd5f8ac7668ab490c7fdf1c8a3c9e5b3a",
+      "git_blob": "de02f97f69f71f071d649295ed9985be6ad58fb3"
     },
     "research/EXCLUSIONS.md": {
       "bytes": 2351,
@@ -244,9 +244,9 @@
       "git_blob": "6ad7a539614fad945e8688d9bf8535a7dafda748"
     },
     "research/REPRODUCTION.md": {
-      "bytes": 6359,
-      "sha256": "c0d922cc5394c56fc5a8c22e5d319462179e3284e6c54e5134f8b297a035a414",
-      "git_blob": "328a1cfe482e6ca2bcfc16f6bb37dad18c194b63"
+      "bytes": 7009,
+      "sha256": "5dc42b990ff44d2a50763bfa81413673e36f541ee18d82df7053fd3e0e93f7f2",
+      "git_blob": "6303a6139ded37d400837d84cdd662841a5dc5c5"
     },
     "research/assets.json": {
       "bytes": 3957,
@@ -274,9 +274,9 @@
       "git_blob": "3338030417cc33655eae0f6e15736b7deebb86db"
     },
     "research/tracked_files.txt": {
-      "bytes": 9662,
-      "sha256": "cd7e7a84a81b6266108e534be5319f80fc90a7db0335443ed65bcd34989e60f5",
-      "git_blob": "07c1fde5bbc7b073d322e345ab2ddd0129d970e4"
+      "bytes": 9923,
+      "sha256": "3f3ab6100492913aec42ae110d0500af0a9935c426abef505eb40158cba8b34b",
+      "git_blob": "3e66484870490d23d3584872c988b8bcd5c1eeb4"
     },
     "research/verify_snapshot.py": {
       "bytes": 664,
@@ -1408,15 +1408,35 @@
       "sha256": "7241f1a867971df4ac1a03c2e4cff4312682dc2856deffd02b9a23debb77f81d",
       "git_blob": "5a34dac369f749b91f99bd908abb0f457906f36c"
     },
+    "research_pass9/PBC_EXISTING_SPEED_RUN_LOG.md": {
+      "bytes": 2747,
+      "sha256": "965066bdc2600f85ff93d1bd5d2eee3d5faf143f875f3216c496a8971290d2af",
+      "git_blob": "7dd6e671e8b47864130bcfdab6125bc5c1aa8799"
+    },
+    "research_pass9/PBC_HF_THREE_WAY_BENCHMARK.md": {
+      "bytes": 2060,
+      "sha256": "8d0b91ab2b06a8530f4de0fc9dd2a7847c40ddbb3796cd81108ed07bccca4340",
+      "git_blob": "3470db9cd2446ec3d8a84d971f00b740b195c4ad"
+    },
+    "research_pass9/PBC_PASS9_SUMMARY.md": {
+      "bytes": 3491,
+      "sha256": "3ad16ccd1eef1dde52fa579d9b84da05be41284bbf7da5ff635a5a4246429337",
+      "git_blob": "c7c523810df5544109b5918d8967db46e61cc76e"
+    },
     "research_pass9/PBC_RELEASE_RNG_RESTORATION.md": {
-      "bytes": 1895,
-      "sha256": "bc7ae4e8908c73dc1ef109be2a7ea126a72e186e9f21b17ddccda152baf31571",
-      "git_blob": "8b952eb8d249eefc8504155352f3c31bec3267de"
+      "bytes": 2711,
+      "sha256": "bb0e5bb337c3387ae544b2c69b7d9635a83deb82fcbe0f0e4038321b5c893854",
+      "git_blob": "f98a617e1273517ca01243a78cc2ec1a31d4b044"
     },
     "research_pass9/README.md": {
       "bytes": 3013,
       "sha256": "3dcc1be67c7d1010de5a54382e9af561aaf57ad19972c8da4f937decfcac14eb",
       "git_blob": "35a76fcb850dd5ca959056d6182c90c3416451ef"
+    },
+    "research_pass9/active_run_backup.json": {
+      "bytes": 672,
+      "sha256": "75ab60ffec502f735a66add4de48831bef1a7a5645e05b1493d29377be39fdcb",
+      "git_blob": "de793e50cd4f6750d28c8671a6dda7db44ea7c2b"
     },
     "research_pass9/analyze.py": {
       "bytes": 8869,
@@ -1429,9 +1449,9 @@
       "git_blob": "0945ed681e2cd975cb61fda59818092ce2e83086"
     },
     "research_pass9/hf_deployment.json": {
-      "bytes": 437,
-      "sha256": "5d4e1b26a0e2e4480b15f22884f691becd45d43d5eab12f2ea6f7f955f2ce859",
-      "git_blob": "294b4dce10f9916e7d79d79a41f653e1f54e01a7"
+      "bytes": 546,
+      "sha256": "73f8cd0fa49b8ad6c7378910bbcc721a7ccfc04b880512ea1e21e8787749475e",
+      "git_blob": "c46bf283e562dbd52a9c5f3829d3d3966de1e5d0"
     },
     "research_pass9/hf_release_job.py": {
       "bytes": 5367,
@@ -1443,15 +1463,30 @@
       "sha256": "cb8d7c4f4ddd3f10a0dd82fa8f819d63919c7ca87436488ec5879b7f72089778",
       "git_blob": "9c4e7c02d4aa06f1029fa9bc0158ed96cd6261ab"
     },
+    "research_pass9/log_public_run.py": {
+      "bytes": 5689,
+      "sha256": "31cabceb4512c88410198c4cb356942e5c905d1920ef589cb49892296ed46143",
+      "git_blob": "8bc58f4711548dc41abea3c5719e7ba4c3a01e94"
+    },
     "research_pass9/prepare_deployment.py": {
       "bytes": 3565,
       "sha256": "3ab3ac1ef70d3e79acab6beb421f20eed11d4ceda1e0d621940d11b7571f7789",
       "git_blob": "e61f2fed5216167e698f37123547864a94767867"
     },
+    "research_pass9/public_run_log.json": {
+      "bytes": 23453,
+      "sha256": "318eea5b76600615bce4fe4217191bf7f5b4ce9a7e39c0d682a25f29d3bb8f01",
+      "git_blob": "1ad6223e644977e4917bac84d9f3dcc2ad7fd842"
+    },
     "research_pass9/run_hf.py": {
       "bytes": 4223,
       "sha256": "f1d81beb6d77fd511f87057feb04c0bc9bb2c40954300baa28a322bf1917001e",
       "git_blob": "cd45a2bc0f1270d6f58de754f9fb364b0a7085c5"
+    },
+    "research_pass9/run_stop.json": {
+      "bytes": 1684,
+      "sha256": "cceab21bd892abc3b0353194140ece1e6a406d8701188ac4fb04d99acf1a4ca4",
+      "git_blob": "6d38b0229b3169158c6a119d7762a6abad138d15"
     },
     "research_pass9/runtime_manifest.json": {
       "bytes": 4591,
@@ -1539,5 +1574,7 @@
       "git_blob": "66c3c0e8cdd0bd3bbf4c10bd04b91056917b2ede"
     }
   },
-  "hf_codec_revision": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7"
+  "hf_codec_revision": "cd0d5691647a4f02cf765454a2d3b0abfde8f3b7",
+  "research_codec_change": "Pass 9 explicit per-encode release RNG; current public default retained; not deployed to HF",
+  "hf_prepared_not_deployed": "4237d954f4e1a04951c822c738113a53bbd58e9b"
 }

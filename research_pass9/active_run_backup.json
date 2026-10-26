@@ -1,0 +1,33 @@
+{
+  "bytes": 987136,
+  "sha256": "361a50f44476bf16f6aeb57612b7e62ae98cce3fdb09a5ff0f24d35e34204cfb",
+  "runs": [
+    [
+      "20260624_134736",
+      900
+    ],
+    [
+      "20260624_150209",
+      4500
+    ],
+    [
+      "20261026_141310",
+      945
+    ]
+  ],
+  "quick_check": "ok",
+  "observed_status": {
+    "running": true,
+    "run_id": "20261026_141310",
+    "done": 945,
+    "total": 9800,
+    "current": {
+      "trial": 1,
+      "codec": "AVIF",
+      "variant": "q95"
+    },
+    "started": 1793023986.5166032,
+    "error": null
+  },
+  "deployment_attempt": "Idle-state guard stopped before database export, HF commit push or restart; existing run preserved."
+}

@@ -1,0 +1,88 @@
+{
+  "before": {
+    "running": true,
+    "run_id": "20261026_141310",
+    "done": 995,
+    "total": 9800,
+    "current": {
+      "trial": 2,
+      "codec": "PBC3",
+      "variant": "compression"
+    },
+    "started": 1793023986.5166032,
+    "error": null
+  },
+  "stop_response": {
+    "stopping": true
+  },
+  "after": {
+    "running": false,
+    "run_id": "20261026_141310",
+    "done": 996,
+    "total": 9800,
+    "current": null,
+    "started": 1793023986.5166032,
+    "error": null
+  },
+  "backup": {
+    "bytes": 995328,
+    "sha256": "ceb40d7366f5c8291b1df2e09b848aed5702b6fb85eae09f0c06b3ffffd833a3",
+    "runs": [
+      [
+        "20260624_134736",
+        900
+      ],
+      [
+        "20260624_150209",
+        4500
+      ],
+      [
+        "20261026_141310",
+        996
+      ]
+    ],
+    "quick_check": "ok",
+    "columns": [
+      "id",
+      "ts",
+      "run_id",
+      "trial",
+      "codec",
+      "variant",
+      "q",
+      "image",
+      "mp",
+      "encode_seconds",
+      "decode_seconds",
+      "bpp",
+      "mse",
+      "psnr"
+    ]
+  },
+  "hf": {
+    "sha": "27f6c65225a5496fa065deb586c7e405ecdffc84",
+    "runtime": {
+      "stage": "RUNNING",
+      "hardware": {
+        "current": "cpu-basic",
+        "requested": "cpu-basic"
+      },
+      "gcTimeout": 172800,
+      "replicas": {
+        "current": 1,
+        "requested": 1
+      },
+      "devMode": false,
+      "domains": [
+        {
+          "domain": "egeeken-pbc.hf.space",
+          "stage": "READY"
+        }
+      ],
+      "sha": "27f6c65225a5496fa065deb586c7e405ecdffc84",
+      "pySpacesVersion": "0.51.3"
+    }
+  },
+  "deployment_performed": false,
+  "pass9_hf_benchmark_performed": false
+}

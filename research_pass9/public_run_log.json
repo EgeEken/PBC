@@ -1,0 +1,836 @@
+{
+  "run_id": "20261026_141310",
+  "hf_revision": "27f6c65225a5496fa065deb586c7e405ecdffc84",
+  "completed_rows": 996,
+  "planned_rows": 9800,
+  "complete_trials": 1,
+  "partial_second_trial": {
+    "codec": "PBC3",
+    "variant": "compression",
+    "rows": 16
+  },
+  "first_trial": {
+    "PBC3": {
+      "rows": 80,
+      "images": 20,
+      "variants": 4,
+      "encode_seconds": 0.5343916427285876,
+      "decode_seconds": 0.08220269269659183,
+      "screenshot_encode_seconds": 0.534,
+      "screenshot_decode_seconds": 0.082,
+      "screenshot_matching_first_trial_images": 20
+    },
+    "JPEG": {
+      "rows": 160,
+      "images": 20,
+      "variants": 8,
+      "encode_seconds": 0.01736836426134687,
+      "decode_seconds": 0.034151902352459726,
+      "screenshot_encode_seconds": 0.017,
+      "screenshot_decode_seconds": 0.034,
+      "screenshot_matching_first_trial_images": 20
+    },
+    "JPEG2000": {
+      "rows": 180,
+      "images": 20,
+      "variants": 9,
+      "encode_seconds": 2.792432229562352,
+      "decode_seconds": 0.8989725273438833,
+      "screenshot_encode_seconds": 2.792,
+      "screenshot_decode_seconds": 0.899,
+      "screenshot_matching_first_trial_images": 20
+    },
+    "WEBP": {
+      "rows": 180,
+      "images": 20,
+      "variants": 9,
+      "encode_seconds": 0.45609371658259384,
+      "decode_seconds": 0.055082264340793094,
+      "screenshot_encode_seconds": 0.456,
+      "screenshot_decode_seconds": 0.055,
+      "screenshot_matching_first_trial_images": 20
+    },
+    "JXL": {
+      "rows": 180,
+      "images": 20,
+      "variants": 9,
+      "encode_seconds": 1.8268458319646823,
+      "decode_seconds": 0.10695863328874111,
+      "screenshot_encode_seconds": 1.827,
+      "screenshot_decode_seconds": 0.107,
+      "screenshot_matching_first_trial_images": 20
+    },
+    "AVIF": {
+      "rows": 180,
+      "images": 20,
+      "variants": 9,
+      "encode_seconds": 1.1871664010130594,
+      "decode_seconds": 0.05550487048199607,
+      "screenshot_encode_seconds": 1.187,
+      "screenshot_decode_seconds": 0.056,
+      "screenshot_matching_first_trial_images": 20
+    },
+    "PNG": {
+      "rows": 20,
+      "images": 20,
+      "variants": 1,
+      "encode_seconds": 1.8782708730432205,
+      "decode_seconds": 0.1641180069418624,
+      "screenshot_encode_seconds": 3.104,
+      "screenshot_decode_seconds": 0.261,
+      "screenshot_matching_first_trial_images": 5
+    }
+  },
+  "pbc3_first_trial_presets": {
+    "compression": {
+      "encode_seconds": 0.4769232537015341,
+      "decode_seconds": 0.08383585426490754,
+      "mse": 277.6947629928589,
+      "bpp": 0.0786612033203099
+    },
+    "balanced": {
+      "encode_seconds": 0.5470070530544036,
+      "decode_seconds": 0.08286984829464927,
+      "mse": 195.79558258056642,
+      "bpp": 0.16986611499965673
+    },
+    "quality": {
+      "encode_seconds": 0.5115033245761879,
+      "decode_seconds": 0.07958857184275984,
+      "mse": 159.93939485549927,
+      "bpp": 0.3280581797472375
+    },
+    "high_quality": {
+      "encode_seconds": 0.6021329395822249,
+      "decode_seconds": 0.0825164963840507,
+      "mse": 143.85152974128724,
+      "bpp": 0.5356243656745671
+    }
+  },
+  "pbc3_first_trial_rows": [
+    {
+      "image": "cat.jpg",
+      "variant": "compression",
+      "mp": 8.5252,
+      "encode_seconds": 0.5947651269380003,
+      "decode_seconds": 0.10791353601962328,
+      "mse": 422.8449401855469,
+      "bpp": 0.007570041890004955
+    },
+    {
+      "image": "cathedral.png",
+      "variant": "compression",
+      "mp": 11.9954,
+      "encode_seconds": 0.8569053208921105,
+      "decode_seconds": 0.13479133206419647,
+      "mse": 531.497314453125,
+      "bpp": 0.017018509579914316
+    },
+    {
+      "image": "coast.jpg",
+      "variant": "compression",
+      "mp": 12.0077,
+      "encode_seconds": 0.9060769439674914,
+      "decode_seconds": 0.22616797895170748,
+      "mse": 83.8331527709961,
+      "bpp": 0.0036656539814518708
+    },
+    {
+      "image": "ducklings.jpg",
+      "variant": "compression",
+      "mp": 12.0077,
+      "encode_seconds": 0.7818115029949695,
+      "decode_seconds": 0.12705985992215574,
+      "mse": 84.57331848144531,
+      "bpp": 0.005255969512845113
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "compression",
+      "mp": 0.2372,
+      "encode_seconds": 0.19948601420037448,
+      "decode_seconds": 0.013360393000766635,
+      "mse": 141.5762481689453,
+      "bpp": 0.4160408822400904
+    },
+    {
+      "image": "field.jpg",
+      "variant": "compression",
+      "mp": 12.0077,
+      "encode_seconds": 0.6108271188568324,
+      "decode_seconds": 0.12587413215078413,
+      "mse": 125.97127532958984,
+      "bpp": 0.002665627331840955
+    },
+    {
+      "image": "flag.jpg",
+      "variant": "compression",
+      "mp": 6.4685,
+      "encode_seconds": 0.4752838129643351,
+      "decode_seconds": 0.08317878702655435,
+      "mse": 40.772274017333984,
+      "bpp": 0.006877591000385867
+    },
+    {
+      "image": "flower.jpg",
+      "variant": "compression",
+      "mp": 8.5252,
+      "encode_seconds": 0.47781825601123273,
+      "decode_seconds": 0.09182643983513117,
+      "mse": 99.120361328125,
+      "bpp": 0.008607908052189842
+    },
+    {
+      "image": "flowers.jpg",
+      "variant": "compression",
+      "mp": 12.0077,
+      "encode_seconds": 0.8605372989550233,
+      "decode_seconds": 0.13525149505585432,
+      "mse": 307.9304504394531,
+      "bpp": 0.010939665280886898
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "compression",
+      "mp": 0.661,
+      "encode_seconds": 0.18500571604818106,
+      "decode_seconds": 0.021144592901691794,
+      "mse": 1052.5784912109375,
+      "bpp": 0.34711514021858847
+    },
+    {
+      "image": "mario64.png",
+      "variant": "compression",
+      "mp": 0.9953,
+      "encode_seconds": 0.2478942507877946,
+      "decode_seconds": 0.03844312811270356,
+      "mse": 384.35064697265625,
+      "bpp": 0.10972865226337448
+    },
+    {
+      "image": "monet.jpg",
+      "variant": "compression",
+      "mp": 0.8451,
+      "encode_seconds": 0.1612663499545306,
+      "decode_seconds": 0.021027886075899005,
+      "mse": 187.31646728515625,
+      "bpp": 0.08915394627854692
+    },
+    {
+      "image": "monkey.png",
+      "variant": "compression",
+      "mp": 0.306,
+      "encode_seconds": 0.30216252198442817,
+      "decode_seconds": 0.02010729699395597,
+      "mse": 53.54736328125,
+      "bpp": 0.19908496732026143
+    },
+    {
+      "image": "panorama.png",
+      "variant": "compression",
+      "mp": 1.9984,
+      "encode_seconds": 0.23661942896433175,
+      "decode_seconds": 0.043834042036905885,
+      "mse": 246.7589569091797,
+      "bpp": 0.03362316751935564
+    },
+    {
+      "image": "park.jpg",
+      "variant": "compression",
+      "mp": 8.5276,
+      "encode_seconds": 0.7056680899113417,
+      "decode_seconds": 0.1662930049933493,
+      "mse": 535.72412109375,
+      "bpp": 0.02121402022241277
+    },
+    {
+      "image": "perlman.png",
+      "variant": "compression",
+      "mp": 4.0895,
+      "encode_seconds": 0.5025531598366797,
+      "decode_seconds": 0.09988275892101228,
+      "mse": 259.5046081542969,
+      "bpp": 0.0176039918552928
+    },
+    {
+      "image": "ratedistortion.png",
+      "variant": "compression",
+      "mp": 0.1995,
+      "encode_seconds": 0.11861126986332238,
+      "decode_seconds": 0.012774102156981826,
+      "mse": 337.18609619140625,
+      "bpp": 0.22300629485585982
+    },
+    {
+      "image": "seagull.jpg",
+      "variant": "compression",
+      "mp": 4.7001,
+      "encode_seconds": 0.5394214990083128,
+      "decode_seconds": 0.06015866994857788,
+      "mse": 161.66384887695312,
+      "bpp": 0.014556174544736579
+    },
+    {
+      "image": "stockpoint.jpg",
+      "variant": "compression",
+      "mp": 1.1271,
+      "encode_seconds": 0.1999608960468322,
+      "decode_seconds": 0.024874204071238637,
+      "mse": 54.8720703125,
+      "bpp": 0.033672256232809866
+    },
+    {
+      "image": "sunset.jpg",
+      "variant": "compression",
+      "mp": 12.0077,
+      "encode_seconds": 0.5757904958445579,
+      "decode_seconds": 0.12275344505906105,
+      "mse": 442.27325439453125,
+      "bpp": 0.00582360622534911
+    },
+    {
+      "image": "cat.jpg",
+      "variant": "balanced",
+      "mp": 8.5252,
+      "encode_seconds": 0.46151551604270935,
+      "decode_seconds": 0.23131950106471777,
+      "mse": 388.340576171875,
+      "bpp": 0.015149467741693318
+    },
+    {
+      "image": "cathedral.png",
+      "variant": "balanced",
+      "mp": 11.9954,
+      "encode_seconds": 0.8123318268917501,
+      "decode_seconds": 0.12370315007865429,
+      "mse": 410.2379455566406,
+      "bpp": 0.035803027991540094
+    },
+    {
+      "image": "coast.jpg",
+      "variant": "balanced",
+      "mp": 12.0077,
+      "encode_seconds": 1.0293553390074521,
+      "decode_seconds": 0.12285826983861625,
+      "mse": 45.15230178833008,
+      "bpp": 0.007441903848203816
+    },
+    {
+      "image": "ducklings.jpg",
+      "variant": "balanced",
+      "mp": 12.0077,
+      "encode_seconds": 0.9226659641135484,
+      "decode_seconds": 0.18549370882101357,
+      "mse": 67.38744354248047,
+      "bpp": 0.008124800127918132
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "balanced",
+      "mp": 0.2372,
+      "encode_seconds": 0.37367106112651527,
+      "decode_seconds": 0.028385819867253304,
+      "mse": 71.65925598144531,
+      "bpp": 0.9611374167787528
+    },
+    {
+      "image": "field.jpg",
+      "variant": "balanced",
+      "mp": 12.0077,
+      "encode_seconds": 0.887991103110835,
+      "decode_seconds": 0.12147672800347209,
+      "mse": 96.58941650390625,
+      "bpp": 0.008406619763351456
+    },
+    {
+      "image": "flag.jpg",
+      "variant": "balanced",
+      "mp": 6.4685,
+      "encode_seconds": 0.8128851670771837,
+      "decode_seconds": 0.0741557099390775,
+      "mse": 27.33496856689453,
+      "bpp": 0.011251991174520882
+    },
+    {
+      "image": "flower.jpg",
+      "variant": "balanced",
+      "mp": 8.5252,
+      "encode_seconds": 0.537847365019843,
+      "decode_seconds": 0.09724788600578904,
+      "mse": 70.95518493652344,
+      "bpp": 0.014849180967824272
+    },
+    {
+      "image": "flowers.jpg",
+      "variant": "balanced",
+      "mp": 12.0077,
+      "encode_seconds": 0.8659491471480578,
+      "decode_seconds": 0.12248065997846425,
+      "mse": 195.06666564941406,
+      "bpp": 0.023590901822833386
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "balanced",
+      "mp": 0.661,
+      "encode_seconds": 0.2903608661144972,
+      "decode_seconds": 0.025166434003040195,
+      "mse": 839.7217407226562,
+      "bpp": 0.6435409883685745
+    },
+    {
+      "image": "mario64.png",
+      "variant": "balanced",
+      "mp": 0.9953,
+      "encode_seconds": 0.36310365214012563,
+      "decode_seconds": 0.03031165897846222,
+      "mse": 197.72824096679688,
+      "bpp": 0.3016171553497942
+    },
+    {
+      "image": "monet.jpg",
+      "variant": "balanced",
+      "mp": 0.8451,
+      "encode_seconds": 0.2849073519464582,
+      "decode_seconds": 0.02387353591620922,
+      "mse": 149.6653289794922,
+      "bpp": 0.15804046858359957
+    },
+    {
+      "image": "monkey.png",
+      "variant": "balanced",
+      "mp": 0.306,
+      "encode_seconds": 0.5373643529601395,
+      "decode_seconds": 0.02127834502607584,
+      "mse": 36.647987365722656,
+      "bpp": 0.3144313725490196
+    },
+    {
+      "image": "panorama.png",
+      "variant": "balanced",
+      "mp": 1.9984,
+      "encode_seconds": 0.3655224300455302,
+      "decode_seconds": 0.04006147920154035,
+      "mse": 147.17041015625,
+      "bpp": 0.11000088071161498
+    },
+    {
+      "image": "park.jpg",
+      "variant": "balanced",
+      "mp": 8.5276,
+      "encode_seconds": 0.6205060200300068,
+      "decode_seconds": 0.09439716604538262,
+      "mse": 339.6839904785156,
+      "bpp": 0.049935925459638666
+    },
+    {
+      "image": "perlman.png",
+      "variant": "balanced",
+      "mp": 4.0895,
+      "encode_seconds": 0.31164114689454436,
+      "decode_seconds": 0.07151008793152869,
+      "mse": 228.08766174316406,
+      "bpp": 0.028670308326610876
+    },
+    {
+      "image": "ratedistortion.png",
+      "variant": "balanced",
+      "mp": 0.1995,
+      "encode_seconds": 0.16414008615538478,
+      "decode_seconds": 0.009665231918916106,
+      "mse": 89.7920150756836,
+      "bpp": 0.5968886572310653
+    },
+    {
+      "image": "seagull.jpg",
+      "variant": "balanced",
+      "mp": 4.7001,
+      "encode_seconds": 0.3971399781294167,
+      "decode_seconds": 0.05866581108421087,
+      "mse": 109.01686096191406,
+      "bpp": 0.037353812740737714
+    },
+    {
+      "image": "stockpoint.jpg",
+      "variant": "balanced",
+      "mp": 1.1271,
+      "encode_seconds": 0.21349774999544024,
+      "decode_seconds": 0.02783942106179893,
+      "mse": 42.86906051635742,
+      "bpp": 0.05613698873214444
+    },
+    {
+      "image": "sunset.jpg",
+      "variant": "balanced",
+      "mp": 12.0077,
+      "encode_seconds": 0.6877449371386319,
+      "decode_seconds": 0.14750636112876236,
+      "mse": 362.8045959472656,
+      "bpp": 0.014950431723696833
+    },
+    {
+      "image": "cat.jpg",
+      "variant": "quality",
+      "mp": 8.5252,
+      "encode_seconds": 0.5618741731159389,
+      "decode_seconds": 0.09275858290493488,
+      "mse": 301.371826171875,
+      "bpp": 0.06090848009849406
+    },
+    {
+      "image": "cathedral.png",
+      "variant": "quality",
+      "mp": 11.9954,
+      "encode_seconds": 0.8710919190198183,
+      "decode_seconds": 0.13270202814601362,
+      "mse": 378.02447509765625,
+      "bpp": 0.06223046982137334
+    },
+    {
+      "image": "coast.jpg",
+      "variant": "quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.6999965200666338,
+      "decode_seconds": 0.1315364318434149,
+      "mse": 31.386518478393555,
+      "bpp": 0.01467194328962797
+    },
+    {
+      "image": "ducklings.jpg",
+      "variant": "quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.5648764481302351,
+      "decode_seconds": 0.1186083760112524,
+      "mse": 51.62675857543945,
+      "bpp": 0.01694848630209999
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "quality",
+      "mp": 0.2372,
+      "encode_seconds": 0.3512720721773803,
+      "decode_seconds": 0.01420781691558659,
+      "mse": 25.166746139526367,
+      "bpp": 1.8629416154725111
+    },
+    {
+      "image": "field.jpg",
+      "variant": "quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.6338985678739846,
+      "decode_seconds": 0.1195114329457283,
+      "mse": 89.33915710449219,
+      "bpp": 0.015765243577443768
+    },
+    {
+      "image": "flag.jpg",
+      "variant": "quality",
+      "mp": 6.4685,
+      "encode_seconds": 0.4897089849691838,
+      "decode_seconds": 0.10234256298281252,
+      "mse": 19.597389221191406,
+      "bpp": 0.020808392120390616
+    },
+    {
+      "image": "flower.jpg",
+      "variant": "quality",
+      "mp": 8.5252,
+      "encode_seconds": 0.5148159980308264,
+      "decode_seconds": 0.09844527509994805,
+      "mse": 44.3052978515625,
+      "bpp": 0.028849113403300153
+    },
+    {
+      "image": "flowers.jpg",
+      "variant": "quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.7276299290824682,
+      "decode_seconds": 0.12226132396608591,
+      "mse": 162.7887725830078,
+      "bpp": 0.040595352307856304
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "quality",
+      "mp": 0.661,
+      "encode_seconds": 0.588550009066239,
+      "decode_seconds": 0.026678781025111675,
+      "mse": 799.0845336914062,
+      "bpp": 0.9743285605354571
+    },
+    {
+      "image": "mario64.png",
+      "variant": "quality",
+      "mp": 0.9953,
+      "encode_seconds": 0.39315302087925375,
+      "decode_seconds": 0.03350314893759787,
+      "mse": 136.13983154296875,
+      "bpp": 0.5870386445473251
+    },
+    {
+      "image": "monet.jpg",
+      "variant": "quality",
+      "mp": 0.8451,
+      "encode_seconds": 0.2782554430887103,
+      "decode_seconds": 0.025648270035162568,
+      "mse": 94.17086791992188,
+      "bpp": 0.544266950656727
+    },
+    {
+      "image": "monkey.png",
+      "variant": "quality",
+      "mp": 0.306,
+      "encode_seconds": 0.28536536800675094,
+      "decode_seconds": 0.019729946041479707,
+      "mse": 23.277790069580078,
+      "bpp": 0.596
+    },
+    {
+      "image": "panorama.png",
+      "variant": "quality",
+      "mp": 1.9984,
+      "encode_seconds": 0.4423659429885447,
+      "decode_seconds": 0.1774691480677575,
+      "mse": 106.52820587158203,
+      "bpp": 0.19767171874874898
+    },
+    {
+      "image": "park.jpg",
+      "variant": "quality",
+      "mp": 8.5276,
+      "encode_seconds": 0.607998905936256,
+      "decode_seconds": 0.09612935688346624,
+      "mse": 301.4692687988281,
+      "bpp": 0.08636647635058436
+    },
+    {
+      "image": "perlman.png",
+      "variant": "quality",
+      "mp": 4.0895,
+      "encode_seconds": 0.33028990705497563,
+      "decode_seconds": 0.054528408916667104,
+      "mse": 190.38511657714844,
+      "bpp": 0.08076630867090498
+    },
+    {
+      "image": "ratedistortion.png",
+      "variant": "quality",
+      "mp": 0.1995,
+      "encode_seconds": 0.304996961960569,
+      "decode_seconds": 0.014082557056099176,
+      "mse": 37.644012451171875,
+      "bpp": 1.103003087285995
+    },
+    {
+      "image": "seagull.jpg",
+      "variant": "quality",
+      "mp": 4.7001,
+      "encode_seconds": 0.7085216119885445,
+      "decode_seconds": 0.06135366787202656,
+      "mse": 65.96382904052734,
+      "bpp": 0.10737221220832759
+    },
+    {
+      "image": "stockpoint.jpg",
+      "variant": "quality",
+      "mp": 1.1271,
+      "encode_seconds": 0.17787820403464139,
+      "decode_seconds": 0.02582620014436543,
+      "mse": 28.954084396362305,
+      "bpp": 0.11466595688048975
+    },
+    {
+      "image": "sunset.jpg",
+      "variant": "quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.6975265040528029,
+      "decode_seconds": 0.12444812105968595,
+      "mse": 311.56341552734375,
+      "bpp": 0.04596458266709306
+    },
+    {
+      "image": "cat.jpg",
+      "variant": "high_quality",
+      "mp": 8.5252,
+      "encode_seconds": 0.7511477170046419,
+      "decode_seconds": 0.09857490193098783,
+      "mse": 293.3438415527344,
+      "bpp": 0.07131341681305647
+    },
+    {
+      "image": "cathedral.png",
+      "variant": "high_quality",
+      "mp": 11.9954,
+      "encode_seconds": 0.8690624029841274,
+      "decode_seconds": 0.12612115289084613,
+      "mse": 370.3085632324219,
+      "bpp": 0.08285102384995593
+    },
+    {
+      "image": "coast.jpg",
+      "variant": "high_quality",
+      "mp": 12.0077,
+      "encode_seconds": 1.1272525629028678,
+      "decode_seconds": 0.22939219302497804,
+      "mse": 22.02031898498535,
+      "bpp": 0.027461757808336
+    },
+    {
+      "image": "ducklings.jpg",
+      "variant": "high_quality",
+      "mp": 12.0077,
+      "encode_seconds": 1.0414887021761388,
+      "decode_seconds": 0.12725326907821,
+      "mse": 33.97525405883789,
+      "bpp": 0.046580854919518175
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "high_quality",
+      "mp": 0.2372,
+      "encode_seconds": 0.4403497108723968,
+      "decode_seconds": 0.02018063492141664,
+      "mse": 19.694011688232422,
+      "bpp": 2.8360873469972887
+    },
+    {
+      "image": "field.jpg",
+      "variant": "high_quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.8287532620597631,
+      "decode_seconds": 0.12525678798556328,
+      "mse": 76.45206451416016,
+      "bpp": 0.040089009700458374
+    },
+    {
+      "image": "flag.jpg",
+      "variant": "high_quality",
+      "mp": 6.4685,
+      "encode_seconds": 0.46924256393685937,
+      "decode_seconds": 0.10533175384625793,
+      "mse": 14.790727615356445,
+      "bpp": 0.03328724362082101
+    },
+    {
+      "image": "flower.jpg",
+      "variant": "high_quality",
+      "mp": 8.5252,
+      "encode_seconds": 0.5166033538989723,
+      "decode_seconds": 0.09973784000612795,
+      "mse": 35.94158172607422,
+      "bpp": 0.04788823326276594
+    },
+    {
+      "image": "flowers.jpg",
+      "variant": "high_quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.8501143432222307,
+      "decode_seconds": 0.13065869198180735,
+      "mse": 151.54800415039062,
+      "bpp": 0.06228147319049142
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "high_quality",
+      "mp": 0.661,
+      "encode_seconds": 0.5221991499420255,
+      "decode_seconds": 0.0336494199000299,
+      "mse": 703.341552734375,
+      "bpp": 2.240423136974861
+    },
+    {
+      "image": "mario64.png",
+      "variant": "high_quality",
+      "mp": 0.9953,
+      "encode_seconds": 0.479513559024781,
+      "decode_seconds": 0.033356026047840714,
+      "mse": 133.7207794189453,
+      "bpp": 0.7256221064814815
+    },
+    {
+      "image": "monet.jpg",
+      "variant": "high_quality",
+      "mp": 0.8451,
+      "encode_seconds": 0.31888808216899633,
+      "decode_seconds": 0.03110997099429369,
+      "mse": 58.211360931396484,
+      "bpp": 1.1524316648917288
+    },
+    {
+      "image": "monkey.png",
+      "variant": "high_quality",
+      "mp": 0.306,
+      "encode_seconds": 0.26053471816703677,
+      "decode_seconds": 0.029206055216491222,
+      "mse": 13.833106994628906,
+      "bpp": 0.8301960784313726
+    },
+    {
+      "image": "panorama.png",
+      "variant": "high_quality",
+      "mp": 1.9984,
+      "encode_seconds": 0.49478052486665547,
+      "decode_seconds": 0.03977849707007408,
+      "mse": 95.76394653320312,
+      "bpp": 0.3215918462117391
+    },
+    {
+      "image": "park.jpg",
+      "variant": "high_quality",
+      "mp": 8.5276,
+      "encode_seconds": 0.7375473640859127,
+      "decode_seconds": 0.10146115999668837,
+      "mse": 288.6747131347656,
+      "bpp": 0.14347631118274284
+    },
+    {
+      "image": "perlman.png",
+      "variant": "high_quality",
+      "mp": 4.0895,
+      "encode_seconds": 0.4415113490540534,
+      "decode_seconds": 0.06343298079445958,
+      "mse": 183.39537048339844,
+      "bpp": 0.1037088152248414
+    },
+    {
+      "image": "ratedistortion.png",
+      "variant": "high_quality",
+      "mp": 0.1995,
+      "encode_seconds": 0.3102629310451448,
+      "decode_seconds": 0.017105967039242387,
+      "mse": 15.47176456451416,
+      "bpp": 1.4731566496932762
+    },
+    {
+      "image": "seagull.jpg",
+      "variant": "high_quality",
+      "mp": 4.7001,
+      "encode_seconds": 0.4329062451142818,
+      "decode_seconds": 0.08070571580901742,
+      "mse": 60.52898406982422,
+      "bpp": 0.16974657754584122
+    },
+    {
+      "image": "stockpoint.jpg",
+      "variant": "high_quality",
+      "mp": 1.1271,
+      "encode_seconds": 0.41198607813566923,
+      "decode_seconds": 0.029125045984983444,
+      "mse": 16.291290283203125,
+      "bpp": 0.20048620353118624
+    },
+    {
+      "image": "sunset.jpg",
+      "variant": "high_quality",
+      "mp": 12.0077,
+      "encode_seconds": 0.7385141709819436,
+      "decode_seconds": 0.12889186316169798,
+      "mse": 289.7233581542969,
+      "bpp": 0.10380756315957787
+    }
+  ],
+  "database_sha256": "ceb40d7366f5c8291b1df2e09b848aed5702b6fb85eae09f0c06b3ffffd833a3",
+  "screenshot_sha256": "7a06e7e4ce21ecfc22881e5578a344bab2f0cc45d4fabcb05d0674778228f80a",
+  "screenshot_provenance": "Displayed three-decimal values match first-trial six-codec full coverage and PNG first five images; filters/run selector are not visible in the screenshot.",
+  "controlled_pass9_comparison": false
+}
