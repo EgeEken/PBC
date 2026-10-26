@@ -1,0 +1,5 @@
+{
+  "proceed": true,
+  "reason": "Fixed replay identity matches all 18 control trajectories. Actual fixed-stream HQ t=0.1 improves all five overlapping Q-HQ cases; 500k/35 t=0.4 improves five of six all-rate cases. This supports the integrated geometry-evolving test, not release acceptance. Weights stay 0.1/0.4/0.8; no new model/geometry/budget knobs.",
+  "historical_decision_commit": "3e9e8c94b7497ecefc5e482a66fde697dfad6e19"
+}

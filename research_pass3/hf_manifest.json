@@ -1,0 +1,49 @@
+{
+  "current_modules_lf": {
+    "PBC3.py": "b58e2a931bb6ebb908028279790c7fc479ff3ce748227ec6cabd35994cce5ebd",
+    "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+    "pbc3_ops.py": "07b33b8fb4828c1fe984105737ec246436c6d67680f152189b49eb3818abd021",
+    "pbc3_heads.py": "4f4d84d699d0270bd3d60749b94546613b0ea1bd4eab8d201e22d47dab6da42d",
+    "pbc3_features.py": "f6f19e560072636bc733b5b0885daace4ea724bd0100672dfcd0a2628c293c33",
+    "learned_filler.py": "f86a0e4090a8c725b0f0c542b8d27387c01bbbb4ee4620b41193da196621122c",
+    "pbc3_stream.py": "a2342d081ee1399dc0794185fca3999f75eaf6d9ad42160cd636ededccc30edd",
+    "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594"
+  },
+  "reference_modules_lf": {
+    "PBC3.py": "ab3988d9d39a1937c545a89b827fbb0b6982a573f498e5c81686b42cd501bd34",
+    "pbc3_types.py": "cc3c092cd100591765fb824a0ef93b9d01f169cbfe440f4b67efb1180d7638c9",
+    "pbc3_ops.py": "5778344d8a0eacee26019804ca988af022131f6c414ac6bcc196012a038fc401",
+    "pbc3_heads.py": "6f26c54b143eaa2b306343db6335685043baf4e7c1a5b188d3c5f7032cf65476",
+    "pbc3_features.py": "a5e74cd7497081694fee015a5605357367fc5c850875ee56c21ab61dc52a013e",
+    "learned_filler.py": "6a1d5b4ba77ffd7e5038dc7d8a44898cf5605316db742c2991f3b6b73eef0a08"
+  },
+  "candidate_lf": "66f7803e438e70fd048cafcdda936bcd2a7a4a09da41037550da38da620900a6",
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "inputs": {
+    "hpt_data/cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "hpt_data/cathedral.png": "d7a3859fcbbe118daf8f3ea1f2daf120d6d38be474ab2ee845d6802675b21bf1",
+    "hpt_data/coast.jpg": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+    "hpt_data/ducklings.jpg": "3f9857490373bd56a5ca9d173998aea94a3d356fa2bbeef4ca41728584f1da43",
+    "hpt_data/eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e",
+    "hpt_data/field.jpg": "c14f283e160ca729615378dbed4ddaeaa36768401105081fcb5ae3efb578e982",
+    "hpt_data/flag.jpg": "6eeb01e6c10985fc5d71fa2f8bd223250391f7780cfb3b8d615bdba24f2de1e5",
+    "hpt_data/flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+    "hpt_data/flowers.jpg": "9f8b040449e59975e26d6ddc8d4a48b366e8fda7aa7161b9eecf0223bb5d9b40",
+    "hpt_data/googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+    "hpt_data/mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+    "hpt_data/monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+    "hpt_data/monkey.png": "c0dd08960b30afb33f1a34f2528905d39fd492cc11d2362fcc3d666944972566",
+    "hpt_data/panorama.png": "67c9cf7b3c451dad7d49386553bcc11572b95cf636ea6a4a6c38e9c12ffcd95d",
+    "hpt_data/park.jpg": "96640a11a732044b81d575b84af1d05cda79fcb6b39bc097a8455145fc5c0ef4",
+    "hpt_data/perlman.png": "d1104b1539e3264ac3cf9783bcc8fd34cb6f3266b5ae4d7301e01cde748a16a9",
+    "hpt_data/ratedistortion.png": "e2fc378ea28312d303c38934d88968913f1018744e7d68f92dfaf7c5bb0a6c10",
+    "hpt_data/seagull.jpg": "d44f39a33b0c39d2ab6442dd3a606f6becb5ac3e91165a4a48c37b1aca5c2639",
+    "hpt_data/stockpoint.jpg": "3175eac094fa5b7f9641eb0873ddc3b9b544259c5620e3f1a3b82ad982f1e030",
+    "hpt_data/sunset.jpg": "e6ed612e51170d488dca3fdc5978a152c68c4a9173e972351719d3f59b96c0b6",
+    "hpt_data_val/15k_kills.png": "c8bdaac8f41d7231e7d8ed2ed280b3fc430d5b5222a0577c6ae6c1863678759c",
+    "hpt_data_val/ducks.jpg": "0af7df42c1dd22d4cf022d5200560d30c876acd20846bdfd54b7e92fdee825c1",
+    "hpt_data_val/old_man_standing.jpg": "a4a8b1d0b718c5faf41b6b9f57097ddb0be74adffd967bfeedd0e776d3b1922c",
+    "hpt_data_val/pigeon.JPG": "2e61640bdeae1c67d7b26a010deb7495477183cc30ffbbb2dde76ae8ae7477ee",
+    "hpt_data_val/pigeons.JPG": "f51db7c65634348b7364e97f9c0fd0045cdf51f6ab9ed3d4ada080b42feeaa7c"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "basis": "Corrected same-runtime cProfile: ordinary to allocator search calls 30.33 to35, exact scoring30.33 to104.83, projection/make_patch39.33 to113.83. Additional search/features are real trajectory work. Raw rate calculation is negligible; do not optimize LZMA/model/beam.",
+  "methods": [
+    "Reuse the original projected residual grid for a lower-precision representation at the same unchanged box/cell",
+    "Reuse the exact clipped before-SSE scalar across representations of the same unchanged box"
+  ],
+  "scope": "Fresh cache per legacy build_action; cache ends before applying any patch; original frozen selector still chooses all representations. All cache initialization/closure/state/restoration overhead is charged inside compress. No array/score is reused across boxes, mutations, steps or encodes.",
+  "screen": "Require24 six-image full-output/decision matches to frozen Pass3 before timing90 rows, three interleaved repeats.",
+  "promotion_gate": "Composite exactness, at least2% reduction in six-image mean per-case median encode, at least4/6 wins, and no image slower by more than10%. Otherwise stop broad promotion; retain negative result. No third method.",
+  "qualified_confirmation": "If gate passes, all25 images ordinary/frozen/composite, three repeats; optional equal-fast-runtime comparison only if the full composite remains favorable. No new weight or quality tuning."
+}

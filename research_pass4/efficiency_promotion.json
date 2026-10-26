@@ -1,0 +1,12 @@
+{
+  "full": false,
+  "fast": false,
+  "decision": "Stop cost branch at the predetermined screen gate. Composition preserves files/pixels/decisions but reduces mean per-case median encode only0.8977%, below2%. Five of six image medians improve, with no large regression. Projection alone is+1.0403%, before-SSE alone-0.4054%. These are small point estimates comparable to variation, not a substantial whole-codec saving. No broad timing or optional fast allocation composition is justified.",
+  "baseline_seconds": 0.8282609999878332,
+  "composite_seconds": 0.8208255166925179,
+  "composite_encode_pct": -0.897722251249855,
+  "wins": 5,
+  "images": 6,
+  "exact": true,
+  "additional_methods": 0
+}

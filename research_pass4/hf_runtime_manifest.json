@@ -1,0 +1,20 @@
+{
+  "source_lf": {
+    "PBC3.py": "b58e2a931bb6ebb908028279790c7fc479ff3ce748227ec6cabd35994cce5ebd",
+    "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+    "pbc3_ops.py": "07b33b8fb4828c1fe984105737ec246436c6d67680f152189b49eb3818abd021",
+    "pbc3_heads.py": "4f4d84d699d0270bd3d60749b94546613b0ea1bd4eab8d201e22d47dab6da42d",
+    "pbc3_features.py": "f6f19e560072636bc733b5b0885daace4ea724bd0100672dfcd0a2628c293c33",
+    "learned_filler.py": "f86a0e4090a8c725b0f0c542b8d27387c01bbbb4ee4620b41193da196621122c",
+    "pbc3_stream.py": "a2342d081ee1399dc0794185fca3999f75eaf6d9ad42160cd636ededccc30edd",
+    "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+    "research_pass4/hf_candidate_grid.py": "66f7803e438e70fd048cafcdda936bcd2a7a4a09da41037550da38da620900a6",
+    "research_pass4/hf_candidate_search.py": "15592c9c7f088897752857219023a8af41655084738041353e601307d6674823",
+    "research_pass4/hf_runtime_job.py": "d451c0a4aa74534ac0289e791691b65a9ae72c9167d2dfcb8341d41b5eb1c17c"
+  },
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "inputs": {
+    "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+    "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72"
+  }
+}

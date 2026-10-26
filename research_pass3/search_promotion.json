@@ -1,0 +1,5 @@
+{
+  "variant": "rectangles",
+  "reason": "Both candidates match all 48 verified image/preset checks, including 1178 full maps and proposal/RNG comparisons. Rectangle map updates screen -8.45% encode with 22/24 wins; score-only sharing -3.93% with 20/24. Promote only rectangles. Additional signed/clipped/RGBA/warmup/repeated-context checks passed.",
+  "historical_decision_commit": "3e9e8c94b7497ecefc5e482a66fde697dfad6e19"
+}
