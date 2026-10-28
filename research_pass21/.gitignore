@@ -1,0 +1,14 @@
+__pycache__/
+artifacts/
+*.log
+*_raw.json
+!coefficients.json
+!files.json
+!timings.json
+!decode_profile.json
+!validation.json
+!comparisons.json
+!provenance.json
+!coefficients.csv
+!files.csv
+!other_controls.json
