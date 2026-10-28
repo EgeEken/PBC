@@ -1,0 +1,13 @@
+__pycache__/
+artifacts/
+*.log
+*_raw.json
+!costs.json
+!screen.json
+!timings.json
+!validation.json
+!comparisons.json
+!provenance.json
+!files.csv
+!cost_details.json
+!control_times.json
