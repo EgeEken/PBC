@@ -1,0 +1,11 @@
+__pycache__/
+artifacts/
+*.log
+*_raw.json
+!diagnostics.json
+!frozen_results.json
+!representation.json
+!validation.json
+!provenance.json
+!summary.json
+!decisions.csv
