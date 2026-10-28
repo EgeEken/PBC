@@ -1,4 +1,5 @@
 import numpy as np
+from numba import njit
 
 
 FEATURE_NAMES = [
@@ -34,6 +35,45 @@ def extract_global_features(target, canvas, channel: int, step: int = 0, patch_c
     }
 
 
+@njit(cache=True)
+def _integer_order_stats(flat, lo, hi):
+    counts = np.zeros(hi - lo + 1, dtype=np.int64)
+    for value in flat:
+        counts[int(value) - lo] += 1
+    ranks = np.array([0.05, 0.25, 0.5, 0.75, 0.95]) * (flat.size - 1)
+    lower = np.floor(ranks).astype(np.int64)
+    upper = np.ceil(ranks).astype(np.int64)
+    a = np.empty(5, dtype=np.float64)
+    b = np.empty(5, dtype=np.float64)
+    cumulative = 0
+    unique = 0
+    previous = np.inf
+    for i in range(counts.size):
+        count = counts[i]
+        if count == 0:
+            continue
+        value = float(i + lo)
+        quantized = np.rint(value / 2.0)
+        if quantized != previous:
+            unique += 1
+            previous = quantized
+        end = cumulative + count
+        for j in range(5):
+            if cumulative <= lower[j] < end:
+                a[j] = value
+            if cumulative <= upper[j] < end:
+                b[j] = value
+        cumulative = end
+    for j in range(5):
+        gamma = ranks[j] - lower[j]
+        diff = b[j] - a[j]
+        if gamma >= 0.5:
+            a[j] = b[j] - diff * (1.0 - gamma)
+        else:
+            a[j] = a[j] + diff * gamma
+    return a, unique / flat.size
+
+
 def extract_features(target, canvas, box, step: int, q: float, image_w: int, image_h: int, patch_count: int, n_channels: int) -> np.ndarray:
     """## Returns the full learned-filler feature vector for one candidate box"""
     c, x, y, bw, bh = box
@@ -44,12 +84,17 @@ def extract_features(target, canvas, box, step: int, q: float, image_w: int, ima
     flat = res.ravel()
     n = max(1, flat.size)
     absflat = np.abs(flat)
-    p05, p25, p50, p75, p95 = np.percentile(flat, [5, 25, 50, 75, 95])
+    lo, hi = flat.min(), flat.max()
+    if target.dtype.kind in "iu" and canvas.dtype.kind in "iu" and -2**52 <= lo <= hi <= 2**52 and hi - lo <= 65535:
+        percentiles, uniq = _integer_order_stats(flat, int(lo), int(hi))
+        p05, p25, p50, p75, p95 = percentiles
+    else:
+        p05, p25, p50, p75, p95 = np.percentile(flat, [5, 25, 50, 75, 95])
+        uniq = np.unique(np.rint(flat / 2.0)).size / n
     dx = float(np.abs(np.diff(res, axis=1)).mean()) if bw > 1 else 0.0
     dy = float(np.abs(np.diff(res, axis=0)).mean()) if bh > 1 else 0.0
     lapx = float(np.abs(res[:, 2:] - 2 * res[:, 1:-1] + res[:, :-2]).mean()) if bw > 2 else 0.0
     lapy = float(np.abs(res[2:] - 2 * res[1:-1] + res[:-2]).mean()) if bh > 2 else 0.0
-    uniq = np.unique(np.rint(flat / 2.0)).size / n
     return np.array([
         bw / image_w,
         bh / image_h,
