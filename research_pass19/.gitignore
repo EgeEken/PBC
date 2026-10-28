@@ -1,0 +1,12 @@
+__pycache__/
+artifacts/
+*.log
+*_raw.json
+!feasibility.json
+!results.json
+!timings.json
+!validation.json
+!provenance.json
+!summary.json
+!regions.csv
+!files.csv
