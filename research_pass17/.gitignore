@@ -1,0 +1,14 @@
+__pycache__/
+artifacts/
+*.log
+*_raw.json
+!baseline.json
+!extra_controls.json
+!hybrid_results.json
+!targeted_controls.json
+!tiles_results.json
+!timings.json
+!validation.json
+!rd_comparisons.json
+!provenance.json
+!measurements.csv

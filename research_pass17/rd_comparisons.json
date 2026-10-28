@@ -1,0 +1,451 @@
+{
+  "comparison_method": "Actual files first. Strongest measured ordinary control within 5% is shown with signed rate gap. Matched-rate interpolation uses the minimum MSE over all valid measured ordinary brackets (a conservative lower-chord envelope); no extrapolation. Bracket endpoints/weights are retained. This is an estimate, not an achievable interpolated file.",
+  "comparisons": [
+    {
+      "image": "cat.jpg",
+      "step": 32,
+      "bytes": 1042473,
+      "rgb_mse": 16.01950221836854,
+      "hq_rate_change_percent": 1221.292047960658,
+      "hq_mse_change_percent": -94.53508671872069,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "cat.jpg",
+      "step": 64,
+      "bytes": 550737,
+      "rgb_mse": 41.18813322191443,
+      "hq_rate_change_percent": 598.0367056199143,
+      "hq_mse_change_percent": -85.94902805297873,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "cat.jpg",
+      "step": 128,
+      "bytes": 239853,
+      "rgb_mse": 91.1259875837675,
+      "hq_rate_change_percent": 204.00390377449366,
+      "hq_mse_change_percent": -68.91316515158606,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "flower.jpg",
+      "step": 32,
+      "bytes": 244104,
+      "rgb_mse": 5.06503249665931,
+      "hq_rate_change_percent": 429.57868703084995,
+      "hq_mse_change_percent": -85.46238550346601,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "flower.jpg",
+      "step": 64,
+      "bytes": 139956,
+      "rgb_mse": 10.502158193887663,
+      "hq_rate_change_percent": 203.63170911615396,
+      "hq_mse_change_percent": -69.85679217160924,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "flower.jpg",
+      "step": 128,
+      "bytes": 80752,
+      "rgb_mse": 22.832166437698003,
+      "hq_rate_change_percent": 75.18982947889097,
+      "hq_mse_change_percent": -34.46730420567297,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "monet.jpg",
+      "step": 32,
+      "bytes": 177670,
+      "rgb_mse": 22.192676211888138,
+      "hq_rate_change_percent": 36.50227798308223,
+      "hq_mse_change_percent": -58.884261347006394,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "monet.jpg",
+      "step": 64,
+      "bytes": 96146,
+      "rgb_mse": 50.16891965447876,
+      "hq_rate_change_percent": -26.131884848531417,
+      "hq_mse_change_percent": -7.0534725365108635,
+      "strictly_dominates_hq": true,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": {
+        "value": 71.50868771083437,
+        "a": "quality",
+        "b": "high_quality_p10",
+        "x_a": 53871,
+        "x_b": 102264,
+        "y_a": 96.79610854731196,
+        "y_b": 67.84911489764525,
+        "weight": 0.8735767569689831
+      },
+      "interpolated_matched_rate_mse_change_percent": -29.842203429391677,
+      "best_measured_within5pct": {
+        "preset": "high_quality_p8",
+        "bytes": 94410,
+        "rgb_mse": 82.06288171025125,
+        "signed_rate_gap_percent": 1.8387882639550934,
+        "mse_change_percent": -38.86527183920268
+      }
+    },
+    {
+      "image": "monet.jpg",
+      "step": 128,
+      "bytes": 58086,
+      "rgb_mse": 81.2162994517414,
+      "hq_rate_change_percent": -55.37304373881176,
+      "hq_mse_change_percent": 50.467123060728184,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": {
+        "value": 94.27484352482223,
+        "a": "quality",
+        "b": "high_quality_p10",
+        "x_a": 53871,
+        "x_b": 102264,
+        "y_a": 96.79610854731196,
+        "y_b": 67.84911489764525,
+        "weight": 0.08709937387638708
+      },
+      "interpolated_matched_rate_mse_change_percent": -13.851568016278437,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "googlewiki.png",
+      "step": 32,
+      "bytes": 347906,
+      "rgb_mse": 23.98490244610934,
+      "hq_rate_change_percent": 96.6626155281083,
+      "hq_mse_change_percent": -96.64280026504873,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "googlewiki.png",
+      "step": 64,
+      "bytes": 227250,
+      "rgb_mse": 77.07784390974047,
+      "hq_rate_change_percent": 28.458777309855577,
+      "hq_mse_change_percent": -89.21130833340659,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "googlewiki.png",
+      "step": 128,
+      "bytes": 136602,
+      "rgb_mse": 222.83425723080896,
+      "hq_rate_change_percent": -22.782284276871767,
+      "hq_mse_change_percent": -68.80958298687241,
+      "strictly_dominates_hq": true,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": {
+        "value": 735.9948719779676,
+        "a": "quality",
+        "b": "high_quality_p13",
+        "x_a": 82440,
+        "x_b": 147416,
+        "y_a": 781.0294058613024,
+        "y_b": 727.0032644041265,
+        "weight": 0.8335693179019946
+      },
+      "interpolated_matched_rate_mse_change_percent": -69.72339540465174,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "mario64.png",
+      "step": 32,
+      "bytes": 187095,
+      "rgb_mse": 10.105254750192902,
+      "hq_rate_change_percent": 109.13816230717642,
+      "hq_mse_change_percent": -91.71874134628088,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "mario64.png",
+      "step": 64,
+      "bytes": 121067,
+      "rgb_mse": 27.167613423246742,
+      "hq_rate_change_percent": 35.330874133691026,
+      "hq_mse_change_percent": -77.7361343851462,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": null,
+      "interpolated_matched_rate_mse_change_percent": null,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "mario64.png",
+      "step": 128,
+      "bytes": 78167,
+      "rgb_mse": 64.78785787197788,
+      "hq_rate_change_percent": -12.62351889112453,
+      "hq_mse_change_percent": -46.90633517695345,
+      "strictly_dominates_hq": true,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": {
+        "value": 128.18547746672525,
+        "a": "quality",
+        "b": "high_quality",
+        "x_a": 64809,
+        "x_b": 89460,
+        "y_a": 135.47174097382972,
+        "y_b": 122.0255902241941,
+        "weight": 0.5418847105594093
+      },
+      "interpolated_matched_rate_mse_change_percent": -49.45772395410728,
+      "best_measured_within5pct": {
+        "preset": "high_quality_p13",
+        "bytes": 81086,
+        "rgb_mse": 147.77403093921467,
+        "signed_rate_gap_percent": -3.599881607182498,
+        "mse_change_percent": -56.157480810259756
+      }
+    },
+    {
+      "image": "eiffel.png",
+      "step": 32,
+      "bytes": 59265,
+      "rgb_mse": 10.567571366128513,
+      "hq_rate_change_percent": -30.986095907958166,
+      "hq_mse_change_percent": -31.42342456719074,
+      "strictly_dominates_hq": true,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": {
+        "value": 24.832875013221678,
+        "a": "quality",
+        "b": "high_quality",
+        "x_a": 48183,
+        "x_b": 85874,
+        "y_a": 28.757320729100346,
+        "y_b": 15.409884934371693,
+        "weight": 0.29402244567668673
+      },
+      "interpolated_matched_rate_mse_change_percent": -57.44523596038695,
+      "best_measured_within5pct": null
+    },
+    {
+      "image": "eiffel.png",
+      "step": 64,
+      "bytes": 50217,
+      "rgb_mse": 19.878965351008492,
+      "hq_rate_change_percent": -41.522463143675616,
+      "hq_mse_change_percent": 29.001387328133333,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": {
+        "value": 28.0370245202845,
+        "a": "quality",
+        "b": "high_quality",
+        "x_a": 48183,
+        "x_b": 85874,
+        "y_a": 28.757320729100346,
+        "y_b": 15.409884934371693,
+        "weight": 0.05396513756599719
+      },
+      "interpolated_matched_rate_mse_change_percent": -29.09744992152693,
+      "best_measured_within5pct": {
+        "preset": "quality",
+        "bytes": 48183,
+        "rgb_mse": 28.757320729100346,
+        "signed_rate_gap_percent": 4.221405890044205,
+        "mse_change_percent": -30.873374685102682
+      }
+    },
+    {
+      "image": "eiffel.png",
+      "step": 128,
+      "bytes": 46005,
+      "rgb_mse": 30.821813418560886,
+      "hq_rate_change_percent": -46.42732375340616,
+      "hq_mse_change_percent": 100.0132612918669,
+      "strictly_dominates_hq": false,
+      "dominated_by_any_ordinary": false,
+      "ordinary_rate_bracket": {
+        "value": 38.613117225727464,
+        "a": "quality_p10_base",
+        "b": "quality",
+        "x_a": 43555,
+        "x_b": 48183,
+        "y_a": 49.69975699466063,
+        "y_b": 28.757320729100346,
+        "weight": 0.5293863439930856
+      },
+      "interpolated_matched_rate_mse_change_percent": -20.177867955129315,
+      "best_measured_within5pct": {
+        "preset": "quality",
+        "bytes": 48183,
+        "rgb_mse": 28.757320729100346,
+        "signed_rate_gap_percent": -4.520266484029634,
+        "mse_change_percent": 7.179016115264947
+      }
+    }
+  ],
+  "matched_quality": [
+    {
+      "image": "cat.jpg",
+      "preset": "quality",
+      "ordinary_bytes": 63297,
+      "ordinary_mse": 299.1919568344019,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "cat.jpg",
+      "preset": "high_quality",
+      "ordinary_bytes": 78898,
+      "ordinary_mse": 293.13369478789747,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "quality",
+      "ordinary_bytes": 28979,
+      "ordinary_mse": 43.43484363504647,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "flower.jpg",
+      "preset": "high_quality",
+      "ordinary_bytes": 46094,
+      "ordinary_mse": 34.84087776482791,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "quality",
+      "ordinary_bytes": 53871,
+      "ordinary_mse": 96.79610854731196,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "monet.jpg",
+      "preset": "high_quality",
+      "ordinary_bytes": 130159,
+      "ordinary_mse": 53.97610973060387,
+      "hybrid_mse_bracket": {
+        "value": 91478.88621315164,
+        "a": 64,
+        "b": 128,
+        "x_a": 50.16891965447876,
+        "x_b": 81.2162994517414,
+        "y_a": 96146,
+        "y_b": 58086,
+        "weight": 0.12262516518256329
+      },
+      "interpolated_rate_change_percent": -29.717586787581617
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "quality",
+      "ordinary_bytes": 82440,
+      "ordinary_mse": 781.0294058613024,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "high_quality",
+      "ordinary_bytes": 176905,
+      "ordinary_mse": 714.4317985136951,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "mario64.png",
+      "preset": "quality",
+      "ordinary_bytes": 64809,
+      "ordinary_mse": 135.47174097382972,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "mario64.png",
+      "preset": "high_quality",
+      "ordinary_bytes": 89460,
+      "ordinary_mse": 122.0255902241941,
+      "hybrid_mse_bracket": null,
+      "interpolated_rate_change_percent": null
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "quality",
+      "ordinary_bytes": 48183,
+      "ordinary_mse": 28.757320729100346,
+      "hybrid_mse_bracket": {
+        "value": 46799.64168325539,
+        "a": 64,
+        "b": 128,
+        "x_a": 19.878965351008492,
+        "x_b": 30.821813418560886,
+        "y_a": 50217,
+        "y_b": 46005,
+        "weight": 0.8113386317057486
+      },
+      "interpolated_rate_change_percent": -2.871050612756809
+    },
+    {
+      "image": "eiffel.png",
+      "preset": "high_quality",
+      "ordinary_bytes": 85874,
+      "ordinary_mse": 15.409884934371693,
+      "hybrid_mse_bracket": {
+        "value": 54559.662299048985,
+        "a": 32,
+        "b": 64,
+        "x_a": 10.567571366128513,
+        "x_b": 19.878965351008492,
+        "y_a": 59265,
+        "y_b": 50217,
+        "weight": 0.5200417441369382
+      },
+      "interpolated_rate_change_percent": -36.46544670208796
+    }
+  ]
+}

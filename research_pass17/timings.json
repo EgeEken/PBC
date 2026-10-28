@@ -1,0 +1,188 @@
+{
+  "provenance": {
+    "control_commit": "1c9c4016fdb213d7d16663542d268c7c3df4ed9b",
+    "control_id": "pbc31_feature_histogram",
+    "source_sha256": {
+      "PBC3.py": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
+      "pbc3_ops.py": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+      "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+      "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+      "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+      "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+    },
+    "image_sha256": {
+      "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+      "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+    },
+    "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "numba": "0.68.0",
+    "pillow": "11.3.0",
+    "scipy": "1.17.1",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cpu": "i9-12900H logical P-core 12",
+    "threads": 1,
+    "seed": 2003,
+    "internal_mse": true,
+    "timing": "One warmed deterministic call per configuration; feasibility timing only. Full compress/decompress calls; loading, hashing, analysis and external RGB scoring excluded."
+  },
+  "repetitions": 3,
+  "rows": [
+    {
+      "image": "googlewiki.png",
+      "variant": "ordinary",
+      "step": null,
+      "ordinary_preset": "high_quality",
+      "encode_seconds": 0.6343238999997993,
+      "decode_seconds": 0.055053799998859176,
+      "stream_sha256": "94fadcfc9b485a8cfc614aef7a8df20d82769122040a602af3521141da9b3e8a",
+      "rep": 0
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "hybrid",
+      "step": 128,
+      "ordinary_preset": "high_quality",
+      "encode_seconds": 2.5181010000014794,
+      "decode_seconds": 0.08474310000019614,
+      "stream_sha256": "8db84ca6d1c6c7f419281a85757cb1c22ef1eaeab26cae13a2e72fc72200fb30",
+      "rep": 0
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "hybrid",
+      "step": 128,
+      "ordinary_preset": "high_quality",
+      "encode_seconds": 2.5138910000005126,
+      "decode_seconds": 0.08638719999908062,
+      "stream_sha256": "8db84ca6d1c6c7f419281a85757cb1c22ef1eaeab26cae13a2e72fc72200fb30",
+      "rep": 1
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "ordinary",
+      "step": null,
+      "ordinary_preset": "high_quality",
+      "encode_seconds": 0.6750035000004573,
+      "decode_seconds": 0.05449160000171105,
+      "stream_sha256": "94fadcfc9b485a8cfc614aef7a8df20d82769122040a602af3521141da9b3e8a",
+      "rep": 1
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "ordinary",
+      "step": null,
+      "ordinary_preset": "high_quality",
+      "encode_seconds": 0.6202069000009942,
+      "decode_seconds": 0.05383509999956004,
+      "stream_sha256": "94fadcfc9b485a8cfc614aef7a8df20d82769122040a602af3521141da9b3e8a",
+      "rep": 2
+    },
+    {
+      "image": "googlewiki.png",
+      "variant": "hybrid",
+      "step": 128,
+      "ordinary_preset": "high_quality",
+      "encode_seconds": 2.520968599999833,
+      "decode_seconds": 0.08432840000023134,
+      "stream_sha256": "8db84ca6d1c6c7f419281a85757cb1c22ef1eaeab26cae13a2e72fc72200fb30",
+      "rep": 2
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "ordinary",
+      "step": null,
+      "ordinary_preset": "quality",
+      "encode_seconds": 0.252210799999375,
+      "decode_seconds": 0.023909800000183168,
+      "stream_sha256": "f3511c8a5cf048be328d805658fbd51eeb839b62950e0db977cf182870c1c73a",
+      "rep": 0
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "hybrid",
+      "step": 64,
+      "ordinary_preset": "quality",
+      "encode_seconds": 0.4415743999998085,
+      "decode_seconds": 0.03712040000027628,
+      "stream_sha256": "d230cc247e8674318c348c0322d2e4fd9f9f6832e7f50ddfa349148a09d66c3b",
+      "rep": 0
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "hybrid",
+      "step": 64,
+      "ordinary_preset": "quality",
+      "encode_seconds": 0.4458412000003591,
+      "decode_seconds": 0.03738260000136506,
+      "stream_sha256": "d230cc247e8674318c348c0322d2e4fd9f9f6832e7f50ddfa349148a09d66c3b",
+      "rep": 1
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "ordinary",
+      "step": null,
+      "ordinary_preset": "quality",
+      "encode_seconds": 0.2538319000013871,
+      "decode_seconds": 0.02613009999913629,
+      "stream_sha256": "f3511c8a5cf048be328d805658fbd51eeb839b62950e0db977cf182870c1c73a",
+      "rep": 1
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "ordinary",
+      "step": null,
+      "ordinary_preset": "quality",
+      "encode_seconds": 0.2563124999996944,
+      "decode_seconds": 0.024429999999483698,
+      "stream_sha256": "f3511c8a5cf048be328d805658fbd51eeb839b62950e0db977cf182870c1c73a",
+      "rep": 2
+    },
+    {
+      "image": "eiffel.png",
+      "variant": "hybrid",
+      "step": 64,
+      "ordinary_preset": "quality",
+      "encode_seconds": 0.45023980000041774,
+      "decode_seconds": 0.0381558999997651,
+      "stream_sha256": "d230cc247e8674318c348c0322d2e4fd9f9f6832e7f50ddfa349148a09d66c3b",
+      "rep": 2
+    }
+  ],
+  "summary": {
+    "googlewiki.png": {
+      "ordinary": {
+        "encode_seconds": 0.6343238999997993,
+        "decode_seconds": 0.05449160000171105,
+        "encode_cv_percent": 3.611786096419146
+      },
+      "hybrid": {
+        "encode_seconds": 2.5181010000014794,
+        "decode_seconds": 0.08474310000019614,
+        "encode_cv_percent": 0.11545236659309548
+      }
+    },
+    "eiffel.png": {
+      "ordinary": {
+        "encode_seconds": 0.2538319000013871,
+        "decode_seconds": 0.024429999999483698,
+        "encode_cv_percent": 0.6637544344092761
+      },
+      "hybrid": {
+        "encode_seconds": 0.4458412000003591,
+        "decode_seconds": 0.03738260000136506,
+        "encode_cv_percent": 0.7934265732647579
+      }
+    }
+  },
+  "frozen_hybrid_sha256": "ff1486bd71798145b12aac5ab193463791ea8f7ec53f1ae3ec9c9ee8bee114f4",
+  "frozen_hybrid_lf_sha256": "15ced56e4611a2da19f032008435dcf253bf0bcf7a248675f9f8a7cee8f749d7",
+  "source_hash_note": "The measured working copy used CRLF. The LF digest pins identical canonical Git source; only line endings were normalized before commit."
+}

@@ -1,0 +1,69 @@
+{
+  "control_commit": "1c9c4016fdb213d7d16663542d268c7c3df4ed9b",
+  "prototype_id": "pbc17_dct_detail_v1",
+  "frozen_measured_source_sha256": "ff1486bd71798145b12aac5ab193463791ea8f7ec53f1ae3ec9c9ee8bee114f4",
+  "frozen_measured_source_lf_sha256": "15ced56e4611a2da19f032008435dcf253bf0bcf7a248675f9f8a7cee8f749d7",
+  "production_id": "pbc31_feature_histogram",
+  "staged_zip_sha256_unchanged": "08855cb3369000fd50d38fbb41d65920899998d366812c04519302383d873591",
+  "source_model_runtime_inputs": {
+    "control_commit": "1c9c4016fdb213d7d16663542d268c7c3df4ed9b",
+    "control_id": "pbc31_feature_histogram",
+    "source_sha256": {
+      "PBC3.py": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
+      "pbc3_ops.py": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+      "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+      "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+      "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+      "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+    },
+    "image_sha256": {
+      "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+      "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+    },
+    "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "numba": "0.68.0",
+    "pillow": "11.3.0",
+    "scipy": "1.17.1",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cpu": "i9-12900H logical P-core 12",
+    "threads": 1,
+    "seed": 2003,
+    "internal_mse": true,
+    "timing": "One warmed deterministic call per configuration; feasibility timing only. Full compress/decompress calls; loading, hashing, analysis and external RGB scoring excluded."
+  },
+  "experimental_source_sha256": {
+    "hybrid.py": "15ced56e4611a2da19f032008435dcf253bf0bcf7a248675f9f8a7cee8f749d7",
+    "analyze_residuals.py": "628d4e62b5ac92feff718fee0102e09cfa9985bed0aeb95de796ff794c1d0fa9",
+    "screen_hybrid.py": "71960d3900a9b358534d2d59b59001c157a1fa3c46f9e729fc904385b34be8e4",
+    "screen_tiles.py": "c2fc16893317829c98edc7d667001f755f32cb5a40d7112869477f02302ae05b",
+    "rate_controls.py": "b41f19d621f47b0cab265af21425924ac4c1fa61d8233370bc0aa55ec19ad0ee",
+    "time_promising.py": "6de2b1cde5dc225703fc9ec34f450028799cb77c233494ec8e00891c5ecad302",
+    "validate.py": "af599352728bc3a5e1f351edf9238c2b289f282a44cc3776d94cfea4ff854592",
+    "report.py": "b2b60e657f471f35f97429d6dd22982a3ea9e644657439debec095a64f40a685"
+  },
+  "evidence_sha256": {
+    "baseline.json": "9b20f49dbd34dd86589cd532716f81bdd68a8bcbde16f302c1ada3f49dad28c2",
+    "hybrid_results.json": "0380cad3f39d70a7bb91c1fdf053df1e06499febd0cdead62db83797c4860b0d",
+    "tiles_results.json": "c85f34dc3f5eab7dd336328e51a2ba5bd4ca9fe6d1ef6677c7eb2a9bfb0e300e",
+    "extra_controls.json": "2f0aef6b15a91ff09acf913aba2a46ee0f49e36f084267ae6d9e8d5e9b5f21ec",
+    "targeted_controls.json": "f75093650f26fd04e546add431d221b9f7ad3f5f113251c7e42c2ca1dd2b117f",
+    "timings.json": "723161cf802620bc1a3951c1711fa2064510fc759ad9fdce93b2bc360c4cf799",
+    "validation.json": "610d8db5b064c5a0412954123e0a6eafc107783bc3a1580b17e4a8d091e090ca"
+  },
+  "completed_experimental_files": 30,
+  "ordinary_default_encodes": 12,
+  "additional_ordinary_encodes": 10,
+  "full_hybrid_encodes": 18,
+  "tile_hybrid_encodes": 12,
+  "timing_measured_calls": 12,
+  "no_full_confirmation": true,
+  "no_alternative_architecture": true
+}

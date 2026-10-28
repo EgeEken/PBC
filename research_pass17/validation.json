@@ -1,0 +1,320 @@
+{
+  "provenance": {
+    "control_commit": "1c9c4016fdb213d7d16663542d268c7c3df4ed9b",
+    "control_id": "pbc31_feature_histogram",
+    "source_sha256": {
+      "PBC3.py": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
+      "pbc3_ops.py": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+      "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_types.py": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+      "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+      "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+      "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+    },
+    "image_sha256": {
+      "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+      "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "mario64.png": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+    },
+    "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "numba": "0.68.0",
+    "pillow": "11.3.0",
+    "scipy": "1.17.1",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cpu": "i9-12900H logical P-core 12",
+    "threads": 1,
+    "seed": 2003,
+    "internal_mse": true,
+    "timing": "One warmed deterministic call per configuration; feasibility timing only. Full compress/decompress calls; loading, hashing, analysis and external RGB scoring excluded."
+  },
+  "completed_files_checked": 30,
+  "all_sizes_sha_pixels_mse_consistent": true,
+  "signed_int16_extreme_payload_roundtrip": true,
+  "synthetic_determinism_and_boundaries": [
+    {
+      "shape": [
+        9,
+        13
+      ],
+      "mode": "full",
+      "sha256": "206381a2b4c07c11ac0f4f4d024097479204c83cb7c8ed1c8f4f5bd084dc5547"
+    },
+    {
+      "shape": [
+        9,
+        13
+      ],
+      "mode": "tiles",
+      "sha256": "8b10eb4530d53e4a058c5b1ce5d01bad0fdb81c4bb87fd278e118528404850d8"
+    },
+    {
+      "shape": [
+        35,
+        37
+      ],
+      "mode": "full",
+      "sha256": "bdbf6e7f7a9264ab3aef5fabb67539fc3a263169cf38a2d61315bfdea2d91095"
+    },
+    {
+      "shape": [
+        35,
+        37
+      ],
+      "mode": "tiles",
+      "sha256": "f9d329006710e940a87215f58a83d7e1d6d8b7a08c89a3580265ee60e763bf51"
+    }
+  ],
+  "independent_process_no_policy_load": [
+    "artifacts\\googlewiki.png.dct_q128.p17",
+    "artifacts\\eiffel.png.dct_q64.p17"
+  ],
+  "v0_rejects_experimental_magic": true,
+  "rows": [
+    {
+      "file": "artifacts\\cat.jpg.dct_q32.p17",
+      "stream_sha256": "f3e546e5083dc189f87d02540fe592795f60223ae94c419e0b43dccd4f3cf8f3",
+      "pixels_sha256": "b94e271d4af0b661753f1fad0ec204b02786af7d90a44cdb04bf1272a33464d7",
+      "rgb_mse": 16.01950221836854,
+      "residual_min": -149.0,
+      "residual_max": 179.0
+    },
+    {
+      "file": "artifacts\\cat.jpg.dct_q64.p17",
+      "stream_sha256": "e88450ad3b5fd50401425f1a0090deb73e8fe9ce32c3fe016cc923ce262b0090",
+      "pixels_sha256": "c1b32233bfaf30490d57ea0fdff6e2470978df10f55a0d231289ffd69ef2c82f",
+      "rgb_mse": 41.18813322191443,
+      "residual_min": -149.0,
+      "residual_max": 179.0
+    },
+    {
+      "file": "artifacts\\cat.jpg.dct_q128.p17",
+      "stream_sha256": "4884bb32fd7129325f8708781f1e7b9d8f3f07220272362be7605bad2d8a2623",
+      "pixels_sha256": "5d509defb802b22d07303d36c6fbb9b1a57db746d113478dd8ecb86e8936cead",
+      "rgb_mse": 91.1259875837675,
+      "residual_min": -149.0,
+      "residual_max": 179.0
+    },
+    {
+      "file": "artifacts\\flower.jpg.dct_q32.p17",
+      "stream_sha256": "973ce0d572660bf6d5ef2a2ed38a1f1a97daae62448953dc4a8c488c0f717538",
+      "pixels_sha256": "e170ab3978a72617cd9b2380b37b563ead01fb2d293fb0afae81c3020b654a5d",
+      "rgb_mse": 5.06503249665931,
+      "residual_min": -159.0,
+      "residual_max": 154.0
+    },
+    {
+      "file": "artifacts\\flower.jpg.dct_q64.p17",
+      "stream_sha256": "4f542b83c2d0a452fa262b35e1636e517f1348e4480303e025d858ca7783d37f",
+      "pixels_sha256": "200dbadaa9d17b7dcd846e2e4651e08196fd45f98406c9404dd469190bb1eb50",
+      "rgb_mse": 10.502158193887663,
+      "residual_min": -159.0,
+      "residual_max": 154.0
+    },
+    {
+      "file": "artifacts\\flower.jpg.dct_q128.p17",
+      "stream_sha256": "d8dd8cacf8aca14f4c8188dfd9dd6a2aea5c60c5e5da771f083eb86c248935aa",
+      "pixels_sha256": "bca5a15ff5a26ac6bc0c1d21b5f2fc06889d4ef56fed58c97b46d07a051158fa",
+      "rgb_mse": 22.832166437698003,
+      "residual_min": -159.0,
+      "residual_max": 154.0
+    },
+    {
+      "file": "artifacts\\monet.jpg.dct_q32.p17",
+      "stream_sha256": "b428746f963f312aa80752a343a8c6a804464d76776d9bfc23e73ce05df1d972",
+      "pixels_sha256": "7d93e2798a645e0939320ac2c293a97a150a01b492d740ea8fff1213b574a561",
+      "rgb_mse": 22.192676211888138,
+      "residual_min": -127.0,
+      "residual_max": 103.0
+    },
+    {
+      "file": "artifacts\\monet.jpg.dct_q64.p17",
+      "stream_sha256": "720b4efa5fb805543e29990d159552766846cb1a770fb1e366a211e53fe920bd",
+      "pixels_sha256": "45dadb97528aff633897b183391046ec007c39dcfb8a78efed5044a262c915bf",
+      "rgb_mse": 50.16891965447876,
+      "residual_min": -127.0,
+      "residual_max": 103.0
+    },
+    {
+      "file": "artifacts\\monet.jpg.dct_q128.p17",
+      "stream_sha256": "252ae60907207793fb99716da00016ee211190cc8651c75d423e4f8e472a4890",
+      "pixels_sha256": "7ef9ced7a52f7bdb380367285575e404efd5473c4ce8773a3d41de4238173574",
+      "rgb_mse": 81.2162994517414,
+      "residual_min": -127.0,
+      "residual_max": 103.0
+    },
+    {
+      "file": "artifacts\\googlewiki.png.dct_q32.p17",
+      "stream_sha256": "cc5002af9d68818335def31f96cbe403431c317074b9fb843b06f53a1cba5f69",
+      "pixels_sha256": "7bb32afc55affc69ae2cd0517d7b3278024bfc3bcb0eb577d9accfa4f2b86063",
+      "rgb_mse": 23.98490244610934,
+      "residual_min": -238.0,
+      "residual_max": 210.0
+    },
+    {
+      "file": "artifacts\\googlewiki.png.dct_q64.p17",
+      "stream_sha256": "96238719f560d0ee3afc0eda18a7c0e7b0a7e81f59aaf558571e86743e8389c4",
+      "pixels_sha256": "f77ac641065797d49824cab7da6859428cc1fa0567cf6f64afc70873a5201e3b",
+      "rgb_mse": 77.07784390974047,
+      "residual_min": -238.0,
+      "residual_max": 210.0
+    },
+    {
+      "file": "artifacts\\googlewiki.png.dct_q128.p17",
+      "stream_sha256": "8db84ca6d1c6c7f419281a85757cb1c22ef1eaeab26cae13a2e72fc72200fb30",
+      "pixels_sha256": "8b72aa8a1075d978374c180889a658ec3d98a7818514f0b416708db9d3678879",
+      "rgb_mse": 222.83425723080896,
+      "residual_min": -238.0,
+      "residual_max": 210.0
+    },
+    {
+      "file": "artifacts\\mario64.png.dct_q32.p17",
+      "stream_sha256": "5d67a27c30067cc198cab2478ee6d29983581d84e1b29199ac6ebae8663cc3cc",
+      "pixels_sha256": "697eaec0105669b69220df8dfb418ea2f51374f2ed4aa9d2d57cbec5df9d0c57",
+      "rgb_mse": 10.105254750192902,
+      "residual_min": -231.0,
+      "residual_max": 229.0
+    },
+    {
+      "file": "artifacts\\mario64.png.dct_q64.p17",
+      "stream_sha256": "093055850352ebe86847d7afd04513b1c841ae0de2fae9ac0946cca5bfa7bd88",
+      "pixels_sha256": "228ae18694cb091120adcc77112c21f03085fe32b32d2af84b3d65169ea4c2a3",
+      "rgb_mse": 27.167613423246742,
+      "residual_min": -231.0,
+      "residual_max": 229.0
+    },
+    {
+      "file": "artifacts\\mario64.png.dct_q128.p17",
+      "stream_sha256": "491a25c01579ae8312d5cf2f0e33d7928e75cd452eb39cc21fe58273fb843b1c",
+      "pixels_sha256": "03cf3180a7f4801ebefb56418b8507db22e90fb2490c6cd7958b29d0bd89465a",
+      "rgb_mse": 64.78785787197788,
+      "residual_min": -231.0,
+      "residual_max": 229.0
+    },
+    {
+      "file": "artifacts\\eiffel.png.dct_q32.p17",
+      "stream_sha256": "6e7e7c3099c1bf72996ad1ea3f8ea90f6c0976986128e8649c6534b2500127cc",
+      "pixels_sha256": "cb089993cd9d7be6a178e5981c4910bea6e58cffa4fd973415da853d0f2e8b68",
+      "rgb_mse": 10.567571366128513,
+      "residual_min": -141.0,
+      "residual_max": 180.0
+    },
+    {
+      "file": "artifacts\\eiffel.png.dct_q64.p17",
+      "stream_sha256": "d230cc247e8674318c348c0322d2e4fd9f9f6832e7f50ddfa349148a09d66c3b",
+      "pixels_sha256": "4cf0bdf9df11a545699718e28939f1ec029a6d0edfe35a8332a81a2f493b087e",
+      "rgb_mse": 19.878965351008492,
+      "residual_min": -141.0,
+      "residual_max": 180.0
+    },
+    {
+      "file": "artifacts\\eiffel.png.dct_q128.p17",
+      "stream_sha256": "af3768ed801906ccdcb4a902418a01ee6e0492a5c5b914fce93653fb2abfda3b",
+      "pixels_sha256": "5aef7517a2170368f8a115bd0a6c3643b0f7545a210ce5afb5bacc91b28c7a52",
+      "rgb_mse": 30.821813418560886,
+      "residual_min": -141.0,
+      "residual_max": 180.0
+    },
+    {
+      "file": "artifacts\\cat.jpg.tiles64_quality.p17",
+      "stream_sha256": "8ac98add9ed1cc50f3f8d019832ef58f6bfde7ee9148dbbf5c5c82c9f941c392",
+      "pixels_sha256": "c14cdc3ba7fb581cec59dc31438040b83b49013fe23e3c65bd7d810a9b800f5c",
+      "rgb_mse": 308.7700531742189,
+      "residual_min": -149.0,
+      "residual_max": 179.0
+    },
+    {
+      "file": "artifacts\\cat.jpg.tiles64_high_quality.p17",
+      "stream_sha256": "1b0f59c825e1fb8ebf8bfe211eb6f6bf8baa2455b6db757e49eb479a119871da",
+      "pixels_sha256": "d9018cc45961df344947a3bb06aee35944036969041c901f126ed879a82f5078",
+      "rgb_mse": 302.02869466903394,
+      "residual_min": -149.0,
+      "residual_max": 179.0
+    },
+    {
+      "file": "artifacts\\flower.jpg.tiles64_quality.p17",
+      "stream_sha256": "ffb77f9a337b1ffc6c1b1519ade3b33ce2d44849bb63c50deba28fd881120bb0",
+      "pixels_sha256": "5dcfc2a2ac215dfa330353614717f441bd4ed2637eb9a90e63982747ff665be6",
+      "rgb_mse": 57.54707652057715,
+      "residual_min": -159.0,
+      "residual_max": 154.0
+    },
+    {
+      "file": "artifacts\\flower.jpg.tiles64_high_quality.p17",
+      "stream_sha256": "cbe3915bca4e6a8c2efdfb94fe35c1764e9aa8411edef0a89e12df750ed3258e",
+      "pixels_sha256": "efb4ee0ad8a03eb1323076e8d68cb95f14d0cacab691c6433d6e61bfd41d5245",
+      "rgb_mse": 51.668638471615395,
+      "residual_min": -159.0,
+      "residual_max": 154.0
+    },
+    {
+      "file": "artifacts\\monet.jpg.tiles64_quality.p17",
+      "stream_sha256": "948a9247cb59f1d09d9988fdc23863f0738c3ce9d3a2d856f2fb98cd0b946088",
+      "pixels_sha256": "8bbe94185ebef2103efa9bae96192b25e4b76008370c1eac42346a596830c175",
+      "rgb_mse": 109.542003707648,
+      "residual_min": -127.0,
+      "residual_max": 103.0
+    },
+    {
+      "file": "artifacts\\monet.jpg.tiles64_high_quality.p17",
+      "stream_sha256": "1c913975b56eb02995e942b8b28dcfe0792cbc449b032731dbd6e652bebff04e",
+      "pixels_sha256": "0e1de709787cbacbb3b6ec81635c93023e7162ed2a486a1e11449bcc1c85d44b",
+      "rgb_mse": 69.80828856545577,
+      "residual_min": -127.0,
+      "residual_max": 103.0
+    },
+    {
+      "file": "artifacts\\googlewiki.png.tiles64_quality.p17",
+      "stream_sha256": "5e8609928c8820ec20b05cc42877bb92a913e0525b695a2a1631322e2650af2a",
+      "pixels_sha256": "424264535c5179876b1ba389c7561e0112556a58e0e5922fd4f00ab8b8f7762f",
+      "rgb_mse": 759.3803108975522,
+      "residual_min": -238.0,
+      "residual_max": 210.0
+    },
+    {
+      "file": "artifacts\\googlewiki.png.tiles64_high_quality.p17",
+      "stream_sha256": "18ab91be362d5164fc080ab93f955df453284037591ef6c28e8d9c49a2f41b7f",
+      "pixels_sha256": "42f692f23c6e442b4e98a6f6d780ea0429929032aa240f0ebb71899d1b70491a",
+      "rgb_mse": 438.4841878376361,
+      "residual_min": -238.0,
+      "residual_max": 210.0
+    },
+    {
+      "file": "artifacts\\mario64.png.tiles64_quality.p17",
+      "stream_sha256": "255101f1fa94a58d03019ab22f5a940a96490faca4c24652643204f839d6cb24",
+      "pixels_sha256": "b65023c2d3bff0d8c9d2ffbf737080552f0da55cc7a4ce5de437834ce30d3483",
+      "rgb_mse": 251.83422550154322,
+      "residual_min": -231.0,
+      "residual_max": 229.0
+    },
+    {
+      "file": "artifacts\\mario64.png.tiles64_high_quality.p17",
+      "stream_sha256": "5463e3979b0aca61b13d14012b7e071f7608cb7728b6f445a416f99f85e6c299",
+      "pixels_sha256": "a6b015c27b792aaa4232c4b84756ada1cf86eaf8d59962babd8512b87a7d0f12",
+      "rgb_mse": 179.70652521915724,
+      "residual_min": -231.0,
+      "residual_max": 229.0
+    },
+    {
+      "file": "artifacts\\eiffel.png.tiles64_quality.p17",
+      "stream_sha256": "d9d9ba567ad9671cac342539c0a6ea021e2b8ec1581e10c3e34a8593f91f910d",
+      "pixels_sha256": "6a609c5308f4da7021933a220d3e936b992d155552ae58a401fc40a757e2eba9",
+      "rgb_mse": 32.88724496034473,
+      "residual_min": -141.0,
+      "residual_max": 180.0
+    },
+    {
+      "file": "artifacts\\eiffel.png.tiles64_high_quality.p17",
+      "stream_sha256": "b0c3b8e34ea2c61950d4a590c4219dc6fe4c4c71a3d5cc8a6542bd7749d52ca2",
+      "pixels_sha256": "64aad5d2c8edee98d5defc50d0564a4799a1ee714cb4e2596a1db8253786fdc8",
+      "rgb_mse": 19.876882448099597,
+      "residual_min": -141.0,
+      "residual_max": 180.0
+    }
+  ]
+}
