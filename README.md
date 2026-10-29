@@ -3,7 +3,7 @@
 An unconventional lossy image compression algorithm I designed. It compresses image data as a series of approved "brush stroke" instructions. The core idea relies on carrying many pixels worth of data per stroke while also using less than 1 byte per stroke, effectively saving a lot of space over the uncompressed RGB image which would otherwise use 3 bytes per pixel.
 
 
-### Current latest version: V3.0
+### Current latest version: V3.1
 ### Demo deployed on [Hugging Face Spaces](https://egeeken-pbc.hf.space/)
 <img width="1359" height="821" alt="image" src="https://github.com/user-attachments/assets/5582a25f-7b21-4525-bf92-d94c94a94799" />
 
