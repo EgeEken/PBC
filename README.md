@@ -203,5 +203,8 @@ Outliers (JXL encoding under q3, avif over q90, and JPEG2000 decoding over q70 a
 
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/1f4690cc-5d4c-4294-9a4e-12c874bb9ac7" />
 
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/54a32b58-0f65-459c-b38c-e9b3f591a27a" />
+
+
 
 ### 
