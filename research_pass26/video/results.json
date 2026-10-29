@@ -1,0 +1,1283 @@
+[
+  {
+    "clip": "static_flower",
+    "mode": "intra",
+    "bytes": 102001,
+    "bpp_per_frame": 1.3834771050347223,
+    "mean_mse": 75.29947916666667,
+    "worst_mse": 75.29947916666667,
+    "final_mse": 75.29947916666667,
+    "frame_mse": [
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667,
+      75.29947916666667
+    ],
+    "encode_seconds": 1.7201934000004258,
+    "decode_seconds": 0.11507319999873289,
+    "encode_fps": 9.301279728195702,
+    "decode_fps": 139.0419315720444,
+    "sha256": "045bba4f6c1b6f0199e942c0446537f4bb773dd65e3d70e604dcd5851d9a791d",
+    "frame_hashes": [
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36"
+    ],
+    "source_sha256": "a1a132986ae5f2d40714c36cf2f5bcdfb3abc5cb7d09a5eddf458b5692893091",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        }
+      ]
+    },
+    "residual_fraction": 0.0
+  },
+  {
+    "clip": "static_flower",
+    "mode": "temporal",
+    "bytes": 204845,
+    "bpp_per_frame": 2.7783881293402777,
+    "mean_mse": 9.412434895833334,
+    "worst_mse": 75.29947916666667,
+    "final_mse": 0.0,
+    "frame_mse": [
+      75.29947916666667,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      75.29947916666667,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "encode_seconds": 0.3450412000020151,
+    "decode_seconds": 0.028295299998717383,
+    "encode_fps": 46.37127392295922,
+    "decode_fps": 565.4649358983745,
+    "sha256": "badc90cfffc62018ca55369cd5b06f050fef22979195ab58c2ca317989b27944",
+    "frame_hashes": [
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f3a048ee5d878b09e2e70438511003a59768ab61866574558745b3aae5bd6a36",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048"
+    ],
+    "source_sha256": "a1a132986ae5f2d40714c36cf2f5bcdfb3abc5cb7d09a5eddf458b5692893091",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 1,
+          "bytes": 94555
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 0,
+          "bytes": 6365
+        },
+        {
+          "type": 1,
+          "bytes": 94555
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        }
+      ]
+    },
+    "residual_fraction": 0.9370694915667944
+  },
+  {
+    "clip": "static_flower",
+    "mode": "lossless",
+    "bytes": 134381,
+    "bpp_per_frame": 1.8226589626736112,
+    "mean_mse": 0.0,
+    "worst_mse": 0.0,
+    "final_mse": 0.0,
+    "frame_mse": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "encode_seconds": 0.03555169999890495,
+    "decode_seconds": 0.015008599999418948,
+    "encode_fps": 450.0488021808472,
+    "decode_fps": 1066.0554615766582,
+    "sha256": "b77dce3c242ef02bf9b51c72baf0a55b21af585b4747a2c2def891d108477b40",
+    "frame_hashes": [
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048",
+      "f36e660893bb4d381c1b5b6c60a4d4d6000a3b37dd63cd556edfe425da369048"
+    ],
+    "source_sha256": "a1a132986ae5f2d40714c36cf2f5bcdfb3abc5cb7d09a5eddf458b5692893091",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 2,
+          "bytes": 65451
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 2,
+          "bytes": 65451
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        },
+        {
+          "type": 1,
+          "bytes": 237
+        }
+      ]
+    },
+    "residual_fraction": 0.024690990541817667
+  },
+  {
+    "clip": "static_flower",
+    "mode": "h264",
+    "bytes": 7242,
+    "bpp_per_frame": 0.09822591145833333,
+    "mean_mse": 37.11962551540799,
+    "worst_mse": 37.37732385706018,
+    "final_mse": 37.086181640625,
+    "frame_mse": [
+      37.37732385706018,
+      37.25807472511574,
+      37.135091145833336,
+      37.10417570891204,
+      37.11279296875,
+      37.083884910300924,
+      37.078097873263886,
+      37.075113932291664,
+      37.086181640625,
+      37.086181640625,
+      37.086181640625,
+      37.086181640625,
+      37.086181640625,
+      37.086181640625,
+      37.086181640625,
+      37.086181640625
+    ],
+    "encode_seconds": 0.10833180000190623,
+    "decode_seconds": 0.06974049999917042,
+    "encode_fps": 147.69439813349783,
+    "decode_fps": 229.4219284374262,
+    "sha256": "aa844dcbbade791e88122b4ea160111c65f7700624222ab0e2f29ce87f9375b0",
+    "frame_hashes": [
+      "cab12294dda6890431520fb13a32d288fca4df8b2acbaef01fbf84475a4f275a",
+      "7887048cfc6fc85275e44e0e6016e154aa781f9cc86f8d687a8f554884ad0ace",
+      "5643ef6e50dddeb31f5d11dbfede95588e548254d7f65ff8fb76e6a53ff5bce4",
+      "41512eaeb63f472c60053a481759811722866b67c4d6c25b5b214883b80c69be",
+      "13ee0e1da29dff4f22caeac97ee569c0e11c8bcf2f7a3990e9f188e0ef63db95",
+      "b108d63c1378aa9f7f215ebdb05e5f71030f1207723c86d4db9109eb17ff758d",
+      "7de176b685875d5697f642e8c66ac1dd6c81c79f563281a1ddebe8f45c31bcfe",
+      "e253e36ed7106961aa3c50d39e82a24400aaa2a3e4e8e83aac5841da2b26c876",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df",
+      "9115a2763827d58b60f52a092ddeca1138977c6d59dfc12420493ee71e55b2df"
+    ],
+    "source_sha256": "a1a132986ae5f2d40714c36cf2f5bcdfb3abc5cb7d09a5eddf458b5692893091",
+    "metadata": null
+  },
+  {
+    "clip": "moving_shape",
+    "mode": "intra",
+    "bytes": 21816,
+    "bpp_per_frame": 0.2958984375,
+    "mean_mse": 14.621906986942998,
+    "worst_mse": 16.221535011574073,
+    "final_mse": 14.349446614583334,
+    "frame_mse": [
+      16.10675274884259,
+      16.055528428819443,
+      14.987603081597221,
+      14.106345847800926,
+      16.221535011574073,
+      13.77346462673611,
+      14.004729094328704,
+      14.877640335648149,
+      14.552671079282407,
+      13.578694661458334,
+      14.435791015625,
+      14.068395543981481,
+      14.00291160300926,
+      13.703215422453704,
+      15.125786675347221,
+      14.349446614583334
+    ],
+    "encode_seconds": 1.544364699999278,
+    "decode_seconds": 0.08876379999855999,
+    "encode_fps": 10.360247161831321,
+    "decode_fps": 180.25366196872562,
+    "sha256": "5b223106ed254a7c6c69eb457cc5a3fbf3ca620c1679290950d276e39d795797",
+    "frame_hashes": [
+      "c3663f356e1d31ceebf650e5c305c8aed3b1a51df515dde7cfddaa456eae5279",
+      "8231e0c9e805d06b6d237667652d95a105b3d00a7fa2030661a3825e8e6841db",
+      "8308794184c61ba74fc1b825c6effb1f9dd3219bb57cd1963e89392da0410abe",
+      "b702e9f6bf41bdb42425fe4dc1416dab0715e907d50c575632aa6ff86cd6f5dc",
+      "0c07f2f33d3114e73bd5a90489fb5d1dc784e919b5bef1784d44498d8c1e01a4",
+      "7a4a378414af5a01089dcaaca659475896f2ca7edb6e4d43300b5948e3174e74",
+      "bf1fc027d38cf9441071f2ea309f060f9d191822c60b7e988659a5b54fc2433e",
+      "5a940f3395141f98020f6ebf28ac2668007bcfff7830f02e475f7640539d3da7",
+      "ed7d0f4d64aee91d11126591e03d3b6ae3eea1ea89eea8ac102dc8ed0d43dd9a",
+      "5dbe398b8501e70c64501ce1fbaecfc81ca3f0a14cb8d1a13ed90e6d70c2c92b",
+      "a2b61541c2eaa112b8ab1f5cebf8ff7369b7c9013db80b3518340cfa3d7a0eb1",
+      "ca2accd7ced427d74ab88d0f2138bc24fe3eb1a1b529fb02018f4541f545b7e8",
+      "2f4166b3ac2956571513f6c97d59b3b5efe84a2b7f9e23f65bc145af6ea4ed69",
+      "36957bd65055fb0176d0441ed381966b65c64752111899427aef6f87fdae1aea",
+      "01590740f87552dfa2a144e7671681eb6bdeb4b39b6a24efa027808f08ff631c",
+      "92a872dd6d0a85b8578e184728d102a35c2c75e8f0dc3c2b1bfaab32b0137f54"
+    ],
+    "source_sha256": "6128c309297b47fbb29eefb486d329f86aed45c94fde0ce3a449012301718fe4",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 0,
+          "bytes": 1570
+        },
+        {
+          "type": 0,
+          "bytes": 1465
+        },
+        {
+          "type": 0,
+          "bytes": 1540
+        },
+        {
+          "type": 0,
+          "bytes": 1516
+        },
+        {
+          "type": 0,
+          "bytes": 1422
+        },
+        {
+          "type": 0,
+          "bytes": 1508
+        },
+        {
+          "type": 0,
+          "bytes": 1303
+        },
+        {
+          "type": 0,
+          "bytes": 1329
+        },
+        {
+          "type": 0,
+          "bytes": 1446
+        },
+        {
+          "type": 0,
+          "bytes": 1869
+        },
+        {
+          "type": 0,
+          "bytes": 1147
+        },
+        {
+          "type": 0,
+          "bytes": 959
+        },
+        {
+          "type": 0,
+          "bytes": 1056
+        },
+        {
+          "type": 0,
+          "bytes": 1251
+        },
+        {
+          "type": 0,
+          "bytes": 1084
+        },
+        {
+          "type": 0,
+          "bytes": 1190
+        }
+      ]
+    },
+    "residual_fraction": 0.0
+  },
+  {
+    "clip": "moving_shape",
+    "mode": "temporal",
+    "bytes": 111536,
+    "bpp_per_frame": 1.5128038194444444,
+    "mean_mse": 1.9162139892578125,
+    "worst_mse": 16.10675274884259,
+    "final_mse": 0.0,
+    "frame_mse": [
+      16.10675274884259,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      14.552671079282407,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "encode_seconds": 0.30669489999854704,
+    "decode_seconds": 0.02855470000213245,
+    "encode_fps": 52.169110083264506,
+    "decode_fps": 560.3280720443615,
+    "sha256": "01a09fcd55bb76531ef5087d3ae017f32b5737500b9e4ffc4fea31078d4625eb",
+    "frame_hashes": [
+      "c3663f356e1d31ceebf650e5c305c8aed3b1a51df515dde7cfddaa456eae5279",
+      "ec3530899598d404a343f3f0327c90ecee19b88cb9a506015778fb8683fde27d",
+      "4978a9e5fd532e98e667e99fc9bbbf0fbe5ecde4f60a555b41c0f8200b7e8488",
+      "620b359772898e23879683e61b261c73dcfdb3bad194377d6ab7f5d8562cad0f",
+      "22a0ebd043456186abae7b1a2dcd572a6568b9ecf7818e401e10c406edcce079",
+      "de86f03bb8d51c46632fbf0a59446754feb7cff9402bd905d786a0586a1a00be",
+      "8837a04a71b7c0ea3da86652948e8995251e8c9662c4db5e2a4173bade7229ea",
+      "a27abd73487dbd321d1d64b6b153894acf3aae7fd2a5a1fccfc71e40a4364743",
+      "ed7d0f4d64aee91d11126591e03d3b6ae3eea1ea89eea8ac102dc8ed0d43dd9a",
+      "7ead600794d90ebb112b3cc9037d6f7cea78b0aee35d1a8faaac15afaa454fde",
+      "13822e17a241b4072f7cd5249038be3f7af5c8c2a4915c7308d49898613b0461",
+      "c5af37023110bfb510474013d512c339346bba2f37afa5b993d1dadd0563c48a",
+      "0dd7185e472e861c3c5c2dba8e0c026047ef74d6077df2c4873aabcbc3b0408d",
+      "9fe00194b6d3bcbe23310e5ee50a6e307f63ce13901e11c58988bfd8df4b478a",
+      "c7afecbf169be93ef7a8a68b4f5f54adafe7f591d641104952dad32025d826f1",
+      "36f7b4d5f315a9e03334a7c51fa473e66580e4a2e24b009c29b6441b51054d0b"
+    ],
+    "source_sha256": "6128c309297b47fbb29eefb486d329f86aed45c94fde0ce3a449012301718fe4",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 0,
+          "bytes": 1570
+        },
+        {
+          "type": 1,
+          "bytes": 42632
+        },
+        {
+          "type": 1,
+          "bytes": 1680
+        },
+        {
+          "type": 1,
+          "bytes": 2024
+        },
+        {
+          "type": 1,
+          "bytes": 1859
+        },
+        {
+          "type": 1,
+          "bytes": 1743
+        },
+        {
+          "type": 1,
+          "bytes": 1688
+        },
+        {
+          "type": 1,
+          "bytes": 2036
+        },
+        {
+          "type": 0,
+          "bytes": 1446
+        },
+        {
+          "type": 1,
+          "bytes": 43603
+        },
+        {
+          "type": 1,
+          "bytes": 1683
+        },
+        {
+          "type": 1,
+          "bytes": 2045
+        },
+        {
+          "type": 1,
+          "bytes": 1875
+        },
+        {
+          "type": 1,
+          "bytes": 1736
+        },
+        {
+          "type": 1,
+          "bytes": 1692
+        },
+        {
+          "type": 1,
+          "bytes": 2063
+        }
+      ]
+    },
+    "residual_fraction": 0.9715159231100272
+  },
+  {
+    "clip": "moving_shape",
+    "mode": "lossless",
+    "bytes": 27096,
+    "bpp_per_frame": 0.3675130208333333,
+    "mean_mse": 0.0,
+    "worst_mse": 0.0,
+    "final_mse": 0.0,
+    "frame_mse": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "encode_seconds": 0.030591100003221072,
+    "decode_seconds": 0.014462700000876794,
+    "encode_fps": 523.0279394436711,
+    "decode_fps": 1106.294122053974,
+    "sha256": "0d0816864c0d3f1cb299e0eee69883973b0e9d0fc4593f285146c4e945ba9809",
+    "frame_hashes": [
+      "b69f1eae8aef7e4b4c3eec048178fb8eff701730f26885614c75cf3c975c26bd",
+      "ec3530899598d404a343f3f0327c90ecee19b88cb9a506015778fb8683fde27d",
+      "4978a9e5fd532e98e667e99fc9bbbf0fbe5ecde4f60a555b41c0f8200b7e8488",
+      "620b359772898e23879683e61b261c73dcfdb3bad194377d6ab7f5d8562cad0f",
+      "22a0ebd043456186abae7b1a2dcd572a6568b9ecf7818e401e10c406edcce079",
+      "de86f03bb8d51c46632fbf0a59446754feb7cff9402bd905d786a0586a1a00be",
+      "8837a04a71b7c0ea3da86652948e8995251e8c9662c4db5e2a4173bade7229ea",
+      "a27abd73487dbd321d1d64b6b153894acf3aae7fd2a5a1fccfc71e40a4364743",
+      "e7202c0cd295bb12bca9036c942ef0dc68658450e111e866d685f65deb4c4ac2",
+      "7ead600794d90ebb112b3cc9037d6f7cea78b0aee35d1a8faaac15afaa454fde",
+      "13822e17a241b4072f7cd5249038be3f7af5c8c2a4915c7308d49898613b0461",
+      "c5af37023110bfb510474013d512c339346bba2f37afa5b993d1dadd0563c48a",
+      "0dd7185e472e861c3c5c2dba8e0c026047ef74d6077df2c4873aabcbc3b0408d",
+      "9fe00194b6d3bcbe23310e5ee50a6e307f63ce13901e11c58988bfd8df4b478a",
+      "c7afecbf169be93ef7a8a68b4f5f54adafe7f591d641104952dad32025d826f1",
+      "36f7b4d5f315a9e03334a7c51fa473e66580e4a2e24b009c29b6441b51054d0b"
+    ],
+    "source_sha256": "6128c309297b47fbb29eefb486d329f86aed45c94fde0ce3a449012301718fe4",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 2,
+          "bytes": 621
+        },
+        {
+          "type": 1,
+          "bytes": 1725
+        },
+        {
+          "type": 1,
+          "bytes": 1680
+        },
+        {
+          "type": 1,
+          "bytes": 2024
+        },
+        {
+          "type": 1,
+          "bytes": 1859
+        },
+        {
+          "type": 1,
+          "bytes": 1743
+        },
+        {
+          "type": 1,
+          "bytes": 1688
+        },
+        {
+          "type": 1,
+          "bytes": 2036
+        },
+        {
+          "type": 2,
+          "bytes": 733
+        },
+        {
+          "type": 1,
+          "bytes": 1732
+        },
+        {
+          "type": 1,
+          "bytes": 1683
+        },
+        {
+          "type": 1,
+          "bytes": 2045
+        },
+        {
+          "type": 1,
+          "bytes": 1875
+        },
+        {
+          "type": 1,
+          "bytes": 1736
+        },
+        {
+          "type": 1,
+          "bytes": 1692
+        },
+        {
+          "type": 1,
+          "bytes": 2063
+        }
+      ]
+    },
+    "residual_fraction": 0.9440876882196634
+  },
+  {
+    "clip": "moving_shape",
+    "mode": "h264",
+    "bytes": 3660,
+    "bpp_per_frame": 0.049641927083333336,
+    "mean_mse": 10.310963383427373,
+    "worst_mse": 18.03594292534722,
+    "final_mse": 13.705168547453704,
+    "frame_mse": [
+      3.489402488425926,
+      18.03594292534722,
+      6.473985460069445,
+      17.256673177083332,
+      5.21263744212963,
+      17.048258463541668,
+      5.151321976273148,
+      15.95701316550926,
+      3.444218388310185,
+      16.886338975694443,
+      4.106391059027778,
+      15.06739185474537,
+      4.035951967592593,
+      13.375849971064815,
+      5.728868272569445,
+      13.705168547453704
+    ],
+    "encode_seconds": 0.07270180000341497,
+    "decode_seconds": 0.05197369999950752,
+    "encode_fps": 220.07708198763225,
+    "decode_fps": 307.84800774529447,
+    "sha256": "aef9e32410b40d5e73e2fe3196c7412928dfdfb2bd9699b8c170f0e3ff7db55d",
+    "frame_hashes": [
+      "cecd0f3e889cbd95a6b7a55823778ea4fd4155dfbdf277918bec7766ce494f42",
+      "8dddb0f2837000e70240f17d4ba3753a133a0a662f82a6010dcc9d1297d7b335",
+      "8acc969e44e965fce47ecf9dc89b0f54744c97b034564070a242a9adf7803222",
+      "8004fe789fe56b53ffe6fc035cc02acd62c02e32958e3213f2adfe7c6bd28496",
+      "6602d7d8823a9bf526985bfa9775520c4d63303bc70679a735c85df41fec144a",
+      "ca76a79b736ca6dc7256b2d842e223af31d47c391c5db5be205798cbf0bda6d8",
+      "5bda89d6c88cdfbb8f9c8e886c34a8432f0531373f62e2f848de49e0e60de407",
+      "e55c2bdf8390d804a7b7d31ee671cd7e85ad39ce566be49ed82192d060494047",
+      "86ea6a48797c6e39a96f1df816a456ded16b56d03a74b6fb4868c99946255f06",
+      "757d52b5734c60eaedc229573d6eed5f3116d91e5282768ed3f33d4ff62c798f",
+      "846847777f9bdfbde7fa978a1d423db82e15b231e899a2576ef31bcba18d9c6d",
+      "6b8b7087aadeb928d679f4cc18648038e210741862eda8bdb84c24b89e3030c9",
+      "efebf890798e5e48c4566107844d9ba56041d1c75d381297839318e3b07a60ef",
+      "20be8fe3e4e31e1e131a75aca60c73c8943dbda3a4151f13715dd3ffba659a9e",
+      "5e8b8e18369ef4d2707e87bce9e2003dbae74a6267241aa6d4fe2c5fafd76e5f",
+      "3cd4287028eb7da786867204a66d07ef11e1d6011d35fed262c0ec1f8cceb313"
+    ],
+    "source_sha256": "6128c309297b47fbb29eefb486d329f86aed45c94fde0ce3a449012301718fe4",
+    "metadata": null
+  },
+  {
+    "clip": "photo_pan",
+    "mode": "intra",
+    "bytes": 56484,
+    "bpp_per_frame": 0.76611328125,
+    "mean_mse": 96.61199499059606,
+    "worst_mse": 107.807861328125,
+    "final_mse": 94.68990523726852,
+    "frame_mse": [
+      89.95259150752315,
+      98.92305953414352,
+      93.70356807002315,
+      96.26244212962963,
+      95.84757486979167,
+      96.62698025173611,
+      87.52092375578704,
+      98.64399775752315,
+      97.20478877314815,
+      101.58281792534723,
+      92.28404405381944,
+      93.74131944444444,
+      104.74533420138889,
+      107.807861328125,
+      96.25471100983796,
+      94.68990523726852
+    ],
+    "encode_seconds": 1.3753471999989415,
+    "decode_seconds": 0.09402620000037132,
+    "encode_fps": 11.633426090526315,
+    "decode_fps": 170.16533689478905,
+    "sha256": "fae1682ff02b5f2376b0452825adda95b19ad7ae21e358048363001447170a8d",
+    "frame_hashes": [
+      "fc619b223abce4ad153b599c35b836f63cbe24928a5308218cdfe5e3d1e49381",
+      "1dcd66ac1aead20240abe785e54736ee5b0b81c0fddf15cb583dcb8956bcf7ac",
+      "ebf71b302e4b2022ff1b9ff5f033398ce1928d090b46301fad9d074721a9115e",
+      "9290be4e439f6374875745b6ffa3ab116b47af7a37685f685bad158be0d455d8",
+      "597f1c65cfb77fe0c406f5a820c68363ae0364b71cd2552fc417e4c653e22111",
+      "59678db3f4ab522098eb5b878d1d2cabbddcc9c5875f82bed0dfe48fd7570f78",
+      "9be10f533fcdd3404a09be3d12ece0bc1df53035dfe95e16a14d54553a386585",
+      "a7f9919afb5cbe5de8953347de43a0e18f033aca3b7db9876832c3a80bd2d044",
+      "7b49dea50d736a0b633ac01aee1bb17688ce9147707e1500487e69a12a124dc9",
+      "093b2b611a87906000b8e860a1444887776d17fe9b01df76594df83adc93e363",
+      "c492c0aad339bd1226defc46f98e565428082f92176d0e7f1155383b7a6ed7df",
+      "88d2f6859041552d0ae7c02300843f6435f0be6bd5fc9eb8c7f592a36aeab355",
+      "e0dc58e6946ca3597414ca2b1fb395722b4f5e92bf253cbf400696cfc4eeea20",
+      "0b70c047c42e43b50518ef0dad8025adcf1f7633b0b04610c15fb5ffea95d4e5",
+      "7eaaad63f6686ac8782e119b33f49ea7dfb9d97bd46ff964f17f7dc02753445c",
+      "f2c148e15a8c7c592a2b7a8c84febe4498082a807e1e8111153c961e5c5478e9"
+    ],
+    "source_sha256": "95d1b61715bfe363bef43bc69efe499efe032c5bff8ac19774ab707b61b32f0a",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 0,
+          "bytes": 3200
+        },
+        {
+          "type": 0,
+          "bytes": 3108
+        },
+        {
+          "type": 0,
+          "bytes": 3376
+        },
+        {
+          "type": 0,
+          "bytes": 3021
+        },
+        {
+          "type": 0,
+          "bytes": 3035
+        },
+        {
+          "type": 0,
+          "bytes": 3254
+        },
+        {
+          "type": 0,
+          "bytes": 3442
+        },
+        {
+          "type": 0,
+          "bytes": 3315
+        },
+        {
+          "type": 0,
+          "bytes": 4039
+        },
+        {
+          "type": 0,
+          "bytes": 3774
+        },
+        {
+          "type": 0,
+          "bytes": 3736
+        },
+        {
+          "type": 0,
+          "bytes": 4425
+        },
+        {
+          "type": 0,
+          "bytes": 3474
+        },
+        {
+          "type": 0,
+          "bytes": 3986
+        },
+        {
+          "type": 0,
+          "bytes": 3777
+        },
+        {
+          "type": 0,
+          "bytes": 3361
+        }
+      ]
+    },
+    "residual_fraction": 0.0
+  },
+  {
+    "clip": "photo_pan",
+    "mode": "temporal",
+    "bytes": 1112826,
+    "bpp_per_frame": 15.093668619791666,
+    "mean_mse": 11.697336267541957,
+    "worst_mse": 97.20478877314815,
+    "final_mse": 0.0,
+    "frame_mse": [
+      89.95259150752315,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      97.20478877314815,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "encode_seconds": 0.5281109999996261,
+    "decode_seconds": 0.03369849999944563,
+    "encode_fps": 30.29666111861205,
+    "decode_fps": 474.7985815470485,
+    "sha256": "22609902cf3a883a12f009d3d47c6fcc9f09a8dd5c8ea7037f5b7572358e2ef1",
+    "frame_hashes": [
+      "fc619b223abce4ad153b599c35b836f63cbe24928a5308218cdfe5e3d1e49381",
+      "51885b35d95397bd7694ff3a69ec152f1578e167ee5061abf3c2b462a2a97475",
+      "c899eb40fca398acb6ebf0853411f8422b1878a4de07b8649ce611e65f3ffed5",
+      "febbf23d9ab9007a5ae9e47d57b00f72096e3c40a70ae169e28119a5f6520bc5",
+      "786581275753d21f3e0dc3b92af1d00f9f54cca2bf2bb06620c523dc74241633",
+      "9bd042d163b206adc2037b52d5b47113f09dd2f7f1345000fc687e537bc9df00",
+      "5a69bcd03b0326e3413199dadfe2ce294e4ee4941231acaf7c794615bf30b1b4",
+      "3d82357d9a6c68410539c9bf7058ebbf8e3db3df0f0b03958e27771fd63d0b30",
+      "7b49dea50d736a0b633ac01aee1bb17688ce9147707e1500487e69a12a124dc9",
+      "bf183ab61f2cc3561c639c25e8de7bd8dcdacc62d9dd5ddc765752ee04fcc481",
+      "c3e8e62f0159896fb93804ee4008f6a7c1e08c1ca6977bf05b5e1848840d073e",
+      "34a502bb7e4a8fb6f79b0b2bd55c6e9e38a3416ac04cdfb253371601415ac93c",
+      "3d1f362b2f80d8959f33d1c9196643ee751d9a2f75d2424b46714eee4d4419de",
+      "90a09ce24fa00509312f207a9e3d13f798052153f28aa6d4ed07aa0147426da2",
+      "4cd3f79422d4d927e815d45c4a2ebaa8efb486118b25a8fb30163cc81c635b94",
+      "147ed1447c21bbe174b876821f0775d0127da3397076a970da8ded30cde6b0ff"
+    ],
+    "source_sha256": "95d1b61715bfe363bef43bc69efe499efe032c5bff8ac19774ab707b61b32f0a",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 0,
+          "bytes": 3200
+        },
+        {
+          "type": 1,
+          "bytes": 83917
+        },
+        {
+          "type": 1,
+          "bytes": 76079
+        },
+        {
+          "type": 1,
+          "bytes": 76300
+        },
+        {
+          "type": 1,
+          "bytes": 76473
+        },
+        {
+          "type": 1,
+          "bytes": 76607
+        },
+        {
+          "type": 1,
+          "bytes": 76786
+        },
+        {
+          "type": 1,
+          "bytes": 77211
+        },
+        {
+          "type": 0,
+          "bytes": 4039
+        },
+        {
+          "type": 1,
+          "bytes": 86956
+        },
+        {
+          "type": 1,
+          "bytes": 78758
+        },
+        {
+          "type": 1,
+          "bytes": 78983
+        },
+        {
+          "type": 1,
+          "bytes": 79120
+        },
+        {
+          "type": 1,
+          "bytes": 79223
+        },
+        {
+          "type": 1,
+          "bytes": 79438
+        },
+        {
+          "type": 1,
+          "bytes": 79575
+        }
+      ]
+    },
+    "residual_fraction": 0.9933502632037713
+  },
+  {
+    "clip": "photo_pan",
+    "mode": "lossless",
+    "bytes": 1196462,
+    "bpp_per_frame": 16.22805447048611,
+    "mean_mse": 0.0,
+    "worst_mse": 0.0,
+    "final_mse": 0.0,
+    "frame_mse": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "encode_seconds": 0.3800472000002628,
+    "decode_seconds": 0.024073299999145092,
+    "encode_fps": 42.10003389049817,
+    "decode_fps": 664.636755266964,
+    "sha256": "47498b34bb7c1afd4723a797bbe6a091402e9d6858cf1fca789cec2549e2b872",
+    "frame_hashes": [
+      "385dda9dfab76f48f391ef6c23059cb7cbe5f2988bd00403a95b67c47d97e42a",
+      "51885b35d95397bd7694ff3a69ec152f1578e167ee5061abf3c2b462a2a97475",
+      "c899eb40fca398acb6ebf0853411f8422b1878a4de07b8649ce611e65f3ffed5",
+      "febbf23d9ab9007a5ae9e47d57b00f72096e3c40a70ae169e28119a5f6520bc5",
+      "786581275753d21f3e0dc3b92af1d00f9f54cca2bf2bb06620c523dc74241633",
+      "9bd042d163b206adc2037b52d5b47113f09dd2f7f1345000fc687e537bc9df00",
+      "5a69bcd03b0326e3413199dadfe2ce294e4ee4941231acaf7c794615bf30b1b4",
+      "3d82357d9a6c68410539c9bf7058ebbf8e3db3df0f0b03958e27771fd63d0b30",
+      "cb3f22dddec20b1214bea9299c1d6d25034fbbf22aff6c6849fc56687fde6b4e",
+      "bf183ab61f2cc3561c639c25e8de7bd8dcdacc62d9dd5ddc765752ee04fcc481",
+      "c3e8e62f0159896fb93804ee4008f6a7c1e08c1ca6977bf05b5e1848840d073e",
+      "34a502bb7e4a8fb6f79b0b2bd55c6e9e38a3416ac04cdfb253371601415ac93c",
+      "3d1f362b2f80d8959f33d1c9196643ee751d9a2f75d2424b46714eee4d4419de",
+      "90a09ce24fa00509312f207a9e3d13f798052153f28aa6d4ed07aa0147426da2",
+      "4cd3f79422d4d927e815d45c4a2ebaa8efb486118b25a8fb30163cc81c635b94",
+      "147ed1447c21bbe174b876821f0775d0127da3397076a970da8ded30cde6b0ff"
+    ],
+    "source_sha256": "95d1b61715bfe363bef43bc69efe499efe032c5bff8ac19774ab707b61b32f0a",
+    "metadata": {
+      "width": 256,
+      "height": 144,
+      "frames": 16,
+      "fps": 12.0,
+      "interval": 8,
+      "ledger": [
+        {
+          "type": 2,
+          "bytes": 53204
+        },
+        {
+          "type": 1,
+          "bytes": 75840
+        },
+        {
+          "type": 1,
+          "bytes": 76079
+        },
+        {
+          "type": 1,
+          "bytes": 76300
+        },
+        {
+          "type": 1,
+          "bytes": 76473
+        },
+        {
+          "type": 1,
+          "bytes": 76607
+        },
+        {
+          "type": 1,
+          "bytes": 76786
+        },
+        {
+          "type": 1,
+          "bytes": 77211
+        },
+        {
+          "type": 2,
+          "bytes": 54311
+        },
+        {
+          "type": 1,
+          "bytes": 78393
+        },
+        {
+          "type": 1,
+          "bytes": 78758
+        },
+        {
+          "type": 1,
+          "bytes": 78983
+        },
+        {
+          "type": 1,
+          "bytes": 79120
+        },
+        {
+          "type": 1,
+          "bytes": 79223
+        },
+        {
+          "type": 1,
+          "bytes": 79438
+        },
+        {
+          "type": 1,
+          "bytes": 79575
+        }
+      ]
+    },
+    "residual_fraction": 0.9100046637502904
+  },
+  {
+    "clip": "photo_pan",
+    "mode": "h264",
+    "bytes": 6132,
+    "bpp_per_frame": 0.08317057291666667,
+    "mean_mse": 24.868826972113716,
+    "worst_mse": 28.436668113425927,
+    "final_mse": 26.578504774305557,
+    "frame_mse": [
+      22.29228153935185,
+      24.403736255787038,
+      22.85028754340278,
+      26.401204427083332,
+      22.587474681712962,
+      24.04588035300926,
+      22.317138671875,
+      25.702030888310187,
+      23.508942780671298,
+      26.465729890046298,
+      25.136619285300927,
+      26.781575520833332,
+      24.52542679398148,
+      25.86773003472222,
+      28.436668113425927,
+      26.578504774305557
+    ],
+    "encode_seconds": 0.06543450000026496,
+    "decode_seconds": 0.0519614000004367,
+    "encode_fps": 244.51932848780402,
+    "decode_fps": 307.92087972736556,
+    "sha256": "f36f6b7e77482af9ed5e2c46aea2a9f73c430afb7e0860a7da942bd95dda8efd",
+    "frame_hashes": [
+      "4272686f9dfae5064fb22a8e23afda490a161cc7898ad94695cdd9bb7947690d",
+      "f12010644e759a1062f4fd6fc142b395174d6eb854b6fd68b4070331fff9df9d",
+      "08080453739d95ca65be0ae2b6d587b2491c93ad012a49ccbf9ecb822c8747e2",
+      "12b00b98ebbefacfee0981694b8847d3be84d20e939902493a83f2964e6c899e",
+      "cd1d3403378635ac82227f2f78fa883bc196a1417b2cd32e0eceb24317676df8",
+      "4ca47b48e57e2e0dc1155f18f998252ee09c5fce4639b01642a7f35c6f3ffc87",
+      "5c0d393c7dca2123f88787c791667e4d2105aee65c4031bf99134bac634152e9",
+      "573cf4356f4a613fed6d98ffc2e26ad012a854d40435080acfedb8d6f7aae42d",
+      "2209ea3ef9e57b98b353ae1cabad9fc34d99a9b27a9ef1abcdacf15ea56877a9",
+      "5ac406fd868a6f252a6e21b9332bf872ef0d49e488f48d0f0c9f5c25164a279b",
+      "9ff138cd79dd36f52141e2837083432a7964504cbfd7d0ac54071e35974602f8",
+      "21006701f529b461b8270dc385c475c9642ca472f72088821a5c8e6b40bf4fce",
+      "d3a5b04e2ea89656cbb80d4c648c4779c0bf4793e51fe2f9a21a41ce3972d1fe",
+      "f349f44ccbb6c7dd66312ded6a632ea820fa8e0ccee2ce1484a411c13fd0036c",
+      "1fde3c84c79cc1a1deeaa71540e75c7e39e45d11f4abf4a226e105773c8662b5",
+      "a6b2106d148c6724a278a30680914133da7707536261310e0bc3ac4bab87d1eb"
+    ],
+    "source_sha256": "95d1b61715bfe363bef43bc69efe499efe032c5bff8ac19774ab707b61b32f0a",
+    "metadata": null
+  }
+]
