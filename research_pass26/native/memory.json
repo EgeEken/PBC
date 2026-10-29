@@ -1,0 +1,16 @@
+[
+  {
+    "mode": "reference",
+    "before_rss": 145223680,
+    "peak_wset": 453787648,
+    "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "mse": 299.1919568344019
+  },
+  {
+    "mode": "native",
+    "before_rss": 145223680,
+    "peak_wset": 299872256,
+    "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "mse": 299.1919568344019
+  }
+]

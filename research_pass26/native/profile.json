@@ -1,0 +1,3516 @@
+[
+  {
+    "image": "cat.jpg",
+    "preset": "quality",
+    "encode": {
+      "total_ns": 672371700,
+      "summary": {
+        "action.downsample_init.build_candidate": {
+          "count": 9,
+          "total_ns": 13219300,
+          "exclusive_ns": 13219300,
+          "avg_ns": 1468811,
+          "min_ns": 1175900,
+          "max_ns": 1899200
+        },
+        "action.downsample_init.candidates": {
+          "count": 3,
+          "total_ns": 9679200,
+          "exclusive_ns": 9679200,
+          "avg_ns": 3226400,
+          "min_ns": 2790800,
+          "max_ns": 3719000
+        },
+        "action.downsample_init.resample_candidate": {
+          "count": 9,
+          "total_ns": 16805200,
+          "exclusive_ns": 16805200,
+          "avg_ns": 1867244,
+          "min_ns": 1364100,
+          "max_ns": 2921100
+        },
+        "action.downsample_init.residual": {
+          "count": 3,
+          "total_ns": 7698400,
+          "exclusive_ns": 7698400,
+          "avg_ns": 2566133,
+          "min_ns": 2530600,
+          "max_ns": 2615200
+        },
+        "action.downsample_init.score_candidate": {
+          "count": 9,
+          "total_ns": 17431900,
+          "exclusive_ns": 17431900,
+          "avg_ns": 1936877,
+          "min_ns": 1612100,
+          "max_ns": 2148300
+        },
+        "action.downsample_init.select_candidate": {
+          "count": 3,
+          "total_ns": 186700,
+          "exclusive_ns": 186700,
+          "avg_ns": 62233,
+          "min_ns": 53200,
+          "max_ns": 68800
+        },
+        "action.filler.build.make_patch": {
+          "count": 19,
+          "total_ns": 14896200,
+          "exclusive_ns": 14896200,
+          "avg_ns": 784010,
+          "min_ns": 190800,
+          "max_ns": 4012800
+        },
+        "action.filler.build.residual": {
+          "count": 19,
+          "total_ns": 1411800,
+          "exclusive_ns": 1411800,
+          "avg_ns": 74305,
+          "min_ns": 12700,
+          "max_ns": 258000
+        },
+        "action.filler.build.score_patch": {
+          "count": 19,
+          "total_ns": 9472800,
+          "exclusive_ns": 365000,
+          "avg_ns": 498568,
+          "min_ns": 116500,
+          "max_ns": 1234700
+        },
+        "action.filler.learned_select": {
+          "count": 19,
+          "total_ns": 151062200,
+          "exclusive_ns": 1231500,
+          "avg_ns": 7950642,
+          "min_ns": 5910200,
+          "max_ns": 16320900
+        },
+        "action.filler.load_policy": {
+          "count": 1,
+          "total_ns": 63400,
+          "exclusive_ns": 63400,
+          "avg_ns": 63400,
+          "min_ns": 63400,
+          "max_ns": 63400
+        },
+        "action.filler.policy.action_head_forward": {
+          "count": 19,
+          "total_ns": 151200,
+          "exclusive_ns": 151200,
+          "avg_ns": 7957,
+          "min_ns": 6300,
+          "max_ns": 9600
+        },
+        "action.filler.policy.evaluate_action": {
+          "count": 19,
+          "total_ns": 26246400,
+          "exclusive_ns": 465600,
+          "avg_ns": 1381389,
+          "min_ns": 339200,
+          "max_ns": 5394700
+        },
+        "action.filler.policy.feature_extract": {
+          "count": 19,
+          "total_ns": 22567500,
+          "exclusive_ns": 22567500,
+          "avg_ns": 1187763,
+          "min_ns": 417300,
+          "max_ns": 3588800
+        },
+        "action.filler.policy.feature_normalize": {
+          "count": 19,
+          "total_ns": 143400,
+          "exclusive_ns": 143400,
+          "avg_ns": 7547,
+          "min_ns": 6300,
+          "max_ns": 9400
+        },
+        "action.filler.policy.forward": {
+          "count": 19,
+          "total_ns": 1232900,
+          "exclusive_ns": 236700,
+          "avg_ns": 64889,
+          "min_ns": 55800,
+          "max_ns": 75800
+        },
+        "action.filler.policy.propose_boxes": {
+          "count": 19,
+          "total_ns": 99531800,
+          "exclusive_ns": 3575000,
+          "avg_ns": 5238515,
+          "min_ns": 4338500,
+          "max_ns": 7192900
+        },
+        "action.filler.policy.rd_score": {
+          "count": 18,
+          "total_ns": 8900,
+          "exclusive_ns": 8900,
+          "avg_ns": 494,
+          "min_ns": 400,
+          "max_ns": 700
+        },
+        "action.filler.policy.select_action_head": {
+          "count": 19,
+          "total_ns": 48900,
+          "exclusive_ns": 48900,
+          "avg_ns": 2573,
+          "min_ns": 2000,
+          "max_ns": 3200
+        },
+        "action.filler.policy.select_value_order": {
+          "count": 19,
+          "total_ns": 50900,
+          "exclusive_ns": 50900,
+          "avg_ns": 2678,
+          "min_ns": 2400,
+          "max_ns": 3400
+        },
+        "action.filler.policy.trunk_forward": {
+          "count": 19,
+          "total_ns": 717100,
+          "exclusive_ns": 717100,
+          "avg_ns": 37742,
+          "min_ns": 32100,
+          "max_ns": 44200
+        },
+        "action.filler.policy.value_head_forward": {
+          "count": 19,
+          "total_ns": 127900,
+          "exclusive_ns": 127900,
+          "avg_ns": 6731,
+          "min_ns": 5700,
+          "max_ns": 7900
+        },
+        "action.filler.score.bit_cost": {
+          "count": 19,
+          "total_ns": 53400,
+          "exclusive_ns": 53400,
+          "avg_ns": 2810,
+          "min_ns": 2300,
+          "max_ns": 3500
+        },
+        "action.filler.score.reduction": {
+          "count": 19,
+          "total_ns": 6109000,
+          "exclusive_ns": 6109000,
+          "avg_ns": 321526,
+          "min_ns": 81300,
+          "max_ns": 955100
+        },
+        "action.filler.score.resample": {
+          "count": 19,
+          "total_ns": 2945400,
+          "exclusive_ns": 2945400,
+          "avg_ns": 155021,
+          "min_ns": 15200,
+          "max_ns": 573700
+        },
+        "action.search.anchors": {
+          "count": 19,
+          "total_ns": 5837900,
+          "exclusive_ns": 5837900,
+          "avg_ns": 307257,
+          "min_ns": 247100,
+          "max_ns": 409400
+        },
+        "action.search.integral_error": {
+          "count": 19,
+          "total_ns": 11009600,
+          "exclusive_ns": 11009600,
+          "avg_ns": 579452,
+          "min_ns": 452500,
+          "max_ns": 945500
+        },
+        "action.search.prescore": {
+          "count": 19,
+          "total_ns": 1325200,
+          "exclusive_ns": 1325200,
+          "avg_ns": 69747,
+          "min_ns": 51800,
+          "max_ns": 204700
+        },
+        "action.search.sample_boxes": {
+          "count": 19,
+          "total_ns": 77318500,
+          "exclusive_ns": 77318500,
+          "avg_ns": 4069394,
+          "min_ns": 3250100,
+          "max_ns": 5970400
+        },
+        "action.search.select_top_boxes": {
+          "count": 19,
+          "total_ns": 458400,
+          "exclusive_ns": 458400,
+          "avg_ns": 24126,
+          "min_ns": 20600,
+          "max_ns": 31800
+        },
+        "action.search.visible_error": {
+          "count": 19,
+          "total_ns": 7200,
+          "exclusive_ns": 7200,
+          "avg_ns": 378,
+          "min_ns": 300,
+          "max_ns": 500
+        },
+        "encode.entropy_pack": {
+          "count": 1,
+          "total_ns": 41716200,
+          "exclusive_ns": 41716200,
+          "avg_ns": 41716200,
+          "min_ns": 41716200,
+          "max_ns": 41716200
+        },
+        "encode.filler_initialize": {
+          "count": 1,
+          "total_ns": 76300,
+          "exclusive_ns": 12900,
+          "avg_ns": 76300,
+          "min_ns": 76300,
+          "max_ns": 76300
+        },
+        "encode.initial_error_scores": {
+          "count": 1,
+          "total_ns": 3521800,
+          "exclusive_ns": 3521800,
+          "avg_ns": 3521800,
+          "min_ns": 3521800,
+          "max_ns": 3521800
+        },
+        "encode.initial_patch.apply": {
+          "count": 3,
+          "total_ns": 622700,
+          "exclusive_ns": 622700,
+          "avg_ns": 207566,
+          "min_ns": 174800,
+          "max_ns": 239600
+        },
+        "encode.initial_patch.channel": {
+          "count": 3,
+          "total_ns": 67851800,
+          "exclusive_ns": 50500,
+          "avg_ns": 22617266,
+          "min_ns": 21926100,
+          "max_ns": 23918200
+        },
+        "encode.initial_patch_selection": {
+          "count": 1,
+          "total_ns": 67879800,
+          "exclusive_ns": 28000,
+          "avg_ns": 67879800,
+          "min_ns": 67879800,
+          "max_ns": 67879800
+        },
+        "encode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 1458700,
+          "exclusive_ns": 1458700,
+          "avg_ns": 1458700,
+          "min_ns": 1458700,
+          "max_ns": 1458700
+        },
+        "encode.metric.final_mse": {
+          "count": 1,
+          "total_ns": 195983200,
+          "exclusive_ns": 195983200,
+          "avg_ns": 195983200,
+          "min_ns": 195983200,
+          "max_ns": 195983200
+        },
+        "encode.patch.apply": {
+          "count": 18,
+          "total_ns": 1184600,
+          "exclusive_ns": 1184600,
+          "avg_ns": 65811,
+          "min_ns": 16700,
+          "max_ns": 181600
+        },
+        "encode.patch.choose_channel": {
+          "count": 19,
+          "total_ns": 120700,
+          "exclusive_ns": 120700,
+          "avg_ns": 6352,
+          "min_ns": 5100,
+          "max_ns": 7800
+        },
+        "encode.patch.fill": {
+          "count": 19,
+          "total_ns": 151287100,
+          "exclusive_ns": 78200,
+          "avg_ns": 7962478,
+          "min_ns": 5923800,
+          "max_ns": 16334600
+        },
+        "encode.patch.quality_check": {
+          "count": 18,
+          "total_ns": 15900,
+          "exclusive_ns": 15900,
+          "avg_ns": 883,
+          "min_ns": 700,
+          "max_ns": 1100
+        },
+        "encode.patch.score": {
+          "count": 18,
+          "total_ns": 3692700,
+          "exclusive_ns": 3692700,
+          "avg_ns": 205150,
+          "min_ns": 53900,
+          "max_ns": 542200
+        },
+        "encode.patch.search": {
+          "count": 19,
+          "total_ns": 76500,
+          "exclusive_ns": 67800,
+          "avg_ns": 4026,
+          "min_ns": 3200,
+          "max_ns": 5400
+        },
+        "encode.patch.total": {
+          "count": 19,
+          "total_ns": 156961300,
+          "exclusive_ns": 583800,
+          "avg_ns": 8261121,
+          "min_ns": 6028900,
+          "max_ns": 16996800
+        },
+        "encode.prepare": {
+          "count": 1,
+          "total_ns": 101798500,
+          "exclusive_ns": 2604600,
+          "avg_ns": 101798500,
+          "min_ns": 101798500,
+          "max_ns": 101798500
+        },
+        "encode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2233900,
+          "exclusive_ns": 2233900,
+          "avg_ns": 2233900,
+          "min_ns": 2233900,
+          "max_ns": 2233900
+        },
+        "encode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 88202700,
+          "exclusive_ns": 88202700,
+          "avg_ns": 88202700,
+          "min_ns": 88202700,
+          "max_ns": 88202700
+        },
+        "encode.search_initialize": {
+          "count": 1,
+          "total_ns": 92300,
+          "exclusive_ns": 92300,
+          "avg_ns": 92300,
+          "min_ns": 92300,
+          "max_ns": 92300
+        },
+        "encode.serialize.header": {
+          "count": 1,
+          "total_ns": 25700,
+          "exclusive_ns": 25700,
+          "avg_ns": 25700,
+          "min_ns": 25700,
+          "max_ns": 25700
+        },
+        "encode.serialize.patches": {
+          "count": 1,
+          "total_ns": 8299800,
+          "exclusive_ns": 8299800,
+          "avg_ns": 8299800,
+          "min_ns": 8299800,
+          "max_ns": 8299800
+        },
+        "encode.validate": {
+          "count": 1,
+          "total_ns": 9100,
+          "exclusive_ns": 9100,
+          "avg_ns": 9100,
+          "min_ns": 9100,
+          "max_ns": 9100
+        },
+        "head.downsample_init": {
+          "count": 3,
+          "total_ns": 67178600,
+          "exclusive_ns": 2157900,
+          "avg_ns": 22392866,
+          "min_ns": 21739100,
+          "max_ns": 23657400
+        },
+        "head.filler": {
+          "count": 19,
+          "total_ns": 151208900,
+          "exclusive_ns": 146700,
+          "avg_ns": 7958363,
+          "min_ns": 5919400,
+          "max_ns": 16330000
+        },
+        "head.search": {
+          "count": 19,
+          "total_ns": 8700,
+          "exclusive_ns": 8700,
+          "avg_ns": 457,
+          "min_ns": 400,
+          "max_ns": 700
+        },
+        "prepare.build_warmup_target": {
+          "count": 1,
+          "total_ns": 3800,
+          "exclusive_ns": 3800,
+          "avg_ns": 3800,
+          "min_ns": 3800,
+          "max_ns": 3800
+        },
+        "prepare.downsample_color": {
+          "count": 1,
+          "total_ns": 53807500,
+          "exclusive_ns": 53807500,
+          "avg_ns": 53807500,
+          "min_ns": 53807500,
+          "max_ns": 53807500
+        },
+        "prepare.input_normalize": {
+          "count": 1,
+          "total_ns": 44698900,
+          "exclusive_ns": 44698900,
+          "avg_ns": 44698900,
+          "min_ns": 44698900,
+          "max_ns": 44698900
+        },
+        "prepare.materialize_arrays": {
+          "count": 1,
+          "total_ns": 683700,
+          "exclusive_ns": 683700,
+          "avg_ns": 683700,
+          "min_ns": 683700,
+          "max_ns": 683700
+        }
+      }
+    },
+    "decode": {
+      "total_ns": 128984400,
+      "summary": {
+        "decode.entropy_unpack": {
+          "count": 1,
+          "total_ns": 4697500,
+          "exclusive_ns": 4697500,
+          "avg_ns": 4697500,
+          "min_ns": 4697500,
+          "max_ns": 4697500
+        },
+        "decode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 769600,
+          "exclusive_ns": 769600,
+          "avg_ns": 769600,
+          "min_ns": 769600,
+          "max_ns": 769600
+        },
+        "decode.open_body": {
+          "count": 1,
+          "total_ns": 4717600,
+          "exclusive_ns": 16600,
+          "avg_ns": 4717600,
+          "min_ns": 4717600,
+          "max_ns": 4717600
+        },
+        "decode.parse_header": {
+          "count": 1,
+          "total_ns": 50300,
+          "exclusive_ns": 50300,
+          "avg_ns": 50300,
+          "min_ns": 50300,
+          "max_ns": 50300
+        },
+        "decode.patch.read": {
+          "count": 21,
+          "total_ns": 6413300,
+          "exclusive_ns": 6413300,
+          "avg_ns": 305395,
+          "min_ns": 62500,
+          "max_ns": 1667800
+        },
+        "decode.patch.resample_apply": {
+          "count": 21,
+          "total_ns": 12464500,
+          "exclusive_ns": 12464500,
+          "avg_ns": 593547,
+          "min_ns": 26300,
+          "max_ns": 3126600
+        },
+        "decode.patch_loop": {
+          "count": 1,
+          "total_ns": 19241600,
+          "exclusive_ns": 363800,
+          "avg_ns": 19241600,
+          "min_ns": 19241600,
+          "max_ns": 19241600
+        },
+        "decode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2489100,
+          "exclusive_ns": 2489100,
+          "avg_ns": 2489100,
+          "min_ns": 2489100,
+          "max_ns": 2489100
+        },
+        "decode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 98700200,
+          "exclusive_ns": 98700200,
+          "avg_ns": 98700200,
+          "min_ns": 98700200,
+          "max_ns": 98700200
+        },
+        "decode.to_canvas": {
+          "count": 1,
+          "total_ns": 24829600,
+          "exclusive_ns": 6300,
+          "avg_ns": 24829600,
+          "min_ns": 24829600,
+          "max_ns": 24829600
+        },
+        "decode.validate_magic_version": {
+          "count": 1,
+          "total_ns": 3500,
+          "exclusive_ns": 3500,
+          "avg_ns": 3500,
+          "min_ns": 3500,
+          "max_ns": 3500
+        },
+        "head.decoder": {
+          "count": 1,
+          "total_ns": 24823300,
+          "exclusive_ns": 44200,
+          "avg_ns": 24823300,
+          "min_ns": 24823300,
+          "max_ns": 24823300
+        }
+      }
+    },
+    "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27"
+  },
+  {
+    "image": "cat.jpg",
+    "preset": "high_quality",
+    "encode": {
+      "total_ns": 713689100,
+      "summary": {
+        "action.downsample_init.build_candidate": {
+          "count": 9,
+          "total_ns": 12957000,
+          "exclusive_ns": 12957000,
+          "avg_ns": 1439666,
+          "min_ns": 1154500,
+          "max_ns": 1631400
+        },
+        "action.downsample_init.candidates": {
+          "count": 3,
+          "total_ns": 10203100,
+          "exclusive_ns": 10203100,
+          "avg_ns": 3401033,
+          "min_ns": 3182700,
+          "max_ns": 3612800
+        },
+        "action.downsample_init.resample_candidate": {
+          "count": 9,
+          "total_ns": 16803900,
+          "exclusive_ns": 16803900,
+          "avg_ns": 1867100,
+          "min_ns": 1397900,
+          "max_ns": 2449600
+        },
+        "action.downsample_init.residual": {
+          "count": 3,
+          "total_ns": 7877200,
+          "exclusive_ns": 7877200,
+          "avg_ns": 2625733,
+          "min_ns": 2333700,
+          "max_ns": 2801600
+        },
+        "action.downsample_init.score_candidate": {
+          "count": 9,
+          "total_ns": 18654600,
+          "exclusive_ns": 18654600,
+          "avg_ns": 2072733,
+          "min_ns": 1778000,
+          "max_ns": 2344100
+        },
+        "action.downsample_init.select_candidate": {
+          "count": 3,
+          "total_ns": 195400,
+          "exclusive_ns": 195400,
+          "avg_ns": 65133,
+          "min_ns": 63200,
+          "max_ns": 66100
+        },
+        "action.filler.build.make_patch": {
+          "count": 20,
+          "total_ns": 22393000,
+          "exclusive_ns": 22393000,
+          "avg_ns": 1119650,
+          "min_ns": 123800,
+          "max_ns": 6528000
+        },
+        "action.filler.build.residual": {
+          "count": 20,
+          "total_ns": 2828700,
+          "exclusive_ns": 2828700,
+          "avg_ns": 141435,
+          "min_ns": 7500,
+          "max_ns": 566200
+        },
+        "action.filler.build.score_patch": {
+          "count": 20,
+          "total_ns": 20523900,
+          "exclusive_ns": 464300,
+          "avg_ns": 1026195,
+          "min_ns": 74700,
+          "max_ns": 6815700
+        },
+        "action.filler.learned_select": {
+          "count": 20,
+          "total_ns": 189431200,
+          "exclusive_ns": 1320300,
+          "avg_ns": 9471560,
+          "min_ns": 5324900,
+          "max_ns": 21086200
+        },
+        "action.filler.load_policy": {
+          "count": 1,
+          "total_ns": 61000,
+          "exclusive_ns": 61000,
+          "avg_ns": 61000,
+          "min_ns": 61000,
+          "max_ns": 61000
+        },
+        "action.filler.policy.action_head_forward": {
+          "count": 20,
+          "total_ns": 160900,
+          "exclusive_ns": 160900,
+          "avg_ns": 8045,
+          "min_ns": 6400,
+          "max_ns": 9300
+        },
+        "action.filler.policy.evaluate_action": {
+          "count": 20,
+          "total_ns": 46150300,
+          "exclusive_ns": 404700,
+          "avg_ns": 2307515,
+          "min_ns": 218200,
+          "max_ns": 9130600
+        },
+        "action.filler.policy.feature_extract": {
+          "count": 20,
+          "total_ns": 38854500,
+          "exclusive_ns": 38854500,
+          "avg_ns": 1942725,
+          "min_ns": 305900,
+          "max_ns": 6378100
+        },
+        "action.filler.policy.feature_normalize": {
+          "count": 20,
+          "total_ns": 166100,
+          "exclusive_ns": 166100,
+          "avg_ns": 8305,
+          "min_ns": 5800,
+          "max_ns": 13400
+        },
+        "action.filler.policy.forward": {
+          "count": 20,
+          "total_ns": 1348000,
+          "exclusive_ns": 243600,
+          "avg_ns": 67400,
+          "min_ns": 52100,
+          "max_ns": 105500
+        },
+        "action.filler.policy.propose_boxes": {
+          "count": 20,
+          "total_ns": 101471400,
+          "exclusive_ns": 4438200,
+          "avg_ns": 5073570,
+          "min_ns": 4531800,
+          "max_ns": 5583600
+        },
+        "action.filler.policy.rd_score": {
+          "count": 20,
+          "total_ns": 9600,
+          "exclusive_ns": 9600,
+          "avg_ns": 480,
+          "min_ns": 300,
+          "max_ns": 800
+        },
+        "action.filler.policy.select_action_head": {
+          "count": 20,
+          "total_ns": 57200,
+          "exclusive_ns": 57200,
+          "avg_ns": 2860,
+          "min_ns": 2000,
+          "max_ns": 4000
+        },
+        "action.filler.policy.select_value_order": {
+          "count": 20,
+          "total_ns": 53800,
+          "exclusive_ns": 53800,
+          "avg_ns": 2690,
+          "min_ns": 2100,
+          "max_ns": 3100
+        },
+        "action.filler.policy.trunk_forward": {
+          "count": 20,
+          "total_ns": 794500,
+          "exclusive_ns": 794500,
+          "avg_ns": 39725,
+          "min_ns": 30400,
+          "max_ns": 61100
+        },
+        "action.filler.policy.value_head_forward": {
+          "count": 20,
+          "total_ns": 149000,
+          "exclusive_ns": 149000,
+          "avg_ns": 7450,
+          "min_ns": 5400,
+          "max_ns": 21600
+        },
+        "action.filler.score.bit_cost": {
+          "count": 20,
+          "total_ns": 59500,
+          "exclusive_ns": 59500,
+          "avg_ns": 2975,
+          "min_ns": 2000,
+          "max_ns": 4600
+        },
+        "action.filler.score.reduction": {
+          "count": 20,
+          "total_ns": 10438100,
+          "exclusive_ns": 10438100,
+          "avg_ns": 521905,
+          "min_ns": 50800,
+          "max_ns": 1893200
+        },
+        "action.filler.score.resample": {
+          "count": 20,
+          "total_ns": 9562000,
+          "exclusive_ns": 9562000,
+          "avg_ns": 478100,
+          "min_ns": 8800,
+          "max_ns": 5774200
+        },
+        "action.search.anchors": {
+          "count": 20,
+          "total_ns": 6386700,
+          "exclusive_ns": 6386700,
+          "avg_ns": 319335,
+          "min_ns": 255600,
+          "max_ns": 413600
+        },
+        "action.search.integral_error": {
+          "count": 20,
+          "total_ns": 11031100,
+          "exclusive_ns": 11031100,
+          "avg_ns": 551555,
+          "min_ns": 439100,
+          "max_ns": 674100
+        },
+        "action.search.prescore": {
+          "count": 20,
+          "total_ns": 1269300,
+          "exclusive_ns": 1269300,
+          "avg_ns": 63465,
+          "min_ns": 51500,
+          "max_ns": 73200
+        },
+        "action.search.sample_boxes": {
+          "count": 20,
+          "total_ns": 77836100,
+          "exclusive_ns": 77836100,
+          "avg_ns": 3891805,
+          "min_ns": 3419300,
+          "max_ns": 4323400
+        },
+        "action.search.select_top_boxes": {
+          "count": 20,
+          "total_ns": 502900,
+          "exclusive_ns": 502900,
+          "avg_ns": 25145,
+          "min_ns": 21300,
+          "max_ns": 33400
+        },
+        "action.search.visible_error": {
+          "count": 20,
+          "total_ns": 7100,
+          "exclusive_ns": 7100,
+          "avg_ns": 355,
+          "min_ns": 200,
+          "max_ns": 500
+        },
+        "encode.entropy_pack": {
+          "count": 1,
+          "total_ns": 76486900,
+          "exclusive_ns": 76486900,
+          "avg_ns": 76486900,
+          "min_ns": 76486900,
+          "max_ns": 76486900
+        },
+        "encode.filler_initialize": {
+          "count": 1,
+          "total_ns": 72800,
+          "exclusive_ns": 11800,
+          "avg_ns": 72800,
+          "min_ns": 72800,
+          "max_ns": 72800
+        },
+        "encode.initial_error_scores": {
+          "count": 1,
+          "total_ns": 4051500,
+          "exclusive_ns": 4051500,
+          "avg_ns": 4051500,
+          "min_ns": 4051500,
+          "max_ns": 4051500
+        },
+        "encode.initial_patch.apply": {
+          "count": 3,
+          "total_ns": 670300,
+          "exclusive_ns": 670300,
+          "avg_ns": 223433,
+          "min_ns": 220700,
+          "max_ns": 225000
+        },
+        "encode.initial_patch.channel": {
+          "count": 3,
+          "total_ns": 69621700,
+          "exclusive_ns": 43300,
+          "avg_ns": 23207233,
+          "min_ns": 22242100,
+          "max_ns": 24680500
+        },
+        "encode.initial_patch_selection": {
+          "count": 1,
+          "total_ns": 69649000,
+          "exclusive_ns": 27300,
+          "avg_ns": 69649000,
+          "min_ns": 69649000,
+          "max_ns": 69649000
+        },
+        "encode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 1382100,
+          "exclusive_ns": 1382100,
+          "avg_ns": 1382100,
+          "min_ns": 1382100,
+          "max_ns": 1382100
+        },
+        "encode.metric.final_mse": {
+          "count": 1,
+          "total_ns": 144799200,
+          "exclusive_ns": 144799200,
+          "avg_ns": 144799200,
+          "min_ns": 144799200,
+          "max_ns": 144799200
+        },
+        "encode.patch.apply": {
+          "count": 20,
+          "total_ns": 1745100,
+          "exclusive_ns": 1745100,
+          "avg_ns": 87255,
+          "min_ns": 11600,
+          "max_ns": 252000
+        },
+        "encode.patch.choose_channel": {
+          "count": 20,
+          "total_ns": 124700,
+          "exclusive_ns": 124700,
+          "avg_ns": 6235,
+          "min_ns": 4300,
+          "max_ns": 8000
+        },
+        "encode.patch.fill": {
+          "count": 20,
+          "total_ns": 189686300,
+          "exclusive_ns": 87600,
+          "avg_ns": 9484315,
+          "min_ns": 5333700,
+          "max_ns": 21099700
+        },
+        "encode.patch.quality_check": {
+          "count": 20,
+          "total_ns": 16800,
+          "exclusive_ns": 16800,
+          "avg_ns": 840,
+          "min_ns": 600,
+          "max_ns": 1300
+        },
+        "encode.patch.score": {
+          "count": 20,
+          "total_ns": 5939600,
+          "exclusive_ns": 5939600,
+          "avg_ns": 296980,
+          "min_ns": 36800,
+          "max_ns": 864500
+        },
+        "encode.patch.search": {
+          "count": 20,
+          "total_ns": 75900,
+          "exclusive_ns": 66800,
+          "avg_ns": 3795,
+          "min_ns": 3100,
+          "max_ns": 4700
+        },
+        "encode.patch.total": {
+          "count": 20,
+          "total_ns": 198193300,
+          "exclusive_ns": 604900,
+          "avg_ns": 9909665,
+          "min_ns": 5428800,
+          "max_ns": 22072300
+        },
+        "encode.prepare": {
+          "count": 1,
+          "total_ns": 109552800,
+          "exclusive_ns": 2979000,
+          "avg_ns": 109552800,
+          "min_ns": 109552800,
+          "max_ns": 109552800
+        },
+        "encode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2527000,
+          "exclusive_ns": 2527000,
+          "avg_ns": 2527000,
+          "min_ns": 2527000,
+          "max_ns": 2527000
+        },
+        "encode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 88894400,
+          "exclusive_ns": 88894400,
+          "avg_ns": 88894400,
+          "min_ns": 88894400,
+          "max_ns": 88894400
+        },
+        "encode.search_initialize": {
+          "count": 1,
+          "total_ns": 90700,
+          "exclusive_ns": 90700,
+          "avg_ns": 90700,
+          "min_ns": 90700,
+          "max_ns": 90700
+        },
+        "encode.serialize.header": {
+          "count": 1,
+          "total_ns": 18700,
+          "exclusive_ns": 18700,
+          "avg_ns": 18700,
+          "min_ns": 18700,
+          "max_ns": 18700
+        },
+        "encode.serialize.patches": {
+          "count": 1,
+          "total_ns": 12092000,
+          "exclusive_ns": 12092000,
+          "avg_ns": 12092000,
+          "min_ns": 12092000,
+          "max_ns": 12092000
+        },
+        "encode.validate": {
+          "count": 1,
+          "total_ns": 9300,
+          "exclusive_ns": 9300,
+          "avg_ns": 9300,
+          "min_ns": 9300,
+          "max_ns": 9300
+        },
+        "head.downsample_init": {
+          "count": 3,
+          "total_ns": 68908100,
+          "exclusive_ns": 2216900,
+          "avg_ns": 22969366,
+          "min_ns": 22002500,
+          "max_ns": 24442100
+        },
+        "head.filler": {
+          "count": 20,
+          "total_ns": 189598700,
+          "exclusive_ns": 167500,
+          "avg_ns": 9479935,
+          "min_ns": 5330600,
+          "max_ns": 21095500
+        },
+        "head.search": {
+          "count": 20,
+          "total_ns": 9100,
+          "exclusive_ns": 9100,
+          "avg_ns": 455,
+          "min_ns": 300,
+          "max_ns": 600
+        },
+        "prepare.build_warmup_target": {
+          "count": 1,
+          "total_ns": 3800,
+          "exclusive_ns": 3800,
+          "avg_ns": 3800,
+          "min_ns": 3800,
+          "max_ns": 3800
+        },
+        "prepare.downsample_color": {
+          "count": 1,
+          "total_ns": 55132300,
+          "exclusive_ns": 55132300,
+          "avg_ns": 55132300,
+          "min_ns": 55132300,
+          "max_ns": 55132300
+        },
+        "prepare.input_normalize": {
+          "count": 1,
+          "total_ns": 50648200,
+          "exclusive_ns": 50648200,
+          "avg_ns": 50648200,
+          "min_ns": 50648200,
+          "max_ns": 50648200
+        },
+        "prepare.materialize_arrays": {
+          "count": 1,
+          "total_ns": 789500,
+          "exclusive_ns": 789500,
+          "avg_ns": 789500,
+          "min_ns": 789500,
+          "max_ns": 789500
+        }
+      }
+    },
+    "decode": {
+      "total_ns": 129296100,
+      "summary": {
+        "decode.entropy_unpack": {
+          "count": 1,
+          "total_ns": 5262100,
+          "exclusive_ns": 5262100,
+          "avg_ns": 5262100,
+          "min_ns": 5262100,
+          "max_ns": 5262100
+        },
+        "decode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 608100,
+          "exclusive_ns": 608100,
+          "avg_ns": 608100,
+          "min_ns": 608100,
+          "max_ns": 608100
+        },
+        "decode.open_body": {
+          "count": 1,
+          "total_ns": 5286400,
+          "exclusive_ns": 21700,
+          "avg_ns": 5286400,
+          "min_ns": 5286400,
+          "max_ns": 5286400
+        },
+        "decode.parse_header": {
+          "count": 1,
+          "total_ns": 42100,
+          "exclusive_ns": 42100,
+          "avg_ns": 42100,
+          "min_ns": 42100,
+          "max_ns": 42100
+        },
+        "decode.patch.read": {
+          "count": 23,
+          "total_ns": 8073800,
+          "exclusive_ns": 8073800,
+          "avg_ns": 351034,
+          "min_ns": 81700,
+          "max_ns": 2134300
+        },
+        "decode.patch.resample_apply": {
+          "count": 23,
+          "total_ns": 14341200,
+          "exclusive_ns": 14341200,
+          "avg_ns": 623530,
+          "min_ns": 17900,
+          "max_ns": 2934900
+        },
+        "decode.patch_loop": {
+          "count": 1,
+          "total_ns": 22799700,
+          "exclusive_ns": 384700,
+          "avg_ns": 22799700,
+          "min_ns": 22799700,
+          "max_ns": 22799700
+        },
+        "decode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2352900,
+          "exclusive_ns": 2352900,
+          "avg_ns": 2352900,
+          "min_ns": 2352900,
+          "max_ns": 2352900
+        },
+        "decode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 95539700,
+          "exclusive_ns": 95539700,
+          "avg_ns": 95539700,
+          "min_ns": 95539700,
+          "max_ns": 95539700
+        },
+        "decode.to_canvas": {
+          "count": 1,
+          "total_ns": 28790500,
+          "exclusive_ns": 6000,
+          "avg_ns": 28790500,
+          "min_ns": 28790500,
+          "max_ns": 28790500
+        },
+        "decode.validate_magic_version": {
+          "count": 1,
+          "total_ns": 2600,
+          "exclusive_ns": 2600,
+          "avg_ns": 2600,
+          "min_ns": 2600,
+          "max_ns": 2600
+        },
+        "head.decoder": {
+          "count": 1,
+          "total_ns": 28784500,
+          "exclusive_ns": 48200,
+          "avg_ns": 28784500,
+          "min_ns": 28784500,
+          "max_ns": 28784500
+        }
+      }
+    },
+    "stream_sha256": "483d4ab4d82fb25cb3306489f25c1aa623109859072cbf8152c15547f1ad1cc8"
+  },
+  {
+    "image": "googlewiki.png",
+    "preset": "quality",
+    "encode": {
+      "total_ns": 546116100,
+      "summary": {
+        "action.downsample_init.build_candidate": {
+          "count": 9,
+          "total_ns": 19011800,
+          "exclusive_ns": 19011800,
+          "avg_ns": 2112422,
+          "min_ns": 1755700,
+          "max_ns": 2825400
+        },
+        "action.downsample_init.candidates": {
+          "count": 3,
+          "total_ns": 9710700,
+          "exclusive_ns": 9710700,
+          "avg_ns": 3236900,
+          "min_ns": 2845400,
+          "max_ns": 3516300
+        },
+        "action.downsample_init.resample_candidate": {
+          "count": 9,
+          "total_ns": 17657200,
+          "exclusive_ns": 17657200,
+          "avg_ns": 1961911,
+          "min_ns": 1632100,
+          "max_ns": 2256000
+        },
+        "action.downsample_init.residual": {
+          "count": 3,
+          "total_ns": 7902900,
+          "exclusive_ns": 7902900,
+          "avg_ns": 2634300,
+          "min_ns": 2499200,
+          "max_ns": 2763700
+        },
+        "action.downsample_init.score_candidate": {
+          "count": 9,
+          "total_ns": 16736700,
+          "exclusive_ns": 16736700,
+          "avg_ns": 1859633,
+          "min_ns": 1605200,
+          "max_ns": 2056600
+        },
+        "action.downsample_init.select_candidate": {
+          "count": 3,
+          "total_ns": 195600,
+          "exclusive_ns": 195600,
+          "avg_ns": 65200,
+          "min_ns": 63500,
+          "max_ns": 67000
+        },
+        "action.filler.build.make_patch": {
+          "count": 50,
+          "total_ns": 21119200,
+          "exclusive_ns": 21119200,
+          "avg_ns": 422384,
+          "min_ns": 120500,
+          "max_ns": 3968700
+        },
+        "action.filler.build.residual": {
+          "count": 50,
+          "total_ns": 1840300,
+          "exclusive_ns": 1840300,
+          "avg_ns": 36806,
+          "min_ns": 6700,
+          "max_ns": 432300
+        },
+        "action.filler.build.score_patch": {
+          "count": 50,
+          "total_ns": 12389000,
+          "exclusive_ns": 1028500,
+          "avg_ns": 247780,
+          "min_ns": 73400,
+          "max_ns": 1664900
+        },
+        "action.filler.learned_select": {
+          "count": 50,
+          "total_ns": 318955100,
+          "exclusive_ns": 3038900,
+          "avg_ns": 6379102,
+          "min_ns": 4949100,
+          "max_ns": 19712200
+        },
+        "action.filler.load_policy": {
+          "count": 1,
+          "total_ns": 51500,
+          "exclusive_ns": 51500,
+          "avg_ns": 51500,
+          "min_ns": 51500,
+          "max_ns": 51500
+        },
+        "action.filler.policy.action_head_forward": {
+          "count": 50,
+          "total_ns": 398600,
+          "exclusive_ns": 398600,
+          "avg_ns": 7972,
+          "min_ns": 6000,
+          "max_ns": 15400
+        },
+        "action.filler.policy.evaluate_action": {
+          "count": 50,
+          "total_ns": 36230700,
+          "exclusive_ns": 882200,
+          "avg_ns": 724614,
+          "min_ns": 215300,
+          "max_ns": 6089500
+        },
+        "action.filler.policy.feature_extract": {
+          "count": 50,
+          "total_ns": 38028700,
+          "exclusive_ns": 38028700,
+          "avg_ns": 760574,
+          "min_ns": 315100,
+          "max_ns": 8048400
+        },
+        "action.filler.policy.feature_normalize": {
+          "count": 50,
+          "total_ns": 344700,
+          "exclusive_ns": 344700,
+          "avg_ns": 6894,
+          "min_ns": 5600,
+          "max_ns": 9100
+        },
+        "action.filler.policy.forward": {
+          "count": 50,
+          "total_ns": 3295500,
+          "exclusive_ns": 597100,
+          "avg_ns": 65910,
+          "min_ns": 48200,
+          "max_ns": 146200
+        },
+        "action.filler.policy.propose_boxes": {
+          "count": 50,
+          "total_ns": 237743100,
+          "exclusive_ns": 10327200,
+          "avg_ns": 4754862,
+          "min_ns": 4151400,
+          "max_ns": 5467800
+        },
+        "action.filler.policy.rd_score": {
+          "count": 50,
+          "total_ns": 22100,
+          "exclusive_ns": 22100,
+          "avg_ns": 442,
+          "min_ns": 300,
+          "max_ns": 600
+        },
+        "action.filler.policy.select_action_head": {
+          "count": 50,
+          "total_ns": 127600,
+          "exclusive_ns": 127600,
+          "avg_ns": 2552,
+          "min_ns": 1900,
+          "max_ns": 3400
+        },
+        "action.filler.policy.select_value_order": {
+          "count": 50,
+          "total_ns": 123800,
+          "exclusive_ns": 123800,
+          "avg_ns": 2476,
+          "min_ns": 1900,
+          "max_ns": 3400
+        },
+        "action.filler.policy.trunk_forward": {
+          "count": 50,
+          "total_ns": 1985700,
+          "exclusive_ns": 1985700,
+          "avg_ns": 39714,
+          "min_ns": 27500,
+          "max_ns": 119000
+        },
+        "action.filler.policy.value_head_forward": {
+          "count": 50,
+          "total_ns": 314100,
+          "exclusive_ns": 314100,
+          "avg_ns": 6282,
+          "min_ns": 5200,
+          "max_ns": 8200
+        },
+        "action.filler.score.bit_cost": {
+          "count": 50,
+          "total_ns": 128000,
+          "exclusive_ns": 128000,
+          "avg_ns": 2560,
+          "min_ns": 2000,
+          "max_ns": 3700
+        },
+        "action.filler.score.reduction": {
+          "count": 50,
+          "total_ns": 8778200,
+          "exclusive_ns": 8778200,
+          "avg_ns": 175564,
+          "min_ns": 49600,
+          "max_ns": 1438400
+        },
+        "action.filler.score.resample": {
+          "count": 50,
+          "total_ns": 2454300,
+          "exclusive_ns": 2454300,
+          "avg_ns": 49086,
+          "min_ns": 8400,
+          "max_ns": 547300
+        },
+        "action.search.anchors": {
+          "count": 50,
+          "total_ns": 14613300,
+          "exclusive_ns": 14613300,
+          "avg_ns": 292266,
+          "min_ns": 240700,
+          "max_ns": 529100
+        },
+        "action.search.integral_error": {
+          "count": 50,
+          "total_ns": 26075500,
+          "exclusive_ns": 26075500,
+          "avg_ns": 521510,
+          "min_ns": 430300,
+          "max_ns": 718500
+        },
+        "action.search.prescore": {
+          "count": 50,
+          "total_ns": 3200400,
+          "exclusive_ns": 3200400,
+          "avg_ns": 64008,
+          "min_ns": 50800,
+          "max_ns": 90200
+        },
+        "action.search.sample_boxes": {
+          "count": 50,
+          "total_ns": 182329400,
+          "exclusive_ns": 182329400,
+          "avg_ns": 3646588,
+          "min_ns": 3133700,
+          "max_ns": 4249300
+        },
+        "action.search.select_top_boxes": {
+          "count": 50,
+          "total_ns": 1179400,
+          "exclusive_ns": 1179400,
+          "avg_ns": 23588,
+          "min_ns": 18300,
+          "max_ns": 33100
+        },
+        "action.search.visible_error": {
+          "count": 50,
+          "total_ns": 17900,
+          "exclusive_ns": 17900,
+          "avg_ns": 358,
+          "min_ns": 200,
+          "max_ns": 500
+        },
+        "encode.entropy_pack": {
+          "count": 1,
+          "total_ns": 81131200,
+          "exclusive_ns": 81131200,
+          "avg_ns": 81131200,
+          "min_ns": 81131200,
+          "max_ns": 81131200
+        },
+        "encode.filler_initialize": {
+          "count": 1,
+          "total_ns": 62500,
+          "exclusive_ns": 11000,
+          "avg_ns": 62500,
+          "min_ns": 62500,
+          "max_ns": 62500
+        },
+        "encode.initial_error_scores": {
+          "count": 1,
+          "total_ns": 3540900,
+          "exclusive_ns": 3540900,
+          "avg_ns": 3540900,
+          "min_ns": 3540900,
+          "max_ns": 3540900
+        },
+        "encode.initial_patch.apply": {
+          "count": 3,
+          "total_ns": 683200,
+          "exclusive_ns": 683200,
+          "avg_ns": 227733,
+          "min_ns": 226200,
+          "max_ns": 229100
+        },
+        "encode.initial_patch.channel": {
+          "count": 3,
+          "total_ns": 74938600,
+          "exclusive_ns": 44900,
+          "avg_ns": 24979533,
+          "min_ns": 24189900,
+          "max_ns": 25531400
+        },
+        "encode.initial_patch_selection": {
+          "count": 1,
+          "total_ns": 74965100,
+          "exclusive_ns": 26500,
+          "avg_ns": 74965100,
+          "min_ns": 74965100,
+          "max_ns": 74965100
+        },
+        "encode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 1260500,
+          "exclusive_ns": 1260500,
+          "avg_ns": 1260500,
+          "min_ns": 1260500,
+          "max_ns": 1260500
+        },
+        "encode.metric.final_mse": {
+          "count": 1,
+          "total_ns": 9578900,
+          "exclusive_ns": 9578900,
+          "avg_ns": 9578900,
+          "min_ns": 9578900,
+          "max_ns": 9578900
+        },
+        "encode.patch.apply": {
+          "count": 50,
+          "total_ns": 1857800,
+          "exclusive_ns": 1857800,
+          "avg_ns": 37156,
+          "min_ns": 11500,
+          "max_ns": 264400
+        },
+        "encode.patch.choose_channel": {
+          "count": 50,
+          "total_ns": 261700,
+          "exclusive_ns": 261700,
+          "avg_ns": 5234,
+          "min_ns": 3700,
+          "max_ns": 19100
+        },
+        "encode.patch.fill": {
+          "count": 50,
+          "total_ns": 319477100,
+          "exclusive_ns": 177400,
+          "avg_ns": 6389542,
+          "min_ns": 4957800,
+          "max_ns": 19724900
+        },
+        "encode.patch.quality_check": {
+          "count": 50,
+          "total_ns": 40900,
+          "exclusive_ns": 40900,
+          "avg_ns": 818,
+          "min_ns": 600,
+          "max_ns": 1900
+        },
+        "encode.patch.score": {
+          "count": 50,
+          "total_ns": 5340200,
+          "exclusive_ns": 5340200,
+          "avg_ns": 106804,
+          "min_ns": 36200,
+          "max_ns": 780500
+        },
+        "encode.patch.search": {
+          "count": 50,
+          "total_ns": 186900,
+          "exclusive_ns": 163300,
+          "avg_ns": 3738,
+          "min_ns": 2800,
+          "max_ns": 6700
+        },
+        "encode.patch.total": {
+          "count": 50,
+          "total_ns": 329401200,
+          "exclusive_ns": 2236600,
+          "avg_ns": 6588024,
+          "min_ns": 5038300,
+          "max_ns": 20814900
+        },
+        "encode.prepare": {
+          "count": 1,
+          "total_ns": 13125700,
+          "exclusive_ns": 277200,
+          "avg_ns": 13125700,
+          "min_ns": 13125700,
+          "max_ns": 13125700
+        },
+        "encode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2499500,
+          "exclusive_ns": 2499500,
+          "avg_ns": 2499500,
+          "min_ns": 2499500,
+          "max_ns": 2499500
+        },
+        "encode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 10202800,
+          "exclusive_ns": 10202800,
+          "avg_ns": 10202800,
+          "min_ns": 10202800,
+          "max_ns": 10202800
+        },
+        "encode.search_initialize": {
+          "count": 1,
+          "total_ns": 86300,
+          "exclusive_ns": 86300,
+          "avg_ns": 86300,
+          "min_ns": 86300,
+          "max_ns": 86300
+        },
+        "encode.serialize.header": {
+          "count": 1,
+          "total_ns": 18600,
+          "exclusive_ns": 18600,
+          "avg_ns": 18600,
+          "min_ns": 18600,
+          "max_ns": 18600
+        },
+        "encode.serialize.patches": {
+          "count": 1,
+          "total_ns": 14141200,
+          "exclusive_ns": 14141200,
+          "avg_ns": 14141200,
+          "min_ns": 14141200,
+          "max_ns": 14141200
+        },
+        "encode.validate": {
+          "count": 1,
+          "total_ns": 8200,
+          "exclusive_ns": 8200,
+          "avg_ns": 8200,
+          "min_ns": 8200,
+          "max_ns": 8200
+        },
+        "head.downsample_init": {
+          "count": 3,
+          "total_ns": 74210500,
+          "exclusive_ns": 2995600,
+          "avg_ns": 24736833,
+          "min_ns": 23946600,
+          "max_ns": 25290400
+        },
+        "head.filler": {
+          "count": 50,
+          "total_ns": 319299700,
+          "exclusive_ns": 344600,
+          "avg_ns": 6385994,
+          "min_ns": 4954900,
+          "max_ns": 19720900
+        },
+        "head.search": {
+          "count": 50,
+          "total_ns": 23600,
+          "exclusive_ns": 23600,
+          "avg_ns": 472,
+          "min_ns": 300,
+          "max_ns": 700
+        },
+        "prepare.build_warmup_target": {
+          "count": 1,
+          "total_ns": 3100,
+          "exclusive_ns": 3100,
+          "avg_ns": 3100,
+          "min_ns": 3100,
+          "max_ns": 3100
+        },
+        "prepare.downsample_color": {
+          "count": 1,
+          "total_ns": 9198900,
+          "exclusive_ns": 9198900,
+          "avg_ns": 9198900,
+          "min_ns": 9198900,
+          "max_ns": 9198900
+        },
+        "prepare.input_normalize": {
+          "count": 1,
+          "total_ns": 3101400,
+          "exclusive_ns": 3101400,
+          "avg_ns": 3101400,
+          "min_ns": 3101400,
+          "max_ns": 3101400
+        },
+        "prepare.materialize_arrays": {
+          "count": 1,
+          "total_ns": 545100,
+          "exclusive_ns": 545100,
+          "avg_ns": 545100,
+          "min_ns": 545100,
+          "max_ns": 545100
+        }
+      }
+    },
+    "decode": {
+      "total_ns": 42717700,
+      "summary": {
+        "decode.entropy_unpack": {
+          "count": 1,
+          "total_ns": 5449100,
+          "exclusive_ns": 5449100,
+          "avg_ns": 5449100,
+          "min_ns": 5449100,
+          "max_ns": 5449100
+        },
+        "decode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 519400,
+          "exclusive_ns": 519400,
+          "avg_ns": 519400,
+          "min_ns": 519400,
+          "max_ns": 519400
+        },
+        "decode.open_body": {
+          "count": 1,
+          "total_ns": 5471600,
+          "exclusive_ns": 20000,
+          "avg_ns": 5471600,
+          "min_ns": 5471600,
+          "max_ns": 5471600
+        },
+        "decode.parse_header": {
+          "count": 1,
+          "total_ns": 30500,
+          "exclusive_ns": 30500,
+          "avg_ns": 30500,
+          "min_ns": 30500,
+          "max_ns": 30500
+        },
+        "decode.patch.read": {
+          "count": 53,
+          "total_ns": 10375100,
+          "exclusive_ns": 10375100,
+          "avg_ns": 195756,
+          "min_ns": 72300,
+          "max_ns": 1809400
+        },
+        "decode.patch.resample_apply": {
+          "count": 53,
+          "total_ns": 12194400,
+          "exclusive_ns": 12194400,
+          "avg_ns": 230083,
+          "min_ns": 16000,
+          "max_ns": 2939100
+        },
+        "decode.patch_loop": {
+          "count": 1,
+          "total_ns": 23282700,
+          "exclusive_ns": 713200,
+          "avg_ns": 23282700,
+          "min_ns": 23282700,
+          "max_ns": 23282700
+        },
+        "decode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2151600,
+          "exclusive_ns": 2151600,
+          "avg_ns": 2151600,
+          "min_ns": 2151600,
+          "max_ns": 2151600
+        },
+        "decode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 10154700,
+          "exclusive_ns": 10154700,
+          "avg_ns": 10154700,
+          "min_ns": 10154700,
+          "max_ns": 10154700
+        },
+        "decode.to_canvas": {
+          "count": 1,
+          "total_ns": 29354300,
+          "exclusive_ns": 5000,
+          "avg_ns": 29354300,
+          "min_ns": 29354300,
+          "max_ns": 29354300
+        },
+        "decode.validate_magic_version": {
+          "count": 1,
+          "total_ns": 2500,
+          "exclusive_ns": 2500,
+          "avg_ns": 2500,
+          "min_ns": 2500,
+          "max_ns": 2500
+        },
+        "head.decoder": {
+          "count": 1,
+          "total_ns": 29349300,
+          "exclusive_ns": 45100,
+          "avg_ns": 29349300,
+          "min_ns": 29349300,
+          "max_ns": 29349300
+        }
+      }
+    },
+    "stream_sha256": "0f4f38e879741604d1a80ff1c47e3130629409dcf8544c05d1fbbe3a9561281a"
+  },
+  {
+    "image": "googlewiki.png",
+    "preset": "high_quality",
+    "encode": {
+      "total_ns": 626088800,
+      "summary": {
+        "action.downsample_init.build_candidate": {
+          "count": 9,
+          "total_ns": 19940400,
+          "exclusive_ns": 19940400,
+          "avg_ns": 2215600,
+          "min_ns": 1715100,
+          "max_ns": 2837900
+        },
+        "action.downsample_init.candidates": {
+          "count": 3,
+          "total_ns": 10311100,
+          "exclusive_ns": 10311100,
+          "avg_ns": 3437033,
+          "min_ns": 3332700,
+          "max_ns": 3595000
+        },
+        "action.downsample_init.resample_candidate": {
+          "count": 9,
+          "total_ns": 18974500,
+          "exclusive_ns": 18974500,
+          "avg_ns": 2108277,
+          "min_ns": 1947700,
+          "max_ns": 2350800
+        },
+        "action.downsample_init.residual": {
+          "count": 3,
+          "total_ns": 7926800,
+          "exclusive_ns": 7926800,
+          "avg_ns": 2642266,
+          "min_ns": 2517900,
+          "max_ns": 2843100
+        },
+        "action.downsample_init.score_candidate": {
+          "count": 9,
+          "total_ns": 18941500,
+          "exclusive_ns": 18941500,
+          "avg_ns": 2104611,
+          "min_ns": 1950500,
+          "max_ns": 2263000
+        },
+        "action.downsample_init.select_candidate": {
+          "count": 3,
+          "total_ns": 202300,
+          "exclusive_ns": 202300,
+          "avg_ns": 67433,
+          "min_ns": 65600,
+          "max_ns": 70800
+        },
+        "action.filler.build.make_patch": {
+          "count": 20,
+          "total_ns": 41084800,
+          "exclusive_ns": 41084800,
+          "avg_ns": 2054240,
+          "min_ns": 152400,
+          "max_ns": 7673000
+        },
+        "action.filler.build.residual": {
+          "count": 20,
+          "total_ns": 2641000,
+          "exclusive_ns": 2641000,
+          "avg_ns": 132050,
+          "min_ns": 7800,
+          "max_ns": 455900
+        },
+        "action.filler.build.score_patch": {
+          "count": 20,
+          "total_ns": 15206100,
+          "exclusive_ns": 418300,
+          "avg_ns": 760305,
+          "min_ns": 105300,
+          "max_ns": 2821100
+        },
+        "action.filler.learned_select": {
+          "count": 20,
+          "total_ns": 210999600,
+          "exclusive_ns": 1353500,
+          "avg_ns": 10549980,
+          "min_ns": 5648600,
+          "max_ns": 26935200
+        },
+        "action.filler.load_policy": {
+          "count": 1,
+          "total_ns": 64500,
+          "exclusive_ns": 64500,
+          "avg_ns": 64500,
+          "min_ns": 64500,
+          "max_ns": 64500
+        },
+        "action.filler.policy.action_head_forward": {
+          "count": 20,
+          "total_ns": 165700,
+          "exclusive_ns": 165700,
+          "avg_ns": 8285,
+          "min_ns": 7000,
+          "max_ns": 9300
+        },
+        "action.filler.policy.evaluate_action": {
+          "count": 20,
+          "total_ns": 59311600,
+          "exclusive_ns": 379700,
+          "avg_ns": 2965580,
+          "min_ns": 281400,
+          "max_ns": 10974800
+        },
+        "action.filler.policy.feature_extract": {
+          "count": 20,
+          "total_ns": 48946900,
+          "exclusive_ns": 48946900,
+          "avg_ns": 2447345,
+          "min_ns": 348700,
+          "max_ns": 10741700
+        },
+        "action.filler.policy.feature_normalize": {
+          "count": 20,
+          "total_ns": 169700,
+          "exclusive_ns": 169700,
+          "avg_ns": 8485,
+          "min_ns": 6300,
+          "max_ns": 12300
+        },
+        "action.filler.policy.forward": {
+          "count": 20,
+          "total_ns": 1427700,
+          "exclusive_ns": 278700,
+          "avg_ns": 71385,
+          "min_ns": 57300,
+          "max_ns": 111900
+        },
+        "action.filler.policy.propose_boxes": {
+          "count": 20,
+          "total_ns": 99667900,
+          "exclusive_ns": 3721000,
+          "avg_ns": 4983395,
+          "min_ns": 4214200,
+          "max_ns": 5652100
+        },
+        "action.filler.policy.rd_score": {
+          "count": 20,
+          "total_ns": 10100,
+          "exclusive_ns": 10100,
+          "avg_ns": 505,
+          "min_ns": 400,
+          "max_ns": 600
+        },
+        "action.filler.policy.select_action_head": {
+          "count": 20,
+          "total_ns": 57300,
+          "exclusive_ns": 57300,
+          "avg_ns": 2865,
+          "min_ns": 2300,
+          "max_ns": 3800
+        },
+        "action.filler.policy.select_value_order": {
+          "count": 20,
+          "total_ns": 54900,
+          "exclusive_ns": 54900,
+          "avg_ns": 2745,
+          "min_ns": 2200,
+          "max_ns": 3400
+        },
+        "action.filler.policy.trunk_forward": {
+          "count": 20,
+          "total_ns": 829900,
+          "exclusive_ns": 829900,
+          "avg_ns": 41495,
+          "min_ns": 32700,
+          "max_ns": 62300
+        },
+        "action.filler.policy.value_head_forward": {
+          "count": 20,
+          "total_ns": 153400,
+          "exclusive_ns": 153400,
+          "avg_ns": 7670,
+          "min_ns": 5900,
+          "max_ns": 16600
+        },
+        "action.filler.score.bit_cost": {
+          "count": 20,
+          "total_ns": 65300,
+          "exclusive_ns": 65300,
+          "avg_ns": 3265,
+          "min_ns": 2500,
+          "max_ns": 4800
+        },
+        "action.filler.score.reduction": {
+          "count": 20,
+          "total_ns": 12436900,
+          "exclusive_ns": 12436900,
+          "avg_ns": 621845,
+          "min_ns": 75700,
+          "max_ns": 2493100
+        },
+        "action.filler.score.resample": {
+          "count": 20,
+          "total_ns": 2285600,
+          "exclusive_ns": 2285600,
+          "avg_ns": 114280,
+          "min_ns": 10600,
+          "max_ns": 290900
+        },
+        "action.search.anchors": {
+          "count": 20,
+          "total_ns": 6278200,
+          "exclusive_ns": 6278200,
+          "avg_ns": 313910,
+          "min_ns": 249600,
+          "max_ns": 472300
+        },
+        "action.search.integral_error": {
+          "count": 20,
+          "total_ns": 10033300,
+          "exclusive_ns": 10033300,
+          "avg_ns": 501665,
+          "min_ns": 442800,
+          "max_ns": 561000
+        },
+        "action.search.prescore": {
+          "count": 20,
+          "total_ns": 1355600,
+          "exclusive_ns": 1355600,
+          "avg_ns": 67780,
+          "min_ns": 53300,
+          "max_ns": 79600
+        },
+        "action.search.sample_boxes": {
+          "count": 20,
+          "total_ns": 77789200,
+          "exclusive_ns": 77789200,
+          "avg_ns": 3889460,
+          "min_ns": 3199000,
+          "max_ns": 4325800
+        },
+        "action.search.select_top_boxes": {
+          "count": 20,
+          "total_ns": 483200,
+          "exclusive_ns": 483200,
+          "avg_ns": 24160,
+          "min_ns": 19300,
+          "max_ns": 30700
+        },
+        "action.search.visible_error": {
+          "count": 20,
+          "total_ns": 7400,
+          "exclusive_ns": 7400,
+          "avg_ns": 370,
+          "min_ns": 300,
+          "max_ns": 500
+        },
+        "encode.entropy_pack": {
+          "count": 1,
+          "total_ns": 245646300,
+          "exclusive_ns": 245646300,
+          "avg_ns": 245646300,
+          "min_ns": 245646300,
+          "max_ns": 245646300
+        },
+        "encode.filler_initialize": {
+          "count": 1,
+          "total_ns": 85900,
+          "exclusive_ns": 21400,
+          "avg_ns": 85900,
+          "min_ns": 85900,
+          "max_ns": 85900
+        },
+        "encode.initial_error_scores": {
+          "count": 1,
+          "total_ns": 4337300,
+          "exclusive_ns": 4337300,
+          "avg_ns": 4337300,
+          "min_ns": 4337300,
+          "max_ns": 4337300
+        },
+        "encode.initial_patch.apply": {
+          "count": 3,
+          "total_ns": 675500,
+          "exclusive_ns": 675500,
+          "avg_ns": 225166,
+          "min_ns": 219800,
+          "max_ns": 229300
+        },
+        "encode.initial_patch.channel": {
+          "count": 3,
+          "total_ns": 80031600,
+          "exclusive_ns": 47700,
+          "avg_ns": 26677200,
+          "min_ns": 26139200,
+          "max_ns": 27528400
+        },
+        "encode.initial_patch_selection": {
+          "count": 1,
+          "total_ns": 80062000,
+          "exclusive_ns": 30400,
+          "avg_ns": 80062000,
+          "min_ns": 80062000,
+          "max_ns": 80062000
+        },
+        "encode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 1982500,
+          "exclusive_ns": 1982500,
+          "avg_ns": 1982500,
+          "min_ns": 1982500,
+          "max_ns": 1982500
+        },
+        "encode.metric.final_mse": {
+          "count": 1,
+          "total_ns": 8195900,
+          "exclusive_ns": 8195900,
+          "avg_ns": 8195900,
+          "min_ns": 8195900,
+          "max_ns": 8195900
+        },
+        "encode.patch.apply": {
+          "count": 20,
+          "total_ns": 2137200,
+          "exclusive_ns": 2137200,
+          "avg_ns": 106860,
+          "min_ns": 14000,
+          "max_ns": 345900
+        },
+        "encode.patch.choose_channel": {
+          "count": 20,
+          "total_ns": 116800,
+          "exclusive_ns": 116800,
+          "avg_ns": 5840,
+          "min_ns": 4300,
+          "max_ns": 8700
+        },
+        "encode.patch.fill": {
+          "count": 20,
+          "total_ns": 211251100,
+          "exclusive_ns": 87700,
+          "avg_ns": 10562555,
+          "min_ns": 5666800,
+          "max_ns": 26951600
+        },
+        "encode.patch.quality_check": {
+          "count": 20,
+          "total_ns": 19100,
+          "exclusive_ns": 19100,
+          "avg_ns": 955,
+          "min_ns": 700,
+          "max_ns": 1200
+        },
+        "encode.patch.score": {
+          "count": 20,
+          "total_ns": 6221400,
+          "exclusive_ns": 6221400,
+          "avg_ns": 311070,
+          "min_ns": 45900,
+          "max_ns": 1061500
+        },
+        "encode.patch.search": {
+          "count": 20,
+          "total_ns": 78500,
+          "exclusive_ns": 69800,
+          "avg_ns": 3925,
+          "min_ns": 3200,
+          "max_ns": 5500
+        },
+        "encode.patch.total": {
+          "count": 20,
+          "total_ns": 220451900,
+          "exclusive_ns": 627800,
+          "avg_ns": 11022595,
+          "min_ns": 5851000,
+          "max_ns": 28408000
+        },
+        "encode.prepare": {
+          "count": 1,
+          "total_ns": 14937200,
+          "exclusive_ns": 368500,
+          "avg_ns": 14937200,
+          "min_ns": 14937200,
+          "max_ns": 14937200
+        },
+        "encode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2255000,
+          "exclusive_ns": 2255000,
+          "avg_ns": 2255000,
+          "min_ns": 2255000,
+          "max_ns": 2255000
+        },
+        "encode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 10077200,
+          "exclusive_ns": 10077200,
+          "avg_ns": 10077200,
+          "min_ns": 10077200,
+          "max_ns": 10077200
+        },
+        "encode.search_initialize": {
+          "count": 1,
+          "total_ns": 91800,
+          "exclusive_ns": 91800,
+          "avg_ns": 91800,
+          "min_ns": 91800,
+          "max_ns": 91800
+        },
+        "encode.serialize.header": {
+          "count": 1,
+          "total_ns": 22000,
+          "exclusive_ns": 22000,
+          "avg_ns": 22000,
+          "min_ns": 22000,
+          "max_ns": 22000
+        },
+        "encode.serialize.patches": {
+          "count": 1,
+          "total_ns": 34506000,
+          "exclusive_ns": 34506000,
+          "avg_ns": 34506000,
+          "min_ns": 34506000,
+          "max_ns": 34506000
+        },
+        "encode.validate": {
+          "count": 1,
+          "total_ns": 11500,
+          "exclusive_ns": 11500,
+          "avg_ns": 11500,
+          "min_ns": 11500,
+          "max_ns": 11500
+        },
+        "head.downsample_init": {
+          "count": 3,
+          "total_ns": 79308400,
+          "exclusive_ns": 3011800,
+          "avg_ns": 26436133,
+          "min_ns": 25903900,
+          "max_ns": 27287100
+        },
+        "head.filler": {
+          "count": 20,
+          "total_ns": 211163400,
+          "exclusive_ns": 163800,
+          "avg_ns": 10558170,
+          "min_ns": 5655700,
+          "max_ns": 26946000
+        },
+        "head.search": {
+          "count": 20,
+          "total_ns": 8700,
+          "exclusive_ns": 8700,
+          "avg_ns": 435,
+          "min_ns": 300,
+          "max_ns": 600
+        },
+        "prepare.build_warmup_target": {
+          "count": 1,
+          "total_ns": 5800,
+          "exclusive_ns": 5800,
+          "avg_ns": 5800,
+          "min_ns": 5800,
+          "max_ns": 5800
+        },
+        "prepare.downsample_color": {
+          "count": 1,
+          "total_ns": 9760700,
+          "exclusive_ns": 9760700,
+          "avg_ns": 9760700,
+          "min_ns": 9760700,
+          "max_ns": 9760700
+        },
+        "prepare.input_normalize": {
+          "count": 1,
+          "total_ns": 4100000,
+          "exclusive_ns": 4100000,
+          "avg_ns": 4100000,
+          "min_ns": 4100000,
+          "max_ns": 4100000
+        },
+        "prepare.materialize_arrays": {
+          "count": 1,
+          "total_ns": 702200,
+          "exclusive_ns": 702200,
+          "avg_ns": 702200,
+          "min_ns": 702200,
+          "max_ns": 702200
+        }
+      }
+    },
+    "decode": {
+      "total_ns": 52169900,
+      "summary": {
+        "decode.entropy_unpack": {
+          "count": 1,
+          "total_ns": 10831100,
+          "exclusive_ns": 10831100,
+          "avg_ns": 10831100,
+          "min_ns": 10831100,
+          "max_ns": 10831100
+        },
+        "decode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 586500,
+          "exclusive_ns": 586500,
+          "avg_ns": 586500,
+          "min_ns": 586500,
+          "max_ns": 586500
+        },
+        "decode.open_body": {
+          "count": 1,
+          "total_ns": 10849200,
+          "exclusive_ns": 16100,
+          "avg_ns": 10849200,
+          "min_ns": 10849200,
+          "max_ns": 10849200
+        },
+        "decode.parse_header": {
+          "count": 1,
+          "total_ns": 28800,
+          "exclusive_ns": 28800,
+          "avg_ns": 28800,
+          "min_ns": 28800,
+          "max_ns": 28800
+        },
+        "decode.patch.read": {
+          "count": 23,
+          "total_ns": 15281000,
+          "exclusive_ns": 15281000,
+          "avg_ns": 664391,
+          "min_ns": 67700,
+          "max_ns": 4342200
+        },
+        "decode.patch.resample_apply": {
+          "count": 23,
+          "total_ns": 11889800,
+          "exclusive_ns": 11889800,
+          "avg_ns": 516947,
+          "min_ns": 15200,
+          "max_ns": 2644600
+        },
+        "decode.patch_loop": {
+          "count": 1,
+          "total_ns": 27509900,
+          "exclusive_ns": 339100,
+          "avg_ns": 27509900,
+          "min_ns": 27509900,
+          "max_ns": 27509900
+        },
+        "decode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2351500,
+          "exclusive_ns": 2351500,
+          "avg_ns": 2351500,
+          "min_ns": 2351500,
+          "max_ns": 2351500
+        },
+        "decode.reconstruct.final_resize": {
+          "count": 1,
+          "total_ns": 9183400,
+          "exclusive_ns": 9183400,
+          "avg_ns": 9183400,
+          "min_ns": 9183400,
+          "max_ns": 9183400
+        },
+        "decode.to_canvas": {
+          "count": 1,
+          "total_ns": 39783500,
+          "exclusive_ns": 6500,
+          "avg_ns": 39783500,
+          "min_ns": 39783500,
+          "max_ns": 39783500
+        },
+        "decode.validate_magic_version": {
+          "count": 1,
+          "total_ns": 2000,
+          "exclusive_ns": 2000,
+          "avg_ns": 2000,
+          "min_ns": 2000,
+          "max_ns": 2000
+        },
+        "head.decoder": {
+          "count": 1,
+          "total_ns": 39777000,
+          "exclusive_ns": 802600,
+          "avg_ns": 39777000,
+          "min_ns": 39777000,
+          "max_ns": 39777000
+        }
+      }
+    },
+    "stream_sha256": "94fadcfc9b485a8cfc614aef7a8df20d82769122040a602af3521141da9b3e8a"
+  },
+  {
+    "image": "eiffel.png",
+    "preset": "quality",
+    "encode": {
+      "total_ns": 249843300,
+      "summary": {
+        "action.downsample_init.build_candidate": {
+          "count": 9,
+          "total_ns": 14177600,
+          "exclusive_ns": 14177600,
+          "avg_ns": 1575288,
+          "min_ns": 1185200,
+          "max_ns": 2138800
+        },
+        "action.downsample_init.candidates": {
+          "count": 3,
+          "total_ns": 8876600,
+          "exclusive_ns": 8876600,
+          "avg_ns": 2958866,
+          "min_ns": 2827000,
+          "max_ns": 3163400
+        },
+        "action.downsample_init.resample_candidate": {
+          "count": 9,
+          "total_ns": 14043000,
+          "exclusive_ns": 14043000,
+          "avg_ns": 1560333,
+          "min_ns": 1334000,
+          "max_ns": 2000500
+        },
+        "action.downsample_init.residual": {
+          "count": 3,
+          "total_ns": 7609300,
+          "exclusive_ns": 7609300,
+          "avg_ns": 2536433,
+          "min_ns": 2096600,
+          "max_ns": 2811900
+        },
+        "action.downsample_init.score_candidate": {
+          "count": 9,
+          "total_ns": 18247200,
+          "exclusive_ns": 18247200,
+          "avg_ns": 2027466,
+          "min_ns": 1641100,
+          "max_ns": 2323800
+        },
+        "action.downsample_init.select_candidate": {
+          "count": 3,
+          "total_ns": 172100,
+          "exclusive_ns": 172100,
+          "avg_ns": 57366,
+          "min_ns": 55200,
+          "max_ns": 61100
+        },
+        "action.filler.build.make_patch": {
+          "count": 17,
+          "total_ns": 13336200,
+          "exclusive_ns": 13336200,
+          "avg_ns": 784482,
+          "min_ns": 204400,
+          "max_ns": 2519700
+        },
+        "action.filler.build.residual": {
+          "count": 17,
+          "total_ns": 1254600,
+          "exclusive_ns": 1254600,
+          "avg_ns": 73800,
+          "min_ns": 23200,
+          "max_ns": 155300
+        },
+        "action.filler.build.score_patch": {
+          "count": 17,
+          "total_ns": 9802200,
+          "exclusive_ns": 316100,
+          "avg_ns": 576600,
+          "min_ns": 170600,
+          "max_ns": 1338100
+        },
+        "action.filler.learned_select": {
+          "count": 17,
+          "total_ns": 130484600,
+          "exclusive_ns": 1167500,
+          "avg_ns": 7675564,
+          "min_ns": 5719500,
+          "max_ns": 9639500
+        },
+        "action.filler.load_policy": {
+          "count": 1,
+          "total_ns": 43900,
+          "exclusive_ns": 43900,
+          "avg_ns": 43900,
+          "min_ns": 43900,
+          "max_ns": 43900
+        },
+        "action.filler.policy.action_head_forward": {
+          "count": 17,
+          "total_ns": 181300,
+          "exclusive_ns": 181300,
+          "avg_ns": 10664,
+          "min_ns": 6600,
+          "max_ns": 56000
+        },
+        "action.filler.policy.evaluate_action": {
+          "count": 17,
+          "total_ns": 24670300,
+          "exclusive_ns": 277300,
+          "avg_ns": 1451194,
+          "min_ns": 502800,
+          "max_ns": 3181900
+        },
+        "action.filler.policy.feature_extract": {
+          "count": 17,
+          "total_ns": 19630600,
+          "exclusive_ns": 19630600,
+          "avg_ns": 1154741,
+          "min_ns": 555300,
+          "max_ns": 1832800
+        },
+        "action.filler.policy.feature_normalize": {
+          "count": 17,
+          "total_ns": 270000,
+          "exclusive_ns": 270000,
+          "avg_ns": 15882,
+          "min_ns": 6200,
+          "max_ns": 147500
+        },
+        "action.filler.policy.forward": {
+          "count": 17,
+          "total_ns": 1146600,
+          "exclusive_ns": 202000,
+          "avg_ns": 67447,
+          "min_ns": 53600,
+          "max_ns": 117000
+        },
+        "action.filler.policy.propose_boxes": {
+          "count": 17,
+          "total_ns": 83478600,
+          "exclusive_ns": 3856800,
+          "avg_ns": 4910505,
+          "min_ns": 4136000,
+          "max_ns": 5411700
+        },
+        "action.filler.policy.rd_score": {
+          "count": 16,
+          "total_ns": 8000,
+          "exclusive_ns": 8000,
+          "avg_ns": 500,
+          "min_ns": 400,
+          "max_ns": 600
+        },
+        "action.filler.policy.select_action_head": {
+          "count": 17,
+          "total_ns": 43600,
+          "exclusive_ns": 43600,
+          "avg_ns": 2564,
+          "min_ns": 2000,
+          "max_ns": 3100
+        },
+        "action.filler.policy.select_value_order": {
+          "count": 17,
+          "total_ns": 69400,
+          "exclusive_ns": 69400,
+          "avg_ns": 4082,
+          "min_ns": 2100,
+          "max_ns": 28200
+        },
+        "action.filler.policy.trunk_forward": {
+          "count": 17,
+          "total_ns": 637200,
+          "exclusive_ns": 637200,
+          "avg_ns": 37482,
+          "min_ns": 31500,
+          "max_ns": 45300
+        },
+        "action.filler.policy.value_head_forward": {
+          "count": 17,
+          "total_ns": 126100,
+          "exclusive_ns": 126100,
+          "avg_ns": 7417,
+          "min_ns": 5400,
+          "max_ns": 21500
+        },
+        "action.filler.score.bit_cost": {
+          "count": 17,
+          "total_ns": 58700,
+          "exclusive_ns": 58700,
+          "avg_ns": 3452,
+          "min_ns": 2200,
+          "max_ns": 10700
+        },
+        "action.filler.score.reduction": {
+          "count": 17,
+          "total_ns": 6123600,
+          "exclusive_ns": 6123600,
+          "avg_ns": 360211,
+          "min_ns": 129300,
+          "max_ns": 802000
+        },
+        "action.filler.score.resample": {
+          "count": 17,
+          "total_ns": 3303800,
+          "exclusive_ns": 3303800,
+          "avg_ns": 194341,
+          "min_ns": 20700,
+          "max_ns": 507000
+        },
+        "action.search.anchors": {
+          "count": 17,
+          "total_ns": 4706800,
+          "exclusive_ns": 4706800,
+          "avg_ns": 276870,
+          "min_ns": 233700,
+          "max_ns": 378500
+        },
+        "action.search.integral_error": {
+          "count": 17,
+          "total_ns": 8746300,
+          "exclusive_ns": 8746300,
+          "avg_ns": 514488,
+          "min_ns": 424700,
+          "max_ns": 804300
+        },
+        "action.search.prescore": {
+          "count": 17,
+          "total_ns": 1019900,
+          "exclusive_ns": 1019900,
+          "avg_ns": 59994,
+          "min_ns": 47300,
+          "max_ns": 70600
+        },
+        "action.search.sample_boxes": {
+          "count": 17,
+          "total_ns": 64770300,
+          "exclusive_ns": 64770300,
+          "avg_ns": 3810017,
+          "min_ns": 3118700,
+          "max_ns": 4356000
+        },
+        "action.search.select_top_boxes": {
+          "count": 17,
+          "total_ns": 372400,
+          "exclusive_ns": 372400,
+          "avg_ns": 21905,
+          "min_ns": 17700,
+          "max_ns": 27500
+        },
+        "action.search.visible_error": {
+          "count": 17,
+          "total_ns": 6100,
+          "exclusive_ns": 6100,
+          "avg_ns": 358,
+          "min_ns": 300,
+          "max_ns": 400
+        },
+        "encode.entropy_pack": {
+          "count": 1,
+          "total_ns": 25498600,
+          "exclusive_ns": 25498600,
+          "avg_ns": 25498600,
+          "min_ns": 25498600,
+          "max_ns": 25498600
+        },
+        "encode.filler_initialize": {
+          "count": 1,
+          "total_ns": 52700,
+          "exclusive_ns": 8800,
+          "avg_ns": 52700,
+          "min_ns": 52700,
+          "max_ns": 52700
+        },
+        "encode.initial_error_scores": {
+          "count": 1,
+          "total_ns": 4085800,
+          "exclusive_ns": 4085800,
+          "avg_ns": 4085800,
+          "min_ns": 4085800,
+          "max_ns": 4085800
+        },
+        "encode.initial_patch.apply": {
+          "count": 3,
+          "total_ns": 571400,
+          "exclusive_ns": 571400,
+          "avg_ns": 190466,
+          "min_ns": 172500,
+          "max_ns": 219100
+        },
+        "encode.initial_patch.channel": {
+          "count": 3,
+          "total_ns": 65913100,
+          "exclusive_ns": 37600,
+          "avg_ns": 21971033,
+          "min_ns": 20819700,
+          "max_ns": 23114200
+        },
+        "encode.initial_patch_selection": {
+          "count": 1,
+          "total_ns": 65938800,
+          "exclusive_ns": 25700,
+          "avg_ns": 65938800,
+          "min_ns": 65938800,
+          "max_ns": 65938800
+        },
+        "encode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 1267100,
+          "exclusive_ns": 1267100,
+          "avg_ns": 1267100,
+          "min_ns": 1267100,
+          "max_ns": 1267100
+        },
+        "encode.metric.final_mse": {
+          "count": 1,
+          "total_ns": 3218500,
+          "exclusive_ns": 3218500,
+          "avg_ns": 3218500,
+          "min_ns": 3218500,
+          "max_ns": 3218500
+        },
+        "encode.patch.apply": {
+          "count": 16,
+          "total_ns": 1179300,
+          "exclusive_ns": 1179300,
+          "avg_ns": 73706,
+          "min_ns": 26200,
+          "max_ns": 126900
+        },
+        "encode.patch.choose_channel": {
+          "count": 17,
+          "total_ns": 90500,
+          "exclusive_ns": 90500,
+          "avg_ns": 5323,
+          "min_ns": 4200,
+          "max_ns": 6800
+        },
+        "encode.patch.fill": {
+          "count": 17,
+          "total_ns": 130676700,
+          "exclusive_ns": 64400,
+          "avg_ns": 7686864,
+          "min_ns": 5729600,
+          "max_ns": 9650400
+        },
+        "encode.patch.quality_check": {
+          "count": 16,
+          "total_ns": 14300,
+          "exclusive_ns": 14300,
+          "avg_ns": 893,
+          "min_ns": 700,
+          "max_ns": 1300
+        },
+        "encode.patch.score": {
+          "count": 16,
+          "total_ns": 3810200,
+          "exclusive_ns": 3810200,
+          "avg_ns": 238137,
+          "min_ns": 82100,
+          "max_ns": 477300
+        },
+        "encode.patch.search": {
+          "count": 17,
+          "total_ns": 66900,
+          "exclusive_ns": 57900,
+          "avg_ns": 3935,
+          "min_ns": 3000,
+          "max_ns": 5100
+        },
+        "encode.patch.total": {
+          "count": 17,
+          "total_ns": 136315000,
+          "exclusive_ns": 477100,
+          "avg_ns": 8018529,
+          "min_ns": 5751000,
+          "max_ns": 10068600
+        },
+        "encode.prepare": {
+          "count": 1,
+          "total_ns": 2968000,
+          "exclusive_ns": 40200,
+          "avg_ns": 2968000,
+          "min_ns": 2968000,
+          "max_ns": 2968000
+        },
+        "encode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2180500,
+          "exclusive_ns": 2180500,
+          "avg_ns": 2180500,
+          "min_ns": 2180500,
+          "max_ns": 2180500
+        },
+        "encode.search_initialize": {
+          "count": 1,
+          "total_ns": 72300,
+          "exclusive_ns": 72300,
+          "avg_ns": 72300,
+          "min_ns": 72300,
+          "max_ns": 72300
+        },
+        "encode.serialize.header": {
+          "count": 1,
+          "total_ns": 15400,
+          "exclusive_ns": 15400,
+          "avg_ns": 15400,
+          "min_ns": 15400,
+          "max_ns": 15400
+        },
+        "encode.serialize.patches": {
+          "count": 1,
+          "total_ns": 5646100,
+          "exclusive_ns": 5646100,
+          "avg_ns": 5646100,
+          "min_ns": 5646100,
+          "max_ns": 5646100
+        },
+        "encode.validate": {
+          "count": 1,
+          "total_ns": 4300,
+          "exclusive_ns": 4300,
+          "avg_ns": 4300,
+          "min_ns": 4300,
+          "max_ns": 4300
+        },
+        "head.downsample_init": {
+          "count": 3,
+          "total_ns": 65304100,
+          "exclusive_ns": 2178300,
+          "avg_ns": 21768033,
+          "min_ns": 20634800,
+          "max_ns": 22920800
+        },
+        "head.filler": {
+          "count": 17,
+          "total_ns": 130612300,
+          "exclusive_ns": 127700,
+          "avg_ns": 7683076,
+          "min_ns": 5726000,
+          "max_ns": 9647000
+        },
+        "head.search": {
+          "count": 17,
+          "total_ns": 9000,
+          "exclusive_ns": 9000,
+          "avg_ns": 529,
+          "min_ns": 300,
+          "max_ns": 700
+        },
+        "prepare.build_warmup_target": {
+          "count": 1,
+          "total_ns": 1600,
+          "exclusive_ns": 1600,
+          "avg_ns": 1600,
+          "min_ns": 1600,
+          "max_ns": 1600
+        },
+        "prepare.downsample_color": {
+          "count": 1,
+          "total_ns": 709300,
+          "exclusive_ns": 709300,
+          "avg_ns": 709300,
+          "min_ns": 709300,
+          "max_ns": 709300
+        },
+        "prepare.input_normalize": {
+          "count": 1,
+          "total_ns": 1666800,
+          "exclusive_ns": 1666800,
+          "avg_ns": 1666800,
+          "min_ns": 1666800,
+          "max_ns": 1666800
+        },
+        "prepare.materialize_arrays": {
+          "count": 1,
+          "total_ns": 550100,
+          "exclusive_ns": 550100,
+          "avg_ns": 550100,
+          "min_ns": 550100,
+          "max_ns": 550100
+        }
+      }
+    },
+    "decode": {
+      "total_ns": 18938000,
+      "summary": {
+        "decode.entropy_unpack": {
+          "count": 1,
+          "total_ns": 2712700,
+          "exclusive_ns": 2712700,
+          "avg_ns": 2712700,
+          "min_ns": 2712700,
+          "max_ns": 2712700
+        },
+        "decode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 464600,
+          "exclusive_ns": 464600,
+          "avg_ns": 464600,
+          "min_ns": 464600,
+          "max_ns": 464600
+        },
+        "decode.open_body": {
+          "count": 1,
+          "total_ns": 2726700,
+          "exclusive_ns": 12100,
+          "avg_ns": 2726700,
+          "min_ns": 2726700,
+          "max_ns": 2726700
+        },
+        "decode.parse_header": {
+          "count": 1,
+          "total_ns": 22000,
+          "exclusive_ns": 22000,
+          "avg_ns": 22000,
+          "min_ns": 22000,
+          "max_ns": 22000
+        },
+        "decode.patch.read": {
+          "count": 19,
+          "total_ns": 3638900,
+          "exclusive_ns": 3638900,
+          "avg_ns": 191521,
+          "min_ns": 50900,
+          "max_ns": 538300
+        },
+        "decode.patch.resample_apply": {
+          "count": 19,
+          "total_ns": 9307800,
+          "exclusive_ns": 9307800,
+          "avg_ns": 489884,
+          "min_ns": 32400,
+          "max_ns": 2190600
+        },
+        "decode.patch_loop": {
+          "count": 1,
+          "total_ns": 13176800,
+          "exclusive_ns": 230100,
+          "avg_ns": 13176800,
+          "min_ns": 13176800,
+          "max_ns": 13176800
+        },
+        "decode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 1795100,
+          "exclusive_ns": 1795100,
+          "avg_ns": 1795100,
+          "min_ns": 1795100,
+          "max_ns": 1795100
+        },
+        "decode.to_canvas": {
+          "count": 1,
+          "total_ns": 16424300,
+          "exclusive_ns": 4700,
+          "avg_ns": 16424300,
+          "min_ns": 16424300,
+          "max_ns": 16424300
+        },
+        "decode.validate_magic_version": {
+          "count": 1,
+          "total_ns": 1900,
+          "exclusive_ns": 1900,
+          "avg_ns": 1900,
+          "min_ns": 1900,
+          "max_ns": 1900
+        },
+        "head.decoder": {
+          "count": 1,
+          "total_ns": 16419600,
+          "exclusive_ns": 29500,
+          "avg_ns": 16419600,
+          "min_ns": 16419600,
+          "max_ns": 16419600
+        }
+      }
+    },
+    "stream_sha256": "f3511c8a5cf048be328d805658fbd51eeb839b62950e0db977cf182870c1c73a"
+  },
+  {
+    "image": "eiffel.png",
+    "preset": "high_quality",
+    "encode": {
+      "total_ns": 516663100,
+      "summary": {
+        "action.downsample_init.build_candidate": {
+          "count": 9,
+          "total_ns": 12962200,
+          "exclusive_ns": 12962200,
+          "avg_ns": 1440244,
+          "min_ns": 1093500,
+          "max_ns": 1876400
+        },
+        "action.downsample_init.candidates": {
+          "count": 3,
+          "total_ns": 10815500,
+          "exclusive_ns": 10815500,
+          "avg_ns": 3605166,
+          "min_ns": 2597000,
+          "max_ns": 4614500
+        },
+        "action.downsample_init.resample_candidate": {
+          "count": 9,
+          "total_ns": 14756000,
+          "exclusive_ns": 14756000,
+          "avg_ns": 1639555,
+          "min_ns": 1320000,
+          "max_ns": 1968300
+        },
+        "action.downsample_init.residual": {
+          "count": 3,
+          "total_ns": 8576400,
+          "exclusive_ns": 8576400,
+          "avg_ns": 2858800,
+          "min_ns": 2295000,
+          "max_ns": 3962400
+        },
+        "action.downsample_init.score_candidate": {
+          "count": 9,
+          "total_ns": 17631700,
+          "exclusive_ns": 17631700,
+          "avg_ns": 1959077,
+          "min_ns": 1669400,
+          "max_ns": 2504500
+        },
+        "action.downsample_init.select_candidate": {
+          "count": 3,
+          "total_ns": 188700,
+          "exclusive_ns": 188700,
+          "avg_ns": 62900,
+          "min_ns": 57700,
+          "max_ns": 69600
+        },
+        "action.filler.build.make_patch": {
+          "count": 20,
+          "total_ns": 31577800,
+          "exclusive_ns": 31577800,
+          "avg_ns": 1578890,
+          "min_ns": 139100,
+          "max_ns": 7305400
+        },
+        "action.filler.build.residual": {
+          "count": 20,
+          "total_ns": 2419200,
+          "exclusive_ns": 2419200,
+          "avg_ns": 120960,
+          "min_ns": 8300,
+          "max_ns": 485500
+        },
+        "action.filler.build.score_patch": {
+          "count": 20,
+          "total_ns": 17717000,
+          "exclusive_ns": 431600,
+          "avg_ns": 885850,
+          "min_ns": 86700,
+          "max_ns": 4092300
+        },
+        "action.filler.learned_select": {
+          "count": 20,
+          "total_ns": 202201300,
+          "exclusive_ns": 1273200,
+          "avg_ns": 10110065,
+          "min_ns": 5072500,
+          "max_ns": 27838300
+        },
+        "action.filler.load_policy": {
+          "count": 1,
+          "total_ns": 45700,
+          "exclusive_ns": 45700,
+          "avg_ns": 45700,
+          "min_ns": 45700,
+          "max_ns": 45700
+        },
+        "action.filler.policy.action_head_forward": {
+          "count": 20,
+          "total_ns": 160800,
+          "exclusive_ns": 160800,
+          "avg_ns": 8040,
+          "min_ns": 6500,
+          "max_ns": 9300
+        },
+        "action.filler.policy.evaluate_action": {
+          "count": 20,
+          "total_ns": 52078300,
+          "exclusive_ns": 364300,
+          "avg_ns": 2603915,
+          "min_ns": 257200,
+          "max_ns": 11238700
+        },
+        "action.filler.policy.feature_extract": {
+          "count": 20,
+          "total_ns": 50247000,
+          "exclusive_ns": 50247000,
+          "avg_ns": 2512350,
+          "min_ns": 341000,
+          "max_ns": 11514700
+        },
+        "action.filler.policy.feature_normalize": {
+          "count": 20,
+          "total_ns": 160400,
+          "exclusive_ns": 160400,
+          "avg_ns": 8020,
+          "min_ns": 5600,
+          "max_ns": 13400
+        },
+        "action.filler.policy.forward": {
+          "count": 20,
+          "total_ns": 1301600,
+          "exclusive_ns": 253700,
+          "avg_ns": 65080,
+          "min_ns": 51500,
+          "max_ns": 82000
+        },
+        "action.filler.policy.propose_boxes": {
+          "count": 20,
+          "total_ns": 97022700,
+          "exclusive_ns": 4223800,
+          "avg_ns": 4851135,
+          "min_ns": 4138600,
+          "max_ns": 7180900
+        },
+        "action.filler.policy.rd_score": {
+          "count": 20,
+          "total_ns": 10000,
+          "exclusive_ns": 10000,
+          "avg_ns": 500,
+          "min_ns": 300,
+          "max_ns": 800
+        },
+        "action.filler.policy.select_action_head": {
+          "count": 20,
+          "total_ns": 53600,
+          "exclusive_ns": 53600,
+          "avg_ns": 2680,
+          "min_ns": 1800,
+          "max_ns": 3500
+        },
+        "action.filler.policy.select_value_order": {
+          "count": 20,
+          "total_ns": 54500,
+          "exclusive_ns": 54500,
+          "avg_ns": 2725,
+          "min_ns": 2200,
+          "max_ns": 3300
+        },
+        "action.filler.policy.trunk_forward": {
+          "count": 20,
+          "total_ns": 753400,
+          "exclusive_ns": 753400,
+          "avg_ns": 37670,
+          "min_ns": 28000,
+          "max_ns": 49100
+        },
+        "action.filler.policy.value_head_forward": {
+          "count": 20,
+          "total_ns": 133700,
+          "exclusive_ns": 133700,
+          "avg_ns": 6685,
+          "min_ns": 5400,
+          "max_ns": 7600
+        },
+        "action.filler.score.bit_cost": {
+          "count": 20,
+          "total_ns": 60100,
+          "exclusive_ns": 60100,
+          "avg_ns": 3005,
+          "min_ns": 2200,
+          "max_ns": 4700
+        },
+        "action.filler.score.reduction": {
+          "count": 20,
+          "total_ns": 12815700,
+          "exclusive_ns": 12815700,
+          "avg_ns": 640785,
+          "min_ns": 60800,
+          "max_ns": 3115100
+        },
+        "action.filler.score.resample": {
+          "count": 20,
+          "total_ns": 4409600,
+          "exclusive_ns": 4409600,
+          "avg_ns": 220480,
+          "min_ns": 10500,
+          "max_ns": 1420800
+        },
+        "action.search.anchors": {
+          "count": 20,
+          "total_ns": 5559300,
+          "exclusive_ns": 5559300,
+          "avg_ns": 277965,
+          "min_ns": 230800,
+          "max_ns": 428500
+        },
+        "action.search.integral_error": {
+          "count": 20,
+          "total_ns": 10156100,
+          "exclusive_ns": 10156100,
+          "avg_ns": 507805,
+          "min_ns": 425800,
+          "max_ns": 897200
+        },
+        "action.search.prescore": {
+          "count": 20,
+          "total_ns": 1613200,
+          "exclusive_ns": 1613200,
+          "avg_ns": 80660,
+          "min_ns": 53100,
+          "max_ns": 439600
+        },
+        "action.search.sample_boxes": {
+          "count": 20,
+          "total_ns": 74797100,
+          "exclusive_ns": 74797100,
+          "avg_ns": 3739855,
+          "min_ns": 3185800,
+          "max_ns": 6068300
+        },
+        "action.search.select_top_boxes": {
+          "count": 20,
+          "total_ns": 666400,
+          "exclusive_ns": 666400,
+          "avg_ns": 33320,
+          "min_ns": 19100,
+          "max_ns": 185100
+        },
+        "action.search.visible_error": {
+          "count": 20,
+          "total_ns": 6800,
+          "exclusive_ns": 6800,
+          "avg_ns": 340,
+          "min_ns": 300,
+          "max_ns": 400
+        },
+        "encode.entropy_pack": {
+          "count": 1,
+          "total_ns": 201481400,
+          "exclusive_ns": 201481400,
+          "avg_ns": 201481400,
+          "min_ns": 201481400,
+          "max_ns": 201481400
+        },
+        "encode.filler_initialize": {
+          "count": 1,
+          "total_ns": 54500,
+          "exclusive_ns": 8800,
+          "avg_ns": 54500,
+          "min_ns": 54500,
+          "max_ns": 54500
+        },
+        "encode.initial_error_scores": {
+          "count": 1,
+          "total_ns": 3091100,
+          "exclusive_ns": 3091100,
+          "avg_ns": 3091100,
+          "min_ns": 3091100,
+          "max_ns": 3091100
+        },
+        "encode.initial_patch.apply": {
+          "count": 3,
+          "total_ns": 771300,
+          "exclusive_ns": 771300,
+          "avg_ns": 257100,
+          "min_ns": 179600,
+          "max_ns": 310900
+        },
+        "encode.initial_patch.channel": {
+          "count": 3,
+          "total_ns": 68468700,
+          "exclusive_ns": 61600,
+          "avg_ns": 22822900,
+          "min_ns": 21274800,
+          "max_ns": 25028100
+        },
+        "encode.initial_patch_selection": {
+          "count": 1,
+          "total_ns": 68496400,
+          "exclusive_ns": 27700,
+          "avg_ns": 68496400,
+          "min_ns": 68496400,
+          "max_ns": 68496400
+        },
+        "encode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 1677700,
+          "exclusive_ns": 1677700,
+          "avg_ns": 1677700,
+          "min_ns": 1677700,
+          "max_ns": 1677700
+        },
+        "encode.metric.final_mse": {
+          "count": 1,
+          "total_ns": 2705200,
+          "exclusive_ns": 2705200,
+          "avg_ns": 2705200,
+          "min_ns": 2705200,
+          "max_ns": 2705200
+        },
+        "encode.patch.apply": {
+          "count": 20,
+          "total_ns": 2029000,
+          "exclusive_ns": 2029000,
+          "avg_ns": 101450,
+          "min_ns": 11900,
+          "max_ns": 387600
+        },
+        "encode.patch.choose_channel": {
+          "count": 20,
+          "total_ns": 108900,
+          "exclusive_ns": 108900,
+          "avg_ns": 5445,
+          "min_ns": 3700,
+          "max_ns": 8900
+        },
+        "encode.patch.fill": {
+          "count": 20,
+          "total_ns": 202667200,
+          "exclusive_ns": 79100,
+          "avg_ns": 10133360,
+          "min_ns": 5081100,
+          "max_ns": 27852200
+        },
+        "encode.patch.quality_check": {
+          "count": 20,
+          "total_ns": 17500,
+          "exclusive_ns": 17500,
+          "avg_ns": 875,
+          "min_ns": 600,
+          "max_ns": 1400
+        },
+        "encode.patch.score": {
+          "count": 20,
+          "total_ns": 6016100,
+          "exclusive_ns": 6016100,
+          "avg_ns": 300805,
+          "min_ns": 38000,
+          "max_ns": 1154700
+        },
+        "encode.patch.search": {
+          "count": 20,
+          "total_ns": 76300,
+          "exclusive_ns": 66900,
+          "avg_ns": 3815,
+          "min_ns": 3000,
+          "max_ns": 5200
+        },
+        "encode.patch.total": {
+          "count": 20,
+          "total_ns": 211539800,
+          "exclusive_ns": 624800,
+          "avg_ns": 10576990,
+          "min_ns": 5177400,
+          "max_ns": 29360700
+        },
+        "encode.prepare": {
+          "count": 1,
+          "total_ns": 2693700,
+          "exclusive_ns": 43200,
+          "avg_ns": 2693700,
+          "min_ns": 2693700,
+          "max_ns": 2693700
+        },
+        "encode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2350500,
+          "exclusive_ns": 2350500,
+          "avg_ns": 2350500,
+          "min_ns": 2350500,
+          "max_ns": 2350500
+        },
+        "encode.search_initialize": {
+          "count": 1,
+          "total_ns": 75400,
+          "exclusive_ns": 75400,
+          "avg_ns": 75400,
+          "min_ns": 75400,
+          "max_ns": 75400
+        },
+        "encode.serialize.header": {
+          "count": 1,
+          "total_ns": 19800,
+          "exclusive_ns": 19800,
+          "avg_ns": 19800,
+          "min_ns": 19800,
+          "max_ns": 19800
+        },
+        "encode.serialize.patches": {
+          "count": 1,
+          "total_ns": 19221600,
+          "exclusive_ns": 19221600,
+          "avg_ns": 19221600,
+          "min_ns": 19221600,
+          "max_ns": 19221600
+        },
+        "encode.validate": {
+          "count": 1,
+          "total_ns": 4900,
+          "exclusive_ns": 4900,
+          "avg_ns": 4900,
+          "min_ns": 4900,
+          "max_ns": 4900
+        },
+        "head.downsample_init": {
+          "count": 3,
+          "total_ns": 67635800,
+          "exclusive_ns": 2705300,
+          "avg_ns": 22545266,
+          "min_ns": 20943700,
+          "max_ns": 24719200
+        },
+        "head.filler": {
+          "count": 20,
+          "total_ns": 202588100,
+          "exclusive_ns": 386800,
+          "avg_ns": 10129405,
+          "min_ns": 5078300,
+          "max_ns": 27848500
+        },
+        "head.search": {
+          "count": 20,
+          "total_ns": 9400,
+          "exclusive_ns": 9400,
+          "avg_ns": 470,
+          "min_ns": 300,
+          "max_ns": 600
+        },
+        "prepare.build_warmup_target": {
+          "count": 1,
+          "total_ns": 2000,
+          "exclusive_ns": 2000,
+          "avg_ns": 2000,
+          "min_ns": 2000,
+          "max_ns": 2000
+        },
+        "prepare.downsample_color": {
+          "count": 1,
+          "total_ns": 757600,
+          "exclusive_ns": 757600,
+          "avg_ns": 757600,
+          "min_ns": 757600,
+          "max_ns": 757600
+        },
+        "prepare.input_normalize": {
+          "count": 1,
+          "total_ns": 1267900,
+          "exclusive_ns": 1267900,
+          "avg_ns": 1267900,
+          "min_ns": 1267900,
+          "max_ns": 1267900
+        },
+        "prepare.materialize_arrays": {
+          "count": 1,
+          "total_ns": 623000,
+          "exclusive_ns": 623000,
+          "avg_ns": 623000,
+          "min_ns": 623000,
+          "max_ns": 623000
+        }
+      }
+    },
+    "decode": {
+      "total_ns": 32273200,
+      "summary": {
+        "decode.entropy_unpack": {
+          "count": 1,
+          "total_ns": 5844900,
+          "exclusive_ns": 5844900,
+          "avg_ns": 5844900,
+          "min_ns": 5844900,
+          "max_ns": 5844900
+        },
+        "decode.initialize_canvas": {
+          "count": 1,
+          "total_ns": 469400,
+          "exclusive_ns": 469400,
+          "avg_ns": 469400,
+          "min_ns": 469400,
+          "max_ns": 469400
+        },
+        "decode.open_body": {
+          "count": 1,
+          "total_ns": 5865700,
+          "exclusive_ns": 18600,
+          "avg_ns": 5865700,
+          "min_ns": 5865700,
+          "max_ns": 5865700
+        },
+        "decode.parse_header": {
+          "count": 1,
+          "total_ns": 25900,
+          "exclusive_ns": 25900,
+          "avg_ns": 25900,
+          "min_ns": 25900,
+          "max_ns": 25900
+        },
+        "decode.patch.read": {
+          "count": 23,
+          "total_ns": 11036100,
+          "exclusive_ns": 11036100,
+          "avg_ns": 479830,
+          "min_ns": 83900,
+          "max_ns": 2485600
+        },
+        "decode.patch.resample_apply": {
+          "count": 23,
+          "total_ns": 11392100,
+          "exclusive_ns": 11392100,
+          "avg_ns": 495308,
+          "min_ns": 18800,
+          "max_ns": 2484700
+        },
+        "decode.patch_loop": {
+          "count": 1,
+          "total_ns": 22798200,
+          "exclusive_ns": 370000,
+          "avg_ns": 22798200,
+          "min_ns": 22798200,
+          "max_ns": 22798200
+        },
+        "decode.reconstruct.canvas_to_image": {
+          "count": 1,
+          "total_ns": 2128300,
+          "exclusive_ns": 2128300,
+          "avg_ns": 2128300,
+          "min_ns": 2128300,
+          "max_ns": 2128300
+        },
+        "decode.to_canvas": {
+          "count": 1,
+          "total_ns": 29203900,
+          "exclusive_ns": 5200,
+          "avg_ns": 29203900,
+          "min_ns": 29203900,
+          "max_ns": 29203900
+        },
+        "decode.validate_magic_version": {
+          "count": 1,
+          "total_ns": 2200,
+          "exclusive_ns": 2200,
+          "avg_ns": 2200,
+          "min_ns": 2200,
+          "max_ns": 2200
+        },
+        "head.decoder": {
+          "count": 1,
+          "total_ns": 29198700,
+          "exclusive_ns": 39500,
+          "avg_ns": 29198700,
+          "min_ns": 29198700,
+          "max_ns": 29198700
+        }
+      }
+    },
+    "stream_sha256": "b1aa09910986a7df29db2eac779308ad1f564ac07a507744e559f785cd1d945c"
+  }
+]
