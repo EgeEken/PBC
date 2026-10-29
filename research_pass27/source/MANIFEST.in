@@ -1,0 +1,3 @@
+include README.md INSTALL.md LICENSE
+include pbc3/patch_policy.npz pbc3/mse.c
+exclude pbc3/*.dll

@@ -1,0 +1,594 @@
+{
+  "valid": [
+    {
+      "name": "python_balanced",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\python_balanced.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "a5ea6bb35948dd52b5542451553844df7c04f490ccb3879c2c29748b9ac156f3",
+      "bytes": 2453,
+      "mode": "RGB",
+      "size": [
+        96,
+        95
+      ],
+      "pixel_sha256": "ddbae6d9c9cff61fe7b063f43442e299434b5b0e06d74ad6e3b6e89a674f93a6",
+      "partial": {
+        "0": "5da09f83a6ea07cde5ccb89ca5a37cc28c69ff30684e7e0b96d053ff7b92c5b8",
+        "1": "70d4eb01efabbb34341ba6a7be59db8792a7ef9b4d9d29e9b5e0a22b0ee687ba"
+      }
+    },
+    {
+      "name": "python_compression",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\python_compression.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "df2d8a0361a41d680e67ad5fde0170b4d051da0d9f02a8f6fea2e7a757fda87e",
+      "bytes": 947,
+      "mode": "RGB",
+      "size": [
+        96,
+        95
+      ],
+      "pixel_sha256": "af26c1277a469fd960bc82a3e30c2a6b9fad98eabc8c0bb02842eacd7d0a6d70",
+      "partial": {
+        "0": "5da09f83a6ea07cde5ccb89ca5a37cc28c69ff30684e7e0b96d053ff7b92c5b8",
+        "1": "70d4eb01efabbb34341ba6a7be59db8792a7ef9b4d9d29e9b5e0a22b0ee687ba"
+      }
+    },
+    {
+      "name": "python_high_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\python_high_quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "3bf0d97eb18b3d25f8c6e688b0b39b025eb27e8a91526dd765f8bc0f969d34ac",
+      "bytes": 6165,
+      "mode": "RGB",
+      "size": [
+        96,
+        95
+      ],
+      "pixel_sha256": "6869aafb7072b51fda39d41cafd4b487146f4c820ac33f21013e89b59dc812b8",
+      "partial": {
+        "0": "5da09f83a6ea07cde5ccb89ca5a37cc28c69ff30684e7e0b96d053ff7b92c5b8",
+        "1": "70d4eb01efabbb34341ba6a7be59db8792a7ef9b4d9d29e9b5e0a22b0ee687ba"
+      }
+    },
+    {
+      "name": "python_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\python_quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "1cd2bd0e710f69f716ff091486c4e2e67989d3cd8478f689cf7296d113f15f65",
+      "bytes": 4290,
+      "mode": "RGB",
+      "size": [
+        96,
+        95
+      ],
+      "pixel_sha256": "b7593bb3948011003f7ee09f0a702651741e7a0b8a8c757ef585ff60d031f9a7",
+      "partial": {
+        "0": "5da09f83a6ea07cde5ccb89ca5a37cc28c69ff30684e7e0b96d053ff7b92c5b8",
+        "1": "70d4eb01efabbb34341ba6a7be59db8792a7ef9b4d9d29e9b5e0a22b0ee687ba"
+      }
+    },
+    {
+      "name": "python_rgba",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\python_rgba.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "f9d2de7884db32cbd85d78687222ee8ced3eae7345450ff3922e23ff6399b9f1",
+      "bytes": 24243,
+      "mode": "RGBA",
+      "size": [
+        127,
+        91
+      ],
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58",
+      "partial": {
+        "0": "33b80868d444491d5327c621e48e2ae4bbb5f8de1a27caeb373250d22f49cd51",
+        "1": "ee1d826709d869aa00bb67d6fe670c284ba58cef4addf8ea2d128b63510607ec"
+      }
+    },
+    {
+      "name": "stored",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\stored.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "bdc3a6d773e71212ef2b26ad7a5f49f5e5261ce776cc8c2e6644c25d71c247ea",
+      "bytes": 5343,
+      "mode": "RGB",
+      "size": [
+        96,
+        95
+      ],
+      "pixel_sha256": "b7593bb3948011003f7ee09f0a702651741e7a0b8a8c757ef585ff60d031f9a7",
+      "partial": {
+        "0": "5da09f83a6ea07cde5ccb89ca5a37cc28c69ff30684e7e0b96d053ff7b92c5b8",
+        "1": "70d4eb01efabbb34341ba6a7be59db8792a7ef9b4d9d29e9b5e0a22b0ee687ba"
+      }
+    },
+    {
+      "name": "warmup",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\warmup.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "07cc9b65aeb75b41314c3821c71aa3adc0f199cce437076ca0be8c0f4ef84cbb",
+      "bytes": 2116,
+      "mode": "RGB",
+      "size": [
+        96,
+        95
+      ],
+      "pixel_sha256": "9d9a4e3fc0fa2acad05f84caeb89c1a9810b32f1096615e31e2e15d5dbcc795d",
+      "partial": {
+        "0": "5da09f83a6ea07cde5ccb89ca5a37cc28c69ff30684e7e0b96d053ff7b92c5b8",
+        "1": "1230c5d28185d30240a1a61338ff078a37ebf2a78ddc146c38d154e41fd46502"
+      }
+    },
+    {
+      "name": "cat.jpg.high_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\cat.jpg.high_quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "483d4ab4d82fb25cb3306489f25c1aa623109859072cbf8152c15547f1ad1cc8",
+      "bytes": 78898,
+      "mode": "RGB",
+      "size": [
+        3576,
+        2384
+      ],
+      "pixel_sha256": "18fb8c8929c6cb4e6f8eedd2e41bb75dc47884355faec0b00accab1c106045e6",
+      "partial": {
+        "0": "4070c2b1ea7df6665d5c2b644f17a1e36702ed17c4a52cf42d5cf3692e295e91",
+        "1": "fcf672be4f484098d11d4d5d07258502335a5937a76c44c8a03c79c3c41730d7"
+      }
+    },
+    {
+      "name": "cat.jpg.quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\cat.jpg.quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+      "bytes": 63297,
+      "mode": "RGB",
+      "size": [
+        3576,
+        2384
+      ],
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2",
+      "partial": {
+        "0": "4070c2b1ea7df6665d5c2b644f17a1e36702ed17c4a52cf42d5cf3692e295e91",
+        "1": "fcf672be4f484098d11d4d5d07258502335a5937a76c44c8a03c79c3c41730d7"
+      }
+    },
+    {
+      "name": "flower.jpg.high_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\flower.jpg.high_quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "d0d17341aca95b28163b74d9cb75233592c7023fe7d32188affedb800eb8e5b1",
+      "bytes": 46094,
+      "mode": "RGB",
+      "size": [
+        3576,
+        2384
+      ],
+      "pixel_sha256": "acb47d2eb5b408deeafc714583eb135a4a80c1b5a9682c2267c28b5724f333f1",
+      "partial": {
+        "0": "0bdb9dad4bb64f3cee7af96fbe1ce4abe28079e96ae213ff937af3b3aa65f235",
+        "1": "4098cd07c9801c8f4d3e044d4d2130d0d6c7575efdb758e23934bcaa9b456631"
+      }
+    },
+    {
+      "name": "flower.jpg.quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\flower.jpg.quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+      "bytes": 28979,
+      "mode": "RGB",
+      "size": [
+        3576,
+        2384
+      ],
+      "pixel_sha256": "dd8de1029d1c9e88b2f72cc9977ac18b7b0f2eb0ead790d2328f077f3f85b3bc",
+      "partial": {
+        "0": "0bdb9dad4bb64f3cee7af96fbe1ce4abe28079e96ae213ff937af3b3aa65f235",
+        "1": "4098cd07c9801c8f4d3e044d4d2130d0d6c7575efdb758e23934bcaa9b456631"
+      }
+    },
+    {
+      "name": "googlewiki.png.high_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\googlewiki.png.high_quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "94fadcfc9b485a8cfc614aef7a8df20d82769122040a602af3521141da9b3e8a",
+      "bytes": 176905,
+      "mode": "RGB",
+      "size": [
+        814,
+        812
+      ],
+      "pixel_sha256": "d7444bd9900f9da2c7d800177f0ff50c78f8143619af3c8d1f5aa8c70da493af",
+      "partial": {
+        "0": "8b9aaa1930bc7eddbab212e1be9bfb6364fdd85edb94e9057f00a4421c377491",
+        "1": "2bedfa5ad205a1a8a0d8a64867b250ab6e4e48006e1c5f69149e714792b5a195"
+      }
+    },
+    {
+      "name": "googlewiki.png.quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\googlewiki.png.quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "0f4f38e879741604d1a80ff1c47e3130629409dcf8544c05d1fbbe3a9561281a",
+      "bytes": 82440,
+      "mode": "RGB",
+      "size": [
+        814,
+        812
+      ],
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff",
+      "partial": {
+        "0": "8b9aaa1930bc7eddbab212e1be9bfb6364fdd85edb94e9057f00a4421c377491",
+        "1": "2bedfa5ad205a1a8a0d8a64867b250ab6e4e48006e1c5f69149e714792b5a195"
+      }
+    },
+    {
+      "name": "mario64.png.high_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\mario64.png.high_quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "7f7327271d8423c5643e827344f2ad08370b59bb896f864f121c6cb29678ee2e",
+      "bytes": 89460,
+      "mode": "RGB",
+      "size": [
+        1152,
+        864
+      ],
+      "pixel_sha256": "57fc0a3f94f08ae6f45e7ed0acf320f1f62812f6192ea364a1ffa25696cee27b",
+      "partial": {
+        "0": "da6887acca0e90f68ff57e4cf8c100fe7aaeebabf6ea9902eba15b7c4be9c133",
+        "1": "4ced4094340cabde8fe687d0c5a4de5e3fffc3498a9da3c882a0356405179f25"
+      }
+    },
+    {
+      "name": "mario64.png.quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\mario64.png.quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "ae2187db7cb5844eed6195335873a40b03e8843ed35bcbf8bb6e7a4a1fc310e1",
+      "bytes": 64809,
+      "mode": "RGB",
+      "size": [
+        1152,
+        864
+      ],
+      "pixel_sha256": "7e4e9718dcc1821fc0bfb90250be5ca2ee113a19caef2fd11e9df6fda290a80a",
+      "partial": {
+        "0": "da6887acca0e90f68ff57e4cf8c100fe7aaeebabf6ea9902eba15b7c4be9c133",
+        "1": "4ced4094340cabde8fe687d0c5a4de5e3fffc3498a9da3c882a0356405179f25"
+      }
+    },
+    {
+      "name": "monet.jpg.high_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\monet.jpg.high_quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "84bd81318336b139b9bee98af8d58635d1eed91454203fd81936f783aa28d02e",
+      "bytes": 130159,
+      "mode": "RGB",
+      "size": [
+        900,
+        939
+      ],
+      "pixel_sha256": "cdbbb9ca75b2dc3f3006c29bc89ca4304c5089b1f7a0f4e52e0ae4d27dead569",
+      "partial": {
+        "0": "bf1a318aca2e0c60026f9e05c2ec32235b32f0f3dd9bac15e3b133e8b2d7b525",
+        "1": "1bec063f322dd0df13c587de236e958667aafb7f5399919022b060915001b231"
+      }
+    },
+    {
+      "name": "monet.jpg.quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\monet.jpg.quality.pbc",
+      "origin": "published31_pass26",
+      "stream_sha256": "e74a08cf29b73233c5543536dc362954d156d874d8106b25df2099eef96ad211",
+      "bytes": 53871,
+      "mode": "RGB",
+      "size": [
+        900,
+        939
+      ],
+      "pixel_sha256": "407c44e804d50a3aa99356302313225e046521642f2aee21d3890e9ada219df1",
+      "partial": {
+        "0": "bf1a318aca2e0c60026f9e05c2ec32235b32f0f3dd9bac15e3b133e8b2d7b525",
+        "1": "1bec063f322dd0df13c587de236e958667aafb7f5399919022b060915001b231"
+      }
+    },
+    {
+      "name": "eiffel.png.quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\eiffel.png.quality.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "f3511c8a5cf048be328d805658fbd51eeb839b62950e0db977cf182870c1c73a",
+      "bytes": 48183,
+      "mode": "RGB",
+      "size": [
+        487,
+        487
+      ],
+      "pixel_sha256": "e4b126f38035a686c907fc2388ec114342ed4fa4d731f4ba8dc2afc04e5f3477",
+      "partial": {
+        "0": "5e651aa9205c60bf6a21dac0434b902634e44c147fd2d8aa77f25c8848d94665",
+        "1": "1a1f8ebf312b27de7cf079fa0707f1c5c54e89da62115b9aee0627aeed8cdec4"
+      }
+    },
+    {
+      "name": "eiffel.png.high_quality",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\eiffel.png.high_quality.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "b1aa09910986a7df29db2eac779308ad1f564ac07a507744e559f785cd1d945c",
+      "bytes": 85874,
+      "mode": "RGB",
+      "size": [
+        487,
+        487
+      ],
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea",
+      "partial": {
+        "0": "5e651aa9205c60bf6a21dac0434b902634e44c147fd2d8aa77f25c8848d94665",
+        "1": "1a1f8ebf312b27de7cf079fa0707f1c5c54e89da62115b9aee0627aeed8cdec4"
+      }
+    },
+    {
+      "name": "boundary_0_RGB",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_0_RGB.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "ccf83187cdf41d3f322a10caa4006f2c24ac9e5eaa8f6c1e85c5826676f4e59a",
+      "bytes": 64,
+      "mode": "RGB",
+      "size": [
+        1,
+        1
+      ],
+      "pixel_sha256": "8c0e3419fccd25c096fa1952e22e75d17c12f112183d28f1518179bc5c20c60f",
+      "partial": {
+        "0": "8c0e3419fccd25c096fa1952e22e75d17c12f112183d28f1518179bc5c20c60f",
+        "1": "8c0e3419fccd25c096fa1952e22e75d17c12f112183d28f1518179bc5c20c60f"
+      }
+    },
+    {
+      "name": "boundary_0_YCbCr",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_0_YCbCr.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "c37c45577c3306c0e5c7838983f6193cf64cec59c50a2c3f0c3b849aa99c0ca1",
+      "bytes": 64,
+      "mode": "RGB",
+      "size": [
+        1,
+        1
+      ],
+      "pixel_sha256": "e1f1d2509326d5352f17d065d2d2542225e0cb4d8e1d7ef090f4028fdb9876dc",
+      "partial": {
+        "0": "e1f1d2509326d5352f17d065d2d2542225e0cb4d8e1d7ef090f4028fdb9876dc",
+        "1": "e1f1d2509326d5352f17d065d2d2542225e0cb4d8e1d7ef090f4028fdb9876dc"
+      }
+    },
+    {
+      "name": "boundary_1_RGB",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_1_RGB.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "bfe854a6349dd81dfb1f48a3811a28c1e229eae5d382486297746d626e526af7",
+      "bytes": 212,
+      "mode": "RGBA",
+      "size": [
+        1,
+        17
+      ],
+      "pixel_sha256": "e1d2801b0aafa79c99244bbefe0c632d165d1f6f71f164ea5d3a0c723875fa6a",
+      "partial": {
+        "0": "09f32ffa2b4f5c59c70c8cc2b08fdc195a7a8c913d2ef7779b2c0b1f4bfb26a0",
+        "1": "e0e49897f0f9837559a2957fdeeb8078fee5a5fafa745824a10483e1171fa50c"
+      }
+    },
+    {
+      "name": "boundary_1_YCbCr",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_1_YCbCr.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "e08a69bac9f3c269a061e5ce35d3ec1a613576a6f5cf0d1181684605236d6872",
+      "bytes": 209,
+      "mode": "RGBA",
+      "size": [
+        1,
+        17
+      ],
+      "pixel_sha256": "9df93bb982bd8907ace6fd93d6f6606abf964cfdd786c653a82e3352498b1453",
+      "partial": {
+        "0": "31b4fe01287fcdfd3f785b92cd1e0e855fc5c66e9872fa57b6b0106ac829feb6",
+        "1": "285c3af725452132ac48a06f99d32a0f43ba77e0c9125cfd98788f3111934e42"
+      }
+    },
+    {
+      "name": "boundary_2_RGB",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_2_RGB.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "578ddca30865c2bc9c8591ad51d5e6919f38682e5b1e0741a5ea24731e184e6f",
+      "bytes": 193,
+      "mode": "RGB",
+      "size": [
+        19,
+        1
+      ],
+      "pixel_sha256": "78d78232344830a082b2784bd4e64a6d52420c36f75baaf48c6c36a350236539",
+      "partial": {
+        "0": "ccbaab676129a5da58e77f75ee924588635d1291f120050b1d57f0bbdc010117",
+        "1": "ce4498e4a6e8a8142825444d23361baa801af0715890980f8e7add0abc27d70d"
+      }
+    },
+    {
+      "name": "boundary_2_YCbCr",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_2_YCbCr.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "cd2407b3c3ccc33aa9d05770df636023a2a17e5143b486409b0010a5d6cddeca",
+      "bytes": 209,
+      "mode": "RGB",
+      "size": [
+        19,
+        1
+      ],
+      "pixel_sha256": "d90620e2491156d96ff0f9abdcef0db25d44af8198e6acfdb392ceaa1d954c42",
+      "partial": {
+        "0": "4d8fa4b06584c48776dc5fc3a360841cd6946e382f156bffea4da7cea20571c6",
+        "1": "ec766ee58dd6119579b1eaa824c4ac25ec45948f9b256c47cab6b0d1ab8cf863"
+      }
+    },
+    {
+      "name": "boundary_3_RGB",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_3_RGB.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "c8aec6e7dd02c811be4ce5a92c1a569a19a1a4985fa4f4073c9486e3801f5412",
+      "bytes": 1972,
+      "mode": "RGBA",
+      "size": [
+        37,
+        31
+      ],
+      "pixel_sha256": "211067286e672037516aa3c30bfaa055516d83d780759d928b910b0f90437a61",
+      "partial": {
+        "0": "8fc2ba95cefacc181a31a2fd55d427fa8214b3e8f816e35c5156328faf139387",
+        "1": "b2fb8f0e5815a4b341d3494f8d6845852cfbfa8e2e7175740ba2d3d4d3a5146d"
+      }
+    },
+    {
+      "name": "boundary_3_YCbCr",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_3_YCbCr.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "4ec55a13b7ba81fb439cf5acee544a7358d250c11659227c160b33d570f78dc3",
+      "bytes": 1993,
+      "mode": "RGBA",
+      "size": [
+        37,
+        31
+      ],
+      "pixel_sha256": "96c69111798428c6f3bd4a8592620a570e518c2ec0c68f72d4a7c592d898b06c",
+      "partial": {
+        "0": "a9306138b566c03c59b57567a5527a21cda18410636f48738fee59be202038f5",
+        "1": "fff1fcbec167f022a21304820a91cfa3af615f3a9059b708abc4ec3de6115732"
+      }
+    },
+    {
+      "name": "boundary_4_RGB",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_4_RGB.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "d8f5b274aac4112bf4a8fe00d554439b4314916827aec35e9bb02192a769efdc",
+      "bytes": 3866,
+      "mode": "RGB",
+      "size": [
+        65,
+        67
+      ],
+      "pixel_sha256": "b73d911f80fa889f11b7428b1f1e11692ec7e33c2addaddd62c0ee2c9df5394b",
+      "partial": {
+        "0": "c6710ff54b92d7028f83a0c905834a2dd13749c903cb0cab2158e6a44f9d8c38",
+        "1": "4f94ac1d7cc13a07ec5891da10de3b339a62a4ff881ce814d4966f4b3aab8c58"
+      }
+    },
+    {
+      "name": "boundary_4_YCbCr",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\boundary_4_YCbCr.pbc",
+      "origin": "published31_fresh",
+      "stream_sha256": "9cb5048149b9f635ef289460eff2c553910b714bbecd01e233ccd70b779cecab",
+      "bytes": 4741,
+      "mode": "RGB",
+      "size": [
+        65,
+        67
+      ],
+      "pixel_sha256": "9402b74d6edabd73cd48dfbaa847f54a7d177996742f8e4ffb0c6936a11799f5",
+      "partial": {
+        "0": "7d2d46b31da134d2c736174d0b00c3780eeab6222162db9af437ef80a19b10c2",
+        "1": "eb5680e753ba574f96636c2ed23c5442b545728790877da126a9181e6fde7d3c"
+      }
+    },
+    {
+      "name": "signed_wrap_-1",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\signed_wrap_-1.pbc",
+      "origin": "published31_signed_wrap",
+      "stream_sha256": "90044851ca8aea0dcee6d2e42b5b4ad885ec364751209f430b80018816bb80b2",
+      "bytes": 2018,
+      "mode": "RGB",
+      "size": [
+        1,
+        1
+      ],
+      "pixel_sha256": "7fa54a42524916a1648ec76ce75d295024840b7a3a4f4bbaf3e43155d0014767",
+      "partial": {
+        "0": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+        "1": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c"
+      }
+    },
+    {
+      "name": "signed_wrap_1",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\signed_wrap_1.pbc",
+      "origin": "published31_signed_wrap",
+      "stream_sha256": "d2b61a1f4734c6c3a8989729e71dbb6a226fabd754e0ebe644b9511d40337db3",
+      "bytes": 2018,
+      "mode": "RGB",
+      "size": [
+        1,
+        1
+      ],
+      "pixel_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+      "partial": {
+        "0": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+        "1": "7fa54a42524916a1648ec76ce75d295024840b7a3a4f4bbaf3e43155d0014767"
+      }
+    },
+    {
+      "name": "historical30",
+      "file": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\historical30.pbc",
+      "origin": "actual_frozen30",
+      "stream_sha256": "9bc1522ddbc0b0e890cfd0b7bfcfa73c39707bb2a7c47697c533c7567f93f890",
+      "bytes": 743,
+      "mode": "RGB",
+      "size": [
+        65,
+        63
+      ],
+      "pixel_sha256": "da71aca7a3059ebc93305888c065af645a6db4032f187a9c1ebc882889e2631e",
+      "partial": {
+        "0": "385d150e3432db7d402f1eaeddbad0525281174aced164238d5a4d42f37df4a2",
+        "1": "c4f18f86cb51e03406c3ba5bc3ffe8d50f174cbfe28b3181d54873f7d3ede271"
+      }
+    }
+  ],
+  "invalid": [
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_0.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_1.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_2.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_3.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_4.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_5.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_6.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_7.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_8.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_9.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_10.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_11.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_12.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_13.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_14.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_15.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_16.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_17.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_18.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_19.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_20.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_21.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_22.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_23.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_24.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_25.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_26.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_27.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_28.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_29.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_30.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_31.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_32.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_33.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_34.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_35.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_36.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_37.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_38.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_39.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_40.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_41.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_42.pbc",
+    "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\corpus\\invalid_43.pbc"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "mode": "published_python",
+      "sampled_peak_process_tree_rss": 143417344,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    {
+      "mode": "combined",
+      "sampled_peak_process_tree_rss": 70451200,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    {
+      "mode": "decoder",
+      "sampled_peak_process_tree_rss": 75264000,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    {
+      "mode": "decoder_onefile",
+      "sampled_peak_process_tree_rss": 110055424,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    }
+  ],
+  "poll_interval_seconds": 0.02,
+  "timings_discarded": true,
+  "workload": "Cat Quality warm decode, initial plus3"
+}

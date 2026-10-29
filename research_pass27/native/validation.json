@@ -1,0 +1,8 @@
+{
+  "direct_layout_type_cases": 60,
+  "signed_extremes": 2,
+  "concurrent_metric": 32,
+  "concurrent_mixed_backend_encodes": 4,
+  "all_exact": true,
+  "no_global_patch": true
+}

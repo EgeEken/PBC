@@ -1,0 +1,24 @@
+[
+  {
+    "installation": "source",
+    "streams": {
+      "compression": "15772debca2dc997330761584f255c207c8118dc4a25251ad85392e8d3803061",
+      "balanced": "5f2617690dfdb3206840b42bb1de8c6cd45f28ed260a660e17b652a360adeef2",
+      "quality": "32706b13312fc58f5d5abc73476b6691f32c8401f0e01e7965e597c8131c8f0e",
+      "high_quality": "546e6b8845d5da28bc3ab211d546ca58dfd2887b03e09d2ece03bc1c84fd6f39"
+    },
+    "actual_site_packages_import": true,
+    "installed_model_sha256_verified": true
+  },
+  {
+    "installation": "wheel",
+    "streams": {
+      "compression": "15772debca2dc997330761584f255c207c8118dc4a25251ad85392e8d3803061",
+      "balanced": "5f2617690dfdb3206840b42bb1de8c6cd45f28ed260a660e17b652a360adeef2",
+      "quality": "32706b13312fc58f5d5abc73476b6691f32c8401f0e01e7965e597c8131c8f0e",
+      "high_quality": "546e6b8845d5da28bc3ab211d546ca58dfd2887b03e09d2ece03bc1c84fd6f39"
+    },
+    "actual_site_packages_import": true,
+    "installed_model_sha256_verified": true
+  }
+]

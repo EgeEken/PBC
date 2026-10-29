@@ -1,0 +1,74 @@
+[
+  {
+    "mode": "reference",
+    "image": "cat.jpg",
+    "before_rss": 145616896,
+    "peak_wset": 454242304,
+    "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "mse": 299.1919568344019,
+    "repeat": 0
+  },
+  {
+    "mode": "native",
+    "image": "cat.jpg",
+    "before_rss": 145285120,
+    "peak_wset": 300126208,
+    "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "mse": 299.1919568344019,
+    "repeat": 0
+  },
+  {
+    "mode": "native",
+    "image": "cat.jpg",
+    "before_rss": 144797696,
+    "peak_wset": 299732992,
+    "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "mse": 299.1919568344019,
+    "repeat": 1
+  },
+  {
+    "mode": "reference",
+    "image": "cat.jpg",
+    "before_rss": 145055744,
+    "peak_wset": 453943296,
+    "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "mse": 299.1919568344019,
+    "repeat": 1
+  },
+  {
+    "mode": "reference",
+    "image": "flower.jpg",
+    "before_rss": 145133568,
+    "peak_wset": 453316608,
+    "stream_sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+    "mse": 43.43484363504647,
+    "repeat": 0
+  },
+  {
+    "mode": "native",
+    "image": "flower.jpg",
+    "before_rss": 145289216,
+    "peak_wset": 299380736,
+    "stream_sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+    "mse": 43.43484363504647,
+    "repeat": 0
+  },
+  {
+    "mode": "native",
+    "image": "flower.jpg",
+    "before_rss": 145162240,
+    "peak_wset": 299421696,
+    "stream_sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+    "mse": 43.43484363504647,
+    "repeat": 1
+  },
+  {
+    "mode": "reference",
+    "image": "flower.jpg",
+    "before_rss": 144846848,
+    "peak_wset": 453144576,
+    "stream_sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+    "mse": 43.43484363504647,
+    "repeat": 1
+  }
+]

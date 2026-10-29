@@ -1,0 +1,1086 @@
+{
+  "rows": [
+    {
+      "mode": "combined",
+      "operation": "version",
+      "latency_seconds": 0.14362770000298042,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "decoder",
+      "operation": "version",
+      "latency_seconds": 0.14914670000143815,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "version",
+      "latency_seconds": 1.2340263000005507,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "version",
+      "latency_seconds": 0.5727894000010565,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "decoder",
+      "operation": "version",
+      "latency_seconds": 0.13369560000137426,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "version",
+      "latency_seconds": 1.2266122000000905,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "version",
+      "latency_seconds": 0.14343770000414224,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "combined",
+      "operation": "version",
+      "latency_seconds": 0.16190759999881266,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "version",
+      "latency_seconds": 1.2275341999993543,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "version",
+      "latency_seconds": 0.16197610000381246,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "combined",
+      "operation": "version",
+      "latency_seconds": 0.16403530000388855,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "decoder",
+      "operation": "version",
+      "latency_seconds": 0.1416209999952116,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "published_python",
+      "operation": "inspect",
+      "latency_seconds": 1.09973799999716,
+      "result": {
+        "import_seconds": 0.8093712000045343,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "inspect",
+      "latency_seconds": 2.3940417999983765,
+      "result": {
+        "import_seconds": 2.217919199996686,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "inspect",
+      "latency_seconds": 0.27728059999935795,
+      "result": {
+        "import_seconds": 0.11072520000016084,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "inspect",
+      "latency_seconds": 0.2645143000045209,
+      "result": {
+        "import_seconds": 0.11220519999915268,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "inspect",
+      "latency_seconds": 2.012740099999064,
+      "result": {
+        "import_seconds": 0.7507909999985714,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "inspect",
+      "latency_seconds": 1.1805658000012045,
+      "result": {
+        "import_seconds": 0.9146366999993916,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "inspect",
+      "latency_seconds": 0.5886532000004081,
+      "result": {
+        "import_seconds": 0.42251100000430597,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "inspect",
+      "latency_seconds": 0.27067559999704827,
+      "result": {
+        "import_seconds": 0.11421659999905387,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "inspect",
+      "latency_seconds": 0.2645762000029208,
+      "result": {
+        "import_seconds": 0.12322109999513486,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "inspect",
+      "latency_seconds": 1.9950263999999152,
+      "result": {
+        "import_seconds": 0.7849201000062749,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "inspect",
+      "latency_seconds": 1.1698421999972197,
+      "result": {
+        "import_seconds": 0.9119548999951803,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "inspect",
+      "latency_seconds": 0.6328983999992488,
+      "result": {
+        "import_seconds": 0.45114119999925606,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "inspect",
+      "latency_seconds": 0.28745409999828553,
+      "result": {
+        "import_seconds": 0.13010339999891585,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "inspect",
+      "latency_seconds": 0.2721683999989182,
+      "result": {
+        "import_seconds": 0.11867310000525322,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "inspect",
+      "latency_seconds": 2.0332904000024428,
+      "result": {
+        "import_seconds": 0.8835193999984767,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "encode_pass26_combined_None",
+      "latency_seconds": 4.868240399999195,
+      "result": {
+        "import_seconds": 0.4285849000007147,
+        "bytes": 4290,
+        "codec_seconds": 4.113998300003004,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "fresh_cache"
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "encode_pass26_combined_None",
+      "latency_seconds": 0.9770062000025064,
+      "result": {
+        "import_seconds": 0.4141052999984822,
+        "bytes": 4290,
+        "codec_seconds": 0.31801500000437954,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "reused_cache"
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "encode_pass26_combined_None",
+      "latency_seconds": 4.208129999999073,
+      "result": {
+        "import_seconds": 0.41008380000130273,
+        "bytes": 4290,
+        "codec_seconds": 3.515363200000138,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "reused_cache_other_cwd"
+    },
+    {
+      "mode": "combined",
+      "operation": "encode_combined_reference",
+      "latency_seconds": 4.356940599995141,
+      "result": {
+        "import_seconds": 0.3963335999942501,
+        "bytes": 4290,
+        "codec_seconds": 3.635499100004381,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "fresh_cache"
+    },
+    {
+      "mode": "combined",
+      "operation": "encode_combined_reference",
+      "latency_seconds": 1.061965799999598,
+      "result": {
+        "import_seconds": 0.449314500001492,
+        "bytes": 4290,
+        "codec_seconds": 0.3296680999992532,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "reused_cache"
+    },
+    {
+      "mode": "combined",
+      "operation": "encode_combined_reference",
+      "latency_seconds": 1.0644937999968533,
+      "result": {
+        "import_seconds": 0.47485820000292733,
+        "bytes": 4290,
+        "codec_seconds": 0.33069909999903757,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "reused_cache_other_cwd"
+    },
+    {
+      "mode": "combined",
+      "operation": "encode_combined_native",
+      "latency_seconds": 4.005443899994134,
+      "result": {
+        "import_seconds": 0.42765720000170404,
+        "bytes": 4290,
+        "codec_seconds": 3.2781543000019155,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "fresh_cache"
+    },
+    {
+      "mode": "combined",
+      "operation": "encode_combined_native",
+      "latency_seconds": 0.9956426999997348,
+      "result": {
+        "import_seconds": 0.448756300000241,
+        "bytes": 4290,
+        "codec_seconds": 0.3035729000039282,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "reused_cache"
+    },
+    {
+      "mode": "combined",
+      "operation": "encode_combined_native",
+      "latency_seconds": 0.9221354999972391,
+      "result": {
+        "import_seconds": 0.389156199998979,
+        "bytes": 4290,
+        "codec_seconds": 0.2995616999978665,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      },
+      "phase": "reused_cache_other_cwd"
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_encode_cat.jpg_reference",
+      "latency_seconds": 7.670954299996083,
+      "result": {
+        "import_seconds": 0.34754520000569755,
+        "first_encode_seconds": 4.180175000001327,
+        "rows": [
+          {
+            "encode_seconds": 0.7749097999985679,
+            "decode_seconds": 0.13869720000366215
+          },
+          {
+            "encode_seconds": 0.7277485000013257,
+            "decode_seconds": 0.12060660000133794
+          },
+          {
+            "encode_seconds": 0.729465500000515,
+            "decode_seconds": 0.15423700000246754
+          }
+        ],
+        "bytes": 63297,
+        "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_encode_cat.jpg_native",
+      "latency_seconds": 7.086873499996727,
+      "result": {
+        "import_seconds": 0.41807710000284715,
+        "first_encode_seconds": 4.021984099999827,
+        "rows": [
+          {
+            "encode_seconds": 0.5836291999949026,
+            "decode_seconds": 0.1297082999954
+          },
+          {
+            "encode_seconds": 0.5803977999967174,
+            "decode_seconds": 0.12822420000156853
+          },
+          {
+            "encode_seconds": 0.5790582000045106,
+            "decode_seconds": 0.13567699999839533
+          }
+        ],
+        "bytes": 63297,
+        "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_encode_googlewiki.png_reference",
+      "latency_seconds": 7.586967900002492,
+      "result": {
+        "import_seconds": 0.39278039999771863,
+        "first_encode_seconds": 4.682382599996345,
+        "rows": [
+          {
+            "encode_seconds": 0.6609505000014906,
+            "decode_seconds": 0.05700820000492968
+          },
+          {
+            "encode_seconds": 0.7064119999995455,
+            "decode_seconds": 0.061646800000744406
+          },
+          {
+            "encode_seconds": 0.6671416999961366,
+            "decode_seconds": 0.05343939999875147
+          }
+        ],
+        "bytes": 83773,
+        "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+        "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_encode_googlewiki.png_native",
+      "latency_seconds": 6.094787499998347,
+      "result": {
+        "import_seconds": 0.36682419999851845,
+        "first_encode_seconds": 3.464050499998848,
+        "rows": [
+          {
+            "encode_seconds": 0.6067493000009563,
+            "decode_seconds": 0.05167110000184039
+          },
+          {
+            "encode_seconds": 0.6017264000038267,
+            "decode_seconds": 0.05109190000075614
+          },
+          {
+            "encode_seconds": 0.6022754000005079,
+            "decode_seconds": 0.05132940000476083
+          }
+        ],
+        "bytes": 83773,
+        "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+        "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "warm_decode_cat.jpg.quality",
+      "latency_seconds": 1.6196662999936962,
+      "result": {
+        "import_seconds": 0.8142439999937778,
+        "seconds": [
+          0.12646099999983562,
+          0.15530150000267895,
+          0.12819319999834988
+        ],
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_decode_cat.jpg.quality",
+      "latency_seconds": 0.8238971000027959,
+      "result": {
+        "import_seconds": 0.11502499999915017,
+        "seconds": [
+          0.1358858000021428,
+          0.12568630000168923,
+          0.12214660000609001
+        ],
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "warm_decode_cat.jpg.quality",
+      "latency_seconds": 1.0751721000051475,
+      "result": {
+        "import_seconds": 0.11720300000160933,
+        "seconds": [
+          0.1391585999954259,
+          0.13183080000453629,
+          0.14299980000214418
+        ],
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "warm_decode_cat.jpg.quality",
+      "latency_seconds": 2.550463100000343,
+      "result": {
+        "import_seconds": 0.8040970000001835,
+        "seconds": [
+          0.13138179999805288,
+          0.10489470000175061,
+          0.14056419999542413
+        ],
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "warm_decode_googlewiki.png.quality",
+      "latency_seconds": 1.3038092000060715,
+      "result": {
+        "import_seconds": 0.8314208000010694,
+        "seconds": [
+          0.054315800000040326,
+          0.052141200001642574,
+          0.05107520000456134
+        ],
+        "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_decode_googlewiki.png.quality",
+      "latency_seconds": 0.5096359999952256,
+      "result": {
+        "import_seconds": 0.12703760000295006,
+        "seconds": [
+          0.05293140000139829,
+          0.04800849999446655,
+          0.04546330000448506
+        ],
+        "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "warm_decode_googlewiki.png.quality",
+      "latency_seconds": 0.4643705999988015,
+      "result": {
+        "import_seconds": 0.10574610000185203,
+        "seconds": [
+          0.043866100000741426,
+          0.04587199999514269,
+          0.044182800003909506
+        ],
+        "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "warm_decode_googlewiki.png.quality",
+      "latency_seconds": 2.2095775000052527,
+      "result": {
+        "import_seconds": 0.8190701999992598,
+        "seconds": [
+          0.04744159999972908,
+          0.051214400002209004,
+          0.05509229999734089
+        ],
+        "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "warm_decode_python_rgba",
+      "latency_seconds": 1.2572053000039887,
+      "result": {
+        "import_seconds": 0.926542100001825,
+        "seconds": [
+          0.008681300001626369,
+          0.008650799994939007,
+          0.008363300003111362
+        ],
+        "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_decode_python_rgba",
+      "latency_seconds": 0.30890090000320924,
+      "result": {
+        "import_seconds": 0.11077060000388883,
+        "seconds": [
+          0.010668900002201553,
+          0.01039899999886984,
+          0.0101619999986724
+        ],
+        "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "warm_decode_python_rgba",
+      "latency_seconds": 0.35149019999516895,
+      "result": {
+        "import_seconds": 0.1263461999988067,
+        "seconds": [
+          0.01067979999788804,
+          0.01026830000046175,
+          0.011885100000654347
+        ],
+        "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "warm_decode_python_rgba",
+      "latency_seconds": 2.1056171000018367,
+      "result": {
+        "import_seconds": 0.769586900001741,
+        "seconds": [
+          0.009899699995003175,
+          0.009506300004431978,
+          0.009520100000372622
+        ],
+        "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "warm_decode_eiffel.png.high_quality",
+      "latency_seconds": 1.2693941000034101,
+      "result": {
+        "import_seconds": 0.8616324999966309,
+        "seconds": [
+          0.03630259999772534,
+          0.038117999996757135,
+          0.03859850000299048
+        ],
+        "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "warm_decode_eiffel.png.high_quality",
+      "latency_seconds": 0.504210700004478,
+      "result": {
+        "import_seconds": 0.12467240000114543,
+        "seconds": [
+          0.04805830000259448,
+          0.043935700006841216,
+          0.044831300001533236
+        ],
+        "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "warm_decode_eiffel.png.high_quality",
+      "latency_seconds": 0.4646675000039977,
+      "result": {
+        "import_seconds": 0.11211669999465812,
+        "seconds": [
+          0.05355559999588877,
+          0.03750250000302913,
+          0.04459520000091288
+        ],
+        "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "warm_decode_eiffel.png.high_quality",
+      "latency_seconds": 2.2887412999989465,
+      "result": {
+        "import_seconds": 0.801407000006293,
+        "seconds": [
+          0.04525969999667723,
+          0.04520250000496162,
+          0.04344029999629129
+        ],
+        "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "decode_command",
+      "latency_seconds": 0.3832981000014115,
+      "result": {
+        "import_seconds": 0.12372150000010151,
+        "codec_seconds": 0.006552500002726447,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "decode_command",
+      "latency_seconds": 0.34196890000021085,
+      "result": {
+        "import_seconds": 0.11002400000143098,
+        "codec_seconds": 0.005611699998553377,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "decode_command",
+      "latency_seconds": 0.3542546999960905,
+      "result": {
+        "import_seconds": 0.1330995999960578,
+        "codec_seconds": 0.00624910000624368,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "decode_command",
+      "latency_seconds": 0.34993219999887515,
+      "result": {
+        "import_seconds": 0.11667519999900833,
+        "codec_seconds": 0.0053454000008059666,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "decode_command",
+      "latency_seconds": 0.3425162000057753,
+      "result": {
+        "import_seconds": 0.11490730000514304,
+        "codec_seconds": 0.005439900000055786,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "decode_command",
+      "latency_seconds": 0.36101930000586435,
+      "result": {
+        "import_seconds": 0.13057699999626493,
+        "codec_seconds": 0.005171299999346957,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "decode_command",
+      "latency_seconds": 2.167146899999352,
+      "result": {
+        "import_seconds": 0.8327714999977616,
+        "codec_seconds": 0.006301499997789506,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "decode_command",
+      "latency_seconds": 2.051749899997958,
+      "result": {
+        "import_seconds": 0.7971027999956277,
+        "codec_seconds": 0.005230000002484303,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "decode_command",
+      "latency_seconds": 2.025043099994946,
+      "result": {
+        "import_seconds": 0.8288673999995808,
+        "codec_seconds": 0.005031100001360755,
+        "width": 96,
+        "height": 95,
+        "mode": "RGB",
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "decode_command",
+      "latency_seconds": 1.1115969999955269,
+      "result": {
+        "import_seconds": 0.824376199998369,
+        "codec_seconds": 0.007298399999854155
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "decode_command",
+      "latency_seconds": 1.2582865999938804,
+      "result": {
+        "import_seconds": 0.9711286000019754,
+        "codec_seconds": 0.008776800001214724
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "decode_command",
+      "latency_seconds": 1.2633448999986285,
+      "result": {
+        "import_seconds": 0.9583591000045999,
+        "codec_seconds": 0.006768700004613493
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "decode_command",
+      "latency_seconds": 0.8227371000029962,
+      "result": {
+        "import_seconds": 0.48280630000226665,
+        "codec_seconds": 0.00631759999669157,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "decode_command",
+      "latency_seconds": 0.7172254999968573,
+      "result": {
+        "import_seconds": 0.4596300999983214,
+        "codec_seconds": 0.0069818999982089736,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "decode_command",
+      "latency_seconds": 0.7348576000003959,
+      "result": {
+        "import_seconds": 0.47200369999336544,
+        "codec_seconds": 0.005730299999413546,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    }
+  ],
+  "memory_polling": false,
+  "cache_root": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\PBC27 performance b9mt6hbk",
+  "one_core": 12,
+  "threads": 1
+}

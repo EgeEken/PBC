@@ -1,0 +1,7 @@
+# Pass 27 fixed engineering scope
+
+Reference is the published ZIP edec3ec73721c3f56913db21f6089a3b6a1637fb3481e61de5b0475da8eeaede. Pass 26 stays frozen. Generate a candidate under artifacts from that ZIP and tracked overlays. Share only the existing pure decode operations; preserve their bodies and palette/interpolation semantics. CLI decode/inspect import no encoder. Model/native data live in pbc3 package data. Native metric selection is per compress call, never a global patch.
+
+Native screen: Cat, Flower, Seagull if restored, Googlewiki, Monet and Eiffel; all four presets plus deterministic small RGB/RGBA, three interleaved repeats, one P-core/numerical thread, warmed full calls. Compare published, candidate reference and candidate native. Gate default use at >=3% aggregate mean case-median gain versus candidate reference, all streams/pixels/MSE exact, no case median slowdown over5%, relocated DLL success and no material bundle cost. Otherwise optional only. No other kernels or RD work.
+
+Directory combined/decoder distributions are primary. Decoder-only one-file only after a successful substantially smaller directory build. Persistent per-user JIT caching only: do not ship generated JIT caches. Measure truly fresh-cache and reused-cache first commands separately; test relocation and read-only directories. No clean Windows VM tool is currently on PATH; use available normal-user/isolation/ACL tests and report limits.

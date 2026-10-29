@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "kind": "source",
+      "environment": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\install-source",
+      "cwd": "C:\\Users\\EGE\\AppData\\Local\\Temp\\PBC27 unrelated install 06a3pj6j",
+      "model": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\install-source\\Lib\\site-packages\\pbc3\\patch_policy.npz",
+      "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "stream_sha256": "19ed3aae36fd1aa764a6e07e206b691aa2c75940a4f61769958805e5627fd3c6"
+    },
+    {
+      "kind": "wheel",
+      "environment": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\install-wheel",
+      "cwd": "C:\\Users\\EGE\\AppData\\Local\\Temp\\PBC27 unrelated install 5qtyg5f2",
+      "model": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\install-wheel\\Lib\\site-packages\\pbc3\\patch_policy.npz",
+      "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "stream_sha256": "19ed3aae36fd1aa764a6e07e206b691aa2c75940a4f61769958805e5627fd3c6"
+    }
+  ],
+  "wheel": {
+    "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\packages\\pbc_codec-3.2.0rc1-py3-none-any.whl",
+    "bytes": 134653,
+    "sha256": "94064aa2a8278d8966f5b64d652497674773fdcb96beab492cca7481d7b30ce4"
+  },
+  "sdist": {
+    "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\packages\\pbc_codec-3.2.0rc1.tar.gz",
+    "bytes": 134385,
+    "sha256": "f156b0168c9cc0f744ba93058fe1f7cb508de781ee6e01d66bce1f338b2de3bf"
+  }
+}
