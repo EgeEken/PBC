@@ -2,22 +2,22 @@
   "rows": [
     {
       "mode": "published_python",
-      "sampled_peak_process_tree_rss": 143417344,
+      "sampled_peak_process_tree_rss": 132263936,
       "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
     },
     {
       "mode": "combined",
-      "sampled_peak_process_tree_rss": 70451200,
+      "sampled_peak_process_tree_rss": 90030080,
       "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
     },
     {
       "mode": "decoder",
-      "sampled_peak_process_tree_rss": 75264000,
+      "sampled_peak_process_tree_rss": 81788928,
       "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
     },
     {
       "mode": "decoder_onefile",
-      "sampled_peak_process_tree_rss": 110055424,
+      "sampled_peak_process_tree_rss": 108204032,
       "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "root": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\portability \u00c7\u0131\u011f \u65e5\u672c cd8rhshu",
+  "root": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\portability \u00c7\u0131\u011f \u65e5\u672c 7hpzwczx",
   "non_administrator": true,
   "actual_acl_write_denied": true,
   "no_python_or_compiler_on_path": true,
@@ -16,33 +16,33 @@
   "rows": [
     {
       "test": "all_presets_readonly_native_default",
-      "import_seconds": 2.508418500001426,
+      "import_seconds": 2.3881838000015705,
       "bytes": 947,
-      "codec_seconds": 3.5386762999987695,
+      "codec_seconds": 3.3757727999982308,
       "mse": 316.5495248538012,
       "preset": "compression"
     },
     {
       "test": "all_presets_readonly_native_default",
-      "import_seconds": 0.3529936999984784,
+      "import_seconds": 0.3441949999978533,
       "bytes": 2453,
-      "codec_seconds": 0.24588629999925615,
+      "codec_seconds": 0.24773439999989932,
       "mse": 92.76275584795322,
       "preset": "balanced"
     },
     {
       "test": "all_presets_readonly_native_default",
-      "import_seconds": 0.38277140000718646,
+      "import_seconds": 0.3504716000024928,
       "bytes": 4290,
-      "codec_seconds": 0.2835189999968861,
+      "codec_seconds": 0.25862659999984317,
       "mse": 56.90252192982456,
       "preset": "quality"
     },
     {
       "test": "all_presets_readonly_native_default",
-      "import_seconds": 0.33948460000101477,
+      "import_seconds": 0.35248120001051575,
       "bytes": 6165,
-      "codec_seconds": 0.30557150000095135,
+      "codec_seconds": 0.27031020000140416,
       "mse": 26.15138888888889,
       "preset": "high_quality"
     }

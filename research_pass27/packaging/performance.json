@@ -3,81 +3,81 @@
     {
       "mode": "combined",
       "operation": "version",
-      "latency_seconds": 0.14362770000298042,
+      "latency_seconds": 0.13357430000178283,
       "result": "pbc 3.2.0rc1; stream v0"
     },
     {
       "mode": "decoder",
       "operation": "version",
-      "latency_seconds": 0.14914670000143815,
+      "latency_seconds": 0.13013819999468978,
       "result": "pbc 3.2.0rc1; stream v0"
     },
     {
       "mode": "decoder_onefile",
       "operation": "version",
-      "latency_seconds": 1.2340263000005507,
+      "latency_seconds": 1.0921720000042114,
       "result": "pbc 3.2.0rc1; stream v0"
     },
     {
       "mode": "pass26_combined",
       "operation": "version",
-      "latency_seconds": 0.5727894000010565,
+      "latency_seconds": 0.16912130000127945,
       "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
     },
     {
       "mode": "decoder",
       "operation": "version",
-      "latency_seconds": 0.13369560000137426,
+      "latency_seconds": 0.14209649999975227,
       "result": "pbc 3.2.0rc1; stream v0"
     },
     {
       "mode": "decoder_onefile",
       "operation": "version",
-      "latency_seconds": 1.2266122000000905,
+      "latency_seconds": 1.1440844000026118,
       "result": "pbc 3.2.0rc1; stream v0"
     },
     {
       "mode": "pass26_combined",
       "operation": "version",
-      "latency_seconds": 0.14343770000414224,
-      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
-    },
-    {
-      "mode": "combined",
-      "operation": "version",
-      "latency_seconds": 0.16190759999881266,
-      "result": "pbc 3.2.0rc1; stream v0"
-    },
-    {
-      "mode": "decoder_onefile",
-      "operation": "version",
-      "latency_seconds": 1.2275341999993543,
-      "result": "pbc 3.2.0rc1; stream v0"
-    },
-    {
-      "mode": "pass26_combined",
-      "operation": "version",
-      "latency_seconds": 0.16197610000381246,
+      "latency_seconds": 0.1260273999942001,
       "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
     },
     {
       "mode": "combined",
       "operation": "version",
-      "latency_seconds": 0.16403530000388855,
+      "latency_seconds": 0.1504311000026064,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "version",
+      "latency_seconds": 1.1983689999979106,
+      "result": "pbc 3.2.0rc1; stream v0"
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "version",
+      "latency_seconds": 0.14852370000153314,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "combined",
+      "operation": "version",
+      "latency_seconds": 0.15754329999617767,
       "result": "pbc 3.2.0rc1; stream v0"
     },
     {
       "mode": "decoder",
       "operation": "version",
-      "latency_seconds": 0.1416209999952116,
+      "latency_seconds": 0.14351010000245878,
       "result": "pbc 3.2.0rc1; stream v0"
     },
     {
       "mode": "published_python",
       "operation": "inspect",
-      "latency_seconds": 1.09973799999716,
+      "latency_seconds": 1.2349121000006562,
       "result": {
-        "import_seconds": 0.8093712000045343,
+        "import_seconds": 0.9644972000023699,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -98,9 +98,9 @@
     {
       "mode": "pass26_combined",
       "operation": "inspect",
-      "latency_seconds": 2.3940417999983765,
+      "latency_seconds": 0.770234999996319,
       "result": {
-        "import_seconds": 2.217919199996686,
+        "import_seconds": 0.543994500003464,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -121,9 +121,9 @@
     {
       "mode": "combined",
       "operation": "inspect",
-      "latency_seconds": 0.27728059999935795,
+      "latency_seconds": 0.2823701000015717,
       "result": {
-        "import_seconds": 0.11072520000016084,
+        "import_seconds": 0.12392879999970319,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -144,9 +144,9 @@
     {
       "mode": "decoder",
       "operation": "inspect",
-      "latency_seconds": 0.2645143000045209,
+      "latency_seconds": 0.28810929999599466,
       "result": {
-        "import_seconds": 0.11220519999915268,
+        "import_seconds": 0.12528549999842653,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -167,124 +167,9 @@
     {
       "mode": "decoder_onefile",
       "operation": "inspect",
-      "latency_seconds": 2.012740099999064,
+      "latency_seconds": 1.9714894000062486,
       "result": {
-        "import_seconds": 0.7507909999985714,
-        "version": 0,
-        "working_width": 96,
-        "working_height": 95,
-        "width": 96,
-        "height": 95,
-        "color_space": "YCbCr",
-        "channels": 3,
-        "alpha": false,
-        "patches": 13,
-        "warmup": false,
-        "warmup_width": null,
-        "warmup_height": null,
-        "warmup_split": null,
-        "entropy": 2,
-        "bytes": 4290
-      }
-    },
-    {
-      "mode": "published_python",
-      "operation": "inspect",
-      "latency_seconds": 1.1805658000012045,
-      "result": {
-        "import_seconds": 0.9146366999993916,
-        "version": 0,
-        "working_width": 96,
-        "working_height": 95,
-        "width": 96,
-        "height": 95,
-        "color_space": "YCbCr",
-        "channels": 3,
-        "alpha": false,
-        "patches": 13,
-        "warmup": false,
-        "warmup_width": null,
-        "warmup_height": null,
-        "warmup_split": null,
-        "entropy": 2,
-        "bytes": 4290
-      }
-    },
-    {
-      "mode": "pass26_combined",
-      "operation": "inspect",
-      "latency_seconds": 0.5886532000004081,
-      "result": {
-        "import_seconds": 0.42251100000430597,
-        "version": 0,
-        "working_width": 96,
-        "working_height": 95,
-        "width": 96,
-        "height": 95,
-        "color_space": "YCbCr",
-        "channels": 3,
-        "alpha": false,
-        "patches": 13,
-        "warmup": false,
-        "warmup_width": null,
-        "warmup_height": null,
-        "warmup_split": null,
-        "entropy": 2,
-        "bytes": 4290
-      }
-    },
-    {
-      "mode": "combined",
-      "operation": "inspect",
-      "latency_seconds": 0.27067559999704827,
-      "result": {
-        "import_seconds": 0.11421659999905387,
-        "version": 0,
-        "working_width": 96,
-        "working_height": 95,
-        "width": 96,
-        "height": 95,
-        "color_space": "YCbCr",
-        "channels": 3,
-        "alpha": false,
-        "patches": 13,
-        "warmup": false,
-        "warmup_width": null,
-        "warmup_height": null,
-        "warmup_split": null,
-        "entropy": 2,
-        "bytes": 4290
-      }
-    },
-    {
-      "mode": "decoder",
-      "operation": "inspect",
-      "latency_seconds": 0.2645762000029208,
-      "result": {
-        "import_seconds": 0.12322109999513486,
-        "version": 0,
-        "working_width": 96,
-        "working_height": 95,
-        "width": 96,
-        "height": 95,
-        "color_space": "YCbCr",
-        "channels": 3,
-        "alpha": false,
-        "patches": 13,
-        "warmup": false,
-        "warmup_width": null,
-        "warmup_height": null,
-        "warmup_split": null,
-        "entropy": 2,
-        "bytes": 4290
-      }
-    },
-    {
-      "mode": "decoder_onefile",
-      "operation": "inspect",
-      "latency_seconds": 1.9950263999999152,
-      "result": {
-        "import_seconds": 0.7849201000062749,
+        "import_seconds": 0.8137782999983756,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -305,9 +190,9 @@
     {
       "mode": "published_python",
       "operation": "inspect",
-      "latency_seconds": 1.1698421999972197,
+      "latency_seconds": 1.1558749999967404,
       "result": {
-        "import_seconds": 0.9119548999951803,
+        "import_seconds": 0.8872256000031484,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -328,9 +213,9 @@
     {
       "mode": "pass26_combined",
       "operation": "inspect",
-      "latency_seconds": 0.6328983999992488,
+      "latency_seconds": 0.5673220999960904,
       "result": {
-        "import_seconds": 0.45114119999925606,
+        "import_seconds": 0.39350800000102026,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -351,9 +236,9 @@
     {
       "mode": "combined",
       "operation": "inspect",
-      "latency_seconds": 0.28745409999828553,
+      "latency_seconds": 0.26758739999786485,
       "result": {
-        "import_seconds": 0.13010339999891585,
+        "import_seconds": 0.11327829999936512,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -374,9 +259,9 @@
     {
       "mode": "decoder",
       "operation": "inspect",
-      "latency_seconds": 0.2721683999989182,
+      "latency_seconds": 0.28834769999957643,
       "result": {
-        "import_seconds": 0.11867310000525322,
+        "import_seconds": 0.12263700000039535,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -397,9 +282,124 @@
     {
       "mode": "decoder_onefile",
       "operation": "inspect",
-      "latency_seconds": 2.0332904000024428,
+      "latency_seconds": 2.0071790000001783,
       "result": {
-        "import_seconds": 0.8835193999984767,
+        "import_seconds": 0.7342586000013398,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "published_python",
+      "operation": "inspect",
+      "latency_seconds": 1.3353397999962908,
+      "result": {
+        "import_seconds": 1.0307666000007885,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "pass26_combined",
+      "operation": "inspect",
+      "latency_seconds": 0.6554604999982985,
+      "result": {
+        "import_seconds": 0.4560062000018661,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "combined",
+      "operation": "inspect",
+      "latency_seconds": 0.2871633999966434,
+      "result": {
+        "import_seconds": 0.1260952999946312,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder",
+      "operation": "inspect",
+      "latency_seconds": 0.30650389999937033,
+      "result": {
+        "import_seconds": 0.12684009999793489,
+        "version": 0,
+        "working_width": 96,
+        "working_height": 95,
+        "width": 96,
+        "height": 95,
+        "color_space": "YCbCr",
+        "channels": 3,
+        "alpha": false,
+        "patches": 13,
+        "warmup": false,
+        "warmup_width": null,
+        "warmup_height": null,
+        "warmup_split": null,
+        "entropy": 2,
+        "bytes": 4290
+      }
+    },
+    {
+      "mode": "decoder_onefile",
+      "operation": "inspect",
+      "latency_seconds": 1.9133180000062566,
+      "result": {
+        "import_seconds": 0.7251484000007622,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -420,11 +420,11 @@
     {
       "mode": "pass26_combined",
       "operation": "encode_pass26_combined_None",
-      "latency_seconds": 4.868240399999195,
+      "latency_seconds": 4.895943800001987,
       "result": {
-        "import_seconds": 0.4285849000007147,
+        "import_seconds": 0.44109539999772096,
         "bytes": 4290,
-        "codec_seconds": 4.113998300003004,
+        "codec_seconds": 4.130670300000929,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -433,11 +433,11 @@
     {
       "mode": "pass26_combined",
       "operation": "encode_pass26_combined_None",
-      "latency_seconds": 0.9770062000025064,
+      "latency_seconds": 1.089578299994173,
       "result": {
-        "import_seconds": 0.4141052999984822,
+        "import_seconds": 0.44335660000069765,
         "bytes": 4290,
-        "codec_seconds": 0.31801500000437954,
+        "codec_seconds": 0.3569107000002987,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -446,11 +446,11 @@
     {
       "mode": "pass26_combined",
       "operation": "encode_pass26_combined_None",
-      "latency_seconds": 4.208129999999073,
+      "latency_seconds": 4.351141500002996,
       "result": {
-        "import_seconds": 0.41008380000130273,
+        "import_seconds": 0.5001370000027237,
         "bytes": 4290,
-        "codec_seconds": 3.515363200000138,
+        "codec_seconds": 3.523917899998196,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -459,11 +459,11 @@
     {
       "mode": "combined",
       "operation": "encode_combined_reference",
-      "latency_seconds": 4.356940599995141,
+      "latency_seconds": 4.62415420000616,
       "result": {
-        "import_seconds": 0.3963335999942501,
+        "import_seconds": 0.4498803000024054,
         "bytes": 4290,
-        "codec_seconds": 3.635499100004381,
+        "codec_seconds": 3.8182216999994125,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -472,11 +472,11 @@
     {
       "mode": "combined",
       "operation": "encode_combined_reference",
-      "latency_seconds": 1.061965799999598,
+      "latency_seconds": 1.0901782000000821,
       "result": {
-        "import_seconds": 0.449314500001492,
+        "import_seconds": 0.45022149999567773,
         "bytes": 4290,
-        "codec_seconds": 0.3296680999992532,
+        "codec_seconds": 0.3555170999970869,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -485,11 +485,11 @@
     {
       "mode": "combined",
       "operation": "encode_combined_reference",
-      "latency_seconds": 1.0644937999968533,
+      "latency_seconds": 1.0144198999987566,
       "result": {
-        "import_seconds": 0.47485820000292733,
+        "import_seconds": 0.44010179999895627,
         "bytes": 4290,
-        "codec_seconds": 0.33069909999903757,
+        "codec_seconds": 0.31668160000117496,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -498,11 +498,11 @@
     {
       "mode": "combined",
       "operation": "encode_combined_native",
-      "latency_seconds": 4.005443899994134,
+      "latency_seconds": 4.42166520000319,
       "result": {
-        "import_seconds": 0.42765720000170404,
+        "import_seconds": 0.42295049999665935,
         "bytes": 4290,
-        "codec_seconds": 3.2781543000019155,
+        "codec_seconds": 3.7042279000015697,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -511,11 +511,11 @@
     {
       "mode": "combined",
       "operation": "encode_combined_native",
-      "latency_seconds": 0.9956426999997348,
+      "latency_seconds": 0.9871188000033726,
       "result": {
-        "import_seconds": 0.448756300000241,
+        "import_seconds": 0.4324665999956778,
         "bytes": 4290,
-        "codec_seconds": 0.3035729000039282,
+        "codec_seconds": 0.3032487999953446,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -524,11 +524,11 @@
     {
       "mode": "combined",
       "operation": "encode_combined_native",
-      "latency_seconds": 0.9221354999972391,
+      "latency_seconds": 0.9728976999977021,
       "result": {
-        "import_seconds": 0.389156199998979,
+        "import_seconds": 0.4219267999942531,
         "bytes": 4290,
-        "codec_seconds": 0.2995616999978665,
+        "codec_seconds": 0.3105915000051027,
         "mse": 56.90252192982456,
         "preset": "quality"
       },
@@ -537,22 +537,22 @@
     {
       "mode": "combined",
       "operation": "warm_encode_cat.jpg_reference",
-      "latency_seconds": 7.670954299996083,
+      "latency_seconds": 8.272263200000452,
       "result": {
-        "import_seconds": 0.34754520000569755,
-        "first_encode_seconds": 4.180175000001327,
+        "import_seconds": 0.41626019999966957,
+        "first_encode_seconds": 4.57258549999824,
         "rows": [
           {
-            "encode_seconds": 0.7749097999985679,
-            "decode_seconds": 0.13869720000366215
+            "encode_seconds": 0.8034294000026421,
+            "decode_seconds": 0.12837589999980992
           },
           {
-            "encode_seconds": 0.7277485000013257,
-            "decode_seconds": 0.12060660000133794
+            "encode_seconds": 0.7877760999981547,
+            "decode_seconds": 0.152465499995742
           },
           {
-            "encode_seconds": 0.729465500000515,
-            "decode_seconds": 0.15423700000246754
+            "encode_seconds": 0.7592118999964441,
+            "decode_seconds": 0.1383124999993015
           }
         ],
         "bytes": 63297,
@@ -563,22 +563,22 @@
     {
       "mode": "combined",
       "operation": "warm_encode_cat.jpg_native",
-      "latency_seconds": 7.086873499996727,
+      "latency_seconds": 7.17276000000129,
       "result": {
-        "import_seconds": 0.41807710000284715,
-        "first_encode_seconds": 4.021984099999827,
+        "import_seconds": 0.40067410000483505,
+        "first_encode_seconds": 4.105349400000705,
         "rows": [
           {
-            "encode_seconds": 0.5836291999949026,
-            "decode_seconds": 0.1297082999954
+            "encode_seconds": 0.5838595999957761,
+            "decode_seconds": 0.11868520000280114
           },
           {
-            "encode_seconds": 0.5803977999967174,
-            "decode_seconds": 0.12822420000156853
+            "encode_seconds": 0.5700652000014088,
+            "decode_seconds": 0.1173964000045089
           },
           {
-            "encode_seconds": 0.5790582000045106,
-            "decode_seconds": 0.13567699999839533
+            "encode_seconds": 0.6462991000007605,
+            "decode_seconds": 0.1416721999994479
           }
         ],
         "bytes": 63297,
@@ -589,22 +589,22 @@
     {
       "mode": "combined",
       "operation": "warm_encode_googlewiki.png_reference",
-      "latency_seconds": 7.586967900002492,
+      "latency_seconds": 7.320880100000068,
       "result": {
-        "import_seconds": 0.39278039999771863,
-        "first_encode_seconds": 4.682382599996345,
+        "import_seconds": 0.4096293999973568,
+        "first_encode_seconds": 4.409045300002617,
         "rows": [
           {
-            "encode_seconds": 0.6609505000014906,
-            "decode_seconds": 0.05700820000492968
+            "encode_seconds": 0.6940326000039931,
+            "decode_seconds": 0.0595305000024382
           },
           {
-            "encode_seconds": 0.7064119999995455,
-            "decode_seconds": 0.061646800000744406
+            "encode_seconds": 0.7048850000064704,
+            "decode_seconds": 0.0556092000042554
           },
           {
-            "encode_seconds": 0.6671416999961366,
-            "decode_seconds": 0.05343939999875147
+            "encode_seconds": 0.6283091000004788,
+            "decode_seconds": 0.05075829999987036
           }
         ],
         "bytes": 83773,
@@ -615,22 +615,22 @@
     {
       "mode": "combined",
       "operation": "warm_encode_googlewiki.png_native",
-      "latency_seconds": 6.094787499998347,
+      "latency_seconds": 7.233804299998155,
       "result": {
-        "import_seconds": 0.36682419999851845,
-        "first_encode_seconds": 3.464050499998848,
+        "import_seconds": 0.41678029999457067,
+        "first_encode_seconds": 4.313026700001501,
         "rows": [
           {
-            "encode_seconds": 0.6067493000009563,
-            "decode_seconds": 0.05167110000184039
+            "encode_seconds": 0.6715379000015673,
+            "decode_seconds": 0.05971829999907641
           },
           {
-            "encode_seconds": 0.6017264000038267,
-            "decode_seconds": 0.05109190000075614
+            "encode_seconds": 0.6897054000000935,
+            "decode_seconds": 0.05185389999678591
           },
           {
-            "encode_seconds": 0.6022754000005079,
-            "decode_seconds": 0.05132940000476083
+            "encode_seconds": 0.669408800000383,
+            "decode_seconds": 0.05742770000506425
           }
         ],
         "bytes": 83773,
@@ -641,13 +641,13 @@
     {
       "mode": "published_python",
       "operation": "warm_decode_cat.jpg.quality",
-      "latency_seconds": 1.6196662999936962,
+      "latency_seconds": 1.6129479000010178,
       "result": {
-        "import_seconds": 0.8142439999937778,
+        "import_seconds": 0.8412361000009696,
         "seconds": [
-          0.12646099999983562,
-          0.15530150000267895,
-          0.12819319999834988
+          0.12080360000254586,
+          0.1259464000031585,
+          0.12267269999574637
         ],
         "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
       }
@@ -655,13 +655,13 @@
     {
       "mode": "combined",
       "operation": "warm_decode_cat.jpg.quality",
-      "latency_seconds": 0.8238971000027959,
+      "latency_seconds": 0.8071160000035889,
       "result": {
-        "import_seconds": 0.11502499999915017,
+        "import_seconds": 0.11236440000357106,
         "seconds": [
-          0.1358858000021428,
-          0.12568630000168923,
-          0.12214660000609001
+          0.1151737000036519,
+          0.11953660000290256,
+          0.12334569999802625
         ],
         "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
       }
@@ -669,13 +669,13 @@
     {
       "mode": "decoder",
       "operation": "warm_decode_cat.jpg.quality",
-      "latency_seconds": 1.0751721000051475,
+      "latency_seconds": 1.0887136000019382,
       "result": {
-        "import_seconds": 0.11720300000160933,
+        "import_seconds": 0.11221870000008494,
         "seconds": [
-          0.1391585999954259,
-          0.13183080000453629,
-          0.14299980000214418
+          0.14263300000311574,
+          0.15281070000492036,
+          0.13327720000233967
         ],
         "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
       }
@@ -683,13 +683,13 @@
     {
       "mode": "decoder_onefile",
       "operation": "warm_decode_cat.jpg.quality",
-      "latency_seconds": 2.550463100000343,
+      "latency_seconds": 2.844807599998603,
       "result": {
-        "import_seconds": 0.8040970000001835,
+        "import_seconds": 0.7375634999989416,
         "seconds": [
-          0.13138179999805288,
-          0.10489470000175061,
-          0.14056419999542413
+          0.13882480000029318,
+          0.14179169999988517,
+          0.14605130000563804
         ],
         "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
       }
@@ -697,13 +697,13 @@
     {
       "mode": "published_python",
       "operation": "warm_decode_googlewiki.png.quality",
-      "latency_seconds": 1.3038092000060715,
+      "latency_seconds": 1.3903615999952308,
       "result": {
-        "import_seconds": 0.8314208000010694,
+        "import_seconds": 0.9102115999994567,
         "seconds": [
-          0.054315800000040326,
-          0.052141200001642574,
-          0.05107520000456134
+          0.059779399998660665,
+          0.06344749999698251,
+          0.05302450000453973
         ],
         "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
       }
@@ -711,13 +711,13 @@
     {
       "mode": "combined",
       "operation": "warm_decode_googlewiki.png.quality",
-      "latency_seconds": 0.5096359999952256,
+      "latency_seconds": 0.5115475000056904,
       "result": {
-        "import_seconds": 0.12703760000295006,
+        "import_seconds": 0.12991900000633905,
         "seconds": [
-          0.05293140000139829,
-          0.04800849999446655,
-          0.04546330000448506
+          0.045610900000610854,
+          0.04835289999755332,
+          0.05165429999760818
         ],
         "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
       }
@@ -725,13 +725,13 @@
     {
       "mode": "decoder",
       "operation": "warm_decode_googlewiki.png.quality",
-      "latency_seconds": 0.4643705999988015,
+      "latency_seconds": 0.5049975000001723,
       "result": {
-        "import_seconds": 0.10574610000185203,
+        "import_seconds": 0.13695710000320105,
         "seconds": [
-          0.043866100000741426,
-          0.04587199999514269,
-          0.044182800003909506
+          0.04959120000421535,
+          0.04832970000279602,
+          0.0469470000025467
         ],
         "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
       }
@@ -739,13 +739,13 @@
     {
       "mode": "decoder_onefile",
       "operation": "warm_decode_googlewiki.png.quality",
-      "latency_seconds": 2.2095775000052527,
+      "latency_seconds": 2.180257799998799,
       "result": {
-        "import_seconds": 0.8190701999992598,
+        "import_seconds": 0.7235608999981196,
         "seconds": [
-          0.04744159999972908,
-          0.051214400002209004,
-          0.05509229999734089
+          0.04509919999691192,
+          0.04238880000048084,
+          0.04846460000408115
         ],
         "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
       }
@@ -753,13 +753,13 @@
     {
       "mode": "published_python",
       "operation": "warm_decode_python_rgba",
-      "latency_seconds": 1.2572053000039887,
+      "latency_seconds": 1.309042100001534,
       "result": {
-        "import_seconds": 0.926542100001825,
+        "import_seconds": 1.0026432000013301,
         "seconds": [
-          0.008681300001626369,
-          0.008650799994939007,
-          0.008363300003111362
+          0.011185999996087048,
+          0.00893730000098003,
+          0.008585099996707868
         ],
         "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
       }
@@ -767,13 +767,13 @@
     {
       "mode": "combined",
       "operation": "warm_decode_python_rgba",
-      "latency_seconds": 0.30890090000320924,
+      "latency_seconds": 0.3249072000035085,
       "result": {
-        "import_seconds": 0.11077060000388883,
+        "import_seconds": 0.11948790000315057,
         "seconds": [
-          0.010668900002201553,
-          0.01039899999886984,
-          0.0101619999986724
+          0.01002120000339346,
+          0.009838600002694875,
+          0.009560999998939224
         ],
         "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
       }
@@ -781,13 +781,13 @@
     {
       "mode": "decoder",
       "operation": "warm_decode_python_rgba",
-      "latency_seconds": 0.35149019999516895,
+      "latency_seconds": 0.3165636000048835,
       "result": {
-        "import_seconds": 0.1263461999988067,
+        "import_seconds": 0.11385960000188788,
         "seconds": [
-          0.01067979999788804,
-          0.01026830000046175,
-          0.011885100000654347
+          0.008509899998898618,
+          0.008844800002407283,
+          0.008389999995415565
         ],
         "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
       }
@@ -795,13 +795,13 @@
     {
       "mode": "decoder_onefile",
       "operation": "warm_decode_python_rgba",
-      "latency_seconds": 2.1056171000018367,
+      "latency_seconds": 2.046592300001066,
       "result": {
-        "import_seconds": 0.769586900001741,
+        "import_seconds": 0.7573709999996936,
         "seconds": [
-          0.009899699995003175,
-          0.009506300004431978,
-          0.009520100000372622
+          0.013458900000841822,
+          0.009589700006472412,
+          0.0092785000015283
         ],
         "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
       }
@@ -809,13 +809,13 @@
     {
       "mode": "published_python",
       "operation": "warm_decode_eiffel.png.high_quality",
-      "latency_seconds": 1.2693941000034101,
+      "latency_seconds": 1.4141178999998374,
       "result": {
-        "import_seconds": 0.8616324999966309,
+        "import_seconds": 0.957129199996416,
         "seconds": [
-          0.03630259999772534,
-          0.038117999996757135,
-          0.03859850000299048
+          0.03625669999746606,
+          0.042388299996673595,
+          0.04310550000082003
         ],
         "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
       }
@@ -823,13 +823,13 @@
     {
       "mode": "combined",
       "operation": "warm_decode_eiffel.png.high_quality",
-      "latency_seconds": 0.504210700004478,
+      "latency_seconds": 0.4808848000029684,
       "result": {
-        "import_seconds": 0.12467240000114543,
+        "import_seconds": 0.12137849999999162,
         "seconds": [
-          0.04805830000259448,
-          0.043935700006841216,
-          0.044831300001533236
+          0.04378149999683956,
+          0.04284229999757372,
+          0.0436448999971617
         ],
         "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
       }
@@ -837,13 +837,13 @@
     {
       "mode": "decoder",
       "operation": "warm_decode_eiffel.png.high_quality",
-      "latency_seconds": 0.4646675000039977,
+      "latency_seconds": 0.4604906000022311,
       "result": {
-        "import_seconds": 0.11211669999465812,
+        "import_seconds": 0.12647019999712938,
         "seconds": [
-          0.05355559999588877,
-          0.03750250000302913,
-          0.04459520000091288
+          0.042910100004519336,
+          0.038889499999640975,
+          0.03904529999999795
         ],
         "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
       }
@@ -851,13 +851,13 @@
     {
       "mode": "decoder_onefile",
       "operation": "warm_decode_eiffel.png.high_quality",
-      "latency_seconds": 2.2887412999989465,
+      "latency_seconds": 2.1172478000007686,
       "result": {
-        "import_seconds": 0.801407000006293,
+        "import_seconds": 0.78197899999941,
         "seconds": [
-          0.04525969999667723,
-          0.04520250000496162,
-          0.04344029999629129
+          0.03886199999396922,
+          0.05061230000137584,
+          0.04392139999981737
         ],
         "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
       }
@@ -865,10 +865,10 @@
     {
       "mode": "combined",
       "operation": "decode_command",
-      "latency_seconds": 0.3832981000014115,
+      "latency_seconds": 0.32899649999308167,
       "result": {
-        "import_seconds": 0.12372150000010151,
-        "codec_seconds": 0.006552500002726447,
+        "import_seconds": 0.1121387000021059,
+        "codec_seconds": 0.005566600004385691,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -878,10 +878,10 @@
     {
       "mode": "combined",
       "operation": "decode_command",
-      "latency_seconds": 0.34196890000021085,
+      "latency_seconds": 0.3039118000015151,
       "result": {
-        "import_seconds": 0.11002400000143098,
-        "codec_seconds": 0.005611699998553377,
+        "import_seconds": 0.10547640000004321,
+        "codec_seconds": 0.005205800000112504,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -891,10 +891,10 @@
     {
       "mode": "combined",
       "operation": "decode_command",
-      "latency_seconds": 0.3542546999960905,
+      "latency_seconds": 0.30440030000318075,
       "result": {
-        "import_seconds": 0.1330995999960578,
-        "codec_seconds": 0.00624910000624368,
+        "import_seconds": 0.10683419999986654,
+        "codec_seconds": 0.005043700002715923,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -904,10 +904,10 @@
     {
       "mode": "decoder",
       "operation": "decode_command",
-      "latency_seconds": 0.34993219999887515,
+      "latency_seconds": 0.34480859999894165,
       "result": {
-        "import_seconds": 0.11667519999900833,
-        "codec_seconds": 0.0053454000008059666,
+        "import_seconds": 0.11456799999723444,
+        "codec_seconds": 0.005214900003920775,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -917,10 +917,10 @@
     {
       "mode": "decoder",
       "operation": "decode_command",
-      "latency_seconds": 0.3425162000057753,
+      "latency_seconds": 0.3028017999968142,
       "result": {
-        "import_seconds": 0.11490730000514304,
-        "codec_seconds": 0.005439900000055786,
+        "import_seconds": 0.10594019999552984,
+        "codec_seconds": 0.0047421000053873286,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -930,10 +930,10 @@
     {
       "mode": "decoder",
       "operation": "decode_command",
-      "latency_seconds": 0.36101930000586435,
+      "latency_seconds": 0.3127572000012151,
       "result": {
-        "import_seconds": 0.13057699999626493,
-        "codec_seconds": 0.005171299999346957,
+        "import_seconds": 0.10714379999990342,
+        "codec_seconds": 0.004960999998729676,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -943,10 +943,10 @@
     {
       "mode": "decoder_onefile",
       "operation": "decode_command",
-      "latency_seconds": 2.167146899999352,
+      "latency_seconds": 1.9581239000035566,
       "result": {
-        "import_seconds": 0.8327714999977616,
-        "codec_seconds": 0.006301499997789506,
+        "import_seconds": 0.6938603999951738,
+        "codec_seconds": 0.005255000003671739,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -956,10 +956,10 @@
     {
       "mode": "decoder_onefile",
       "operation": "decode_command",
-      "latency_seconds": 2.051749899997958,
+      "latency_seconds": 2.1037242999955197,
       "result": {
-        "import_seconds": 0.7971027999956277,
-        "codec_seconds": 0.005230000002484303,
+        "import_seconds": 0.7590640999987954,
+        "codec_seconds": 0.005321500000718515,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -969,10 +969,10 @@
     {
       "mode": "decoder_onefile",
       "operation": "decode_command",
-      "latency_seconds": 2.025043099994946,
+      "latency_seconds": 1.9709893000035663,
       "result": {
-        "import_seconds": 0.8288673999995808,
-        "codec_seconds": 0.005031100001360755,
+        "import_seconds": 0.7330798000039067,
+        "codec_seconds": 0.006549600002472289,
         "width": 96,
         "height": 95,
         "mode": "RGB",
@@ -982,37 +982,37 @@
     {
       "mode": "published_python",
       "operation": "decode_command",
-      "latency_seconds": 1.1115969999955269,
+      "latency_seconds": 1.2168531999996048,
       "result": {
-        "import_seconds": 0.824376199998369,
-        "codec_seconds": 0.007298399999854155
+        "import_seconds": 0.9278494000027422,
+        "codec_seconds": 0.006293600003118627
       }
     },
     {
       "mode": "published_python",
       "operation": "decode_command",
-      "latency_seconds": 1.2582865999938804,
+      "latency_seconds": 1.1573516999997082,
       "result": {
-        "import_seconds": 0.9711286000019754,
-        "codec_seconds": 0.008776800001214724
+        "import_seconds": 0.8857040000002598,
+        "codec_seconds": 0.005234500000369735
       }
     },
     {
       "mode": "published_python",
       "operation": "decode_command",
-      "latency_seconds": 1.2633448999986285,
+      "latency_seconds": 1.1475738000008278,
       "result": {
-        "import_seconds": 0.9583591000045999,
-        "codec_seconds": 0.006768700004613493
+        "import_seconds": 0.8752693999995245,
+        "codec_seconds": 0.006285299998125993
       }
     },
     {
       "mode": "pass26_combined",
       "operation": "decode_command",
-      "latency_seconds": 0.8227371000029962,
+      "latency_seconds": 0.673198999997112,
       "result": {
-        "import_seconds": 0.48280630000226665,
-        "codec_seconds": 0.00631759999669157,
+        "import_seconds": 0.422275199998694,
+        "codec_seconds": 0.006250200000067707,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -1033,10 +1033,10 @@
     {
       "mode": "pass26_combined",
       "operation": "decode_command",
-      "latency_seconds": 0.7172254999968573,
+      "latency_seconds": 0.6419281999988016,
       "result": {
-        "import_seconds": 0.4596300999983214,
-        "codec_seconds": 0.0069818999982089736,
+        "import_seconds": 0.413269600001513,
+        "codec_seconds": 0.006084499997086823,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -1057,10 +1057,10 @@
     {
       "mode": "pass26_combined",
       "operation": "decode_command",
-      "latency_seconds": 0.7348576000003959,
+      "latency_seconds": 0.673322200003895,
       "result": {
-        "import_seconds": 0.47200369999336544,
-        "codec_seconds": 0.005730299999413546,
+        "import_seconds": 0.42591990000073565,
+        "codec_seconds": 0.006357300000672694,
         "version": 0,
         "working_width": 96,
         "working_height": 95,
@@ -1080,7 +1080,7 @@
     }
   ],
   "memory_polling": false,
-  "cache_root": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\PBC27 performance b9mt6hbk",
+  "cache_root": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\PBC27 performance g1wlouhr",
   "one_core": 12,
   "threads": 1
 }

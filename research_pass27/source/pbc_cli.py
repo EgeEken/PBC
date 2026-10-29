@@ -30,11 +30,12 @@ def main(decoder_only=False):
             p.add_argument('--preset',choices=PRESETS,default='balanced')
             p.add_argument('--mse-backend',choices=('reference','native','auto'),default='auto')
     p=sub.add_parser('inspect'); p.add_argument('input',type=Path)
-    p=sub.add_parser('benchmark',help='research: warmed in-process codec timing')
-    p.add_argument('input',type=Path); p.add_argument('--preset',choices=PRESETS,default='quality')
-    p.add_argument('--repeats',type=int,choices=range(1,11),default=3)
-    p.add_argument('--mse-backend',choices=('reference','native','auto'),default='auto')
-    p=sub.add_parser('benchdecode',help='research: warmed decode timing');p.add_argument('input',type=Path);p.add_argument('--repeats',type=int,default=3)
+    if not decoder_only:
+        p=sub.add_parser('benchmark',help='research: warmed in-process codec timing')
+        p.add_argument('input',type=Path); p.add_argument('--preset',choices=PRESETS,default='quality')
+        p.add_argument('--repeats',type=int,choices=range(1,11),default=3)
+        p.add_argument('--mse-backend',choices=('reference','native','auto'),default='auto')
+    p=sub.add_parser('benchdecode',help='research: warmed decode timing');p.add_argument('input',type=Path);p.add_argument('--repeats',type=int,choices=range(1,11),default=3)
     args=parser.parse_args()
     if decoder_only and args.command in ('encode','benchmark'): parser.error('encoding is unavailable')
     try:

@@ -1,0 +1,177 @@
+{
+  "verified_utc": "2026-10-29T22:42:34.982921+00:00",
+  "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "cpu": "Intel Core i9-12900H",
+  "affinity": [
+    12
+  ],
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMBA_NUM_THREADS": "1"
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "numba": "0.68.0",
+    "llvmlite": "0.50.0",
+    "Pillow": "11.3.0",
+    "psutil": "7.2.2",
+    "pyinstaller": "6.16.0",
+    "pyinstaller-hooks-contrib": "2026.9",
+    "build": "1.3.0",
+    "setuptools": "79.0.1",
+    "wheel": "0.45.1"
+  },
+  "original_head": "87fb89e184abce8065bc001dec0ea121cbe3cc72",
+  "published_asset_sha256": "edec3ec73721c3f56913db21f6089a3b6a1637fb3481e61de5b0475da8eeaede",
+  "released_sources": {
+    "PBC3.py": "fb490b5694b49e393e3370d41597515c79fd8db3fc62f430eec10efe3c4f7df3",
+    "pbc3_ops.py": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+    "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+    "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+    "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+    "pbc3_types.py": "c3502fd9e3326e9cbdaea960fd608fb2a01dc00863e1b0d1a00d4aa6ec6a2b4d",
+    "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+    "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+    "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "pyproject.toml": "28451a8f82775100bc6e0745fcbb1a8bcb96c28fda245dfdbff5adc3761126a0",
+    "pbc3/__init__.py": "875bc5a601074859fbe8932601a2ce44112b1db39ddfc4cd4746c3cd8d16b525",
+    "INSTALL.md": "a9a5b5787564e4b35825e388e3db12822711c451e53a3ccc0af3c41a2218fba2"
+  },
+  "input_hashes": {
+    "cat.jpg": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "flower.jpg": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+    "seagull.jpg": "d44f39a33b0c39d2ab6442dd3a606f6becb5ac3e91165a4a48c37b1aca5c2639",
+    "googlewiki.png": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+    "monet.jpg": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7",
+    "eiffel.png": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+  },
+  "research_source_sha256": {
+    "common.py": "2a1822a32ad65ef10d5f207526ee9ca5f4ddceb7df09493fa4b1c48d2f637e2c",
+    "report.py": "145b2490b03a0754647eb5cfa6bc1028e47dc64bb1ad9987f8bf55eb936ea63d",
+    "requirements-build.txt": "b39a500db0b522d43f75e1770e5261113228e6b6441a0888146023987704534e",
+    "requirements-decoder-build.txt": "fc00489e2732e36ba9687e142b28219972c84ede8ec27240004d0ae69ba59ebe",
+    "verify.py": "5d261916bab7bcbb5ea251fd96c4da5593ad218a4cc07e657e6b5c252937b67c",
+    "decoder\\benchmark.py": "5fd8fae3c1b971be65473bd19850b1c28eec6e6941e1f9562571803c1ec36358",
+    "decoder\\check.py": "7414e89b82af3c66da81398f7abc02ef682fd5d5283b529ed33dd645a3bd8899",
+    "decoder\\make_corpus.py": "410eb4567e474eb1e0dc9eb0072ef05eb6e56844fcfb18e76047c04ea1d17bc5",
+    "decoder\\worker.py": "517e0e7b78facfb9e4307473d64426a2a07ef6f1a26a15ffe7e41d71a6dd145d",
+    "native\\benchmark.py": "09a7e16d5ded186d57dfe28cf60d87d8b6a9a8ac3b7448111f097c184b72d838",
+    "native\\build.py": "00d4b0ce9012c23514c29f333fe53c3f4fbc2d8bd8afc1f8c981c05261a97a43",
+    "native\\check.py": "ad3fbee163c1f3a412fbdd330c7caff9892fa1be7cab5b0cf99ae56ad2047d58",
+    "native\\memory.py": "6cfd09c4b277c27f8acb2af2acbac461d40c102c68a26e0e00533da3f64ab739",
+    "native\\worker.py": "2984beecd147132db164c40d3398952806e295e3841582a3edb7edcf99085eac",
+    "packaging\\build.py": "5c3ffc91ae2c6d3ce396f9083369c58904ef73313ce3f269dbf6ad3b3ce6487c",
+    "packaging\\clean_checkout.py": "ee32a0c888e7beb65210b9e84865c9878923d707a93da4ca54e128c458fa5238",
+    "packaging\\install_test.py": "99bc30a824d1b743cd9ebd908de42b9235abc44d1b666b0d8dfb42a67eacc030",
+    "packaging\\install_verify.py": "7c1036a4c02930a4abe4ae091c3f02dcb638a2c295755bac38a5783115a61941",
+    "packaging\\measure.py": "1c96ca035fe6dccd115476a37e7175e37fcdd5557eacabe72273c567e85d3dfb",
+    "packaging\\memory.py": "7a76d6422b588616942feb97e504f46875d1b54e4da4aa12fea4a524b81f58cc",
+    "packaging\\prepare.py": "4764add47dbe9e2f4d3fbf1b89be0ec0af4d1c679151ccc34e68d513991966f7",
+    "packaging\\reference_cli.py": "5a88e05436516898815bb95a92c042e51b78be6f399cef14d965a0331ee7a175",
+    "packaging\\validate_distribution.py": "108a46939603f199403d1d0061f8c1aa0e786329ed060e26584e7471b0590d0a",
+    "source\\MANIFEST.in": "79a51ad05f98f2d729c38e26346a3432bee960030d064e922ec886a7bb0ea0bc",
+    "source\\pbc3_cache.py": "fa745caf89293003c3984a771674937a716e967daaaa5d9fe67549afffe1756b",
+    "source\\pbc3_decoder.py": "4867a248e23d4bdf81d349d3719f163a534a6c7546b04b74fc214226fe7df2d7",
+    "source\\pbc3_native.py": "d83d0ce9e49e2c318991e27e1690aa52d6b9e49e0ee3f37a52acc6514e90543c",
+    "source\\pbc_cli.py": "fe6972dd8cee3201dacc2c096c0900f0036636129ac9aeea1b3127905816359f",
+    "source\\pbc_decode_cli.py": "fdd9c7da0ab574325b907b084aa6095ecd1483642389521858e79951c54dfd70",
+    "source\\pyproject.toml": "37c5f5259ebcc7100535ad0988c5c4e15e3f3e33bcfec5b1bd10d200e940a494"
+  },
+  "generated_candidate_sha256": {
+    "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+    "PBC3.py": "a0a1cfe094ca596c5e1b3fa7b10c925e8bc008a0b04c75df846d25573999990a",
+    "pbc3_cache.py": "fa745caf89293003c3984a771674937a716e967daaaa5d9fe67549afffe1756b",
+    "pbc3_decoder.py": "4867a248e23d4bdf81d349d3719f163a534a6c7546b04b74fc214226fe7df2d7",
+    "pbc3_decode_ops.py": "f0d0ff05738915a8882eb06a1e3271c05fa92344281eb3917d96d683615f640e",
+    "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+    "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+    "pbc3_native.py": "d83d0ce9e49e2c318991e27e1690aa52d6b9e49e0ee3f37a52acc6514e90543c",
+    "pbc3_ops.py": "d8103bd5c53bd49d81ed76319aba9a0539286fd6b9572b77e0c97ff3d0d8ffad",
+    "pbc3_stream.py": "29efced0554f3fc7f76c8c6bf178de9c8fb43b1f47d92a8961e0403d59f12496",
+    "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+    "pbc3_types.py": "fc1835445394e3affed4620e81180a1f55b3c1a3a73172373e8b956907e5b360",
+    "pbc_cli.py": "fe6972dd8cee3201dacc2c096c0900f0036636129ac9aeea1b3127905816359f",
+    "pbc_decode_cli.py": "fdd9c7da0ab574325b907b084aa6095ecd1483642389521858e79951c54dfd70",
+    "pyproject.toml": "37c5f5259ebcc7100535ad0988c5c4e15e3f3e33bcfec5b1bd10d200e940a494",
+    "pbc3\\mse.dll": "6c4196caffd0ce311825f2f81af6a3a51cddb96aae82ab405ce3bd74fda459a1",
+    "pbc3\\patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "pbc3\\__init__.py": "c2f0fe8057254027b7e871fefe5ee887ebe3c2cacfffa0c3bf678d29f84b492d"
+  },
+  "build_environment_freeze": [
+    "altgraph==0.17.5",
+    "build==1.3.0",
+    "colorama==0.4.6",
+    "llvmlite==0.50.0",
+    "numba==0.68.0",
+    "numpy==2.4.6",
+    "packaging==26.3",
+    "pefile==2023.2.7",
+    "pillow==11.3.0",
+    "psutil==7.2.2",
+    "pyinstaller==6.16.0",
+    "pyinstaller-hooks-contrib==2026.9",
+    "pyproject_hooks==1.3.3",
+    "pywin32-ctypes==0.2.3",
+    "scipy==1.17.1"
+  ],
+  "decoder_environment_freeze": [
+    "altgraph==0.17.5",
+    "numpy==2.4.6",
+    "packaging==26.3",
+    "pefile==2023.2.7",
+    "pillow==11.3.0",
+    "pyinstaller==6.16.0",
+    "pyinstaller-hooks-contrib==2026.9",
+    "pywin32-ctypes==0.2.3",
+    "setuptools==84.2.1"
+  ],
+  "protected_refs": "d938d003f68063e8df607957d8929c5ba8e74344\trefs/heads/main\n93e9c0591a710397bb3f09d2d51473313ce23db6\trefs/heads/rust\nac7566f8b4fe77020bc27ff720fbe9942040cca4\trefs/tags/v3.1\n",
+  "hf_ref": "98ade0c8072a4571e9674eaac3d91f861e3b9867\trefs/heads/main\n",
+  "pass26_preserved": true,
+  "release_staging_preserved": true,
+  "artifacts": {
+    "combined": {
+      "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\combined\\onedir\\pbc\\pbc.exe",
+      "exe_bytes": 8105970,
+      "exe_sha256": "e899942cd3fa334839eb5b26624c7a4532c19ce630ac7739d4b86ce7600c818e",
+      "files": 163,
+      "extracted_bytes": 191210903,
+      "zip": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\PBC32rc1-combined-Windows-x64.zip",
+      "zip_bytes": 72582125,
+      "zip_sha256": "aade8849c74f0a808de8df1b3bd4cef3a1caea93009b474ce20c11357f0b3eed"
+    },
+    "decoder": {
+      "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\decoder\\onedir\\pbc-decode\\pbc-decode.exe",
+      "exe_bytes": 5194858,
+      "exe_sha256": "83de42afea875fc5a5a90a6981b91eca46897679e69d10e711ee01745678abb4",
+      "files": 124,
+      "extracted_bytes": 65682789,
+      "zip": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\PBC32rc1-decoder-Windows-x64.zip",
+      "zip_bytes": 27260868,
+      "zip_sha256": "dc19beea274b2d19d2d4d631e6a9a3db8709d59a850669ec5e7d541f3082c7fb"
+    },
+    "decoder_onefile": {
+      "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\decoder\\onefile\\pbc-decode.exe",
+      "bytes": 27232475,
+      "sha256": "c7c6d5be9a9155ef4182cc4ee797adfaf8666ecbc2d109261a1f6896c0e17bbc"
+    },
+    "native_dll": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\candidate\\pbc3\\mse.dll",
+      "bytes": 55172,
+      "sha256": "6c4196caffd0ce311825f2f81af6a3a51cddb96aae82ab405ce3bd74fda459a1"
+    },
+    ".whl": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\packages\\pbc_codec-3.2.0rc1-py3-none-any.whl",
+      "bytes": 134820,
+      "sha256": "120df9fcbbc0131110d54d417425c318609414d094b43334bbd01e73080bbfa6"
+    },
+    ".gz": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\packages\\pbc_codec-3.2.0rc1.tar.gz",
+      "bytes": 134533,
+      "sha256": "9574b7044432cf68fbf45786f8cd6846369de52eea62347f1840bbb20e51206d"
+    }
+  }
+}

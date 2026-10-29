@@ -1,0 +1,42 @@
+{
+  "combined": {
+    "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\combined\\onedir\\pbc\\pbc.exe",
+    "exe_bytes": 8105970,
+    "exe_sha256": "e899942cd3fa334839eb5b26624c7a4532c19ce630ac7739d4b86ce7600c818e",
+    "files": 163,
+    "extracted_bytes": 191210903,
+    "zip": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\PBC32rc1-combined-Windows-x64.zip",
+    "zip_bytes": 72582125,
+    "zip_sha256": "aade8849c74f0a808de8df1b3bd4cef3a1caea93009b474ce20c11357f0b3eed"
+  },
+  "decoder": {
+    "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\decoder\\onedir\\pbc-decode\\pbc-decode.exe",
+    "exe_bytes": 5194858,
+    "exe_sha256": "83de42afea875fc5a5a90a6981b91eca46897679e69d10e711ee01745678abb4",
+    "files": 124,
+    "extracted_bytes": 65682789,
+    "zip": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\PBC32rc1-decoder-Windows-x64.zip",
+    "zip_bytes": 27260868,
+    "zip_sha256": "dc19beea274b2d19d2d4d631e6a9a3db8709d59a850669ec5e7d541f3082c7fb"
+  },
+  "decoder_onefile": {
+    "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\decoder\\onefile\\pbc-decode.exe",
+    "bytes": 27232475,
+    "sha256": "c7c6d5be9a9155ef4182cc4ee797adfaf8666ecbc2d109261a1f6896c0e17bbc"
+  },
+  "native_dll": {
+    "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\candidate\\pbc3\\mse.dll",
+    "bytes": 55172,
+    "sha256": "6c4196caffd0ce311825f2f81af6a3a51cddb96aae82ab405ce3bd74fda459a1"
+  },
+  ".whl": {
+    "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\packages\\pbc_codec-3.2.0rc1-py3-none-any.whl",
+    "bytes": 134820,
+    "sha256": "120df9fcbbc0131110d54d417425c318609414d094b43334bbd01e73080bbfa6"
+  },
+  ".gz": {
+    "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass27\\artifacts\\packages\\pbc_codec-3.2.0rc1.tar.gz",
+    "bytes": 134533,
+    "sha256": "9574b7044432cf68fbf45786f8cd6846369de52eea62347f1840bbb20e51206d"
+  }
+}

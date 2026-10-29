@@ -2,3 +2,4 @@ artifacts/
 **/__pycache__/
 !/baseline.json
 !/provenance.json
+!/artifacts.json

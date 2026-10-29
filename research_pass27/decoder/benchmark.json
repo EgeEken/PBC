@@ -1,0 +1,194 @@
+[
+  {
+    "image": "cat.jpg.quality",
+    "repeat": 0,
+    "published": {
+      "seconds": 0.10066500000539236,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.10365710000041872,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.1038263000009465,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    }
+  },
+  {
+    "image": "cat.jpg.quality",
+    "repeat": 1,
+    "candidate_same_environment": {
+      "seconds": 0.11276070000167238,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.12785479999729432,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    "published": {
+      "seconds": 0.12838229999761097,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    }
+  },
+  {
+    "image": "cat.jpg.quality",
+    "repeat": 2,
+    "candidate_without_numba": {
+      "seconds": 0.14162320000468753,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    "published": {
+      "seconds": 0.13198040000133915,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.13750419999996666,
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    }
+  },
+  {
+    "image": "googlewiki.png.quality",
+    "repeat": 0,
+    "published": {
+      "seconds": 0.053204600000754,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.04823040000337642,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.04932369999733055,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    }
+  },
+  {
+    "image": "googlewiki.png.quality",
+    "repeat": 1,
+    "candidate_same_environment": {
+      "seconds": 0.04995599999529077,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.047619199998734985,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    },
+    "published": {
+      "seconds": 0.04170380000141449,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    }
+  },
+  {
+    "image": "googlewiki.png.quality",
+    "repeat": 2,
+    "candidate_without_numba": {
+      "seconds": 0.04329860000143526,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    },
+    "published": {
+      "seconds": 0.041088999998464715,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.04485459999705199,
+      "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff"
+    }
+  },
+  {
+    "image": "eiffel.png.high_quality",
+    "repeat": 0,
+    "published": {
+      "seconds": 0.05900120000296738,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.0469708000018727,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.042364100001577754,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    }
+  },
+  {
+    "image": "eiffel.png.high_quality",
+    "repeat": 1,
+    "candidate_same_environment": {
+      "seconds": 0.04004290000011679,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.042547600001853425,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    },
+    "published": {
+      "seconds": 0.04697190000297269,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    }
+  },
+  {
+    "image": "eiffel.png.high_quality",
+    "repeat": 2,
+    "candidate_without_numba": {
+      "seconds": 0.04669060000014724,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    },
+    "published": {
+      "seconds": 0.03965329999482492,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.03726309999910882,
+      "pixel_sha256": "bccd779128f3e2194b04eb6905e63c7eea3b51329319d894e1b7dc98394ac1ea"
+    }
+  },
+  {
+    "image": "python_rgba",
+    "repeat": 0,
+    "published": {
+      "seconds": 0.011292800001683645,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.010223700002825353,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.0090589999963413,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    }
+  },
+  {
+    "image": "python_rgba",
+    "repeat": 1,
+    "candidate_same_environment": {
+      "seconds": 0.01008189999993192,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    },
+    "candidate_without_numba": {
+      "seconds": 0.009178100001008715,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    },
+    "published": {
+      "seconds": 0.00926179999805754,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    }
+  },
+  {
+    "image": "python_rgba",
+    "repeat": 2,
+    "candidate_without_numba": {
+      "seconds": 0.008428399996773805,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    },
+    "published": {
+      "seconds": 0.00992720000067493,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    },
+    "candidate_same_environment": {
+      "seconds": 0.00926150000304915,
+      "pixel_sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    }
+  }
+]

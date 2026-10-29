@@ -1,0 +1,19 @@
+{
+  "root": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-25d6r3fg",
+  "commit": "73082d7a4f0943c0b7a3716fb32f0e30f9fa0939",
+  "tracked_checkout_clean": true,
+  "published_asset_downloaded_and_verified": true,
+  "no_existing_artifacts_reused": true,
+  "wheel_payloads_identical": true,
+  "combined_encode_exact": true,
+  "decoder_pixels_exact": true,
+  "runtime_no_python_or_compiler_on_path": true,
+  "combined_exe": {
+    "path": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-25d6r3fg\\repo\\research_pass27\\artifacts\\combined\\onedir\\pbc\\pbc.exe",
+    "sha256": "f6c6b7b006069c93b36c17bc8197bafc177c777a97816bb54695f992c334f74a"
+  },
+  "decoder_exe": {
+    "path": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-25d6r3fg\\repo\\research_pass27\\artifacts\\decoder\\onedir\\pbc-decode\\pbc-decode.exe",
+    "sha256": "1dfbc013fad2a09a3c0508132bd3f5353a35201b05f62d892999baae51505357"
+  }
+}
