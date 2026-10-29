@@ -1,0 +1,303 @@
+{
+  "memory_polling": false,
+  "cache_root": "C:\\Users\\EGE\\AppData\\Local\\Temp\\PBC26 startup caches 2bgzdlg6",
+  "rows": [
+    {
+      "mode": "python",
+      "operation": "version",
+      "repeat": 0,
+      "latency_seconds": 0.18409210000027088,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "onedir",
+      "operation": "version",
+      "repeat": 0,
+      "latency_seconds": 0.11992060000193305,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "onefile",
+      "operation": "version",
+      "repeat": 0,
+      "latency_seconds": 2.0673902000016824,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "onedir",
+      "operation": "version",
+      "repeat": 1,
+      "latency_seconds": 0.1342493000011018,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "onefile",
+      "operation": "version",
+      "repeat": 1,
+      "latency_seconds": 2.057886200000212,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "python",
+      "operation": "version",
+      "repeat": 1,
+      "latency_seconds": 0.21345790000123088,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "onefile",
+      "operation": "version",
+      "repeat": 2,
+      "latency_seconds": 1.9398539000030723,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "python",
+      "operation": "version",
+      "repeat": 2,
+      "latency_seconds": 0.21173470000212546,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "onedir",
+      "operation": "version",
+      "repeat": 2,
+      "latency_seconds": 0.11520569999993313,
+      "result": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0"
+    },
+    {
+      "mode": "python",
+      "operation": "first_use_fresh_cache",
+      "latency_seconds": 4.649081399998977,
+      "result": {
+        "import_seconds": 0.793392200001108,
+        "bytes": 4290,
+        "codec_seconds": 3.4819000999996206,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      }
+    },
+    {
+      "mode": "python",
+      "operation": "second_process_same_cache",
+      "latency_seconds": 1.9218551000012667,
+      "result": {
+        "import_seconds": 0.7863295000024664,
+        "bytes": 4290,
+        "codec_seconds": 0.7948399999986577,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      }
+    },
+    {
+      "mode": "onedir",
+      "operation": "first_use_fresh_cache",
+      "latency_seconds": 4.059492799999134,
+      "result": {
+        "import_seconds": 0.3577999999979511,
+        "bytes": 4290,
+        "codec_seconds": 3.413890600000741,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      }
+    },
+    {
+      "mode": "onedir",
+      "operation": "second_process_same_cache",
+      "latency_seconds": 0.9437093999986246,
+      "result": {
+        "import_seconds": 0.38609830000132206,
+        "bytes": 4290,
+        "codec_seconds": 0.3105708000002778,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      }
+    },
+    {
+      "mode": "onefile",
+      "operation": "first_use_fresh_cache",
+      "latency_seconds": 8.040288399999554,
+      "result": {
+        "import_seconds": 1.7037820000005013,
+        "bytes": 4290,
+        "codec_seconds": 3.7938418999983696,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      }
+    },
+    {
+      "mode": "onefile",
+      "operation": "second_process_same_cache",
+      "latency_seconds": 4.555192399999214,
+      "result": {
+        "import_seconds": 1.7070843999972567,
+        "bytes": 4290,
+        "codec_seconds": 0.3470919999999751,
+        "mse": 56.90252192982456,
+        "preset": "quality"
+      }
+    },
+    {
+      "mode": "python",
+      "operation": "warmed_codec",
+      "image": "googlewiki.png",
+      "latency_seconds": 4.300558399998408,
+      "result": {
+        "import_seconds": 0.8627679999990505,
+        "first_encode_seconds": 1.1394369000008737,
+        "rows": [
+          {
+            "encode_seconds": 0.5480647000003955,
+            "decode_seconds": 0.04878190000090399
+          },
+          {
+            "encode_seconds": 0.5822909999988042,
+            "decode_seconds": 0.05120280000119237
+          },
+          {
+            "encode_seconds": 0.6566638000003877,
+            "decode_seconds": 0.05993790000138688
+          }
+        ],
+        "bytes": 83773,
+        "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+        "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+      }
+    },
+    {
+      "mode": "onedir",
+      "operation": "warmed_codec",
+      "image": "googlewiki.png",
+      "latency_seconds": 7.042905399997835,
+      "result": {
+        "import_seconds": 0.3722806000005221,
+        "first_encode_seconds": 4.082981600000494,
+        "rows": [
+          {
+            "encode_seconds": 0.6451326000023982,
+            "decode_seconds": 0.053672899997764034
+          },
+          {
+            "encode_seconds": 0.7271811999999045,
+            "decode_seconds": 0.054988599997159326
+          },
+          {
+            "encode_seconds": 0.6975760999994236,
+            "decode_seconds": 0.06059319999985746
+          }
+        ],
+        "bytes": 83773,
+        "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+        "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+      }
+    },
+    {
+      "mode": "onefile",
+      "operation": "warmed_codec",
+      "image": "googlewiki.png",
+      "latency_seconds": 10.011697399997502,
+      "result": {
+        "import_seconds": 1.6306938999987324,
+        "first_encode_seconds": 3.9070372999995016,
+        "rows": [
+          {
+            "encode_seconds": 0.583603499999299,
+            "decode_seconds": 0.05490019999706419
+          },
+          {
+            "encode_seconds": 0.60633560000133,
+            "decode_seconds": 0.046905100000003586
+          },
+          {
+            "encode_seconds": 0.6137391000011121,
+            "decode_seconds": 0.05070829999749549
+          }
+        ],
+        "bytes": 83773,
+        "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+        "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+      }
+    },
+    {
+      "mode": "onedir",
+      "operation": "warmed_codec",
+      "image": "cat.jpg",
+      "latency_seconds": 7.233148199997231,
+      "result": {
+        "import_seconds": 0.37396409999928437,
+        "first_encode_seconds": 4.050704799999949,
+        "rows": [
+          {
+            "encode_seconds": 0.6580739999990328,
+            "decode_seconds": 0.11984619999930146
+          },
+          {
+            "encode_seconds": 0.6428711000007752,
+            "decode_seconds": 0.11930999999822234
+          },
+          {
+            "encode_seconds": 0.6360386000014842,
+            "decode_seconds": 0.12460449999707635
+          }
+        ],
+        "bytes": 63297,
+        "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "onefile",
+      "operation": "warmed_codec",
+      "image": "cat.jpg",
+      "latency_seconds": 10.884123300002102,
+      "result": {
+        "import_seconds": 1.6559102999999595,
+        "first_encode_seconds": 4.168641799999023,
+        "rows": [
+          {
+            "encode_seconds": 0.6751687999967544,
+            "decode_seconds": 0.11655659999814816
+          },
+          {
+            "encode_seconds": 0.6964036000026681,
+            "decode_seconds": 0.12005220000355621
+          },
+          {
+            "encode_seconds": 0.6715647999990324,
+            "decode_seconds": 0.12135309999939636
+          }
+        ],
+        "bytes": 63297,
+        "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    },
+    {
+      "mode": "python",
+      "operation": "warmed_codec",
+      "image": "cat.jpg",
+      "latency_seconds": 5.166927800000849,
+      "result": {
+        "import_seconds": 0.9009584999985236,
+        "first_encode_seconds": 1.327383900003042,
+        "rows": [
+          {
+            "encode_seconds": 0.6561106000008294,
+            "decode_seconds": 0.1263468000033754
+          },
+          {
+            "encode_seconds": 0.6768626000011864,
+            "decode_seconds": 0.12275989999761805
+          },
+          {
+            "encode_seconds": 0.6804659000008542,
+            "decode_seconds": 0.1277059999993071
+          }
+        ],
+        "bytes": 63297,
+        "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+        "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+      }
+    }
+  ]
+}

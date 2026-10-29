@@ -1,0 +1,25 @@
+{
+  "workload": "cat.jpg Quality initial encode plus one warmed encode/decode",
+  "sample_interval_seconds": 0.05,
+  "latencies_discarded": true,
+  "rows": [
+    {
+      "mode": "python",
+      "sampled_peak_process_tree_rss_bytes": 495353856,
+      "samples": 59,
+      "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27"
+    },
+    {
+      "mode": "onedir",
+      "sampled_peak_process_tree_rss_bytes": 532025344,
+      "samples": 83,
+      "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27"
+    },
+    {
+      "mode": "onefile",
+      "sampled_peak_process_tree_rss_bytes": 557973504,
+      "samples": 127,
+      "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27"
+    }
+  ]
+}

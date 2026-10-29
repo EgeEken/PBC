@@ -1,0 +1,132 @@
+{
+  "release_tag": "ac7566f8b4fe77020bc27ff720fbe9942040cca4",
+  "main_before": "17e569049c1b84004540ae89317a2ccdabf89832",
+  "research_before": "d507bc2c386bc3b63ccdb173068077043446fcba",
+  "zip_sha256": "edec3ec73721c3f56913db21f6089a3b6a1637fb3481e61de5b0475da8eeaede",
+  "zip_bytes": 130098,
+  "files": [
+    {
+      "file": "PBC3.py",
+      "published_sha256": "fb490b5694b49e393e3370d41597515c79fd8db3fc62f430eec10efe3c4f7df3",
+      "research_equal": false,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "pbc3_ops.py",
+      "published_sha256": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+      "research_equal": true,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "pbc3_stream.py",
+      "published_sha256": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+      "research_equal": true,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "pbc3_heads.py",
+      "published_sha256": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "research_equal": true,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "pbc3_features.py",
+      "published_sha256": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "research_equal": true,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "pbc3_types.py",
+      "published_sha256": "c3502fd9e3326e9cbdaea960fd608fb2a01dc00863e1b0d1a00d4aa6ec6a2b4d",
+      "research_equal": false,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "pbc3_trace.py",
+      "published_sha256": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+      "research_equal": true,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "learned_filler.py",
+      "published_sha256": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "research_equal": true,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "patch_policy.npz",
+      "published_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "research_equal": true,
+      "tag_equal": true,
+      "staging_equal": true
+    },
+    {
+      "file": "pyproject.toml",
+      "published_sha256": "28451a8f82775100bc6e0745fcbb1a8bcb96c28fda245dfdbff5adc3761126a0",
+      "research_equal": false,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "pbc3/__init__.py",
+      "published_sha256": "875bc5a601074859fbe8932601a2ce44112b1db39ddfc4cd4746c3cd8d16b525",
+      "research_equal": false,
+      "tag_equal": false,
+      "staging_equal": true
+    },
+    {
+      "file": "INSTALL.md",
+      "published_sha256": "a9a5b5787564e4b35825e388e3db12822711c451e53a3ccc0af3c41a2218fba2",
+      "research_equal": false,
+      "tag_equal": false,
+      "staging_equal": true
+    }
+  ],
+  "staging_files": {
+    "PBC3_1_Release_.zip": "08855cb3369000fd50d38fbb41d65920899998d366812c04519302383d873591",
+    "RELEASE_MANIFEST.json": "546e4b3e8de72cb2035702467573dfaec55f78a21ae2efb985554317485b1dbb",
+    "RELEASE_NOTES.md": "4ca7295add1e1b90d2c2b0bbfa4c1405896fd194f70b6951b2f424cfb8d6de77",
+    "SHA256SUMS.txt": "9f0d2c16f18d4f772e60363b672970858e7dae28cbbd392855dd25991bcf3926",
+    "GitHub_Source\\.gitignore": "04264abbecd6f99ea7ccfd1447b44c68d10cff576d01bc9cf6b7983138f8b65d",
+    "GitHub_Source\\INSTALL.md": "a9a5b5787564e4b35825e388e3db12822711c451e53a3ccc0af3c41a2218fba2",
+    "GitHub_Source\\learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+    "GitHub_Source\\LICENSE": "672bf89c4c0e447ae3369383ee7c711cc9db1682102548ef36e7d79d7c8f0ec9",
+    "GitHub_Source\\patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "GitHub_Source\\PBC3.py": "fb490b5694b49e393e3370d41597515c79fd8db3fc62f430eec10efe3c4f7df3",
+    "GitHub_Source\\PBC3_animation.py": "83d10a80a8e1d1ac50cdbd996bf463785f29de0ce8909033b06317f5cb4620af",
+    "GitHub_Source\\pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+    "GitHub_Source\\pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+    "GitHub_Source\\pbc3_ops.py": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+    "GitHub_Source\\pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+    "GitHub_Source\\pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+    "GitHub_Source\\pbc3_types.py": "c3502fd9e3326e9cbdaea960fd608fb2a01dc00863e1b0d1a00d4aa6ec6a2b4d",
+    "GitHub_Source\\pyproject.toml": "28451a8f82775100bc6e0745fcbb1a8bcb96c28fda245dfdbff5adc3761126a0",
+    "GitHub_Source\\README.md": "1c3c51a07b27c63ba5ebf7f7db995c7848b486725ff5e36d2e1bb4c116bb72ee",
+    "GitHub_Source\\RELEASE_MANIFEST.json": "546e4b3e8de72cb2035702467573dfaec55f78a21ae2efb985554317485b1dbb",
+    "GitHub_Source\\RELEASE_NOTES.md": "4ca7295add1e1b90d2c2b0bbfa4c1405896fd194f70b6951b2f424cfb8d6de77",
+    "GitHub_Source\\requirements.txt": "7195c77a82def811c6776f471d6b455feb60e0043cf57e446337acf8cc1f7217",
+    "GitHub_Source\\pbc3\\__init__.py": "875bc5a601074859fbe8932601a2ce44112b1db39ddfc4cd4746c3cd8d16b525",
+    "PBC3_1_Release\\INSTALL.md": "a9a5b5787564e4b35825e388e3db12822711c451e53a3ccc0af3c41a2218fba2",
+    "PBC3_1_Release\\learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+    "PBC3_1_Release\\patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "PBC3_1_Release\\PBC3.py": "fb490b5694b49e393e3370d41597515c79fd8db3fc62f430eec10efe3c4f7df3",
+    "PBC3_1_Release\\PBC3_1_Release.zip": "edec3ec73721c3f56913db21f6089a3b6a1637fb3481e61de5b0475da8eeaede",
+    "PBC3_1_Release\\PBC3_animation.py": "83d10a80a8e1d1ac50cdbd996bf463785f29de0ce8909033b06317f5cb4620af",
+    "PBC3_1_Release\\pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+    "PBC3_1_Release\\pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+    "PBC3_1_Release\\pbc3_ops.py": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+    "PBC3_1_Release\\pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+    "PBC3_1_Release\\pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+    "PBC3_1_Release\\pbc3_types.py": "c3502fd9e3326e9cbdaea960fd608fb2a01dc00863e1b0d1a00d4aa6ec6a2b4d",
+    "PBC3_1_Release\\pyproject.toml": "28451a8f82775100bc6e0745fcbb1a8bcb96c28fda245dfdbff5adc3761126a0",
+    "PBC3_1_Release\\pbc3\\__init__.py": "875bc5a601074859fbe8932601a2ce44112b1db39ddfc4cd4746c3cd8d16b525"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "all_jit_calls_forbidden": true,
+  "rows": [
+    {
+      "file": "python_balanced.pbc",
+      "sha256": "ddbae6d9c9cff61fe7b063f43442e299434b5b0e06d74ad6e3b6e89a674f93a6"
+    },
+    {
+      "file": "python_compression.pbc",
+      "sha256": "af26c1277a469fd960bc82a3e30c2a6b9fad98eabc8c0bb02842eacd7d0a6d70"
+    },
+    {
+      "file": "python_high_quality.pbc",
+      "sha256": "6869aafb7072b51fda39d41cafd4b487146f4c820ac33f21013e89b59dc812b8"
+    },
+    {
+      "file": "python_quality.pbc",
+      "sha256": "b7593bb3948011003f7ee09f0a702651741e7a0b8a8c757ef585ff60d031f9a7"
+    },
+    {
+      "file": "python_rgba.pbc",
+      "sha256": "8dbe4c3506fcd4c295fa3b3cb8b7195a13d10f6721cd60ad3ea97e2343218c58"
+    },
+    {
+      "file": "stored.pbc",
+      "sha256": "b7593bb3948011003f7ee09f0a702651741e7a0b8a8c757ef585ff60d031f9a7"
+    },
+    {
+      "file": "warmup.pbc",
+      "sha256": "9d9a4e3fc0fa2acad05f84caeb89c1a9810b32f1096615e31e2e15d5dbcc795d"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+PBC 3.2 packaging research prototype (released codec 3.1.0, stream v0)
+
+Keep pbc.exe and _internal together in the directory distribution.
+Run these commands from PowerShell or Command Prompt:
+
+  pbc.exe --version
+  pbc.exe encode "input image.png" "output.pbc"
+  pbc.exe encode input.jpg output.pbc --preset quality
+  pbc.exe encode input.png output.pbc --preset high_quality
+  pbc.exe decode output.pbc decoded.png
+  pbc.exe inspect output.pbc
+
+Balanced is the default. Other presets: compression, quality, high_quality.
+Add --force to replace an output file. Encode/decode failures return exit 1;
+invalid command arguments return exit 2. Decoding preserves source dimensions.
+PNG preserves alpha. Use PNG output when decoding an RGBA stream.
+
+The runtime is bundled: no Python installation or virtualenv activation is needed.
+The first encode compiles Numba kernels and takes longer. Writable per-user
+Numba cache and temporary directories are required. One-file pbc.exe extracts
+its runtime at startup and has substantially higher command latency.
+
+Inspect reports stored metadata; preset and MSE are not stored in v0 streams.
+Research limits: 32 million pixels, 64 MiB input files, 128 MiB unpacked bodies,
+10,000 patches. This CLI is a local prototype, not a published 3.2 release.

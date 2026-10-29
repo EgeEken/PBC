@@ -1,0 +1,438 @@
+{
+  "portable_directory": "C:\\Users\\EGE\\AppData\\Local\\Temp\\PBC26 portability 5uw5oy99",
+  "path": "C:\\Windows\\System32",
+  "checks": [
+    "python/compression/RGB",
+    "python/balanced/RGB",
+    "python/quality/RGB",
+    "python/high_quality/RGB",
+    "python/RGBA/inspect/no_overwrite/missing/7_invalid",
+    "onedir/compression/RGB",
+    "onedir/balanced/RGB",
+    "onedir/quality/RGB",
+    "onedir/high_quality/RGB",
+    "onedir/RGBA/inspect/no_overwrite/missing/7_invalid",
+    "onefile/compression/RGB",
+    "onefile/balanced/RGB",
+    "onefile/quality/RGB",
+    "onefile/high_quality/RGB",
+    "onefile/RGBA/inspect/no_overwrite/missing/7_invalid"
+  ],
+  "rows": [
+    {
+      "mode": "python",
+      "operation": "version",
+      "runs": [
+        {
+          "latency_seconds": 0.1947093999988283,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "latency_seconds": 0.1925295000000915,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "latency_seconds": 0.19418379999842728,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "mode": "python",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "compression",
+      "latency_seconds": 4.627450300002238,
+      "stdout": "{\"import_seconds\": 0.7592815999996674, \"bytes\": 947, \"codec_seconds\": 3.4894950999987486, \"mse\": 316.5495248538012, \"preset\": \"compression\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "python",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "balanced",
+      "latency_seconds": 1.8789690000012342,
+      "stdout": "{\"import_seconds\": 0.7601933999976609, \"bytes\": 2453, \"codec_seconds\": 0.8179958999971859, \"mse\": 92.76275584795322, \"preset\": \"balanced\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "python",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "quality",
+      "latency_seconds": 1.774565399999119,
+      "stdout": "{\"import_seconds\": 0.7824543999995512, \"bytes\": 4290, \"codec_seconds\": 0.6811192000022857, \"mse\": 56.90252192982456, \"preset\": \"quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "python",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "high_quality",
+      "latency_seconds": 1.7510185000028287,
+      "stdout": "{\"import_seconds\": 0.7998963999998523, \"bytes\": 6165, \"codec_seconds\": 0.6200497999998333, \"mse\": 26.15138888888889, \"preset\": \"high_quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "python",
+      "operation": "encode",
+      "fixture": "small_rgba",
+      "latency_seconds": 2.0114895999977307,
+      "stdout": "{\"import_seconds\": 0.8403007999986585, \"bytes\": 24243, \"codec_seconds\": 0.8198404999966442, \"mse\": 2214.168923596089, \"preset\": \"quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "python",
+      "operation": "benchmark",
+      "image": "googlewiki.png",
+      "measurement": {
+        "latency_seconds": 4.142315100001724,
+        "stdout": "{\"import_seconds\": 0.7791163000001688, \"first_encode_seconds\": 1.1648453000016161, \"rows\": [{\"encode_seconds\": 0.5450061000010464, \"decode_seconds\": 0.05518130000200472}, {\"encode_seconds\": 0.5735323000008066, \"decode_seconds\": 0.05052209999848856}, {\"encode_seconds\": 0.5946097999985795, \"decode_seconds\": 0.04842000000280677}], \"bytes\": 83773, \"stream_sha256\": \"a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654\", \"pixel_sha256\": \"ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0\"}",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "import_seconds": 0.7791163000001688,
+      "first_encode_seconds": 1.1648453000016161,
+      "rows": [
+        {
+          "encode_seconds": 0.5450061000010464,
+          "decode_seconds": 0.05518130000200472
+        },
+        {
+          "encode_seconds": 0.5735323000008066,
+          "decode_seconds": 0.05052209999848856
+        },
+        {
+          "encode_seconds": 0.5946097999985795,
+          "decode_seconds": 0.04842000000280677
+        }
+      ],
+      "bytes": 83773,
+      "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+      "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+    },
+    {
+      "mode": "python",
+      "operation": "benchmark",
+      "image": "cat.jpg",
+      "measurement": {
+        "latency_seconds": 4.479254100002436,
+        "stdout": "{\"import_seconds\": 0.7538697999989381, \"first_encode_seconds\": 1.1173472000009497, \"rows\": [{\"encode_seconds\": 0.5531826000005822, \"decode_seconds\": 0.10370770000008633}, {\"encode_seconds\": 0.6229079000004276, \"decode_seconds\": 0.11310280000179773}, {\"encode_seconds\": 0.6093727000006766, \"decode_seconds\": 0.1137265999968804}], \"bytes\": 63297, \"stream_sha256\": \"a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27\", \"pixel_sha256\": \"cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2\"}",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "import_seconds": 0.7538697999989381,
+      "first_encode_seconds": 1.1173472000009497,
+      "rows": [
+        {
+          "encode_seconds": 0.5531826000005822,
+          "decode_seconds": 0.10370770000008633
+        },
+        {
+          "encode_seconds": 0.6229079000004276,
+          "decode_seconds": 0.11310280000179773
+        },
+        {
+          "encode_seconds": 0.6093727000006766,
+          "decode_seconds": 0.1137265999968804
+        }
+      ],
+      "bytes": 63297,
+      "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    {
+      "mode": "onedir",
+      "operation": "version",
+      "runs": [
+        {
+          "latency_seconds": 0.6351547999984177,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "latency_seconds": 0.11526620000222465,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "latency_seconds": 0.11643019999974058,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "mode": "onedir",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "compression",
+      "latency_seconds": 5.919775800000934,
+      "stdout": "{\"import_seconds\": 2.3366347000010137, \"bytes\": 947, \"codec_seconds\": 3.275146100000711, \"mse\": 316.5495248538012, \"preset\": \"compression\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onedir",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "balanced",
+      "latency_seconds": 0.9127348000001803,
+      "stdout": "{\"import_seconds\": 0.3976435999975365, \"bytes\": 2453, \"codec_seconds\": 0.27506309999807854, \"mse\": 92.76275584795322, \"preset\": \"balanced\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onedir",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "quality",
+      "latency_seconds": 0.9945793000006233,
+      "stdout": "{\"import_seconds\": 0.4317020999988017, \"bytes\": 4290, \"codec_seconds\": 0.3052687000017613, \"mse\": 56.90252192982456, \"preset\": \"quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onedir",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "high_quality",
+      "latency_seconds": 0.910539600001357,
+      "stdout": "{\"import_seconds\": 0.38598909999927855, \"bytes\": 6165, \"codec_seconds\": 0.29110420000142767, \"mse\": 26.15138888888889, \"preset\": \"high_quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onedir",
+      "operation": "encode",
+      "fixture": "small_rgba",
+      "latency_seconds": 1.0735589000032633,
+      "stdout": "{\"import_seconds\": 0.3723483000030683, \"bytes\": 24243, \"codec_seconds\": 0.4636002999977791, \"mse\": 2214.168923596089, \"preset\": \"quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onedir",
+      "operation": "benchmark",
+      "image": "googlewiki.png",
+      "measurement": {
+        "latency_seconds": 3.109603699998843,
+        "stdout": "{\"import_seconds\": 0.3474217000002682, \"first_encode_seconds\": 0.7612876999992295, \"rows\": [{\"encode_seconds\": 0.5530264999979408, \"decode_seconds\": 0.052095200000621844}, {\"encode_seconds\": 0.5328111000017088, \"decode_seconds\": 0.0468648000023677}, {\"encode_seconds\": 0.5349586999982421, \"decode_seconds\": 0.04618690000279457}], \"bytes\": 83773, \"stream_sha256\": \"a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654\", \"pixel_sha256\": \"ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0\"}",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "import_seconds": 0.3474217000002682,
+      "first_encode_seconds": 0.7612876999992295,
+      "rows": [
+        {
+          "encode_seconds": 0.5530264999979408,
+          "decode_seconds": 0.052095200000621844
+        },
+        {
+          "encode_seconds": 0.5328111000017088,
+          "decode_seconds": 0.0468648000023677
+        },
+        {
+          "encode_seconds": 0.5349586999982421,
+          "decode_seconds": 0.04618690000279457
+        }
+      ],
+      "bytes": 83773,
+      "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+      "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+    },
+    {
+      "mode": "onedir",
+      "operation": "benchmark",
+      "image": "cat.jpg",
+      "measurement": {
+        "latency_seconds": 3.65319079999972,
+        "stdout": "{\"import_seconds\": 0.34798180000143475, \"first_encode_seconds\": 0.7692088999974658, \"rows\": [{\"encode_seconds\": 0.5872808000021905, \"decode_seconds\": 0.11040009999851463}, {\"encode_seconds\": 0.592654300002323, \"decode_seconds\": 0.10583309999856283}, {\"encode_seconds\": 0.5936660999977903, \"decode_seconds\": 0.13278680000075838}], \"bytes\": 63297, \"stream_sha256\": \"a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27\", \"pixel_sha256\": \"cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2\"}",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "import_seconds": 0.34798180000143475,
+      "first_encode_seconds": 0.7692088999974658,
+      "rows": [
+        {
+          "encode_seconds": 0.5872808000021905,
+          "decode_seconds": 0.11040009999851463
+        },
+        {
+          "encode_seconds": 0.592654300002323,
+          "decode_seconds": 0.10583309999856283
+        },
+        {
+          "encode_seconds": 0.5936660999977903,
+          "decode_seconds": 0.13278680000075838
+        }
+      ],
+      "bytes": 63297,
+      "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    },
+    {
+      "mode": "onefile",
+      "operation": "version",
+      "runs": [
+        {
+          "latency_seconds": 2.2920193999998446,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "latency_seconds": 2.084700100000191,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "latency_seconds": 2.1020465000001423,
+          "stdout": "pbc 3.2 packaging prototype; codec 3.1.0, stream v0",
+          "stderr": "",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "mode": "onefile",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "compression",
+      "latency_seconds": 7.2340461000021605,
+      "stdout": "{\"import_seconds\": 1.6381712000002153, \"bytes\": 947, \"codec_seconds\": 3.289243199997145, \"mse\": 316.5495248538012, \"preset\": \"compression\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onefile",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "balanced",
+      "latency_seconds": 4.15675310000006,
+      "stdout": "{\"import_seconds\": 1.6609362999988662, \"bytes\": 2453, \"codec_seconds\": 0.2688741000019945, \"mse\": 92.76275584795322, \"preset\": \"balanced\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onefile",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "quality",
+      "latency_seconds": 4.3070465000018885,
+      "stdout": "{\"import_seconds\": 1.7080327000003308, \"bytes\": 4290, \"codec_seconds\": 0.2910228000000643, \"mse\": 56.90252192982456, \"preset\": \"quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onefile",
+      "operation": "encode",
+      "fixture": "small_rgb",
+      "preset": "high_quality",
+      "latency_seconds": 4.439432099999976,
+      "stdout": "{\"import_seconds\": 1.6301483000024746, \"bytes\": 6165, \"codec_seconds\": 0.3177560000003723, \"mse\": 26.15138888888889, \"preset\": \"high_quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onefile",
+      "operation": "encode",
+      "fixture": "small_rgba",
+      "latency_seconds": 4.432116600000882,
+      "stdout": "{\"import_seconds\": 1.7471932000007655, \"bytes\": 24243, \"codec_seconds\": 0.46360679999997956, \"mse\": 2214.168923596089, \"preset\": \"quality\"}",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "mode": "onefile",
+      "operation": "benchmark",
+      "image": "googlewiki.png",
+      "measurement": {
+        "latency_seconds": 7.131493999997474,
+        "stdout": "{\"import_seconds\": 1.7424346000007063, \"first_encode_seconds\": 0.7661618999991333, \"rows\": [{\"encode_seconds\": 0.6462749000020267, \"decode_seconds\": 0.058675400003266986}, {\"encode_seconds\": 0.6935487999980978, \"decode_seconds\": 0.06598039999880712}, {\"encode_seconds\": 0.8108839000014996, \"decode_seconds\": 0.06426609999834909}], \"bytes\": 83773, \"stream_sha256\": \"a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654\", \"pixel_sha256\": \"ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0\"}",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "import_seconds": 1.7424346000007063,
+      "first_encode_seconds": 0.7661618999991333,
+      "rows": [
+        {
+          "encode_seconds": 0.6462749000020267,
+          "decode_seconds": 0.058675400003266986
+        },
+        {
+          "encode_seconds": 0.6935487999980978,
+          "decode_seconds": 0.06598039999880712
+        },
+        {
+          "encode_seconds": 0.8108839000014996,
+          "decode_seconds": 0.06426609999834909
+        }
+      ],
+      "bytes": 83773,
+      "stream_sha256": "a8fe94001394ce4a3030279204c30a064ef01fa84660d7d6d8eacdedf5eb8654",
+      "pixel_sha256": "ab47cd60dec9c2c9d7e2ba34ed9078d6131249055dcce9b7e2007523c1c672a0"
+    },
+    {
+      "mode": "onefile",
+      "operation": "benchmark",
+      "image": "cat.jpg",
+      "measurement": {
+        "latency_seconds": 7.9023183999997855,
+        "stdout": "{\"import_seconds\": 1.783112599998276, \"first_encode_seconds\": 0.9461383999987447, \"rows\": [{\"encode_seconds\": 0.6767932999973709, \"decode_seconds\": 0.11805459999959567}, {\"encode_seconds\": 0.6873481000002357, \"decode_seconds\": 0.11750880000181496}, {\"encode_seconds\": 0.6770286999999371, \"decode_seconds\": 0.12114599999767961}], \"bytes\": 63297, \"stream_sha256\": \"a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27\", \"pixel_sha256\": \"cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2\"}",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "import_seconds": 1.783112599998276,
+      "first_encode_seconds": 0.9461383999987447,
+      "rows": [
+        {
+          "encode_seconds": 0.6767932999973709,
+          "decode_seconds": 0.11805459999959567
+        },
+        {
+          "encode_seconds": 0.6873481000002357,
+          "decode_seconds": 0.11750880000181496
+        },
+        {
+          "encode_seconds": 0.6770286999999371,
+          "decode_seconds": 0.12114599999767961
+        }
+      ],
+      "bytes": 63297,
+      "stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+      "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2"
+    }
+  ],
+  "distributions": {
+    "onedir": {
+      "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass26\\artifacts\\onedir\\pbc\\pbc.exe",
+      "exe_sha256": "b5eafdfb5816729e2d9676546ba0abf2a0d8ee35200857f7eeebeced2e7399e8",
+      "exe_bytes": 8076004,
+      "total_bytes": 190957154,
+      "files": 140
+    },
+    "onefile": {
+      "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass26\\artifacts\\onefile\\pbc.exe",
+      "exe_sha256": "3295107cc0a34f25711536adcedf41b84ac977a578d1a3ae951afed82d978653",
+      "exe_bytes": 72291627,
+      "total_bytes": 72291627,
+      "files": 1
+    }
+  }
+}
