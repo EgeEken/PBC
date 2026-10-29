@@ -1,0 +1,132 @@
+[
+  {
+    "image": "googlewiki.png",
+    "working_target_rgb_mse": 684.3108158539193,
+    "working_size": [
+      501,
+      499
+    ],
+    "streams": [
+      {
+        "preset": "quality",
+        "raw_body_bytes": 196748,
+        "final_file_bytes": 82440,
+        "raw_metadata_bits": 6339,
+        "raw_metadata_fraction": 0.004027359871510765,
+        "patches": 53
+      },
+      {
+        "preset": "high_quality",
+        "raw_body_bytes": 484441,
+        "final_file_bytes": 176905,
+        "raw_metadata_bits": 2829,
+        "raw_metadata_fraction": 0.0007299650525038136,
+        "patches": 23
+      }
+    ]
+  },
+  {
+    "image": "mario64.png",
+    "working_target_rgb_mse": 89.1793773844736,
+    "working_size": [
+      577,
+      433
+    ],
+    "streams": [
+      {
+        "preset": "quality",
+        "raw_body_bytes": 172896,
+        "final_file_bytes": 64809,
+        "raw_metadata_bits": 6339,
+        "raw_metadata_fraction": 0.00458295738478623,
+        "patches": 53
+      },
+      {
+        "preset": "high_quality",
+        "raw_body_bytes": 284035,
+        "final_file_bytes": 89460,
+        "raw_metadata_bits": 2829,
+        "raw_metadata_fraction": 0.0012450050169873432,
+        "patches": 23
+      }
+    ]
+  },
+  {
+    "image": "monet.jpg",
+    "working_target_rgb_mse": 40.297333648877846,
+    "working_size": [
+      490,
+      511
+    ],
+    "streams": [
+      {
+        "preset": "quality",
+        "raw_body_bytes": 83918,
+        "final_file_bytes": 53871,
+        "raw_metadata_bits": 4467,
+        "raw_metadata_fraction": 0.006653816821182583,
+        "patches": 37
+      },
+      {
+        "preset": "high_quality",
+        "raw_body_bytes": 271347,
+        "final_file_bytes": 130159,
+        "raw_metadata_bits": 2829,
+        "raw_metadata_fraction": 0.0013032205994538359,
+        "patches": 23
+      }
+    ]
+  },
+  {
+    "image": "cat.jpg",
+    "working_target_rgb_mse": 280.57484123900826,
+    "working_size": [
+      612,
+      408
+    ],
+    "streams": [
+      {
+        "preset": "quality",
+        "raw_body_bytes": 134098,
+        "final_file_bytes": 63297,
+        "raw_metadata_bits": 2595,
+        "raw_metadata_fraction": 0.0024189398797894077,
+        "patches": 21
+      },
+      {
+        "preset": "high_quality",
+        "raw_body_bytes": 205662,
+        "final_file_bytes": 78898,
+        "raw_metadata_bits": 2829,
+        "raw_metadata_fraction": 0.001719447442891735,
+        "patches": 23
+      }
+    ]
+  },
+  {
+    "image": "flower.jpg",
+    "working_target_rgb_mse": 22.120693426284603,
+    "working_size": [
+      612,
+      408
+    ],
+    "streams": [
+      {
+        "preset": "quality",
+        "raw_body_bytes": 51849,
+        "final_file_bytes": 28979,
+        "raw_metadata_bits": 4584,
+        "raw_metadata_fraction": 0.01105132210843025,
+        "patches": 38
+      },
+      {
+        "preset": "high_quality",
+        "raw_body_bytes": 120112,
+        "final_file_bytes": 46094,
+        "raw_metadata_bits": 2829,
+        "raw_metadata_fraction": 0.0029441271479952046,
+        "patches": 23
+      }
+    ]
+  }
+]

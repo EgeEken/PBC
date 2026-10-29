@@ -30,7 +30,7 @@ Freeze downloads only the pinned release and rejects a digest mismatch. Build us
 
 | Form | Bytes | Files | Executable SHA-256 |
 | --- | --- | --- | --- |
-| onedir | 190957154 | 140 | b5eafdfb5816729e2d9676546ba0abf2a0d8ee35200857f7eeebeced2e7399e8 |
+| onedir | 190957170 | 140 | b5eafdfb5816729e2d9676546ba0abf2a0d8ee35200857f7eeebeced2e7399e8 |
 | onefile | 72291627 | 1 | 3295107cc0a34f25711536adcedf41b84ac977a578d1a3ae951afed82d978653 |
 
 

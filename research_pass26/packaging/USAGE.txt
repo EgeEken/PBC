@@ -1,14 +1,14 @@
 PBC 3.2 packaging research prototype (released codec 3.1.0, stream v0)
 
 Keep pbc.exe and _internal together in the directory distribution.
-Run these commands from PowerShell or Command Prompt:
+Open PowerShell or Command Prompt in this folder and run:
 
-  pbc.exe --version
-  pbc.exe encode "input image.png" "output.pbc"
-  pbc.exe encode input.jpg output.pbc --preset quality
-  pbc.exe encode input.png output.pbc --preset high_quality
-  pbc.exe decode output.pbc decoded.png
-  pbc.exe inspect output.pbc
+  .\pbc.exe --version
+  .\pbc.exe encode "input image.png" "output.pbc"
+  .\pbc.exe encode input.jpg output.pbc --preset quality
+  .\pbc.exe encode input.png output.pbc --preset high_quality
+  .\pbc.exe decode output.pbc decoded.png
+  .\pbc.exe inspect output.pbc
 
 Balanced is the default. Other presets: compression, quality, high_quality.
 Add --force to replace an output file. Encode/decode failures return exit 1;

@@ -1,0 +1,4424 @@
+[
+  {
+    "image": "googlewiki.png",
+    "codec": "PBC31",
+    "setting": "quality",
+    "bytes": 82440,
+    "mse": 781.0294058613024,
+    "encode_seconds": 0.5218378999998095,
+    "decode_seconds": 0.040462200002366444,
+    "sha256": "0f4f38e879741604d1a80ff1c47e3130629409dcf8544c05d1fbbe3a9561281a",
+    "pixel_sha256": "a9f63258bcd382fbbc8bd26c16a4ddd544745e8383bf35cd96066a9caff6c2ff",
+    "width": 814,
+    "height": 812,
+    "bpp": 0.9978092736713426
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "PBC31",
+    "setting": "high_quality",
+    "bytes": 176905,
+    "mse": 714.4317985136951,
+    "encode_seconds": 0.5698381999973208,
+    "decode_seconds": 0.05200669999976526,
+    "sha256": "94fadcfc9b485a8cfc614aef7a8df20d82769122040a602af3521141da9b3e8a",
+    "pixel_sha256": "d7444bd9900f9da2c7d800177f0ff50c78f8143619af3c8d1f5aa8c70da493af",
+    "width": 814,
+    "height": 812,
+    "bpp": 2.1411626584040375
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 1,
+    "bytes": 15892,
+    "mse": 1102.8983616957755,
+    "encode_seconds": 0.0050212999994982965,
+    "decode_seconds": 0.0031871000028331764,
+    "sha256": "05a52f89cd1c164cf39f28dc804754736e6064d2ee1f9db843d770482605e110",
+    "pixel_sha256": "f912f2058fdc3ada5e748d2ed883418a135386805eba255ebf01f0601c840a21",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.19234819234819234
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 100,
+    "bytes": 474160,
+    "mse": 191.7457017586328,
+    "encode_seconds": 0.011335700000927318,
+    "decode_seconds": 0.005970099999103695,
+    "sha256": "342240bf7ea482b87986acf290b75856864b16dc5fc14d5e9569c1e7c25084d8",
+    "pixel_sha256": "8c62e0d14069cca8cf63c0660c22eab5061a955215635eb7a8e8f4758a307ceb",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 5.738976773459532
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 50,
+    "bytes": 113063,
+    "mse": 312.3045038993315,
+    "encode_seconds": 0.007404999996651895,
+    "decode_seconds": 0.0040948999994725455,
+    "sha256": "ebc5f69ba6e204b0e2f7764b0b7d3c884bb03abcc6a76cff247cbd9ccddd6242",
+    "pixel_sha256": "f52c510ee54f6690560ce16b78c630661d9fe3d08e787283a99294837f3ac184",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.368453540867334
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 25,
+    "bytes": 74520,
+    "mse": 417.61899970951697,
+    "encode_seconds": 0.006788300001062453,
+    "decode_seconds": 0.0034364000021014363,
+    "sha256": "9d01a6a497642cbb829b6bb1759ce877036efab43b701fcc29c640c3bb8f41b4",
+    "pixel_sha256": "df2176b2b42ba6d2442e2cb7ea616849a313cb8fce9ac10d111e1aa73a32a951",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.9019498674671088
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 37,
+    "bytes": 94846,
+    "mse": 351.38233974009836,
+    "encode_seconds": 0.00601230000029318,
+    "decode_seconds": 0.004762200002005557,
+    "sha256": "7b414d18b45cca300cd089bcf47dbbe2ad984df36f8889b4be8c589e99927ad7",
+    "pixel_sha256": "cb8196b205a874a56eb5443e4995665715825cf74bc3f898f8e77042e712450a",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.147964803137217
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 31,
+    "bytes": 85064,
+    "mse": 379.5999513844341,
+    "encode_seconds": 0.006344299999909708,
+    "decode_seconds": 0.004019899999548215,
+    "sha256": "431817cbb18f32a320367bb52eea8ebacfe88278c12f0cc68a3be7ebab1ab2d7",
+    "pixel_sha256": "61527b0673bb19bdaeb90be5764a11de92a2ce2a295e189eacd0dee2b34164dc",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.0295687537066847
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 75,
+    "bytes": 163226,
+    "mse": 246.72728936953075,
+    "encode_seconds": 0.007596200000989484,
+    "decode_seconds": 0.005303800000547199,
+    "sha256": "959dc31d3d2f9ced54d995bc3431973b0022d818479764119e58198ec502d2df",
+    "pixel_sha256": "cfe5d5415ec313212356eb0f389f7877cc733bbf430901959320fc37a8fac564",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.9755994238752859
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 87,
+    "bytes": 220306,
+    "mse": 212.4938337912476,
+    "encode_seconds": 0.009217800001351861,
+    "decode_seconds": 0.005164499998500105,
+    "sha256": "4c8557f13694da1d2190686eb02e454d193de7e49f971bcbd52d813dcc88298a",
+    "pixel_sha256": "8dbd713feeaa1ed73806742ca0006f789d698002cfa4b1dee6cdb43db486c746",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.6664649423270115
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 81,
+    "bytes": 186544,
+    "mse": 229.09967048329116,
+    "encode_seconds": 0.008363799999642652,
+    "decode_seconds": 0.005151800000021467,
+    "sha256": "b60b39885e2e96277b89e675f2ab2de0722e8b81e91615e863b11cf50952b473",
+    "pixel_sha256": "3c000146b05d5bbb0e452add8eb08c65d8c0b629825107ba0b6d0902bf300be2",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.2578279130003267
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JPEG",
+    "setting": 78,
+    "bytes": 174509,
+    "mse": 237.86057872695804,
+    "encode_seconds": 0.0077468999988923315,
+    "decode_seconds": 0.0049429000027885195,
+    "sha256": "a94ecb457b3b6a5d60d69110c562c50ce24beb62ace0ae5368a0b148b2ba7fcd",
+    "pixel_sha256": "6c59a111b2c28cf1ba3b11302f589061fde40f5381d4d57628d4daa11ec96aa9",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.1121627673351813
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 0,
+    "bytes": 26530,
+    "mse": 582.7290297462712,
+    "encode_seconds": 0.19072420000156853,
+    "decode_seconds": 0.01709339999797521,
+    "sha256": "88f9d47d767aa75cd1380d4206becddee83e6713e0782419639e41f270aae810",
+    "pixel_sha256": "f72ba56e4bdd11fde370ee1a6042e9dad5a955f2ce96da8356dba64656cfe08f",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.32110480386342455
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 100,
+    "bytes": 264256,
+    "mse": 189.58752869528732,
+    "encode_seconds": 0.15591659999699914,
+    "decode_seconds": 0.02751189999980852,
+    "sha256": "70df8e0e6a5f3931da3a0fb83b4533b5fb0f62bf0d9a37bdad2431d2c6d56ac6",
+    "pixel_sha256": "d70524702511a1d23f38bfbe63f9e82af5f69bca21352a03057126fc0df17e98",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 3.1984120259982327
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 50,
+    "bytes": 100584,
+    "mse": 221.7786524208938,
+    "encode_seconds": 0.12421639999956824,
+    "decode_seconds": 0.02207980000093812,
+    "sha256": "551189872b08e37f0e6606c6d0198811000b1b75d7e5fcec39a0e25491e4bdf2",
+    "pixel_sha256": "32013c606a397ae464d9b9f4a2a9bb4a7d5b3b237994a90e52465d6ad991b7ae",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.2174144587937692
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 25,
+    "bytes": 74040,
+    "mse": 258.89890231700576,
+    "encode_seconds": 0.1226401000021724,
+    "decode_seconds": 0.020866599999862956,
+    "sha256": "ae32b29cb870d8eee17f12893f317c6d14887e6424c1e02942025b5feddf0b46",
+    "pixel_sha256": "49d778eaddcb6ee38e3fbd35ae9ce23124d1e3b5d2460997be10667eebaef902",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.8961402064850341
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 37,
+    "bytes": 87666,
+    "mse": 235.79886469541643,
+    "encode_seconds": 0.1244035999989137,
+    "decode_seconds": 0.02192269999795826,
+    "sha256": "e5403da3bf56ddee93e28ce43569dac4608fb038b5c8e3913ee13a1cd2c5c90a",
+    "pixel_sha256": "b684bb0a991b8d6bcd85aebfb5baee403d12a1144c586b92bffd0ec4ea3d84da",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.0610619576136817
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 31,
+    "bytes": 81806,
+    "mse": 245.10997002376314,
+    "encode_seconds": 0.12089629999900353,
+    "decode_seconds": 0.021692599999369122,
+    "sha256": "9f1d289240ffbdfd7f6796ec9eacfa21e52f322c9938c0b519f6f61676d0a5a1",
+    "pixel_sha256": "857eb2a75b43bba28c48da48417e0ff3ed2443a312cd9dc71c41587d7ee96be2",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.9901356797908522
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 75,
+    "bytes": 123030,
+    "mse": 206.28140545381925,
+    "encode_seconds": 0.133768699997745,
+    "decode_seconds": 0.02171489999818732,
+    "sha256": "6791baa54da0e9d53d6442371c700ad21db58b0dfccf5e961cb174657d735277",
+    "pixel_sha256": "1ccb74d881f238146862222b6a0202bc2dcf221b78e81fc08e3cac002b4f6073",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.489088730468041
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 87,
+    "bytes": 164244,
+    "mse": 195.22786983131812,
+    "encode_seconds": 0.13342519999787328,
+    "decode_seconds": 0.024056099999143044,
+    "sha256": "802d9cccbc663c07b2924d0c605dce7a46c450fde1947b2b4915be45eba62e3d",
+    "pixel_sha256": "a944bb54994cdf973b1f2de27510bda7ecc7f37959fcfc214c5361457f6b757b",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.9879207465414361
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 93,
+    "bytes": 199188,
+    "mse": 192.33251887131198,
+    "encode_seconds": 0.14403559999846038,
+    "decode_seconds": 0.023735599999781698,
+    "sha256": "129dfd44333a25cea78cae59287cf3d44e33b0d0da8114b400f16e89f19bdcc9",
+    "pixel_sha256": "021839171a31dbd4ddd755117435f6392b774b2a21a379311a41ea074f95d3da",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.41086406603648
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "WEBP",
+    "setting": 90,
+    "bytes": 179848,
+    "mse": 193.01346661260453,
+    "encode_seconds": 0.14404099999956088,
+    "decode_seconds": 0.02436930000112625,
+    "sha256": "a30e4b39a87c62b558c1a443a18d4980a47969e58f705dd666ccee3e6bb8887f",
+    "pixel_sha256": "fb18484e5a1ac21cb2ecc875091533bd4dc126b1334b2d46c1e9f22360e3142e",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.176783142300384
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 0,
+    "bytes": 5159,
+    "mse": 1396.3162906524976,
+    "encode_seconds": 0.07215520000318065,
+    "decode_seconds": 0.018733100001554703,
+    "sha256": "986ef6c0d2c4979aa7de6ecc71436531454bdde0676a3b24150e570e171c0e8a",
+    "pixel_sha256": "465de360deba20faf89270025bbe0333a62ced92ae1c4f6c7e9a9d894132bb57",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.06244175209692451
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 100,
+    "bytes": 365260,
+    "mse": 193.3013791893102,
+    "encode_seconds": 0.29761230000076466,
+    "decode_seconds": 0.05111879999822122,
+    "sha256": "0701dd0028676d135f2755f02e95cfd1555c16a08d475a0b995c2482fed430a3",
+    "pixel_sha256": "0394a73245b956e1e6f60cd566aaae38cbad7cc8ea8f1884851c4a6c253067f0",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 4.4209099381513175
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 50,
+    "bytes": 94074,
+    "mse": 219.25724139948278,
+    "encode_seconds": 0.2209554000000935,
+    "decode_seconds": 0.027522000000317348,
+    "sha256": "11dd6f86c735e8d5950f6d8fb4f8927419e1c7a0cb0028f8b2d831fbf9ce6e01",
+    "pixel_sha256": "e790d946907bce62a15294052ce78b5e1f632668f08c81f531e6f34b6fc2ca3c",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.13862093172438
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 25,
+    "bytes": 49802,
+    "mse": 312.9598044080803,
+    "encode_seconds": 0.18088300000090385,
+    "decode_seconds": 0.024040600001171697,
+    "sha256": "52324ce85eca2e94d784c52df9e919f16c72647cc2b1451fe980b42accb7c0a5",
+    "pixel_sha256": "9d2c9592bb578181544fa4875ec60eb398b6aadbfe783d3b9a9df2edb9550915",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.6027765338110166
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 37,
+    "bytes": 68395,
+    "mse": 253.65489554713693,
+    "encode_seconds": 0.1996824000016204,
+    "decode_seconds": 0.02493499999764026,
+    "sha256": "25f46ee7e8d508d39d93968795222b53ae88066fda6a959a76a60c8cb15a2673",
+    "pixel_sha256": "5375d1cec319a9f7c6b2a22c6f48e51ba8b2385715ad7e18ec490816f14630d6",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.8278161726437588
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 43,
+    "bytes": 80537,
+    "mse": 233.14901376970343,
+    "encode_seconds": 0.2070700999975088,
+    "decode_seconds": 0.02921989999958896,
+    "sha256": "8224a1d9f08f4057989a33bcaf8e59d512f10abdcb375a7de0eeb9b2388bb9c4",
+    "pixel_sha256": "698d86bee1f5a06ea23c6112f13031e48fabd02dccd71ef8f061da1e000c890c",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.974776388569492
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 75,
+    "bytes": 146618,
+    "mse": 198.31106094899198,
+    "encode_seconds": 0.2564048000022012,
+    "decode_seconds": 0.030438300000241725,
+    "sha256": "8144cee4b48f0925e3593bcb8fc2986d52b5b4fb52ae781b5529a19b3edb9311",
+    "pixel_sha256": "462442717472685f34010c25e70b1c9c60aee63a714ee8f01fc893b67cd339b8",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.7745851538954986
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 87,
+    "bytes": 188986,
+    "mse": 194.9393349350246,
+    "encode_seconds": 0.2879675000003772,
+    "decode_seconds": 0.033073300000978634,
+    "sha256": "e764bc665e5f1ed6c4af26f920a364402482f24da8111187e676383515aeb1d1",
+    "pixel_sha256": "e8c6c278d56690a556363b8ab44b9a96d652d2f4f83c3617731aa79dc6919d80",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.2873845632466323
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 81,
+    "bytes": 163246,
+    "mse": 196.188624865349,
+    "encode_seconds": 0.27194109999982174,
+    "decode_seconds": 0.0360791999992216,
+    "sha256": "9d53c7fbfb56de37419077de52a34651cb7d35009dc95f6841aca8f073319e2c",
+    "pixel_sha256": "dc9fc6604f42ae078dbeb3e0ecc640889a14b0d2e52e528c6dfda6859ff5376c",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.9758414930828725
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "AVIF",
+    "setting": 84,
+    "bytes": 174211,
+    "mse": 195.6423956984302,
+    "encode_seconds": 0.2827123000024585,
+    "decode_seconds": 0.03413340000042808,
+    "sha256": "47aef37f688cc7c45364e10c430e61ce62fbbbfde35a672cb7da535837f272af",
+    "pixel_sha256": "43ca518bc05cba32f019bc9055c3d2a5f76f10c2c3c0d1f0d9e04fad6a9d35a3",
+    "working_size": [
+      814,
+      812
+    ],
+    "metadata_original_size": false,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.108555936142143
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 1,
+    "bytes": 4240,
+    "mse": 1600.277234298786,
+    "encode_seconds": 0.002353600000787992,
+    "decode_seconds": 0.012731099999655271,
+    "sha256": "63da0984ad261dabb2f301d7928bbe40f8323518d09d6e8becf3c253f2cf502b",
+    "pixel_sha256": "e65c9814d55d68d9a4625779b336e8fef63d894fa14963ec0e3a9c6721ecd0ed",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.05131867200832718
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 100,
+    "bytes": 205244,
+    "mse": 757.1304808503085,
+    "encode_seconds": 0.006551099999342114,
+    "decode_seconds": 0.014292899999418296,
+    "sha256": "a93163ef7b0ce8ec4eed61a5bb072716c8694310c69e14fc93524f7a5756a6d2",
+    "pixel_sha256": "d919bde08fa58c24b367373df09101e851d75a430e43624dc280f6c202660ba2",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.4841626220936566
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 50,
+    "bytes": 43592,
+    "mse": 866.8687137652655,
+    "encode_seconds": 0.0034707000013440847,
+    "decode_seconds": 0.012774599999829661,
+    "sha256": "f949845ac576017e4668a92dc72c2b8969e24c7f5904fbdd02144cd5da30f2ba",
+    "pixel_sha256": "4fffefc8b4c8e1e2976bf496d05b70eb4f90192166e1d2d93938b444f96ec91d",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.5276140448554242
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 75,
+    "bytes": 63432,
+    "mse": 800.5047541383748,
+    "encode_seconds": 0.0030923000012990087,
+    "decode_seconds": 0.011752399997931207,
+    "sha256": "2e7c5477e5072a38b144ed84b41c7b184ea0ac3586bbe9117dae3006301c6586",
+    "pixel_sha256": "5f514c36c8742bc8609dcf0c9d761976bd97192c207d9d0ce4dc90d9f2476c8e",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.7677466987811815
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 87,
+    "bytes": 86755,
+    "mse": 774.9965691732933,
+    "encode_seconds": 0.0036814999984926544,
+    "decode_seconds": 0.010775999999168562,
+    "sha256": "e6565e06e9f6d6fc9181445c6dd47b4947893603b9b45e085b91a23c354458fa",
+    "pixel_sha256": "b24f53726187df8b9c6767ce5aeccf8ce994297148da4baaff0adfb542a9b8bd",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.050035705208119
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 81,
+    "bytes": 73188,
+    "mse": 786.6863090699297,
+    "encode_seconds": 0.003892599997925572,
+    "decode_seconds": 0.012831399999413406,
+    "sha256": "1668e64edad971ba5e9985cdd8451ba2c2e839d50e4e50ab3ca0da5e28efa16e",
+    "pixel_sha256": "3da14482db765441347fb6a5d7f8d29a6dc859639f5f9f291becb0c72c4d1f7d",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.8858280582418513
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 93,
+    "bytes": 112932,
+    "mse": 764.2317807619531,
+    "encode_seconds": 0.0041042000011657365,
+    "decode_seconds": 0.012155000000348082,
+    "sha256": "51710229a9e01c29c4124c5ced444ca76b00b36693d838328fbc6108b008944d",
+    "pixel_sha256": "a49020d584d6057850ab3523002315527e4bf2edcdee88f893ae6efdf761ec65",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.3668679875576428
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 96,
+    "bytes": 140700,
+    "mse": 759.9717116915393,
+    "encode_seconds": 0.004735100003017578,
+    "decode_seconds": 0.013097299997752998,
+    "sha256": "1483439cf7382af79a4baf0d251ab282b578c85f0d96155137678e678fcd34e7",
+    "pixel_sha256": "48719af453f5d9b36ca167fd6f43d3f979446ade58a9a68e2ca632712f8a2db1",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.7029568753706685
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 98,
+    "bytes": 168095,
+    "mse": 757.9324727773004,
+    "encode_seconds": 0.006489899998996407,
+    "decode_seconds": 0.013727800000197021,
+    "sha256": "ab57d6c0d29049f90292e62e61f61074b1bed5b4d505c498ef63b1f660e25c35",
+    "pixel_sha256": "abba3055cbcbbfea48f592f8512d527df109074ea3db9cb41670e163eef574b2",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.034531172462207
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_JPEG",
+    "setting": 99,
+    "bytes": 190959,
+    "mse": 757.2667723702207,
+    "encode_seconds": 0.005613599998468999,
+    "decode_seconds": 0.0138732000013988,
+    "sha256": "cfc6e8b46aab7054e29d76c97e73e1ad413231f3f7e4d0b095a89291b33b3d37",
+    "pixel_sha256": "bec76f34132e604fcb577f5f12f18c5f0a24961fc1d953c4783283983dca4c9b",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 2.3112646905750354
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_WEBP",
+    "setting": 0,
+    "bytes": 7356,
+    "mse": 1270.6343811904158,
+    "encode_seconds": 0.04507549999834737,
+    "decode_seconds": 0.016098600000987062,
+    "sha256": "7543d1aabb5060b6a8ac9db1630956119cf5513444d72b19da4bf7eb2ca08ff6",
+    "pixel_sha256": "bb3e5998b474deb7f2749873fdf73b465d26be42d9fb8c00685bc58bb02cea0e",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.08903305455029593
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_WEBP",
+    "setting": 100,
+    "bytes": 119814,
+    "mse": 760.3412933757761,
+    "encode_seconds": 0.07041620000018156,
+    "decode_seconds": 0.02258360000269022,
+    "sha256": "7850e676987bc02049ea5caad54f8124f8bed57b2cbfd2b73f856965bec22f3d",
+    "pixel_sha256": "c37cb8f4d427edd2ed9643bd8d6c0993ce3ca63500cb40c86812b2019030abdd",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.4501640018881399
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_WEBP",
+    "setting": 50,
+    "bytes": 38932,
+    "mse": 792.5730005083453,
+    "encode_seconds": 0.05423760000121547,
+    "decode_seconds": 0.01774460000160616,
+    "sha256": "72e0bb7273c23695923485d29759d550a8dcd64baf4b387162a60a9e524a12a6",
+    "pixel_sha256": "8958a2c5a2ea3e1d0b4214f3aeb372cd610ccb7fe9e52f426ca5265be28f7849",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.47121191948778157
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_WEBP",
+    "setting": 75,
+    "bytes": 48332,
+    "mse": 778.9256973610422,
+    "encode_seconds": 0.053566300000966294,
+    "decode_seconds": 0.020284299997001654,
+    "sha256": "614dbcb17a17b93b0161ff345f7e644ead19c379d4cf3d7eda935b7c2e94dc5a",
+    "pixel_sha256": "c065349413d15669a9374c1bec8465985b31a59f7969d0784a71321918f02a96",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.5849844470534126
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_WEBP",
+    "setting": 87,
+    "bytes": 69224,
+    "mse": 766.9792632421943,
+    "encode_seconds": 0.06544600000052014,
+    "decode_seconds": 0.020559300002787495,
+    "sha256": "ce3a391db64bd2bbbe973a8cc63fdecaf4e82c455eb492ae12e1c4f923efc7d9",
+    "pixel_sha256": "63d9d902c5de4d86de0af711593823f46e60168c0ac0dc0a7cf9a42fbc110cf4",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 0.8378499412982172
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "working_WEBP",
+    "setting": 93,
+    "bytes": 88808,
+    "mse": 762.6423583794274,
+    "encode_seconds": 0.06749960000161082,
+    "decode_seconds": 0.020574499998474494,
+    "sha256": "880bbcdf2e077601786c7063d431e4a4a46f6400d4b0c3510ba8bb8941b01889",
+    "pixel_sha256": "db2aa8d5d1c9ee590cc56be0c949b9fbb39896f1f8cad0ff01523a327c81e999",
+    "working_size": [
+      501,
+      499
+    ],
+    "metadata_original_size": true,
+    "width": 814,
+    "height": 812,
+    "bpp": 1.074884109366868
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JXL",
+    "setting": 8,
+    "bytes": 71774,
+    "mse": 309.65208250122043,
+    "encode_seconds": 0.10747189999892726,
+    "decode_seconds": 0.14795299999968847,
+    "sha256": "d3c9b72060ca09a1ebaeadf08758ca6f66172dc4647ab31cd0a1587315608229",
+    "pixel_sha256": "f665eff19d44daaee2522578b529ced17a9c4b37a4f1060a7766b9e19bc7c8a3",
+    "width": 814,
+    "height": 812,
+    "bpp": 0.8687137652654894
+  },
+  {
+    "image": "googlewiki.png",
+    "codec": "JXL",
+    "setting": 15,
+    "bytes": 40292,
+    "mse": 487.8555003167072,
+    "encode_seconds": 0.08167459999822313,
+    "decode_seconds": 0.1571841000004497,
+    "sha256": "04caaa620aae01fc7a286c4dc55ce967bb5837fadff3ed745ddb43fb2ac0e13c",
+    "pixel_sha256": "1e76e430964ec791aabe59c145bcaa64bbd2d372295e941fa99c029c75ffcf01",
+    "width": 814,
+    "height": 812,
+    "bpp": 0.4876726256036601
+  },
+  {
+    "image": "mario64.png",
+    "codec": "PBC31",
+    "setting": "quality",
+    "bytes": 64809,
+    "mse": 135.47174097382972,
+    "encode_seconds": 0.5286887000002025,
+    "decode_seconds": 0.04536799999914365,
+    "sha256": "ae2187db7cb5844eed6195335873a40b03e8843ed35bcbf8bb6e7a4a1fc310e1",
+    "pixel_sha256": "7e4e9718dcc1821fc0bfb90250be5ca2ee113a19caef2fd11e9df6fda290a80a",
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5209056712962963
+  },
+  {
+    "image": "mario64.png",
+    "codec": "PBC31",
+    "setting": "high_quality",
+    "bytes": 89460,
+    "mse": 122.0255902241941,
+    "encode_seconds": 0.4849248999998963,
+    "decode_seconds": 0.04873119999683695,
+    "sha256": "7f7327271d8423c5643e827344f2ad08370b59bb896f864f121c6cb29678ee2e",
+    "pixel_sha256": "57fc0a3f94f08ae6f45e7ed0acf320f1f62812f6192ea364a1ffa25696cee27b",
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.7190393518518519
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 1,
+    "bytes": 11437,
+    "mse": 469.79607593342763,
+    "encode_seconds": 0.00708929999746033,
+    "decode_seconds": 0.0048060999979497865,
+    "sha256": "4bedfabd5f86e2adaa55b3773722f24fd2fbe9bbe6b656e86088d16b43498a83",
+    "pixel_sha256": "ea0705a00a4883d187981d21a15e46118bbfe7125dfe05a4f6d72cdc70216e97",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.09192547582304526
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 100,
+    "bytes": 440724,
+    "mse": 44.692355685763886,
+    "encode_seconds": 0.018363200000749202,
+    "decode_seconds": 0.010266299999784678,
+    "sha256": "bd89a313149188c7e5169eaf4665634db630967536bb106fa885a33aede52d2d",
+    "pixel_sha256": "4018efbbe76ee1ddb45536374381326349b2aa212346bb2cd22f4b6495cb5ad3",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 3.5423418209876543
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 50,
+    "bytes": 69581,
+    "mse": 83.01613270533265,
+    "encode_seconds": 0.00891340000089258,
+    "decode_seconds": 0.0060146000032546,
+    "sha256": "81bf16a5b57509bc0999ca8219bcc815e221cae063dfdfc05e5967da7ae68b8e",
+    "pixel_sha256": "aa4f241ce025674394d6f8a87819bd3a02812b4f3441a60dcecab9525b798ac9",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5592608667695473
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 25,
+    "bytes": 45781,
+    "mse": 117.43604587298525,
+    "encode_seconds": 0.009650400003010873,
+    "decode_seconds": 0.0057980000019597355,
+    "sha256": "5e4f3e6014c32dad89d2edf1d07551e51af39c891e0b5b135095175a75a15370",
+    "pixel_sha256": "5dd09685bab62da86a4f002785e6cc7664a125b8dc3659f54963f08e9f352a56",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.3679671424897119
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 37,
+    "bytes": 58153,
+    "mse": 96.21550048493226,
+    "encode_seconds": 0.007409300000290386,
+    "decode_seconds": 0.005054400000517489,
+    "sha256": "b2ddf93d20ead3e087bed9cc03a530890073a2f6a30a121172b7e010573bf4a3",
+    "pixel_sha256": "5746a57071153c70829b7d701d8fff9caff772cb9d59ff81d8221248e633898e",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.467407728909465
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 43,
+    "bytes": 63618,
+    "mse": 89.95551918563528,
+    "encode_seconds": 0.009263199997803895,
+    "decode_seconds": 0.005684899999323534,
+    "sha256": "1776a01812ee653ad22d0370be0e028f4e37fe7156772b988c16cd79b774646b",
+    "pixel_sha256": "538e8e8d0b5b81f0fdfe44e11fe48d39a02d4d41399756ffe82e46bc8019325e",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5113329475308642
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 75,
+    "bytes": 100702,
+    "mse": 61.77094552415552,
+    "encode_seconds": 0.00980870000057621,
+    "decode_seconds": 0.0065390999989176635,
+    "sha256": "f42b8823b54989e5687cb981e6d6987080e5d56733b3c3ce970e8776310ff634",
+    "pixel_sha256": "dd1536bc24ec00f3a5701361fe470f5f445f506534aebc7b76a047704693495f",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.809397505144033
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 62,
+    "bytes": 81090,
+    "mse": 73.42241853941616,
+    "encode_seconds": 0.008217799997510156,
+    "decode_seconds": 0.0072183000011136755,
+    "sha256": "7508097bda61d25b58d64c1e05bcb646b75eccae119d6e50e0e5da1d90f741ab",
+    "pixel_sha256": "2dfa9877b7de1481cd442da7eaeff73430f3494695790d24eb0ebc51b6f3a6b6",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.6517650462962963
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 68,
+    "bytes": 88986,
+    "mse": 67.6122068972908,
+    "encode_seconds": 0.008605099999840604,
+    "decode_seconds": 0.006309200001851423,
+    "sha256": "fb80d5ecf3eb70e986a003f933ed605f7197f168e8aebb329cf8d40182caa6b4",
+    "pixel_sha256": "4b4d34b238e801dbf81f15f8da3eca167b0f8f11a53b033705e6f3b5a56eb851",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.7152295524691358
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JPEG",
+    "setting": 71,
+    "bytes": 94278,
+    "mse": 64.71541843492798,
+    "encode_seconds": 0.01170319999800995,
+    "decode_seconds": 0.00784390000262647,
+    "sha256": "738424303aa545635522386940904714be97be717287bdf6623a539c610b242c",
+    "pixel_sha256": "9e368bc78610c9e77073ba1628d7b036d22137136f02826a495ee81e079e3a56",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.757764274691358
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 0,
+    "bytes": 13438,
+    "mse": 187.04696307816786,
+    "encode_seconds": 0.13459580000198912,
+    "decode_seconds": 0.018737800000963034,
+    "sha256": "b9e93c26d3f5c473e17994d4107fb02f9aa6926b382752c5a0b5e01c6c46c677",
+    "pixel_sha256": "5db465ae18ac7df66eadbe5fc69af90759d5ea896640d3d28c74899d0f4a740e",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.10800861625514403
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 100,
+    "bytes": 202896,
+    "mse": 45.50962228866598,
+    "encode_seconds": 0.21083050000015646,
+    "decode_seconds": 0.028273100000660634,
+    "sha256": "5decf9602c26d6912d3020fe81576cecbf2cfda6a85e2742d2bfa68db45232f6",
+    "pixel_sha256": "d0955218e717299d050f9c59d5a6f5c6e3145e9e9b72f256ffc0934959f64625",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 1.630787037037037
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 50,
+    "bytes": 48814,
+    "mse": 64.97931502647033,
+    "encode_seconds": 0.15437680000104592,
+    "decode_seconds": 0.030466400003206218,
+    "sha256": "02f59c8187339ea9cb2ca41c2a7cbcb004914ca9086b52f8a4c8ae4d631715b0",
+    "pixel_sha256": "0928f854a8fd838061491ddb1baa6764f753ab97b5a88b5b225881f08c8115c4",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.39234503600823045
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 75,
+    "bytes": 62642,
+    "mse": 57.128778988768865,
+    "encode_seconds": 0.1944091000004846,
+    "decode_seconds": 0.026975500000844477,
+    "sha256": "71568ac415b2d1256451ca14a50db1085df879e8b45ea4fbabafa9393570d0d6",
+    "pixel_sha256": "842a954459141f173d1fc7d2501aff6dcd90f046a0b942a15b13127f6f5c068f",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5034882973251029
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 87,
+    "bytes": 94570,
+    "mse": 49.055237737375684,
+    "encode_seconds": 0.21732449999763048,
+    "decode_seconds": 0.0289005000013276,
+    "sha256": "4da74c49839a57688d3102bba6ae24580f54adda7c113c3bd2c38aafdf4a409f",
+    "pixel_sha256": "80d98a654ce8d0bf2ba9190138b3b794276ca29e318fed03329c2b073df46992",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.7601112397119342
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 81,
+    "bytes": 75192,
+    "mse": 52.35762046950017,
+    "encode_seconds": 0.18094659999769647,
+    "decode_seconds": 0.023063000000547618,
+    "sha256": "f6b1d885fb507704b9c670bcceb16e265ac2e16335e45fdd2a2c305e550f9463",
+    "pixel_sha256": "92ad9a382036592531b199380bfd1ce21c814964dce0722b60bc26a56c423c5f",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.6043595679012346
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 84,
+    "bytes": 84236,
+    "mse": 50.39886750900206,
+    "encode_seconds": 0.17738110000209417,
+    "decode_seconds": 0.02579219999825,
+    "sha256": "0c168c8a26c4c15cda59819928c2df70b4cedcf8f188b69be7dc3bb6d3275107",
+    "pixel_sha256": "ab1bf63468eed61160a401ee934f706a3bfca7eab5701c75d22d1cfbbd36088e",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.6770511831275721
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 85,
+    "bytes": 86144,
+    "mse": 50.0703369475523,
+    "encode_seconds": 0.18158060000132537,
+    "decode_seconds": 0.026555600001302082,
+    "sha256": "2777a1a7ad242244802c2b08ba46161430bb6535348b9a0453dfeca07d39fd11",
+    "pixel_sha256": "9520db5c68bff7377abb595b90a01e2b1941a725076cd329d6cd206ace429278",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.6923868312757202
+  },
+  {
+    "image": "mario64.png",
+    "codec": "WEBP",
+    "setting": 86,
+    "bytes": 91246,
+    "mse": 49.14331590524262,
+    "encode_seconds": 0.17303239999819198,
+    "decode_seconds": 0.027217900002142414,
+    "sha256": "0d7c599516d9cc6a981c05fb1dc084becd16054bdae2c26826e9131ded562179",
+    "pixel_sha256": "8bb48355f8753c0a5869452e0ab5c1d0d6d2a43ad7207b8bdd64698f0839cce4",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.7333944187242798
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 0,
+    "bytes": 4083,
+    "mse": 581.0478251055598,
+    "encode_seconds": 0.05321080000067013,
+    "decode_seconds": 0.020999500000471016,
+    "sha256": "37a1abdb6a0a51b6a44d8070a80ff71bcf72402701607dc238d80f9720206da1",
+    "pixel_sha256": "b0874eb5691c6e4e0b66050d43ec1630be98fec9e5061470dd0d0c0bc2ba1265",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.032817322530864196
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 100,
+    "bytes": 351829,
+    "mse": 45.508706007801784,
+    "encode_seconds": 0.4262734999974782,
+    "decode_seconds": 0.05096390000107931,
+    "sha256": "dfb02e51ae1368894b0689739efe2f367aabfeddc195bb63d2d2f136b59e2a0c",
+    "pixel_sha256": "2e3d7113101dc6c04ff7b35cb72530e4e278b4cbae5834e8b82e8f0a52f1a973",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 2.8278436856995883
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 50,
+    "bytes": 38710,
+    "mse": 62.385394563400205,
+    "encode_seconds": 0.1439250000003085,
+    "decode_seconds": 0.025635800000600284,
+    "sha256": "b4a0ef6398345728031ce96270339d96f1f32042328b95a25ee0107ee265a1a1",
+    "pixel_sha256": "8bc2aa3d4b46132e51f18934e3b603d6f8138ceeebef070a1359eb23b07ee77a",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.311133616255144
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 75,
+    "bytes": 72041,
+    "mse": 49.41805749796382,
+    "encode_seconds": 0.19038069999805884,
+    "decode_seconds": 0.02734280000004219,
+    "sha256": "dbdb6fd62adc46d084509cc30448b0ebfba65a83c86ea847d2561515517a9d9d",
+    "pixel_sha256": "bd0d2111c7518d46756b3ef941ccb9c7b31e573cd9c293f1d922557d7fb893c5",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5790332433127572
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 62,
+    "bytes": 55975,
+    "mse": 52.80198487332819,
+    "encode_seconds": 0.18944460000057006,
+    "decode_seconds": 0.02862049999748706,
+    "sha256": "354166152cfc922ae44e31281d0b0bc9b0bfdfc70053e682d4f191fbcfc1b9ba",
+    "pixel_sha256": "5aa409e6ec9f3a97b26019fd27084b94d3dfe6fa14ff28afd8575dbdf52e25c3",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.449901941872428
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 68,
+    "bytes": 62909,
+    "mse": 50.919803321116255,
+    "encode_seconds": 0.1830885000017588,
+    "decode_seconds": 0.026613000001816545,
+    "sha256": "b0262259c02072b40d695ec29331d8b3886b2e8b973edcfd4ee2dd6e9c70606c",
+    "pixel_sha256": "e17e66175c983dd520cbd88220463df69a238bd481b7b71bf7c7faa25bee247c",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5056343235596708
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 87,
+    "bytes": 103496,
+    "mse": 46.93415302962106,
+    "encode_seconds": 0.22491290000107256,
+    "decode_seconds": 0.03198049999991781,
+    "sha256": "5a79cfb76f1e5b0220843c8557435c39b53982b299662e3164caaa1a0d779daf",
+    "pixel_sha256": "2351a1404925ff8cb008f9f4f238a96e84cf61f60aaf7ebdbcc3e5b57f147fb9",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.8318544238683128
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 81,
+    "bytes": 83988,
+    "mse": 48.046469773448216,
+    "encode_seconds": 0.202361399999063,
+    "decode_seconds": 0.02857199999925797,
+    "sha256": "0b637d853519c398ab92b92141a954c1baf05f8568b42bb8c06b9abc63f9e95d",
+    "pixel_sha256": "474f87602fdb35fff1a3226509365ecb8a3cf667e79e9b4d81a00df7d165aef4",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.6750578703703703
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 84,
+    "bytes": 92431,
+    "mse": 47.57557776598937,
+    "encode_seconds": 0.2125255000028119,
+    "decode_seconds": 0.030595499996707076,
+    "sha256": "3c18750c79414d51651062070e27b00bfed1fc2228a3da830746d2b63e50875b",
+    "pixel_sha256": "9dbf495323ad4d4dc0fffda1695661b46ac2199b86a3a933893aff289bcc77b6",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.74291891718107
+  },
+  {
+    "image": "mario64.png",
+    "codec": "AVIF",
+    "setting": 82,
+    "bytes": 88121,
+    "mse": 47.61214929483882,
+    "encode_seconds": 0.20504270000310498,
+    "decode_seconds": 0.029718900001171278,
+    "sha256": "5ce50c759e295fa82f5b033758e2daafc1088517a5854c4b62e1c8be884f1f94",
+    "pixel_sha256": "5b63ee007bf5376fb81e73b78fc998ed9bfe476facb177c1e21e300ebc36947b",
+    "working_size": [
+      1152,
+      864
+    ],
+    "metadata_original_size": false,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.7082770704732511
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 1,
+    "bytes": 3864,
+    "mse": 750.0172104070216,
+    "encode_seconds": 0.002243400002043927,
+    "decode_seconds": 0.015452699997695163,
+    "sha256": "b6a3c5f5c3e0af7c423bf353bccfcf40ca43a13de737c46c0a7ebafe7792864d",
+    "pixel_sha256": "4aac2742730629cc221dd55a9a580efc039f96f53720184c604d8f0ae41b4b96",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.031057098765432098
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 100,
+    "bytes": 149879,
+    "mse": 150.8551315077375,
+    "encode_seconds": 0.004102899998542853,
+    "decode_seconds": 0.01595689999885508,
+    "sha256": "6c0e7118d27fb4f2c9f5f9a7a6431819a7495b8a53de0a7d60d9e15684394e5e",
+    "pixel_sha256": "cc96cb2d6fee25aa30c24a09ba6f8a61134244b462d9b60351fb93a0252244eb",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 1.204660172325103
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 50,
+    "bytes": 25570,
+    "mse": 216.3182244111154,
+    "encode_seconds": 0.0028566000000864733,
+    "decode_seconds": 0.015713799999502953,
+    "sha256": "56294a07e18f68dc3e554d56be22e5455be9c24840e3514763284f18e524181f",
+    "pixel_sha256": "541ebb3e2db61ca73c1349ca68f75c51d70b87fc570242c6b026f25823cb0397",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.20552019032921812
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 75,
+    "bytes": 37005,
+    "mse": 180.36702574427727,
+    "encode_seconds": 0.003373200001078658,
+    "decode_seconds": 0.017685000002529705,
+    "sha256": "5646951a51befc25470368f616ec83f085287df26cf41d69d60ea9342e43f330",
+    "pixel_sha256": "eb585e0b3741dda1affd69f3123d9a1ff5a1d8400aa35bd7d805117860a02951",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.2974295910493827
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 87,
+    "bytes": 51674,
+    "mse": 161.22995635609567,
+    "encode_seconds": 0.003255300001910655,
+    "decode_seconds": 0.0162806999978784,
+    "sha256": "414c56fa0ef6eff9c3e4fa9237a5df1e3242fb47e3335985cb8a2ef22abf348b",
+    "pixel_sha256": "d220198cdc3920dbaf2ca70b31306898eb3b2e03baeff9462c04237f12283ad2",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.415332433127572
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 93,
+    "bytes": 68643,
+    "mse": 154.048684453768,
+    "encode_seconds": 0.003551599998900201,
+    "decode_seconds": 0.016390000000683358,
+    "sha256": "9198c52fad0463fb391eef5472713cc83cc19e3e6deb024e06f090648a917a16",
+    "pixel_sha256": "6e62597f8d72eb7a3c4bc6ca16d397c3fd15ab2d760fbc54695fcb7a41b479a1",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5517216435185185
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 96,
+    "bytes": 88006,
+    "mse": 151.9460291816701,
+    "encode_seconds": 0.0032752999977674335,
+    "decode_seconds": 0.016250599997874815,
+    "sha256": "1f40bb7fe6cda1cd938dcae5197e50fcdaf64f346f195f8ba418eac1ad5d7720",
+    "pixel_sha256": "d86958a474402e5afbf0606ea5add9f019e48e2880864aa1edd13b5fe3e48fa1",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.7073527520576132
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 98,
+    "bytes": 107199,
+    "mse": 151.29872598111712,
+    "encode_seconds": 0.003959699999541044,
+    "decode_seconds": 0.01699960000041756,
+    "sha256": "ae443332ba5dd280186384e2bb21093a0b27c061c0bc2f5c316b4674a2fec1a1",
+    "pixel_sha256": "fba8a44b74b8039cdb24c8b2fb24158eb94cbd86c1c0458fc1a0502099090df4",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.8616174768518519
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_JPEG",
+    "setting": 97,
+    "bytes": 97382,
+    "mse": 151.48878895533264,
+    "encode_seconds": 0.0035390000011830125,
+    "decode_seconds": 0.014914200000930578,
+    "sha256": "649616d1fedb0694f3fb1a5e9669c34cb641cee0d5083043262559cf57bf9312",
+    "pixel_sha256": "e7e8540f6a6dc93287077ab548a8e9bf1b959fb0955b8926f91061736573eb42",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.7827128343621399
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_WEBP",
+    "setting": 0,
+    "bytes": 4902,
+    "mse": 401.2977192777992,
+    "encode_seconds": 0.039450500000384636,
+    "decode_seconds": 0.019688899999891873,
+    "sha256": "45b1fac4a45c0322cd504190d6aa9bbcb7056b6892efb77ebc295ed3379ef45a",
+    "pixel_sha256": "2789b5d35815a58443fead0fa8ad76a49444485076ddb60ed0768516d17e0d70",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.039400077160493825
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_WEBP",
+    "setting": 100,
+    "bytes": 74456,
+    "mse": 154.95598770790465,
+    "encode_seconds": 0.07232319999820902,
+    "decode_seconds": 0.02410089999830234,
+    "sha256": "a44fb11d6272bba362e350692566bfe3d87a854d5e2a3ebb24bdfa9df38d7a1b",
+    "pixel_sha256": "40a0669de648933cb7e28a3afb841d5555cf3872a0fa155ffb6878f785fa9222",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.5984439300411523
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_WEBP",
+    "setting": 50,
+    "bytes": 19290,
+    "mse": 180.94919463734567,
+    "encode_seconds": 0.048156400000152644,
+    "decode_seconds": 0.021290299999236595,
+    "sha256": "b42cfc7ad650edaa33f1ddf6dc95caf6f442ed0b0f064315bc05b8f4d09d996a",
+    "pixel_sha256": "8089085310c8ea7003611f3c02b83b9296c6ca918afef5e3aedbbcb9eeab6ed8",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.15504436728395063
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_WEBP",
+    "setting": 75,
+    "bytes": 24724,
+    "mse": 170.93399562757202,
+    "encode_seconds": 0.054671500001859386,
+    "decode_seconds": 0.02162549999775365,
+    "sha256": "da7c9523578b51bd766e0a0b47304ffb559e3a79d5d9eb6bb7ffc90df9741393",
+    "pixel_sha256": "f9bc43dd7b6424e70573a49f4d8516566a0e8396f69d9f61a30105c6f5a21bbd",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.1987204218106996
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_WEBP",
+    "setting": 87,
+    "bytes": 37736,
+    "mse": 159.21457583161865,
+    "encode_seconds": 0.05418720000307076,
+    "decode_seconds": 0.020241999998688698,
+    "sha256": "b786ea00f1023e5b66d8c7666cea7d03c1bab85364a67e1ac7eb5ae1fdee0c9d",
+    "pixel_sha256": "021f4f73e5a7a9ab5176ebbb9b2f8773cd0890deaedaefc9c2c5a2fb2ec57d7c",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.30330504115226337
+  },
+  {
+    "image": "mario64.png",
+    "codec": "working_WEBP",
+    "setting": 93,
+    "bytes": 49930,
+    "mse": 156.77100379640348,
+    "encode_seconds": 0.054297199996653944,
+    "decode_seconds": 0.021397399999841582,
+    "sha256": "57c86c849afcb168ddaccf5ae59c8e5aee419ade67d9385c48d51bbec518f8ac",
+    "pixel_sha256": "5563bb41c210bfaff52bebdc633102938aeb7ac252d3670a6c57c4581ca2c0db",
+    "working_size": [
+      577,
+      433
+    ],
+    "metadata_original_size": true,
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.40131494341563784
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JXL",
+    "setting": 8,
+    "bytes": 39117,
+    "mse": 130.03330727827074,
+    "encode_seconds": 0.10624670000106562,
+    "decode_seconds": 0.18838340000002063,
+    "sha256": "dcc4650e64815cb3d2b8dfcb70fef07707d3acb20ebce3369564839caa0ec28d",
+    "pixel_sha256": "926701dd5948b14ea776d68bcc9aaf79025654605a98a7b735be835685318a10",
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.31440489969135804
+  },
+  {
+    "image": "mario64.png",
+    "codec": "JXL",
+    "setting": 15,
+    "bytes": 24129,
+    "mse": 203.0709414384002,
+    "encode_seconds": 0.09617580000121961,
+    "decode_seconds": 0.19931429999996908,
+    "sha256": "a793b3d496955b59fd6f6f681a689169a7016bb264eaf850cf85fb147a3aaed5",
+    "pixel_sha256": "3e31fa0f4cbaefe991ad95fa7eb506631c4dd379aa4141c9e69a99b421b9e738",
+    "width": 1152,
+    "height": 864,
+    "bpp": 0.1939380787037037
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "PBC31",
+    "setting": "quality",
+    "bytes": 53871,
+    "mse": 96.79610854731196,
+    "encode_seconds": 0.37975160000132746,
+    "decode_seconds": 0.03522930000326596,
+    "sha256": "e74a08cf29b73233c5543536dc362954d156d874d8106b25df2099eef96ad211",
+    "pixel_sha256": "407c44e804d50a3aa99356302313225e046521642f2aee21d3890e9ada219df1",
+    "width": 900,
+    "height": 939,
+    "bpp": 0.5099609513667022
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "PBC31",
+    "setting": "high_quality",
+    "bytes": 130159,
+    "mse": 53.97610973060387,
+    "encode_seconds": 0.4770289000007324,
+    "decode_seconds": 0.04648730000189971,
+    "sha256": "84bd81318336b139b9bee98af8d58635d1eed91454203fd81936f783aa28d02e",
+    "pixel_sha256": "cdbbb9ca75b2dc3f3006c29bc89ca4304c5089b1f7a0f4e52e0ae4d27dead569",
+    "width": 900,
+    "height": 939,
+    "bpp": 1.232128742160691
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 1,
+    "bytes": 6775,
+    "mse": 392.6594485859662,
+    "encode_seconds": 0.006999900000664638,
+    "decode_seconds": 0.003390199999557808,
+    "sha256": "481b4b2a5824e9b757d760c0edcf9bfc6dd1b2d84bd2ca54c733fd630d0243ec",
+    "pixel_sha256": "eb6e52dd1443d0051107a3c90a86d27ff23d7855feb0e98e613ab885cded04b6",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.064134421961898
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 100,
+    "bytes": 607161,
+    "mse": 0.6029093203960083,
+    "encode_seconds": 0.01608940000005532,
+    "decode_seconds": 0.008686799999850336,
+    "sha256": "9bec3253dcb9300bc4821059c634a7a35984c093ad8beefb861a2dfd69869406",
+    "pixel_sha256": "014f46176bd6427e26487bda0ef586c963ed5bd754c890c63c243796df1bea4c",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 5.7475896343627975
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 50,
+    "bytes": 93208,
+    "mse": 40.32647576223721,
+    "encode_seconds": 0.008807700000033947,
+    "decode_seconds": 0.004728600000817096,
+    "sha256": "1bd43e17eb2a1bfe9df7be85e7bf34e0fb9fd1bd885b40a94c6f0e4bf4ac2641",
+    "pixel_sha256": "7cb525c0e94b5fb86b854f4bab0cf97d9790641b974bbf64b05f6604a7c25af7",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.8823381848301977
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 25,
+    "bytes": 50994,
+    "mse": 66.37280913501361,
+    "encode_seconds": 0.006197899998369394,
+    "decode_seconds": 0.004360400002042297,
+    "sha256": "e68b9102a5d74012652213a6cdf3b08e660a7a45233bb8139d5968dc978eb9df",
+    "pixel_sha256": "f53046c7d99064d49dd4d2d00f25099f71c9e6b869677f5f6fe2e5631ec4ec00",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.48272630457933974
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 37,
+    "bytes": 72467,
+    "mse": 50.096222537766735,
+    "encode_seconds": 0.007369499999185791,
+    "decode_seconds": 0.005219599999691127,
+    "sha256": "c3ad56cd655e25b866ff58aeb324448ee51b2fd96c5ae4c0db1e400185946c99",
+    "pixel_sha256": "8fffce0767edb4682a625ad02074e568e0017db38ed31d488780efd206ba16ad",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.6859969234410129
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 31,
+    "bytes": 62097,
+    "mse": 56.96124916183489,
+    "encode_seconds": 0.007361200001469115,
+    "decode_seconds": 0.004273799997463357,
+    "sha256": "d4b9880f86e5c7a9bb9d474d2b28a57953a580f7aa667014813788ac5e04974a",
+    "pixel_sha256": "298b7f0437d9661085ec352f2648099fc2b26f4b3ad08a52a190bac791c2304a",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.587831025914093
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 75,
+    "bytes": 154065,
+    "mse": 23.654186486806296,
+    "encode_seconds": 0.009253500000340864,
+    "decode_seconds": 0.006206899997778237,
+    "sha256": "b9a5d11d53ee248713a718f5ae13333322c314a268fcde9c18a88de7c43fbf47",
+    "pixel_sha256": "8eac516d20dfa143f69609199c3e7a0141931e0f3343040b7fde90fe83d25227",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.458430954916578
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 62,
+    "bytes": 114749,
+    "mse": 32.95844988758727,
+    "encode_seconds": 0.008721300000615884,
+    "decode_seconds": 0.004646800000045914,
+    "sha256": "ddf1cf97e471596b7ed1b257a61a446ed866a97ac432ed505c695f00bedd5fe8",
+    "pixel_sha256": "70bbee05984508c8b1277601fdf72f505aa9650071bcda4a12a75781d9220dac",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.086252514495326
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 68,
+    "bytes": 130191,
+    "mse": 28.825644696880055,
+    "encode_seconds": 0.01050039999972796,
+    "decode_seconds": 0.005572900001425296,
+    "sha256": "44c0103d619410e6259bb2dce3666d9552b624daa4937bcf704a1e7d61482d98",
+    "pixel_sha256": "cb69a24942233dcff28bf969789f240cb84db89fb525b9d03a1fef8af9e3dd91",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.2324316648917288
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JPEG",
+    "setting": 65,
+    "bytes": 121930,
+    "mse": 30.977446456040706,
+    "encode_seconds": 0.009039600001415238,
+    "decode_seconds": 0.005467199996928684,
+    "sha256": "74e1ad2eb4ddb461826f9f8688213bd6ddd0ecaf241f41ca2e96800d0c9d29b2",
+    "pixel_sha256": "63356df332901eeaf2cf0da43762e1a16cdd4277dff2e52e4e832ad0c3d6cc11",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.1542302686072654
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 0,
+    "bytes": 8772,
+    "mse": 149.98702007651954,
+    "encode_seconds": 0.129352400002972,
+    "decode_seconds": 0.014740400001755916,
+    "sha256": "5dbaa60d59fd8931f01bef12d91f0049627698cb6002e61bba4fc6bfa5a736c8",
+    "pixel_sha256": "4bf1e1861582b1aba0d5aa3dfff2b031c5ca7ebacfd27e7cb12dada183b81af3",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.0830386936457224
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 100,
+    "bytes": 446656,
+    "mse": 1.9110673293101408,
+    "encode_seconds": 0.27482059999965713,
+    "decode_seconds": 0.0392489999976533,
+    "sha256": "5bf19222c191a12778298ed0fdd720eec2faf999d2fe8b5b5f4a5cfd521525d6",
+    "pixel_sha256": "58dc0247171e200d5300eda1ff85dbc80965240c1c497d31bd81cb6bfad070f2",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 4.228195479824873
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 50,
+    "bytes": 77822,
+    "mse": 39.07354356486412,
+    "encode_seconds": 0.18940310000107274,
+    "decode_seconds": 0.02629979999983334,
+    "sha256": "709c3830663c0d5185dda2740023e3619dbedd6fac1f81ec491943b6e11a1598",
+    "pixel_sha256": "bb97d482af5a2a38206b6a3bfc0532492ef9e78ab725356327eaa00754690c87",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.7366891492131109
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 25,
+    "bytes": 43628,
+    "mse": 62.83335147714274,
+    "encode_seconds": 0.1557403999977396,
+    "decode_seconds": 0.01995840000017779,
+    "sha256": "bd0fb2b7f83109ac32d10d9fc2dc342f056dfe52145f1b45292f88d89aaf0564",
+    "pixel_sha256": "d94f3ce07410dc7e6eb75dba17bdb3c7aa17a7769981da4fc0ea4a2aa0db6133",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.41299727842858835
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 37,
+    "bytes": 59592,
+    "mse": 49.41320356565298,
+    "encode_seconds": 0.1695389000014984,
+    "decode_seconds": 0.02319290000014007,
+    "sha256": "5349aeddc78ce31edb875c1100d70fa30f1d007b43e29476037a375a29c0b448",
+    "pixel_sha256": "b0116e01902e7421739f724c8620728ceb2e9c74d1879d26afd4d74ee27e0cac",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.5641178558750444
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 31,
+    "bytes": 51454,
+    "mse": 55.73056719125942,
+    "encode_seconds": 0.1634861999991699,
+    "decode_seconds": 0.019536399999196874,
+    "sha256": "5823d7e7540f6902ead1207740950f232640b05b1acf8c71be56e839fa961ce1",
+    "pixel_sha256": "716c4e116643e631b731f22b49add3131d3caeaecf94c54eccc2b64e8dd80f15",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.48708081883800736
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 75,
+    "bytes": 117476,
+    "mse": 24.481648325641935,
+    "encode_seconds": 0.1911139000003459,
+    "decode_seconds": 0.025247999998100568,
+    "sha256": "24ffa4fa25e95e633c43686921db1f8101f375497ea4b8520af8b71ecd56163e",
+    "pixel_sha256": "d8ba965825b15d98a7ba384d80fb999383b9d35d057ad83f5c2b0702cf8caddd",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.112067210980949
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 87,
+    "bytes": 211442,
+    "mse": 9.290556541632155,
+    "encode_seconds": 0.24597260000155075,
+    "decode_seconds": 0.02757259999998496,
+    "sha256": "58ce1fcefe488e3183bb25f6f2cd0b3441f268d9bfadbee7c428fc750d1679ce",
+    "pixel_sha256": "daff35182e28caaed3e8e8eb5e6b51df68e9d19dbade721d2673df7dc8c19b5b",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 2.001580878002603
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 81,
+    "bytes": 157248,
+    "mse": 16.090651599416244,
+    "encode_seconds": 0.2266708999995899,
+    "decode_seconds": 0.03018780000275001,
+    "sha256": "b66f5fcc1e9ad2310673ed834a4d1da9d65486cf993ea8d68830546fd6ac1e92",
+    "pixel_sha256": "bb153022e153c4a1def5b4d4fd954d0318529ab65627ac85c116b24ea8f55db8",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.4885623003194888
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "WEBP",
+    "setting": 78,
+    "bytes": 136360,
+    "mse": 19.965721216424093,
+    "encode_seconds": 0.20970799999849987,
+    "decode_seconds": 0.031347600001026876,
+    "sha256": "c15d4cb219ad4e2a3b119255e192f8fd17b2f869f05054b6825d429523084225",
+    "pixel_sha256": "9e670b3d066c568ae813a02a218972c3888a6901123128dee1a3d33acbd3e8f2",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.2908294876345994
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 0,
+    "bytes": 1960,
+    "mse": 266.7412838717312,
+    "encode_seconds": 0.030892400001903297,
+    "decode_seconds": 0.0172195000013744,
+    "sha256": "dffaf99d65c53b596a50615b61b3f5b2143d37021c6d9cd650dd2a8652c14c10",
+    "pixel_sha256": "927a69789f6285424090505f969e9f5ed878e5157790540be5bacee785a1c839",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.018554017276062006
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 100,
+    "bytes": 678175,
+    "mse": 1.1322573265491263,
+    "encode_seconds": 0.47790570000142907,
+    "decode_seconds": 0.08254110000052606,
+    "sha256": "0e0ad131967c222284459cca9a95af00e52420f7fab27ad0816b566e247bfe8a",
+    "pixel_sha256": "392fa5e7557a63a1bd6f56e0b9f1ef9d4bf1080add559d729684c3384b5362b8",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 6.419831972547628
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 50,
+    "bytes": 66576,
+    "mse": 37.64540488305131,
+    "encode_seconds": 0.18356240000139223,
+    "decode_seconds": 0.025756400002137525,
+    "sha256": "270a6cbce912670dcebf561ce799babac2b5f28d2fc1b283d78403a45e164d05",
+    "pixel_sha256": "1cf739cc7bd6bb97fd54ed201cc7fea63dfb74c8bce98c94409219262cb3148d",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.6302307419240326
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 25,
+    "bytes": 14451,
+    "mse": 106.12908492091665,
+    "encode_seconds": 0.0689684999997553,
+    "decode_seconds": 0.021388699999079108,
+    "sha256": "f3dc09e42bef5b1a15b7cd4d44b305145ef5f83ffd3b92877dc55159ae5dc031",
+    "pixel_sha256": "2b291686dda3ea7f5a6e542f0608224bee788aca683a58e45814d96e5b11e6ca",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.13679801206957756
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 37,
+    "bytes": 30070,
+    "mse": 68.82821401806493,
+    "encode_seconds": 0.11417330000040238,
+    "decode_seconds": 0.02214330000060727,
+    "sha256": "883df117fc70cba4cee1ae172dfd24ef1e8bf3b68931a33c5dc0dc64058a41a0",
+    "pixel_sha256": "ce0725d7e680e0648aaf11b7b46227e387d6e38f2d51acc05c9f67c49413b4b3",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.2846527038220329
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 43,
+    "bytes": 45175,
+    "mse": 51.56432611525263,
+    "encode_seconds": 0.1395483999986027,
+    "decode_seconds": 0.024949399998149602,
+    "sha256": "1d3e1b360db76c3cc694ae4d30a3b91b21f5287ee5fc3170c11cc6426fa43237",
+    "pixel_sha256": "ab231c8f74d56e9fb5cd37f553fff4f2eeba74472cdddf4ebd4eb68fd9300f24",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.4276416992071944
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 75,
+    "bytes": 183956,
+    "mse": 9.585630891807675,
+    "encode_seconds": 0.3008917000006477,
+    "decode_seconds": 0.036061499999050284,
+    "sha256": "c8f133f685521dd0dd8f9638772ac9a5a840332c9e75ffc33706d0f33e6cfef7",
+    "pixel_sha256": "8b87511a13b192bf8e87a5b0c7c92b88480f5fa20ea613f66c0d3d41f6d8b77e",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.7413891847118683
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 62,
+    "bytes": 128072,
+    "mse": 17.52326706898592,
+    "encode_seconds": 0.2411625999993703,
+    "decode_seconds": 0.03186640000058105,
+    "sha256": "67d6c54f32434074ac36449343f3ede5221709e3425e68576aa282cec4d2e8cd",
+    "pixel_sha256": "e526de5d2905af796f5bf02dd6e5ac3a4a02ee5c0df4816c846a99a56fbe0657",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.212372500295823
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 68,
+    "bytes": 152577,
+    "mse": 13.289119630812921,
+    "encode_seconds": 0.2682214999986172,
+    "decode_seconds": 0.0341922000006889,
+    "sha256": "e4964d845615efa52e671b66a9328bc846112a044ed4d9013aebab262d2450db",
+    "pixel_sha256": "5fd730427f32412ee0cf1f3cfd79b76663d4ae444a0d6e233ea158de1a4ecdf9",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.4443450479233226
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "AVIF",
+    "setting": 65,
+    "bytes": 140657,
+    "mse": 15.13225574882657,
+    "encode_seconds": 0.2725761000001512,
+    "decode_seconds": 0.03868979999970179,
+    "sha256": "995a3d1669ffc81cd3093c059941ff488e9e00d6b40f1bc684ecf92268cab1f9",
+    "pixel_sha256": "f26d1e7b9ac30a8b107f24cae43ef1e7326dc124db94401e42e17c05f25d195f",
+    "working_size": [
+      900,
+      939
+    ],
+    "metadata_original_size": false,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.3315063306117618
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 1,
+    "bytes": 2293,
+    "mse": 452.32613734074863,
+    "encode_seconds": 0.0018216999997093808,
+    "decode_seconds": 0.01265140000032261,
+    "sha256": "04c0918c04e4d13becef1bce91594b21973f900485a6efe3ebd448a12c42ec32",
+    "pixel_sha256": "75728c188f2eadb6c370e8636027d009138aded69dc72c705855c749af9b8478",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.02170630694592356
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 100,
+    "bytes": 221639,
+    "mse": 41.398857334437736,
+    "encode_seconds": 0.005643299999064766,
+    "decode_seconds": 0.013934400001744507,
+    "sha256": "b20d999d2a155ec931a20639bbf67b77a3c64c457d43bcc5cbefb754806ffff0",
+    "pixel_sha256": "74c72c3c71c35789f8c7f0749add3ca704a3ac8c1a37f60d4065eacae3235054",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 2.09810909951485
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 50,
+    "bytes": 28725,
+    "mse": 91.24038851417978,
+    "encode_seconds": 0.003153599998768186,
+    "decode_seconds": 0.01285940000161645,
+    "sha256": "3bb937962b6fc1326bebd7ebd5629017a0a227dfdc29705d71389454316ce2d6",
+    "pixel_sha256": "e3cec873240ffa319d0f808f33f3d8c837c2ecf4e6ab666ef696a45ea9b98f21",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.2719204827831026
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 75,
+    "bytes": 46085,
+    "mse": 71.90967104484676,
+    "encode_seconds": 0.002868099996703677,
+    "decode_seconds": 0.013982699998450698,
+    "sha256": "5281b5f6ef1827227c0a96f8134e7757caa2ebbf5a17e3f52c79c01eecc401f4",
+    "pixel_sha256": "c392967a779eb17af6616f3c966393cbfad58a60bf9790b2ee79f2189b48c83d",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.43625606437108033
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 87,
+    "bytes": 69624,
+    "mse": 58.20713998343391,
+    "encode_seconds": 0.0035490000009303913,
+    "decode_seconds": 0.014234399997803848,
+    "sha256": "e8b4ecb03a1cbf4e124ef3eefcd81a0473366d35c697526ecff00c6afbc3d816",
+    "pixel_sha256": "40146403ab8995784d65ac0624f7a66a56991f67ad3c73b4bc7590ba2d2321f5",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.6590841320553781
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 81,
+    "bytes": 55486,
+    "mse": 65.51545773675699,
+    "encode_seconds": 0.0032056000018201303,
+    "decode_seconds": 0.013596400000096764,
+    "sha256": "a7c4d115e41f0ac660a2e55d1848aaf2e2396ee4eb4b3316142848e0b61c2ffb",
+    "pixel_sha256": "acba174ad980ba9defcbb92951b50c2474110656892ee16fe1317df520cbcfb7",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.5252490829487635
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 93,
+    "bytes": 99465,
+    "mse": 49.29529602019485,
+    "encode_seconds": 0.004927400001179194,
+    "decode_seconds": 0.014005999997607432,
+    "sha256": "98d8a91437a8ccbcedb7c0265e8ff4dc1898306c20f86fa7a49d760ef2791bba",
+    "pixel_sha256": "d980a74187f3298a47e0efbef610f2b93ea1fa54570d0ca51e04927569f328bb",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.9415690450834221
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 96,
+    "bytes": 134664,
+    "mse": 44.5116459590581,
+    "encode_seconds": 0.004328199996962212,
+    "decode_seconds": 0.014967400002205977,
+    "sha256": "cc508df9bee006a306e58433a5e98ca6513d7856763135f2f18e98a262af4800",
+    "pixel_sha256": "164bd7668e863373ff1a6aed6965cbf0cf45397843425ac315a4123a97450cda",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.2747745828895989
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 94,
+    "bytes": 109397,
+    "mse": 47.56839190628328,
+    "encode_seconds": 0.004004599999461789,
+    "decode_seconds": 0.014939699998649303,
+    "sha256": "4d7b2897b8d85b789e13b3f90bdc9308632241bbf37bce723109695f09ef8e96",
+    "pixel_sha256": "5f490a09ad27b29499743588799bdc9187036e37effe3ea6afcddc12c6c79ca6",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.0355886877292628
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_JPEG",
+    "setting": 95,
+    "bytes": 120257,
+    "mse": 46.07617638938193,
+    "encode_seconds": 0.004207099998893682,
+    "decode_seconds": 0.0128645000004326,
+    "sha256": "fb7bf7aa47887b1e527ee1fcab4c68999bb46c3c35e16aebbf4ee843ab48b4f2",
+    "pixel_sha256": "b1809b9616f4b664d0d51b59e4b5a827d28703858adbfb08bd09dbb4a6c18ba1",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.1383930895751981
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 0,
+    "bytes": 2912,
+    "mse": 217.14267345087367,
+    "encode_seconds": 0.03771970000161673,
+    "decode_seconds": 0.01676930000030552,
+    "sha256": "4acb28ae837d898787a821b8fdb658648439f6e15a0b113844dc317e969309fe",
+    "pixel_sha256": "0e6274e5331cbb44d45875007f9d270d35b396b214a83a4f9b76f3c280dce0a3",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.027565968524434978
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 100,
+    "bytes": 145836,
+    "mse": 43.6622750759279,
+    "encode_seconds": 0.0913579000007303,
+    "decode_seconds": 0.026209699997707503,
+    "sha256": "5e28ee5efd89b455fd5897a6f4d0a7403650fba099bb7974e55fc45a1ac8aace",
+    "pixel_sha256": "44e5bf4d54d89cf771dede894bd165f47df253763eb7420e3098bcb8718291ed",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.3805324813631523
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 50,
+    "bytes": 23344,
+    "mse": 88.15651914960755,
+    "encode_seconds": 0.057635900000605034,
+    "decode_seconds": 0.021198700000240933,
+    "sha256": "3d100f5c2889c9a4e28969e90af6337135a59c048924b37bb05d926ada470ad6",
+    "pixel_sha256": "e51d76dc15c4122c2e16d77ee6033cd1ca542bb58cd6fb575127b1f31755597c",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.22098213229203645
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 75,
+    "bytes": 35112,
+    "mse": 70.92176428824992,
+    "encode_seconds": 0.06194990000221878,
+    "decode_seconds": 0.021407000000181142,
+    "sha256": "d2af64e1097e4590671b5a6f7b50b39b6c6c32ef5b3a51eb85d39acb78ac8815",
+    "pixel_sha256": "ea601943087cc69113af1924f803ebc2613d378bd0fc470fb79fdb072ddae256",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.3323819666311679
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 87,
+    "bytes": 65040,
+    "mse": 52.95527905967736,
+    "encode_seconds": 0.07294679999904474,
+    "decode_seconds": 0.020660800000769086,
+    "sha256": "b08c66aac80d11a751fcebaee084a79f55dfe2f8d85e5a74a274eaa4b7d2fc25",
+    "pixel_sha256": "4533adfe75700b9e030b7471f42aade59f81155c0c7617a6a05b18b000453c41",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.6156904508342208
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 81,
+    "bytes": 47734,
+    "mse": 60.69322131503175,
+    "encode_seconds": 0.0663098999975773,
+    "decode_seconds": 0.022950200000195764,
+    "sha256": "fc96189e65dcb07b22aad16f81569360531030aeb1491a35f31fc416227870e8",
+    "pixel_sha256": "449e1be66249ec9b485712cabd6e5a605866b68dcee4fd0cf52b2dd2b4239d0a",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.45186605135486924
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 93,
+    "bytes": 96204,
+    "mse": 46.371039324734745,
+    "encode_seconds": 0.0800760000020091,
+    "decode_seconds": 0.020760200000950135,
+    "sha256": "33ab24936ce5764285e03e5fde5dacdd518d6f34b0be424fdd93a4cf61030ea8",
+    "pixel_sha256": "19cacf6208d15181bbab8fc3e6f3912b281f3bcb559c11c1eff48da5cdd889a8",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 0.9106993255236067
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 96,
+    "bytes": 117466,
+    "mse": 44.52646274602611,
+    "encode_seconds": 0.0812831000002916,
+    "decode_seconds": 0.02113429999735672,
+    "sha256": "1efe50c77fe7808db0693cda3882a27b53725124887b9457a0813fc03593a0ce",
+    "pixel_sha256": "68de308ba897e4803b683d0013b3385539924ea63b800d50d6554917f62007c1",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.1119725476274998
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 98,
+    "bytes": 135308,
+    "mse": 43.702987417662605,
+    "encode_seconds": 0.08351459999903454,
+    "decode_seconds": 0.023615599999175174,
+    "sha256": "a2b90d6fdc4e8a50229014272001c2fa913a03b8d4f88630536e895fbd99d00a",
+    "pixel_sha256": "df8bbc6db236bc00f82a551bc95e75c015b8d56c68014e1643e4aa3fcce28e8d",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.2808709028517336
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "working_WEBP",
+    "setting": 97,
+    "bytes": 127744,
+    "mse": 43.953037115923166,
+    "encode_seconds": 0.08490059999894584,
+    "decode_seconds": 0.02153339999858872,
+    "sha256": "13531b946399f40a9e55c91dce603d1e52b9baa8e519e582ee6c293f286c00c6",
+    "pixel_sha256": "f806e03663c4af03576b740a552c453afe47b0bebb572d2b9ecd05e6eb74eef0",
+    "working_size": [
+      490,
+      511
+    ],
+    "metadata_original_size": true,
+    "width": 900,
+    "height": 939,
+    "bpp": 1.2092675423026862
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JXL",
+    "setting": 8,
+    "bytes": 36530,
+    "mse": 66.04783694237368,
+    "encode_seconds": 0.12028959999952349,
+    "decode_seconds": 0.206044299997302,
+    "sha256": "2d1a25a65a4e6bb17f396e88ed9854398f5edcfa2524780e33eda71610459d50",
+    "pixel_sha256": "5c87e00772f609678f88e6b51ef4a33fbdfbf68efb6c682e98d7b5d190b8f0be",
+    "width": 900,
+    "height": 939,
+    "bpp": 0.3458052301502781
+  },
+  {
+    "image": "monet.jpg",
+    "codec": "JXL",
+    "setting": 15,
+    "bytes": 19215,
+    "mse": 97.75327535202935,
+    "encode_seconds": 0.10314199999993434,
+    "decode_seconds": 0.1880221999999776,
+    "sha256": "b2c29d2168fa0c9738ed7c1d637a6bc831d0ced3d95e661c83a3916935090805",
+    "pixel_sha256": "5fd3b84d252e4f4b7d96d280b65af9152234bc7c73213994a63b5e81c1af9ddd",
+    "width": 900,
+    "height": 939,
+    "bpp": 0.18189563365282216
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "PBC31",
+    "setting": "quality",
+    "bytes": 63297,
+    "mse": 299.1919568344019,
+    "encode_seconds": 0.6715810999994574,
+    "decode_seconds": 0.11076840000168886,
+    "sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "pixel_sha256": "cf8556957f6562e6575f2ead73744d9293d3decaafe86ce2a9a35a9c39b86bf2",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.05939766226746543
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "PBC31",
+    "setting": "high_quality",
+    "bytes": 78898,
+    "mse": 293.13369478789747,
+    "encode_seconds": 0.7771880999971472,
+    "decode_seconds": 0.1333307999993849,
+    "sha256": "483d4ab4d82fb25cb3306489f25c1aa623109859072cbf8152c15547f1ad1cc8",
+    "pixel_sha256": "18fb8c8929c6cb4e6f8eedd2e41bb75dc47884355faec0b00accab1c106045e6",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.07403758088974971
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JPEG",
+    "setting": 1,
+    "bytes": 76191,
+    "mse": 325.6504868008323,
+    "encode_seconds": 0.06485780000002705,
+    "decode_seconds": 0.04368669999894337,
+    "sha256": "ed38cc9948ab55bf3f72a9798bc48b9e89398a38f87b208cd9a343fb155e7e53",
+    "pixel_sha256": "6c4947cf6e51a6159abfae752ce361e9f9bbd1aafeb6b7edf89038cc3c36d5eb",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.07149734246205126
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JPEG",
+    "setting": 100,
+    "bytes": 5929877,
+    "mse": 1.2355555023797726,
+    "encode_seconds": 0.1759273999996367,
+    "decode_seconds": 0.09389319999900181,
+    "sha256": "84f4957963645657422fd1d740b689e998f17a56194d59c8fc186b5e3b80d8eb",
+    "pixel_sha256": "81905be75f9bef2aa9c819f599a93f702dae00375c25e629401bb27b71553bc2",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 5.564573855532033
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JPEG",
+    "setting": 50,
+    "bytes": 823299,
+    "mse": 25.162044870038386,
+    "encode_seconds": 0.07718159999785712,
+    "decode_seconds": 0.048605700001644436,
+    "sha256": "b0eda79c7975f022a46979de6bbdb9078437a9b5082c44e6f98dff5bd0330503",
+    "pixel_sha256": "4978c43ba0c25b7b169392ef01e48c8703a81428d5b1c319cc117720cdac3d04",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.7725806269987838
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JPEG",
+    "setting": 25,
+    "bytes": 529078,
+    "mse": 45.03007868608271,
+    "encode_seconds": 0.08090070000253036,
+    "decode_seconds": 0.054277400002320064,
+    "sha256": "74d0d6326b05f98a380c8398bebd4934b409ebed63325593f0b8adbf36a0eca1",
+    "pixel_sha256": "73dee520a80ad7c6f4b8419d0a5ab004d7250deac5cd836e68a49593a337dcb7",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.49648476795339547
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JPEG",
+    "setting": 13,
+    "bytes": 308273,
+    "mse": 80.4606823344419,
+    "encode_seconds": 0.06379530000049272,
+    "decode_seconds": 0.046280800001113676,
+    "sha256": "a47ebacafaafda4cd2b1c822c25c8eacaac45208e5c80181ef403d453f0114da",
+    "pixel_sha256": "7a2da813be56845f8cc8b4203959a4a1e858f487b34861a6f7efa80018e06a24",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.28928220200291277
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JPEG",
+    "setting": 7,
+    "bytes": 164739,
+    "mse": 141.84608946074752,
+    "encode_seconds": 0.06114929999966989,
+    "decode_seconds": 0.03809219999675406,
+    "sha256": "bfd5c51843fc8ec8ec9e3b8c836bdaf35c3fba824d5b14edb068aec87e7575d4",
+    "pixel_sha256": "05e3b0a85977f58e476e6847a3a2261c9437f08ff3c057dfee8a4d440403015c",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.15459044637628935
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 0,
+    "bytes": 58218,
+    "mse": 149.96237050914874,
+    "encode_seconds": 1.1981491000005917,
+    "decode_seconds": 0.13754149999658694,
+    "sha256": "426a9b3818f4736b76be6909d038ad4cfef31e1e3b88baccb0e1d60a902b77aa",
+    "pixel_sha256": "baf3b54ede291db0ffbb7d8d71a75ca5fbc18852c6f2679b3fc802b507791082",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.05463154812846268
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 100,
+    "bytes": 3516286,
+    "mse": 2.4342034924602998,
+    "encode_seconds": 2.524490899999364,
+    "decode_seconds": 0.34555050000199117,
+    "sha256": "3b2e72c8afa7683a5b5639edcec1bf14218a0dc4106fe85eab774b037d9a9b6e",
+    "pixel_sha256": "e6571fad4e7985cc24cd11c7411cc573f1120762e2d95f7a1ae58fd13b465809",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 3.2996693091902767
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 50,
+    "bytes": 597530,
+    "mse": 28.269379679468894,
+    "encode_seconds": 1.6886230000018259,
+    "decode_seconds": 0.19846029999825987,
+    "sha256": "bb853e881eb3d01e827994394c13f7d954170c224aa846983cac55b4c8db5656",
+    "pixel_sha256": "3bf126dc3766a1ad148f693c9d45cb60d0774bbefb19416f453661e289be9ec4",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.5607198624686576
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 25,
+    "bytes": 350720,
+    "mse": 50.4277257046104,
+    "encode_seconds": 1.5045576999982586,
+    "decode_seconds": 0.1835084000013012,
+    "sha256": "20b024e621c70cc1630c0199f64567921cd2aabdc9933a0f775b587a51262d95",
+    "pixel_sha256": "c80d5defdbfcf1331f9db161df2f1a37d677b5840e06ea89ee1989683b0fa899",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.32911430416047327
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 12,
+    "bytes": 229550,
+    "mse": 70.9582500506734,
+    "encode_seconds": 1.4111496999976225,
+    "decode_seconds": 0.1752465999998094,
+    "sha256": "1b82be1d380b35498536d913b04b1b473d503096d261ea9784edf7f04b60ee14",
+    "pixel_sha256": "c841c0018aa81e9e4be78cac8861103c4c57c4f4d311b8d0e218b0971421be3b",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.2154088404426227
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 6,
+    "bytes": 159986,
+    "mse": 89.54356343902177,
+    "encode_seconds": 1.347713200000726,
+    "decode_seconds": 0.14820289999988745,
+    "sha256": "896acd15ca0c78f57fa62b84927f1fdb6afc64ca66af9cfc0b0f9d091b839365",
+    "pixel_sha256": "64a4a47afaa9de4c8191c60f254d40b03d91040bf4f323f2f73deab09ed58cda",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.1501302493881657
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 3,
+    "bytes": 122920,
+    "mse": 102.6698832541327,
+    "encode_seconds": 1.3073041999996349,
+    "decode_seconds": 0.15275100000144448,
+    "sha256": "0e030c416581225b408dd9f025f286d9052729a6acf6854b164c88261843f5f7",
+    "pixel_sha256": "f304506bb2405c71c338fd4ba7a213c52a748d9ca1cd03831ee91506991cf03b",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.11534765701244688
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "WEBP",
+    "setting": 1,
+    "bytes": 91586,
+    "mse": 118.39887979739402,
+    "encode_seconds": 1.2733907000001636,
+    "decode_seconds": 0.14937819999977364,
+    "sha256": "2ccf632de9703a43495162cd80b0bf39861f91bbf0a262276dc7bf9ac536fa77",
+    "pixel_sha256": "0724de8e07f1ded2451955709fac72f9cc08e79ed805d03c04eca5e9bbaf8d81",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.08594395147365734
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 0,
+    "bytes": 9407,
+    "mse": 240.69249453540633,
+    "encode_seconds": 0.2789239000012458,
+    "decode_seconds": 0.13985629999660887,
+    "sha256": "723e30af46eda387ac304a6317934bcd8adba94f6e1838ea8719f6686b3ddad9",
+    "pixel_sha256": "fcaa358b2a2b53813be004f2700046d12b682c48dcda85c1452e1013ef4fe582",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.008827492755581581
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 100,
+    "bytes": 5670196,
+    "mse": 1.661641242386479,
+    "encode_seconds": 4.2881549000012456,
+    "decode_seconds": 0.6790526999975555,
+    "sha256": "5025cb721acb0ad2e541a43d7f50b4e875e15d06a5d7c094416cdbb678adf0b1",
+    "pixel_sha256": "f04ac163de7d89ba20c95fe7680611769e45afb131fab7aa133ebbde621d0e9d",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 5.320890200141135
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 50,
+    "bytes": 524245,
+    "mse": 23.954582681147997,
+    "encode_seconds": 1.5167550000005576,
+    "decode_seconds": 0.2213332999999693,
+    "sha256": "4acdc875a13a5d7cc3f654a0d32d42119812dde783b21e302353aea9d8514dcd",
+    "pixel_sha256": "cadff4d22951903f1a3abb2adbf6712da40d1dc22b9f3d0c412932d6ce2e0165",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.4919494992718046
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 25,
+    "bytes": 121883,
+    "mse": 84.36106919608225,
+    "encode_seconds": 0.7246477000007872,
+    "decode_seconds": 0.1796875,
+    "sha256": "486f17c185080a9ac6f32104ace58149aa52b14f78c480e1a728718ca5276ea4",
+    "pixel_sha256": "e7e6c6f3a565ca5dd0987dc96787327873384d299e9ea3f917b35d6dce0e6530",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.11437454018587752
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 12,
+    "bytes": 34557,
+    "mse": 132.03404012550735,
+    "encode_seconds": 0.3977368999985629,
+    "decode_seconds": 0.18028749999939464,
+    "sha256": "07a16adda0b452d223d3c3d68a6de5998578b5dd83c7d783a58b3c9ea427fd28",
+    "pixel_sha256": "bb10d21a7fc65ed4b9693c732de8f27140173dd11918091d188b519006dca307",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.03242815638935183
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 18,
+    "bytes": 53869,
+    "mse": 115.9063251107933,
+    "encode_seconds": 0.44600269999864395,
+    "decode_seconds": 0.1698333000022103,
+    "sha256": "40f30d780e638ad1a5d37ba9259cb93c44a0cef55a8a0f5be687a9a17c277520",
+    "pixel_sha256": "df9b447aeec9d4f037fd4e6b4f8ef2f2d4b4e77a94a271b96604ab2d39da4992",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.050550463192348696
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 21,
+    "bytes": 75274,
+    "mse": 103.88718659913968,
+    "encode_seconds": 0.5266666999996232,
+    "decode_seconds": 0.17076580000139074,
+    "sha256": "f32f47bdc5de350e9cafb5521ef0d9dd0b7daadc9c19d42877e3398841570da3",
+    "pixel_sha256": "4a2e956863e357c1afd78b03944a258fd3ba66fd64d5119ca2142d7cedd9c737",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.07063683317568278
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 23,
+    "bytes": 88581,
+    "mse": 97.56218055430436,
+    "encode_seconds": 0.5770979000008083,
+    "decode_seconds": 0.18160259999785922,
+    "sha256": "d75142975eb22b333999064b69759fb7fd6b54337981069f679e5b86fe55394e",
+    "pixel_sha256": "3e13df460e2dc177ce1e84f78679d91e81c8597392481f21c3272cba185da74b",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.08312407098779334
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "AVIF",
+    "setting": 22,
+    "bytes": 88581,
+    "mse": 97.56218055430436,
+    "encode_seconds": 0.5842331999992894,
+    "decode_seconds": 0.18779870000071242,
+    "sha256": "d75142975eb22b333999064b69759fb7fd6b54337981069f679e5b86fe55394e",
+    "pixel_sha256": "3e13df460e2dc177ce1e84f78679d91e81c8597392481f21c3272cba185da74b",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.08312407098779334
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 1,
+    "bytes": 2646,
+    "mse": 563.1136653081818,
+    "encode_seconds": 0.0031739000005472917,
+    "decode_seconds": 0.10701619999963441,
+    "sha256": "4c470b2abcc93a5b8ded297bde2cecfc6eef1bd3585c6f4f4d0394e6e8359c26",
+    "pixel_sha256": "3cddf70f4c5d0745c3c6aba90318798cbcbe2d94c43f7222b302e04601ca1d1b",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.002482996261429665
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 100,
+    "bytes": 163963,
+    "mse": 281.07204563952325,
+    "encode_seconds": 0.006072999996831641,
+    "decode_seconds": 0.10671590000129072,
+    "sha256": "66fff4a45e3c4a69af41fe569fbcd0f08581fd74df8ecc544cf044158dac3743",
+    "pixel_sha256": "fdbd2dfcda1df449ccbd03e0d49126ef477a13ca0393e60c6516924f98a12d59",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.15386225094965691
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 50,
+    "bytes": 20455,
+    "mse": 302.25926752235887,
+    "encode_seconds": 0.0023056999998516403,
+    "decode_seconds": 0.1044843999989098,
+    "sha256": "38ebcc65bb30cfb9087cb82f634d59e4b55eed0dacc24f33f029d4429aaade00",
+    "pixel_sha256": "7d663039de96d896c0e406fb7b0ce5c1c74820fb9e6e6ad38df9efbf15b650f7",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.019194893623410356
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 75,
+    "bytes": 30807,
+    "mse": 294.2834191027431,
+    "encode_seconds": 0.002556900002673501,
+    "decode_seconds": 0.09643080000023474,
+    "sha256": "4f56e8800e0650c7a158f1def26b00c953a95a28642527fe729b694bbdde33c0",
+    "pixel_sha256": "243a0f64c9d1e958e0e26f6d44eac61e7edd36259a3b9d9431d551e1f93c3759",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.02890917075807396
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 87,
+    "bytes": 45032,
+    "mse": 288.743716460157,
+    "encode_seconds": 0.004746100003103493,
+    "decode_seconds": 0.09653269999762415,
+    "sha256": "47761ba3e10e200e660dab596d0af8af21e7876f55f7d8a682e1960449ffe849",
+    "pixel_sha256": "4e6de4a3aa271ee77afaf204959e45f3e61e06a278f0773aeefefe5eedaaef4a",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.04225785625272135
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 93,
+    "bytes": 64390,
+    "mse": 284.82020845532486,
+    "encode_seconds": 0.0037527999993471894,
+    "decode_seconds": 0.09760780000215163,
+    "sha256": "6cf3c0c874b26fbe068ff68aaffbd728599f2a16551055e8804fdc3452286c6d",
+    "pixel_sha256": "5910159cf8dcfb0d0581c0295dfaf35b7b3ec727615aa194b702c6e315a774a0",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.06042332927946189
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 96,
+    "bytes": 89447,
+    "mse": 282.432147583755,
+    "encode_seconds": 0.00499620000118739,
+    "decode_seconds": 0.10121969999818248,
+    "sha256": "eadc5e6534d3c6fc63fc9190384e5bc8986f62ae885e86f8566670d5f7606b1c",
+    "pixel_sha256": "63199a40e9916497d2eeb80a358419d838e963bf3181e31ff513d6ddc944d504",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.08393672206957645
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 94,
+    "bytes": 71130,
+    "mse": 283.9804792092073,
+    "encode_seconds": 0.004329100000177277,
+    "decode_seconds": 0.11054409999997006,
+    "sha256": "8e79e07346173dca09d9914dfb8c7a4e28800ebb52a595378f4b64f1e9602db7",
+    "pixel_sha256": "c56a464d1dc79c9116e4ca2c8a4fa431d9071d9c0c3436b6a3b13f453ce300fb",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.06674811945407864
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_JPEG",
+    "setting": 95,
+    "bytes": 79347,
+    "mse": 283.1949059007602,
+    "encode_seconds": 0.004238599998643622,
+    "decode_seconds": 0.11341499999980442,
+    "sha256": "4cc60d3d9fe193a512985da6c7ad842ca04d7548428202b1bd28f3ca8426c947",
+    "pixel_sha256": "70bb9ba8148152aa439763531461b690259d84ae7112c6f497752282e9f4fae0",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.07445892076933472
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 0,
+    "bytes": 2054,
+    "mse": 427.0965534194531,
+    "encode_seconds": 0.039165300000604475,
+    "decode_seconds": 0.10880879999967874,
+    "sha256": "70073d34a187ed855b30eb94dd3de92098b0121fab0f38964c817f961921d57a",
+    "pixel_sha256": "3de9222255f3f74bb51eb83b7c19133188ab6161b5b80f6ef3ea58e683b0341c",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.0019274657297719323
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 100,
+    "bytes": 88896,
+    "mse": 282.3677873306508,
+    "encode_seconds": 0.07748150000043097,
+    "decode_seconds": 0.11366439999983413,
+    "sha256": "8e1949c82798cf2c4bace0521019d309d06ca7de9a9c71ea2d4480f774d7e6f2",
+    "pixel_sha256": "88429f78f8040d48c39350b06d00a002c0d18999b54379990dc8eda04f178c0e",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.08341966578082069
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 50,
+    "bytes": 11972,
+    "mse": 312.52434176200774,
+    "encode_seconds": 0.05322080000041751,
+    "decode_seconds": 0.10014939999746275,
+    "sha256": "c7d9e8a2d8a217fdc1fd5eee23abe7025f0379ecba455a1ef2820494c1a36158",
+    "pixel_sha256": "4c78fd84449898e49156f11f282931668fd23d613d99ccd5be1438e5fbc402de",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.011234478927375644
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 75,
+    "bytes": 17962,
+    "mse": 297.4178781752198,
+    "encode_seconds": 0.0601195999988704,
+    "decode_seconds": 0.09883429999899818,
+    "sha256": "2b3da22b20489a8a3a27ed417a9a7bd03b302fa46a5becade5b9187809002756",
+    "pixel_sha256": "cedfa4d133204bda350cb00fcbb81d96e29bf95c03fef02cbfa81dc0c228494d",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.01685547197573683
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 87,
+    "bytes": 37788,
+    "mse": 287.3770267011246,
+    "encode_seconds": 0.06832970000323257,
+    "decode_seconds": 0.10407580000173766,
+    "sha256": "35075964f2809fbdae232480e7253da9918209dac3ad592fdeb3b2400bb1328b",
+    "pixel_sha256": "0a3b5154897376c9aad711e2f0325141c09ed86ba5ce8433c3bff64928b036fd",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.03546011440926084
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 93,
+    "bytes": 57430,
+    "mse": 284.32567297081215,
+    "encode_seconds": 0.0823195000011765,
+    "decode_seconds": 0.10726640000211773,
+    "sha256": "8a97daf0f7308c7143cfaf826a50a4396b734e0b52fd6d69a2c06387e3dff241",
+    "pixel_sha256": "a3de1579a7f90251350f4a01c14009aa46a3d1e28c5409bbc3237b8778ee03cd",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.05389209194781016
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 96,
+    "bytes": 72208,
+    "mse": 283.0664192897968,
+    "encode_seconds": 0.07559570000012172,
+    "decode_seconds": 0.09881409999798052,
+    "sha256": "00626739fee1732dc773e094c3076def4a87ebac310b1c2de613b071c22552f4",
+    "pixel_sha256": "f19be611495115f9f760fc2ab356e37ee55a681e66ea7ed10a9b80324388473c",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.06775971052355
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 98,
+    "bytes": 83694,
+    "mse": 282.43521003965037,
+    "encode_seconds": 0.08704310000030091,
+    "decode_seconds": 0.12117770000259043,
+    "sha256": "6c8f2ec6e814ee939de1c2a8352f9a4faeced0dc37ee69a76525b51c370595e0",
+    "pixel_sha256": "9b6296312ccde25050436cbb93ab358104949876d598393b4e205626536cbbbf",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.07853812891311202
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "working_WEBP",
+    "setting": 97,
+    "bytes": 75270,
+    "mse": 282.7858054441992,
+    "encode_seconds": 0.08899190000011004,
+    "decode_seconds": 0.12145539999983157,
+    "sha256": "01b53d55e39f49393dbb8bf3ff8550d66fcdea05e4fb788246338bdbca5f0d32",
+    "pixel_sha256": "119c9fedb0998e998f97865c691b2e73b4acf43004992a91b984fafd5b99ae31",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.07063307959100941
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JXL",
+    "setting": 8,
+    "bytes": 332395,
+    "mse": 53.223518890227666,
+    "encode_seconds": 0.5663332999974955,
+    "decode_seconds": 1.595295700000861,
+    "sha256": "6404a924d440b44b2e6963fcbf3bcb6309f45393f3b96e4f92b197aaa1367178",
+    "pixel_sha256": "ab7e0e661d451f752174209ab6f456afeb6b6417328627af984b2e690a4cf478",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.31191819437562873
+  },
+  {
+    "image": "cat.jpg",
+    "codec": "JXL",
+    "setting": 15,
+    "bytes": 164287,
+    "mse": 93.72462889559529,
+    "encode_seconds": 0.5124727000002167,
+    "decode_seconds": 1.5162526999993133,
+    "sha256": "505b678669b93aa977e45611448fdf86483e4f09f1e4d363eb512f885cd82135",
+    "pixel_sha256": "0525c59fcf8ff820c620d5d8ea51e639e8644849ba6b565a162d1df8711f818d",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.15416629130819934
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "PBC31",
+    "setting": "quality",
+    "bytes": 28979,
+    "mse": 43.43484363504647,
+    "encode_seconds": 0.769778400001087,
+    "decode_seconds": 0.12385450000147102,
+    "sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+    "pixel_sha256": "dd8de1029d1c9e88b2f72cc9977ac18b7b0f2eb0ead790d2328f077f3f85b3bc",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.02719378256234704
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "PBC31",
+    "setting": "high_quality",
+    "bytes": 46094,
+    "mse": 34.84087776482791,
+    "encode_seconds": 0.79979099999764,
+    "decode_seconds": 0.1373645999992732,
+    "sha256": "d0d17341aca95b28163b74d9cb75233592c7023fe7d32188affedb800eb8e5b1",
+    "pixel_sha256": "acb47d2eb5b408deeafc714583eb135a4a80c1b5a9682c2267c28b5724f333f1",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.04325443298349924
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "JPEG",
+    "setting": 1,
+    "bytes": 59421,
+    "mse": 273.2281995712155,
+    "encode_seconds": 0.06115809999755584,
+    "decode_seconds": 0.04548530000101891,
+    "sha256": "721040a6a690c1457f87788f1f7a9fb34f28cbcf6721a80cf2fce35ce43f0ade",
+    "pixel_sha256": "524ff2e0bd4cc89968784d89830c7c5190b5689ab92cd145aded215dee3e107e",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.055760438718976624
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "JPEG",
+    "setting": 100,
+    "bytes": 3979263,
+    "mse": 0.7746695359693507,
+    "encode_seconds": 0.18828129999747034,
+    "decode_seconds": 0.09074429999964195,
+    "sha256": "95886ac1166338a5bcf6a18a584f4ef957385277f2e639781fd0e7c4b0e54f79",
+    "pixel_sha256": "090a564d979e467b7c9afcddb2c16f99057bd50a07d23f912177a10cb9ccc713",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 3.7341251520201793
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "WEBP",
+    "setting": 0,
+    "bytes": 41382,
+    "mse": 24.54889888593607,
+    "encode_seconds": 1.1632883000020229,
+    "decode_seconds": 0.14038369999980205,
+    "sha256": "97c5997a7e8d833d13a6d171481765f43e13e3cb722bd23af4648fe1dbb5c96b",
+    "pixel_sha256": "09044a5627fc99a51be6c6328cb4b34ce6b01cf51e473264e11ebcf68cb21ea9",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.03883271023827756
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "WEBP",
+    "setting": 100,
+    "bytes": 1649966,
+    "mse": 1.8173550662757934,
+    "encode_seconds": 2.511192999998457,
+    "decode_seconds": 0.23598629999833065,
+    "sha256": "152b8b096ef663db784cdb7e41bff670ee6bbb565292d91b30c12ef71e406aab",
+    "pixel_sha256": "e04447d3422a659be14ab8b7c6344dbf35f109145322ad3902f977614b859629",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 1.5483217722925393
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "WEBP",
+    "setting": 50,
+    "bytes": 108560,
+    "mse": 5.773912406660861,
+    "encode_seconds": 1.2861250999994809,
+    "decode_seconds": 0.16663880000123754,
+    "sha256": "5d11fcc43b7a9b82aa3f8f7857987f404051b6b663c4a4a83a2faa3902e9249a",
+    "pixel_sha256": "c2a581a52f1a5f6de2f4e0c284a134e0be86b9f72b1f0e8d5341b6597377ea18",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.10187228803507349
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "WEBP",
+    "setting": 25,
+    "bytes": 81794,
+    "mse": 7.842210013688072,
+    "encode_seconds": 1.2587453000014648,
+    "decode_seconds": 0.15839989999949466,
+    "sha256": "34c04a0271b66fd675300b0513e5528a45358dfd96421683fce94381193f70b1",
+    "pixel_sha256": "b2cbeb43362859a399edc5fd868675774c04ac30b976473e0df21f6cce7d6274",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.07675517619326457
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "WEBP",
+    "setting": 12,
+    "bytes": 66440,
+    "mse": 10.214494647075457,
+    "encode_seconds": 1.2083906000007119,
+    "decode_seconds": 0.16556879999916418,
+    "sha256": "e7957df8dfca7e804ada4baae38ad5408bc8fae16388236e03a84ea187d017bc",
+    "pixel_sha256": "bc0609205dfe6d90f4206046ff4195e33fabbc0a3719d753676895510cff9b67",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.062347041424560455
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "WEBP",
+    "setting": 6,
+    "bytes": 59322,
+    "mse": 12.334967823959381,
+    "encode_seconds": 1.2174049000022933,
+    "decode_seconds": 0.15295550000155345,
+    "sha256": "0c7994f85020d14ec14c8c3bda75e25f7b3a9b309d00a717d1a49955bd660de0",
+    "pixel_sha256": "6e82966d924c31fd25a6a58ba6b420f2385d59788a1c3463027ecf527ea44377",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.05566753749831089
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 0,
+    "bytes": 10625,
+    "mse": 83.60527663293445,
+    "encode_seconds": 0.27852700000221375,
+    "decode_seconds": 0.14813309999954072,
+    "sha256": "dd0869849fd9c50b6daf2b74b38355eb388735f9324e5ea9ba606120be66a596",
+    "pixel_sha256": "dd8f8a261c6019368e7760c85c7ec7924cb156e4275452289e5422bae6eb72b8",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.009970459288620634
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 100,
+    "bytes": 3747970,
+    "mse": 1.150160551764435,
+    "encode_seconds": 3.710611300000892,
+    "decode_seconds": 0.5193518000014592,
+    "sha256": "41edc9231200ab6358b42afe23eeeb7c2bf943a062ed5564710fe44fd4ea0981",
+    "pixel_sha256": "90ed5155f5c0f1aa54e5ea341a68c87f1c12077c65bd8a23c1bc83c0f3e404ed",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 3.5170806870561386
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 50,
+    "bytes": 64141,
+    "mse": 6.556500872395638,
+    "encode_seconds": 0.44462619999831077,
+    "decode_seconds": 0.15273320000051172,
+    "sha256": "4ffcd937c11cb75231efa322c78743aae952de4e2b8d2192397fba1ff42592d6",
+    "pixel_sha256": "69f0e878e0e190071a4f6e90b0f5726136aa9411f95bee353c34ce8202264649",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.06018966863354504
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 25,
+    "bytes": 29692,
+    "mse": 15.110470264727814,
+    "encode_seconds": 0.33935619999829214,
+    "decode_seconds": 0.14237949999733246,
+    "sha256": "0fa7b9b2f0cf173e95389bc4fa9512eeb24a3e79db67a3aa49650c08791534ee",
+    "pixel_sha256": "d9be6c5f167c7bfd33bb8b8aa59c968736f59125e3498f78f23d19be10945e14",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.027862859030374006
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 12,
+    "bytes": 19841,
+    "mse": 25.893940275463066,
+    "encode_seconds": 0.3056096999971487,
+    "decode_seconds": 0.14061660000152187,
+    "sha256": "c6341eea82b6105cd10d6ef01d6bb83bf1959efae07767b4052918f89fc85127",
+    "pixel_sha256": "21e0d984f629d78581f96b202878dd008c07dd955b3b5219628869cf474719be",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.018618718376049125
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 18,
+    "bytes": 23171,
+    "mse": 21.057204943220775,
+    "encode_seconds": 0.3218641999992542,
+    "decode_seconds": 0.14485439999771188,
+    "sha256": "6b3c829998785d91b303ceb9c4b580d15cb20af123a4e918444ea0bfc272d3f0",
+    "pixel_sha256": "8277deea05134e775c577a5f1fc05c1a6c9f65c464b5eed4caa5e74a6e55c971",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.021743577616623877
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 37,
+    "bytes": 42411,
+    "mse": 9.988333233237743,
+    "encode_seconds": 0.3958667000006244,
+    "decode_seconds": 0.15278410000246367,
+    "sha256": "981c81410dc73411fc9f825bba96ec878141d592bae25939a25f30a595f16b8b",
+    "pixel_sha256": "ba9fea5284f1fdf455b87d1defee977b1900ec28ab17e92b04bd8e59ace56e3c",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.0397983198955002
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 43,
+    "bytes": 52285,
+    "mse": 8.041623617742443,
+    "encode_seconds": 0.4249485000000277,
+    "decode_seconds": 0.15224579999994603,
+    "sha256": "064f137f658f9c6e3a3a3814564c7bfef3ed779edbf8955a67da09fc7794a0a3",
+    "pixel_sha256": "b4468ce795745e33c45bc10f02a345661953e3a094d1f7a0f957b4179d0cf925",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.04906404366169692
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 40,
+    "bytes": 47011,
+    "mse": 9.035137736225595,
+    "encode_seconds": 0.4371739999987767,
+    "decode_seconds": 0.1642228000018804,
+    "sha256": "7dc99fc3ddd52084a7b3a84ef5b5f3cd3f24076e637d08ab876146b96b696e76",
+    "pixel_sha256": "d4f80ed4c73757865422cd51d41882c2e8a81ac65e643f399f172aa3f04a0b15",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.04411494226986772
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "AVIF",
+    "setting": 38,
+    "bytes": 44582,
+    "mse": 9.56924933624111,
+    "encode_seconds": 0.41386419999980717,
+    "decode_seconds": 0.16032439999980852,
+    "sha256": "d42896f4e68e63ffd29fd2f7625d5eb6565d104d90e96b651df7b9422052c057",
+    "pixel_sha256": "6abc48cfb3fe5c590e409e28e0e2ccbfef0ea11685d55238d7040d499e3dde24",
+    "working_size": [
+      3576,
+      2384
+    ],
+    "metadata_original_size": false,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.041835577976968005
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 1,
+    "bytes": 3045,
+    "mse": 419.4688271048852,
+    "encode_seconds": 0.002076900000247406,
+    "decode_seconds": 0.09405519999927492,
+    "sha256": "49e0fdf6971d9e9e6ad5291539898d03b7a63a646ee4c09335dfed039cd82c65",
+    "pixel_sha256": "f891aa50f4799d908bd0709caf170a49422397f7812e1a95ea99ce4ef3777ee7",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.0028574163325976306
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 100,
+    "bytes": 148017,
+    "mse": 23.055125691910774,
+    "encode_seconds": 0.0058376999986649025,
+    "decode_seconds": 0.10007499999846914,
+    "sha256": "a036811c73c24e329f30b956badf15321986b56d7f0d0e071f77e85771890195",
+    "pixel_sha256": "affc15d66ba6880d5df219a32141ca1c9cfbf330a15c06517f872ad01c4fe7a1",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.13889858564929508
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 50,
+    "bytes": 20910,
+    "mse": 40.15039659750061,
+    "encode_seconds": 0.0029051999990770128,
+    "decode_seconds": 0.09249080000154208,
+    "sha256": "440f59272a6b730c468d2c81020e07553f350fd989728a850a139952f95ba2f3",
+    "pixel_sha256": "b41870305d2bb1ce98a34124c2d7903ae64109190b48da644945540776065ef9",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.019621863880005405
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 75,
+    "bytes": 30739,
+    "mse": 31.365942678382854,
+    "encode_seconds": 0.0029641999972227495,
+    "decode_seconds": 0.10089850000076694,
+    "sha256": "e3e914d8e295dee0b80c93bd3f0b3f0e70dc4158cf6b0dfdfa8bf11324ca3757",
+    "pixel_sha256": "c8e4fa11bae50c835c5f7dab7384afda41d5e7190daf435dbdcc0183da996ecc",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.02884535981862679
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 62,
+    "bytes": 24575,
+    "mse": 35.988658622109114,
+    "encode_seconds": 0.002610299998195842,
+    "decode_seconds": 0.09445400000186055,
+    "sha256": "14939abc44d95056f74735c4558c4fcce96a507aafee5dca396e8e6c6cb9f76d",
+    "pixel_sha256": "403bc3893fcf9f99e24b8efb9155157c59a6a5e8aa4e5610fa99288a8ac8fdc6",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.02306108583697431
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 68,
+    "bytes": 27151,
+    "mse": 33.70216365222537,
+    "encode_seconds": 0.0028192999998282176,
+    "decode_seconds": 0.0991489999978512,
+    "sha256": "fcf1944810f1ad16f9a753cde1cee553b7b85b6d39bf3139bf358cfda0e4d261",
+    "pixel_sha256": "0c784e9732bd9bec0b79c48e785d21b3df23d5b0ebe8e4d04d1ae3586e699c2f",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.02547839436662012
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 87,
+    "bytes": 43187,
+    "mse": 27.16144425739081,
+    "encode_seconds": 0.0032140999974217266,
+    "decode_seconds": 0.0995509000022139,
+    "sha256": "a986e89fa0c23bcba82a4969f3d7b35a4a255c0449639774af0e491d499d3a7f",
+    "pixel_sha256": "9802095a0d5c3112a4089b1f4ef1119557b25261b0c81118b14b66cbfd2ecfa0",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.04052651532213264
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 93,
+    "bytes": 58395,
+    "mse": 25.034562030176318,
+    "encode_seconds": 0.0033345000010740478,
+    "decode_seconds": 0.09301699999923585,
+    "sha256": "1131c3ad924055fc816365f1794f690e9c97684ed179ef0d8a7775fb6b7e263a",
+    "pixel_sha256": "d4188004168eae7549726a806368c79d0c1709f5af67db0645ea0c52c915d35f",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.054797644250259
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 90,
+    "bytes": 49700,
+    "mse": 26.09263064977053,
+    "encode_seconds": 0.00256930000250577,
+    "decode_seconds": 0.09761069999876781,
+    "sha256": "ee90ca12264525cb0be54152e016474bf537cd24d8625a23b27b9422ee95a122",
+    "pixel_sha256": "e77bfcd8ce5f4111c56d44880299284b66d970281df698264cfc399814798dcf",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.04663828956653604
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_JPEG",
+    "setting": 88,
+    "bytes": 45388,
+    "mse": 26.767263596109284,
+    "encode_seconds": 0.0032347999986086506,
+    "decode_seconds": 0.10113709999859566,
+    "sha256": "3402bbecbdcfc23735a6afbdb9b8dc828cff0b1d45d9c802131e8f68287a3978",
+    "pixel_sha256": "ba1690b2623583137c0af752e0dfc21a67ee0c44a565160ec991a814a3aa6be6",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.04259192528865066
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 0,
+    "bytes": 3780,
+    "mse": 118.9281324211497,
+    "encode_seconds": 0.040408900000329595,
+    "decode_seconds": 0.10272229999827687,
+    "sha256": "c78c3686e56754a1bdcf70bd106fac905db12cdcc17cd01e445118dc1df91480",
+    "pixel_sha256": "ca1b27f8e7b8a680151b5d806ba0120fde9b287f7a7eb07204a729ad57307f32",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.0035471375163280932
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 100,
+    "bytes": 71182,
+    "mse": 24.544430517081313,
+    "encode_seconds": 0.07087809999939054,
+    "decode_seconds": 0.10381829999823822,
+    "sha256": "ce2654c183aba10d0d72cdfd329c74d52d85f7770a55f902d6fd3c32aef6d808",
+    "pixel_sha256": "a59102e8e24e33c478971d946cf60ae9672bf5efe53bffa4858a2c819a8d5c16",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.06679691605483236
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 50,
+    "bytes": 14518,
+    "mse": 39.00716766543299,
+    "encode_seconds": 0.05130229999849689,
+    "decode_seconds": 0.10817250000036438,
+    "sha256": "1806cba9c580afe97d86ebf34ffd2b4afd38b79693eee11e99841391059e860a",
+    "pixel_sha256": "cf082897dd30d0b8e140412290c8b85789cbe8d2b875232d3c5cfe5034bccd3d",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.013623635571971233
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 75,
+    "bytes": 18692,
+    "mse": 33.50263783162921,
+    "encode_seconds": 0.05200949999925797,
+    "decode_seconds": 0.10041920000003302,
+    "sha256": "b400dbce717b9571f01fe4b6eab2e3463f7d9c353e6db9de64427a7556673386",
+    "pixel_sha256": "9816a2621282d7e02aa7c97f79ad67142dc6bec5d7ed5e8c4bff7fe1cbce7333",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.017540501178625587
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 87,
+    "bytes": 28482,
+    "mse": 28.465125483899623,
+    "encode_seconds": 0.05678030000126455,
+    "decode_seconds": 0.10318180000103894,
+    "sha256": "2b4296031c40cde31fd44b0ee517af94c6a613104b4ad72979fb4a914156cdda",
+    "pixel_sha256": "1340c2d2545f094cd5fd60577e12f38040e1248a85cd3c0fa4866f47bd9f88fe",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.02672739966668168
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 93,
+    "bytes": 41150,
+    "mse": 25.971252858980325,
+    "encode_seconds": 0.06075019999843789,
+    "decode_seconds": 0.1011413000014727,
+    "sha256": "6be6ea6a4093a020b8f3cadf0cc84307899b9171e61be3bb68f4e2b94b4f6a8f",
+    "pixel_sha256": "dafa42670746fb7aeca5e39b926c80e85adc3fcc506b0dd997b2c8e9e1593452",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.038615002327222495
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 96,
+    "bytes": 53118,
+    "mse": 25.225266144793277,
+    "encode_seconds": 0.06479359999866574,
+    "decode_seconds": 0.09767339999962132,
+    "sha256": "da68502bb2f2fa4a9bf64fc82cc82292eb9e59e25d6f2fb368d36a4ccb65017c",
+    "pixel_sha256": "0b498859707e6b4e6f589606ab436be76af32bc404ecb3d626935bbf4c024f4e",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.049845727669924775
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 94,
+    "bytes": 44652,
+    "mse": 25.69546893846123,
+    "encode_seconds": 0.07029129999864381,
+    "decode_seconds": 0.10402999999860185,
+    "sha256": "b49d31c1027131e26b07aa1b4476dc33f9a39963e2c9609631dcb01de86fc52d",
+    "pixel_sha256": "5c9561a7ba34f083b932113e39b3493bb6af4c221552fe5b73478f12244d81e1",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.041901265708751856
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "working_WEBP",
+    "setting": 95,
+    "bytes": 49324,
+    "mse": 25.481130729847003,
+    "encode_seconds": 0.06392579999737791,
+    "decode_seconds": 0.10155339999982971,
+    "sha256": "60a6b32712582bfbea98ccf8db36d2fc51450a6c3589164883a5587430bcbb06",
+    "pixel_sha256": "15d82beda256643e45a87a9445c57a292ddc1e0c4eef93d9c667d0e4a48fbfec",
+    "working_size": [
+      612,
+      408
+    ],
+    "metadata_original_size": true,
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.046285452607239916
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "JXL",
+    "setting": 8,
+    "bytes": 96526,
+    "mse": 8.610444693432228,
+    "encode_seconds": 0.4625128000006953,
+    "decode_seconds": 1.3331796999991639,
+    "sha256": "ff94e538802a5dc120750a46d637c2a9bbde0942d790466cb93399bfc73c8982",
+    "pixel_sha256": "c9f021f62323f47b5a698c9b83ef88eb54ce3461b736c1e9efead05e97063d76",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.09057962854526072
+  },
+  {
+    "image": "flower.jpg",
+    "codec": "JXL",
+    "setting": 15,
+    "bytes": 65913,
+    "mse": 17.960412350044294,
+    "encode_seconds": 0.4542724000020826,
+    "decode_seconds": 1.5632737999985693,
+    "sha256": "7e41b0c5549f41e75cbff3a9dcd24b26944ea479e6e7c9316ce73ae97a1a7c42",
+    "pixel_sha256": "8c9f2332484363a263ac5b3404cae09be7eadc4dc3046f78bc5ca4a7ffa6491d",
+    "width": 3576,
+    "height": 2384,
+    "bpp": 0.061852506643844875
+  }
+]
