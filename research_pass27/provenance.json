@@ -1,5 +1,5 @@
 {
-  "verified_utc": "2026-10-29T22:42:34.982921+00:00",
+  "verified_utc": "2026-10-29T22:48:03.924467+00:00",
   "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
   "platform": "Windows-10-10.0.26200-SP0",
   "cpu": "Intel Core i9-12900H",
@@ -50,7 +50,7 @@
   },
   "research_source_sha256": {
     "common.py": "2a1822a32ad65ef10d5f207526ee9ca5f4ddceb7df09493fa4b1c48d2f637e2c",
-    "report.py": "145b2490b03a0754647eb5cfa6bc1028e47dc64bb1ad9987f8bf55eb936ea63d",
+    "report.py": "156f5209938f038aaf71ba22a12698dcadf3003b0da4702ec7149136d6854fca",
     "requirements-build.txt": "b39a500db0b522d43f75e1770e5261113228e6b6441a0888146023987704534e",
     "requirements-decoder-build.txt": "fc00489e2732e36ba9687e142b28219972c84ede8ec27240004d0ae69ba59ebe",
     "verify.py": "5d261916bab7bcbb5ea251fd96c4da5593ad218a4cc07e657e6b5c252937b67c",

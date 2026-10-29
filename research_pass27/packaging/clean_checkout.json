@@ -1,6 +1,6 @@
 {
-  "root": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-25d6r3fg",
-  "commit": "73082d7a4f0943c0b7a3716fb32f0e30f9fa0939",
+  "root": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-owtzbeul",
+  "commit": "1b207e1c67fee4c911c57c9f7d0d4c0845e82952",
   "tracked_checkout_clean": true,
   "published_asset_downloaded_and_verified": true,
   "no_existing_artifacts_reused": true,
@@ -9,11 +9,11 @@
   "decoder_pixels_exact": true,
   "runtime_no_python_or_compiler_on_path": true,
   "combined_exe": {
-    "path": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-25d6r3fg\\repo\\research_pass27\\artifacts\\combined\\onedir\\pbc\\pbc.exe",
-    "sha256": "f6c6b7b006069c93b36c17bc8197bafc177c777a97816bb54695f992c334f74a"
+    "path": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-owtzbeul\\repo\\research_pass27\\artifacts\\combined\\onedir\\pbc\\pbc.exe",
+    "sha256": "843b97c0d37f0c27394bc83cf2493f68ff94ba23b0b1be5a7ec489fe58590cb9"
   },
   "decoder_exe": {
-    "path": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-25d6r3fg\\repo\\research_pass27\\artifacts\\decoder\\onedir\\pbc-decode\\pbc-decode.exe",
-    "sha256": "1dfbc013fad2a09a3c0508132bd3f5353a35201b05f62d892999baae51505357"
+    "path": "C:\\Users\\EGE\\AppData\\Local\\Temp\\p27-clean-owtzbeul\\repo\\research_pass27\\artifacts\\decoder\\onedir\\pbc-decode\\pbc-decode.exe",
+    "sha256": "b2a79c3b63eb8d0ce0b226aec7cbf3017513eb5c7d8f3b8a9b51ef967a0c4aa3"
   }
 }
