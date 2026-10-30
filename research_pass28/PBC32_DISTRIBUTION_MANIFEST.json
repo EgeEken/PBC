@@ -1,67 +1,88 @@
 {
-  "version": "3.2.0rc1",
-  "promoted_to_stable": false,
+  "version": "3.2.0",
+  "promoted_to_stable": true,
   "codec_implementation_commit": "1b207e1c67fee4c911c57c9f7d0d4c0845e82952",
-  "acceptance_build_commit": "0e7396b3bbe3d167a4d21b76b2d90ca168d276d2",
-  "implementation_sha256": "ed6dfd4266cbcc87bf098dc9ebaa2b19b15655520c1c6651b2ac5f80363b040d",
-  "release_source_git_tree": "1ad12623397d04b344e9c01a2e7383d5cacd986f",
-  "source_snapshot_path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\release-source",
+  "acceptance_build_commit": "d59fd3c20a5284b5cc441dc8275b395d54145012",
+  "implementation_sha256": "65cbd7341f842217a4e33dcd85abe4c077e0b943106a340f8b767b308acede91",
+  "release_source_git_tree": "fd077ba70d6855e043721953d77a65ed43bfd5ea",
+  "source_snapshot_path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final-source",
   "artifacts": [
     {
       "kind": "combined",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\PBC32rc1-combined-Windows-x64.zip",
-      "filename": "PBC32rc1-combined-Windows-x64.zip",
-      "bytes": 72818078,
-      "sha256": "f4f1983a5c4a7a040b2df2b8cbd31cf6bacc1f1cfac9cf6108988362601105bb"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\PBC-3.2.0-combined-Windows-x64.zip",
+      "filename": "PBC-3.2.0-combined-Windows-x64.zip",
+      "bytes": 72817005,
+      "sha256": "439ac835c3e1bfc5bdfb4a83c56647fa7f1fff80bb94fd75e9fad681c1a36425"
     },
     {
       "kind": "decoder",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\PBC32rc1-decoder-Windows-x64.zip",
-      "filename": "PBC32rc1-decoder-Windows-x64.zip",
-      "bytes": 27521444,
-      "sha256": "73d7817a0edf54120dbda61e49b4ef26e01f1692eb0475c2b396ccbee7c4048e"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\PBC-3.2.0-decoder-Windows-x64.zip",
+      "filename": "PBC-3.2.0-decoder-Windows-x64.zip",
+      "bytes": 27519330,
+      "sha256": "47b5bb0ac0feabe4daa7eaad8fc75a894aecf5336271237572b9c873122c9bee"
     },
     {
       "kind": "decoder_onefile",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\PBC32rc1-decoder-Windows-x64.exe",
-      "filename": "PBC32rc1-decoder-Windows-x64.exe",
-      "bytes": 27353048,
-      "sha256": "7ce29ceb5ed2592c6439701d65986c514f15d51c620db5be7f35ff5d263926e8"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\PBC-3.2.0-decoder-Windows-x64.exe",
+      "filename": "PBC-3.2.0-decoder-Windows-x64.exe",
+      "bytes": 27352206,
+      "sha256": "d8b8038ee0e7de8a8b1d0a0ec75ebfa824040f43aef839a5341c8851cdc974f4"
     },
     {
       "kind": "decoder_onefile_with_notices",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\PBC32rc1-decoder-onefile-with-notices.zip",
-      "filename": "PBC32rc1-decoder-onefile-with-notices.zip",
-      "bytes": 27227142,
-      "sha256": "79f045768e32e95db8494cb91cddb309f49cdb03e7a92e600e80bc3420bc87d1"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\PBC-3.2.0-decoder-onefile-with-notices.zip",
+      "filename": "PBC-3.2.0-decoder-onefile-with-notices.zip",
+      "bytes": 27225941,
+      "sha256": "0d90e04e4775873f0b2b9ba8cb266d22e2a6b338b86a196d490b780b919b34cb"
     },
     {
       "kind": "wheel",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\pbc_codec-3.2.0rc1-py3-none-any.whl",
-      "filename": "pbc_codec-3.2.0rc1-py3-none-any.whl",
-      "bytes": 260407,
-      "sha256": "020c975e5bcdf498ba79db8ee5073f36d0b9a2e29dcc54765c03fac5a24f7c5c"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\pbc_codec-3.2.0-py3-none-any.whl",
+      "filename": "pbc_codec-3.2.0-py3-none-any.whl",
+      "bytes": 260099,
+      "sha256": "040d5c75a2daa3285720c1075e3f708759a82c089a08152d5c07ce233a062adb"
     },
     {
       "kind": "sdist",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\pbc_codec-3.2.0rc1.tar.gz",
-      "filename": "pbc_codec-3.2.0rc1.tar.gz",
-      "bytes": 233357,
-      "sha256": "1da177959cebe89f3fc3b4da8a2cbb28b1ce81cf4963643bfcca40180552e175"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\pbc_codec-3.2.0.tar.gz",
+      "filename": "pbc_codec-3.2.0.tar.gz",
+      "bytes": 233307,
+      "sha256": "6dc9391ed6ffa9b16f673252ef3f8e42ff65bc2f8f7b4d1d9e9e21e0bd3905a8"
     },
     {
       "kind": "release_source",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\PBC32rc1-release-source.zip",
-      "filename": "PBC32rc1-release-source.zip",
-      "bytes": 262035,
-      "sha256": "da1cc4d5a85ebb490012710614adab9d1ff8c9b9be0dead9ed283f343d4e2ed2"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\PBC-3.2.0-release-source.zip",
+      "filename": "PBC-3.2.0-release-source.zip",
+      "bytes": 261606,
+      "sha256": "34d338686bc3bb62e65f044dacfff0cc155d16e1cdda63a7bfa0f0584021fd53"
     },
     {
       "kind": "consumer_smoke_test",
-      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\dist\\PBC32rc1-consumer-smoke-test.zip",
-      "filename": "PBC32rc1-consumer-smoke-test.zip",
-      "bytes": 57080,
-      "sha256": "3e622a034f3ea5aaa93355122291468a2fda5f8afae0076d4c016a298f5bfdbe"
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\PBC-3.2.0-consumer-smoke-test.zip",
+      "filename": "PBC-3.2.0-consumer-smoke-test.zip",
+      "bytes": 57088,
+      "sha256": "3e83d1b037dac1995a9a4ad721156b481a72f2a33a778f6462942617f460c7a3"
     }
-  ]
+  ],
+  "windows_directories": {
+    "combined": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\combined\\onedir\\pbc",
+      "files": 236,
+      "extracted_bytes": 191855909,
+      "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\combined\\onedir\\pbc\\pbc.exe",
+      "executable_sha256": "a8afbc01359b809814346f1925e6c825ac07f2766d7d9e47a9115b7eedd1463c"
+    },
+    "decoder": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\decoder\\onedir\\pbc-decode",
+      "files": 198,
+      "extracted_bytes": 66374388,
+      "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final\\decoder\\onedir\\pbc-decode\\pbc-decode.exe",
+      "executable_sha256": "e43f48dbeb9e3aec861772b061c26805176f8eca9c09f6ef821395ab7fc891de"
+    }
+  },
+  "native_dll": {
+    "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\final-source\\pbc3\\mse.dll",
+    "bytes": 55172,
+    "sha256": "0def06d35fb5d4f97949ba2bc1ddb55651afeb2d007971a7c626c951cce928f3"
+  }
 }

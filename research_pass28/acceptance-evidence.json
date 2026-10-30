@@ -1,0 +1,171 @@
+{
+  "version": "3.2.0",
+  "verdict": "READY WITH LIMITATIONS",
+  "source_build_commit": "d59fd3c20a5284b5cc441dc8275b395d54145012",
+  "implementation_sha256": "65cbd7341f842217a4e33dcd85abe4c077e0b943106a340f8b767b308acede91",
+  "source_git_tree": "fd077ba70d6855e043721953d77a65ed43bfd5ea",
+  "metadata_only_runtime_files": [
+    "pbc_cli.py",
+    "pbc3/__init__.py"
+  ],
+  "performance_campaign_commit": "e6cd616361d9ea9a6a552524383f84183d25a622",
+  "performance_campaign_version": "3.2.0rc1; unchanged codec/native bodies; final frozen command timings rerun at 3.2.0",
+  "cpu": "Intel Core i9-12900H; logical CPU 12",
+  "threads": 1,
+  "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.4.6",
+    "Pillow": "11.3.0",
+    "numba": "0.68.0",
+    "llvmlite": "0.50.0",
+    "pyinstaller": "6.16.0",
+    "pyinstaller-hooks-contrib": "2026.9"
+  },
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "raw_evidence": {
+    "benchmark.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\benchmark.json",
+      "bytes": 121765,
+      "sha256": "1b6a3d97b1301597f53b9efd98c686de07c9525ab32ab83737d9ff5855d773ca"
+    },
+    "summary.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\summary.json",
+      "bytes": 22572,
+      "sha256": "bddf03fbf00d2c7d3f7fb106a13d9b3b408e7c835d49f42e3d00281fef211dad"
+    },
+    "cli-performance.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\cli-performance.json",
+      "bytes": 28897,
+      "sha256": "cb9a92ddab692925e17741579ebc1c81566b08bd583393e3cba4fd5620b899e6"
+    },
+    "memory.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\memory.json",
+      "bytes": 2003,
+      "sha256": "6d594d97fd219d580e1333d597cc5a1c25c86a5527f1bd109826899a6db89c6a"
+    },
+    "compatibility.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\compatibility.json",
+      "bytes": 974,
+      "sha256": "5d8b72175ce53392dc2fd74f9bb8d2a0e8e70661dd18ec4272733441e16cf90b"
+    },
+    "runtime-check.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\runtime-check.json",
+      "bytes": 7010,
+      "sha256": "03f11b424c96570119cafd28add91b69c83828b9cf1d1611a03e06e631e30e23"
+    },
+    "install-check.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\install-check.json",
+      "bytes": 1149,
+      "sha256": "6b7f41bc76e176115a804ab442ee59819a312322ff7564a54b6c60106242078c"
+    },
+    "packaging-audit.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\packaging-audit.json",
+      "bytes": 310,
+      "sha256": "950943ab33b86f32dec7dc0bcda694c30f2696959bc0e4cfd8563b269efde50d"
+    },
+    "permission-validation.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\permission-validation.json",
+      "bytes": 1569,
+      "sha256": "556c8ef756ff582f7f8e6c5269fb93b33af350c86936edbc2b77bb9cb391bbc5"
+    },
+    "smoke-final.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\smoke-final.json",
+      "bytes": 23302,
+      "sha256": "87d58f752b0670a3d7c83acb7bb2f94dab7cf8314ef9305881889052098cc05a"
+    },
+    "snapshot-check.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\snapshot-check.json",
+      "bytes": 677,
+      "sha256": "fcf8dbcb0189998c44647d5e9dbfceddefade13c0f17a50fad99dfbf474dce86"
+    },
+    "pe-imports.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\pe-imports.json",
+      "bytes": 56375,
+      "sha256": "ac7e2880c5e41c741b4519dae2a29f07417fe965ab725ffc99b69737f04cbf12"
+    },
+    "cli-memory.json": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass28\\artifacts\\cli-memory.json",
+      "bytes": 7190,
+      "sha256": "8b77ef4eb4844be07b9c45893bc937f9bb9401647c49c3a2e0a93bcc5da8633f"
+    }
+  },
+  "protected_refs": [
+    "d938d003f68063e8df607957d8929c5ba8e74344\trefs/heads/main",
+    "d59fd3c20a5284b5cc441dc8275b395d54145012\trefs/heads/research/experiments",
+    "93e9c0591a710397bb3f09d2d51473313ce23db6\trefs/heads/rust",
+    "ac7566f8b4fe77020bc27ff720fbe9942040cca4\trefs/tags/v3.1"
+  ],
+  "hf_ref": "98ade0c8072a4571e9674eaac3d91f861e3b9867\trefs/heads/main",
+  "pass27_artifacts_unchanged": true,
+  "input_images": [
+    {
+      "name": "cat.jpg",
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\hpt_data\\cat.jpg",
+      "file_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "size": [
+        3576,
+        2384
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "0b6222fb0f560db382a0a41e95642f32a5f918cb0c4ef37cf938fda21b58eac6"
+    },
+    {
+      "name": "flower.jpg",
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\hpt_data\\flower.jpg",
+      "file_sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "size": [
+        3576,
+        2384
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "d1d38661d2d81d1159747e45f31c3c7ccb0e5ff2b52b63e55d2b41f72b56aec3"
+    },
+    {
+      "name": "googlewiki.png",
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\hpt_data\\googlewiki.png",
+      "file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "size": [
+        814,
+        812
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a"
+    },
+    {
+      "name": "eiffel.png",
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\hpt_data\\eiffel.png",
+      "file_sha256": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e",
+      "size": [
+        487,
+        487
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "8f634f18c1a0141720cb701d3682a726f9957966d61eec4aeb63fd20980e9b0e"
+    },
+    {
+      "name": "small",
+      "generator": "numpy.default_rng(2702).integers(0,256,(61,79,C),uint8)",
+      "channels": 3,
+      "size": [
+        79,
+        61
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "f41be085d24f1dc16b7d28f41b2279180fff99ffd80e10a85de91e488a693a4d"
+    },
+    {
+      "name": "rgba",
+      "generator": "numpy.default_rng(2702).integers(0,256,(61,79,C),uint8)",
+      "channels": 4,
+      "size": [
+        79,
+        61
+      ],
+      "mode": "RGBA",
+      "pixel_sha256": "0e4be7a2123460bdf4008c07285a9360502f96e1672f019ada2bb20875f616f4"
+    }
+  ],
+  "warmup_per_case_variant": 1,
+  "measured_repeats": 3
+}

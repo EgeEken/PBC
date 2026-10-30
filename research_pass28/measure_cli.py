@@ -27,6 +27,13 @@ for mode,backend in (('published',None),('combined','reference'),('combined','na
     if backend:args+=['--mse-backend',backend]
     for phase in ('empty_cache','reused_cache','other_cwd'):
         run(mode,args,group,phase,phase=='other_cwd')
+for index,name in enumerate(('cat.jpg','flower.jpg')):
+    variants=(('published',None),('combined','reference'),('combined','native'))
+    if index:variants=tuple(reversed(variants))
+    for mode,backend in variants:
+        args=['benchmark',ROOT/'hpt_data'/name,'--preset','quality','--repeats','3']
+        if backend:args+=['--mse-backend',backend]
+        run(mode,args,'warm_encode_'+name+'_'+str(backend))
 files={'cat':ROOT/'research_pass27/artifacts/corpus/cat.jpg.quality.pbc','flower':ROOT/'research_pass27/artifacts/corpus/flower.jpg.quality.pbc','googlewiki':ROOT/'research_pass27/artifacts/corpus/googlewiki.png.quality.pbc','eiffel':ROOT/'research_pass27/artifacts/corpus/eiffel.png.high_quality.pbc','small':work/'small.pbc','rgba':work/'rgba.pbc'}
 for index,(name,path) in enumerate(files.items()):
     modes=('published','combined','decoder','onefile')

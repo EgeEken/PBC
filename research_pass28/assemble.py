@@ -95,7 +95,12 @@ for p in (PASS/'smoke').iterdir():
 (smoke/'smoke-checksums.json').write_text(json.dumps(dict(version='3.2.0',artifacts=[r for r in rows if r['kind'] in ('combined','decoder','decoder_onefile')]),indent=2)+'\n')
 smokezip=Path(shutil.make_archive(str(dist/'PBC-3.2.0-consumer-smoke-test'),'zip',smoke))
 rows.append(dict(kind='consumer_smoke_test',path=str(smokezip.resolve()),filename=smokezip.name,bytes=smokezip.stat().st_size,sha256=sha(smokezip)))
-manifest=dict(version='3.2.0',promoted_to_stable=True,codec_implementation_commit='1b207e1c67fee4c911c57c9f7d0d4c0845e82952',acceptance_build_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),implementation_sha256=sha(source/'IMPLEMENTATION.json'),release_source_git_tree=tree,source_snapshot_path=str(source.resolve()),artifacts=rows)
+manifest=dict(version='3.2.0',promoted_to_stable=True,codec_implementation_commit='1b207e1c67fee4c911c57c9f7d0d4c0845e82952',acceptance_build_commit='d59fd3c20a5284b5cc441dc8275b395d54145012',implementation_sha256=sha(source/'IMPLEMENTATION.json'),release_source_git_tree=tree,source_snapshot_path=str(source.resolve()),artifacts=rows)
+manifest['windows_directories']={}
+for kind,name in (('combined','pbc'),('decoder','pbc-decode')):
+    app=dist/kind/'onedir'/name;items=[p for p in app.rglob('*') if p.is_file()];executable=app/(name+'.exe')
+    manifest['windows_directories'][kind]=dict(path=str(app.resolve()),files=len(items),extracted_bytes=sum(p.stat().st_size for p in items),executable=str(executable.resolve()),executable_sha256=sha(executable))
+manifest['native_dll']=dict(path=str((source/'pbc3/mse.dll').resolve()),bytes=(source/'pbc3/mse.dll').stat().st_size,sha256=sha(source/'pbc3/mse.dll'))
 (PASS/'PBC32_DISTRIBUTION_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',newline='\n')
 checksums=''.join(r['sha256']+'  '+r['filename']+'\n' for r in rows)+sha(PASS/'PBC32_DISTRIBUTION_MANIFEST.json')+'  PBC32_DISTRIBUTION_MANIFEST.json\n'
 (PASS/'SHA256SUMS.txt').write_text(checksums,newline='\n')

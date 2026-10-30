@@ -1,32 +1,13 @@
 {
-  "run_id": 41051583050,
+  "run_id": 41053705104,
   "conclusion": "success",
   "environments": [
-    {
-      "runtime_exact": true,
-      "image_version": "20261026.347.1",
-      "artifacts_uploaded": false,
-      "runner": "Windows",
-      "implementation_sha256": "ed6dfd4266cbcc87bf098dc9ebaa2b19b15655520c1c6651b2ac5f80363b040d",
-      "python": "Python 3.11.9",
-      "admin": true,
-      "clean_consumer_machine_proven": false,
-      "status": "PASS",
-      "os": "Microsoft Windows NT 10.0.20348.0",
-      "source_wheel_installed": true,
-      "image": "win22",
-      "source_commit": "e6cd616361d9ea9a6a552524383f84183d25a622",
-      "checks": 75,
-      "job_id": 124048680240,
-      "run_url": "https://github.com/EgeEken/PBC/actions/runs/41051583050",
-      "log_sha256_note": "Full upstream job logs retained by GitHub; compact result extracted verbatim."
-    },
     {
       "runtime_exact": true,
       "image_version": "20261021.278.1",
       "artifacts_uploaded": false,
       "runner": "Windows",
-      "implementation_sha256": "ed6dfd4266cbcc87bf098dc9ebaa2b19b15655520c1c6651b2ac5f80363b040d",
+      "implementation_sha256": "65cbd7341f842217a4e33dcd85abe4c077e0b943106a340f8b767b308acede91",
       "python": "Python 3.11.9",
       "admin": true,
       "clean_consumer_machine_proven": false,
@@ -34,11 +15,28 @@
       "os": "Microsoft Windows NT 10.0.26100.0",
       "source_wheel_installed": true,
       "image": "win25-vs2026",
-      "source_commit": "e6cd616361d9ea9a6a552524383f84183d25a622",
+      "source_commit": "d59fd3c20a5284b5cc441dc8275b395d54145012",
       "checks": 75,
-      "job_id": 124048680775,
-      "run_url": "https://github.com/EgeEken/PBC/actions/runs/41051583050",
-      "log_sha256_note": "Full upstream job logs retained by GitHub; compact result extracted verbatim."
+      "job_id": 124055817195,
+      "run_url": "https://github.com/EgeEken/PBC/actions/runs/41053705104"
+    },
+    {
+      "runtime_exact": true,
+      "image_version": "20261026.347.1",
+      "artifacts_uploaded": false,
+      "runner": "Windows",
+      "implementation_sha256": "65cbd7341f842217a4e33dcd85abe4c077e0b943106a340f8b767b308acede91",
+      "python": "Python 3.11.9",
+      "admin": true,
+      "clean_consumer_machine_proven": false,
+      "status": "PASS",
+      "os": "Microsoft Windows NT 10.0.20348.0",
+      "source_wheel_installed": true,
+      "image": "win22",
+      "source_commit": "d59fd3c20a5284b5cc441dc8275b395d54145012",
+      "checks": 75,
+      "job_id": 124055817478,
+      "run_url": "https://github.com/EgeEken/PBC/actions/runs/41053705104"
     }
   ]
 }
