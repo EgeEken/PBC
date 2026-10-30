@@ -1,0 +1,28 @@
+name: PBC Pass 28 Windows acceptance
+on:
+  push:
+    branches: [research/experiments]
+    paths: [.github/workflows/pass28-windows.yml, research_pass28/ci_windows.ps1, research_pass28/runtime_check.py, research_pass28/install_check.py, research_pass28/prepare.py, research_pass28/build_windows.py, research_pass28/smoke/**, research_pass28/licenses/**]
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: x64
+      - name: Build and validate without uploading binaries
+        run: ./research_pass28/ci_windows.ps1

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "CPYTHON_THIRD_PARTY.rst",
+    "url": "https://raw.githubusercontent.com/python/cpython/v3.11.16/Doc/license.rst",
+    "sha256": "2b734ec5975b21b29ae8b9756a00fc3dfe701abe51687cec4c98a21c51005bca"
+  },
+  {
+    "name": "OPENSSL_LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/openssl/openssl/openssl-3.5.8/LICENSE.txt",
+    "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+  },
+  {
+    "name": "XZ_COPYING.txt",
+    "url": "https://raw.githubusercontent.com/tukaani-project/xz/v5.8.1/COPYING",
+    "sha256": "616a3ad264ce29b8f1cb97e53037b139d406899ca8d1f799651e17bfa09830b8"
+  },
+  {
+    "name": "XZ_0BSD.txt",
+    "url": "https://raw.githubusercontent.com/tukaani-project/xz/v5.8.1/COPYING.0BSD",
+    "sha256": "0b01625d853911cd0e2e088dcfb743261034a091bb379246cb25a14cc4c74bf1"
+  },
+  {
+    "name": "MINGW_COPYING.txt",
+    "url": "https://raw.githubusercontent.com/mingw-w64/mingw-w64/v11.0.1/COPYING",
+    "sha256": "99a69660981156c21336fdb5661f89341b013c94e4bf9e1c7467b4745718397f"
+  }
+]
