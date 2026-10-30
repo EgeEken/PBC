@@ -3,7 +3,7 @@ from pathlib import Path
 import psutil
 psutil.Process().cpu_affinity([12])
 for n in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMBA_NUM_THREADS'):os.environ[n]='1'
-ROOT=Path(__file__).resolve().parents[1];PASS=ROOT/'research_pass28';dist=PASS/'artifacts/dist'
+ROOT=Path(__file__).resolve().parents[1];PASS=ROOT/'research_pass28';dist=PASS/'artifacts/final'
 commands={'published':[sys.executable,str(PASS/'reference_cli.py')],'combined':[str(dist/'combined/onedir/pbc/pbc.exe')],'decoder':[str(dist/'decoder/onedir/pbc-decode/pbc-decode.exe')],'onefile':[str(dist/'decoder/onefile/pbc-decode.exe')]}
 work=Path(tempfile.mkdtemp(prefix='PBC28 latency ',dir=PASS/'artifacts'));(work/'cwd').mkdir();(work/'other-cwd').mkdir();(work/'temp').mkdir()
 f=json.loads((PASS/'smoke/fixtures.json').read_text());rows=[]

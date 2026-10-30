@@ -82,7 +82,7 @@ try {
     }
     foreach ($name in $apps.Keys) {
         $version = Invoke-Pbc $apps[$name] @('--version')
-        if ($version.stdout -notmatch '3\.2\.0rc1') { throw 'Unexpected version' }
+        if (-not $declared.version -or $version.stdout -ne ('pbc '+$declared.version+'; stream v0')) { throw 'Unexpected version' }
         foreach ($fixture in $fixtures.streams) {
             $input = Join-Path $root ($fixture.name+'.pbc')
             $output = Join-Path $root ($name+'-'+$fixture.name+'.png')

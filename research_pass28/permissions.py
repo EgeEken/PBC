@@ -12,10 +12,10 @@ import tempfile
 
 root=Path(tempfile.mkdtemp(prefix='portability \u00c7\u0131\u011f \u65e5\u672c ',dir=PASS/'artifacts'))
 for kind,name in (('combined','pbc'),('decoder','pbc-decode')):
-    archive=PASS/'artifacts/dist'/('PBC32rc1-'+kind+'-Windows-x64.zip')
+    archive=PASS/'artifacts/final'/('PBC-3.2.0-'+kind+'-Windows-x64.zip')
     shutil.unpack_archive(archive,root/kind)
 (root/'single').mkdir(exist_ok=True)
-shutil.copy2(PASS/'artifacts/dist/decoder/onefile/pbc-decode.exe',root/'single/pbc-decode.exe')
+shutil.copy2(PASS/'artifacts/final/decoder/onefile/pbc-decode.exe',root/'single/pbc-decode.exe')
 for name in ('cwd','outputs','cache','tmp'): (root/name).mkdir(exist_ok=True)
 commands={'combined':[str(root/'combined/pbc/pbc.exe')],'decoder':[str(root/'decoder/pbc-decode/pbc-decode.exe')],'decoder_onefile':[str(root/'single/pbc-decode.exe')]}
 sid=next(csv.reader(subprocess.check_output(['whoami','/user','/fo','csv','/nh'],text=True).splitlines()))[1]
@@ -55,7 +55,7 @@ try:
         rows.append(dict(test='all_presets_readonly_native_default',**result))
         before=target.read_bytes();run('combined',['encode',input,target],1);assert before==target.read_bytes()
     run('combined',['encode',input,root/'outputs/default-cache.pbc','--preset','quality'],default_cache=True)
-    assert list((root/'user-local/PBC/3.2rc1/numba').rglob('*.nbc'))
+    assert list((root/'user-local/PBC/3.2.0/numba').rglob('*.nbc'))
     source=ROOT/'research_pass26/artifacts/packaging_tests/alpha \u00f6.png'
     target=root/'outputs/alpha.pbc';run('combined',['encode',source,target,'--preset','quality'])
     assert sha(target.read_bytes())==expected['python_rgba']['stream_sha256']
@@ -73,7 +73,7 @@ try:
             args=['decode',file,root/'outputs/invalid.png','--force'] if kind=='combined' else [file,root/'outputs/invalid.png','--force']
             run(kind,args,1)
         run(kind,['inspect',root/'missing.pbc'],1)
-        assert run(kind,['--version'])=='pbc 3.2.0rc1; stream v0'
+        assert run(kind,['--version'])=='pbc 3.2.0; stream v0'
     assert list((root/'cache').rglob('*.nbc')),'persistent user cache was not populated'
     assert not list((root/'combined/pbc').rglob('*.nbc'))
     decoder_folder=root/'decoder/pbc-decode'

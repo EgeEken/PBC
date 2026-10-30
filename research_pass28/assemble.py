@@ -8,12 +8,15 @@ import tarfile
 import zipfile
 import pefile
 from PyInstaller.archive.readers import CArchiveReader
-ROOT=Path(__file__).resolve().parents[1];PASS=ROOT/'research_pass28';source=PASS/'artifacts/release-source';dist=PASS/'artifacts/dist'
+ROOT=Path(__file__).resolve().parents[1];PASS=ROOT/'research_pass28';source=PASS/'artifacts/final-source';dist=PASS/'artifacts/final'
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 implementation=json.loads((source/'IMPLEMENTATION.json').read_text())
 for name,digest in implementation['files'].items():
     assert sha(source/name)==digest,name
-    assert sha(source/name)==sha(ROOT/'research_pass27/artifacts/candidate'/name),name
+    old=(ROOT/'research_pass27/artifacts/candidate'/name).read_bytes()
+    if name=='pbc3/__init__.py':old=old.replace(b'3.2.0rc1',b'3.2.0')
+    if name=='pbc_cli.py':old=old.replace(b'3.2.0rc1',b'3.2.0').replace(b'3.2rc1',b'3.2.0').replace(b'PBC 3.2 release candidate',b'PBC 3.2.0')
+    assert (source/name).read_bytes()==old,name
 wheel=next(dist.glob('*.whl'));sdist=next(dist.glob('*.tar.gz'))
 with zipfile.ZipFile(wheel) as z:
     for name,digest in implementation['files'].items():assert hashlib.sha256(z.read(name)).hexdigest()==digest,name
@@ -33,8 +36,13 @@ for name in ('combined','decoder'):
         assert not (app/'_internal/numba').exists() and not (app/'_internal/llvmlite').exists()
         assert not list(app.rglob('*.npz'))
     else:assert sha(app/'_internal/pbc3/patch_policy.npz')==implementation['files']['pbc3/patch_policy.npz']
+for app in (dist/'combined/onedir/pbc',dist/'decoder/onedir/pbc-decode'):
+    for p in (source/'licenses').rglob('*'):
+        if p.is_file():assert sha(app/'licenses'/p.relative_to(source/'licenses'))==sha(p)
 reader=CArchiveReader(str(dist/'decoder/onefile/pbc-decode.exe'))
 assert all(n in reader.toc for n in ('LICENSE','THIRD_PARTY_NOTICES.md','IMPLEMENTATION.json'))
+for p in (source/'licenses').rglob('*'):
+    if p.is_file():assert hashlib.sha256(reader.extract(str(p.relative_to(source)))).hexdigest()==sha(p)
 pyz=reader.open_embedded_archive('PYZ.pyz')
 assert not any(n=='numba' or n.startswith(('numba.','llvmlite.')) for n in pyz.toc)
 assert not list((dist/'combined/onedir/pbc').rglob('tbbpool*.pyd'))
@@ -64,29 +72,30 @@ records=[]
 for p in files:
     blob=subprocess.check_output(cmd+['hash-object','-w','--stdin'],input=p.read_bytes()).decode().strip()
     records.append('100644 '+blob+'\t'+p.relative_to(source).as_posix()+'\n')
-subprocess.run(cmd+['update-index','--index-info'],input=''.join(records),text=True,check=True,env=env)
+subprocess.run(cmd+['update-index','--index-info'],input=''.join(records).encode('utf-8'),check=True,env=env)
 tree=subprocess.check_output(cmd+['write-tree'],env=env,text=True).strip()
-archive=dist/'PBC32rc1-release-source.zip'
+assert len(subprocess.check_output(cmd+['ls-tree','-r','--name-only',tree]).splitlines())==len(files) and tree!='4b825dc642cb6eb9a060e54bf8d69288fbee4904'
+archive=dist/'PBC-3.2.0-release-source.zip'
 with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in files:
-        info=zipfile.ZipInfo('PBC-3.2.0rc1-source/'+p.relative_to(source).as_posix(),date_time=(1980,1,1,0,0,0));info.external_attr=0o100644<<16;info.compress_type=zipfile.ZIP_DEFLATED;z.writestr(info,p.read_bytes())
+        info=zipfile.ZipInfo('PBC-3.2.0-source/'+p.relative_to(source).as_posix(),date_time=(1980,1,1,0,0,0));info.external_attr=0o100644<<16;info.compress_type=zipfile.ZIP_DEFLATED;z.writestr(info,p.read_bytes())
 source_tree=dict(git_tree_sha1=tree,files={p.relative_to(source).as_posix():sha(p) for p in files},archive_sha256=sha(archive),implementation_sha256=sha(source/'IMPLEMENTATION.json'))
 (PASS/'SOURCE_TREE.json').write_text(json.dumps(source_tree,indent=2)+'\n',newline='\n')
-exe=dist/'PBC32rc1-decoder-Windows-x64.exe';shutil.copy2(dist/'decoder/onefile/pbc-decode.exe',exe)
+exe=dist/'PBC-3.2.0-decoder-Windows-x64.exe';shutil.copy2(dist/'decoder/onefile/pbc-decode.exe',exe)
 companion=PASS/'artifacts/onefile-download';companion.mkdir(exist_ok=True)
 shutil.copy2(exe,companion/'pbc-decode.exe')
 for name in ('LICENSE','README.md','INSTALL.md','THIRD_PARTY_NOTICES.md'):shutil.copy2(source/name,companion/name)
 shutil.copytree(source/'licenses',companion/'licenses',dirs_exist_ok=True)
-convenience=Path(shutil.make_archive(str(dist/'PBC32rc1-decoder-onefile-with-notices'),'zip',companion))
-paths={'combined':dist/'PBC32rc1-combined-Windows-x64.zip','decoder':dist/'PBC32rc1-decoder-Windows-x64.zip','decoder_onefile':exe,'decoder_onefile_with_notices':convenience,'wheel':wheel,'sdist':sdist,'release_source':archive}
+convenience=Path(shutil.make_archive(str(dist/'PBC-3.2.0-decoder-onefile-with-notices'),'zip',companion))
+paths={'combined':dist/'PBC-3.2.0-combined-Windows-x64.zip','decoder':dist/'PBC-3.2.0-decoder-Windows-x64.zip','decoder_onefile':exe,'decoder_onefile_with_notices':convenience,'wheel':wheel,'sdist':sdist,'release_source':archive}
 rows=[dict(kind=k,path=str(p.resolve()),filename=p.name,bytes=p.stat().st_size,sha256=sha(p)) for k,p in paths.items()]
 smoke=PASS/'artifacts/smoke-bundle';smoke.mkdir(exist_ok=True)
 for p in (PASS/'smoke').iterdir():
     if p.is_file():shutil.copy2(p,smoke/p.name)
-(smoke/'smoke-checksums.json').write_text(json.dumps(dict(version='3.2.0rc1',artifacts=[r for r in rows if r['kind'] in ('combined','decoder','decoder_onefile')]),indent=2)+'\n')
-smokezip=Path(shutil.make_archive(str(dist/'PBC32rc1-consumer-smoke-test'),'zip',smoke))
+(smoke/'smoke-checksums.json').write_text(json.dumps(dict(version='3.2.0',artifacts=[r for r in rows if r['kind'] in ('combined','decoder','decoder_onefile')]),indent=2)+'\n')
+smokezip=Path(shutil.make_archive(str(dist/'PBC-3.2.0-consumer-smoke-test'),'zip',smoke))
 rows.append(dict(kind='consumer_smoke_test',path=str(smokezip.resolve()),filename=smokezip.name,bytes=smokezip.stat().st_size,sha256=sha(smokezip)))
-manifest=dict(version='3.2.0rc1',promoted_to_stable=False,codec_implementation_commit='1b207e1c67fee4c911c57c9f7d0d4c0845e82952',acceptance_build_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),implementation_sha256=sha(source/'IMPLEMENTATION.json'),release_source_git_tree=tree,source_snapshot_path=str(source.resolve()),artifacts=rows)
+manifest=dict(version='3.2.0',promoted_to_stable=True,codec_implementation_commit='1b207e1c67fee4c911c57c9f7d0d4c0845e82952',acceptance_build_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),implementation_sha256=sha(source/'IMPLEMENTATION.json'),release_source_git_tree=tree,source_snapshot_path=str(source.resolve()),artifacts=rows)
 (PASS/'PBC32_DISTRIBUTION_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',newline='\n')
 checksums=''.join(r['sha256']+'  '+r['filename']+'\n' for r in rows)+sha(PASS/'PBC32_DISTRIBUTION_MANIFEST.json')+'  PBC32_DISTRIBUTION_MANIFEST.json\n'
 (PASS/'SHA256SUMS.txt').write_text(checksums,newline='\n')

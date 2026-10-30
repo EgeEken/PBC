@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'research_pass27'))
 from common import *
-CANDIDATE=ROOT/'research_pass28/artifacts/release-source'
+CANDIDATE=ROOT/'research_pass28/artifacts/final-source'
 PUBLISHED=ROOT/'research_pass27/artifacts/published'
 import dataclasses
 import time

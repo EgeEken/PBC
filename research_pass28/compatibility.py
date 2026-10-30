@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 PASS=ROOT/'research_pass27'
 assert importlib.util.find_spec('numba') is None
 assert importlib.util.find_spec('llvmlite') is None
-sys.path.insert(0,str(ROOT/'research_pass28/artifacts/release-source'))
+sys.path.insert(0,str(ROOT/'research_pass28/artifacts/final-source'))
 from pbc3_decoder import decode,inspect,read_file,MAX_FILE
 import numpy as np
 manifest=json.loads((PASS/'decoder/corpus.json').read_text())

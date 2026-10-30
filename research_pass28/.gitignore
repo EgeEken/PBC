@@ -1,2 +1,7 @@
 artifacts/
 __pycache__/
+!accepted-rc1-windows.json
+!independent-windows.json
+!SOURCE_TREE.json
+!PBC32_DISTRIBUTION_MANIFEST.json
+!acceptance-evidence.json

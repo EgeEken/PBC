@@ -8,13 +8,19 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 PASS=ROOT/'research_pass28'
 subprocess.run([sys.executable,str(ROOT/'research_pass27/packaging/prepare.py')],check=True)
-source=PASS/'artifacts/release-source';source.mkdir(parents=True,exist_ok=True)
+source=PASS/'artifacts/final-source';source.mkdir(parents=True,exist_ok=True)
 for p in (ROOT/'research_pass27/artifacts/candidate').iterdir():
     if p.is_file() and p.suffix in ('.py','.toml','.md','.in') or p.name=='LICENSE':
         shutil.copy2(p,source/p.name)
 (source/'pbc3').mkdir(exist_ok=True)
 for name in ('__init__.py','mse.c','patch_policy.npz'):
     shutil.copy2(ROOT/'research_pass27/artifacts/candidate/pbc3'/name,source/'pbc3'/name)
+for name in ('pbc_cli.py','pbc3/__init__.py','README.md','INSTALL.md','pyproject.toml'):
+    path=source/name;text=path.read_text().replace('3.2.0rc1','3.2.0').replace('3.2rc1','3.2.0')
+    text=text.replace('PBC 3.2 release candidate','PBC 3.2.0').replace('Probabilistic Brush Compression release candidate','Probabilistic Brush Compression')
+    text=text.replace('Local release candidate; not an official release.','Image codec and standalone Windows applications.')
+    text=text.replace('This candidate is for broader release testing; no release/tag/HF update is authorized.','See THIRD_PARTY_NOTICES.md and BUILD.md for redistribution and rebuilding.')
+    path.write_text(text,encoding='utf-8',newline='\n')
 shutil.copytree(PASS/'licenses',source/'licenses',dirs_exist_ok=True)
 shutil.copy2(PASS/'THIRD_PARTY_NOTICES.md',source/'THIRD_PARTY_NOTICES.md')
 installed=[]
@@ -41,6 +47,6 @@ license_files=['LICENSE','THIRD_PARTY_NOTICES.md']+[str(p.relative_to(source)).r
 p=source/'pyproject.toml';p.write_text(p.read_text().replace('license-files = ["LICENSE"]','license-files = '+json.dumps(license_files)).replace('["patch_policy.npz", "mse.c"]','["patch_policy.npz", "mse.c", "IMPLEMENTATION.json"]'),newline='\n')
 p=source/'MANIFEST.in';p.write_text(p.read_text()+'\ninclude THIRD_PARTY_NOTICES.md BUILD.md IMPLEMENTATION.json\nrecursive-include licenses *\nrecursive-include tools *.py *.txt\n',newline='\n')
 files={str(p.relative_to(source)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in source.rglob('*') if p.suffix in ('.py','.npz','.c') and 'tools' not in p.parts}
-(source/'IMPLEMENTATION.json').write_text(json.dumps(dict(version='3.2.0rc1',baseline='published 3.1 asset edec3ec73721c3f56913db21f6089a3b6a1637fb3481e61de5b0475da8eeaede',codec_source_commit='1b207e1c67fee4c911c57c9f7d0d4c0845e82952',files=files),indent=2)+'\n',newline='\n')
+(source/'IMPLEMENTATION.json').write_text(json.dumps(dict(version='3.2.0',baseline='published 3.1 asset edec3ec73721c3f56913db21f6089a3b6a1637fb3481e61de5b0475da8eeaede',codec_source_commit='1b207e1c67fee4c911c57c9f7d0d4c0845e82952',files=files),indent=2)+'\n',newline='\n')
 shutil.copy2(source/'IMPLEMENTATION.json',source/'pbc3/IMPLEMENTATION.json')
 print(source)

@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'research_pass27'))
 from common import *
-CANDIDATE=ROOT/'research_pass28/artifacts/release-source'
+CANDIDATE=ROOT/'research_pass28/artifacts/final-source'
 def save(name,data): (ROOT/'research_pass28/artifacts/memory.json').write_text(json.dumps(data,indent=2)+'\n',newline='\n')
 import subprocess
 if len(sys.argv)>1:

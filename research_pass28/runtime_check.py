@@ -12,18 +12,18 @@ PASS=ROOT/'research_pass28'
 fixtures=json.loads((PASS/'smoke/fixtures.json').read_text())
 if len(sys.argv)>1:
     mode=sys.argv[1]
-    source=ROOT/'research_pass27/artifacts/published' if mode=='published' else PASS/'artifacts/release-source'
+    source=ROOT/'research_pass27/artifacts/published' if mode=='published' else PASS/'artifacts/final-source'
     sys.path.insert(0,str(source))
     import numpy as np
     from PIL import Image
     from PBC3 import PBC3
     from pbc3_types import PBC3Config
-    sys.path.append(str(PASS/'artifacts/release-source'))
+    sys.path.append(str(PASS/'artifacts/final-source'))
     from pbc3_decoder import decode
     sha=lambda data:hashlib.sha256(data).hexdigest()
     if mode=='published':
         # The lightweight reader is used only as the independent comparison.
-        sys.path.insert(0,str(PASS/'artifacts/release-source'))
+        sys.path.insert(0,str(PASS/'artifacts/final-source'))
     rows=[]
     for row in fixtures['inputs']:
         image=Image.open(io.BytesIO(base64.b64decode(row['png'])))

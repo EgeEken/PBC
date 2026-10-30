@@ -37,4 +37,4 @@ if not a.onefile:
     for filename in ('LICENSE','README.md','INSTALL.md','THIRD_PARTY_NOTICES.md','IMPLEMENTATION.json'):shutil.copy2(source/filename,folder/filename)
     shutil.copytree(source/'licenses',folder/'licenses',dirs_exist_ok=True)
     assert not any(p.suffix in ('.nbc','.nbi') for p in folder.rglob('*'))
-    print(shutil.make_archive(str(output/('PBC32rc1-'+a.kind+'-Windows-x64')),'zip',dist,name))
+    print(shutil.make_archive(str(output/('PBC-3.2.0-'+a.kind+'-Windows-x64')),'zip',dist,name))

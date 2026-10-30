@@ -16,7 +16,7 @@ from PBC3 import PBC3
 import PBC3 as module
 from pbc3 import PBC3 as Alias,PBC3Config
 assert Alias is PBC3 and Path(module.__file__).is_relative_to(Path(sys.prefix))
-assert importlib.metadata.version('pbc-codec')=='3.2.0rc1'
+assert importlib.metadata.version('pbc-codec')=='3.2.0'
 fixtures=json.loads(Path(sys.argv[1]).read_text())
 expected=json.loads(Path(sys.argv[2]).read_text())['rows']['published']
 implementation=json.loads((Path(module.__file__).parent/'pbc3/IMPLEMENTATION.json').read_text())
@@ -32,11 +32,11 @@ for row in fixtures['inputs']:
         result=PBC3.compress(im,config=cfg);decoded=PBC3.decompress(result.data).image
         rows.append(dict(name=row['name'],preset=preset,stream=hashlib.sha256(result.data).hexdigest(),pixels=hashlib.sha256(decoded.tobytes()).hexdigest(),mse=result.mse))
 assert rows==expected
-print(json.dumps(dict(version='3.2.0rc1',module=module.__file__,model=str(model),comparisons=len(rows),exact=True)))
+print(json.dumps(dict(version='3.2.0',module=module.__file__,model=str(model),comparisons=len(rows),exact=True)))
 """
 rows=[]
 for kind,pattern in (('wheel','*.whl'),('sdist','*.tar.gz')):
-    package=next((artifacts/'dist').glob(pattern))
+    package=next((artifacts/'final').glob(pattern))
     venv=artifacts/('install-'+kind)
     if not venv.exists():subprocess.run([sys.executable,'-m','venv',str(venv)],check=True)
     python=venv/'Scripts/python.exe'
