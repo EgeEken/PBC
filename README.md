@@ -199,10 +199,13 @@ Outliers (JXL encoding under q3, avif over q90, and JPEG2000 decoding over q70 a
 
 ### Bunch of performance optimizations, leading to significantly better encode and decode speeds with no RD cost
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/0f4e1cc1-7941-4b8a-bcef-85853a7aeb74" />
+### Local Benchmark Improvement Results
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/1f4690cc-5d4c-4294-9a4e-12c874bb9ac7" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/c522cca9-c206-4f72-8db8-11509da35a5b" />
 
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/bd450e2a-5428-4182-8e27-db6dafe87572" />
+
+### HF Space Allocated Free CPU Speed Benchmark Results
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/54a32b58-0f65-459c-b38c-e9b3f591a27a" />
 
 
