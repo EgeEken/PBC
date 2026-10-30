@@ -24,7 +24,7 @@ cmd+=['--add-data',str(source/'licenses')+';licenses']
 if a.kind=='combined':
     cmd+=['--hidden-import','pbc3_cache','--additional-hooks-dir',str(source/'tools/hooks')]
     for package in ('numba','llvmlite'):cmd+=['--copy-metadata',package]
-    for module in ('numba.tests','numba.cuda','numba.pycc'):cmd+=['--exclude-module',module]
+    for module in ('numba.tests','numba.cuda','numba.pycc','numba.np.ufunc.tbbpool'):cmd+=['--exclude-module',module]
     for filename in ('pbc3_ops.py','pbc3_features.py'):cmd+=['--add-data',str(source/filename)+';.']
     cmd+=['--add-data',str(source/'pbc3/patch_policy.npz')+';pbc3','--add-binary',str(source/'pbc3/mse.dll')+';pbc3']
 else:
