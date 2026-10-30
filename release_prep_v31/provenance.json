@@ -1,0 +1,364 @@
+{
+  "head": "5f95490a6f630f739111d5d7fc0b8d181711378a",
+  "original_commit": "2e59f1b06980aa467da0cde94fa33c3f9a0d4d51",
+  "source_tree": "fd077ba70d6855e043721953d77a65ed43bfd5ea",
+  "published_zip_sha256": "edec3ec73721c3f56913db21f6089a3b6a1637fb3481e61de5b0475da8eeaede",
+  "candidate_zip_sha256": "34d338686bc3bb62e65f044dacfff0cc155d16e1cdda63a7bfa0f0584021fd53",
+  "native_dll_sha256": "0def06d35fb5d4f97949ba2bc1ddb55651afeb2d007971a7c626c951cce928f3",
+  "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\release_prep_v31\\artifacts\\env\\Scripts\\python.exe",
+  "versions": {
+    "numpy": "2.4.6",
+    "numba": "0.68.0",
+    "Pillow": "11.3.0",
+    "llvmlite": "0.50.0",
+    "pyinstaller": "6.16.0",
+    "psutil": "7.2.2",
+    "setuptools": "79.0.1"
+  },
+  "cpu_topology": [
+    {
+      "flags": 1,
+      "efficiency_class": 1,
+      "masks": [
+        3
+      ],
+      "logical_cpus": [
+        0,
+        1
+      ]
+    },
+    {
+      "flags": 1,
+      "efficiency_class": 1,
+      "masks": [
+        12
+      ],
+      "logical_cpus": [
+        2,
+        3
+      ]
+    },
+    {
+      "flags": 1,
+      "efficiency_class": 1,
+      "masks": [
+        48
+      ],
+      "logical_cpus": [
+        4,
+        5
+      ]
+    },
+    {
+      "flags": 1,
+      "efficiency_class": 1,
+      "masks": [
+        192
+      ],
+      "logical_cpus": [
+        6,
+        7
+      ]
+    },
+    {
+      "flags": 1,
+      "efficiency_class": 1,
+      "masks": [
+        768
+      ],
+      "logical_cpus": [
+        8,
+        9
+      ]
+    },
+    {
+      "flags": 1,
+      "efficiency_class": 1,
+      "masks": [
+        3072
+      ],
+      "logical_cpus": [
+        10,
+        11
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        4096
+      ],
+      "logical_cpus": [
+        12
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        8192
+      ],
+      "logical_cpus": [
+        13
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        16384
+      ],
+      "logical_cpus": [
+        14
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        32768
+      ],
+      "logical_cpus": [
+        15
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        65536
+      ],
+      "logical_cpus": [
+        16
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        131072
+      ],
+      "logical_cpus": [
+        17
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        262144
+      ],
+      "logical_cpus": [
+        18
+      ]
+    },
+    {
+      "flags": 0,
+      "efficiency_class": 0,
+      "masks": [
+        524288
+      ],
+      "logical_cpus": [
+        19
+      ]
+    }
+  ],
+  "selected_cpu": 10,
+  "inputs": {
+    "hpt_data/cat.jpg": {
+      "bytes": 8425823,
+      "sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e"
+    },
+    "hpt_data/cathedral.png": {
+      "bytes": 18291201,
+      "sha256": "d7a3859fcbbe118daf8f3ea1f2daf120d6d38be474ab2ee845d6802675b21bf1"
+    },
+    "hpt_data/coast.jpg": {
+      "bytes": 8413193,
+      "sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2"
+    },
+    "hpt_data/ducklings.jpg": {
+      "bytes": 2916352,
+      "sha256": "3f9857490373bd56a5ca9d173998aea94a3d356fa2bbeef4ca41728584f1da43"
+    },
+    "hpt_data/eiffel.png": {
+      "bytes": 356645,
+      "sha256": "90424a60b193cbbc66a20a4039d12dda76059333a04a6037ac9947276a60c93e"
+    },
+    "hpt_data/field.jpg": {
+      "bytes": 3440640,
+      "sha256": "c14f283e160ca729615378dbed4ddaeaa36768401105081fcb5ae3efb578e982"
+    },
+    "hpt_data/flag.jpg": {
+      "bytes": 1270451,
+      "sha256": "6eeb01e6c10985fc5d71fa2f8bd223250391f7780cfb3b8d615bdba24f2de1e5"
+    },
+    "hpt_data/flower.jpg": {
+      "bytes": 6878458,
+      "sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72"
+    },
+    "hpt_data/flowers.jpg": {
+      "bytes": 2981888,
+      "sha256": "9f8b040449e59975e26d6ddc8d4a48b366e8fda7aa7161b9eecf0223bb5d9b40"
+    },
+    "hpt_data/googlewiki.png": {
+      "bytes": 266651,
+      "sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+    },
+    "hpt_data/mario64.png": {
+      "bytes": 478250,
+      "sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9"
+    },
+    "hpt_data/monet.jpg": {
+      "bytes": 481797,
+      "sha256": "ea9dc92627a5226e2bcb1ba9cb029cdb68380ef922f24866e8222ff56a093ea7"
+    },
+    "hpt_data/monkey.png": {
+      "bytes": 235351,
+      "sha256": "c0dd08960b30afb33f1a34f2528905d39fd492cc11d2362fcc3d666944972566"
+    },
+    "hpt_data/panorama.png": {
+      "bytes": 2893665,
+      "sha256": "67c9cf7b3c451dad7d49386553bcc11572b95cf636ea6a4a6c38e9c12ffcd95d"
+    },
+    "hpt_data/park.jpg": {
+      "bytes": 8175909,
+      "sha256": "96640a11a732044b81d575b84af1d05cda79fcb6b39bc097a8455145fc5c0ef4"
+    },
+    "hpt_data/perlman.png": {
+      "bytes": 3224404,
+      "sha256": "d1104b1539e3264ac3cf9783bcc8fd34cb6f3266b5ae4d7301e01cde748a16a9"
+    },
+    "hpt_data/ratedistortion.png": {
+      "bytes": 15597,
+      "sha256": "e2fc378ea28312d303c38934d88968913f1018744e7d68f92dfaf7c5bb0a6c10"
+    },
+    "hpt_data/seagull.jpg": {
+      "bytes": 1444021,
+      "sha256": "d44f39a33b0c39d2ab6442dd3a606f6becb5ac3e91165a4a48c37b1aca5c2639"
+    },
+    "hpt_data/stockpoint.jpg": {
+      "bytes": 84909,
+      "sha256": "3175eac094fa5b7f9641eb0873ddc3b9b544259c5620e3f1a3b82ad982f1e030"
+    },
+    "hpt_data/sunset.jpg": {
+      "bytes": 12561761,
+      "sha256": "e6ed612e51170d488dca3fdc5978a152c68c4a9173e972351719d3f59b96c0b6"
+    },
+    "hpt_data_val/15k_kills.png": {
+      "bytes": 17699,
+      "sha256": "c8bdaac8f41d7231e7d8ed2ed280b3fc430d5b5222a0577c6ae6c1863678759c"
+    },
+    "hpt_data_val/ducks.jpg": {
+      "bytes": 2541756,
+      "sha256": "0af7df42c1dd22d4cf022d5200560d30c876acd20846bdfd54b7e92fdee825c1"
+    },
+    "hpt_data_val/old_man_standing.jpg": {
+      "bytes": 8302,
+      "sha256": "a4a8b1d0b718c5faf41b6b9f57097ddb0be74adffd967bfeedd0e776d3b1922c"
+    },
+    "hpt_data_val/pigeon.JPG": {
+      "bytes": 2785280,
+      "sha256": "2e61640bdeae1c67d7b26a010deb7495477183cc30ffbbb2dde76ae8ae7477ee"
+    },
+    "hpt_data_val/pigeons.JPG": {
+      "bytes": 2523136,
+      "sha256": "f51db7c65634348b7364e97f9c0fd0045cdf51f6ab9ed3d4ada080b42feeaa7c"
+    }
+  },
+  "sources": {
+    "original": {
+      "learned_filler.py": "6a1d5b4ba77ffd7e5038dc7d8a44898cf5605316db742c2991f3b6b73eef0a08",
+      "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "PBC3.py": "ab3988d9d39a1937c545a89b827fbb0b6982a573f498e5c81686b42cd501bd34",
+      "pbc3_features.py": "a5e74cd7497081694fee015a5605357367fc5c850875ee56c21ab61dc52a013e",
+      "pbc3_heads.py": "6f26c54b143eaa2b306343db6335685043baf4e7c1a5b188d3c5f7032cf65476",
+      "pbc3_ops.py": "5778344d8a0eacee26019804ca988af022131f6c414ac6bcc196012a038fc401",
+      "pbc3_types.py": "cc3c092cd100591765fb824a0ef93b9d01f169cbfe440f4b67efb1180d7638c9"
+    },
+    "published": {
+      "INSTALL.md": "a9a5b5787564e4b35825e388e3db12822711c451e53a3ccc0af3c41a2218fba2",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "PBC3.py": "fb490b5694b49e393e3370d41597515c79fd8db3fc62f430eec10efe3c4f7df3",
+      "PBC3_animation.py": "83d10a80a8e1d1ac50cdbd996bf463785f29de0ce8909033b06317f5cb4620af",
+      "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_ops.py": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+      "pbc3_stream.py": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+      "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+      "pbc3_types.py": "c3502fd9e3326e9cbdaea960fd608fb2a01dc00863e1b0d1a00d4aa6ec6a2b4d",
+      "pyproject.toml": "28451a8f82775100bc6e0745fcbb1a8bcb96c28fda245dfdbff5adc3761126a0",
+      "pbc3/__init__.py": "875bc5a601074859fbe8932601a2ce44112b1db39ddfc4cd4746c3cd8d16b525"
+    },
+    "candidate": {
+      ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "BUILD.md": "0dc6934757d491f27958739dbb714d8b557c756bab3da9795447092da196fde0",
+      "IMPLEMENTATION.json": "65cbd7341f842217a4e33dcd85abe4c077e0b943106a340f8b767b308acede91",
+      "INSTALL.md": "2f98a4f86b37c5c8d61444dcde3013c6b8b130c873f149d43e953ed50ea4911b",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "LICENSE": "672bf89c4c0e447ae3369383ee7c711cc9db1682102548ef36e7d79d7c8f0ec9",
+      "MANIFEST.in": "81531e3f1b62abb87dc96d21844325f6f41819d86eebdb7ed18040c6da7d2290",
+      "PBC3.py": "a0a1cfe094ca596c5e1b3fa7b10c925e8bc008a0b04c75df846d25573999990a",
+      "pbc3_cache.py": "fa745caf89293003c3984a771674937a716e967daaaa5d9fe67549afffe1756b",
+      "pbc3_decoder.py": "4867a248e23d4bdf81d349d3719f163a534a6c7546b04b74fc214226fe7df2d7",
+      "pbc3_decode_ops.py": "f0d0ff05738915a8882eb06a1e3271c05fa92344281eb3917d96d683615f640e",
+      "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_native.py": "d83d0ce9e49e2c318991e27e1690aa52d6b9e49e0ee3f37a52acc6514e90543c",
+      "pbc3_ops.py": "d8103bd5c53bd49d81ed76319aba9a0539286fd6b9572b77e0c97ff3d0d8ffad",
+      "pbc3_stream.py": "29efced0554f3fc7f76c8c6bf178de9c8fb43b1f47d92a8961e0403d59f12496",
+      "pbc3_trace.py": "d8e6ca5ca78ac21c3fa130a17d5199ab67b55a1c86012cafb9be1ffa4ef0f594",
+      "pbc3_types.py": "fc1835445394e3affed4620e81180a1f55b3c1a3a73172373e8b956907e5b360",
+      "pbc_cli.py": "62cc322672871c7195964083b480d8dcb87aaa6a6bbfa6e9606fc9ef99c683dd",
+      "pbc_decode_cli.py": "fdd9c7da0ab574325b907b084aa6095ecd1483642389521858e79951c54dfd70",
+      "pyproject.toml": "de821e6f7137e4058100fc8ebfc4174d68efc554362ba6f86084ee0ae82960fe",
+      "README.md": "cba9996c2a0cd77989619680f5ed3d82c2e6d0b24243a8f7e45a80a1edb54a68",
+      "THIRD_PARTY_NOTICES.md": "b5dd4eb24753dc4b4ae319c719384631454fecc3edc1eb28073cee92c0c29f5e",
+      "licenses/CPYTHON_THIRD_PARTY.rst": "2b734ec5975b21b29ae8b9756a00fc3dfe701abe51687cec4c98a21c51005bca",
+      "licenses/installed-sources.json": "c886b30dc7e98b8ead69365576f1ffe1e294a136514ebfc4e23e670b90676472",
+      "licenses/MINGW_COPYING.txt": "99a69660981156c21336fdb5661f89341b013c94e4bf9e1c7467b4745718397f",
+      "licenses/OPENSSL_LICENSE.txt": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+      "licenses/PYTHON_LICENSE.txt": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a",
+      "licenses/sources.json": "554917c92dbc176f945173a1638a91c4dfa750f0cc7da3a3997ae048a18473c0",
+      "licenses/XZ_0BSD.txt": "0b01625d853911cd0e2e088dcfb743261034a091bb379246cb25a14cc4c74bf1",
+      "licenses/XZ_COPYING.txt": "616a3ad264ce29b8f1cb97e53037b139d406899ca8d1f799651e17bfa09830b8",
+      "licenses/llvmlite/llvmlite-0.50.0.dist-info/LICENSE": "7d6aa93e52a7ae9a995ff6a40c0ea5628311cdf1bd8dcd29c8ce9181f4af3a81",
+      "licenses/llvmlite/llvmlite-0.50.0.dist-info/LICENSE.thirdparty": "7b564c7af9ab446d245ba66adc8cda2f61d1d162f842899557499e80b715993a",
+      "licenses/numba/numba-0.68.0.dist-info/licenses/LICENSE": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+      "licenses/numba/numba-0.68.0.dist-info/licenses/LICENSES.third-party": "e5ea3f50f1c1aa518a86903b85dfd40c4765589998eb683b9382d111d91bb9ee",
+      "licenses/numpy/numpy/ma/LICENSE": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7",
+      "licenses/numpy/numpy/random/LICENSE.md": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a",
+      "licenses/numpy/numpy/_core/include/numpy/random/LICENSE.txt": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/LICENSE.txt": "a804dff0ead9fadc5293456410bcbfc32bf024be9c4513459663fb7b442d2341",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md": "8db000e158c162e7249787852d8c69764706502ccee725c06641b31c1e95c8af",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt": "19060ef465e1797d682ee0fc3081bd25ab1395e995e43d25c9d13c95d9a3cd6b",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/ma/LICENSE": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.md": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.md": "cf5619f25b112d5ce7c896efffc8e610bcb345dfadcc19f2c1460aa48fff2c9e",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md": "92c10699884321f1c2947fe2a70ab23b0fbf1507f756d89dd08f38c61fc3d4fa",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md": "41190663b77bee5302386495a07b7eabfbfa571aa0ae2f11da6764162062fc4f",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.md": "322ac46d870c8aeead6c53adcccc839296fb3c8e456eae155081297daf7f8013",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md": "28cad82ce1379dc529df30da78ec012d7d0d1d576b03ddcb93388aee53659f59",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md": "454ec7350e478e037061850b67395753b425b1cb0a34bbc26290b020bf89d763",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING": "aea41976c720f91bd19725c16916a1ace40eb1ea42620d340e587a5de4bbcea0",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/highway/LICENSE": "d208152e2777ffd0126eacc1bd21c0320d69e4e6b622d21a2a12a47e8ef73763",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt": "b0fd592d4ead563148e3977e7b589169d46a5ef2ff133c755a81af880a3fc919",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md": "a732977853530066790c42817087f4829b518dd98d340c916acbfd227e39d3cb",
+      "licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE": "585483905b13d4b42f800c55ba99e89d6e2e33ccd5f503e201c07531d148ff41",
+      "licenses/Pillow/pillow-11.3.0.dist-info/licenses/LICENSE": "19544bf53af689a3319a4fb5067370f0f0d68d2c5300a2157674f5ef8a4fd965",
+      "licenses/pyinstaller/pyinstaller-6.16.0.dist-info/licenses/COPYING.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+      "pbc3/IMPLEMENTATION.json": "65cbd7341f842217a4e33dcd85abe4c077e0b943106a340f8b767b308acede91",
+      "pbc3/mse.c": "8a5748865de1640ba88aa7d667181072e8a3438c88b3fa9a2e6bc920ec8e9395",
+      "pbc3/mse.dll": "0def06d35fb5d4f97949ba2bc1ddb55651afeb2d007971a7c626c951cce928f3",
+      "pbc3/patch_policy.npz": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "pbc3/__init__.py": "ca65fc01a130d3b6dc7728c12c68c570cfc366e0fd999a8e9c11a3ba8f34e15b",
+      "tools/build_windows.py": "aa5a70b30e674f8867d4e018316abaf8236b8cdeb0206033eefb4b56358bbca9",
+      "tools/requirements-build.txt": "b39a500db0b522d43f75e1770e5261113228e6b6441a0888146023987704534e",
+      "tools/requirements-decoder-build.txt": "fc00489e2732e36ba9687e142b28219972c84ede8ec27240004d0ae69ba59ebe",
+      "tools/hooks/hook-numba.py": "ddbe32a704d211f68481fb0ce7522528527bcc5dc8570444ca4a011d38e7e947"
+    }
+  }
+}

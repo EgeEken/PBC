@@ -1,0 +1,63 @@
+# V3.1 definitive local benchmark
+
+25 manifest-verified images × four presets × three frozen implementations × three measured repetitions: 900 complete encode and 900 complete decode calls. Additional full-call warmups precede every image/preset/variant. Timed calls include final MSE and entropy coding. Image normalization/loading, independent scoring, hashing, IPC and I/O are excluded. Persistent source-isolated Python 3.11.16 workers share pinned dependency versions and logical CPU 10 on the i9-12900H; numerical/Numba threads are one. Variant order rotates every repetition and case. No build or codec validation workload ran concurrently.
+
+Windows topology identifies CPU 10 as an SMT P-core (sibling 11, efficiency class 1). CPU 12 used in older reports is an E-core here. Topology is retained in provenance.json. These are local timings; no HF or cross-machine claim.
+
+Times below average the three-repetition median for each image/preset case, weighting all 100 cases equally. Reduction = 100 × (1 − new / old). Encode/decode columns report seconds.
+
+| Scope | 3.0 enc | Published 3.1 enc | Final enc | 3.0 dec | Published 3.1 dec | Final dec |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Overall | 0.481247 | 0.316292 | 0.283785 | 0.104033 | 0.048461 | 0.048281 |
+| compression | 0.372682 | 0.267856 | 0.235677 | 0.060331 | 0.045412 | 0.045605 |
+| balanced | 0.462478 | 0.301264 | 0.270589 | 0.080900 | 0.046892 | 0.047166 |
+| quality | 0.520634 | 0.327781 | 0.291604 | 0.103780 | 0.048774 | 0.048399 |
+| high_quality | 0.569194 | 0.368269 | 0.337269 | 0.171119 | 0.052764 | 0.051954 |
+
+| Comparison | Encode time reduction | Decode time reduction | Encode wins/regressions | Decode wins/regressions |
+| --- | ---: | ---: | ---: | ---: |
+| Published 3.1 versus 3.0 | 34.28% | 53.42% | 100/0 | 100/0 |
+| Final versus published 3.1 | 10.28% | 0.37% | 86/14 | 47/53 |
+| Final versus 3.0 | 41.03% | 53.59% | 100/0 | 99/1 |
+
+All 100/100 cases have exact three-way streams, pixels, dimensions, mode, size, bpp, patch count and internal/external MSE. All 300 implementation/cases are deterministic across repetitions. Original release RNG/configuration semantics were retained; no equality was manufactured.
+
+| Image | 3.0 enc | Published enc | Final enc | 3.0 dec | Published dec | Final dec |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| hpt_data/cat.jpg | 0.603565 | 0.411634 | 0.366808 | 0.131933 | 0.069097 | 0.068584 |
+| hpt_data/cathedral.png | 0.731222 | 0.516884 | 0.446223 | 0.169714 | 0.088720 | 0.087961 |
+| hpt_data/coast.jpg | 0.657336 | 0.496695 | 0.423546 | 0.120764 | 0.089067 | 0.088272 |
+| hpt_data/ducklings.jpg | 0.594037 | 0.458732 | 0.394198 | 0.135548 | 0.086140 | 0.085529 |
+| hpt_data/eiffel.png | 0.356328 | 0.195356 | 0.191896 | 0.084422 | 0.014873 | 0.014464 |
+| hpt_data/field.jpg | 0.633363 | 0.486838 | 0.405965 | 0.129059 | 0.086883 | 0.085928 |
+| hpt_data/flag.jpg | 0.567124 | 0.357891 | 0.324959 | 0.075123 | 0.054962 | 0.052601 |
+| hpt_data/flower.jpg | 0.474136 | 0.352385 | 0.307728 | 0.092725 | 0.063962 | 0.063809 |
+| hpt_data/flowers.jpg | 0.708994 | 0.502104 | 0.438478 | 0.162840 | 0.084734 | 0.085107 |
+| hpt_data/googlewiki.png | 0.456591 | 0.233700 | 0.232438 | 0.148102 | 0.020622 | 0.021270 |
+| hpt_data/mario64.png | 0.471775 | 0.240544 | 0.238961 | 0.096714 | 0.022737 | 0.022939 |
+| hpt_data/monet.jpg | 0.389325 | 0.201079 | 0.197809 | 0.073700 | 0.020214 | 0.019616 |
+| hpt_data/monkey.png | 0.417738 | 0.205674 | 0.205064 | 0.033793 | 0.015061 | 0.016141 |
+| hpt_data/panorama.png | 0.436048 | 0.230765 | 0.223517 | 0.078220 | 0.027065 | 0.026997 |
+| hpt_data/park.jpg | 0.591185 | 0.391383 | 0.349350 | 0.154904 | 0.064911 | 0.066072 |
+| hpt_data/perlman.png | 0.368373 | 0.241510 | 0.221891 | 0.082209 | 0.037476 | 0.037342 |
+| hpt_data/ratedistortion.png | 0.255417 | 0.138975 | 0.140140 | 0.084027 | 0.009068 | 0.009217 |
+| hpt_data/seagull.jpg | 0.496281 | 0.306332 | 0.273926 | 0.110010 | 0.042766 | 0.042150 |
+| hpt_data/stockpoint.jpg | 0.255443 | 0.156142 | 0.148460 | 0.044732 | 0.018774 | 0.018945 |
+| hpt_data/sunset.jpg | 0.624713 | 0.453586 | 0.389653 | 0.145726 | 0.082858 | 0.082298 |
+| hpt_data_val/15k_kills.png | 0.295311 | 0.152699 | 0.153314 | 0.088035 | 0.011166 | 0.011559 |
+| hpt_data_val/ducks.jpg | 0.446379 | 0.259919 | 0.247522 | 0.112531 | 0.035666 | 0.036194 |
+| hpt_data_val/old_man_standing.jpg | 0.054037 | 0.037359 | 0.037604 | 0.013164 | 0.003300 | 0.003299 |
+| hpt_data_val/pigeon.JPG | 0.659151 | 0.474535 | 0.398142 | 0.137659 | 0.082285 | 0.081348 |
+| hpt_data_val/pigeons.JPG | 0.487302 | 0.404591 | 0.337033 | 0.095161 | 0.079109 | 0.079380 |
+
+Within-case CV (population standard deviation / mean), averaged over cases:
+- encode_seconds: original 1.72% (maximum 15.37%), published 1.61% (maximum 7.90%), candidate 1.85% (maximum 9.32%).
+  published_vs_original lowest reductions: hpt_data/field.jpg/compression 10.00%, hpt_data/sunset.jpg/compression 10.37%, hpt_data_val/pigeons.JPG/quality 13.48%, hpt_data/coast.jpg/quality 13.77%, hpt_data/cathedral.png/compression 15.87%.
+  candidate_vs_published lowest reductions: hpt_data/ratedistortion.png/balanced -4.95%, hpt_data_val/15k_kills.png/high_quality -2.26%, hpt_data/panorama.png/high_quality -1.94%, hpt_data_val/old_man_standing.jpg/balanced -1.81%, hpt_data_val/old_man_standing.jpg/quality -1.48%.
+  candidate_vs_original lowest reductions: hpt_data_val/old_man_standing.jpg/compression 21.04%, hpt_data_val/old_man_standing.jpg/balanced 22.36%, hpt_data/field.jpg/compression 25.95%, hpt_data/sunset.jpg/compression 26.08%, hpt_data_val/pigeons.JPG/quality 27.20%.
+- decode_seconds: original 2.82% (maximum 57.78%), published 2.89% (maximum 20.57%), candidate 3.11% (maximum 27.76%).
+  published_vs_original lowest reductions: hpt_data/flag.jpg/compression 3.68%, hpt_data/field.jpg/compression 4.11%, hpt_data/coast.jpg/compression 6.99%, hpt_data_val/pigeons.JPG/compression 8.22%, hpt_data_val/pigeons.JPG/balanced 9.65%.
+  candidate_vs_published lowest reductions: hpt_data_val/15k_kills.png/balanced -11.32%, hpt_data/ducklings.jpg/balanced -8.95%, hpt_data/monkey.png/high_quality -8.37%, hpt_data_val/pigeons.JPG/quality -7.72%, hpt_data/monkey.png/balanced -6.88%.
+  candidate_vs_original lowest reductions: hpt_data/field.jpg/compression -0.83%, hpt_data/coast.jpg/compression 5.81%, hpt_data_val/pigeons.JPG/compression 7.34%, hpt_data_val/pigeon.JPG/compression 8.83%, hpt_data/ducklings.jpg/balanced 9.36%.
+
+Detailed case medians, per-preset comparisons, dataset aggregates, variability and regressions: artifacts/summary.json. Full repetition-level configs/hashes/statistics: artifacts/measurements.jsonl (SHA-256 98a7dbeba061b0fd6441171777c79be3bdcb6075a78b80b561aa438cf56ac1d8). Warmups and worker module origins are retained separately. Negative reductions are timing regressions; three repetitions do not establish statistical significance. Sources: provenance.json and prepare.py.

@@ -1,0 +1,12 @@
+{
+  "tcl": {
+    "version": "8.6.12",
+    "url": "https://raw.githubusercontent.com/tcltk/tcl/core-8-6-12/license.terms",
+    "sha256": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16"
+  },
+  "tk": {
+    "version": "8.6.12",
+    "source": "C:\\Users\\EGE\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\tcl\\tk8.6\\license.terms",
+    "sha256": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5"
+  }
+}

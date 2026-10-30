@@ -1,0 +1,30 @@
+--- a/README.md
++++ b/README.md
+@@ -197,14 +197,16 @@
+ 
+ ## V3.1
+ 
+-### Bunch of performance optimizations, leading to significantly better encode and decode speeds with no RD cost
+-
+-<img height="300" alt="image" src="https://github.com/user-attachments/assets/0f4e1cc1-7941-4b8a-bcef-85853a7aeb74" />
+-
+-<img height="300" alt="image" src="https://github.com/user-attachments/assets/1f4690cc-5d4c-4294-9a4e-12c874bb9ac7" />
+-
+-<img height="300" alt="image" src="https://github.com/user-attachments/assets/54a32b58-0f65-459c-b38c-e9b3f591a27a" />
+-
+-
+-
+-### 
++### Performance optimizations and a standalone Windows GUI, with no RD cost
++
++V3.1 uses **41.03% less encoding time** and **53.59% less decoding time** than V3.0. The updated implementation also uses **10.28% less encoding time** than the previously published V3.1; its additional decode-time change is effectively neutral. All 100 tested image/preset cases produced identical compressed streams, reconstructed pixels and compressed sizes.
++
++The combined V3.1 download includes a standalone Windows GUI with Encode, Decode and Registry tabs, alongside the Python library.
++
++<img width="100%" alt="PBC V3.0 versus final V3.1 encoding times by preset; 41.03 percent lower overall execution time" src="docs/assets/v31/encode-time.png" />
++
++<img width="100%" alt="PBC V3.0 versus final V3.1 decoding times by preset; 53.59 percent lower overall execution time" src="docs/assets/v31/decode-time.png" />
++
++<img width="100%" alt="Mean case-median encode and decode times for original V3.0, published V3.1 and final V3.1" src="docs/assets/v31/three-way-times.png" />
++
++Benchmarked on 25 images across four presets, using three measured repetitions per case. Results average the per-case median execution times. These are reductions in execution time, not throughput increases. [Benchmark details](docs/benchmarks/v31.md).

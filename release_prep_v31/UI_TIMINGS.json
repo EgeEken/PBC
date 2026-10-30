@@ -1,0 +1,93 @@
+{
+  "repetitions": 3,
+  "units": "seconds",
+  "aggregation": "median per image",
+  "end_point": "Tk event processing and idle repaint completed, followed by DwmFlush; excludes human reaction and initial JIT",
+  "note": "Stage measurements can overlap; preview/thumbnail/PhotoImage costs are nested in callback costs. Shared desktop CPU timings vary.",
+  "results": {
+    "before": {
+      "cat.jpg": {
+        "worker_begin": 0.03131259999645408,
+        "compress": 0.3449555999977747,
+        "decompress": 0.07252750000043306,
+        "save": 0.583421699993778,
+        "stage": 0.5843349000060698,
+        "queue_delivery": 0.09620270000596065,
+        "loaded": 0.04595720001088921,
+        "add_result": 0.05398369999602437,
+        "preview_render": 0.07615810001152568,
+        "displayed": 1.317870300001232,
+        "non_codec": 0.9729147000034573
+      },
+      "flower.jpg": {
+        "worker_begin": 0.03350170000339858,
+        "compress": 0.43388369999593124,
+        "decompress": 0.07542459999967832,
+        "save": 0.6430382999969879,
+        "stage": 0.6436688999965554,
+        "queue_delivery": 0.09449190000304952,
+        "loaded": 0.04374770000868011,
+        "add_result": 0.05267660001118202,
+        "preview_render": 0.07220120000420138,
+        "displayed": 1.4138271000119857,
+        "non_codec": 0.9859630999999354
+      }
+    },
+    "after": {
+      "cat.jpg": {
+        "worker_begin": 0.03320320000057109,
+        "compress": 0.33962629998859484,
+        "decompress": 0,
+        "save": 0.16404989999136887,
+        "stage": 0.16451869999582414,
+        "queue_delivery": 0.047894999996060506,
+        "loaded": 0.00808879999385681,
+        "add_result": 0.048557999994955026,
+        "preview_render": 0.03584880000562407,
+        "displayed": 0.6537259999895468,
+        "non_codec": 0.3230645000003278
+      },
+      "flower.jpg": {
+        "worker_begin": 0.029948700001114048,
+        "compress": 0.3520012999942992,
+        "decompress": 0,
+        "save": 0.20486919999530073,
+        "stage": 0.20535540000128094,
+        "queue_delivery": 0.038338099999236874,
+        "loaded": 0.006913300006999634,
+        "add_result": 0.04725099999632221,
+        "preview_render": 0.032725099998060614,
+        "displayed": 0.6924831000069389,
+        "non_codec": 0.3435401000024285
+      }
+    },
+    "after_frozen": {
+      "cat.jpg": {
+        "worker_begin": 0.031315099986386485,
+        "compress": 0.3496350000059465,
+        "decompress": 0,
+        "save": 0.17081519999192096,
+        "stage": 0.17135100001178216,
+        "queue_delivery": 0.040410800007521175,
+        "loaded": 0.0071020000032149255,
+        "add_result": 0.050243300007423386,
+        "preview_render": 0.035044899996137246,
+        "displayed": 0.6757976999942912,
+        "non_codec": 0.3261626999883447
+      },
+      "flower.jpg": {
+        "worker_begin": 0.03137860000424553,
+        "compress": 0.36415919999126345,
+        "decompress": 0,
+        "save": 0.20900350000010803,
+        "stage": 0.20964299999468494,
+        "queue_delivery": 0.051591499999631196,
+        "loaded": 0.0071296999958576635,
+        "add_result": 0.048056600004201755,
+        "preview_render": 0.03340680000837892,
+        "displayed": 0.7225864000065485,
+        "non_codec": 0.3511853000090923
+      }
+    }
+  }
+}
