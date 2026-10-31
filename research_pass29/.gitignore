@@ -1,0 +1,4 @@
+outputs/
+!PBC_V4_NONLOCAL_GROUPING_SUMMARY.json
+!visuals/
+!visuals/*.png
