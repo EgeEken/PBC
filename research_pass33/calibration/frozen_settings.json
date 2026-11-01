@@ -1,0 +1,14 @@
+{
+  "calibration_image": "googlewiki.png",
+  "calibration_role": "development image; not independent holdout",
+  "calibration_base_stream_sha256": "0f4f38e879741604d1a80ff1c47e3130629409dcf8544c05d1fbbe3a9561281a",
+  "control_lambdas": [0, 20, 100],
+  "sparse_qstep_used_for_calibration": 64,
+  "sparse_lambda_screen": [100, 400, 1600],
+  "sparse_lambda_screen_total_bytes": [123303, 108227, 87155],
+  "sparse_lambda_screen_rgb_mse": [535.996, 568.437, 713.318],
+  "frozen_sparse_lambdas_for_all_qsteps_and_images": [100, 400, 1600],
+  "selection_rule": "Use three increasing penalties that move the q64 sparse candidate from its high-quality point toward and into the measured A/B total-byte range. Freeze these penalties globally; do not choose per image.",
+  "quantization_steps": [16, 32, 64],
+  "calibration_candidate_streams_are_not_part_of_final_candidate_count": true
+}

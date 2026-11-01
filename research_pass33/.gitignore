@@ -1,0 +1,7 @@
+outputs/
+__pycache__/
+*.pyc
+!PBC_V4_SPARSE_DETAIL_SUMMARY.json
+!visuals/
+!visuals/*.png
+!visuals/*.jpg

@@ -1,0 +1,28 @@
+{
+  "selection_stage": "Conditional extension selected after the initial four-image gate passed and before either added image was encoded by Pass 33.",
+  "selection_rule": "Add one architectural image with dense stone edges and fine relief, plus one natural scene with irregular foliage texture and a narrow structured bridge. Select only among existing benchmark images with frozen PBC V3.1 Quality bases from Pass 29–32.",
+  "images": [
+    {
+      "image": "cathedral.png",
+      "content_class": "architectural facade",
+      "selection_reason": "Dense masonry edges, repeated arches, and fine sculptural detail extend the text/graphics edge case toward photographic architecture.",
+      "source_sha256": "d7a3859fcbbe118daf8f3ea1f2daf120d6d38be474ab2ee845d6802675b21bf1",
+      "width": 3585,
+      "height": 3346,
+      "base_stream_sha256": "d5f71c17e34f7f6745a6eb0b2c3bcd6d18d142ec0c4248b527c1142c1adee5a8",
+      "base_source_pass": 32
+    },
+    {
+      "image": "park.jpg",
+      "content_class": "foliage and bridge photography",
+      "selection_reason": "Irregular fine foliage and a narrow bridge with strong straight edges test sparse coefficients on mixed natural texture and geometry.",
+      "source_sha256": "96640a11a732044b81d575b84af1d05cda79fcb6b39bc097a8455145fc5c0ef4",
+      "width": 3577,
+      "height": 2384,
+      "base_stream_sha256": "3a20e2bf6ffe2d391ee3830cce045324e3a4a846a4579d1f8bc32aa808fe858b",
+      "base_source_pass": 32
+    }
+  ],
+  "pass33_primary_images": ["googlewiki.png", "mario64.png", "flower.jpg", "cat.jpg"],
+  "base_reused_without_regeneration": true
+}
