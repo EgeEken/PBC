@@ -1,0 +1,4690 @@
+{
+  "provenance": {
+    "starting_head": "fa86060175889e8ec40d3dd3b938b7982daa93dd",
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "numpy": "2.2.6",
+    "pillow": "11.3.0",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\EGE\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+        "version": "0.3.29",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      }
+    ],
+    "thread_limit": 1
+  },
+  "config": {
+    "cell": 16,
+    "dc_step": 8,
+    "detail_step": 16,
+    "detail_grid": "4x4 RGB; align-corners bilinear fixed-point, ties away from zero",
+    "modes": {
+      "0": "skip",
+      "1": "dc",
+      "2": "vertical prediction",
+      "3": "horizontal prediction",
+      "4": "local 4x4 detail",
+      "5": "vertical prediction + DC offset",
+      "6": "horizontal prediction + DC offset"
+    },
+    "rate_estimator_bits_per_cell": {
+      "skip": 3,
+      "dc": 27,
+      "vertical_no_offset": 3,
+      "horizontal_no_offset": 3,
+      "vertical_with_offset": 27,
+      "horizontal_with_offset": 27,
+      "detail": 387
+    },
+    "operating_points": [
+      0.0,
+      20.0,
+      100.0
+    ],
+    "xz_preset": 6,
+    "configuration_masks": {
+      "A": 3,
+      "B": 19,
+      "C": 111,
+      "D": 127
+    }
+  },
+  "images": {
+    "googlewiki.png": {
+      "class": "text",
+      "width": 814,
+      "height": 812,
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "base_sha256": "0f4f38e879741604d1a80ff1c47e3130629409dcf8544c05d1fbbe3a9561281a",
+      "base_bytes": 82440,
+      "base_mse": {
+        "mse": 781.0294058613024,
+        "edge_top10_mse": 3783.22627619451,
+        "smooth_bottom50_mse": 64.52765481130602
+      },
+      "process_peak_working_set_bytes": 104370176,
+      "results": [
+        {
+          "key": "A|0",
+          "config": "A",
+          "lambda": 0.0,
+          "enhancement_bytes": 767,
+          "base_bytes": 82440,
+          "total_bytes": 83207,
+          "total_bpp": 1.007092627782283,
+          "enhancement_bpp": 0.009283354110940318,
+          "metrics": {
+            "mse": 777.2401235763305,
+            "edge_top10_mse": 3741.911609285815,
+            "smooth_bottom50_mse": 62.64815462328278
+          },
+          "mode_counts": {
+            "skip": 2048,
+            "dc": 553,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 21075,
+          "actual_enhancement_bits": 6136,
+          "actual_minus_estimated_bits": -14939,
+          "estimated_bits_per_cell": 8.102652825836216,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 1659,
+          "raw_payload_bytes": 2635,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 736,
+          "xz_reduction_pct": 72.06831119544592,
+          "encode_seconds": 0.1669672999996692,
+          "decode": {
+            "samples_s": [
+              0.037685499992221594,
+              0.0395843000151217,
+              0.038376899989089
+            ],
+            "median_s": 0.038376899989089
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "1df42a0e84796e1ffa850c3a9cb4beb19a35a56121022eace90642e478913263",
+          "pixels_sha256": "a3a3cb4a9c32ca7660dd451198bd03ea8ab0c9405656b9099b0f9210c0f4ce75",
+          "modes_sha256": "2a855acde83350874648a7229ab6650c54445bf3407b1022469d32d95a8497f7",
+          "params_sha256": "7c70a6092faf293d4de38915ef5b5eec0f7ebbeb56e678dedd3c71c0c6a36c96",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2048,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 553,
+              "signed_sse_gain": 7513783,
+              "mean_sse_gain_per_used_cell": 13587.31103074141
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "A|20",
+          "config": "A",
+          "lambda": 20.0,
+          "enhancement_bytes": 759,
+          "base_bytes": 82440,
+          "total_bytes": 83199,
+          "total_bpp": 1.0069958000992483,
+          "enhancement_bpp": 0.009186526427905739,
+          "metrics": {
+            "mse": 777.2407368183231,
+            "edge_top10_mse": 3741.8558621246043,
+            "smooth_bottom50_mse": 62.64202059386025
+          },
+          "mode_counts": {
+            "skip": 2052,
+            "dc": 549,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 20979,
+          "actual_enhancement_bits": 6072,
+          "actual_minus_estimated_bits": -14907,
+          "estimated_bits_per_cell": 8.065743944636678,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 1647,
+          "raw_payload_bytes": 2623,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 728,
+          "xz_reduction_pct": 72.24552039649257,
+          "encode_seconds": 0.1686121000093408,
+          "decode": {
+            "samples_s": [
+              0.03735579998465255,
+              0.03862249999656342,
+              0.03844480001134798
+            ],
+            "median_s": 0.03844480001134798
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "dabc6ec6ddfe57565529e9536493fbd4d03623c90c7cda6e8c2069b465f632a4",
+          "pixels_sha256": "64b99328a53e9b6305b55570158dce6c1200a557af7ea7bf1d949da4768867f1",
+          "modes_sha256": "32930d836f1e0ec0e7c5c8c57851916201c131d7b7fbba36175c4fb9454c2fcf",
+          "params_sha256": "ae43f85143a60c2bebd9276e059ac296d5c99c2732a3d894a053b960cfcf2343",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2052,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 549,
+              "signed_sse_gain": 7512567,
+              "mean_sse_gain_per_used_cell": 13684.092896174863
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "A|100",
+          "config": "A",
+          "lambda": 100.0,
+          "enhancement_bytes": 743,
+          "base_bytes": 82440,
+          "total_bytes": 83183,
+          "total_bpp": 1.0068021447331792,
+          "enhancement_bpp": 0.008992871061836579,
+          "metrics": {
+            "mse": 777.2501119570085,
+            "edge_top10_mse": 3741.897087594038,
+            "smooth_bottom50_mse": 62.63890593193192
+          },
+          "mode_counts": {
+            "skip": 2067,
+            "dc": 534,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 20619,
+          "actual_enhancement_bits": 5944,
+          "actual_minus_estimated_bits": -14675,
+          "estimated_bits_per_cell": 7.927335640138408,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 1602,
+          "raw_payload_bytes": 2578,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 712,
+          "xz_reduction_pct": 72.38169123351435,
+          "encode_seconds": 0.1672452000202611,
+          "decode": {
+            "samples_s": [
+              0.03617770000710152,
+              0.0379767999984324,
+              0.037079600006109104
+            ],
+            "median_s": 0.037079600006109104
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "067b5aeb146f3181f60ed0d0ea7f83a9ca23c79798bfdb2b0dae2e68472d373c",
+          "pixels_sha256": "dc405892c0921a0c521d86e52a6eb93184cf0cd9a092f8d1f1f65cc6e489ad84",
+          "modes_sha256": "6cb755f0c0ee1491bc1d94611563aa72b41f99e24e4b6a8b5da724b233d9b8a3",
+          "params_sha256": "443c99a9fc1d570b2c90c92d672c74f4ca1851c8458933ce714d599e371eef30",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2067,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 534,
+              "signed_sse_gain": 7493977,
+              "mean_sse_gain_per_used_cell": 14033.66479400749
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "B|0",
+          "config": "B",
+          "lambda": 0.0,
+          "enhancement_bytes": 8527,
+          "base_bytes": 82440,
+          "total_bytes": 90967,
+          "total_bpp": 1.1010154803258252,
+          "enhancement_bpp": 0.10320620665448252,
+          "metrics": {
+            "mse": 764.7502667804392,
+            "edge_top10_mse": 3694.0221506222138,
+            "smooth_bottom50_mse": 57.60926862987861
+          },
+          "mode_counts": {
+            "skip": 1054,
+            "dc": 174,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 1373,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 539211,
+          "actual_enhancement_bits": 68216,
+          "actual_minus_estimated_bits": -470995,
+          "estimated_bits_per_cell": 207.30911188004615,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 66426,
+          "raw_payload_bytes": 67402,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 8496,
+          "xz_reduction_pct": 87.39503278834457,
+          "encode_seconds": 0.5028235999925528,
+          "decode": {
+            "samples_s": [
+              0.1333561999781523,
+              0.13979319998179562,
+              0.14134109998121858
+            ],
+            "median_s": 0.13979319998179562
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "f0bfab577b3466d2ab196e8db20ae68f66f9cf37bad832deadaeb14ca127b219",
+          "pixels_sha256": "326ca4659f9c106a3971e1d451f77c68e8bb20897672df75d16d432b01f8afce",
+          "modes_sha256": "ad6db82a0f242282327df6659da0d560c1c49dd3b1ce003d483279fa86d6997f",
+          "params_sha256": "89e071eb12b3061a5a8257af2a98ea6a2c5f4d85dc2176d68c628e2c7e3d2ef1",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1054,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 174,
+              "signed_sse_gain": 1747045,
+              "mean_sse_gain_per_used_cell": 10040.488505747126
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 1373,
+              "signed_sse_gain": 30532925,
+              "mean_sse_gain_per_used_cell": 22238.109978150038
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|20",
+          "config": "B",
+          "lambda": 20.0,
+          "enhancement_bytes": 5927,
+          "base_bytes": 82440,
+          "total_bytes": 88367,
+          "total_bpp": 1.0695464833395867,
+          "enhancement_bpp": 0.07173720966824415,
+          "metrics": {
+            "mse": 765.8225743656778,
+            "edge_top10_mse": 3707.1083479558706,
+            "smooth_bottom50_mse": 57.33722867658755
+          },
+          "mode_counts": {
+            "skip": 1534,
+            "dc": 306,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 761,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 307371,
+          "actual_enhancement_bits": 47416,
+          "actual_minus_estimated_bits": -259955,
+          "estimated_bits_per_cell": 118.17416378316032,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 37446,
+          "raw_payload_bytes": 38422,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 5896,
+          "xz_reduction_pct": 84.65462495445317,
+          "encode_seconds": 0.5751442999753635,
+          "decode": {
+            "samples_s": [
+              0.12404260001494549,
+              0.12490960001014173,
+              0.13381939998362213
+            ],
+            "median_s": 0.12490960001014173
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "2718f2a720728b34f0dabb589116f387db0fb1eac8dec73d97815dcf9e35cd3c",
+          "pixels_sha256": "95dada808a6a7146f7eccbeb5c0ef24f90d80d5f0169d14c7aecd96ce397ddde",
+          "modes_sha256": "0d01871bcac24575a84562219a6c650ada80820b69e0a2c97483e20ea182d50e",
+          "params_sha256": "46efec97ef447105d0f58f2374ddb109bac5cdeef2bdc3a58f1b8eb5ac6abc9c",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1534,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 306,
+              "signed_sse_gain": 3005431,
+              "mean_sse_gain_per_used_cell": 9821.669934640522
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 761,
+              "signed_sse_gain": 27148256,
+              "mean_sse_gain_per_used_cell": 35674.4494086728
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|100",
+          "config": "B",
+          "lambda": 100.0,
+          "enhancement_bytes": 2091,
+          "base_bytes": 82440,
+          "total_bytes": 84531,
+          "total_bpp": 1.0231176093245058,
+          "enhancement_bpp": 0.02530833565316324,
+          "metrics": {
+            "mse": 771.2362802233492,
+            "edge_top10_mse": 3734.4806327020433,
+            "smooth_bottom50_mse": 58.97442077477307
+          },
+          "mode_counts": {
+            "skip": 1998,
+            "dc": 476,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 127,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 67995,
+          "actual_enhancement_bits": 16728,
+          "actual_minus_estimated_bits": -51267,
+          "estimated_bits_per_cell": 26.141868512110726,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 7524,
+          "raw_payload_bytes": 8500,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 2060,
+          "xz_reduction_pct": 75.76470588235294,
+          "encode_seconds": 0.6853879000118468,
+          "decode": {
+            "samples_s": [
+              0.058378999994602054,
+              0.06284579998464324,
+              0.07207710001966916
+            ],
+            "median_s": 0.06284579998464324
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "5e4ed4589439ccf3d828a6d2e691e81052f3f74884075a18e68be350fc434156",
+          "pixels_sha256": "6b33cada1c54e7a4f2f58d25fc3b3c0fd5a74113acf4fc177c2415ecd7e3b926",
+          "modes_sha256": "9a1421d8fb43fce540d6ebc2ddd074d7ce98a1e4a69e74004e598c86f0f087d7",
+          "params_sha256": "4bd980b928f52c8bb4325ca469fae93bb113ae9a880a4fc217d4872e471a0235",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1998,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 476,
+              "signed_sse_gain": 5697850,
+              "mean_sse_gain_per_used_cell": 11970.273109243697
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 127,
+              "signed_sse_gain": 13720978,
+              "mean_sse_gain_per_used_cell": 108039.1968503937
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "C|0",
+          "config": "C",
+          "lambda": 0.0,
+          "enhancement_bytes": 1227,
+          "base_bytes": 82440,
+          "total_bytes": 83667,
+          "total_bpp": 1.0126602195567713,
+          "enhancement_bpp": 0.014850945885428644,
+          "metrics": {
+            "mse": 774.8886663197007,
+            "edge_top10_mse": 3724.4183406950247,
+            "smooth_bottom50_mse": 60.85058712366945
+          },
+          "mode_counts": {
+            "skip": 616,
+            "dc": 304,
+            "vertical_no_offset": 880,
+            "horizontal_no_offset": 626,
+            "local_detail": 0,
+            "vertical_with_offset": 107,
+            "horizontal_with_offset": 68
+          },
+          "estimated_bits": 19299,
+          "actual_enhancement_bits": 9816,
+          "actual_minus_estimated_bits": -9483,
+          "estimated_bits_per_cell": 7.419838523644752,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 1437,
+          "raw_payload_bytes": 2413,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1196,
+          "xz_reduction_pct": 50.435142975549105,
+          "encode_seconds": 0.6753824999905191,
+          "decode": {
+            "samples_s": [
+              0.1034018000063952,
+              0.06646590001764707,
+              0.07106100002420135
+            ],
+            "median_s": 0.07106100002420135
+          },
+          "directional_cells": 1681,
+          "directional_selected_sse_gain": 8816977,
+          "directional_available_cell_sse_gain": 11664578,
+          "stream_sha256": "9f92b3593865f1e1874d5088b8e1df8537a841b2092aa4791d97bcdd82e2bb5d",
+          "pixels_sha256": "d6b263a0480697a62a677046ba993cc590cde5a7a7df9ef91524d443416d2ee0",
+          "modes_sha256": "4533a8f14198cd6956f5ed7d8664f62fb66153a0b361cadae1e5f66fcce70123",
+          "params_sha256": "fe3985d0b4505915e9bd5084409873e504764ce1d1f5ebac34ef8e802fbc0c58",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 616,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 304,
+              "signed_sse_gain": 3359520,
+              "mean_sse_gain_per_used_cell": 11051.052631578947
+            },
+            "Vertical": {
+              "cells": 880,
+              "signed_sse_gain": 2168562,
+              "mean_sse_gain_per_used_cell": 2464.275
+            },
+            "Horizontal": {
+              "cells": 626,
+              "signed_sse_gain": 2952221,
+              "mean_sse_gain_per_used_cell": 4716.007987220447
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 107,
+              "signed_sse_gain": 1510918,
+              "mean_sse_gain_per_used_cell": 14120.728971962617
+            },
+            "Horizontal+DC": {
+              "cells": 68,
+              "signed_sse_gain": 2185276,
+              "mean_sse_gain_per_used_cell": 32136.41176470588
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|20",
+          "config": "C",
+          "lambda": 20.0,
+          "enhancement_bytes": 1183,
+          "base_bytes": 82440,
+          "total_bytes": 83623,
+          "total_bpp": 1.0121276673000812,
+          "enhancement_bpp": 0.014318393628738456,
+          "metrics": {
+            "mse": 774.9227320132493,
+            "edge_top10_mse": 3724.5568110768236,
+            "smooth_bottom50_mse": 60.900198872153716
+          },
+          "mode_counts": {
+            "skip": 686,
+            "dc": 260,
+            "vertical_no_offset": 873,
+            "horizontal_no_offset": 630,
+            "local_detail": 0,
+            "vertical_with_offset": 91,
+            "horizontal_with_offset": 61
+          },
+          "estimated_bits": 17691,
+          "actual_enhancement_bits": 9464,
+          "actual_minus_estimated_bits": -8227,
+          "estimated_bits_per_cell": 6.80161476355248,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 1236,
+          "raw_payload_bytes": 2212,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1152,
+          "xz_reduction_pct": 47.92043399638336,
+          "encode_seconds": 0.7494616000039969,
+          "decode": {
+            "samples_s": [
+              0.06818960001692176,
+              0.06776340000214987,
+              0.06186449999222532
+            ],
+            "median_s": 0.06776340000214987
+          },
+          "directional_cells": 1655,
+          "directional_selected_sse_gain": 9116186,
+          "directional_available_cell_sse_gain": 11619866,
+          "stream_sha256": "f0cebe44f47c49f4baa82e6660da445341c447f80d1a05d2abc5dc1f4d53674d",
+          "pixels_sha256": "6bcfb0451e76a2df92cd028f8a3d0d9e058d8f46504cf2582d50cde06f707bc5",
+          "modes_sha256": "419b0bcbfa888ff528f3ebcc1537145b1e4b6a4b07a42d93124a3522c1a679a3",
+          "params_sha256": "709a0c984e2205ce59b3c3bcda6497a9e4ace5d9c8f7b888419d1bc3368cf649",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 686,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 260,
+              "signed_sse_gain": 2992762,
+              "mean_sse_gain_per_used_cell": 11510.623076923077
+            },
+            "Vertical": {
+              "cells": 873,
+              "signed_sse_gain": 2270480,
+              "mean_sse_gain_per_used_cell": 2600.77892325315
+            },
+            "Horizontal": {
+              "cells": 630,
+              "signed_sse_gain": 3164823,
+              "mean_sse_gain_per_used_cell": 5023.528571428571
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 91,
+              "signed_sse_gain": 1511642,
+              "mean_sse_gain_per_used_cell": 16611.45054945055
+            },
+            "Horizontal+DC": {
+              "cells": 61,
+              "signed_sse_gain": 2169241,
+              "mean_sse_gain_per_used_cell": 35561.32786885246
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|100",
+          "config": "C",
+          "lambda": 100.0,
+          "enhancement_bytes": 1123,
+          "base_bytes": 82440,
+          "total_bytes": 83563,
+          "total_bpp": 1.0114014596773218,
+          "enhancement_bpp": 0.013592186005979109,
+          "metrics": {
+            "mse": 775.0176629831802,
+            "edge_top10_mse": 3726.395993424901,
+            "smooth_bottom50_mse": 60.899700408959724
+          },
+          "mode_counts": {
+            "skip": 750,
+            "dc": 213,
+            "vertical_no_offset": 880,
+            "horizontal_no_offset": 633,
+            "local_detail": 0,
+            "vertical_with_offset": 75,
+            "horizontal_with_offset": 50
+          },
+          "estimated_bits": 15915,
+          "actual_enhancement_bits": 8984,
+          "actual_minus_estimated_bits": -6931,
+          "estimated_bits_per_cell": 6.118800461361015,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 1014,
+          "raw_payload_bytes": 1990,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1092,
+          "xz_reduction_pct": 45.12562814070352,
+          "encode_seconds": 0.6722757999959867,
+          "decode": {
+            "samples_s": [
+              0.0600638999894727,
+              0.053950300003634766,
+              0.0536973999987822
+            ],
+            "median_s": 0.053950300003634766
+          },
+          "directional_cells": 1638,
+          "directional_selected_sse_gain": 9148559,
+          "directional_available_cell_sse_gain": 11496277,
+          "stream_sha256": "4e38ba3c2e4684e6220e30a3ef96e5ed08f472599b6cf7ff5952ef0c5db81ac4",
+          "pixels_sha256": "dad32a2fbd0af4815a632be54e08f84b34f76693c144b9a49c62efb2262b35d7",
+          "modes_sha256": "6a13cfaafa98ece235f8ad18eb52b8465ada09b36952c89bde9773d3571146e9",
+          "params_sha256": "a7399b311dbd3c68ef3dd0b55701b270a7c3d5c8bb74776953b422a91cebacaa",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 750,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 213,
+              "signed_sse_gain": 2772150,
+              "mean_sse_gain_per_used_cell": 13014.788732394367
+            },
+            "Vertical": {
+              "cells": 880,
+              "signed_sse_gain": 2401922,
+              "mean_sse_gain_per_used_cell": 2729.456818181818
+            },
+            "Horizontal": {
+              "cells": 633,
+              "signed_sse_gain": 3343756,
+              "mean_sse_gain_per_used_cell": 5282.394944707741
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 75,
+              "signed_sse_gain": 1456216,
+              "mean_sse_gain_per_used_cell": 19416.213333333333
+            },
+            "Horizontal+DC": {
+              "cells": 50,
+              "signed_sse_gain": 1946665,
+              "mean_sse_gain_per_used_cell": 38933.3
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|0",
+          "config": "D",
+          "lambda": 0.0,
+          "enhancement_bytes": 7815,
+          "base_bytes": 82440,
+          "total_bytes": 90255,
+          "total_bpp": 1.0923978165357475,
+          "enhancement_bpp": 0.09458854286440493,
+          "metrics": {
+            "mse": 763.6122797674522,
+            "edge_top10_mse": 3688.492915633005,
+            "smooth_bottom50_mse": 56.92869850527015
+          },
+          "mode_counts": {
+            "skip": 666,
+            "dc": 133,
+            "vertical_no_offset": 316,
+            "horizontal_no_offset": 258,
+            "local_detail": 1155,
+            "vertical_with_offset": 27,
+            "horizontal_with_offset": 46
+          },
+          "estimated_bits": 456267,
+          "actual_enhancement_bits": 62520,
+          "actual_minus_estimated_bits": -393747,
+          "estimated_bits_per_cell": 175.41983852364476,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 56058,
+          "raw_payload_bytes": 57034,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 7784,
+          "xz_reduction_pct": 86.35200056106885,
+          "encode_seconds": 1.1030511999852024,
+          "decode": {
+            "samples_s": [
+              0.17980909999459982,
+              0.15391329998965375,
+              0.15208390000043437
+            ],
+            "median_s": 0.15391329998965375
+          },
+          "directional_cells": 647,
+          "directional_selected_sse_gain": 6948511,
+          "directional_available_cell_sse_gain": 14789257,
+          "stream_sha256": "f25cf2e10a955f0082d1f6d46ebec2a1a788e8c305b087ece1edf5e0a52f6dce",
+          "pixels_sha256": "a5d9a309dfb0a5412b9ef4a909f9e4e57b81a96c4ba55f98dc0871d656d63f39",
+          "modes_sha256": "9cf5831024cad1e2fec2c0bfc6107f12f80e248fab9aa3ba5995f833892f4eab",
+          "params_sha256": "18aa742ad738a35e7eaf25b5acdf974776f18be62f7c3b9f00a404203fb59bf3",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 666,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 133,
+              "signed_sse_gain": 1379736,
+              "mean_sse_gain_per_used_cell": 10373.954887218046
+            },
+            "Vertical": {
+              "cells": 316,
+              "signed_sse_gain": 1513564,
+              "mean_sse_gain_per_used_cell": 4789.7594936708865
+            },
+            "Horizontal": {
+              "cells": 258,
+              "signed_sse_gain": 2778706,
+              "mean_sse_gain_per_used_cell": 10770.178294573643
+            },
+            "Detail": {
+              "cells": 1155,
+              "signed_sse_gain": 26208242,
+              "mean_sse_gain_per_used_cell": 22691.118614718616
+            },
+            "Vertical+DC": {
+              "cells": 27,
+              "signed_sse_gain": 324537,
+              "mean_sse_gain_per_used_cell": 12019.888888888889
+            },
+            "Horizontal+DC": {
+              "cells": 46,
+              "signed_sse_gain": 2331704,
+              "mean_sse_gain_per_used_cell": 50689.217391304344
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|20",
+          "config": "D",
+          "lambda": 20.0,
+          "enhancement_bytes": 5239,
+          "base_bytes": 82440,
+          "total_bytes": 87679,
+          "total_bpp": 1.061219302598613,
+          "enhancement_bpp": 0.06341002892727031,
+          "metrics": {
+            "mse": 764.5710659719281,
+            "edge_top10_mse": 3698.900440693007,
+            "smooth_bottom50_mse": 56.327745414321875
+          },
+          "mode_counts": {
+            "skip": 723,
+            "dc": 183,
+            "vertical_no_offset": 575,
+            "horizontal_no_offset": 451,
+            "local_detail": 568,
+            "vertical_with_offset": 51,
+            "horizontal_with_offset": 50
+          },
+          "estimated_bits": 232731,
+          "actual_enhancement_bits": 41912,
+          "actual_minus_estimated_bits": -190819,
+          "estimated_bits_per_cell": 89.47750865051903,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 28116,
+          "raw_payload_bytes": 29092,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 5208,
+          "xz_reduction_pct": 82.09817131857555,
+          "encode_seconds": 0.9765704000019468,
+          "decode": {
+            "samples_s": [
+              0.1085746000171639,
+              0.10916910000378266,
+              0.13087580000865273
+            ],
+            "median_s": 0.10916910000378266
+          },
+          "directional_cells": 1127,
+          "directional_selected_sse_gain": 9469998,
+          "directional_available_cell_sse_gain": 15873465,
+          "stream_sha256": "ba5d4e9bccb5c801e492b880ad4022423c4e4e13a73b804addf894525e702a42",
+          "pixels_sha256": "9d5742c1b00da5ea10f49d38d114365084ebc36df723de8d7b1e75cb16f333d6",
+          "modes_sha256": "dab6f62191b1e500bddf43bc2274a688b980f018271894b3e6945d30dc8066e8",
+          "params_sha256": "e27f1236ba9e174a8db895dd0b1f9aea03bdf8d8d667df1c191d270e22c68265",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 723,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 183,
+              "signed_sse_gain": 1876067,
+              "mean_sse_gain_per_used_cell": 10251.732240437159
+            },
+            "Vertical": {
+              "cells": 575,
+              "signed_sse_gain": 2182959,
+              "mean_sse_gain_per_used_cell": 3796.4504347826087
+            },
+            "Horizontal": {
+              "cells": 451,
+              "signed_sse_gain": 3675021,
+              "mean_sse_gain_per_used_cell": 8148.605321507761
+            },
+            "Detail": {
+              "cells": 568,
+              "signed_sse_gain": 21289243,
+              "mean_sse_gain_per_used_cell": 37481.06161971831
+            },
+            "Vertical+DC": {
+              "cells": 51,
+              "signed_sse_gain": 804131,
+              "mean_sse_gain_per_used_cell": 15767.274509803921
+            },
+            "Horizontal+DC": {
+              "cells": 50,
+              "signed_sse_gain": 2807887,
+              "mean_sse_gain_per_used_cell": 56157.74
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|100",
+          "config": "D",
+          "lambda": 100.0,
+          "enhancement_bytes": 2079,
+          "base_bytes": 82440,
+          "total_bytes": 84519,
+          "total_bpp": 1.022972367799954,
+          "enhancement_bpp": 0.02516309412861137,
+          "metrics": {
+            "mse": 769.0502591149143,
+            "edge_top10_mse": 3717.455607994998,
+            "smooth_bottom50_mse": 57.43260007931429
+          },
+          "mode_counts": {
+            "skip": 690,
+            "dc": 194,
+            "vertical_no_offset": 870,
+            "horizontal_no_offset": 641,
+            "local_detail": 83,
+            "vertical_with_offset": 72,
+            "horizontal_with_offset": 51
+          },
+          "estimated_bits": 47283,
+          "actual_enhancement_bits": 16632,
+          "actual_minus_estimated_bits": -30651,
+          "estimated_bits_per_cell": 18.178777393310266,
+          "mode_signal_raw_bytes": 976,
+          "parameter_raw_bytes": 4935,
+          "raw_payload_bytes": 5911,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 2048,
+          "xz_reduction_pct": 65.35273219421418,
+          "encode_seconds": 0.9987682999926619,
+          "decode": {
+            "samples_s": [
+              0.07217319999472238,
+              0.06191610000678338,
+              0.057208299986086786
+            ],
+            "median_s": 0.06191610000678338
+          },
+          "directional_cells": 1634,
+          "directional_selected_sse_gain": 11889440,
+          "directional_available_cell_sse_gain": 15666761,
+          "stream_sha256": "1c692a9c52996738926d380ca20cd457357b0d5f66e0d1927a9b861ad90355a4",
+          "pixels_sha256": "521674450a5588433340e109a70dddfc2541b2f9a519a668e4bbdbb3cce6dafa",
+          "modes_sha256": "d2317edebc3189697c757bf6c3fa6fc3c7384a731b5a55b836639212f68809c7",
+          "params_sha256": "7ed7f855098d2d6f05f3bade390a42d610cf75e1cd9f7e802cd18f43727e8b60",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 690,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 194,
+              "signed_sse_gain": 2385172,
+              "mean_sse_gain_per_used_cell": 12294.701030927836
+            },
+            "Vertical": {
+              "cells": 870,
+              "signed_sse_gain": 2495180,
+              "mean_sse_gain_per_used_cell": 2868.022988505747
+            },
+            "Horizontal": {
+              "cells": 641,
+              "signed_sse_gain": 4590847,
+              "mean_sse_gain_per_used_cell": 7162.0078003120125
+            },
+            "Detail": {
+              "cells": 83,
+              "signed_sse_gain": 9478886,
+              "mean_sse_gain_per_used_cell": 114203.44578313253
+            },
+            "Vertical+DC": {
+              "cells": 72,
+              "signed_sse_gain": 1470212,
+              "mean_sse_gain_per_used_cell": 20419.61111111111
+            },
+            "Horizontal+DC": {
+              "cells": 51,
+              "signed_sse_gain": 3333201,
+              "mean_sse_gain_per_used_cell": 65356.882352941175
+            }
+          },
+          "nondominated": true
+        }
+      ]
+    },
+    "mario64.png": {
+      "class": "synthetic graphics",
+      "width": 1152,
+      "height": 864,
+      "source_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "base_sha256": "ae2187db7cb5844eed6195335873a40b03e8843ed35bcbf8bb6e7a4a1fc310e1",
+      "base_bytes": 64809,
+      "base_mse": {
+        "mse": 135.47174097382972,
+        "edge_top10_mse": 957.2399499043964,
+        "smooth_bottom50_mse": 36.185270236804016
+      },
+      "process_peak_working_set_bytes": 121053184,
+      "results": [
+        {
+          "key": "A|0",
+          "config": "A",
+          "lambda": 0.0,
+          "enhancement_bytes": 1407,
+          "base_bytes": 64809,
+          "total_bytes": 66216,
+          "total_bpp": 0.5322145061728395,
+          "enhancement_bpp": 0.01130883487654321,
+          "metrics": {
+            "mse": 128.25208340031293,
+            "edge_top10_mse": 946.2148987539723,
+            "smooth_bottom50_mse": 27.451915449273404
+          },
+          "mode_counts": {
+            "skip": 2559,
+            "dc": 1329,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 43560,
+          "actual_enhancement_bits": 11256,
+          "actual_minus_estimated_bits": -32304,
+          "estimated_bits_per_cell": 11.203703703703704,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 3987,
+          "raw_payload_bytes": 5445,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1376,
+          "xz_reduction_pct": 74.72910927456383,
+          "encode_seconds": 0.3081516000092961,
+          "decode": {
+            "samples_s": [
+              0.09042510000290349,
+              0.09470679998048581,
+              0.09829960000934079
+            ],
+            "median_s": 0.09470679998048581
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "31314c2678f222a96166a6a5576f1e6c15a62113b10d480b6dfff4fb044e2df7",
+          "pixels_sha256": "dd8d300a8de8b7a5510cc02bdc76ba198c961aefe0bac0b23a52120d609f7ca3",
+          "modes_sha256": "578f2b723110b378231f15021ea7fe5201f0241f2dc355a3ced51e602b3b4964",
+          "params_sha256": "2a21c9060b28c54cb92e0cbc71d71002c3046a41c7166a2e85a366977101adec",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2559,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 1329,
+              "signed_sse_gain": 21557782,
+              "mean_sse_gain_per_used_cell": 16221.054928517682
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "A|20",
+          "config": "A",
+          "lambda": 20.0,
+          "enhancement_bytes": 1391,
+          "base_bytes": 64809,
+          "total_bytes": 66200,
+          "total_bpp": 0.5320859053497943,
+          "enhancement_bpp": 0.011180234053497943,
+          "metrics": {
+            "mse": 128.25425119491598,
+            "edge_top10_mse": 946.2281325658258,
+            "smooth_bottom50_mse": 27.45439460095855
+          },
+          "mode_counts": {
+            "skip": 2584,
+            "dc": 1304,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 42960,
+          "actual_enhancement_bits": 11128,
+          "actual_minus_estimated_bits": -31832,
+          "estimated_bits_per_cell": 11.049382716049383,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 3912,
+          "raw_payload_bytes": 5370,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1360,
+          "xz_reduction_pct": 74.67411545623837,
+          "encode_seconds": 0.33493880002060905,
+          "decode": {
+            "samples_s": [
+              0.09006950000184588,
+              0.0864335999940522,
+              0.07969780001440085
+            ],
+            "median_s": 0.0864335999940522
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "6324f77e07ce2c293fec2087324c440a5123d97da7e47db0df1dbcfa6a92c1c6",
+          "pixels_sha256": "afcc209a4c9152c6b77515d53955e9f9dcda9b4b69be26889b5b2b64ea05bed8",
+          "modes_sha256": "0a9a3fd54e3d47c87ae2d463bd4e5ba2f851e12d199794d6ba658810a3c4f64e",
+          "params_sha256": "dd5913b58e0a70f0069d525f217643d4959e0a8ef1f80e62e6905913a3bbec82",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2584,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 1304,
+              "signed_sse_gain": 21551309,
+              "mean_sse_gain_per_used_cell": 16527.07745398773
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "A|100",
+          "config": "A",
+          "lambda": 100.0,
+          "enhancement_bytes": 1299,
+          "base_bytes": 64809,
+          "total_bytes": 66108,
+          "total_bpp": 0.5313464506172839,
+          "enhancement_bpp": 0.010440779320987654,
+          "metrics": {
+            "mse": 128.30246243784293,
+            "edge_top10_mse": 946.1286378750892,
+            "smooth_bottom50_mse": 27.536399297043957
+          },
+          "mode_counts": {
+            "skip": 2686,
+            "dc": 1202,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 40512,
+          "actual_enhancement_bits": 10392,
+          "actual_minus_estimated_bits": -30120,
+          "estimated_bits_per_cell": 10.419753086419753,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 3606,
+          "raw_payload_bytes": 5064,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1268,
+          "xz_reduction_pct": 74.96050552922591,
+          "encode_seconds": 0.33255729998927563,
+          "decode": {
+            "samples_s": [
+              0.06905659998301417,
+              0.072193400003016,
+              0.07903599998098798
+            ],
+            "median_s": 0.072193400003016
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "02a5843e146fefd500bd09dcb6e54687c5b123b7722e158db3df94b6a912adc5",
+          "pixels_sha256": "b395e50b3bafb4e2b5a269e09e63ae77d1a717ab3f703a65c0f60256a822947e",
+          "modes_sha256": "73384c8891874e18d92d3dd06159ac5381cb5a5fe20c2a45dbba2875f47e1562",
+          "params_sha256": "ff8d72df2138dc78cede3ea604f801ffd0b3a86861327cf5de6e7403207b3653",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2686,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 1202,
+              "signed_sse_gain": 21407351,
+              "mean_sse_gain_per_used_cell": 17809.776206322796
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "B|0",
+          "config": "B",
+          "lambda": 0.0,
+          "enhancement_bytes": 10463,
+          "base_bytes": 64809,
+          "total_bytes": 75272,
+          "total_bpp": 0.6050025720164609,
+          "enhancement_bpp": 0.08409690072016461,
+          "metrics": {
+            "mse": 115.11271996099109,
+            "edge_top10_mse": 889.8542070595958,
+            "smooth_bottom50_mse": 18.53676282649779
+          },
+          "mode_counts": {
+            "skip": 1456,
+            "dc": 425,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 2007,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 792552,
+          "actual_enhancement_bits": 83704,
+          "actual_minus_estimated_bits": -708848,
+          "estimated_bits_per_cell": 203.84567901234567,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 97611,
+          "raw_payload_bytes": 99069,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 10432,
+          "xz_reduction_pct": 89.46996537766607,
+          "encode_seconds": 0.8515620999969542,
+          "decode": {
+            "samples_s": [
+              0.2143095999781508,
+              0.21177900000475347,
+              0.3047085999860428
+            ],
+            "median_s": 0.2143095999781508
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "7b63109e45bde8a0e48ab35ce23a3870c63e4d73fdbe058d8c22bb8f91167469",
+          "pixels_sha256": "f1ab4870e8489eb0257dad99dde32d10a3ab94a4698ca503c70a77e66aca6504",
+          "modes_sha256": "8a29d6662edec97a76cf4b8b067f3709598600649be0969abc438999f62450c7",
+          "params_sha256": "c433ca0ca5c0c90e2b6146a00d4b73805e9b44396f128b08254c2ac1190e618c",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1456,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 425,
+              "signed_sse_gain": 3422480,
+              "mean_sse_gain_per_used_cell": 8052.894117647059
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 2007,
+              "signed_sse_gain": 57369231,
+              "mean_sse_gain_per_used_cell": 28584.569506726457
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|20",
+          "config": "B",
+          "lambda": 20.0,
+          "enhancement_bytes": 7979,
+          "base_bytes": 64809,
+          "total_bytes": 72788,
+          "total_bpp": 0.5850372942386831,
+          "enhancement_bpp": 0.06413162294238683,
+          "metrics": {
+            "mse": 116.12760182238083,
+            "edge_top10_mse": 891.90938924217,
+            "smooth_bottom50_mse": 19.158911371651588
+          },
+          "mode_counts": {
+            "skip": 2106,
+            "dc": 694,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 1088,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 446112,
+          "actual_enhancement_bits": 63832,
+          "actual_minus_estimated_bits": -382280,
+          "estimated_bits_per_cell": 114.74074074074075,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 54306,
+          "raw_payload_bytes": 55764,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 7948,
+          "xz_reduction_pct": 85.74707696721899,
+          "encode_seconds": 0.8470492000051308,
+          "decode": {
+            "samples_s": [
+              0.16216639999765903,
+              0.1898314999998547,
+              0.16724529999191873
+            ],
+            "median_s": 0.16724529999191873
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "b4e13713c2b0f9dcebc578baed5580c88dd5c3f078bd47326dd80fb8e990ee1e",
+          "pixels_sha256": "fffea0b6f7ab59c1c73f1a78bdeea683400a595e863ef64bf70a7fd0980a198b",
+          "modes_sha256": "c81f82f4e276ce95ba63c5675a673681c1ec2c49ab57b4cf049e6df669eae1da",
+          "params_sha256": "10bd18bbc079090b01dd90194993da15c18cac5a04605bcca82315b46c36b688",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2106,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 694,
+              "signed_sse_gain": 6675129,
+              "mean_sse_gain_per_used_cell": 9618.341498559077
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 1088,
+              "signed_sse_gain": 51086161,
+              "mean_sse_gain_per_used_cell": 46954.19209558824
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|100",
+          "config": "B",
+          "lambda": 100.0,
+          "enhancement_bytes": 3719,
+          "base_bytes": 64809,
+          "total_bytes": 68528,
+          "total_bpp": 0.5507973251028807,
+          "enhancement_bpp": 0.029891653806584362,
+          "metrics": {
+            "mse": 120.85220416452331,
+            "edge_top10_mse": 914.2555478536914,
+            "smooth_bottom50_mse": 21.552804474127168
+          },
+          "mode_counts": {
+            "skip": 2618,
+            "dc": 948,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 322,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 158064,
+          "actual_enhancement_bits": 29752,
+          "actual_minus_estimated_bits": -128312,
+          "estimated_bits_per_cell": 40.65432098765432,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 18300,
+          "raw_payload_bytes": 19758,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 3688,
+          "xz_reduction_pct": 81.33414313189594,
+          "encode_seconds": 0.8338104000140447,
+          "decode": {
+            "samples_s": [
+              0.08796509998501278,
+              0.11560920000192709,
+              0.09721139998873696
+            ],
+            "median_s": 0.09721139998873696
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "8f2fd08a0aad9ad543bd850308fd3b28f54b314007459e9915d9784eca06161c",
+          "pixels_sha256": "fd8cfd73c5c6531e74f83670174a7cc24a961ef2345f83c7f26d49d9ba3391b1",
+          "modes_sha256": "0814e34887bb9971e14abd1b3b3ced2fe4a99fb2594d4c59aa6da67f673accac",
+          "params_sha256": "5481d7f666250720063e9d983795c2f347927f693ad9c31611026a7f5dcabab2",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 2618,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 948,
+              "signed_sse_gain": 13051233,
+              "mean_sse_gain_per_used_cell": 13767.12341772152
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 322,
+              "signed_sse_gain": 30602470,
+              "mean_sse_gain_per_used_cell": 95038.72670807454
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "C|0",
+          "config": "C",
+          "lambda": 0.0,
+          "enhancement_bytes": 1939,
+          "base_bytes": 64809,
+          "total_bytes": 66748,
+          "total_bpp": 0.5364904835390947,
+          "enhancement_bpp": 0.015584812242798354,
+          "metrics": {
+            "mse": 126.36744403185014,
+            "edge_top10_mse": 941.0544153447923,
+            "smooth_bottom50_mse": 25.336653436578345
+          },
+          "mode_counts": {
+            "skip": 1713,
+            "dc": 813,
+            "vertical_no_offset": 376,
+            "horizontal_no_offset": 629,
+            "local_detail": 0,
+            "vertical_with_offset": 189,
+            "horizontal_with_offset": 168
+          },
+          "estimated_bits": 39744,
+          "actual_enhancement_bits": 15512,
+          "actual_minus_estimated_bits": -24232,
+          "estimated_bits_per_cell": 10.222222222222221,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 3510,
+          "raw_payload_bytes": 4968,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1908,
+          "xz_reduction_pct": 61.59420289855073,
+          "encode_seconds": 0.8468176999886055,
+          "decode": {
+            "samples_s": [
+              0.07045470000593923,
+              0.0736453999998048,
+              0.07780520000960678
+            ],
+            "median_s": 0.0736453999998048
+          },
+          "directional_cells": 1362,
+          "directional_selected_sse_gain": 16530181,
+          "directional_available_cell_sse_gain": 26934134,
+          "stream_sha256": "dd23597e6b4ff401ecf25057272d624e38c74464e7a1d8e8e5b0d0c201558075",
+          "pixels_sha256": "18407a4534ae72bafd7becaadbda14509885f8a69026e2d09c5b1e359aa1db8d",
+          "modes_sha256": "473ef424106257ac48170798c818b61ebf3bf144eb9ec6c85b733480215f0152",
+          "params_sha256": "0c7ede4a8f040781b1a13a16d33232c92e267641757e63534e947a45756f1cd0",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1713,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 813,
+              "signed_sse_gain": 10655104,
+              "mean_sse_gain_per_used_cell": 13105.90897908979
+            },
+            "Vertical": {
+              "cells": 376,
+              "signed_sse_gain": 1935757,
+              "mean_sse_gain_per_used_cell": 5148.289893617021
+            },
+            "Horizontal": {
+              "cells": 629,
+              "signed_sse_gain": 8355231,
+              "mean_sse_gain_per_used_cell": 13283.35612082671
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 189,
+              "signed_sse_gain": 3598963,
+              "mean_sse_gain_per_used_cell": 19042.132275132277
+            },
+            "Horizontal+DC": {
+              "cells": 168,
+              "signed_sse_gain": 2640230,
+              "mean_sse_gain_per_used_cell": 15715.654761904761
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|20",
+          "config": "C",
+          "lambda": 20.0,
+          "enhancement_bytes": 1771,
+          "base_bytes": 64809,
+          "total_bytes": 66580,
+          "total_bpp": 0.5351401748971193,
+          "enhancement_bpp": 0.014234503600823045,
+          "metrics": {
+            "mse": 126.38385972597308,
+            "edge_top10_mse": 941.1069855908167,
+            "smooth_bottom50_mse": 25.341137628675522
+          },
+          "mode_counts": {
+            "skip": 1778,
+            "dc": 513,
+            "vertical_no_offset": 482,
+            "horizontal_no_offset": 837,
+            "local_detail": 0,
+            "vertical_with_offset": 140,
+            "horizontal_with_offset": 138
+          },
+          "estimated_bits": 30648,
+          "actual_enhancement_bits": 14168,
+          "actual_minus_estimated_bits": -16480,
+          "estimated_bits_per_cell": 7.882716049382716,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 2373,
+          "raw_payload_bytes": 3831,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1740,
+          "xz_reduction_pct": 54.58104933437744,
+          "encode_seconds": 0.8813023999973666,
+          "decode": {
+            "samples_s": [
+              0.08964869999908842,
+              0.1131333000084851,
+              0.0860339000064414
+            ],
+            "median_s": 0.08964869999908842
+          },
+          "directional_cells": 1597,
+          "directional_selected_sse_gain": 20346761,
+          "directional_available_cell_sse_gain": 26914017,
+          "stream_sha256": "1cb488664ba2af1bccfd7c73de1b83d2b1ee62757f998486e1d4806c44f189f2",
+          "pixels_sha256": "329f46d636f4d3b98985d8a93e6ad55f00e6b4e1ff75f06f589d32f5dcd23e99",
+          "modes_sha256": "6deb85347ff7a63254e1fdce5140a5ac0a5605531de3a85ef87fbdcf5e675d7a",
+          "params_sha256": "e3defea0c323b656fd1d5f62e9f299850fb6ada3e931d895bd34b8554079ec36",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1778,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 513,
+              "signed_sse_gain": 6789507,
+              "mean_sse_gain_per_used_cell": 13234.906432748538
+            },
+            "Vertical": {
+              "cells": 482,
+              "signed_sse_gain": 2992765,
+              "mean_sse_gain_per_used_cell": 6209.05601659751
+            },
+            "Horizontal": {
+              "cells": 837,
+              "signed_sse_gain": 11573427,
+              "mean_sse_gain_per_used_cell": 13827.27240143369
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 140,
+              "signed_sse_gain": 3227651,
+              "mean_sse_gain_per_used_cell": 23054.65
+            },
+            "Horizontal+DC": {
+              "cells": 138,
+              "signed_sse_gain": 2552918,
+              "mean_sse_gain_per_used_cell": 18499.405797101448
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|100",
+          "config": "C",
+          "lambda": 100.0,
+          "enhancement_bytes": 1567,
+          "base_bytes": 64809,
+          "total_bytes": 66376,
+          "total_bpp": 0.5335005144032922,
+          "enhancement_bpp": 0.012594843106995884,
+          "metrics": {
+            "mse": 126.52398807227367,
+            "edge_top10_mse": 941.0448248495626,
+            "smooth_bottom50_mse": 25.55538824813236
+          },
+          "mode_counts": {
+            "skip": 1962,
+            "dc": 419,
+            "vertical_no_offset": 479,
+            "horizontal_no_offset": 842,
+            "local_detail": 0,
+            "vertical_with_offset": 90,
+            "horizontal_with_offset": 96
+          },
+          "estimated_bits": 26184,
+          "actual_enhancement_bits": 12536,
+          "actual_minus_estimated_bits": -13648,
+          "estimated_bits_per_cell": 6.734567901234568,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 1815,
+          "raw_payload_bytes": 3273,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 1536,
+          "xz_reduction_pct": 53.07057745187901,
+          "encode_seconds": 0.9092748999828473,
+          "decode": {
+            "samples_s": [
+              0.0662583000084851,
+              0.06603200000245124,
+              0.06437670000013895
+            ],
+            "median_s": 0.06603200000245124
+          },
+          "directional_cells": 1507,
+          "directional_selected_sse_gain": 20633076,
+          "directional_available_cell_sse_gain": 26821597,
+          "stream_sha256": "89ddedee4293589d108d434de2c6a393b9122148d4cd6fc28f4ecad70e24152d",
+          "pixels_sha256": "8d17af52e6aaef899fbffaef6a63bf191292180e114119651fe280d264e762a4",
+          "modes_sha256": "952e1a1c29af0383f1f840b0be111a51987dc70f999c47744efc4acbdd9993e1",
+          "params_sha256": "8b45bda188893b65187c4d37d8781a8410a6d0d599d94fa91e2af38050aa40d0",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1962,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 419,
+              "signed_sse_gain": 6084771,
+              "mean_sse_gain_per_used_cell": 14522.126491646777
+            },
+            "Vertical": {
+              "cells": 479,
+              "signed_sse_gain": 3201657,
+              "mean_sse_gain_per_used_cell": 6684.043841336117
+            },
+            "Horizontal": {
+              "cells": 842,
+              "signed_sse_gain": 12108281,
+              "mean_sse_gain_per_used_cell": 14380.381235154395
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 90,
+              "signed_sse_gain": 2815367,
+              "mean_sse_gain_per_used_cell": 31281.855555555554
+            },
+            "Horizontal+DC": {
+              "cells": 96,
+              "signed_sse_gain": 2507771,
+              "mean_sse_gain_per_used_cell": 26122.614583333332
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|0",
+          "config": "D",
+          "lambda": 0.0,
+          "enhancement_bytes": 9927,
+          "base_bytes": 64809,
+          "total_bytes": 74736,
+          "total_bpp": 0.6006944444444444,
+          "enhancement_bpp": 0.07978877314814815,
+          "metrics": {
+            "mse": 114.16899219821674,
+            "edge_top10_mse": 887.3767584527959,
+            "smooth_bottom50_mse": 17.446867091247878
+          },
+          "mode_counts": {
+            "skip": 995,
+            "dc": 330,
+            "vertical_no_offset": 281,
+            "horizontal_no_offset": 532,
+            "local_detail": 1583,
+            "vertical_with_offset": 74,
+            "horizontal_with_offset": 93
+          },
+          "estimated_bits": 631464,
+          "actual_enhancement_bits": 79416,
+          "actual_minus_estimated_bits": -552048,
+          "estimated_bits_per_cell": 162.41358024691357,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 77475,
+          "raw_payload_bytes": 78933,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 9896,
+          "xz_reduction_pct": 87.46278489351728,
+          "encode_seconds": 1.4010626999952365,
+          "decode": {
+            "samples_s": [
+              0.19437419998575933,
+              0.23175919998902828,
+              0.20666990001336671
+            ],
+            "median_s": 0.20666990001336671
+          },
+          "directional_cells": 980,
+          "directional_selected_sse_gain": 18328188,
+          "directional_available_cell_sse_gain": 38529858,
+          "stream_sha256": "92090e8ca9a4b527b4a40e5c58069cbdd5882a610a45fa77389325feedcecc89",
+          "pixels_sha256": "4049dd2420f096c795b9e7bebf759b7e29ed8c1698895c336191c0588765f8b5",
+          "modes_sha256": "909e2e405fc442928273068c8d2e041573ba30c5cf54b852e040d83d047d460e",
+          "params_sha256": "186a67ca1249952cc1232114eb446616e785541ae6711b09bc0111f9dec114e8",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 995,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 330,
+              "signed_sse_gain": 2610887,
+              "mean_sse_gain_per_used_cell": 7911.778787878788
+            },
+            "Vertical": {
+              "cells": 281,
+              "signed_sse_gain": 3256215,
+              "mean_sse_gain_per_used_cell": 11587.953736654805
+            },
+            "Horizontal": {
+              "cells": 532,
+              "signed_sse_gain": 11393819,
+              "mean_sse_gain_per_used_cell": 21416.953007518798
+            },
+            "Detail": {
+              "cells": 1583,
+              "signed_sse_gain": 42670592,
+              "mean_sse_gain_per_used_cell": 26955.52242577385
+            },
+            "Vertical+DC": {
+              "cells": 74,
+              "signed_sse_gain": 1823459,
+              "mean_sse_gain_per_used_cell": 24641.337837837837
+            },
+            "Horizontal+DC": {
+              "cells": 93,
+              "signed_sse_gain": 1854695,
+              "mean_sse_gain_per_used_cell": 19942.956989247312
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|20",
+          "config": "D",
+          "lambda": 20.0,
+          "enhancement_bytes": 7027,
+          "base_bytes": 64809,
+          "total_bytes": 71836,
+          "total_bpp": 0.5773855452674898,
+          "enhancement_bpp": 0.05647987397119342,
+          "metrics": {
+            "mse": 115.15545997567301,
+            "edge_top10_mse": 888.702965887439,
+            "smooth_bottom50_mse": 18.222363484426506
+          },
+          "mode_counts": {
+            "skip": 1441,
+            "dc": 312,
+            "vertical_no_offset": 452,
+            "horizontal_no_offset": 771,
+            "local_detail": 704,
+            "vertical_with_offset": 90,
+            "horizontal_with_offset": 118
+          },
+          "estimated_bits": 294480,
+          "actual_enhancement_bits": 56216,
+          "actual_minus_estimated_bits": -238264,
+          "estimated_bits_per_cell": 75.74074074074075,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 35352,
+          "raw_payload_bytes": 36810,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 6996,
+          "xz_reduction_pct": 80.99429502852486,
+          "encode_seconds": 1.430323500011582,
+          "decode": {
+            "samples_s": [
+              0.16364980000071228,
+              0.12836200001765974,
+              0.1656300999748055
+            ],
+            "median_s": 0.16364980000071228
+          },
+          "directional_cells": 1431,
+          "directional_selected_sse_gain": 27155640,
+          "directional_available_cell_sse_gain": 38842982,
+          "stream_sha256": "1b0e75517c5cd7e2126afb736f08dde22c00701a5faefc696838d66941711ed6",
+          "pixels_sha256": "59316377638cc64e3002bee4440dd2e8b2968eac1dabe20516648c94361ac9b6",
+          "modes_sha256": "30d65ed6fc1e39664d8b2347de10ab002a6d9ee8f0c1c0977ca6532900a71ad8",
+          "params_sha256": "c9f5b823359ae786f3238c8fa7bbedac58fab03334324ea9bffdb85d824acef4",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1441,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 312,
+              "signed_sse_gain": 2905577,
+              "mean_sse_gain_per_used_cell": 9312.746794871795
+            },
+            "Vertical": {
+              "cells": 452,
+              "signed_sse_gain": 6493566,
+              "mean_sse_gain_per_used_cell": 14366.29646017699
+            },
+            "Horizontal": {
+              "cells": 771,
+              "signed_sse_gain": 15984934,
+              "mean_sse_gain_per_used_cell": 20732.728923476006
+            },
+            "Detail": {
+              "cells": 704,
+              "signed_sse_gain": 30602873,
+              "mean_sse_gain_per_used_cell": 43469.990056818184
+            },
+            "Vertical+DC": {
+              "cells": 90,
+              "signed_sse_gain": 2230008,
+              "mean_sse_gain_per_used_cell": 24777.866666666665
+            },
+            "Horizontal+DC": {
+              "cells": 118,
+              "signed_sse_gain": 2447132,
+              "mean_sse_gain_per_used_cell": 20738.406779661018
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|100",
+          "config": "D",
+          "lambda": 100.0,
+          "enhancement_bytes": 3431,
+          "base_bytes": 64809,
+          "total_bytes": 68240,
+          "total_bpp": 0.5484825102880658,
+          "enhancement_bpp": 0.027576838991769548,
+          "metrics": {
+            "mse": 119.85615596064815,
+            "edge_top10_mse": 910.1898208144554,
+            "smooth_bottom50_mse": 20.675261588908445
+          },
+          "mode_counts": {
+            "skip": 1921,
+            "dc": 362,
+            "vertical_no_offset": 480,
+            "horizontal_no_offset": 775,
+            "local_detail": 166,
+            "vertical_with_offset": 81,
+            "horizontal_with_offset": 103
+          },
+          "estimated_bits": 88512,
+          "actual_enhancement_bits": 27448,
+          "actual_minus_estimated_bits": -61064,
+          "estimated_bits_per_cell": 22.765432098765434,
+          "mode_signal_raw_bytes": 1458,
+          "parameter_raw_bytes": 9606,
+          "raw_payload_bytes": 11064,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 3400,
+          "xz_reduction_pct": 69.26970354302242,
+          "encode_seconds": 1.3710799999826122,
+          "decode": {
+            "samples_s": [
+              0.08977449999656528,
+              0.077691100013908,
+              0.08579799998551607
+            ],
+            "median_s": 0.08579799998551607
+          },
+          "directional_cells": 1439,
+          "directional_selected_sse_gain": 25891016,
+          "directional_available_cell_sse_gain": 34266188,
+          "stream_sha256": "a285dd402c4d4c18ee5f6236f1ab50aebb57969309c2cde7961a1ac00e3ae559",
+          "pixels_sha256": "a4b1077f3661b6b0237a5006c384fe5a3682a9352fd490baa75ee477f0ec13c7",
+          "modes_sha256": "4774d9f1c8aa243d0ee2c8a7502b9454d42f849983bfe27de306ed45df00fbfb",
+          "params_sha256": "1884252016afefc71ebb7d29412f224e76f13f29327737809d11ffcdf9442a9f",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 1921,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 362,
+              "signed_sse_gain": 4319547,
+              "mean_sse_gain_per_used_cell": 11932.450276243095
+            },
+            "Vertical": {
+              "cells": 480,
+              "signed_sse_gain": 5530801,
+              "mean_sse_gain_per_used_cell": 11522.502083333333
+            },
+            "Horizontal": {
+              "cells": 775,
+              "signed_sse_gain": 14412204,
+              "mean_sse_gain_per_used_cell": 18596.392258064516
+            },
+            "Detail": {
+              "cells": 166,
+              "signed_sse_gain": 16417324,
+              "mean_sse_gain_per_used_cell": 98899.5421686747
+            },
+            "Vertical+DC": {
+              "cells": 81,
+              "signed_sse_gain": 2136429,
+              "mean_sse_gain_per_used_cell": 26375.666666666668
+            },
+            "Horizontal+DC": {
+              "cells": 103,
+              "signed_sse_gain": 3811582,
+              "mean_sse_gain_per_used_cell": 37005.65048543689
+            }
+          },
+          "nondominated": true
+        }
+      ]
+    },
+    "flower.jpg": {
+      "class": "smooth photography",
+      "width": 3576,
+      "height": 2384,
+      "source_sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "base_sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+      "base_bytes": 28979,
+      "base_mse": {
+        "mse": 43.43484363504647,
+        "edge_top10_mse": 217.34349885122148,
+        "smooth_bottom50_mse": 21.185807705225333
+      },
+      "process_peak_working_set_bytes": 452780032,
+      "results": [
+        {
+          "key": "A|0",
+          "config": "A",
+          "lambda": 0.0,
+          "enhancement_bytes": 15239,
+          "base_bytes": 28979,
+          "total_bytes": 44218,
+          "total_bpp": 0.04149400177169196,
+          "enhancement_bpp": 0.014300219209344925,
+          "metrics": {
+            "mse": 30.794858425734077,
+            "edge_top10_mse": 196.71823041215362,
+            "smooth_bottom50_mse": 10.820226826623715
+          },
+          "mode_counts": {
+            "skip": 13610,
+            "dc": 19766,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 574512,
+          "actual_enhancement_bits": 121912,
+          "actual_minus_estimated_bits": -452600,
+          "estimated_bits_per_cell": 17.21332694151486,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 59298,
+          "raw_payload_bytes": 71814,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 15208,
+          "xz_reduction_pct": 78.82307071044643,
+          "encode_seconds": 2.4843139000004157,
+          "decode": {
+            "samples_s": [
+              0.698720799991861,
+              0.8254138999909628,
+              0.7736959999892861
+            ],
+            "median_s": 0.7736959999892861
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "5105326176d49c1cfc3b3c30a63a83605504750d8ec7447d2a16b9b40eecf9f2",
+          "pixels_sha256": "37e73693c1792e4972411b917a431fc65668bd10c6bdba653b61167013b0fbc4",
+          "modes_sha256": "152598c653950b895329e80afff6ac05a2dc5e1341b5a10dd6760391e5ad37f7",
+          "params_sha256": "7f8787aec75097e73b10b7a030944c607aeb035faf957ce6a6567a0d69a34307",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 13610,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 19766,
+              "signed_sse_gain": 323274599,
+              "mean_sse_gain_per_used_cell": 16355.084437923708
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "A|20",
+          "config": "A",
+          "lambda": 20.0,
+          "enhancement_bytes": 15011,
+          "base_bytes": 28979,
+          "total_bytes": 43990,
+          "total_bpp": 0.04128004744531027,
+          "enhancement_bpp": 0.01408626488296323,
+          "metrics": {
+            "mse": 30.800884375828918,
+            "edge_top10_mse": 196.72491833513072,
+            "smooth_bottom50_mse": 10.824434085896918
+          },
+          "mode_counts": {
+            "skip": 14213,
+            "dc": 19163,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 560040,
+          "actual_enhancement_bits": 120088,
+          "actual_minus_estimated_bits": -439952,
+          "estimated_bits_per_cell": 16.779721955896452,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 57489,
+          "raw_payload_bytes": 70005,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 14980,
+          "xz_reduction_pct": 78.6015284622527,
+          "encode_seconds": 2.4852280000050087,
+          "decode": {
+            "samples_s": [
+              0.7429797000077087,
+              0.92956520000007,
+              0.874820400000317
+            ],
+            "median_s": 0.874820400000317
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "283b79332425db5e3bb6c0760c6856515e4cb2a30698cff200caded7c56c563b",
+          "pixels_sha256": "27b443b3240cc9a2cde2cd431c114c423558ca0dd5c37d05232a6de94db18484",
+          "modes_sha256": "d3edb4312826ba55aaa477b0d7df06337c1de4899c4141c29bc3a716d2f0657a",
+          "params_sha256": "d33402a62b4168fa0fa75bc38c3c3bfeec2dbf41753d11c7ff9c064b22b6e66b",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 14213,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 19163,
+              "signed_sse_gain": 323120482,
+              "mean_sse_gain_per_used_cell": 16861.685644210196
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "A|100",
+          "config": "A",
+          "lambda": 100.0,
+          "enhancement_bytes": 14183,
+          "base_bytes": 28979,
+          "total_bytes": 43162,
+          "total_bpp": 0.040503055417924115,
+          "enhancement_bpp": 0.013309272855577077,
+          "metrics": {
+            "mse": 30.926750437292615,
+            "edge_top10_mse": 196.86558822150326,
+            "smooth_bottom50_mse": 10.944372740362658
+          },
+          "mode_counts": {
+            "skip": 16444,
+            "dc": 16932,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 506496,
+          "actual_enhancement_bits": 113464,
+          "actual_minus_estimated_bits": -393032,
+          "estimated_bits_per_cell": 15.175455417066155,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 50796,
+          "raw_payload_bytes": 63312,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 14152,
+          "xz_reduction_pct": 77.64720748041445,
+          "encode_seconds": 2.5908137999940664,
+          "decode": {
+            "samples_s": [
+              0.694682000001194,
+              0.7043670999992173,
+              0.6613209000206552
+            ],
+            "median_s": 0.694682000001194
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "fe76dda16d92e2d5df360fd984928f06fd9198093879ec9a1bee81f5063f1566",
+          "pixels_sha256": "ddc84b816fd2381ae08c2e9d7dc037a14c47b965fe0458fb15f3fe83dcf28578",
+          "modes_sha256": "df80d5225ea8bdbedbeada8500dba6be8c7f7423c448865412ef988d359c93cd",
+          "params_sha256": "740f0e8db4d75a3da4951ddee5e79c774a8937195ef813d9d8cda30e7eae3aec",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 16444,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 16932,
+              "signed_sse_gain": 319901388,
+              "mean_sse_gain_per_used_cell": 18893.3019135365
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|0",
+          "config": "B",
+          "lambda": 0.0,
+          "enhancement_bytes": 46795,
+          "base_bytes": 28979,
+          "total_bytes": 75774,
+          "total_bpp": 0.07110603125985315,
+          "enhancement_bpp": 0.043912248697506116,
+          "metrics": {
+            "mse": 21.71356227228253,
+            "edge_top10_mse": 123.37056157296696,
+            "smooth_bottom50_mse": 9.546458395556284
+          },
+          "mode_counts": {
+            "skip": 11859,
+            "dc": 16220,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 5297,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 2523456,
+          "actual_enhancement_bits": 374360,
+          "actual_minus_estimated_bits": -2149096,
+          "estimated_bits_per_cell": 75.60690316395015,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 302916,
+          "raw_payload_bytes": 315432,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 46764,
+          "xz_reduction_pct": 85.17461766719927,
+          "encode_seconds": 7.287595700006932,
+          "decode": {
+            "samples_s": [
+              1.0817349000135437,
+              1.1867830000119284,
+              1.1849484000122175
+            ],
+            "median_s": 1.1849484000122175
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "ecad2e43943fa1739dcfd5ce094d49c9cab1d752aa9d72e1aeccc2805c031d7f",
+          "pixels_sha256": "1205489436df22407f83bcdb138e52915c284bcce017a70169908dc0bf5c6c71",
+          "modes_sha256": "333b0461f5bfebca8d49dadb135f3bc1e87a4734a47cf5bf8c08b58fc18c1606",
+          "params_sha256": "621f673d60063980aa440e3fba0f1a2f30c67b4f49a4783470d883d6cbf1fdfb",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 11859,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 16220,
+              "signed_sse_gain": 244520982,
+              "mean_sse_gain_per_used_cell": 15075.276325524044
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 5297,
+              "signed_sse_gain": 311012779,
+              "mean_sse_gain_per_used_cell": 58714.89125920332
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|20",
+          "config": "B",
+          "lambda": 20.0,
+          "enhancement_bytes": 37771,
+          "base_bytes": 28979,
+          "total_bytes": 66750,
+          "total_bpp": 0.0626379442367461,
+          "enhancement_bpp": 0.03544416167439905,
+          "metrics": {
+            "mse": 21.998160899909415,
+            "edge_top10_mse": 124.20484792360232,
+            "smooth_bottom50_mse": 9.734230118580964
+          },
+          "mode_counts": {
+            "skip": 13398,
+            "dc": 17231,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 2747,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 1568520,
+          "actual_enhancement_bits": 302168,
+          "actual_minus_estimated_bits": -1266352,
+          "estimated_bits_per_cell": 46.99544582933844,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 183549,
+          "raw_payload_bytes": 196065,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 37740,
+          "xz_reduction_pct": 80.7512814627802,
+          "encode_seconds": 7.134541100007482,
+          "decode": {
+            "samples_s": [
+              1.0524052000255324,
+              1.0764784000057261,
+              1.4319258000177797
+            ],
+            "median_s": 1.0764784000057261
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "11101561649a7bbb8343f2c2e73846f617fe74295b9b52bd500be0d703e32a78",
+          "pixels_sha256": "98a60fad6e40ea967d4474402583b0c3be9ec3c8c4fe6ddace9b402b337c8e10",
+          "modes_sha256": "f8e9fa5e5efe6fac4c2a0106d920d81e3d72886dc3a0385e067006ff79108f2b",
+          "params_sha256": "c4079304916a7450bb073721077fe1e938ce2492b89b433e4406b7473654e8de",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 13398,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 17231,
+              "signed_sse_gain": 272559380,
+              "mean_sse_gain_per_used_cell": 15817.966455806396
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 2747,
+              "signed_sse_gain": 275695614,
+              "mean_sse_gain_per_used_cell": 100362.4368401893
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|100",
+          "config": "B",
+          "lambda": 100.0,
+          "enhancement_bytes": 28031,
+          "base_bytes": 28979,
+          "total_bytes": 57010,
+          "total_bpp": 0.053497965557107036,
+          "enhancement_bpp": 0.026304182994759995,
+          "metrics": {
+            "mse": 23.113111889041534,
+            "edge_top10_mse": 129.9312651412138,
+            "smooth_bottom50_mse": 10.188374176768574
+          },
+          "mode_counts": {
+            "skip": 16087,
+            "dc": 16056,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 1233,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 958944,
+          "actual_enhancement_bits": 224248,
+          "actual_minus_estimated_bits": -734696,
+          "estimated_bits_per_cell": 28.731543624161073,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 107352,
+          "raw_payload_bytes": 119868,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 28000,
+          "xz_reduction_pct": 76.6409717355758,
+          "encode_seconds": 7.49438989997725,
+          "decode": {
+            "samples_s": [
+              0.8311378000071272,
+              0.7898584999784362,
+              0.767008299997542
+            ],
+            "median_s": 0.7898584999784362
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "4fba650b38d5de699a2a789bf3cef558211c45963dcf3bdfd9d1bbf3e13119c3",
+          "pixels_sha256": "5d6b114765c16bf6e26d7ae8b789972720110db29f0d1a304141e27f62f11c88",
+          "modes_sha256": "e4971dafef5ded7f9e9377c02f2e8232c715446b30b271426a94c330b54ba4f4",
+          "params_sha256": "127ef15695a4c5aed83412f2d09e74b64f56b5dc908ae350016f10b00eec52d8",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 16087,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 16056,
+              "signed_sse_gain": 290337845,
+              "mean_sse_gain_per_used_cell": 18082.825423517686
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 1233,
+              "signed_sse_gain": 229401662,
+              "mean_sse_gain_per_used_cell": 186051.6317923763
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "C|0",
+          "config": "C",
+          "lambda": 0.0,
+          "enhancement_bytes": 16347,
+          "base_bytes": 28979,
+          "total_bytes": 45326,
+          "total_bpp": 0.04253374472621353,
+          "enhancement_bpp": 0.015339962163866492,
+          "metrics": {
+            "mse": 30.668595970088933,
+            "edge_top10_mse": 196.33551640330722,
+            "smooth_bottom50_mse": 10.703144404118163
+          },
+          "mode_counts": {
+            "skip": 12497,
+            "dc": 19057,
+            "vertical_no_offset": 701,
+            "horizontal_no_offset": 500,
+            "local_detail": 0,
+            "vertical_with_offset": 343,
+            "horizontal_with_offset": 278
+          },
+          "estimated_bits": 572400,
+          "actual_enhancement_bits": 130776,
+          "actual_minus_estimated_bits": -441624,
+          "estimated_bits_per_cell": 17.150047938638544,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 59034,
+          "raw_payload_bytes": 71550,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 16316,
+          "xz_reduction_pct": 77.19636617749825,
+          "encode_seconds": 7.628800299979048,
+          "decode": {
+            "samples_s": [
+              0.8520453999808524,
+              0.8721151000063401,
+              0.7828263000119478
+            ],
+            "median_s": 0.8520453999808524
+          },
+          "directional_cells": 1822,
+          "directional_selected_sse_gain": 15355309,
+          "directional_available_cell_sse_gain": 326136387,
+          "stream_sha256": "d1c577272f0a4a61a1a3952fbd920a00e1f56f61f4df28bebeace8c723cdfef0",
+          "pixels_sha256": "f952cacb71230173e17194e5589b3e41d47d105a20bbb935a4eb3151f853a252",
+          "modes_sha256": "44a97fb51265c069b638e28d7acf55931122447ce0030bebaa94412b8037d92f",
+          "params_sha256": "b57feeb5b9487464118ccb3385a1944c31d64abb18bb6bbe264c1f910e55309f",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 12497,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 19057,
+              "signed_sse_gain": 311148522,
+              "mean_sse_gain_per_used_cell": 16327.256231306083
+            },
+            "Vertical": {
+              "cells": 701,
+              "signed_sse_gain": 2330626,
+              "mean_sse_gain_per_used_cell": 3324.716119828816
+            },
+            "Horizontal": {
+              "cells": 500,
+              "signed_sse_gain": 2066810,
+              "mean_sse_gain_per_used_cell": 4133.62
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 343,
+              "signed_sse_gain": 5399033,
+              "mean_sse_gain_per_used_cell": 15740.620991253645
+            },
+            "Horizontal+DC": {
+              "cells": 278,
+              "signed_sse_gain": 5558840,
+              "mean_sse_gain_per_used_cell": 19995.827338129497
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|20",
+          "config": "C",
+          "lambda": 20.0,
+          "enhancement_bytes": 15547,
+          "base_bytes": 28979,
+          "total_bytes": 44526,
+          "total_bpp": 0.04178302779154092,
+          "enhancement_bpp": 0.01458924522919388,
+          "metrics": {
+            "mse": 30.683325505545294,
+            "edge_top10_mse": 196.3995322830215,
+            "smooth_bottom50_mse": 10.710795086314128
+          },
+          "mode_counts": {
+            "skip": 12983,
+            "dc": 8111,
+            "vertical_no_offset": 7101,
+            "horizontal_no_offset": 4749,
+            "local_detail": 0,
+            "vertical_with_offset": 232,
+            "horizontal_with_offset": 200
+          },
+          "estimated_bits": 305160,
+          "actual_enhancement_bits": 124376,
+          "actual_minus_estimated_bits": -180784,
+          "estimated_bits_per_cell": 9.143096836049857,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 25629,
+          "raw_payload_bytes": 38145,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 15516,
+          "xz_reduction_pct": 59.32363350373575,
+          "encode_seconds": 7.8320317000034265,
+          "decode": {
+            "samples_s": [
+              0.7744929000036791,
+              0.6807962999737356,
+              0.6277936999977101
+            ],
+            "median_s": 0.6807962999737356
+          },
+          "directional_cells": 12282,
+          "directional_selected_sse_gain": 180316075,
+          "directional_available_cell_sse_gain": 325971569,
+          "stream_sha256": "9475b32e384140c358e7ddc4a54b81ff877ab6a7ed1de546fcd855c2b35d46f4",
+          "pixels_sha256": "c5ba0d75f8553beece6d7c118bf6f38e17d474ba98ae7f915b978438fe5e93ff",
+          "modes_sha256": "d6d86f37224d173aa616030742aa64e9b4b0cd1f1ed03902f83b51923fed8fc4",
+          "params_sha256": "c4b66d837c4db077c943fce3ce2f2e377458eb310e9f5496ada09298e2002a93",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 12983,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 8111,
+              "signed_sse_gain": 145811040,
+              "mean_sse_gain_per_used_cell": 17976.949821230428
+            },
+            "Vertical": {
+              "cells": 7101,
+              "signed_sse_gain": 99487283,
+              "mean_sse_gain_per_used_cell": 14010.32009576116
+            },
+            "Horizontal": {
+              "cells": 4749,
+              "signed_sse_gain": 70999969,
+              "mean_sse_gain_per_used_cell": 14950.509370393767
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 232,
+              "signed_sse_gain": 4628676,
+              "mean_sse_gain_per_used_cell": 19951.189655172413
+            },
+            "Horizontal+DC": {
+              "cells": 200,
+              "signed_sse_gain": 5200147,
+              "mean_sse_gain_per_used_cell": 26000.735
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|100",
+          "config": "C",
+          "lambda": 100.0,
+          "enhancement_bytes": 14139,
+          "base_bytes": 28979,
+          "total_bytes": 43118,
+          "total_bpp": 0.04046176598651712,
+          "enhancement_bpp": 0.013267983424170083,
+          "metrics": {
+            "mse": 30.83482241165313,
+            "edge_top10_mse": 196.59891803816757,
+            "smooth_bottom50_mse": 10.852666357537238
+          },
+          "mode_counts": {
+            "skip": 14426,
+            "dc": 6421,
+            "vertical_no_offset": 7401,
+            "horizontal_no_offset": 4875,
+            "local_detail": 0,
+            "vertical_with_offset": 134,
+            "horizontal_with_offset": 119
+          },
+          "estimated_bits": 260304,
+          "actual_enhancement_bits": 113112,
+          "actual_minus_estimated_bits": -147192,
+          "estimated_bits_per_cell": 7.799137104506232,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 20022,
+          "raw_payload_bytes": 32538,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 14108,
+          "xz_reduction_pct": 56.641465363574895,
+          "encode_seconds": 8.469349199993303,
+          "decode": {
+            "samples_s": [
+              0.7053710999898612,
+              0.7314492000150494,
+              0.7010439999867231
+            ],
+            "median_s": 0.7053710999898612
+          },
+          "directional_cells": 12529,
+          "directional_selected_sse_gain": 191998256,
+          "directional_available_cell_sse_gain": 325718686,
+          "stream_sha256": "c10b66874c8e09264feeb23b9004e2760bdf6fadaa1a97e59ef7e371fc20db9e",
+          "pixels_sha256": "2f859d92639c3ebad85a9aa2bf50d6f002c214ecf0a05425ced169a9ec78102c",
+          "modes_sha256": "73522d819a35addcb76a357687c63539738b2e14a9855c34b213500743fc63f6",
+          "params_sha256": "52a886f926246722a699dc7e34a00d2e9d44896a2aaa16f315cf6eca7257b058",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 14426,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 6421,
+              "signed_sse_gain": 130254242,
+              "mean_sse_gain_per_used_cell": 20285.662980844107
+            },
+            "Vertical": {
+              "cells": 7401,
+              "signed_sse_gain": 108448729,
+              "mean_sse_gain_per_used_cell": 14653.25347925956
+            },
+            "Horizontal": {
+              "cells": 4875,
+              "signed_sse_gain": 75260988,
+              "mean_sse_gain_per_used_cell": 15438.151384615385
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 134,
+              "signed_sse_gain": 4065811,
+              "mean_sse_gain_per_used_cell": 30341.873134328358
+            },
+            "Horizontal+DC": {
+              "cells": 119,
+              "signed_sse_gain": 4222728,
+              "mean_sse_gain_per_used_cell": 35485.10924369748
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|0",
+          "config": "D",
+          "lambda": 0.0,
+          "enhancement_bytes": 46399,
+          "base_bytes": 28979,
+          "total_bytes": 75378,
+          "total_bpp": 0.07073442637719021,
+          "enhancement_bpp": 0.043540643814843176,
+          "metrics": {
+            "mse": 21.64153833317068,
+            "edge_top10_mse": 122.91752356168239,
+            "smooth_bottom50_mse": 9.510033419293007
+          },
+          "mode_counts": {
+            "skip": 11561,
+            "dc": 16054,
+            "vertical_no_offset": 249,
+            "horizontal_no_offset": 239,
+            "local_detail": 5044,
+            "vertical_with_offset": 102,
+            "horizontal_with_offset": 127
+          },
+          "estimated_bits": 2427816,
+          "actual_enhancement_bits": 371192,
+          "actual_minus_estimated_bits": -2056624,
+          "estimated_bits_per_cell": 72.74137104506232,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 290961,
+          "raw_payload_bytes": 303477,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 46368,
+          "xz_reduction_pct": 84.72108265206259,
+          "encode_seconds": 14.869539999985136,
+          "decode": {
+            "samples_s": [
+              1.2306114000093658,
+              1.2661489000020083,
+              1.4089022999978624
+            ],
+            "median_s": 1.2661489000020083
+          },
+          "directional_cells": 717,
+          "directional_selected_sse_gain": 19169553,
+          "directional_available_cell_sse_gain": 321519060,
+          "stream_sha256": "48546aa9ad806cd1a839b8a3d579c7069116394b1e2c6b35befef8a804458907",
+          "pixels_sha256": "157cf2c694616e6a24db5ac630165cdd755722672ce05b7d7b2aae96495a1c32",
+          "modes_sha256": "44ffdd405f203b2048e22e84010fbdacd5c5153c364a19c0aece4032bf2d081a",
+          "params_sha256": "2d9e0cfbbd059ec54172829e0125700890a1c02149b9246d673c425014fbf7e8",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 11561,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 16054,
+              "signed_sse_gain": 242047312,
+              "mean_sse_gain_per_used_cell": 15077.071882396911
+            },
+            "Vertical": {
+              "cells": 249,
+              "signed_sse_gain": 3330674,
+              "mean_sse_gain_per_used_cell": 13376.20080321285
+            },
+            "Horizontal": {
+              "cells": 239,
+              "signed_sse_gain": 4745371,
+              "mean_sse_gain_per_used_cell": 19855.10878661088
+            },
+            "Detail": {
+              "cells": 5044,
+              "signed_sse_gain": 296158948,
+              "mean_sse_gain_per_used_cell": 58715.09674861221
+            },
+            "Vertical+DC": {
+              "cells": 102,
+              "signed_sse_gain": 4397753,
+              "mean_sse_gain_per_used_cell": 43115.22549019608
+            },
+            "Horizontal+DC": {
+              "cells": 127,
+              "signed_sse_gain": 6695755,
+              "mean_sse_gain_per_used_cell": 52722.48031496063
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|20",
+          "config": "D",
+          "lambda": 20.0,
+          "enhancement_bytes": 36459,
+          "base_bytes": 28979,
+          "total_bytes": 65438,
+          "total_bpp": 0.06140676846388301,
+          "enhancement_bpp": 0.034212985901535965,
+          "metrics": {
+            "mse": 21.946553919931034,
+            "edge_top10_mse": 123.81996412997609,
+            "smooth_bottom50_mse": 9.707218946922323
+          },
+          "mode_counts": {
+            "skip": 12724,
+            "dc": 6935,
+            "vertical_no_offset": 6583,
+            "horizontal_no_offset": 4387,
+            "local_detail": 2476,
+            "vertical_with_offset": 112,
+            "horizontal_with_offset": 159
+          },
+          "estimated_bits": 1223856,
+          "actual_enhancement_bits": 291672,
+          "actual_minus_estimated_bits": -932184,
+          "estimated_bits_per_cell": 36.668744007670185,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 140466,
+          "raw_payload_bytes": 152982,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 36428,
+          "xz_reduction_pct": 76.18804826711639,
+          "encode_seconds": 14.023879300017143,
+          "decode": {
+            "samples_s": [
+              0.9590376999985892,
+              1.0076625000219792,
+              1.333579500002088
+            ],
+            "median_s": 1.0076625000219792
+          },
+          "directional_cells": 11241,
+          "directional_selected_sse_gain": 181044772,
+          "directional_available_cell_sse_gain": 323368910,
+          "stream_sha256": "5a2df71e50bbf6f22938e54c8332655bd3bb8d1444b31f7e242ac39e820df329",
+          "pixels_sha256": "51b75fe0922495e676851b7883bd6e3062a8a467a69083d9f246c78435c54517",
+          "modes_sha256": "ecf09c047b0ac66ebaabd0788e1722985b2271e61b5ede70c16e8f8f226bbe77",
+          "params_sha256": "d1387771da885d2d7c7630795ea025a83987456fbdff4580da4bed42f5be141e",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 12724,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 6935,
+              "signed_sse_gain": 111782515,
+              "mean_sse_gain_per_used_cell": 16118.603460706561
+            },
+            "Vertical": {
+              "cells": 6583,
+              "signed_sse_gain": 97451964,
+              "mean_sse_gain_per_used_cell": 14803.579523013823
+            },
+            "Horizontal": {
+              "cells": 4387,
+              "signed_sse_gain": 69499028,
+              "mean_sse_gain_per_used_cell": 15842.039662639618
+            },
+            "Detail": {
+              "cells": 2476,
+              "signed_sse_gain": 256747584,
+              "mean_sse_gain_per_used_cell": 103694.50080775445
+            },
+            "Vertical+DC": {
+              "cells": 112,
+              "signed_sse_gain": 5219341,
+              "mean_sse_gain_per_used_cell": 46601.25892857143
+            },
+            "Horizontal+DC": {
+              "cells": 159,
+              "signed_sse_gain": 8874439,
+              "mean_sse_gain_per_used_cell": 55814.08176100629
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|100",
+          "config": "D",
+          "lambda": 100.0,
+          "enhancement_bytes": 26531,
+          "base_bytes": 28979,
+          "total_bytes": 55510,
+          "total_bpp": 0.05209037130459589,
+          "enhancement_bpp": 0.024896588742248846,
+          "metrics": {
+            "mse": 23.076093841493627,
+            "edge_top10_mse": 129.650634172645,
+            "smooth_bottom50_mse": 10.163226923856152
+          },
+          "mode_counts": {
+            "skip": 14302,
+            "dc": 5886,
+            "vertical_no_offset": 7166,
+            "horizontal_no_offset": 4725,
+            "local_detail": 1103,
+            "vertical_with_offset": 84,
+            "horizontal_with_offset": 110
+          },
+          "estimated_bits": 669600,
+          "actual_enhancement_bits": 212248,
+          "actual_minus_estimated_bits": -457352,
+          "estimated_bits_per_cell": 20.062320230105463,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 71184,
+          "raw_payload_bytes": 83700,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 26500,
+          "xz_reduction_pct": 68.33930704898447,
+          "encode_seconds": 13.610577400017064,
+          "decode": {
+            "samples_s": [
+              0.9182416999829002,
+              1.0843846000207122,
+              0.9167832999955863
+            ],
+            "median_s": 0.9182416999829002
+          },
+          "directional_cells": 12085,
+          "directional_selected_sse_gain": 203384719,
+          "directional_available_cell_sse_gain": 327266136,
+          "stream_sha256": "c55b4c4dd0a7c4282d3d64ef59f961fd6f58a83ee878cc0bb0a8daec9c500ebc",
+          "pixels_sha256": "d9532bbe019f1597aaf7411adf819c8ebb2c56c4c7d3be584ceb09cd2bd2169b",
+          "modes_sha256": "7516b48bd08b66c22cc1892f9f240ae762f636df0ff292dced8f3e8faab17670",
+          "params_sha256": "65cd13021142f109fbc4ee7c5da9f90328dae658b7c7d4745e518701667ff22e",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 14302,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 5886,
+              "signed_sse_gain": 110305733,
+              "mean_sse_gain_per_used_cell": 18740.355589534487
+            },
+            "Vertical": {
+              "cells": 7166,
+              "signed_sse_gain": 110093286,
+              "mean_sse_gain_per_used_cell": 15363.283003070053
+            },
+            "Horizontal": {
+              "cells": 4725,
+              "signed_sse_gain": 77232781,
+              "mean_sse_gain_per_used_cell": 16345.562116402116
+            },
+            "Detail": {
+              "cells": 1103,
+              "signed_sse_gain": 206995812,
+              "mean_sse_gain_per_used_cell": 187666.19401631912
+            },
+            "Vertical+DC": {
+              "cells": 84,
+              "signed_sse_gain": 4639722,
+              "mean_sse_gain_per_used_cell": 55234.78571428572
+            },
+            "Horizontal+DC": {
+              "cells": 110,
+              "signed_sse_gain": 11418930,
+              "mean_sse_gain_per_used_cell": 103808.45454545454
+            }
+          },
+          "nondominated": true
+        }
+      ]
+    },
+    "cat.jpg": {
+      "class": "detailed photography",
+      "width": 3576,
+      "height": 2384,
+      "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "base_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+      "base_bytes": 63297,
+      "base_mse": {
+        "mse": 299.1919568344019,
+        "edge_top10_mse": 860.5394519066436,
+        "smooth_bottom50_mse": 94.85032293680133
+      },
+      "process_peak_working_set_bytes": 453464064,
+      "results": [
+        {
+          "key": "A|0",
+          "config": "A",
+          "lambda": 0.0,
+          "enhancement_bytes": 9819,
+          "base_bytes": 63297,
+          "total_bytes": 73116,
+          "total_bpp": 0.0686117742444034,
+          "enhancement_bpp": 0.009214111976937975,
+          "metrics": {
+            "mse": 287.2940264593312,
+            "edge_top10_mse": 849.4865690187941,
+            "smooth_bottom50_mse": 83.46403914963625
+          },
+          "mode_counts": {
+            "skip": 19438,
+            "dc": 13938,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 434640,
+          "actual_enhancement_bits": 78552,
+          "actual_minus_estimated_bits": -356088,
+          "estimated_bits_per_cell": 13.022531160115053,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 41814,
+          "raw_payload_bytes": 54330,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 9788,
+          "xz_reduction_pct": 81.98417080802503,
+          "encode_seconds": 2.6516043999872636,
+          "decode": {
+            "samples_s": [
+              0.967778799997177,
+              0.7132379999966361,
+              0.6495341999980155
+            ],
+            "median_s": 0.7132379999966361
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "0dd6cb99895c46b734a9f70562fd37328b457331bc771d20c40d07f98fdb5b45",
+          "pixels_sha256": "86a366a7caee94570f0fffb23cc1cda377ba834d84e2bbb2449c2ba626c29e12",
+          "modes_sha256": "33e82b1271756718d8a51704fef85efd0f66be53340d864b371aabb0f6a7ba38",
+          "params_sha256": "398b7d699dcf513f3ec568e97e5fd2b6e7ceedc97a7ddcd0d6b92508efce8e5e",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 19438,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 13938,
+              "signed_sse_gain": 304296137,
+              "mean_sse_gain_per_used_cell": 21832.123475391018
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "A|20",
+          "config": "A",
+          "lambda": 20.0,
+          "enhancement_bytes": 9563,
+          "base_bytes": 63297,
+          "total_bytes": 72860,
+          "total_bpp": 0.06837154482530818,
+          "enhancement_bpp": 0.00897388255784274,
+          "metrics": {
+            "mse": 287.30011058998844,
+            "edge_top10_mse": 849.529685164397,
+            "smooth_bottom50_mse": 83.48326999705995
+          },
+          "mode_counts": {
+            "skip": 20069,
+            "dc": 13307,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 419496,
+          "actual_enhancement_bits": 76504,
+          "actual_minus_estimated_bits": -342992,
+          "estimated_bits_per_cell": 12.568791946308725,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 39921,
+          "raw_payload_bytes": 52437,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 9532,
+          "xz_reduction_pct": 81.82199591891222,
+          "encode_seconds": 2.5384555000055116,
+          "decode": {
+            "samples_s": [
+              0.8205673999909777,
+              0.7320079999917652,
+              0.6618272000050638
+            ],
+            "median_s": 0.7320079999917652
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "8968201e3ed384d470fc6a6db9167ed32bc868e3ece617a4d0ff521b41dd5aaa",
+          "pixels_sha256": "de5c42b9444ee42ffbc50ad331095294451c1fd147aac51e3556393ad7c5e888",
+          "modes_sha256": "4634c1444c2ee1bf279b9cbcbefcc5bdf6698913691ddec4459cc2f97e9eac1d",
+          "params_sha256": "4d4062ac5ab7635ab408448e290e8f3bc547494a4b186f903688e13482e02c63",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 20069,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 13307,
+              "signed_sse_gain": 304140532,
+              "mean_sse_gain_per_used_cell": 22855.679867738785
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "A|100",
+          "config": "A",
+          "lambda": 100.0,
+          "enhancement_bytes": 8559,
+          "base_bytes": 63297,
+          "total_bytes": 71856,
+          "total_bpp": 0.06742939507229403,
+          "enhancement_bpp": 0.008031732804828612,
+          "metrics": {
+            "mse": 287.4220423473167,
+            "edge_top10_mse": 849.5367982023471,
+            "smooth_bottom50_mse": 83.65096982691213
+          },
+          "mode_counts": {
+            "skip": 22251,
+            "dc": 11125,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 0,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 367128,
+          "actual_enhancement_bits": 68472,
+          "actual_minus_estimated_bits": -298656,
+          "estimated_bits_per_cell": 10.999760306807287,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 33375,
+          "raw_payload_bytes": 45891,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 8528,
+          "xz_reduction_pct": 81.41683554509599,
+          "encode_seconds": 2.6141386999806855,
+          "decode": {
+            "samples_s": [
+              0.8736540999962017,
+              0.6342195000033826,
+              0.6603647000156343
+            ],
+            "median_s": 0.6603647000156343
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "8667e415f6c6f5f533ece7c8c9598f84b69b230f3e606f42d272cbb22e09adc7",
+          "pixels_sha256": "e87789e0790424c1f97e024c0068bce571c8948fbd4b27851a1adae7e54d27d6",
+          "modes_sha256": "3e515fe43ed3e6e80aa32f8a9b51ef9f4e89eb6ff958cfc6ee2de518173ae173",
+          "params_sha256": "20d0aa8f3082c54d19c5fb994f1adbf3e64cca19f6fb6e3b715c629c2cbc1b19",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 22251,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 11125,
+              "signed_sse_gain": 301022060,
+              "mean_sse_gain_per_used_cell": 27058.162696629213
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "B|0",
+          "config": "B",
+          "lambda": 0.0,
+          "enhancement_bytes": 135775,
+          "base_bytes": 63297,
+          "total_bytes": 199072,
+          "total_bpp": 0.18680840202393287,
+          "enhancement_bpp": 0.12741073975646744,
+          "metrics": {
+            "mse": 223.8981015150719,
+            "edge_top10_mse": 668.3760835046883,
+            "smooth_bottom50_mse": 61.60414868229274
+          },
+          "mode_counts": {
+            "skip": 7560,
+            "dc": 4979,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 20837,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 8221032,
+          "actual_enhancement_bits": 1086200,
+          "actual_minus_estimated_bits": -7134832,
+          "estimated_bits_per_cell": 246.31567593480347,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 1015113,
+          "raw_payload_bytes": 1027629,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 135744,
+          "xz_reduction_pct": 86.79056352049231,
+          "encode_seconds": 8.377054299984593,
+          "decode": {
+            "samples_s": [
+              2.5235687000094913,
+              2.6791624999896158,
+              2.4996259000035934
+            ],
+            "median_s": 2.5235687000094913
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "be3b07481cbe5b031911e67d2a4171f137723b1f59ff2e7b0ef110047d034f06",
+          "pixels_sha256": "602e5ddcc75871b7ae60f36b0bd55d488176da37717a92e23f55088e366b515c",
+          "modes_sha256": "e2f277c97e3d615986bb60fb642c1febb197fe9c3d78ed04c95f34e5dd90264b",
+          "params_sha256": "ee5d65b091505775deda0c0ec7c828528ba7f8a8abd0bfc394a09898d0b61456",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 7560,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 4979,
+              "signed_sse_gain": 65601209,
+              "mean_sse_gain_per_used_cell": 13175.579232777665
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 20837,
+              "signed_sse_gain": 1860080703,
+              "mean_sse_gain_per_used_cell": 89268.16254739166
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|20",
+          "config": "B",
+          "lambda": 20.0,
+          "enhancement_bytes": 124895,
+          "base_bytes": 63297,
+          "total_bytes": 188192,
+          "total_bpp": 0.17659865171238534,
+          "enhancement_bpp": 0.1172009894449199,
+          "metrics": {
+            "mse": 224.3156201281599,
+            "edge_top10_mse": 668.3317775517809,
+            "smooth_bottom50_mse": 61.88634837452537
+          },
+          "mode_counts": {
+            "skip": 9903,
+            "dc": 5541,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 17932,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 7119000,
+          "actual_enhancement_bits": 999160,
+          "actual_minus_estimated_bits": -6119840,
+          "estimated_bits_per_cell": 213.29697986577182,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 877359,
+          "raw_payload_bytes": 889875,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 124864,
+          "xz_reduction_pct": 85.96836634358758,
+          "encode_seconds": 7.883875900006387,
+          "decode": {
+            "samples_s": [
+              2.1594047999824397,
+              2.1952737999963574,
+              2.346145899995463
+            ],
+            "median_s": 2.1952737999963574
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "15c2fba3a8edf7f576bbd4ecc9b299bc4446273e56d424d6249b0799beb91ac1",
+          "pixels_sha256": "7e5e3f697e5f9a1b92760833063e65b4ad4f88da730321831d1de257369e02b9",
+          "modes_sha256": "16e9ad6637f9fafc9cf2bfb7237c5419021c6ec3e8744dfa31a6bf996fffd122",
+          "params_sha256": "746121d970a76f9c26f11512a4f6bf16e79cf39baea229271f4d250804622a61",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 9903,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 5541,
+              "signed_sse_gain": 91766609,
+              "mean_sse_gain_per_used_cell": 16561.38043674427
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 17932,
+              "signed_sse_gain": 1823237034,
+              "mean_sse_gain_per_used_cell": 101675.05208565692
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "B|100",
+          "config": "B",
+          "lambda": 100.0,
+          "enhancement_bytes": 85435,
+          "base_bytes": 63297,
+          "total_bytes": 148732,
+          "total_bpp": 0.13956953890965873,
+          "enhancement_bpp": 0.08017187664219329,
+          "metrics": {
+            "mse": 229.8423040488041,
+            "edge_top10_mse": 674.0446015474923,
+            "smooth_bottom50_mse": 64.51142906962924
+          },
+          "mode_counts": {
+            "skip": 15523,
+            "dc": 6755,
+            "vertical_no_offset": 0,
+            "horizontal_no_offset": 0,
+            "local_detail": 11098,
+            "vertical_with_offset": 0,
+            "horizontal_with_offset": 0
+          },
+          "estimated_bits": 4523880,
+          "actual_enhancement_bits": 683480,
+          "actual_minus_estimated_bits": -3840400,
+          "estimated_bits_per_cell": 135.5429050814957,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 552969,
+          "raw_payload_bytes": 565485,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 85404,
+          "xz_reduction_pct": 84.89721212764265,
+          "encode_seconds": 8.079398600006243,
+          "decode": {
+            "samples_s": [
+              1.7282526000053622,
+              1.8187296999967657,
+              1.5554583999910392
+            ],
+            "median_s": 1.7282526000053622
+          },
+          "directional_cells": 0,
+          "directional_selected_sse_gain": 0,
+          "directional_available_cell_sse_gain": 0,
+          "stream_sha256": "8287b958bc7e8b8340807990189efab921261fe9dc10c14e5206c691aa0ec461",
+          "pixels_sha256": "33d9374b3968f02d642ca123092921ce5b9a6825f8277907d16e81fbfe8f442e",
+          "modes_sha256": "74fe7b9667bd94d50656241f1453c131401222cdab12295d2b384ee7cba44ee0",
+          "params_sha256": "87f114b082e88e45ee81572efbbe57d9412467b9b786edb4ca62d132b2da5103",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 15523,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 6755,
+              "signed_sse_gain": 178191249,
+              "mean_sse_gain_per_used_cell": 26379.16343449297
+            },
+            "Vertical": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Detail": {
+              "cells": 11098,
+              "signed_sse_gain": 1595464402,
+              "mean_sse_gain_per_used_cell": 143761.43467291404
+            },
+            "Vertical+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Horizontal+DC": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|0",
+          "config": "C",
+          "lambda": 0.0,
+          "enhancement_bytes": 9891,
+          "base_bytes": 63297,
+          "total_bytes": 73188,
+          "total_bpp": 0.06867933876852395,
+          "enhancement_bpp": 0.009281676501058512,
+          "metrics": {
+            "mse": 287.16472473399597,
+            "edge_top10_mse": 849.3398156913023,
+            "smooth_bottom50_mse": 83.31638048054246
+          },
+          "mode_counts": {
+            "skip": 19372,
+            "dc": 13814,
+            "vertical_no_offset": 8,
+            "horizontal_no_offset": 121,
+            "local_detail": 0,
+            "vertical_with_offset": 17,
+            "horizontal_with_offset": 44
+          },
+          "estimated_bits": 433128,
+          "actual_enhancement_bits": 79128,
+          "actual_minus_estimated_bits": -354000,
+          "estimated_bits_per_cell": 12.977229146692235,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 41625,
+          "raw_payload_bytes": 54141,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 9860,
+          "xz_reduction_pct": 81.78829352985723,
+          "encode_seconds": 7.984037400019588,
+          "decode": {
+            "samples_s": [
+              0.8936452000052668,
+              0.7331836000084877,
+              0.6991362999833655
+            ],
+            "median_s": 0.7331836000084877
+          },
+          "directional_cells": 190,
+          "directional_selected_sse_gain": 11049957,
+          "directional_available_cell_sse_gain": 307471792,
+          "stream_sha256": "6df4e7770f24e92c1658179ba4ae605ccc066b0b206dd89bc39e93a20b66b00e",
+          "pixels_sha256": "d1f037dd8a9a6566b39de5828569828c92fff5e18e65599c42b135c751155fec",
+          "modes_sha256": "d336d7b9b4054ba943ecf4a82dd41ffdb022d2fddf1426ac3fc7ca2d79da2684",
+          "params_sha256": "1546d3a71ac4de6ca082e79bbde0604b36053aea98c38d210ef19a8d1d8651d2",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 19372,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 13814,
+              "signed_sse_gain": 296553143,
+              "mean_sse_gain_per_used_cell": 21467.57948458086
+            },
+            "Vertical": {
+              "cells": 8,
+              "signed_sse_gain": 281690,
+              "mean_sse_gain_per_used_cell": 35211.25
+            },
+            "Horizontal": {
+              "cells": 121,
+              "signed_sse_gain": 6241231,
+              "mean_sse_gain_per_used_cell": 51580.42148760331
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 17,
+              "signed_sse_gain": 926896,
+              "mean_sse_gain_per_used_cell": 54523.294117647056
+            },
+            "Horizontal+DC": {
+              "cells": 44,
+              "signed_sse_gain": 3600140,
+              "mean_sse_gain_per_used_cell": 81821.36363636363
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "C|20",
+          "config": "C",
+          "lambda": 20.0,
+          "enhancement_bytes": 10079,
+          "base_bytes": 63297,
+          "total_bytes": 73376,
+          "total_bpp": 0.068855757248172,
+          "enhancement_bpp": 0.009458094980706575,
+          "metrics": {
+            "mse": 287.170677645589,
+            "edge_top10_mse": 849.5283205809293,
+            "smooth_bottom50_mse": 83.31956144713219
+          },
+          "mode_counts": {
+            "skip": 19740,
+            "dc": 5499,
+            "vertical_no_offset": 4169,
+            "horizontal_no_offset": 3914,
+            "local_detail": 0,
+            "vertical_with_offset": 17,
+            "horizontal_with_offset": 37
+          },
+          "estimated_bits": 233400,
+          "actual_enhancement_bits": 80632,
+          "actual_minus_estimated_bits": -152768,
+          "estimated_bits_per_cell": 6.993048897411313,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 16659,
+          "raw_payload_bytes": 29175,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 10048,
+          "xz_reduction_pct": 65.55955441302486,
+          "encode_seconds": 7.600929600012023,
+          "decode": {
+            "samples_s": [
+              0.6830306999909226,
+              0.7962721000076272,
+              0.6924273000040557
+            ],
+            "median_s": 0.6924273000040557
+          },
+          "directional_cells": 8137,
+          "directional_selected_sse_gain": 160807951,
+          "directional_available_cell_sse_gain": 307466912,
+          "stream_sha256": "7642e8a413c76bf8d5597c45859491a51094d80a7618cc0f7f506f3a30eac9df",
+          "pixels_sha256": "f4db6546fa04d93faa51746b7863fb8b30444d997e6ecfb56906da66164b7401",
+          "modes_sha256": "d5865494a118b8e9e3e2ff44c24f96cf7f66c7c8336871214d51703fd4efeaca",
+          "params_sha256": "59070edde4e80d094cba6dc50afdb349b72036bbd9171e030cd7f2ea5058090f",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 19740,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 5499,
+              "signed_sse_gain": 146642900,
+              "mean_sse_gain_per_used_cell": 26667.194035279143
+            },
+            "Vertical": {
+              "cells": 4169,
+              "signed_sse_gain": 72935328,
+              "mean_sse_gain_per_used_cell": 17494.68169824898
+            },
+            "Horizontal": {
+              "cells": 3914,
+              "signed_sse_gain": 83412698,
+              "mean_sse_gain_per_used_cell": 21311.368932038837
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 17,
+              "signed_sse_gain": 910220,
+              "mean_sse_gain_per_used_cell": 53542.35294117647
+            },
+            "Horizontal+DC": {
+              "cells": 37,
+              "signed_sse_gain": 3549705,
+              "mean_sse_gain_per_used_cell": 95937.97297297297
+            }
+          },
+          "nondominated": false
+        },
+        {
+          "key": "C|100",
+          "config": "C",
+          "lambda": 100.0,
+          "enhancement_bytes": 8647,
+          "base_bytes": 63297,
+          "total_bytes": 71944,
+          "total_bpp": 0.06751197393510802,
+          "enhancement_bpp": 0.008114311667642598,
+          "metrics": {
+            "mse": 287.2834843994765,
+            "edge_top10_mse": 849.7096002161438,
+            "smooth_bottom50_mse": 83.42710589199366
+          },
+          "mode_counts": {
+            "skip": 21097,
+            "dc": 3931,
+            "vertical_no_offset": 4159,
+            "horizontal_no_offset": 4147,
+            "local_detail": 0,
+            "vertical_with_offset": 12,
+            "horizontal_with_offset": 30
+          },
+          "estimated_bits": 195480,
+          "actual_enhancement_bits": 69176,
+          "actual_minus_estimated_bits": -126304,
+          "estimated_bits_per_cell": 5.856903163950144,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 11919,
+          "raw_payload_bytes": 24435,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 8616,
+          "xz_reduction_pct": 64.73910374462861,
+          "encode_seconds": 7.804876300011529,
+          "decode": {
+            "samples_s": [
+              0.7123277999926358,
+              0.6598802999942563,
+              0.7778475999948569
+            ],
+            "median_s": 0.7123277999926358
+          },
+          "directional_cells": 8348,
+          "directional_selected_sse_gain": 177401907,
+          "directional_available_cell_sse_gain": 307457681,
+          "stream_sha256": "d4f4462c964518a2a1b1c5519df5580e1a5e70bd0265bf6a83b06df2922a3e83",
+          "pixels_sha256": "b7a2f1c92bcdd13ba1b6753df629817da2b296020b2404cd1c1ed082058fe0c2",
+          "modes_sha256": "6909a6a9b3a0b20a6ea3e523ee104c29e9ece0993b15659ff86c8d5aa3ae27aa",
+          "params_sha256": "8c454d1a7aa2cd9913f9199db83fa3dd42275dd4116072b131b1be9b4f4d8e88",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 21097,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 3931,
+              "signed_sse_gain": 127163849,
+              "mean_sse_gain_per_used_cell": 32348.982192826254
+            },
+            "Vertical": {
+              "cells": 4159,
+              "signed_sse_gain": 81106430,
+              "mean_sse_gain_per_used_cell": 19501.425823515267
+            },
+            "Horizontal": {
+              "cells": 4147,
+              "signed_sse_gain": 92015680,
+              "mean_sse_gain_per_used_cell": 22188.49288642392
+            },
+            "Detail": {
+              "cells": 0,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": null
+            },
+            "Vertical+DC": {
+              "cells": 12,
+              "signed_sse_gain": 897040,
+              "mean_sse_gain_per_used_cell": 74753.33333333333
+            },
+            "Horizontal+DC": {
+              "cells": 30,
+              "signed_sse_gain": 3382757,
+              "mean_sse_gain_per_used_cell": 112758.56666666667
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|0",
+          "config": "D",
+          "lambda": 0.0,
+          "enhancement_bytes": 120495,
+          "base_bytes": 63297,
+          "total_bytes": 183792,
+          "total_bpp": 0.17246970857168595,
+          "enhancement_bpp": 0.11307204630422053,
+          "metrics": {
+            "mse": 221.23622066886375,
+            "edge_top10_mse": 654.8246572803656,
+            "smooth_bottom50_mse": 61.11983989215631
+          },
+          "mode_counts": {
+            "skip": 7506,
+            "dc": 4953,
+            "vertical_no_offset": 3,
+            "horizontal_no_offset": 2282,
+            "local_detail": 17403,
+            "vertical_with_offset": 3,
+            "horizontal_with_offset": 1226
+          },
+          "estimated_bits": 6931248,
+          "actual_enhancement_bits": 963960,
+          "actual_minus_estimated_bits": -5967288,
+          "estimated_bits_per_cell": 207.67162032598273,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 853890,
+          "raw_payload_bytes": 866406,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 120464,
+          "xz_reduction_pct": 86.0961258347703,
+          "encode_seconds": 13.15385899998364,
+          "decode": {
+            "samples_s": [
+              2.1375341000093613,
+              2.1348827999900095,
+              2.404974699980812
+            ],
+            "median_s": 2.1375341000093613
+          },
+          "directional_cells": 3514,
+          "directional_selected_sse_gain": 607534579,
+          "directional_available_cell_sse_gain": 1472953241,
+          "stream_sha256": "dda7cd3c65e5173fd5204066ec125feeddbafc722cb11c209fbbfc02cae35406",
+          "pixels_sha256": "54a9298d44969da30b0517a787213d8d08022dbc456943812546cbda7b379d35",
+          "modes_sha256": "c108cf3c30164aea7d88ebcd449efe9ad6102b010300c562d1bafd7feb8c8e24",
+          "params_sha256": "86edbcb7276e68a327eda9ec2f45c8957f213d5d89e1e270b5c1b91911f8469e",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 7506,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 4953,
+              "signed_sse_gain": 64592048,
+              "mean_sse_gain_per_used_cell": 13040.994952554007
+            },
+            "Vertical": {
+              "cells": 3,
+              "signed_sse_gain": 53710,
+              "mean_sse_gain_per_used_cell": 17903.333333333332
+            },
+            "Horizontal": {
+              "cells": 2282,
+              "signed_sse_gain": 401394719,
+              "mean_sse_gain_per_used_cell": 175896.02059596844
+            },
+            "Detail": {
+              "cells": 17403,
+              "signed_sse_gain": 1321634357,
+              "mean_sse_gain_per_used_cell": 75942.9039246107
+            },
+            "Vertical+DC": {
+              "cells": 3,
+              "signed_sse_gain": 126826,
+              "mean_sse_gain_per_used_cell": 42275.333333333336
+            },
+            "Horizontal+DC": {
+              "cells": 1226,
+              "signed_sse_gain": 205959324,
+              "mean_sse_gain_per_used_cell": 167992.9233278956
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|20",
+          "config": "D",
+          "lambda": 20.0,
+          "enhancement_bytes": 99855,
+          "base_bytes": 63297,
+          "total_bytes": 163152,
+          "total_bpp": 0.15310121165713256,
+          "enhancement_bpp": 0.09370354938966713,
+          "metrics": {
+            "mse": 221.72141371572351,
+            "edge_top10_mse": 654.5017655520484,
+            "smooth_bottom50_mse": 61.436853344468005
+          },
+          "mode_counts": {
+            "skip": 9562,
+            "dc": 1319,
+            "vertical_no_offset": 2745,
+            "horizontal_no_offset": 5373,
+            "local_detail": 12664,
+            "vertical_with_offset": 5,
+            "horizontal_with_offset": 1708
+          },
+          "estimated_bits": 5035872,
+          "actual_enhancement_bits": 798840,
+          "actual_minus_estimated_bits": -4237032,
+          "estimated_bits_per_cell": 150.8830297219559,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 616968,
+          "raw_payload_bytes": 629484,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 99824,
+          "xz_reduction_pct": 84.14193212218262,
+          "encode_seconds": 13.038902200001758,
+          "decode": {
+            "samples_s": [
+              2.0555393999966327,
+              1.7137201999721583,
+              1.9860996000061277
+            ],
+            "median_s": 1.9860996000061277
+          },
+          "directional_cells": 9831,
+          "directional_selected_sse_gain": 882406847,
+          "directional_available_cell_sse_gain": 1509176733,
+          "stream_sha256": "59fceae65e210c6fbbce3946a15e5eb84ff8e58aac49a28c985de2a24534506f",
+          "pixels_sha256": "212444475dbfdf7387acbd99320dfc3f401a57990fc443b857ac2b3ec599bb50",
+          "modes_sha256": "505126c734ea3ac2442c466395d910886c44edbcff825c58042858a27567e327",
+          "params_sha256": "2bc349051b15ef79ba0c386abf4f0fa20ee24bdc7c8f62f6b68f6217235efc36",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 9562,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 1319,
+              "signed_sse_gain": 28075774,
+              "mean_sse_gain_per_used_cell": 21285.65125094769
+            },
+            "Vertical": {
+              "cells": 2745,
+              "signed_sse_gain": 33530108,
+              "mean_sse_gain_per_used_cell": 12214.975591985429
+            },
+            "Horizontal": {
+              "cells": 5373,
+              "signed_sse_gain": 588586977,
+              "mean_sse_gain_per_used_cell": 109545.3149078727
+            },
+            "Detail": {
+              "cells": 12664,
+              "signed_sse_gain": 1070869283,
+              "mean_sse_gain_per_used_cell": 84560.11394504106
+            },
+            "Vertical+DC": {
+              "cells": 5,
+              "signed_sse_gain": 173144,
+              "mean_sse_gain_per_used_cell": 34628.8
+            },
+            "Horizontal+DC": {
+              "cells": 1708,
+              "signed_sse_gain": 260116618,
+              "mean_sse_gain_per_used_cell": 152293.1018735363
+            }
+          },
+          "nondominated": true
+        },
+        {
+          "key": "D|100",
+          "config": "D",
+          "lambda": 100.0,
+          "enhancement_bytes": 43487,
+          "base_bytes": 63297,
+          "total_bytes": 106784,
+          "total_bpp": 0.1002056964401003,
+          "enhancement_bpp": 0.040808034172634865,
+          "metrics": {
+            "mse": 230.07896154108423,
+            "edge_top10_mse": 668.9665188302744,
+            "smooth_bottom50_mse": 64.7572068859822
+          },
+          "mode_counts": {
+            "skip": 13982,
+            "dc": 1994,
+            "vertical_no_offset": 3135,
+            "horizontal_no_offset": 8627,
+            "local_detail": 3623,
+            "vertical_with_offset": 34,
+            "horizontal_with_offset": 1981
+          },
+          "estimated_bits": 1587576,
+          "actual_enhancement_bits": 347896,
+          "actual_minus_estimated_bits": -1239680,
+          "estimated_bits_per_cell": 47.56639501438159,
+          "mode_signal_raw_bytes": 12516,
+          "parameter_raw_bytes": 185931,
+          "raw_payload_bytes": 198447,
+          "header_bytes": 31,
+          "entropy_payload_bytes": 43456,
+          "xz_reduction_pct": 78.10196173285561,
+          "encode_seconds": 13.027711500006262,
+          "decode": {
+            "samples_s": [
+              1.1130849000182934,
+              0.9491001999995206,
+              1.124841800017748
+            ],
+            "median_s": 1.1130849000182934
+          },
+          "directional_cells": 13777,
+          "directional_selected_sse_gain": 1238439394,
+          "directional_available_cell_sse_gain": 1501946375,
+          "stream_sha256": "db95f5dfa1cc000fa262ed847b26a4db79f52f22c4cc2f132eca010a7ea190fc",
+          "pixels_sha256": "e6cfa70313eaddd0334e4adf5e650061faa0271ff84cd2bc4a1ba3a1732f087f",
+          "modes_sha256": "3551bfe4cd3fd3020bd02b46f1a3cb61231a661c92f1fe19927eec397ef03e37",
+          "params_sha256": "d9d859a836778be4f291d8207c44c8ed67c1f6de865c4d10e351bb8a6b211c0a",
+          "fresh_process_verified": true,
+          "sse_gain_by_selected_mode": {
+            "Skip": {
+              "cells": 13982,
+              "signed_sse_gain": 0,
+              "mean_sse_gain_per_used_cell": 0.0
+            },
+            "DC": {
+              "cells": 1994,
+              "signed_sse_gain": 69907289,
+              "mean_sse_gain_per_used_cell": 35058.82096288867
+            },
+            "Vertical": {
+              "cells": 3135,
+              "signed_sse_gain": 53528548,
+              "mean_sse_gain_per_used_cell": 17074.49696969697
+            },
+            "Horizontal": {
+              "cells": 8627,
+              "signed_sse_gain": 919891321,
+              "mean_sse_gain_per_used_cell": 106629.34055871102
+            },
+            "Detail": {
+              "cells": 3623,
+              "signed_sse_gain": 459256322,
+              "mean_sse_gain_per_used_cell": 126761.336461496
+            },
+            "Vertical+DC": {
+              "cells": 34,
+              "signed_sse_gain": 2039381,
+              "mean_sse_gain_per_used_cell": 59981.794117647056
+            },
+            "Horizontal+DC": {
+              "cells": 1981,
+              "signed_sse_gain": 262980144,
+              "mean_sse_gain_per_used_cell": 132751.20848056537
+            }
+          },
+          "nondominated": true
+        }
+      ]
+    }
+  },
+  "analysis": {
+    "avif_pass26_points": {
+      "googlewiki.png": [
+        {
+          "quality": 43,
+          "bytes": 80537,
+          "mse": 233.15
+        },
+        {
+          "quality": 84,
+          "bytes": 174211,
+          "mse": 195.64
+        }
+      ],
+      "mario64.png": [
+        {
+          "quality": 68,
+          "bytes": 62909,
+          "mse": 50.92
+        },
+        {
+          "quality": 82,
+          "bytes": 88121,
+          "mse": 47.61
+        }
+      ],
+      "flower.jpg": [
+        {
+          "quality": 18,
+          "bytes": 23171,
+          "mse": 21.06
+        },
+        {
+          "quality": 38,
+          "bytes": 44582,
+          "mse": 9.57
+        }
+      ],
+      "cat.jpg": [
+        {
+          "quality": 18,
+          "bytes": 53869,
+          "mse": 115.91
+        },
+        {
+          "quality": 21,
+          "bytes": 75274,
+          "mse": 103.89
+        }
+      ]
+    },
+    "nondominated_points": {
+      "googlewiki.png": [
+        {
+          "config": "A",
+          "lambda": 0.0,
+          "total_bytes": 83207,
+          "bpp": 1.007092627782283,
+          "mse": 777.2401235763305
+        },
+        {
+          "config": "A",
+          "lambda": 20.0,
+          "total_bytes": 83199,
+          "bpp": 1.0069958000992483,
+          "mse": 777.2407368183231
+        },
+        {
+          "config": "A",
+          "lambda": 100.0,
+          "total_bytes": 83183,
+          "bpp": 1.0068021447331792,
+          "mse": 777.2501119570085
+        },
+        {
+          "config": "C",
+          "lambda": 0.0,
+          "total_bytes": 83667,
+          "bpp": 1.0126602195567713,
+          "mse": 774.8886663197007
+        },
+        {
+          "config": "C",
+          "lambda": 20.0,
+          "total_bytes": 83623,
+          "bpp": 1.0121276673000812,
+          "mse": 774.9227320132493
+        },
+        {
+          "config": "C",
+          "lambda": 100.0,
+          "total_bytes": 83563,
+          "bpp": 1.0114014596773218,
+          "mse": 775.0176629831802
+        },
+        {
+          "config": "D",
+          "lambda": 0.0,
+          "total_bytes": 90255,
+          "bpp": 1.0923978165357475,
+          "mse": 763.6122797674522
+        },
+        {
+          "config": "D",
+          "lambda": 20.0,
+          "total_bytes": 87679,
+          "bpp": 1.061219302598613,
+          "mse": 764.5710659719281
+        },
+        {
+          "config": "D",
+          "lambda": 100.0,
+          "total_bytes": 84519,
+          "bpp": 1.022972367799954,
+          "mse": 769.0502591149143
+        }
+      ],
+      "mario64.png": [
+        {
+          "config": "A",
+          "lambda": 0.0,
+          "total_bytes": 66216,
+          "bpp": 0.5322145061728395,
+          "mse": 128.25208340031293
+        },
+        {
+          "config": "A",
+          "lambda": 20.0,
+          "total_bytes": 66200,
+          "bpp": 0.5320859053497943,
+          "mse": 128.25425119491598
+        },
+        {
+          "config": "A",
+          "lambda": 100.0,
+          "total_bytes": 66108,
+          "bpp": 0.5313464506172839,
+          "mse": 128.30246243784293
+        },
+        {
+          "config": "C",
+          "lambda": 0.0,
+          "total_bytes": 66748,
+          "bpp": 0.5364904835390947,
+          "mse": 126.36744403185014
+        },
+        {
+          "config": "C",
+          "lambda": 20.0,
+          "total_bytes": 66580,
+          "bpp": 0.5351401748971193,
+          "mse": 126.38385972597308
+        },
+        {
+          "config": "C",
+          "lambda": 100.0,
+          "total_bytes": 66376,
+          "bpp": 0.5335005144032922,
+          "mse": 126.52398807227367
+        },
+        {
+          "config": "D",
+          "lambda": 0.0,
+          "total_bytes": 74736,
+          "bpp": 0.6006944444444444,
+          "mse": 114.16899219821674
+        },
+        {
+          "config": "D",
+          "lambda": 20.0,
+          "total_bytes": 71836,
+          "bpp": 0.5773855452674898,
+          "mse": 115.15545997567301
+        },
+        {
+          "config": "D",
+          "lambda": 100.0,
+          "total_bytes": 68240,
+          "bpp": 0.5484825102880658,
+          "mse": 119.85615596064815
+        }
+      ],
+      "flower.jpg": [
+        {
+          "config": "A",
+          "lambda": 0.0,
+          "total_bytes": 44218,
+          "bpp": 0.04149400177169196,
+          "mse": 30.794858425734077
+        },
+        {
+          "config": "A",
+          "lambda": 20.0,
+          "total_bytes": 43990,
+          "bpp": 0.04128004744531027,
+          "mse": 30.800884375828918
+        },
+        {
+          "config": "C",
+          "lambda": 0.0,
+          "total_bytes": 45326,
+          "bpp": 0.04253374472621353,
+          "mse": 30.668595970088933
+        },
+        {
+          "config": "C",
+          "lambda": 20.0,
+          "total_bytes": 44526,
+          "bpp": 0.04178302779154092,
+          "mse": 30.683325505545294
+        },
+        {
+          "config": "C",
+          "lambda": 100.0,
+          "total_bytes": 43118,
+          "bpp": 0.04046176598651712,
+          "mse": 30.83482241165313
+        },
+        {
+          "config": "D",
+          "lambda": 0.0,
+          "total_bytes": 75378,
+          "bpp": 0.07073442637719021,
+          "mse": 21.64153833317068
+        },
+        {
+          "config": "D",
+          "lambda": 20.0,
+          "total_bytes": 65438,
+          "bpp": 0.06140676846388301,
+          "mse": 21.946553919931034
+        },
+        {
+          "config": "D",
+          "lambda": 100.0,
+          "total_bytes": 55510,
+          "bpp": 0.05209037130459589,
+          "mse": 23.076093841493627
+        }
+      ],
+      "cat.jpg": [
+        {
+          "config": "A",
+          "lambda": 100.0,
+          "total_bytes": 71856,
+          "bpp": 0.06742939507229403,
+          "mse": 287.4220423473167
+        },
+        {
+          "config": "B",
+          "lambda": 100.0,
+          "total_bytes": 148732,
+          "bpp": 0.13956953890965873,
+          "mse": 229.8423040488041
+        },
+        {
+          "config": "C",
+          "lambda": 0.0,
+          "total_bytes": 73188,
+          "bpp": 0.06867933876852395,
+          "mse": 287.16472473399597
+        },
+        {
+          "config": "C",
+          "lambda": 100.0,
+          "total_bytes": 71944,
+          "bpp": 0.06751197393510802,
+          "mse": 287.2834843994765
+        },
+        {
+          "config": "D",
+          "lambda": 0.0,
+          "total_bytes": 183792,
+          "bpp": 0.17246970857168595,
+          "mse": 221.23622066886375
+        },
+        {
+          "config": "D",
+          "lambda": 20.0,
+          "total_bytes": 163152,
+          "bpp": 0.15310121165713256,
+          "mse": 221.72141371572351
+        },
+        {
+          "config": "D",
+          "lambda": 100.0,
+          "total_bytes": 106784,
+          "bpp": 0.1002056964401003,
+          "mse": 230.07896154108423
+        }
+      ]
+    }
+  }
+}
