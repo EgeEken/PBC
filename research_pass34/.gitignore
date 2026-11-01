@@ -1,0 +1,7 @@
+outputs/
+__pycache__/
+*.pyc
+!dataset_selection.json
+!PBC_V4_SPARSE_VALIDATION_SUMMARY.json
+!visuals/
+!visuals/*.png

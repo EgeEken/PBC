@@ -1,0 +1,60 @@
+{
+  "experiment": "PBC V4 Research Pass 34",
+  "selection_frozen_before_pass34_base_or_enhancement_generation": true,
+  "selection_head": "39fe28e33bcff10d1d0481ec61f987c676ad9611",
+  "selection_rule": "Use the four proposed benchmark assets if present and visually suitable, covering chart/graphics, complex coastal photography, fine organic subject detail, and broad smooth photographic gradients. Do not select from Pass 34 results.",
+  "visual_content_checked": true,
+  "global_independence_note": "All four are established PBC benchmark assets and have earlier benchmark use. Filename searches found no Pass 33 sparse-transform evaluation of these images; this is a representation-specific holdout, not a globally unseen dataset.",
+  "images": [
+    {
+      "filename": "ratedistortion.png",
+      "content_class": "chart/graphics",
+      "source_sha256": "e2fc378ea28312d303c38934d88968913f1018744e7d68f92dfaf7c5bb0a6c10",
+      "width": 509,
+      "height": 392,
+      "selection_rationale": "A compact plotted RD chart with colored curves, axes, labels, and thin lines; selected to test palette-like graphics and text edges.",
+      "historical_use": [
+        "PBC3 general benchmark (Pass 10)",
+        "Pass 11/12 image set"
+      ],
+      "pass33_sparse_transform_evaluated": false
+    },
+    {
+      "filename": "coast.jpg",
+      "content_class": "coastal photography",
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "width": 4240,
+      "height": 2832,
+      "selection_rationale": "A wide shoreline scene with strong silhouettes, horizon geometry, bright point details, and a large smooth sunset sky.",
+      "historical_use": [
+        "PBC3 general benchmark (Pass 10)"
+      ],
+      "pass33_sparse_transform_evaluated": false
+    },
+    {
+      "filename": "ducklings.jpg",
+      "content_class": "detailed natural photography",
+      "source_sha256": "3f9857490373bd56a5ca9d173998aea94a3d356fa2bbeef4ca41728584f1da43",
+      "width": 4240,
+      "height": 2832,
+      "selection_rationale": "Two birds with fine feather edges against both smooth and textured foreground/background regions.",
+      "historical_use": [
+        "PBC3 general benchmark (Pass 10)",
+        "Pass 11 RGB probe"
+      ],
+      "pass33_sparse_transform_evaluated": false
+    },
+    {
+      "filename": "sunset.jpg",
+      "content_class": "smooth/low-frequency photography",
+      "source_sha256": "e6ed612e51170d488dca3fdc5978a152c68c4a9173e972351719d3f59b96c0b6",
+      "width": 2832,
+      "height": 4240,
+      "selection_rationale": "A portrait sunset dominated by broad sky and water gradients, with silhouettes, birds, shoreline and specular water detail.",
+      "historical_use": [
+        "PBC3 general benchmark (Pass 10)"
+      ],
+      "pass33_sparse_transform_evaluated": false
+    }
+  ]
+}
