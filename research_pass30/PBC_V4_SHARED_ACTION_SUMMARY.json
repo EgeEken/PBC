@@ -1,0 +1,561 @@
+{
+  "experiment": "PBC V4 Pass 30 shared-action Phase A",
+  "phase_a_pass": false,
+  "phase_a_classes_over_10pct": 1,
+  "phase_b_executed": false,
+  "phase_b_reason": "Phase A stop gate passed on only one of four image classes",
+  "config": {
+    "cell": 16,
+    "grid": 4,
+    "dc_step": 8,
+    "pattern_steps": [
+      8,
+      16
+    ],
+    "coefficients": [
+      -4,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      4
+    ],
+    "iterations": 4
+  },
+  "provenance": {
+    "starting_head": "9d0bc00fbc5e7a2d7bb21596dc02574705f7bb5a",
+    "pbc3_source": "Pass 29 cached base streams",
+    "runtime": {
+      "python": "3.13.5",
+      "numpy": "2.2.6",
+      "threadpools": [
+        {
+          "user_api": "blas",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "filepath": "C:\\Users\\EGE\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+          "version": "0.3.29",
+          "threading_layer": "pthreads",
+          "architecture": "Haswell"
+        }
+      ],
+      "thread_limit": 1
+    }
+  },
+  "images": {
+    "googlewiki.png": {
+      "class": "text",
+      "dimensions": [
+        814,
+        812
+      ],
+      "cells": 2601,
+      "base_stream_bytes": 82440,
+      "base_stream_sha256": "0f4f38e879741604d1a80ff1c47e3130629409dcf8544c05d1fbbe3a9561281a",
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "base_mse": 781.029296875,
+      "dc_only_mse": 777.2842407226562,
+      "dc_residual_sse": 1544829312.0,
+      "best_shared_shape_q8": {
+        "mse": 774.81591796875,
+        "residual_sse": 1541715584.0,
+        "residual_sse_reduction_beyond_dc_pct": 0.20155806054513808,
+        "ideal_unpriced_coefficient_sse": 1536764928.0,
+        "ideal_unpriced_reduction_beyond_dc_pct": 0.5220242739671682,
+        "active_cells": 1108,
+        "group_sizes": [
+          500,
+          506,
+          1016,
+          579
+        ],
+        "used_by_group": [
+          424,
+          199,
+          102,
+          383
+        ]
+      },
+      "independent_q8": {
+        "mse": 762.1168823242188,
+        "residual_sse": 1516003328.0,
+        "residual_sse_reduction_beyond_dc_pct": 1.8659656297355394,
+        "active_cells": 1713
+      },
+      "fixed_setting_screen": [
+        {
+          "method": "global",
+          "q": 8,
+          "mse": 775.9813232421875,
+          "residual_sse_reduction_beyond_dc_pct": 0.07376763187673124,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.3220073545574982,
+          "active_cells": 986
+        },
+        {
+          "method": "global",
+          "q": 16,
+          "mse": 776.1744995117188,
+          "residual_sse_reduction_beyond_dc_pct": 0.06157107407345725,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.3010942350632974,
+          "active_cells": 772
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 8,
+          "mse": 775.676513671875,
+          "residual_sse_reduction_beyond_dc_pct": 0.17956779939711554,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.399387553827047,
+          "active_cells": 846
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 16,
+          "mse": 775.9041748046875,
+          "residual_sse_reduction_beyond_dc_pct": 0.08737275953500293,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.3607844540950813,
+          "active_cells": 596
+        },
+        {
+          "method": "residual_shape",
+          "q": 8,
+          "mse": 774.81591796875,
+          "residual_sse_reduction_beyond_dc_pct": 0.20155806054513808,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.5220242739671682,
+          "active_cells": 1108
+        },
+        {
+          "method": "residual_shape",
+          "q": 16,
+          "mse": 775.6727905273438,
+          "residual_sse_reduction_beyond_dc_pct": 0.09434932316975611,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.4424483628648289,
+          "active_cells": 693
+        },
+        {
+          "method": "independent_4x4",
+          "q": 8,
+          "mse": 762.1168823242188,
+          "residual_sse_reduction_beyond_dc_pct": 1.8659656297355394,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 1713
+        },
+        {
+          "method": "independent_4x4",
+          "q": 16,
+          "mse": 765.3458251953125,
+          "residual_sse_reduction_beyond_dc_pct": 1.3786916026616667,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 1234
+        }
+      ],
+      "timings": {
+        "encoder_pattern_fit": {
+          "samples_s": [
+            0.014738099998794496,
+            0.01683239999692887,
+            0.012949600000865757
+          ],
+          "median_s": 0.014738099998794496
+        },
+        "decoder_equivalent_reconstruction": {
+          "samples_s": [
+            0.026580400008242577,
+            0.03156529998523183,
+            0.03588189999572933
+          ],
+          "median_s": 0.03156529998523183
+        },
+        "process_peak_working_set_bytes": 114933760
+      }
+    },
+    "mario64.png": {
+      "class": "synthetic graphics",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "cells": 3888,
+      "base_stream_bytes": 64809,
+      "base_stream_sha256": "ae2187db7cb5844eed6195335873a40b03e8843ed35bcbf8bb6e7a4a1fc310e1",
+      "source_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "base_mse": 135.4717559814453,
+      "dc_only_mse": 128.25209045410156,
+      "dc_residual_sse": 389004064.0,
+      "best_shared_shape_q8": {
+        "mse": 125.68596649169922,
+        "residual_sse": 381489280.0,
+        "residual_sse_reduction_beyond_dc_pct": 1.9318008975865095,
+        "ideal_unpriced_coefficient_sse": 379931712.0,
+        "ideal_unpriced_reduction_beyond_dc_pct": 2.332199799331659,
+        "active_cells": 541,
+        "group_sizes": [
+          1036,
+          1025,
+          996,
+          831
+        ],
+        "used_by_group": [
+          327,
+          161,
+          52,
+          1
+        ]
+      },
+      "independent_q8": {
+        "mse": 110.55982208251953,
+        "residual_sse": 335473280.0,
+        "residual_sse_reduction_beyond_dc_pct": 13.760983227157237,
+        "active_cells": 3531
+      },
+      "fixed_setting_screen": [
+        {
+          "method": "global",
+          "q": 8,
+          "mse": 127.47881317138672,
+          "residual_sse_reduction_beyond_dc_pct": 0.5588260383829821,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.845745405888613,
+          "active_cells": 345
+        },
+        {
+          "method": "global",
+          "q": 16,
+          "mse": 127.51976013183594,
+          "residual_sse_reduction_beyond_dc_pct": 0.5564075546521797,
+          "ideal_unpriced_reduction_beyond_dc_pct": 1.0153271817746357,
+          "active_cells": 259
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 8,
+          "mse": 126.8519515991211,
+          "residual_sse_reduction_beyond_dc_pct": 1.0489556222219827,
+          "ideal_unpriced_reduction_beyond_dc_pct": 1.9731783573345907,
+          "active_cells": 860
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 16,
+          "mse": 127.5478744506836,
+          "residual_sse_reduction_beyond_dc_pct": 0.5019258616280163,
+          "ideal_unpriced_reduction_beyond_dc_pct": 0.8644680894644844,
+          "active_cells": 381
+        },
+        {
+          "method": "residual_shape",
+          "q": 8,
+          "mse": 125.68596649169922,
+          "residual_sse_reduction_beyond_dc_pct": 1.9318008975865095,
+          "ideal_unpriced_reduction_beyond_dc_pct": 2.332199799331659,
+          "active_cells": 541
+        },
+        {
+          "method": "residual_shape",
+          "q": 16,
+          "mse": 126.49138641357422,
+          "residual_sse_reduction_beyond_dc_pct": 1.3911134871845452,
+          "ideal_unpriced_reduction_beyond_dc_pct": 2.256782592379292,
+          "active_cells": 420
+        },
+        {
+          "method": "independent_4x4",
+          "q": 8,
+          "mse": 110.55982208251953,
+          "residual_sse_reduction_beyond_dc_pct": 13.760983227157237,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 3531
+        },
+        {
+          "method": "independent_4x4",
+          "q": 16,
+          "mse": 115.23002624511719,
+          "residual_sse_reduction_beyond_dc_pct": 9.724262417988518,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 2029
+        }
+      ],
+      "timings": {
+        "encoder_pattern_fit": {
+          "samples_s": [
+            0.019031999981962144,
+            0.02332470001420006,
+            0.02341550000710413
+          ],
+          "median_s": 0.02332470001420006
+        },
+        "decoder_equivalent_reconstruction": {
+          "samples_s": [
+            0.03537510000751354,
+            0.03747599999769591,
+            0.03640280000399798
+          ],
+          "median_s": 0.03640280000399798
+        },
+        "process_peak_working_set_bytes": 136118272
+      }
+    },
+    "flower.jpg": {
+      "class": "smooth photography",
+      "dimensions": [
+        3576,
+        2384
+      ],
+      "cells": 33376,
+      "base_stream_bytes": 28979,
+      "base_stream_sha256": "4da27ce250bf5020d2220f21766928b02b20766ac9933a62715864a80563190e",
+      "source_sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "base_mse": 43.43489456176758,
+      "dc_only_mse": 30.857624053955078,
+      "dc_residual_sse": 792879360.0,
+      "best_shared_shape_q8": {
+        "mse": 29.299358367919922,
+        "residual_sse": 754595840.0,
+        "residual_sse_reduction_beyond_dc_pct": 4.828416772004256,
+        "ideal_unpriced_coefficient_sse": 737292992.0,
+        "ideal_unpriced_reduction_beyond_dc_pct": 7.010696810167943,
+        "active_cells": 1866,
+        "group_sizes": [
+          8325,
+          8375,
+          8313,
+          8363
+        ],
+        "used_by_group": [
+          662,
+          279,
+          483,
+          442
+        ]
+      },
+      "independent_q8": {
+        "mse": 17.39095687866211,
+        "residual_sse": 448319616.0,
+        "residual_sse_reduction_beyond_dc_pct": 43.45676800061992,
+        "active_cells": 30112
+      },
+      "fixed_setting_screen": [
+        {
+          "method": "global",
+          "q": 8,
+          "mse": 29.824520111083984,
+          "residual_sse_reduction_beyond_dc_pct": 3.2009389171134432,
+          "ideal_unpriced_reduction_beyond_dc_pct": 4.739723329410416,
+          "active_cells": 1317
+        },
+        {
+          "method": "global",
+          "q": 16,
+          "mse": 29.991182327270508,
+          "residual_sse_reduction_beyond_dc_pct": 2.573514336405478,
+          "ideal_unpriced_reduction_beyond_dc_pct": 4.361638068116693,
+          "active_cells": 767
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 8,
+          "mse": 29.53973960876465,
+          "residual_sse_reduction_beyond_dc_pct": 4.090149603591649,
+          "ideal_unpriced_reduction_beyond_dc_pct": 6.660620854098157,
+          "active_cells": 4172
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 16,
+          "mse": 29.87261390686035,
+          "residual_sse_reduction_beyond_dc_pct": 3.021283843231838,
+          "ideal_unpriced_reduction_beyond_dc_pct": 4.700574876863991,
+          "active_cells": 1806
+        },
+        {
+          "method": "residual_shape",
+          "q": 8,
+          "mse": 29.299358367919922,
+          "residual_sse_reduction_beyond_dc_pct": 4.828416772004256,
+          "ideal_unpriced_reduction_beyond_dc_pct": 7.010696810167943,
+          "active_cells": 1866
+        },
+        {
+          "method": "residual_shape",
+          "q": 16,
+          "mse": 29.53182029724121,
+          "residual_sse_reduction_beyond_dc_pct": 3.9675947675066228,
+          "ideal_unpriced_reduction_beyond_dc_pct": 6.294748295629741,
+          "active_cells": 1279
+        },
+        {
+          "method": "independent_4x4",
+          "q": 8,
+          "mse": 17.39095687866211,
+          "residual_sse_reduction_beyond_dc_pct": 43.45676800061992,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 30112
+        },
+        {
+          "method": "independent_4x4",
+          "q": 16,
+          "mse": 21.62730598449707,
+          "residual_sse_reduction_beyond_dc_pct": 29.608039235628482,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 6192
+        }
+      ],
+      "timings": {
+        "encoder_pattern_fit": {
+          "samples_s": [
+            0.445748400001321,
+            0.4709182999795303,
+            0.45964819999062456
+          ],
+          "median_s": 0.45964819999062456
+        },
+        "decoder_equivalent_reconstruction": {
+          "samples_s": [
+            0.2872348999953829,
+            0.2740455000021029,
+            0.28111189999617636
+          ],
+          "median_s": 0.28111189999617636
+        },
+        "process_peak_working_set_bytes": 602906624
+      }
+    },
+    "cat.jpg": {
+      "class": "detailed photography",
+      "dimensions": [
+        3576,
+        2384
+      ],
+      "cells": 33376,
+      "base_stream_bytes": 63297,
+      "base_stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+      "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "base_mse": 299.1920166015625,
+      "dc_only_mse": 287.30462646484375,
+      "dc_residual_sse": 7350322176.0,
+      "best_shared_shape_q8": {
+        "mse": 251.15789794921875,
+        "residual_sse": 6426030592.0,
+        "residual_sse_reduction_beyond_dc_pct": 12.574844501618754,
+        "ideal_unpriced_coefficient_sse": 6299638272.0,
+        "ideal_unpriced_reduction_beyond_dc_pct": 14.29439252922347,
+        "active_cells": 13892,
+        "group_sizes": [
+          7786,
+          5306,
+          14548,
+          5736
+        ],
+        "used_by_group": [
+          3012,
+          5228,
+          2367,
+          3285
+        ]
+      },
+      "independent_q8": {
+        "mse": 217.99542236328125,
+        "residual_sse": 5579893760.0,
+        "residual_sse_reduction_beyond_dc_pct": 24.086405651452086,
+        "active_cells": 30225
+      },
+      "fixed_setting_screen": [
+        {
+          "method": "global",
+          "q": 8,
+          "mse": 264.89300537109375,
+          "residual_sse_reduction_beyond_dc_pct": 7.79003459017903,
+          "ideal_unpriced_reduction_beyond_dc_pct": 9.814874487482601,
+          "active_cells": 10680
+        },
+        {
+          "method": "global",
+          "q": 16,
+          "mse": 261.5942077636719,
+          "residual_sse_reduction_beyond_dc_pct": 8.903874855131248,
+          "ideal_unpriced_reduction_beyond_dc_pct": 11.122235303771262,
+          "active_cells": 11330
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 8,
+          "mse": 264.7223205566406,
+          "residual_sse_reduction_beyond_dc_pct": 7.848218924111552,
+          "ideal_unpriced_reduction_beyond_dc_pct": 9.880588722645944,
+          "active_cells": 11295
+        },
+        {
+          "method": "pass29_distribution_structure",
+          "q": 16,
+          "mse": 261.5207824707031,
+          "residual_sse_reduction_beyond_dc_pct": 8.93070665859205,
+          "ideal_unpriced_reduction_beyond_dc_pct": 11.171635913881335,
+          "active_cells": 11544
+        },
+        {
+          "method": "residual_shape",
+          "q": 8,
+          "mse": 251.15789794921875,
+          "residual_sse_reduction_beyond_dc_pct": 12.574844501618754,
+          "ideal_unpriced_reduction_beyond_dc_pct": 14.29439252922347,
+          "active_cells": 13892
+        },
+        {
+          "method": "residual_shape",
+          "q": 16,
+          "mse": 254.0276336669922,
+          "residual_sse_reduction_beyond_dc_pct": 11.580430838518934,
+          "ideal_unpriced_reduction_beyond_dc_pct": 13.963717717725249,
+          "active_cells": 13808
+        },
+        {
+          "method": "independent_4x4",
+          "q": 8,
+          "mse": 217.99542236328125,
+          "residual_sse_reduction_beyond_dc_pct": 24.086405651452086,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 30225
+        },
+        {
+          "method": "independent_4x4",
+          "q": 16,
+          "mse": 223.92446899414062,
+          "residual_sse_reduction_beyond_dc_pct": 21.998087502606907,
+          "ideal_unpriced_reduction_beyond_dc_pct": null,
+          "active_cells": 21002
+        }
+      ],
+      "timings": {
+        "encoder_pattern_fit": {
+          "samples_s": [
+            0.4188612000143621,
+            0.4071064000017941,
+            0.4207592999737244
+          ],
+          "median_s": 0.4188612000143621
+        },
+        "decoder_equivalent_reconstruction": {
+          "samples_s": [
+            0.42363259999547154,
+            0.39868720000959,
+            0.41573830001289025
+          ],
+          "median_s": 0.41573830001289025
+        },
+        "process_peak_working_set_bytes": 603246592
+      }
+    }
+  },
+  "actual_enhancement_bytes": null,
+  "rate_distortion_results": null,
+  "nominal_uncompressed_signaling": {
+    "global_pattern_bytes": 96,
+    "four_pattern_bytes": 384,
+    "four_group_map_bytes": "ceil(2 * cell_count / 8)",
+    "coefficient_bytes": "ceil(3 * cell_count / 8)",
+    "dc_bytes": "3 * cell_count",
+    "independent_activation_bytes": "ceil(cell_count / 8)",
+    "independent_grid_bytes": "48 * active_cell_count",
+    "measured": false
+  }
+}
