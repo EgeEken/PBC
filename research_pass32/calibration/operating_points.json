@@ -1,0 +1,772 @@
+{
+  "rate_models": {
+    "R0": {
+      "definition": "Pass 31 fixed per-mode costs; original anchors.",
+      "lambdas": [
+        0,
+        20,
+        100
+      ]
+    },
+    "R1": {
+      "definition": "Cat-only smoothed conditional histogram model; values frozen after Cat-only calibration.",
+      "lambdas": [
+        0,
+        20,
+        100,
+        400,
+        1600
+      ]
+    }
+  },
+  "configs": [
+    "B",
+    "D0",
+    "D1",
+    "D"
+  ],
+  "model_sha256": "6f2a4524d83a89a74e54489a2b20e40ff6d26dfa18a40beeeb86aeb48a717db9",
+  "model_format": "pbc32-histogram-r1-v1",
+  "smoothing_alpha": 0.5,
+  "calibration": {
+    "calibration_image": "cat.jpg",
+    "calibration_source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "calibration_base_stream_sha256": "a4e1756ebae5e0ea61cf1dc9601565a6728a80a3388b24b09c3aed569110ac27",
+    "calibration_r0_streams": 12,
+    "calibration_modes": [
+      "B",
+      "D0",
+      "D1",
+      "D"
+    ],
+    "calibration_R0_lambdas": [
+      0.0,
+      20.0,
+      100.0
+    ],
+    "dir": "Cat is a development/calibration image; no Pass 32 held-out source pixels or encoder decisions contributed to the model."
+  },
+  "R1_cat_calibration_rows": [
+    {
+      "config": "B",
+      "lambda": 0.0,
+      "stream_sha256": "be3b07481cbe5b031911e67d2a4171f137723b1f59ff2e7b0ef110047d034f06",
+      "enhancement_bytes": 135775,
+      "total_bytes": 199072,
+      "metrics": {
+        "mse": 223.8981015150719,
+        "edge_top10_mse": 668.3760835046883,
+        "smooth_bottom50_mse": 61.60414868229274
+      },
+      "mode_counts": [
+        7560,
+        4979,
+        0,
+        0,
+        20837,
+        0,
+        0
+      ],
+      "estimated_bits": 1758822,
+      "estimated_mode_bits": 21823.15923876903,
+      "estimated_parameter_bits": 1736495.33288526,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 15.59543859999394,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "B",
+      "lambda": 20.0,
+      "stream_sha256": "ba24701c654f6ed3c5ed97b5887583e8140d5a85b67c4f7133e678a0f0a2136c",
+      "enhancement_bytes": 134407,
+      "total_bytes": 197704,
+      "metrics": {
+        "mse": 223.9055406506964,
+        "edge_top10_mse": 668.2891427248738,
+        "smooth_bottom50_mse": 61.618699682849474
+      },
+      "mode_counts": [
+        7795,
+        5095,
+        0,
+        0,
+        20486,
+        0,
+        0
+      ],
+      "estimated_bits": 1740794,
+      "estimated_mode_bits": 22673.875241869177,
+      "estimated_parameter_bits": 1717615.9527580428,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 10.003504400025122,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "B",
+      "lambda": 100.0,
+      "stream_sha256": "dd616d23d8ed0fb6a0a1587bec5f3f5058bfb9cb33876da3b32c0f333a710646",
+      "enhancement_bytes": 127811,
+      "total_bytes": 191108,
+      "metrics": {
+        "mse": 224.1228113082369,
+        "edge_top10_mse": 668.1897580386283,
+        "smooth_bottom50_mse": 61.80061279799326
+      },
+      "mode_counts": [
+        9174,
+        5460,
+        0,
+        0,
+        18742,
+        0,
+        0
+      ],
+      "estimated_bits": 1650074,
+      "estimated_mode_bits": 26279.99296520521,
+      "estimated_parameter_bits": 1623290.1556234164,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 9.886618799995631,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "B",
+      "lambda": 400.0,
+      "stream_sha256": "288e9347d004c62fa525bd675d5c9c1ae393f1a26de8dee4fc4867880a158433",
+      "enhancement_bytes": 96959,
+      "total_bytes": 160256,
+      "metrics": {
+        "mse": 227.6090683008523,
+        "edge_top10_mse": 671.4120967782927,
+        "smooth_bottom50_mse": 63.59640531461707
+      },
+      "mode_counts": [
+        13803,
+        6576,
+        0,
+        0,
+        12997,
+        0,
+        0
+      ],
+      "estimated_bits": 1293373,
+      "estimated_mode_bits": 28878.827742604582,
+      "estimated_parameter_bits": 1263989.996082332,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 9.560728100012057,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "B",
+      "lambda": 1600.0,
+      "stream_sha256": "ad10de39a2669b81a0019aae01eccf6949e3c3d522e476212b6e966d602e2b2c",
+      "enhancement_bytes": 24791,
+      "total_bytes": 88088,
+      "metrics": {
+        "mse": 259.8090327825573,
+        "edge_top10_mse": 742.5338958232406,
+        "smooth_bottom50_mse": 75.53299335047322
+      },
+      "mode_counts": [
+        23600,
+        7097,
+        0,
+        0,
+        2679,
+        0,
+        0
+      ],
+      "estimated_bits": 398556,
+      "estimated_mode_bits": 19911.215041561085,
+      "estimated_parameter_bits": 378141.0206419113,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 9.22591579996515,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "D0",
+      "lambda": 0.0,
+      "stream_sha256": "5666a1587ed1d41227c07524b9f4e8b72820eef02bbba3090a7e17f020188a2f",
+      "enhancement_bytes": 122747,
+      "total_bytes": 186044,
+      "metrics": {
+        "mse": 221.79060678729437,
+        "edge_top10_mse": 658.1120104068062,
+        "smooth_bottom50_mse": 61.206382263341276
+      },
+      "mode_counts": [
+        7521,
+        4962,
+        5,
+        2686,
+        18202,
+        0,
+        0
+      ],
+      "estimated_bits": 1499041,
+      "estimated_mode_bits": 28881.382183847603,
+      "estimated_parameter_bits": 1469655.9471895997,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 11.40180859999964,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "D0",
+      "lambda": 20.0,
+      "stream_sha256": "488e33091c16ff99106c909ecc33db5be43ad8a90db38b2a9ce85979b342c07d",
+      "enhancement_bytes": 119487,
+      "total_bytes": 182784,
+      "metrics": {
+        "mse": 221.78527298257336,
+        "edge_top10_mse": 657.9139671178394,
+        "smooth_bottom50_mse": 61.22063636534239
+      },
+      "mode_counts": [
+        7425,
+        3772,
+        976,
+        3761,
+        17442,
+        0,
+        0
+      ],
+      "estimated_bits": 1435482,
+      "estimated_mode_bits": 32756.747583707645,
+      "estimated_parameter_bits": 1402221.6584702225,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 11.342708100040909,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "D0",
+      "lambda": 100.0,
+      "stream_sha256": "a349c754c2893c7d8fc0e3443292321c4934cb43ba1fa6065cc83cbf7c5be7c2",
+      "enhancement_bytes": 103527,
+      "total_bytes": 166824,
+      "metrics": {
+        "mse": 222.2231544406158,
+        "edge_top10_mse": 657.9342079179468,
+        "smooth_bottom50_mse": 61.54116388612607
+      },
+      "mode_counts": [
+        8690,
+        3864,
+        1129,
+        5673,
+        14020,
+        0,
+        0
+      ],
+      "estimated_bits": 1173509,
+      "estimated_mode_bits": 39406.13607341894,
+      "estimated_parameter_bits": 1133599.1159218182,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 11.230375999992248,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "D0",
+      "lambda": 400.0,
+      "stream_sha256": "87455a1646d115741483ce81fae6dcc9b04b749a09fa9aedee3354ae58d4ce7f",
+      "enhancement_bytes": 51799,
+      "total_bytes": 115096,
+      "metrics": {
+        "mse": 229.53999033921147,
+        "edge_top10_mse": 672.1105293058962,
+        "smooth_bottom50_mse": 64.50619045608373
+      },
+      "mode_counts": [
+        12702,
+        4388,
+        1353,
+        9687,
+        5246,
+        0,
+        0
+      ],
+      "estimated_bits": 510026,
+      "estimated_mode_bits": 41860.86088968939,
+      "estimated_parameter_bits": 467660.6557100803,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 10.992967199999839,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "D0",
+      "lambda": 1600.0,
+      "stream_sha256": "4dc5d6c1372740e1f1e8d6cea56f4173d63805f80989d189963f61bf73bcdf57",
+      "enhancement_bytes": 8907,
+      "total_bytes": 72204,
+      "metrics": {
+        "mse": 258.5926839037531,
+        "edge_top10_mse": 736.3470741805559,
+        "smooth_bottom50_mse": 75.87022522691588
+      },
+      "mode_counts": [
+        20932,
+        3492,
+        1901,
+        6681,
+        370,
+        0,
+        0
+      ],
+      "estimated_bits": 84912,
+      "estimated_mode_bits": 26100.89435330652,
+      "estimated_parameter_bits": 58307.52789151301,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 10.825939700007439,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "D1",
+      "lambda": 0.0,
+      "stream_sha256": "ab4e9d310d228439a160077f95971e91229d2fdcca73da345d38916e46673349",
+      "enhancement_bytes": 120103,
+      "total_bytes": 183400,
+      "metrics": {
+        "mse": 221.23956753699784,
+        "edge_top10_mse": 654.846303327746,
+        "smooth_bottom50_mse": 61.12139249097654
+      },
+      "mode_counts": [
+        7506,
+        4953,
+        0,
+        0,
+        17403,
+        6,
+        3508
+      ],
+      "estimated_bits": 1424707,
+      "estimated_mode_bits": 30398.612209554416,
+      "estimated_parameter_bits": 1393803.9034699472,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 13.313198299962096,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 3,
+        "6": 2274
+      }
+    },
+    {
+      "config": "D1",
+      "lambda": 20.0,
+      "stream_sha256": "0f434fe2b38747d4e68cac1e504783b729245218ace82e99ed07b5704005c2db",
+      "enhancement_bytes": 116759,
+      "total_bytes": 180056,
+      "metrics": {
+        "mse": 221.18742899468995,
+        "edge_top10_mse": 654.3227357200641,
+        "smooth_bottom50_mse": 61.13417515841888
+      },
+      "mode_counts": [
+        7469,
+        4739,
+        0,
+        0,
+        16613,
+        7,
+        4548
+      ],
+      "estimated_bits": 1361823,
+      "estimated_mode_bits": 31883.63494475202,
+      "estimated_parameter_bits": 1329435.4238173414,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 13.672931999957655,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 3,
+        "6": 3003
+      }
+    },
+    {
+      "config": "D1",
+      "lambda": 100.0,
+      "stream_sha256": "20e4686e1d4401c347f5cfc1316fccccd4f1753e3c9b6d7d2c030e01c20473e4",
+      "enhancement_bytes": 100735,
+      "total_bytes": 164032,
+      "metrics": {
+        "mse": 221.6398535992498,
+        "edge_top10_mse": 654.9316848070248,
+        "smooth_bottom50_mse": 61.43102695466686
+      },
+      "mode_counts": [
+        8896,
+        5200,
+        0,
+        0,
+        13154,
+        12,
+        6114
+      ],
+      "estimated_bits": 1106160,
+      "estimated_mode_bits": 37793.853822097226,
+      "estimated_parameter_bits": 1067862.5043272595,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 13.614678399986587,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 5,
+        "6": 4127
+      }
+    },
+    {
+      "config": "D1",
+      "lambda": 400.0,
+      "stream_sha256": "5b8983bc4e0ffd5859188738c63b43752c2a7eecc99885b71f552365e3437fdf",
+      "enhancement_bytes": 52299,
+      "total_bytes": 115596,
+      "metrics": {
+        "mse": 228.9531910787302,
+        "edge_top10_mse": 669.8181252656344,
+        "smooth_bottom50_mse": 64.25708115175058
+      },
+      "mode_counts": [
+        13137,
+        6021,
+        0,
+        0,
+        4850,
+        42,
+        9326
+      ],
+      "estimated_bits": 502245,
+      "estimated_mode_bits": 39146.30160921707,
+      "estimated_parameter_bits": 462594.5893262436,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 13.63403160002781,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 15,
+        "6": 6045
+      }
+    },
+    {
+      "config": "D1",
+      "lambda": 1600.0,
+      "stream_sha256": "d3ca5fef8456587838d3dcc45046659603b674283e7ce411cbb1f6d3d0b0d57b",
+      "enhancement_bytes": 11507,
+      "total_bytes": 74804,
+      "metrics": {
+        "mse": 256.16302177954947,
+        "edge_top10_mse": 729.743199076306,
+        "smooth_bottom50_mse": 74.73290679089959
+      },
+      "mode_counts": [
+        21695,
+        6344,
+        0,
+        0,
+        370,
+        20,
+        4947
+      ],
+      "estimated_bits": 113099,
+      "estimated_mode_bits": 22726.746203895353,
+      "estimated_parameter_bits": 89868.07286712606,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 13.108839599997737,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 5,
+        "6": 2925
+      }
+    },
+    {
+      "config": "D",
+      "lambda": 0.0,
+      "stream_sha256": "dda7cd3c65e5173fd5204066ec125feeddbafc722cb11c209fbbfc02cae35406",
+      "enhancement_bytes": 120495,
+      "total_bytes": 183792,
+      "metrics": {
+        "mse": 221.23622066886378,
+        "edge_top10_mse": 654.8246572803656,
+        "smooth_bottom50_mse": 61.11983989215631
+      },
+      "mode_counts": [
+        7506,
+        4953,
+        3,
+        2282,
+        17403,
+        3,
+        1226
+      ],
+      "estimated_bits": 1423916,
+      "estimated_mode_bits": 32699.250169040562,
+      "estimated_parameter_bits": 1390713.2194957891,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 14.985826199990697,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 0
+      }
+    },
+    {
+      "config": "D",
+      "lambda": 20.0,
+      "stream_sha256": "f985525e3fe82b4add8f9178c3ce765980cfc743964c6872f87a4678ccd66afc",
+      "enhancement_bytes": 116747,
+      "total_bytes": 180044,
+      "metrics": {
+        "mse": 221.18391865012336,
+        "edge_top10_mse": 654.3120829760588,
+        "smooth_bottom50_mse": 61.132257711386764
+      },
+      "mode_counts": [
+        7019,
+        3228,
+        847,
+        2069,
+        16598,
+        4,
+        3611
+      ],
+      "estimated_bits": 1355103,
+      "estimated_mode_bits": 33999.08241483697,
+      "estimated_parameter_bits": 1320599.6466252932,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 14.779712700052187,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 1869
+      }
+    },
+    {
+      "config": "D",
+      "lambda": 100.0,
+      "stream_sha256": "9a736ce292a7d28b5a8bc25ca0137ee16a55fe192deeb8b9c4104ca81494b529",
+      "enhancement_bytes": 100567,
+      "total_bytes": 163864,
+      "metrics": {
+        "mse": 221.64055419018914,
+        "edge_top10_mse": 655.0298941528966,
+        "smooth_bottom50_mse": 61.424364760635804
+      },
+      "mode_counts": [
+        8239,
+        3422,
+        1036,
+        3153,
+        13131,
+        6,
+        4389
+      ],
+      "estimated_bits": 1096307,
+      "estimated_mode_bits": 40660.60535911447,
+      "estimated_parameter_bits": 1055142.2774913951,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 14.827809999987949,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 2251
+      }
+    },
+    {
+      "config": "D",
+      "lambda": 400.0,
+      "stream_sha256": "5c5e8b7d7f71183cce8f3f248f523295f63ccc4f7b50d1f2026fcf44717bfdb5",
+      "enhancement_bytes": 51771,
+      "total_bytes": 115068,
+      "metrics": {
+        "mse": 228.98787400561287,
+        "edge_top10_mse": 670.0005892341793,
+        "smooth_bottom50_mse": 64.26965011791494
+      },
+      "mode_counts": [
+        12474,
+        3946,
+        1249,
+        5149,
+        4820,
+        20,
+        5718
+      ],
+      "estimated_bits": 485979,
+      "estimated_mode_bits": 43218.63906822384,
+      "estimated_parameter_bits": 442256.76924203115,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 14.342594300047494,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 2896
+      }
+    },
+    {
+      "config": "D",
+      "lambda": 1600.0,
+      "stream_sha256": "c1034acce2937dae6c2696f23ec887b20f596ad3428717fd0a42cccb9bbc4063",
+      "enhancement_bytes": 9971,
+      "total_bytes": 73268,
+      "metrics": {
+        "mse": 256.8693193796951,
+        "edge_top10_mse": 731.8560825819327,
+        "smooth_bottom50_mse": 75.08839491808509
+      },
+      "mode_counts": [
+        20722,
+        3307,
+        1805,
+        5400,
+        366,
+        6,
+        1770
+      ],
+      "estimated_bits": 89932,
+      "estimated_mode_bits": 27232.950572563317,
+      "estimated_parameter_bits": 62195.54546213306,
+      "estimated_framing_bits": 504,
+      "encode_seconds": 15.728586000041105,
+      "parameter_cells": {
+        "1": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "zero_offset_cells": {
+        "5": 0,
+        "6": 951
+      }
+    }
+  ],
+  "selection_rule": "Five operating points per config/model maximum. Shared R1 lambda grid across all configs and images; chosen using only Cat calibration. No held-out image results used."
+}

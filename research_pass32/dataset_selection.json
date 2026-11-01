@@ -1,0 +1,51 @@
+{
+  "selection_rule": "Before running Pass 32 enhancement candidates, select one unused hpt_data photograph from each predeclared content role: architecture, dense natural structure, and fine photographic texture. Exclude Pass 31 images (cat.jpg, flower.jpg, googlewiki.png, mario64.png). Choose by scene content only, without viewing codec results.",
+  "previously_unused": true,
+  "new_detailed_photos": [
+    {
+      "image": "cathedral.png",
+      "role": "architectural detail",
+      "selection_reason": "large facade with repeated masonry, windows, and high-contrast edges",
+      "dimensions": [
+        3585,
+        3346
+      ],
+      "source_bytes": 18291201,
+      "source_sha256": "d7a3859fcbbe118daf8f3ea1f2daf120d6d38be474ab2ee845d6802675b21bf1",
+      "base_bytes": 89327,
+      "base_stream_sha256": "d5f71c17e34f7f6745a6eb0b2c3bcd6d18d142ec0c4248b527c1142c1adee5a8",
+      "decoded_base_rgb_sha256": "a0341abadb1802fad969949dc9f2bfce555ae0fd7ed1bbcde0d21d61811710fe",
+      "base_mse": 379.56655331775517
+    },
+    {
+      "image": "park.jpg",
+      "role": "natural texture and structure",
+      "selection_reason": "dense foliage, branches, and a high-detail bridge scene",
+      "dimensions": [
+        3577,
+        2384
+      ],
+      "source_bytes": 8175909,
+      "source_sha256": "96640a11a732044b81d575b84af1d05cda79fcb6b39bc097a8455145fc5c0ef4",
+      "base_bytes": 94859,
+      "base_stream_sha256": "3a20e2bf6ffe2d391ee3830cce045324e3a4a846a4579d1f8bc32aa808fe858b",
+      "decoded_base_rgb_sha256": "6c50ab2b93b3b37138e11bbaae9ad1174bf221d5774a13f4c94e73e6091ecdfe",
+      "base_mse": 305.9749073436491
+    },
+    {
+      "image": "seagull.jpg",
+      "role": "fine photographic texture",
+      "selection_reason": "water ripples across most of the frame with a small bird silhouette",
+      "dimensions": [
+        1939,
+        2424
+      ],
+      "source_bytes": 1444021,
+      "source_sha256": "d44f39a33b0c39d2ab6442dd3a606f6becb5ac3e91165a4a48c37b1aca5c2639",
+      "base_bytes": 69873,
+      "base_stream_sha256": "1636911b667787b177ef3a6719625e2c6b3d534475e7ada3e6eb1060a313b851",
+      "decoded_base_rgb_sha256": "74b9d3fba7ededf5adf59c618b51071111442e55ab973adf4b002d16501acce5",
+      "base_mse": 67.37901839436135
+    }
+  ]
+}
