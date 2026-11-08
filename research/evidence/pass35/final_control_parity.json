@@ -1,0 +1,84 @@
+{
+  "rows": [
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "bytes": 15985
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 20,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "d6d25303d768da871f0ee79b0694e3a8edc7bc8b5b19dc12199c21c76f38ac5a",
+      "bytes": 42573
+    },
+    {
+      "image": "mario64.png",
+      "qcolor": 50,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "16fac7f047047f1787bbcdcb444e080c08c60f6cdb9dc3fa8aae107be868762b",
+      "bytes": 39785
+    },
+    {
+      "image": "mario64.png",
+      "qcolor": 65,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "2d05b0a8061b1c165f3b651176da37c5e8e5edcc4af64f8e16b26decaaaf1207",
+      "bytes": 60978
+    },
+    {
+      "image": "flower.jpg",
+      "qcolor": 80,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "80a08d1411adb3bb0c692508c74d29d51cf8c614a1e8eb31fb708419620d1bdd",
+      "bytes": 176669
+    },
+    {
+      "image": "flower.jpg",
+      "qcolor": 90,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "3f0fe105a791e5c76ea39edbcd516e0061364515ad4bb7d34266e702e16aa0c8",
+      "bytes": 585814
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+      "bytes": 251357
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 50,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "320e2e729ff97e1f25760102c67364cd9b7cfdd9bcc35cfa9746f1c99e2294d5",
+      "bytes": 525046
+    },
+    {
+      "image": "coast.jpg",
+      "qcolor": 80,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "1d026b8272d1f6c812d949272c4f0718486b09011a048bb3080bd525ac596003",
+      "bytes": 157638
+    },
+    {
+      "image": "coast.jpg",
+      "qcolor": 90,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true,
+      "avif_sha256": "c1bde890b415f9e32048a8383d174ebab992a0789203b8fe2d302e92648d66e0",
+      "bytes": 973289
+    }
+  ]
+}

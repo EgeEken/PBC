@@ -1,0 +1,1963 @@
+{
+  "googlewiki.png": {
+    "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+    "dimensions": [
+      814,
+      812
+    ],
+    "frozen_source_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+    "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "config": {
+      "patch_count": 50,
+      "search_depth": 200,
+      "proposal_depth": 50,
+      "exact_depth": 10,
+      "min_patch_size": 16,
+      "max_patch_size": 400,
+      "min_cell_size": 1,
+      "max_cell_size": 64,
+      "cell_sizes_per_candidate": 3,
+      "top_k": 20,
+      "search_q_start": 0.5,
+      "search_q_end": 0.2,
+      "q_init": 0.7,
+      "q_start": 0.8,
+      "q_end": 0.8,
+      "color_space": "YCbCr",
+      "channel_cycle": "Sum",
+      "auto_downsample_init": true,
+      "init_search_depth": 3,
+      "downsample_init_cell_size": 12,
+      "downsample_palette_bitcount": 6,
+      "downsample_rate": -1,
+      "auto_downsample_max_pixels": 250000,
+      "warmup_ratio": -1,
+      "warm_downsample_max_pixels": 750000,
+      "patch_palette_bitcount": 2,
+      "quality_target_mae": 0.0,
+      "mask_size": 4,
+      "anchor_block_size": 8,
+      "positive_bias": true,
+      "learned_filler_enabled": true,
+      "learned_filler_model_path": "patch_policy.npz",
+      "learned_filler_top_k": 1,
+      "learned_filler_q": 0.4,
+      "learned_filler_candidates": 1,
+      "use_lzma": true,
+      "random_seed": 2003,
+      "compute_final_mse": true,
+      "debug_mode": false,
+      "debug_print": false,
+      "debug_path": null,
+      "reuse_selected_delta": true,
+      "residual_projection_mode": "bicubic",
+      "cell_selection_mode": "gradient",
+      "representability_threshold": 0.0
+    },
+    "working_dimensions": [
+      501,
+      499
+    ],
+    "downsampled": true,
+    "warmup_on": false,
+    "warmup_split_stream_patch_index": null,
+    "init_patch_count": 3,
+    "refinement_patch_count": 9,
+    "patch_metadata": [
+      {
+        "stage": "init",
+        "patch_index": 0,
+        "channel": 0,
+        "x": 0,
+        "y": 0,
+        "width": 501,
+        "height": 499,
+        "cell_size": 4,
+        "bitcount": 6,
+        "grid_dimensions": [
+          126,
+          125
+        ],
+        "raw_patch_bits": 94617
+      },
+      {
+        "stage": "init",
+        "patch_index": 1,
+        "channel": 1,
+        "x": 0,
+        "y": 0,
+        "width": 501,
+        "height": 499,
+        "cell_size": 4,
+        "bitcount": 5,
+        "grid_dimensions": [
+          126,
+          125
+        ],
+        "raw_patch_bits": 78867
+      },
+      {
+        "stage": "init",
+        "patch_index": 2,
+        "channel": 2,
+        "x": 0,
+        "y": 0,
+        "width": 501,
+        "height": 499,
+        "cell_size": 4,
+        "bitcount": 5,
+        "grid_dimensions": [
+          126,
+          125
+        ],
+        "raw_patch_bits": 78867
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 3,
+        "channel": 0,
+        "x": 5,
+        "y": 133,
+        "width": 337,
+        "height": 365,
+        "cell_size": 1,
+        "bitcount": 2,
+        "grid_dimensions": [
+          337,
+          365
+        ],
+        "raw_patch_bits": 246127
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 4,
+        "channel": 0,
+        "x": 324,
+        "y": 86,
+        "width": 168,
+        "height": 245,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          84,
+          123
+        ],
+        "raw_patch_bits": 20781
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 5,
+        "channel": 0,
+        "x": 58,
+        "y": 75,
+        "width": 350,
+        "height": 27,
+        "cell_size": 1,
+        "bitcount": 2,
+        "grid_dimensions": [
+          350,
+          27
+        ],
+        "raw_patch_bits": 19017
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 6,
+        "channel": 0,
+        "x": 294,
+        "y": 210,
+        "width": 167,
+        "height": 272,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          84,
+          136
+        ],
+        "raw_patch_bits": 22965
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 7,
+        "channel": 0,
+        "x": 12,
+        "y": 13,
+        "width": 91,
+        "height": 172,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          46,
+          86
+        ],
+        "raw_patch_bits": 8029
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 8,
+        "channel": 0,
+        "x": 387,
+        "y": 218,
+        "width": 47,
+        "height": 274,
+        "cell_size": 16,
+        "bitcount": 2,
+        "grid_dimensions": [
+          3,
+          18
+        ],
+        "raw_patch_bits": 225
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 9,
+        "channel": 0,
+        "x": 401,
+        "y": 131,
+        "width": 53,
+        "height": 366,
+        "cell_size": 16,
+        "bitcount": 2,
+        "grid_dimensions": [
+          4,
+          23
+        ],
+        "raw_patch_bits": 301
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 10,
+        "channel": 0,
+        "x": 388,
+        "y": 157,
+        "width": 89,
+        "height": 340,
+        "cell_size": 16,
+        "bitcount": 2,
+        "grid_dimensions": [
+          6,
+          22
+        ],
+        "raw_patch_bits": 381
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 11,
+        "channel": 0,
+        "x": 397,
+        "y": 131,
+        "width": 70,
+        "height": 265,
+        "cell_size": 16,
+        "bitcount": 2,
+        "grid_dimensions": [
+          5,
+          17
+        ],
+        "raw_patch_bits": 287
+      }
+    ],
+    "final_stream_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+    "pass42_frozen_v31_compression_stream_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+    "stages": [
+      {
+        "patch_count": 0,
+        "init_patches": 0,
+        "refinement_patches": 0,
+        "bytes": 24,
+        "bpp": 0.0002904830491037388,
+        "raw_body_bytes": 18,
+        "raw_patch_bits_estimate": 0,
+        "rgb_mse": 3889.983515591274,
+        "rgb_psnr": 12.231325999285563,
+        "file_sha256": "e7146333f78fd8da87cc13597618f37232bf56eebdcd652d2819fdfdf7371108",
+        "pixel_sha256": "8b9aaa1930bc7eddbab212e1be9bfb6364fdd85edb94e9057f00a4421c377491",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_000.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_000.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 3,
+        "init_patches": 3,
+        "refinement_patches": 0,
+        "bytes": 11771,
+        "bpp": 0.14246983212500453,
+        "raw_body_bytes": 31562,
+        "raw_patch_bits_estimate": 252351,
+        "rgb_mse": 1559.3689755025962,
+        "rgb_psnr": 16.201314714232048,
+        "file_sha256": "0f07cdf6773d5a6b695f81a82a9fe89fc4e7abcbf0cfe453ce44f3adcc5bb346",
+        "pixel_sha256": "1f5ed38f867b1092e508d05278d4131e68a26ab904e32f113d8f1465a0a62e5e",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_003.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_003.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 4,
+        "init_patches": 3,
+        "refinement_patches": 1,
+        "bytes": 25323,
+        "bpp": 0.3064959271855824,
+        "raw_body_bytes": 62327,
+        "raw_patch_bits_estimate": 498478,
+        "rgb_mse": 1115.7990280921315,
+        "rgb_psnr": 17.654943820821494,
+        "file_sha256": "d8cd445684c42dec27415550b45a87d4cd0d9efc06b2fc09d6d2895343ed850d",
+        "pixel_sha256": "bc29e25a8019990c5927547a3da5ce6ed15cd24e6b1a26e9d3441f48f67991ae",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_004.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_004.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 6,
+        "init_patches": 3,
+        "refinement_patches": 3,
+        "bytes": 27512,
+        "bpp": 0.3329904019559192,
+        "raw_body_bytes": 67302,
+        "raw_patch_bits_estimate": 538276,
+        "rgb_mse": 1034.8872476932822,
+        "rgb_psnr": 17.981873254441332,
+        "file_sha256": "93a61314fa233826ae3ca201eeed4369b6c591d5adc9ccc31e76038abb204dee",
+        "pixel_sha256": "4dd3f0782c47cf5e053abf87f3973648f2d0d35155d55f7bf0fadba69c50310b",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_006.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_006.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 12,
+        "init_patches": 3,
+        "refinement_patches": 9,
+        "bytes": 28974,
+        "bpp": 0.3506856610304886,
+        "raw_body_bytes": 71326,
+        "raw_patch_bits_estimate": 570464,
+        "rgb_mse": 1005.0220131685649,
+        "rgb_psnr": 18.10904786581117,
+        "file_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+        "pixel_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_012.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v31_prefix_012.png",
+        "warmup_applied": false
+      }
+    ],
+    "full_v31_record": {
+      "source": "googlewiki.png",
+      "preset": "compression",
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "frozen_source_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+      "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "rows": [
+        {
+          "repeat": 1,
+          "bytes": 28974,
+          "rgb_mse": 1005.0220131685649,
+          "rgb_psnr": 18.10904786581117,
+          "encode_seconds": 0.1669982000021264,
+          "decode_seconds": 0.017418700037524104,
+          "file_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+          "pixel_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+          "decoded_dimensions": [
+            814,
+            812
+          ]
+        },
+        {
+          "repeat": 2,
+          "bytes": 28974,
+          "rgb_mse": 1005.0220131685649,
+          "rgb_psnr": 18.10904786581117,
+          "encode_seconds": 0.17140659998403862,
+          "decode_seconds": 0.017628900008276105,
+          "file_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+          "pixel_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+          "decoded_dimensions": [
+            814,
+            812
+          ]
+        },
+        {
+          "repeat": 3,
+          "bytes": 28974,
+          "rgb_mse": 1005.0220131685649,
+          "rgb_psnr": 18.10904786581117,
+          "encode_seconds": 0.17379809997510165,
+          "decode_seconds": 0.01896149996900931,
+          "file_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+          "pixel_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+          "decoded_dimensions": [
+            814,
+            812
+          ]
+        }
+      ],
+      "fresh_process_decode_seconds": 0.7540710000321269,
+      "fresh_process_pixel_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+      "fresh_process_exact_pixels": true,
+      "streams": [
+        "PBC_ROOT/research_pass42/outputs/googlewiki_v31_compression_r1.pbc",
+        "PBC_ROOT/research_pass42/outputs/googlewiki_v31_compression_r2.pbc",
+        "PBC_ROOT/research_pass42/outputs/googlewiki_v31_compression_r3.pbc"
+      ]
+    },
+    "attribution_note": "Prefix files are independently entropy-packed complete PBC3 files. Raw patch bits are a field-size estimate; post-LZMA bytes are measured from each prefix file."
+  },
+  "cat.jpg": {
+    "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "dimensions": [
+      3576,
+      2384
+    ],
+    "frozen_source_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+    "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "config": {
+      "patch_count": 50,
+      "search_depth": 200,
+      "proposal_depth": 50,
+      "exact_depth": 10,
+      "min_patch_size": 16,
+      "max_patch_size": 400,
+      "min_cell_size": 1,
+      "max_cell_size": 64,
+      "cell_sizes_per_candidate": 3,
+      "top_k": 20,
+      "search_q_start": 0.5,
+      "search_q_end": 0.2,
+      "q_init": 0.7,
+      "q_start": 0.8,
+      "q_end": 0.8,
+      "color_space": "YCbCr",
+      "channel_cycle": "Sum",
+      "auto_downsample_init": true,
+      "init_search_depth": 3,
+      "downsample_init_cell_size": 12,
+      "downsample_palette_bitcount": 6,
+      "downsample_rate": -1,
+      "auto_downsample_max_pixels": 250000,
+      "warmup_ratio": -1,
+      "warm_downsample_max_pixels": 750000,
+      "patch_palette_bitcount": 2,
+      "quality_target_mae": 0.0,
+      "mask_size": 4,
+      "anchor_block_size": 8,
+      "positive_bias": true,
+      "learned_filler_enabled": true,
+      "learned_filler_model_path": "patch_policy.npz",
+      "learned_filler_top_k": 1,
+      "learned_filler_q": 0.4,
+      "learned_filler_candidates": 1,
+      "use_lzma": true,
+      "random_seed": 2003,
+      "compute_final_mse": true,
+      "debug_mode": false,
+      "debug_print": false,
+      "debug_path": null,
+      "reuse_selected_delta": true,
+      "residual_projection_mode": "bicubic",
+      "cell_selection_mode": "gradient",
+      "representability_threshold": 0.0
+    },
+    "working_dimensions": [
+      612,
+      408
+    ],
+    "downsampled": true,
+    "warmup_on": false,
+    "warmup_split_stream_patch_index": null,
+    "init_patch_count": 3,
+    "refinement_patch_count": 16,
+    "patch_metadata": [
+      {
+        "stage": "init",
+        "patch_index": 0,
+        "channel": 0,
+        "x": 0,
+        "y": 0,
+        "width": 612,
+        "height": 408,
+        "cell_size": 6,
+        "bitcount": 6,
+        "grid_dimensions": [
+          102,
+          68
+        ],
+        "raw_patch_bits": 41733
+      },
+      {
+        "stage": "init",
+        "patch_index": 1,
+        "channel": 1,
+        "x": 0,
+        "y": 0,
+        "width": 612,
+        "height": 408,
+        "cell_size": 24,
+        "bitcount": 5,
+        "grid_dimensions": [
+          26,
+          17
+        ],
+        "raw_patch_bits": 2327
+      },
+      {
+        "stage": "init",
+        "patch_index": 2,
+        "channel": 2,
+        "x": 0,
+        "y": 0,
+        "width": 612,
+        "height": 408,
+        "cell_size": 16,
+        "bitcount": 6,
+        "grid_dimensions": [
+          39,
+          26
+        ],
+        "raw_patch_bits": 6201
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 3,
+        "channel": 0,
+        "x": 199,
+        "y": 205,
+        "width": 400,
+        "height": 190,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          200,
+          95
+        ],
+        "raw_patch_bits": 38117
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 4,
+        "channel": 0,
+        "x": 0,
+        "y": 226,
+        "width": 296,
+        "height": 171,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          148,
+          86
+        ],
+        "raw_patch_bits": 25573
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 5,
+        "channel": 0,
+        "x": 198,
+        "y": 153,
+        "width": 347,
+        "height": 254,
+        "cell_size": 32,
+        "bitcount": 3,
+        "grid_dimensions": [
+          11,
+          8
+        ],
+        "raw_patch_bits": 381
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 6,
+        "channel": 0,
+        "x": 339,
+        "y": 217,
+        "width": 266,
+        "height": 175,
+        "cell_size": 32,
+        "bitcount": 2,
+        "grid_dimensions": [
+          9,
+          6
+        ],
+        "raw_patch_bits": 225
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 7,
+        "channel": 0,
+        "x": 154,
+        "y": 263,
+        "width": 366,
+        "height": 132,
+        "cell_size": 32,
+        "bitcount": 3,
+        "grid_dimensions": [
+          12,
+          5
+        ],
+        "raw_patch_bits": 297
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 8,
+        "channel": 0,
+        "x": 224,
+        "y": 265,
+        "width": 383,
+        "height": 126,
+        "cell_size": 32,
+        "bitcount": 1,
+        "grid_dimensions": [
+          12,
+          4
+        ],
+        "raw_patch_bits": 165
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 9,
+        "channel": 0,
+        "x": 315,
+        "y": 272,
+        "width": 292,
+        "height": 128,
+        "cell_size": 32,
+        "bitcount": 2,
+        "grid_dimensions": [
+          10,
+          4
+        ],
+        "raw_patch_bits": 197
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 10,
+        "channel": 0,
+        "x": 423,
+        "y": 213,
+        "width": 186,
+        "height": 195,
+        "cell_size": 32,
+        "bitcount": 1,
+        "grid_dimensions": [
+          6,
+          7
+        ],
+        "raw_patch_bits": 159
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 11,
+        "channel": 0,
+        "x": 292,
+        "y": 263,
+        "width": 320,
+        "height": 19,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          160,
+          10
+        ],
+        "raw_patch_bits": 3317
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 12,
+        "channel": 0,
+        "x": 244,
+        "y": 270,
+        "width": 353,
+        "height": 128,
+        "cell_size": 32,
+        "bitcount": 2,
+        "grid_dimensions": [
+          12,
+          4
+        ],
+        "raw_patch_bits": 213
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 13,
+        "channel": 0,
+        "x": 258,
+        "y": 337,
+        "width": 351,
+        "height": 68,
+        "cell_size": 32,
+        "bitcount": 2,
+        "grid_dimensions": [
+          11,
+          3
+        ],
+        "raw_patch_bits": 183
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 14,
+        "channel": 0,
+        "x": 258,
+        "y": 335,
+        "width": 354,
+        "height": 61,
+        "cell_size": 32,
+        "bitcount": 1,
+        "grid_dimensions": [
+          12,
+          2
+        ],
+        "raw_patch_bits": 141
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 15,
+        "channel": 0,
+        "x": 363,
+        "y": 378,
+        "width": 249,
+        "height": 17,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          125,
+          9
+        ],
+        "raw_patch_bits": 2367
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 16,
+        "channel": 0,
+        "x": 51,
+        "y": 383,
+        "width": 398,
+        "height": 20,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          199,
+          10
+        ],
+        "raw_patch_bits": 4097
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 17,
+        "channel": 0,
+        "x": 12,
+        "y": 269,
+        "width": 164,
+        "height": 20,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          82,
+          10
+        ],
+        "raw_patch_bits": 1757
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 18,
+        "channel": 0,
+        "x": 294,
+        "y": 155,
+        "width": 131,
+        "height": 57,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          66,
+          29
+        ],
+        "raw_patch_bits": 3945
+      }
+    ],
+    "final_stream_sha256": "fd41e4087e0782242fbc666f44eac651bbc79543a4b70ac697e5b29886aa1c4c",
+    "pass42_frozen_v31_compression_stream_sha256": "fd41e4087e0782242fbc666f44eac651bbc79543a4b70ac697e5b29886aa1c4c",
+    "stages": [
+      {
+        "patch_count": 0,
+        "init_patches": 0,
+        "refinement_patches": 0,
+        "bytes": 24,
+        "bpp": 2.252150804017837e-05,
+        "raw_body_bytes": 18,
+        "raw_patch_bits_estimate": 0,
+        "rgb_mse": 2664.7313211460696,
+        "rgb_psnr": 13.874269342317916,
+        "file_sha256": "1695d08ca8bfcc3244632c6865d937fc9db22823c8a831be5d6d8b7e628f97b5",
+        "pixel_sha256": "4070c2b1ea7df6665d5c2b644f17a1e36702ed17c4a52cf42d5cf3692e295e91",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_000.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_000.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 3,
+        "init_patches": 3,
+        "refinement_patches": 0,
+        "bytes": 3968,
+        "bpp": 0.0037235559959761574,
+        "raw_body_bytes": 6300,
+        "raw_patch_bits_estimate": 50261,
+        "rgb_mse": 581.7170815316127,
+        "rgb_psnr": 20.483685442656853,
+        "file_sha256": "c23db67d7e94b0f6b7abf9e51b6d6d115b0b953ab71dde73f20edb22a319d9a0",
+        "pixel_sha256": "a1a240c7825685bff35a6cac3f51e8ab4a29bd537c6a9edd171666d787b0f941",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_003.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_003.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 4,
+        "init_patches": 3,
+        "refinement_patches": 1,
+        "bytes": 5117,
+        "bpp": 0.004801773193399697,
+        "raw_body_bytes": 11065,
+        "raw_patch_bits_estimate": 88378,
+        "rgb_mse": 502.2825881920359,
+        "rgb_psnr": 21.121322374230424,
+        "file_sha256": "87c0e82f6eb707c73ceaa146915582da069b1ff7a9f7ec47fd30f78324574489",
+        "pixel_sha256": "5f0d22ebeca3f5dea39fa3ce3c726cca85c16d4bee1015434248fb6b4bd693f8",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_004.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_004.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 6,
+        "init_patches": 3,
+        "refinement_patches": 3,
+        "bytes": 6074,
+        "bpp": 0.005699818326501809,
+        "raw_body_bytes": 14309,
+        "raw_patch_bits_estimate": 114332,
+        "rgb_mse": 461.2904628998819,
+        "rgb_psnr": 21.491058851297304,
+        "file_sha256": "d27067268fd6f0f58ebc598b228a34ec074a0ffcaf7aff594270f38b50c70ff2",
+        "pixel_sha256": "12bcb2939f406605582790060faed00b658f76b92334551c531ace749d5e8017",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_006.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_006.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 13,
+        "init_patches": 3,
+        "refinement_patches": 10,
+        "bytes": 6306,
+        "bpp": 0.005917526237556867,
+        "raw_body_bytes": 14881,
+        "raw_patch_bits_estimate": 118905,
+        "rgb_mse": 453.441459640832,
+        "rgb_psnr": 21.565591342921223,
+        "file_sha256": "d7473af303add39d30d12b42dbf1b2ccef65aafbcf55e10536838457b8c3a7b3",
+        "pixel_sha256": "6e97ce78614f8dbaf7dc6712d5697a8933829c939c2ea9686b5734fc6442783d",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_013.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_013.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 19,
+        "init_patches": 3,
+        "refinement_patches": 16,
+        "bytes": 7036,
+        "bpp": 0.006602555440445626,
+        "raw_body_bytes": 16442,
+        "raw_patch_bits_estimate": 131395,
+        "rgb_mse": 433.81161180802667,
+        "rgb_psnr": 21.757791883011738,
+        "file_sha256": "fd41e4087e0782242fbc666f44eac651bbc79543a4b70ac697e5b29886aa1c4c",
+        "pixel_sha256": "4801f2f8e79d57d9dd238da462c1debea1c3096f341d0b38ede757d19582a71f",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_019.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/cat_v31_prefix_019.png",
+        "warmup_applied": false
+      }
+    ],
+    "full_v31_record": {
+      "source": "cat.jpg",
+      "preset": "compression",
+      "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "frozen_source_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+      "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "rows": [
+        {
+          "repeat": 1,
+          "bytes": 7036,
+          "rgb_mse": 433.81161180802667,
+          "rgb_psnr": 21.757791883011738,
+          "encode_seconds": 0.37492349999956787,
+          "decode_seconds": 0.05673679994652048,
+          "file_sha256": "fd41e4087e0782242fbc666f44eac651bbc79543a4b70ac697e5b29886aa1c4c",
+          "pixel_sha256": "4801f2f8e79d57d9dd238da462c1debea1c3096f341d0b38ede757d19582a71f",
+          "decoded_dimensions": [
+            3576,
+            2384
+          ]
+        },
+        {
+          "repeat": 2,
+          "bytes": 7036,
+          "rgb_mse": 433.81161180802667,
+          "rgb_psnr": 21.757791883011738,
+          "encode_seconds": 0.38627229997655377,
+          "decode_seconds": 0.06512839999049902,
+          "file_sha256": "fd41e4087e0782242fbc666f44eac651bbc79543a4b70ac697e5b29886aa1c4c",
+          "pixel_sha256": "4801f2f8e79d57d9dd238da462c1debea1c3096f341d0b38ede757d19582a71f",
+          "decoded_dimensions": [
+            3576,
+            2384
+          ]
+        },
+        {
+          "repeat": 3,
+          "bytes": 7036,
+          "rgb_mse": 433.81161180802667,
+          "rgb_psnr": 21.757791883011738,
+          "encode_seconds": 0.4150501000112854,
+          "decode_seconds": 0.06222710001748055,
+          "file_sha256": "fd41e4087e0782242fbc666f44eac651bbc79543a4b70ac697e5b29886aa1c4c",
+          "pixel_sha256": "4801f2f8e79d57d9dd238da462c1debea1c3096f341d0b38ede757d19582a71f",
+          "decoded_dimensions": [
+            3576,
+            2384
+          ]
+        }
+      ],
+      "fresh_process_decode_seconds": 1.028115599998273,
+      "fresh_process_pixel_sha256": "4801f2f8e79d57d9dd238da462c1debea1c3096f341d0b38ede757d19582a71f",
+      "fresh_process_exact_pixels": true,
+      "streams": [
+        "PBC_ROOT/research_pass42/outputs/cat_v31_compression_r1.pbc",
+        "PBC_ROOT/research_pass42/outputs/cat_v31_compression_r2.pbc",
+        "PBC_ROOT/research_pass42/outputs/cat_v31_compression_r3.pbc"
+      ]
+    },
+    "attribution_note": "Prefix files are independently entropy-packed complete PBC3 files. Raw patch bits are a field-size estimate; post-LZMA bytes are measured from each prefix file."
+  },
+  "coast.jpg": {
+    "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+    "dimensions": [
+      4240,
+      2832
+    ],
+    "frozen_source_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+    "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "config": {
+      "patch_count": 50,
+      "search_depth": 200,
+      "proposal_depth": 50,
+      "exact_depth": 10,
+      "min_patch_size": 16,
+      "max_patch_size": 400,
+      "min_cell_size": 1,
+      "max_cell_size": 64,
+      "cell_sizes_per_candidate": 3,
+      "top_k": 20,
+      "search_q_start": 0.5,
+      "search_q_end": 0.2,
+      "q_init": 0.7,
+      "q_start": 0.8,
+      "q_end": 0.8,
+      "color_space": "YCbCr",
+      "channel_cycle": "Sum",
+      "auto_downsample_init": true,
+      "init_search_depth": 3,
+      "downsample_init_cell_size": 12,
+      "downsample_palette_bitcount": 6,
+      "downsample_rate": -1,
+      "auto_downsample_max_pixels": 250000,
+      "warmup_ratio": -1,
+      "warm_downsample_max_pixels": 750000,
+      "patch_palette_bitcount": 2,
+      "quality_target_mae": 0.0,
+      "mask_size": 4,
+      "anchor_block_size": 8,
+      "positive_bias": true,
+      "learned_filler_enabled": true,
+      "learned_filler_model_path": "patch_policy.npz",
+      "learned_filler_top_k": 1,
+      "learned_filler_q": 0.4,
+      "learned_filler_candidates": 1,
+      "use_lzma": true,
+      "random_seed": 2003,
+      "compute_final_mse": true,
+      "debug_mode": false,
+      "debug_print": false,
+      "debug_path": null,
+      "reuse_selected_delta": true,
+      "residual_projection_mode": "bicubic",
+      "cell_selection_mode": "gradient",
+      "representability_threshold": 0.0
+    },
+    "working_dimensions": [
+      612,
+      409
+    ],
+    "downsampled": true,
+    "warmup_on": false,
+    "warmup_split_stream_patch_index": null,
+    "init_patch_count": 3,
+    "refinement_patch_count": 47,
+    "patch_metadata": [
+      {
+        "stage": "init",
+        "patch_index": 0,
+        "channel": 0,
+        "x": 0,
+        "y": 0,
+        "width": 612,
+        "height": 409,
+        "cell_size": 12,
+        "bitcount": 6,
+        "grid_dimensions": [
+          51,
+          35
+        ],
+        "raw_patch_bits": 10827
+      },
+      {
+        "stage": "init",
+        "patch_index": 1,
+        "channel": 1,
+        "x": 0,
+        "y": 0,
+        "width": 612,
+        "height": 409,
+        "cell_size": 24,
+        "bitcount": 6,
+        "grid_dimensions": [
+          26,
+          18
+        ],
+        "raw_patch_bits": 2925
+      },
+      {
+        "stage": "init",
+        "patch_index": 2,
+        "channel": 2,
+        "x": 0,
+        "y": 0,
+        "width": 612,
+        "height": 409,
+        "cell_size": 24,
+        "bitcount": 5,
+        "grid_dimensions": [
+          26,
+          18
+        ],
+        "raw_patch_bits": 2457
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 3,
+        "channel": 0,
+        "x": 194,
+        "y": 230,
+        "width": 332,
+        "height": 155,
+        "cell_size": 4,
+        "bitcount": 3,
+        "grid_dimensions": [
+          83,
+          39
+        ],
+        "raw_patch_bits": 9828
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 4,
+        "channel": 0,
+        "x": 211,
+        "y": 285,
+        "width": 385,
+        "height": 107,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          97,
+          27
+        ],
+        "raw_patch_bits": 5355
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 5,
+        "channel": 0,
+        "x": 18,
+        "y": 155,
+        "width": 347,
+        "height": 254,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          87,
+          64
+        ],
+        "raw_patch_bits": 11253
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 6,
+        "channel": 0,
+        "x": 227,
+        "y": 283,
+        "width": 316,
+        "height": 95,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          79,
+          24
+        ],
+        "raw_patch_bits": 3909
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 7,
+        "channel": 0,
+        "x": 243,
+        "y": 297,
+        "width": 368,
+        "height": 111,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          46,
+          14
+        ],
+        "raw_patch_bits": 1405
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 8,
+        "channel": 0,
+        "x": 366,
+        "y": 282,
+        "width": 241,
+        "height": 112,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          61,
+          28
+        ],
+        "raw_patch_bits": 3533
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 9,
+        "channel": 0,
+        "x": 2,
+        "y": 224,
+        "width": 213,
+        "height": 168,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          54,
+          42
+        ],
+        "raw_patch_bits": 4653
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 10,
+        "channel": 0,
+        "x": 74,
+        "y": 293,
+        "width": 379,
+        "height": 82,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          48,
+          11
+        ],
+        "raw_patch_bits": 1173
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 11,
+        "channel": 0,
+        "x": 200,
+        "y": 269,
+        "width": 382,
+        "height": 134,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          48,
+          17
+        ],
+        "raw_patch_bits": 1749
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 12,
+        "channel": 0,
+        "x": 288,
+        "y": 227,
+        "width": 319,
+        "height": 142,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          40,
+          18
+        ],
+        "raw_patch_bits": 1557
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 13,
+        "channel": 0,
+        "x": 276,
+        "y": 254,
+        "width": 284,
+        "height": 131,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          36,
+          17
+        ],
+        "raw_patch_bits": 1341
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 14,
+        "channel": 0,
+        "x": 332,
+        "y": 266,
+        "width": 273,
+        "height": 121,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          35,
+          16
+        ],
+        "raw_patch_bits": 1237
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 15,
+        "channel": 0,
+        "x": 337,
+        "y": 281,
+        "width": 199,
+        "height": 87,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          25,
+          11
+        ],
+        "raw_patch_bits": 667
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 16,
+        "channel": 0,
+        "x": 103,
+        "y": 263,
+        "width": 371,
+        "height": 130,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          47,
+          17
+        ],
+        "raw_patch_bits": 1715
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 17,
+        "channel": 0,
+        "x": 181,
+        "y": 274,
+        "width": 358,
+        "height": 95,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          45,
+          12
+        ],
+        "raw_patch_bits": 1197
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 18,
+        "channel": 0,
+        "x": 241,
+        "y": 290,
+        "width": 348,
+        "height": 76,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          44,
+          10
+        ],
+        "raw_patch_bits": 997
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 19,
+        "channel": 0,
+        "x": 344,
+        "y": 277,
+        "width": 258,
+        "height": 108,
+        "cell_size": 32,
+        "bitcount": 1,
+        "grid_dimensions": [
+          9,
+          4
+        ],
+        "raw_patch_bits": 153
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 20,
+        "channel": 0,
+        "x": 302,
+        "y": 288,
+        "width": 279,
+        "height": 106,
+        "cell_size": 32,
+        "bitcount": 1,
+        "grid_dimensions": [
+          9,
+          4
+        ],
+        "raw_patch_bits": 153
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 21,
+        "channel": 0,
+        "x": 205,
+        "y": 277,
+        "width": 375,
+        "height": 29,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          94,
+          8
+        ],
+        "raw_patch_bits": 1621
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 22,
+        "channel": 0,
+        "x": 247,
+        "y": 280,
+        "width": 357,
+        "height": 29,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          90,
+          8
+        ],
+        "raw_patch_bits": 1557
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 23,
+        "channel": 0,
+        "x": 390,
+        "y": 279,
+        "width": 182,
+        "height": 96,
+        "cell_size": 32,
+        "bitcount": 1,
+        "grid_dimensions": [
+          6,
+          3
+        ],
+        "raw_patch_bits": 135
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 24,
+        "channel": 0,
+        "x": 393,
+        "y": 294,
+        "width": 208,
+        "height": 41,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          52,
+          11
+        ],
+        "raw_patch_bits": 1261
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 25,
+        "channel": 0,
+        "x": 317,
+        "y": 288,
+        "width": 295,
+        "height": 20,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          148,
+          10
+        ],
+        "raw_patch_bits": 3077
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 26,
+        "channel": 0,
+        "x": 310,
+        "y": 194,
+        "width": 45,
+        "height": 66,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          23,
+          33
+        ],
+        "raw_patch_bits": 1635
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 27,
+        "channel": 0,
+        "x": 1,
+        "y": 271,
+        "width": 248,
+        "height": 32,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          62,
+          8
+        ],
+        "raw_patch_bits": 1109
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 28,
+        "channel": 0,
+        "x": 22,
+        "y": 292,
+        "width": 386,
+        "height": 82,
+        "cell_size": 8,
+        "bitcount": 2,
+        "grid_dimensions": [
+          49,
+          11
+        ],
+        "raw_patch_bits": 1195
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 29,
+        "channel": 0,
+        "x": 29,
+        "y": 261,
+        "width": 380,
+        "height": 102,
+        "cell_size": 16,
+        "bitcount": 2,
+        "grid_dimensions": [
+          24,
+          7
+        ],
+        "raw_patch_bits": 453
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 30,
+        "channel": 0,
+        "x": 0,
+        "y": 278,
+        "width": 134,
+        "height": 19,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          67,
+          10
+        ],
+        "raw_patch_bits": 1457
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 31,
+        "channel": 0,
+        "x": 64,
+        "y": 281,
+        "width": 388,
+        "height": 21,
+        "cell_size": 21,
+        "bitcount": 2,
+        "grid_dimensions": [
+          19,
+          1
+        ],
+        "raw_patch_bits": 155
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 32,
+        "channel": 0,
+        "x": 384,
+        "y": 296,
+        "width": 157,
+        "height": 75,
+        "cell_size": 32,
+        "bitcount": 2,
+        "grid_dimensions": [
+          5,
+          3
+        ],
+        "raw_patch_bits": 147
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 33,
+        "channel": 0,
+        "x": 324,
+        "y": 288,
+        "width": 276,
+        "height": 17,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          69,
+          5
+        ],
+        "raw_patch_bits": 807
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 34,
+        "channel": 0,
+        "x": 1,
+        "y": 281,
+        "width": 226,
+        "height": 22,
+        "cell_size": 22,
+        "bitcount": 1,
+        "grid_dimensions": [
+          11,
+          1
+        ],
+        "raw_patch_bits": 128
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 35,
+        "channel": 0,
+        "x": 200,
+        "y": 277,
+        "width": 386,
+        "height": 23,
+        "cell_size": 23,
+        "bitcount": 1,
+        "grid_dimensions": [
+          17,
+          1
+        ],
+        "raw_patch_bits": 134
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 36,
+        "channel": 0,
+        "x": 356,
+        "y": 164,
+        "width": 22,
+        "height": 23,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          11,
+          12
+        ],
+        "raw_patch_bits": 381
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 37,
+        "channel": 0,
+        "x": 193,
+        "y": 287,
+        "width": 95,
+        "height": 19,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          24,
+          5
+        ],
+        "raw_patch_bits": 357
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 38,
+        "channel": 0,
+        "x": 365,
+        "y": 155,
+        "width": 18,
+        "height": 17,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          9,
+          9
+        ],
+        "raw_patch_bits": 279
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 39,
+        "channel": 0,
+        "x": 371,
+        "y": 125,
+        "width": 23,
+        "height": 23,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          12,
+          12
+        ],
+        "raw_patch_bits": 405
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 40,
+        "channel": 0,
+        "x": 362,
+        "y": 144,
+        "width": 22,
+        "height": 17,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          11,
+          9
+        ],
+        "raw_patch_bits": 315
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 41,
+        "channel": 0,
+        "x": 110,
+        "y": 281,
+        "width": 40,
+        "height": 21,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          20,
+          11
+        ],
+        "raw_patch_bits": 557
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 42,
+        "channel": 0,
+        "x": 206,
+        "y": 288,
+        "width": 37,
+        "height": 18,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          10,
+          5
+        ],
+        "raw_patch_bits": 217
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 43,
+        "channel": 0,
+        "x": 351,
+        "y": 171,
+        "width": 16,
+        "height": 18,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          8,
+          9
+        ],
+        "raw_patch_bits": 261
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 44,
+        "channel": 0,
+        "x": 392,
+        "y": 103,
+        "width": 25,
+        "height": 27,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          13,
+          14
+        ],
+        "raw_patch_bits": 481
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 45,
+        "channel": 2,
+        "x": 307,
+        "y": 202,
+        "width": 58,
+        "height": 70,
+        "cell_size": 4,
+        "bitcount": 3,
+        "grid_dimensions": [
+          15,
+          18
+        ],
+        "raw_patch_bits": 927
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 46,
+        "channel": 0,
+        "x": 206,
+        "y": 284,
+        "width": 45,
+        "height": 19,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          12,
+          5
+        ],
+        "raw_patch_bits": 237
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 47,
+        "channel": 0,
+        "x": 334,
+        "y": 189,
+        "width": 18,
+        "height": 18,
+        "cell_size": 2,
+        "bitcount": 2,
+        "grid_dimensions": [
+          9,
+          9
+        ],
+        "raw_patch_bits": 279
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 48,
+        "channel": 0,
+        "x": 539,
+        "y": 359,
+        "width": 33,
+        "height": 19,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          9,
+          5
+        ],
+        "raw_patch_bits": 207
+      },
+      {
+        "stage": "refinement",
+        "patch_index": 49,
+        "channel": 0,
+        "x": 207,
+        "y": 292,
+        "width": 31,
+        "height": 16,
+        "cell_size": 4,
+        "bitcount": 2,
+        "grid_dimensions": [
+          8,
+          4
+        ],
+        "raw_patch_bits": 181
+      }
+    ],
+    "final_stream_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+    "pass42_frozen_v31_compression_stream_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+    "stages": [
+      {
+        "patch_count": 0,
+        "init_patches": 0,
+        "refinement_patches": 0,
+        "bytes": 24,
+        "bpp": 1.598976654940838e-05,
+        "raw_body_bytes": 18,
+        "raw_patch_bits_estimate": 0,
+        "rgb_mse": 3164.9303728391606,
+        "rgb_psnr": 13.12716200708647,
+        "file_sha256": "62728d56dec7148d2543793f500fe225e56235d14d1f3b7bae1c7ec1498e7bcc",
+        "pixel_sha256": "4313e4644999f36cdc271acce9c51cc919353780bb9a08a0e979de93de33efb5",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_000.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_000.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 3,
+        "init_patches": 3,
+        "refinement_patches": 0,
+        "bytes": 1783,
+        "bpp": 0.0011879064065664642,
+        "raw_body_bytes": 2044,
+        "raw_patch_bits_estimate": 16209,
+        "rgb_mse": 156.15020250928293,
+        "rgb_psnr": 26.195378090701396,
+        "file_sha256": "4834044183db4ffbf1b767a9341d6f1eaf2884f93de4ffcf78e2d3d774f787cb",
+        "pixel_sha256": "5f5cbd59ff4596b61c3c66b235feb754f90d71c0320438b14bd83479585dde3d",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_003.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_003.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 4,
+        "init_patches": 3,
+        "refinement_patches": 1,
+        "bytes": 2502,
+        "bpp": 0.0016669331627758234,
+        "raw_body_bytes": 3272,
+        "raw_patch_bits_estimate": 26037,
+        "rgb_mse": 122.9681599054383,
+        "rgb_psnr": 27.232876865622778,
+        "file_sha256": "2817981c6e04949255eea3a6990e13ce2baa4c7fe520f33a05fc74f200c36560",
+        "pixel_sha256": "25f695d776655cfcb1e003f6a9cafd796157e5ef2659b6a027649f8037978073",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_004.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_004.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 6,
+        "init_patches": 3,
+        "refinement_patches": 3,
+        "bytes": 3142,
+        "bpp": 0.0020933269374267135,
+        "raw_body_bytes": 5348,
+        "raw_patch_bits_estimate": 42645,
+        "rgb_mse": 99.5252321847351,
+        "rgb_psnr": 28.151471614348683,
+        "file_sha256": "6eaab2664f2b19521f124da91faa0905b116a2ff0f03b91ccf1f7d1612d99470",
+        "pixel_sha256": "8f3654d0762f8e7074bb65c360ca00eb764ada7b8ec6ed3afbda2458a76338a9",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_006.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_006.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 13,
+        "init_patches": 3,
+        "refinement_patches": 10,
+        "bytes": 4296,
+        "bpp": 0.0028621682123440998,
+        "raw_body_bytes": 7596,
+        "raw_patch_bits_estimate": 60624,
+        "rgb_mse": 89.35681991303343,
+        "rgb_psnr": 28.619526564317642,
+        "file_sha256": "2ab87e6f4baf098953eec6f5ec05e0e098940c17d73cb86a9cc2182f5eea2db7",
+        "pixel_sha256": "821bc1aa52dfb755cfe4b8438453aeb97f062ea0162d67dc9e065d66a0b5d3ec",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_013.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_013.png",
+        "warmup_applied": false
+      },
+      {
+        "patch_count": 50,
+        "init_patches": 3,
+        "refinement_patches": 47,
+        "bytes": 6461,
+        "bpp": 0.004304578403155314,
+        "raw_body_bytes": 11023,
+        "raw_patch_bits_estimate": 88039,
+        "rgb_mse": 73.13358281255552,
+        "rgb_psnr": 29.489635108457165,
+        "file_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+        "pixel_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+        "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_050.pbc",
+        "image_path": "PBC_ROOT/research_pass43/outputs/coast_v31_prefix_050.png",
+        "warmup_applied": false
+      }
+    ],
+    "full_v31_record": {
+      "source": "coast.jpg",
+      "preset": "compression",
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "frozen_source_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+      "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+      "rows": [
+        {
+          "repeat": 1,
+          "bytes": 6461,
+          "rgb_mse": 73.13358281255552,
+          "rgb_psnr": 29.489635108457165,
+          "encode_seconds": 0.6319662999594584,
+          "decode_seconds": 0.08384139998815954,
+          "file_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+          "pixel_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+          "decoded_dimensions": [
+            4240,
+            2832
+          ]
+        },
+        {
+          "repeat": 2,
+          "bytes": 6461,
+          "rgb_mse": 73.13358281255552,
+          "rgb_psnr": 29.489635108457165,
+          "encode_seconds": 0.6845192000037059,
+          "decode_seconds": 0.09461999998893589,
+          "file_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+          "pixel_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+          "decoded_dimensions": [
+            4240,
+            2832
+          ]
+        },
+        {
+          "repeat": 3,
+          "bytes": 6461,
+          "rgb_mse": 73.13358281255552,
+          "rgb_psnr": 29.489635108457165,
+          "encode_seconds": 0.6346601999830455,
+          "decode_seconds": 0.07927039999049157,
+          "file_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+          "pixel_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+          "decoded_dimensions": [
+            4240,
+            2832
+          ]
+        }
+      ],
+      "fresh_process_decode_seconds": 1.1392220000270754,
+      "fresh_process_pixel_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+      "fresh_process_exact_pixels": true,
+      "streams": [
+        "PBC_ROOT/research_pass42/outputs/coast_v31_compression_r1.pbc",
+        "PBC_ROOT/research_pass42/outputs/coast_v31_compression_r2.pbc",
+        "PBC_ROOT/research_pass42/outputs/coast_v31_compression_r3.pbc"
+      ]
+    },
+    "attribution_note": "Prefix files are independently entropy-packed complete PBC3 files. Raw patch bits are a field-size estimate; post-LZMA bytes are measured from each prefix file."
+  }
+}

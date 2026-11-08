@@ -1,0 +1,2048 @@
+{
+  "instrumentation": "Pass 35 PBC_PROFILE aggregate counters; timing data ignored",
+  "cases": [
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 6,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 20613,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 21967,
+              "candidate_visits": 1339987,
+              "transform_search_entries": 64649,
+              "pruned_before_transform": 1275338,
+              "invalid_transform_results": 19404,
+              "selected_mode_records": 16087,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 21967,
+                "transform_search_entries": 21967,
+                "pruned": 0,
+                "invalid": 6813,
+                "selected": 7691
+              },
+              "1": {
+                "considered": 153769,
+                "transform_search_entries": 7622,
+                "pruned": 146147,
+                "invalid": 1148,
+                "selected": 748
+              },
+              "2": {
+                "considered": 153769,
+                "transform_search_entries": 13329,
+                "pruned": 140440,
+                "invalid": 2614,
+                "selected": 2521
+              },
+              "3": {
+                "considered": 153769,
+                "transform_search_entries": 426,
+                "pruned": 153343,
+                "invalid": 135,
+                "selected": 49
+              },
+              "4": {
+                "considered": 153769,
+                "transform_search_entries": 515,
+                "pruned": 153254,
+                "invalid": 92,
+                "selected": 181
+              },
+              "5": {
+                "considered": 153769,
+                "transform_search_entries": 337,
+                "pruned": 153432,
+                "invalid": 100,
+                "selected": 79
+              },
+              "6": {
+                "considered": 153769,
+                "transform_search_entries": 386,
+                "pruned": 153383,
+                "invalid": 114,
+                "selected": 87
+              },
+              "7": {
+                "considered": 153769,
+                "transform_search_entries": 893,
+                "pruned": 152876,
+                "invalid": 359,
+                "selected": 128
+              },
+              "8": {
+                "considered": 153769,
+                "transform_search_entries": 706,
+                "pruned": 153063,
+                "invalid": 190,
+                "selected": 78
+              },
+              "9": {
+                "considered": 21967,
+                "transform_search_entries": 11082,
+                "pruned": 10885,
+                "invalid": 5261,
+                "selected": 3218
+              },
+              "10": {
+                "considered": 21967,
+                "transform_search_entries": 0,
+                "pruned": 21967,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 21967,
+                "transform_search_entries": 0,
+                "pruned": 21967,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 21967,
+                "transform_search_entries": 7386,
+                "pruned": 14581,
+                "invalid": 2578,
+                "selected": 1307
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 20361,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 22246,
+              "candidate_visits": 1357006,
+              "transform_search_entries": 64595,
+              "pruned_before_transform": 1292411,
+              "invalid_transform_results": 20541,
+              "selected_mode_records": 16301,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 22246,
+                "transform_search_entries": 19982,
+                "pruned": 2264,
+                "invalid": 6942,
+                "selected": 6702
+              },
+              "1": {
+                "considered": 155722,
+                "transform_search_entries": 7374,
+                "pruned": 148348,
+                "invalid": 990,
+                "selected": 633
+              },
+              "2": {
+                "considered": 155722,
+                "transform_search_entries": 12499,
+                "pruned": 143223,
+                "invalid": 2276,
+                "selected": 2790
+              },
+              "3": {
+                "considered": 155722,
+                "transform_search_entries": 468,
+                "pruned": 155254,
+                "invalid": 150,
+                "selected": 52
+              },
+              "4": {
+                "considered": 155722,
+                "transform_search_entries": 523,
+                "pruned": 155199,
+                "invalid": 92,
+                "selected": 201
+              },
+              "5": {
+                "considered": 155722,
+                "transform_search_entries": 366,
+                "pruned": 155356,
+                "invalid": 110,
+                "selected": 95
+              },
+              "6": {
+                "considered": 155722,
+                "transform_search_entries": 400,
+                "pruned": 155322,
+                "invalid": 109,
+                "selected": 87
+              },
+              "7": {
+                "considered": 155722,
+                "transform_search_entries": 901,
+                "pruned": 154821,
+                "invalid": 370,
+                "selected": 135
+              },
+              "8": {
+                "considered": 155722,
+                "transform_search_entries": 689,
+                "pruned": 155033,
+                "invalid": 229,
+                "selected": 71
+              },
+              "9": {
+                "considered": 22246,
+                "transform_search_entries": 13771,
+                "pruned": 8475,
+                "invalid": 6475,
+                "selected": 4129
+              },
+              "10": {
+                "considered": 22246,
+                "transform_search_entries": 0,
+                "pruned": 22246,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 22246,
+                "transform_search_entries": 0,
+                "pruned": 22246,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 22246,
+                "transform_search_entries": 7622,
+                "pruned": 14624,
+                "invalid": 2798,
+                "selected": 1406
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -0.0835279741372643,
+        "candidate_visit_change_percent": 1.2700869486047253
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 20,
+      "speed": 6,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 44550,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 23186,
+              "candidate_visits": 1414346,
+              "transform_search_entries": 69009,
+              "pruned_before_transform": 1345337,
+              "invalid_transform_results": 23940,
+              "selected_mode_records": 16232,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 23186,
+                "transform_search_entries": 23186,
+                "pruned": 0,
+                "invalid": 7900,
+                "selected": 7574
+              },
+              "1": {
+                "considered": 162302,
+                "transform_search_entries": 8061,
+                "pruned": 154241,
+                "invalid": 1477,
+                "selected": 949
+              },
+              "2": {
+                "considered": 162302,
+                "transform_search_entries": 14316,
+                "pruned": 147986,
+                "invalid": 3150,
+                "selected": 2849
+              },
+              "3": {
+                "considered": 162302,
+                "transform_search_entries": 449,
+                "pruned": 161853,
+                "invalid": 187,
+                "selected": 61
+              },
+              "4": {
+                "considered": 162302,
+                "transform_search_entries": 597,
+                "pruned": 161705,
+                "invalid": 202,
+                "selected": 172
+              },
+              "5": {
+                "considered": 162302,
+                "transform_search_entries": 438,
+                "pruned": 161864,
+                "invalid": 204,
+                "selected": 119
+              },
+              "6": {
+                "considered": 162302,
+                "transform_search_entries": 397,
+                "pruned": 161905,
+                "invalid": 193,
+                "selected": 77
+              },
+              "7": {
+                "considered": 162302,
+                "transform_search_entries": 1037,
+                "pruned": 161265,
+                "invalid": 561,
+                "selected": 135
+              },
+              "8": {
+                "considered": 162302,
+                "transform_search_entries": 718,
+                "pruned": 161584,
+                "invalid": 310,
+                "selected": 106
+              },
+              "9": {
+                "considered": 23186,
+                "transform_search_entries": 11957,
+                "pruned": 11229,
+                "invalid": 6599,
+                "selected": 2895
+              },
+              "10": {
+                "considered": 23186,
+                "transform_search_entries": 0,
+                "pruned": 23186,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 23186,
+                "transform_search_entries": 0,
+                "pruned": 23186,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 23186,
+                "transform_search_entries": 7853,
+                "pruned": 15333,
+                "invalid": 3157,
+                "selected": 1295
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 44653,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 23313,
+              "candidate_visits": 1422093,
+              "transform_search_entries": 67381,
+              "pruned_before_transform": 1354712,
+              "invalid_transform_results": 23847,
+              "selected_mode_records": 16355,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 23313,
+                "transform_search_entries": 21099,
+                "pruned": 2214,
+                "invalid": 7531,
+                "selected": 7147
+              },
+              "1": {
+                "considered": 163191,
+                "transform_search_entries": 7689,
+                "pruned": 155502,
+                "invalid": 1187,
+                "selected": 818
+              },
+              "2": {
+                "considered": 163191,
+                "transform_search_entries": 13466,
+                "pruned": 149725,
+                "invalid": 2661,
+                "selected": 3226
+              },
+              "3": {
+                "considered": 163191,
+                "transform_search_entries": 468,
+                "pruned": 162723,
+                "invalid": 190,
+                "selected": 71
+              },
+              "4": {
+                "considered": 163191,
+                "transform_search_entries": 579,
+                "pruned": 162612,
+                "invalid": 197,
+                "selected": 178
+              },
+              "5": {
+                "considered": 163191,
+                "transform_search_entries": 462,
+                "pruned": 162729,
+                "invalid": 202,
+                "selected": 126
+              },
+              "6": {
+                "considered": 163191,
+                "transform_search_entries": 414,
+                "pruned": 162777,
+                "invalid": 213,
+                "selected": 80
+              },
+              "7": {
+                "considered": 163191,
+                "transform_search_entries": 1046,
+                "pruned": 162145,
+                "invalid": 566,
+                "selected": 140
+              },
+              "8": {
+                "considered": 163191,
+                "transform_search_entries": 768,
+                "pruned": 162423,
+                "invalid": 335,
+                "selected": 102
+              },
+              "9": {
+                "considered": 23313,
+                "transform_search_entries": 13218,
+                "pruned": 10095,
+                "invalid": 7428,
+                "selected": 3224
+              },
+              "10": {
+                "considered": 23313,
+                "transform_search_entries": 0,
+                "pruned": 23313,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 23313,
+                "transform_search_entries": 0,
+                "pruned": 23313,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 23313,
+                "transform_search_entries": 8172,
+                "pruned": 15141,
+                "invalid": 3337,
+                "selected": 1243
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -2.3591125795186136,
+        "candidate_visit_change_percent": 0.5477443284740792
+      }
+    },
+    {
+      "image": "mario64.png",
+      "qcolor": 50,
+      "speed": 6,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 39332,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 10127,
+              "candidate_visits": 617747,
+              "transform_search_entries": 36098,
+              "pruned_before_transform": 581649,
+              "invalid_transform_results": 9666,
+              "selected_mode_records": 9023,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 10127,
+                "transform_search_entries": 10127,
+                "pruned": 0,
+                "invalid": 1690,
+                "selected": 3021
+              },
+              "1": {
+                "considered": 70889,
+                "transform_search_entries": 5661,
+                "pruned": 65228,
+                "invalid": 1260,
+                "selected": 848
+              },
+              "2": {
+                "considered": 70889,
+                "transform_search_entries": 9086,
+                "pruned": 61803,
+                "invalid": 2530,
+                "selected": 1550
+              },
+              "3": {
+                "considered": 70889,
+                "transform_search_entries": 151,
+                "pruned": 70738,
+                "invalid": 30,
+                "selected": 28
+              },
+              "4": {
+                "considered": 70889,
+                "transform_search_entries": 338,
+                "pruned": 70551,
+                "invalid": 84,
+                "selected": 72
+              },
+              "5": {
+                "considered": 70889,
+                "transform_search_entries": 164,
+                "pruned": 70725,
+                "invalid": 55,
+                "selected": 34
+              },
+              "6": {
+                "considered": 70889,
+                "transform_search_entries": 791,
+                "pruned": 70098,
+                "invalid": 285,
+                "selected": 183
+              },
+              "7": {
+                "considered": 70889,
+                "transform_search_entries": 558,
+                "pruned": 70331,
+                "invalid": 208,
+                "selected": 78
+              },
+              "8": {
+                "considered": 70889,
+                "transform_search_entries": 157,
+                "pruned": 70732,
+                "invalid": 61,
+                "selected": 22
+              },
+              "9": {
+                "considered": 10127,
+                "transform_search_entries": 4817,
+                "pruned": 5310,
+                "invalid": 2082,
+                "selected": 1478
+              },
+              "10": {
+                "considered": 10127,
+                "transform_search_entries": 0,
+                "pruned": 10127,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 10127,
+                "transform_search_entries": 0,
+                "pruned": 10127,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 10127,
+                "transform_search_entries": 4248,
+                "pruned": 5879,
+                "invalid": 1381,
+                "selected": 1709
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 39082,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 10155,
+              "candidate_visits": 619455,
+              "transform_search_entries": 35435,
+              "pruned_before_transform": 584020,
+              "invalid_transform_results": 9811,
+              "selected_mode_records": 9006,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 10155,
+                "transform_search_entries": 8453,
+                "pruned": 1702,
+                "invalid": 1681,
+                "selected": 2801
+              },
+              "1": {
+                "considered": 71085,
+                "transform_search_entries": 5155,
+                "pruned": 65930,
+                "invalid": 1186,
+                "selected": 742
+              },
+              "2": {
+                "considered": 71085,
+                "transform_search_entries": 8203,
+                "pruned": 62882,
+                "invalid": 1989,
+                "selected": 1390
+              },
+              "3": {
+                "considered": 71085,
+                "transform_search_entries": 161,
+                "pruned": 70924,
+                "invalid": 39,
+                "selected": 27
+              },
+              "4": {
+                "considered": 71085,
+                "transform_search_entries": 343,
+                "pruned": 70742,
+                "invalid": 87,
+                "selected": 75
+              },
+              "5": {
+                "considered": 71085,
+                "transform_search_entries": 153,
+                "pruned": 70932,
+                "invalid": 54,
+                "selected": 35
+              },
+              "6": {
+                "considered": 71085,
+                "transform_search_entries": 796,
+                "pruned": 70289,
+                "invalid": 289,
+                "selected": 173
+              },
+              "7": {
+                "considered": 71085,
+                "transform_search_entries": 577,
+                "pruned": 70508,
+                "invalid": 220,
+                "selected": 82
+              },
+              "8": {
+                "considered": 71085,
+                "transform_search_entries": 184,
+                "pruned": 70901,
+                "invalid": 59,
+                "selected": 23
+              },
+              "9": {
+                "considered": 10155,
+                "transform_search_entries": 5458,
+                "pruned": 4697,
+                "invalid": 2458,
+                "selected": 1574
+              },
+              "10": {
+                "considered": 10155,
+                "transform_search_entries": 0,
+                "pruned": 10155,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 10155,
+                "transform_search_entries": 0,
+                "pruned": 10155,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 10155,
+                "transform_search_entries": 5952,
+                "pruned": 4203,
+                "invalid": 1749,
+                "selected": 2084
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -1.8366668513491051,
+        "candidate_visit_change_percent": 0.2764885948454626
+      }
+    },
+    {
+      "image": "flower.jpg",
+      "qcolor": 80,
+      "speed": 6,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 170486,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 41107,
+              "candidate_visits": 2507527,
+              "transform_search_entries": 115870,
+              "pruned_before_transform": 2391657,
+              "invalid_transform_results": 42174,
+              "selected_mode_records": 37598,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 41107,
+                "transform_search_entries": 41107,
+                "pruned": 0,
+                "invalid": 3972,
+                "selected": 21074
+              },
+              "1": {
+                "considered": 287749,
+                "transform_search_entries": 4733,
+                "pruned": 283016,
+                "invalid": 1725,
+                "selected": 1049
+              },
+              "2": {
+                "considered": 287749,
+                "transform_search_entries": 13862,
+                "pruned": 273887,
+                "invalid": 5483,
+                "selected": 2967
+              },
+              "3": {
+                "considered": 287749,
+                "transform_search_entries": 2257,
+                "pruned": 285492,
+                "invalid": 648,
+                "selected": 692
+              },
+              "4": {
+                "considered": 287749,
+                "transform_search_entries": 2708,
+                "pruned": 285041,
+                "invalid": 781,
+                "selected": 792
+              },
+              "5": {
+                "considered": 287749,
+                "transform_search_entries": 1261,
+                "pruned": 286488,
+                "invalid": 427,
+                "selected": 369
+              },
+              "6": {
+                "considered": 287749,
+                "transform_search_entries": 2336,
+                "pruned": 285413,
+                "invalid": 731,
+                "selected": 696
+              },
+              "7": {
+                "considered": 287749,
+                "transform_search_entries": 5024,
+                "pruned": 282725,
+                "invalid": 1996,
+                "selected": 1085
+              },
+              "8": {
+                "considered": 287749,
+                "transform_search_entries": 2449,
+                "pruned": 285300,
+                "invalid": 878,
+                "selected": 569
+              },
+              "9": {
+                "considered": 41107,
+                "transform_search_entries": 27923,
+                "pruned": 13184,
+                "invalid": 17559,
+                "selected": 6691
+              },
+              "10": {
+                "considered": 41107,
+                "transform_search_entries": 0,
+                "pruned": 41107,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 41107,
+                "transform_search_entries": 0,
+                "pruned": 41107,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 41107,
+                "transform_search_entries": 12210,
+                "pruned": 28897,
+                "invalid": 7974,
+                "selected": 1614
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 170244,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 41092,
+              "candidate_visits": 2506612,
+              "transform_search_entries": 114888,
+              "pruned_before_transform": 2391724,
+              "invalid_transform_results": 42556,
+              "selected_mode_records": 37557,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 41092,
+                "transform_search_entries": 38698,
+                "pruned": 2394,
+                "invalid": 3698,
+                "selected": 20439
+              },
+              "1": {
+                "considered": 287644,
+                "transform_search_entries": 4184,
+                "pruned": 283460,
+                "invalid": 1480,
+                "selected": 974
+              },
+              "2": {
+                "considered": 287644,
+                "transform_search_entries": 12285,
+                "pruned": 275359,
+                "invalid": 4500,
+                "selected": 2872
+              },
+              "3": {
+                "considered": 287644,
+                "transform_search_entries": 2453,
+                "pruned": 285191,
+                "invalid": 748,
+                "selected": 692
+              },
+              "4": {
+                "considered": 287644,
+                "transform_search_entries": 2737,
+                "pruned": 284907,
+                "invalid": 785,
+                "selected": 802
+              },
+              "5": {
+                "considered": 287644,
+                "transform_search_entries": 1308,
+                "pruned": 286336,
+                "invalid": 434,
+                "selected": 372
+              },
+              "6": {
+                "considered": 287644,
+                "transform_search_entries": 2471,
+                "pruned": 285173,
+                "invalid": 760,
+                "selected": 708
+              },
+              "7": {
+                "considered": 287644,
+                "transform_search_entries": 5146,
+                "pruned": 282498,
+                "invalid": 2007,
+                "selected": 1127
+              },
+              "8": {
+                "considered": 287644,
+                "transform_search_entries": 2438,
+                "pruned": 285206,
+                "invalid": 856,
+                "selected": 580
+              },
+              "9": {
+                "considered": 41092,
+                "transform_search_entries": 30539,
+                "pruned": 10553,
+                "invalid": 18886,
+                "selected": 7339
+              },
+              "10": {
+                "considered": 41092,
+                "transform_search_entries": 0,
+                "pruned": 41092,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 41092,
+                "transform_search_entries": 0,
+                "pruned": 41092,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 41092,
+                "transform_search_entries": 12629,
+                "pruned": 28463,
+                "invalid": 8402,
+                "selected": 1652
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -0.847501510313282,
+        "candidate_visit_change_percent": -0.03649013550003649
+      }
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 6,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 262385,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 59064,
+              "candidate_visits": 3602904,
+              "transform_search_entries": 152001,
+              "pruned_before_transform": 3450903,
+              "invalid_transform_results": 58916,
+              "selected_mode_records": 48036,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 59064,
+                "transform_search_entries": 59064,
+                "pruned": 0,
+                "invalid": 14288,
+                "selected": 21127
+              },
+              "1": {
+                "considered": 413448,
+                "transform_search_entries": 950,
+                "pruned": 412498,
+                "invalid": 431,
+                "selected": 124
+              },
+              "2": {
+                "considered": 413448,
+                "transform_search_entries": 53673,
+                "pruned": 359775,
+                "invalid": 24324,
+                "selected": 18063
+              },
+              "3": {
+                "considered": 413448,
+                "transform_search_entries": 850,
+                "pruned": 412598,
+                "invalid": 318,
+                "selected": 183
+              },
+              "4": {
+                "considered": 413448,
+                "transform_search_entries": 1132,
+                "pruned": 412316,
+                "invalid": 360,
+                "selected": 295
+              },
+              "5": {
+                "considered": 413448,
+                "transform_search_entries": 387,
+                "pruned": 413061,
+                "invalid": 157,
+                "selected": 79
+              },
+              "6": {
+                "considered": 413448,
+                "transform_search_entries": 790,
+                "pruned": 412658,
+                "invalid": 302,
+                "selected": 171
+              },
+              "7": {
+                "considered": 413448,
+                "transform_search_entries": 1879,
+                "pruned": 411569,
+                "invalid": 763,
+                "selected": 348
+              },
+              "8": {
+                "considered": 413448,
+                "transform_search_entries": 570,
+                "pruned": 412878,
+                "invalid": 206,
+                "selected": 118
+              },
+              "9": {
+                "considered": 59064,
+                "transform_search_entries": 21093,
+                "pruned": 37971,
+                "invalid": 11841,
+                "selected": 5888
+              },
+              "10": {
+                "considered": 59064,
+                "transform_search_entries": 0,
+                "pruned": 59064,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 59064,
+                "transform_search_entries": 0,
+                "pruned": 59064,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 59064,
+                "transform_search_entries": 11613,
+                "pruned": 47451,
+                "invalid": 5926,
+                "selected": 1640
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 261979,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 59276,
+              "candidate_visits": 3615836,
+              "transform_search_entries": 139480,
+              "pruned_before_transform": 3476356,
+              "invalid_transform_results": 56151,
+              "selected_mode_records": 48107,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 59276,
+                "transform_search_entries": 43137,
+                "pruned": 16139,
+                "invalid": 10998,
+                "selected": 20226
+              },
+              "1": {
+                "considered": 414932,
+                "transform_search_entries": 820,
+                "pruned": 414112,
+                "invalid": 383,
+                "selected": 91
+              },
+              "2": {
+                "considered": 414932,
+                "transform_search_entries": 54484,
+                "pruned": 360448,
+                "invalid": 23237,
+                "selected": 18637
+              },
+              "3": {
+                "considered": 414932,
+                "transform_search_entries": 821,
+                "pruned": 414111,
+                "invalid": 312,
+                "selected": 181
+              },
+              "4": {
+                "considered": 414932,
+                "transform_search_entries": 1171,
+                "pruned": 413761,
+                "invalid": 389,
+                "selected": 291
+              },
+              "5": {
+                "considered": 414932,
+                "transform_search_entries": 394,
+                "pruned": 414538,
+                "invalid": 164,
+                "selected": 84
+              },
+              "6": {
+                "considered": 414932,
+                "transform_search_entries": 814,
+                "pruned": 414118,
+                "invalid": 294,
+                "selected": 175
+              },
+              "7": {
+                "considered": 414932,
+                "transform_search_entries": 1889,
+                "pruned": 413043,
+                "invalid": 781,
+                "selected": 349
+              },
+              "8": {
+                "considered": 414932,
+                "transform_search_entries": 528,
+                "pruned": 414404,
+                "invalid": 210,
+                "selected": 92
+              },
+              "9": {
+                "considered": 59276,
+                "transform_search_entries": 22855,
+                "pruned": 36421,
+                "invalid": 12848,
+                "selected": 6132
+              },
+              "10": {
+                "considered": 59276,
+                "transform_search_entries": 0,
+                "pruned": 59276,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 59276,
+                "transform_search_entries": 0,
+                "pruned": 59276,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 59276,
+                "transform_search_entries": 12567,
+                "pruned": 46709,
+                "invalid": 6535,
+                "selected": 1849
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -8.237445806277591,
+        "candidate_visit_change_percent": 0.3589326831911147
+      }
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 50,
+      "speed": 6,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 528238,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 74315,
+              "candidate_visits": 4533215,
+              "transform_search_entries": 185275,
+              "pruned_before_transform": 4347940,
+              "invalid_transform_results": 76324,
+              "selected_mode_records": 58498,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 74315,
+                "transform_search_entries": 74315,
+                "pruned": 0,
+                "invalid": 17626,
+                "selected": 28629
+              },
+              "1": {
+                "considered": 520205,
+                "transform_search_entries": 1461,
+                "pruned": 518744,
+                "invalid": 699,
+                "selected": 217
+              },
+              "2": {
+                "considered": 520205,
+                "transform_search_entries": 60548,
+                "pruned": 459657,
+                "invalid": 29946,
+                "selected": 18310
+              },
+              "3": {
+                "considered": 520205,
+                "transform_search_entries": 857,
+                "pruned": 519348,
+                "invalid": 354,
+                "selected": 163
+              },
+              "4": {
+                "considered": 520205,
+                "transform_search_entries": 1330,
+                "pruned": 518875,
+                "invalid": 546,
+                "selected": 322
+              },
+              "5": {
+                "considered": 520205,
+                "transform_search_entries": 543,
+                "pruned": 519662,
+                "invalid": 274,
+                "selected": 97
+              },
+              "6": {
+                "considered": 520205,
+                "transform_search_entries": 1085,
+                "pruned": 519120,
+                "invalid": 491,
+                "selected": 220
+              },
+              "7": {
+                "considered": 520205,
+                "transform_search_entries": 2476,
+                "pruned": 517729,
+                "invalid": 1156,
+                "selected": 466
+              },
+              "8": {
+                "considered": 520205,
+                "transform_search_entries": 800,
+                "pruned": 519405,
+                "invalid": 365,
+                "selected": 170
+              },
+              "9": {
+                "considered": 74315,
+                "transform_search_entries": 30016,
+                "pruned": 44299,
+                "invalid": 18333,
+                "selected": 8145
+              },
+              "10": {
+                "considered": 74315,
+                "transform_search_entries": 0,
+                "pruned": 74315,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 74315,
+                "transform_search_entries": 0,
+                "pruned": 74315,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 74315,
+                "transform_search_entries": 11844,
+                "pruned": 62471,
+                "invalid": 6534,
+                "selected": 1759
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 528312,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 74641,
+              "candidate_visits": 4553101,
+              "transform_search_entries": 171965,
+              "pruned_before_transform": 4381136,
+              "invalid_transform_results": 73622,
+              "selected_mode_records": 58665,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 74641,
+                "transform_search_entries": 56480,
+                "pruned": 18161,
+                "invalid": 14333,
+                "selected": 27739
+              },
+              "1": {
+                "considered": 522487,
+                "transform_search_entries": 1258,
+                "pruned": 521229,
+                "invalid": 601,
+                "selected": 188
+              },
+              "2": {
+                "considered": 522487,
+                "transform_search_entries": 61783,
+                "pruned": 460704,
+                "invalid": 28439,
+                "selected": 19079
+              },
+              "3": {
+                "considered": 522487,
+                "transform_search_entries": 877,
+                "pruned": 521610,
+                "invalid": 364,
+                "selected": 164
+              },
+              "4": {
+                "considered": 522487,
+                "transform_search_entries": 1350,
+                "pruned": 521137,
+                "invalid": 531,
+                "selected": 332
+              },
+              "5": {
+                "considered": 522487,
+                "transform_search_entries": 588,
+                "pruned": 521899,
+                "invalid": 298,
+                "selected": 90
+              },
+              "6": {
+                "considered": 522487,
+                "transform_search_entries": 1100,
+                "pruned": 521387,
+                "invalid": 504,
+                "selected": 220
+              },
+              "7": {
+                "considered": 522487,
+                "transform_search_entries": 2527,
+                "pruned": 519960,
+                "invalid": 1212,
+                "selected": 477
+              },
+              "8": {
+                "considered": 522487,
+                "transform_search_entries": 820,
+                "pruned": 521667,
+                "invalid": 387,
+                "selected": 164
+              },
+              "9": {
+                "considered": 74641,
+                "transform_search_entries": 31575,
+                "pruned": 43066,
+                "invalid": 19470,
+                "selected": 8218
+              },
+              "10": {
+                "considered": 74641,
+                "transform_search_entries": 0,
+                "pruned": 74641,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 74641,
+                "transform_search_entries": 0,
+                "pruned": 74641,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 74641,
+                "transform_search_entries": 13607,
+                "pruned": 61034,
+                "invalid": 7483,
+                "selected": 1994
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -7.183915800836595,
+        "candidate_visit_change_percent": 0.43867321536701875
+      }
+    },
+    {
+      "image": "coast.jpg",
+      "qcolor": 80,
+      "speed": 6,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 159713,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 38196,
+              "candidate_visits": 2329956,
+              "transform_search_entries": 103499,
+              "pruned_before_transform": 2226457,
+              "invalid_transform_results": 30095,
+              "selected_mode_records": 36681,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 38196,
+                "transform_search_entries": 38196,
+                "pruned": 0,
+                "invalid": 1728,
+                "selected": 24225
+              },
+              "1": {
+                "considered": 267372,
+                "transform_search_entries": 6124,
+                "pruned": 261248,
+                "invalid": 1201,
+                "selected": 843
+              },
+              "2": {
+                "considered": 267372,
+                "transform_search_entries": 11647,
+                "pruned": 255725,
+                "invalid": 3910,
+                "selected": 2292
+              },
+              "3": {
+                "considered": 267372,
+                "transform_search_entries": 2009,
+                "pruned": 265363,
+                "invalid": 603,
+                "selected": 575
+              },
+              "4": {
+                "considered": 267372,
+                "transform_search_entries": 1703,
+                "pruned": 265669,
+                "invalid": 476,
+                "selected": 503
+              },
+              "5": {
+                "considered": 267372,
+                "transform_search_entries": 1214,
+                "pruned": 266158,
+                "invalid": 367,
+                "selected": 371
+              },
+              "6": {
+                "considered": 267372,
+                "transform_search_entries": 1047,
+                "pruned": 266325,
+                "invalid": 398,
+                "selected": 278
+              },
+              "7": {
+                "considered": 267372,
+                "transform_search_entries": 1554,
+                "pruned": 265818,
+                "invalid": 613,
+                "selected": 323
+              },
+              "8": {
+                "considered": 267372,
+                "transform_search_entries": 2148,
+                "pruned": 265224,
+                "invalid": 716,
+                "selected": 492
+              },
+              "9": {
+                "considered": 38196,
+                "transform_search_entries": 22539,
+                "pruned": 15657,
+                "invalid": 12395,
+                "selected": 4487
+              },
+              "10": {
+                "considered": 38196,
+                "transform_search_entries": 0,
+                "pruned": 38196,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 38196,
+                "transform_search_entries": 0,
+                "pruned": 38196,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 38196,
+                "transform_search_entries": 15318,
+                "pruned": 22878,
+                "invalid": 7688,
+                "selected": 2292
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 159569,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 38195,
+              "candidate_visits": 2329895,
+              "transform_search_entries": 101855,
+              "pruned_before_transform": 2228040,
+              "invalid_transform_results": 29740,
+              "selected_mode_records": 36655,
+              "hybrid_rd_calls": 0,
+              "hybrid_nonrd_calls": 0
+            },
+            "by_mode": {
+              "0": {
+                "considered": 38195,
+                "transform_search_entries": 36565,
+                "pruned": 1630,
+                "invalid": 1651,
+                "selected": 24089
+              },
+              "1": {
+                "considered": 267365,
+                "transform_search_entries": 5564,
+                "pruned": 261801,
+                "invalid": 992,
+                "selected": 748
+              },
+              "2": {
+                "considered": 267365,
+                "transform_search_entries": 11033,
+                "pruned": 256332,
+                "invalid": 3377,
+                "selected": 2254
+              },
+              "3": {
+                "considered": 267365,
+                "transform_search_entries": 2214,
+                "pruned": 265151,
+                "invalid": 638,
+                "selected": 582
+              },
+              "4": {
+                "considered": 267365,
+                "transform_search_entries": 1715,
+                "pruned": 265650,
+                "invalid": 468,
+                "selected": 508
+              },
+              "5": {
+                "considered": 267365,
+                "transform_search_entries": 1237,
+                "pruned": 266128,
+                "invalid": 377,
+                "selected": 371
+              },
+              "6": {
+                "considered": 267365,
+                "transform_search_entries": 1085,
+                "pruned": 266280,
+                "invalid": 427,
+                "selected": 266
+              },
+              "7": {
+                "considered": 267365,
+                "transform_search_entries": 1568,
+                "pruned": 265797,
+                "invalid": 604,
+                "selected": 328
+              },
+              "8": {
+                "considered": 267365,
+                "transform_search_entries": 2093,
+                "pruned": 265272,
+                "invalid": 661,
+                "selected": 504
+              },
+              "9": {
+                "considered": 38195,
+                "transform_search_entries": 21692,
+                "pruned": 16503,
+                "invalid": 11720,
+                "selected": 4284
+              },
+              "10": {
+                "considered": 38195,
+                "transform_search_entries": 0,
+                "pruned": 38195,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 38195,
+                "transform_search_entries": 0,
+                "pruned": 38195,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 38195,
+                "transform_search_entries": 17089,
+                "pruned": 21106,
+                "invalid": 8825,
+                "selected": 2721
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -1.5884211441656442,
+        "candidate_visit_change_percent": -0.0026180751911194892
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 8,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 15985,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 4024,
+              "candidate_visits": 245464,
+              "transform_search_entries": 11643,
+              "pruned_before_transform": 233821,
+              "invalid_transform_results": 1533,
+              "selected_mode_records": 4024,
+              "hybrid_rd_calls": 4024,
+              "hybrid_nonrd_calls": 1133
+            },
+            "by_mode": {
+              "0": {
+                "considered": 4024,
+                "transform_search_entries": 4024,
+                "pruned": 0,
+                "invalid": 0,
+                "selected": 1705
+              },
+              "1": {
+                "considered": 28168,
+                "transform_search_entries": 1021,
+                "pruned": 27147,
+                "invalid": 197,
+                "selected": 117
+              },
+              "2": {
+                "considered": 28168,
+                "transform_search_entries": 2730,
+                "pruned": 25438,
+                "invalid": 400,
+                "selected": 619
+              },
+              "3": {
+                "considered": 28168,
+                "transform_search_entries": 85,
+                "pruned": 28083,
+                "invalid": 34,
+                "selected": 13
+              },
+              "4": {
+                "considered": 28168,
+                "transform_search_entries": 94,
+                "pruned": 28074,
+                "invalid": 8,
+                "selected": 25
+              },
+              "5": {
+                "considered": 28168,
+                "transform_search_entries": 78,
+                "pruned": 28090,
+                "invalid": 12,
+                "selected": 15
+              },
+              "6": {
+                "considered": 28168,
+                "transform_search_entries": 75,
+                "pruned": 28093,
+                "invalid": 6,
+                "selected": 16
+              },
+              "7": {
+                "considered": 28168,
+                "transform_search_entries": 211,
+                "pruned": 27957,
+                "invalid": 67,
+                "selected": 34
+              },
+              "8": {
+                "considered": 28168,
+                "transform_search_entries": 127,
+                "pruned": 28041,
+                "invalid": 39,
+                "selected": 17
+              },
+              "9": {
+                "considered": 4024,
+                "transform_search_entries": 2121,
+                "pruned": 1903,
+                "invalid": 507,
+                "selected": 1200
+              },
+              "10": {
+                "considered": 4024,
+                "transform_search_entries": 0,
+                "pruned": 4024,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 4024,
+                "transform_search_entries": 0,
+                "pruned": 4024,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 4024,
+                "transform_search_entries": 1077,
+                "pruned": 2947,
+                "invalid": 263,
+                "selected": 263
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 15919,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 4024,
+              "candidate_visits": 245464,
+              "transform_search_entries": 11316,
+              "pruned_before_transform": 234148,
+              "invalid_transform_results": 1876,
+              "selected_mode_records": 4024,
+              "hybrid_rd_calls": 4024,
+              "hybrid_nonrd_calls": 1133
+            },
+            "by_mode": {
+              "0": {
+                "considered": 4024,
+                "transform_search_entries": 3366,
+                "pruned": 658,
+                "invalid": 423,
+                "selected": 1312
+              },
+              "1": {
+                "considered": 28168,
+                "transform_search_entries": 831,
+                "pruned": 27337,
+                "invalid": 164,
+                "selected": 83
+              },
+              "2": {
+                "considered": 28168,
+                "transform_search_entries": 2569,
+                "pruned": 25599,
+                "invalid": 365,
+                "selected": 709
+              },
+              "3": {
+                "considered": 28168,
+                "transform_search_entries": 83,
+                "pruned": 28085,
+                "invalid": 29,
+                "selected": 12
+              },
+              "4": {
+                "considered": 28168,
+                "transform_search_entries": 99,
+                "pruned": 28069,
+                "invalid": 6,
+                "selected": 24
+              },
+              "5": {
+                "considered": 28168,
+                "transform_search_entries": 76,
+                "pruned": 28092,
+                "invalid": 13,
+                "selected": 16
+              },
+              "6": {
+                "considered": 28168,
+                "transform_search_entries": 78,
+                "pruned": 28090,
+                "invalid": 9,
+                "selected": 17
+              },
+              "7": {
+                "considered": 28168,
+                "transform_search_entries": 240,
+                "pruned": 27928,
+                "invalid": 64,
+                "selected": 36
+              },
+              "8": {
+                "considered": 28168,
+                "transform_search_entries": 140,
+                "pruned": 28028,
+                "invalid": 48,
+                "selected": 19
+              },
+              "9": {
+                "considered": 4024,
+                "transform_search_entries": 2751,
+                "pruned": 1273,
+                "invalid": 450,
+                "selected": 1539
+              },
+              "10": {
+                "considered": 4024,
+                "transform_search_entries": 0,
+                "pruned": 4024,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 4024,
+                "transform_search_entries": 0,
+                "pruned": 4024,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 4024,
+                "transform_search_entries": 1083,
+                "pruned": 2941,
+                "invalid": 305,
+                "selected": 257
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -2.8085544962638496,
+        "candidate_visit_change_percent": 0.0
+      }
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 8,
+      "results": {
+        "CTRL": {
+          "exit_code": 0,
+          "bytes": 251357,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 28059,
+              "candidate_visits": 1711599,
+              "transform_search_entries": 89260,
+              "pruned_before_transform": 1622339,
+              "invalid_transform_results": 18685,
+              "selected_mode_records": 28059,
+              "hybrid_rd_calls": 28059,
+              "hybrid_nonrd_calls": 11580
+            },
+            "by_mode": {
+              "0": {
+                "considered": 28059,
+                "transform_search_entries": 28059,
+                "pruned": 0,
+                "invalid": 0,
+                "selected": 7202
+              },
+              "1": {
+                "considered": 196413,
+                "transform_search_entries": 424,
+                "pruned": 195989,
+                "invalid": 108,
+                "selected": 65
+              },
+              "2": {
+                "considered": 196413,
+                "transform_search_entries": 42159,
+                "pruned": 154254,
+                "invalid": 11759,
+                "selected": 15676
+              },
+              "3": {
+                "considered": 196413,
+                "transform_search_entries": 237,
+                "pruned": 196176,
+                "invalid": 63,
+                "selected": 69
+              },
+              "4": {
+                "considered": 196413,
+                "transform_search_entries": 289,
+                "pruned": 196124,
+                "invalid": 63,
+                "selected": 67
+              },
+              "5": {
+                "considered": 196413,
+                "transform_search_entries": 134,
+                "pruned": 196279,
+                "invalid": 37,
+                "selected": 31
+              },
+              "6": {
+                "considered": 196413,
+                "transform_search_entries": 263,
+                "pruned": 196150,
+                "invalid": 72,
+                "selected": 61
+              },
+              "7": {
+                "considered": 196413,
+                "transform_search_entries": 902,
+                "pruned": 195511,
+                "invalid": 258,
+                "selected": 159
+              },
+              "8": {
+                "considered": 196413,
+                "transform_search_entries": 211,
+                "pruned": 196202,
+                "invalid": 55,
+                "selected": 40
+              },
+              "9": {
+                "considered": 28059,
+                "transform_search_entries": 8126,
+                "pruned": 19933,
+                "invalid": 3446,
+                "selected": 3172
+              },
+              "10": {
+                "considered": 28059,
+                "transform_search_entries": 0,
+                "pruned": 28059,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 28059,
+                "transform_search_entries": 0,
+                "pruned": 28059,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 28059,
+                "transform_search_entries": 8456,
+                "pruned": 19603,
+                "invalid": 2824,
+                "selected": 1517
+              }
+            }
+          }
+        },
+        "EXP": {
+          "exit_code": 0,
+          "bytes": 251332,
+          "counters": {
+            "totals": {
+              "rd_intra_blocks": 28059,
+              "candidate_visits": 1711599,
+              "transform_search_entries": 75906,
+              "pruned_before_transform": 1635693,
+              "invalid_transform_results": 18947,
+              "selected_mode_records": 28059,
+              "hybrid_rd_calls": 28059,
+              "hybrid_nonrd_calls": 11580
+            },
+            "by_mode": {
+              "0": {
+                "considered": 28059,
+                "transform_search_entries": 13617,
+                "pruned": 14442,
+                "invalid": 539,
+                "selected": 6816
+              },
+              "1": {
+                "considered": 196413,
+                "transform_search_entries": 365,
+                "pruned": 196048,
+                "invalid": 112,
+                "selected": 57
+              },
+              "2": {
+                "considered": 196413,
+                "transform_search_entries": 41737,
+                "pruned": 154676,
+                "invalid": 11261,
+                "selected": 15667
+              },
+              "3": {
+                "considered": 196413,
+                "transform_search_entries": 267,
+                "pruned": 196146,
+                "invalid": 66,
+                "selected": 71
+              },
+              "4": {
+                "considered": 196413,
+                "transform_search_entries": 290,
+                "pruned": 196123,
+                "invalid": 55,
+                "selected": 74
+              },
+              "5": {
+                "considered": 196413,
+                "transform_search_entries": 143,
+                "pruned": 196270,
+                "invalid": 42,
+                "selected": 31
+              },
+              "6": {
+                "considered": 196413,
+                "transform_search_entries": 265,
+                "pruned": 196148,
+                "invalid": 67,
+                "selected": 59
+              },
+              "7": {
+                "considered": 196413,
+                "transform_search_entries": 929,
+                "pruned": 195484,
+                "invalid": 278,
+                "selected": 163
+              },
+              "8": {
+                "considered": 196413,
+                "transform_search_entries": 217,
+                "pruned": 196196,
+                "invalid": 55,
+                "selected": 47
+              },
+              "9": {
+                "considered": 28059,
+                "transform_search_entries": 9275,
+                "pruned": 18784,
+                "invalid": 3617,
+                "selected": 3497
+              },
+              "10": {
+                "considered": 28059,
+                "transform_search_entries": 0,
+                "pruned": 28059,
+                "invalid": 0,
+                "selected": 0
+              },
+              "11": {
+                "considered": 28059,
+                "transform_search_entries": 0,
+                "pruned": 28059,
+                "invalid": 0,
+                "selected": 0
+              },
+              "12": {
+                "considered": 28059,
+                "transform_search_entries": 8801,
+                "pruned": 19258,
+                "invalid": 2855,
+                "selected": 1577
+              }
+            }
+          }
+        },
+        "transform_search_change_percent": -14.96078870714766,
+        "candidate_visit_change_percent": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,983 @@
+{
+  "googlewiki.png": {
+    "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+    "points": {
+      "low": {
+        "candidates": [
+          {
+            "bytes": 423996,
+            "bpp": 5.131818786991201,
+            "mse": 70.15750333853782,
+            "sse": 139115594,
+            "psnr": 29.67006235264615,
+            "score": 563111594,
+            "file_sha256": "ad1900e12bb39f74bf777dfbc89e830b6430879f2c828fc7ff399417aa8f1a23",
+            "pixel_sha256": "581971cb8593894bb6f9f58e321de4cb76fbf7792fe364f55d5d2400c9be47cf",
+            "base_sha256": "1f5ed38f867b1092e508d05278d4131e68a26ab904e32f113d8f1465a0a62e5e",
+            "base_mse": 1559.3689755025962,
+            "coarse": {
+              "working_width": 501,
+              "working_height": 499,
+              "patch_count": 3,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 879,
+              "procedural": 150,
+              "transform": 1572
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 423964,
+              "coarse_raw_bytes": 31562,
+              "mode_map_raw_bytes": 651,
+              "procedural_raw_bytes": 2292,
+              "transform_raw_bytes": 1318874,
+              "raw_payload_bytes": 1353383
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 3,
+            "encode_seconds": 2.123349800007418,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_low_p3003.pbc"
+          },
+          {
+            "bytes": 340700,
+            "bpp": 4.123648951235158,
+            "mse": 187.58103216292872,
+            "sse": 371955179,
+            "psnr": 25.398914396364116,
+            "score": 712655179,
+            "file_sha256": "bcecf7a8cc204eee200a139ef4ef50e3d40f67a1f4d82368647c8559f075c37d",
+            "pixel_sha256": "a5beb4d25afc2e401f7be5805a08e9fcbed70d66ee6a149f3f85b2f0b963984f",
+            "base_sha256": "4dd3f0782c47cf5e053abf87f3973648f2d0d35155d55f7bf0fadba69c50310b",
+            "base_mse": 1034.8872476932822,
+            "coarse": {
+              "working_width": 501,
+              "working_height": 499,
+              "patch_count": 6,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 1099,
+              "procedural": 353,
+              "transform": 1149
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 340668,
+              "coarse_raw_bytes": 67302,
+              "mode_map_raw_bytes": 651,
+              "procedural_raw_bytes": 4271,
+              "transform_raw_bytes": 980348,
+              "raw_payload_bytes": 1052576
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 6,
+            "encode_seconds": 2.263557700032834,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_low_p3006.pbc"
+          },
+          {
+            "bytes": 337448,
+            "bpp": 4.084288498081602,
+            "mse": 191.17629043060077,
+            "sse": 379084231,
+            "psnr": 25.316463305305582,
+            "score": 716532231,
+            "file_sha256": "27d5693c8fe64bd48877d2594e0951170e7a2af00309d6324605deb6b2352a2b",
+            "pixel_sha256": "f32b931fcf624ba460da14c51ac974f70abf41c0b69c1bd9c45b5bf02728d8ae",
+            "base_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+            "base_mse": 1005.0220131685649,
+            "coarse": {
+              "working_width": 501,
+              "working_height": 499,
+              "patch_count": 12,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 1135,
+              "procedural": 331,
+              "transform": 1135
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 337416,
+              "coarse_raw_bytes": 71326,
+              "mode_map_raw_bytes": 651,
+              "procedural_raw_bytes": 3991,
+              "transform_raw_bytes": 966261,
+              "raw_payload_bytes": 1042233
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 12,
+            "encode_seconds": 2.2199033999932,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_low_p3012.pbc"
+          }
+        ],
+        "selected": {
+          "bytes": 423996,
+          "bpp": 5.131818786991201,
+          "mse": 70.15750333853782,
+          "sse": 139115594,
+          "psnr": 29.67006235264615,
+          "score": 563111594,
+          "file_sha256": "ad1900e12bb39f74bf777dfbc89e830b6430879f2c828fc7ff399417aa8f1a23",
+          "pixel_sha256": "581971cb8593894bb6f9f58e321de4cb76fbf7792fe364f55d5d2400c9be47cf",
+          "base_sha256": "1f5ed38f867b1092e508d05278d4131e68a26ab904e32f113d8f1465a0a62e5e",
+          "base_mse": 1559.3689755025962,
+          "coarse": {
+            "working_width": 501,
+            "working_height": 499,
+            "patch_count": 3,
+            "color_space": "YCbCr",
+            "downsampled": true
+          },
+          "mode_counts": {
+            "skip": 879,
+            "procedural": 150,
+            "transform": 1572
+          },
+          "byte_accounting": {
+            "header_bytes": 32,
+            "xz_bytes": 423964,
+            "coarse_raw_bytes": 31562,
+            "mode_map_raw_bytes": 651,
+            "procedural_raw_bytes": 2292,
+            "transform_raw_bytes": 1318874,
+            "raw_payload_bytes": 1353383
+          },
+          "skip_exact": true,
+          "variant": "D",
+          "point": "low",
+          "coarse_patch_count": 3,
+          "encode_seconds": 2.123349800007418,
+          "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_low_p3003.pbc"
+        }
+      },
+      "intermediate": {
+        "candidates": [
+          {
+            "bytes": 737264,
+            "bpp": 8.923445613100785,
+            "mse": 2.5464102145136627,
+            "sse": 5049287,
+            "psnr": 44.071519931492375,
+            "score": 78775687,
+            "file_sha256": "448644b738b81f74c1ca159e1289a147c924e97b69e8fa7d31d253386848193a",
+            "pixel_sha256": "88787525aa6ae6eba7c60dc6a436f9134f410eaa7993cd20b8a715ce4a0bdf0a",
+            "base_sha256": "1f5ed38f867b1092e508d05278d4131e68a26ab904e32f113d8f1465a0a62e5e",
+            "base_mse": 1559.3689755025962,
+            "coarse": {
+              "working_width": 501,
+              "working_height": 499,
+              "patch_count": 3,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 225,
+              "procedural": 519,
+              "transform": 1857
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 737232,
+              "coarse_raw_bytes": 31562,
+              "mode_map_raw_bytes": 651,
+              "procedural_raw_bytes": 6693,
+              "transform_raw_bytes": 1893179,
+              "raw_payload_bytes": 1932089
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 3,
+            "encode_seconds": 3.791989299992565,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_intermediate_p3003.pbc"
+          },
+          {
+            "bytes": 772492,
+            "bpp": 9.349826315343556,
+            "mse": 3.120916595054526,
+            "sse": 6188478,
+            "psnr": 43.187981983517574,
+            "score": 83437678,
+            "file_sha256": "4f71f871ce304f674ccd0d6be0d24e8e14a33a29a032ab05d8fe393acd2a366c",
+            "pixel_sha256": "6fe1d6b71dc1385bf4574b7ade413906193bb990ccb043815a4aedc68bb79628",
+            "base_sha256": "4dd3f0782c47cf5e053abf87f3973648f2d0d35155d55f7bf0fadba69c50310b",
+            "base_mse": 1034.8872476932822,
+            "coarse": {
+              "working_width": 501,
+              "working_height": 499,
+              "patch_count": 6,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 223,
+              "procedural": 526,
+              "transform": 1852
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 772460,
+              "coarse_raw_bytes": 67302,
+              "mode_map_raw_bytes": 651,
+              "procedural_raw_bytes": 6562,
+              "transform_raw_bytes": 1968927,
+              "raw_payload_bytes": 2043446
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 6,
+            "encode_seconds": 3.631341800035443,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_intermediate_p3006.pbc"
+          },
+          {
+            "bytes": 774028,
+            "bpp": 9.368417230486196,
+            "mse": 3.1776853544094923,
+            "sse": 6301045,
+            "psnr": 43.109694685027755,
+            "score": 83703845,
+            "file_sha256": "66f16f663a665da8052c64814719192ba345862dcdb491a8465d57fe51f75692",
+            "pixel_sha256": "c5aa9759581067edbbc6a15399eadee3846afcc8e4dfa061a69f75f6a5f528c5",
+            "base_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+            "base_mse": 1005.0220131685649,
+            "coarse": {
+              "working_width": 501,
+              "working_height": 499,
+              "patch_count": 12,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 258,
+              "procedural": 498,
+              "transform": 1845
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 773996,
+              "coarse_raw_bytes": 71326,
+              "mode_map_raw_bytes": 651,
+              "procedural_raw_bytes": 6654,
+              "transform_raw_bytes": 1970952,
+              "raw_payload_bytes": 2049587
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 12,
+            "encode_seconds": 3.7938922999892384,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_intermediate_p3012.pbc"
+          }
+        ],
+        "selected": {
+          "bytes": 737264,
+          "bpp": 8.923445613100785,
+          "mse": 2.5464102145136627,
+          "sse": 5049287,
+          "psnr": 44.071519931492375,
+          "score": 78775687,
+          "file_sha256": "448644b738b81f74c1ca159e1289a147c924e97b69e8fa7d31d253386848193a",
+          "pixel_sha256": "88787525aa6ae6eba7c60dc6a436f9134f410eaa7993cd20b8a715ce4a0bdf0a",
+          "base_sha256": "1f5ed38f867b1092e508d05278d4131e68a26ab904e32f113d8f1465a0a62e5e",
+          "base_mse": 1559.3689755025962,
+          "coarse": {
+            "working_width": 501,
+            "working_height": 499,
+            "patch_count": 3,
+            "color_space": "YCbCr",
+            "downsampled": true
+          },
+          "mode_counts": {
+            "skip": 225,
+            "procedural": 519,
+            "transform": 1857
+          },
+          "byte_accounting": {
+            "header_bytes": 32,
+            "xz_bytes": 737232,
+            "coarse_raw_bytes": 31562,
+            "mode_map_raw_bytes": 651,
+            "procedural_raw_bytes": 6693,
+            "transform_raw_bytes": 1893179,
+            "raw_payload_bytes": 1932089
+          },
+          "skip_exact": true,
+          "variant": "D",
+          "point": "intermediate",
+          "coarse_patch_count": 3,
+          "encode_seconds": 3.791989299992565,
+          "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_intermediate_p3003.pbc"
+        }
+      }
+    },
+    "v1_control_sha256": "1634423203a45158747e794419ecc0c983d4308d9a9db101a1e4583386df2ddf",
+    "v1_control_exact": true
+  },
+  "cat.jpg": {
+    "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "points": {
+      "low": {
+        "candidates": [
+          {
+            "bytes": 978704,
+            "bpp": 0.9184120835397805,
+            "mse": 143.80178476695244,
+            "sse": 3677810024,
+            "psnr": 26.553160846289128,
+            "score": 4656514024,
+            "file_sha256": "4b72b783ce2127a7e9844f2c707a8cf0dc4809053b93c55dc1a96140d5d80a10",
+            "pixel_sha256": "cce8f72f76eb5e7985b1f055aff1697c739170ffb0665e7d8c7f7832c99a6b67",
+            "base_sha256": "a1a240c7825685bff35a6cac3f51e8ab4a29bd537c6a9edd171666d787b0f941",
+            "base_mse": 581.7170815316127,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 408,
+              "patch_count": 3,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 17927,
+              "procedural": 8148,
+              "transform": 7301
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 978672,
+              "coarse_raw_bytes": 6300,
+              "mode_map_raw_bytes": 8344,
+              "procedural_raw_bytes": 186366,
+              "transform_raw_bytes": 3742700,
+              "raw_payload_bytes": 3943714
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 3,
+            "encode_seconds": 13.544794699992053,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_low_p3003.pbc"
+          },
+          {
+            "bytes": 964064,
+            "bpp": 0.9046739636352716,
+            "mse": 146.12224119346476,
+            "sse": 3737156978,
+            "psnr": 26.483640361557747,
+            "score": 4701220978,
+            "file_sha256": "1ffdf8a9ca9a4a26e0ed1df4112c18e59a96b7963603d93843306486d234ce48",
+            "pixel_sha256": "c87d5d7dfa913ddc8e9aa3ea8229bc69d00e1fcd4acfd18578d2e9611d59491a",
+            "base_sha256": "12bcb2939f406605582790060faed00b658f76b92334551c531ace749d5e8017",
+            "base_mse": 461.2904628998819,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 408,
+              "patch_count": 6,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 18911,
+              "procedural": 7246,
+              "transform": 7219
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 964032,
+              "coarse_raw_bytes": 14309,
+              "mode_map_raw_bytes": 8344,
+              "procedural_raw_bytes": 160810,
+              "transform_raw_bytes": 3702330,
+              "raw_payload_bytes": 3885797
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 6,
+            "encode_seconds": 12.658754100033548,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_low_p3006.pbc"
+          },
+          {
+            "bytes": 962152,
+            "bpp": 0.9028797501614041,
+            "mse": 146.56874960118162,
+            "sse": 3748576677,
+            "psnr": 26.470389780287846,
+            "score": 4710728677,
+            "file_sha256": "d05533a445edb4f07d7c2c510fbe8f7144e38b115b5edd5779f0f78f327fac88",
+            "pixel_sha256": "062ab936a53f377c4fa3b5a9b70ac3cc1e00136f905af984a1255fac8d60d8d5",
+            "base_sha256": "6e97ce78614f8dbaf7dc6712d5697a8933829c939c2ea9686b5734fc6442783d",
+            "base_mse": 453.441459640832,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 408,
+              "patch_count": 13,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 18870,
+              "procedural": 7312,
+              "transform": 7194
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 962120,
+              "coarse_raw_bytes": 14881,
+              "mode_map_raw_bytes": 8344,
+              "procedural_raw_bytes": 161110,
+              "transform_raw_bytes": 3693654,
+              "raw_payload_bytes": 3877993
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 13,
+            "encode_seconds": 12.99268550000852,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_low_p3013.pbc"
+          }
+        ],
+        "selected": {
+          "bytes": 978704,
+          "bpp": 0.9184120835397805,
+          "mse": 143.80178476695244,
+          "sse": 3677810024,
+          "psnr": 26.553160846289128,
+          "score": 4656514024,
+          "file_sha256": "4b72b783ce2127a7e9844f2c707a8cf0dc4809053b93c55dc1a96140d5d80a10",
+          "pixel_sha256": "cce8f72f76eb5e7985b1f055aff1697c739170ffb0665e7d8c7f7832c99a6b67",
+          "base_sha256": "a1a240c7825685bff35a6cac3f51e8ab4a29bd537c6a9edd171666d787b0f941",
+          "base_mse": 581.7170815316127,
+          "coarse": {
+            "working_width": 612,
+            "working_height": 408,
+            "patch_count": 3,
+            "color_space": "YCbCr",
+            "downsampled": true
+          },
+          "mode_counts": {
+            "skip": 17927,
+            "procedural": 8148,
+            "transform": 7301
+          },
+          "byte_accounting": {
+            "header_bytes": 32,
+            "xz_bytes": 978672,
+            "coarse_raw_bytes": 6300,
+            "mode_map_raw_bytes": 8344,
+            "procedural_raw_bytes": 186366,
+            "transform_raw_bytes": 3742700,
+            "raw_payload_bytes": 3943714
+          },
+          "skip_exact": true,
+          "variant": "D",
+          "point": "low",
+          "coarse_patch_count": 3,
+          "encode_seconds": 13.544794699992053,
+          "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_low_p3003.pbc"
+        }
+      },
+      "intermediate": {
+        "candidates": [
+          {
+            "bytes": 6357192,
+            "bpp": 5.965564614206567,
+            "mse": 6.9087703757088015,
+            "sse": 176695616,
+            "psnr": 39.73679602432072,
+            "score": 812414816,
+            "file_sha256": "dc6e43c9153cc9410ea6ec97c4ca7cf805fa8ae0fd118a16360210992314ac4a",
+            "pixel_sha256": "51eb29a8ce932081908373da17369e52abfdfb08671eeb519baf0a641178405c",
+            "base_sha256": "a1a240c7825685bff35a6cac3f51e8ab4a29bd537c6a9edd171666d787b0f941",
+            "base_mse": 581.7170815316127,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 408,
+              "patch_count": 3,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 3692,
+              "procedural": 10153,
+              "transform": 19531
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 6357160,
+              "coarse_raw_bytes": 6300,
+              "mode_map_raw_bytes": 8344,
+              "procedural_raw_bytes": 230227,
+              "transform_raw_bytes": 22554248,
+              "raw_payload_bytes": 22799123
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 3,
+            "encode_seconds": 52.75238680001348,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_intermediate_p3003.pbc"
+          },
+          {
+            "bytes": 6375128,
+            "bpp": 5.982395687881927,
+            "mse": 6.758284669672037,
+            "sse": 172846861,
+            "psnr": 39.83243879871185,
+            "score": 810359661,
+            "file_sha256": "d67c2ab774e195b7e895cf6a20344e5dc0a996a9b35bf4d4938e9c749a67f6b8",
+            "pixel_sha256": "4983d4b88b9b42c5984f7d3b0f7a24fcb451c5665a06f6b9f1ba87fc2a5d3275",
+            "base_sha256": "12bcb2939f406605582790060faed00b658f76b92334551c531ace749d5e8017",
+            "base_mse": 461.2904628998819,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 408,
+              "patch_count": 6,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 3726,
+              "procedural": 10064,
+              "transform": 19586
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 6375096,
+              "coarse_raw_bytes": 14309,
+              "mode_map_raw_bytes": 8344,
+              "procedural_raw_bytes": 227498,
+              "transform_raw_bytes": 22614864,
+              "raw_payload_bytes": 22865019
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 6,
+            "encode_seconds": 52.75308609998319,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_intermediate_p3006.pbc"
+          },
+          {
+            "bytes": 6376384,
+            "bpp": 5.983574313469363,
+            "mse": 6.750124963089751,
+            "sse": 172638172,
+            "psnr": 39.83768547995705,
+            "score": 810276572,
+            "file_sha256": "c324e7b580b61a5ccd6b97e2e663bb9e014c042416d5667f2faa69d78707728a",
+            "pixel_sha256": "2ef752dd4c5401611d2322779b1ead1a6e3749f086bfec49496f867b596695cc",
+            "base_sha256": "6e97ce78614f8dbaf7dc6712d5697a8933829c939c2ea9686b5734fc6442783d",
+            "base_mse": 453.441459640832,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 408,
+              "patch_count": 13,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 3727,
+              "procedural": 10058,
+              "transform": 19591
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 6376352,
+              "coarse_raw_bytes": 14881,
+              "mode_map_raw_bytes": 8344,
+              "procedural_raw_bytes": 227456,
+              "transform_raw_bytes": 22620244,
+              "raw_payload_bytes": 22870929
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 13,
+            "encode_seconds": 52.261454300023615,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_intermediate_p3013.pbc"
+          }
+        ],
+        "selected": {
+          "bytes": 6376384,
+          "bpp": 5.983574313469363,
+          "mse": 6.750124963089751,
+          "sse": 172638172,
+          "psnr": 39.83768547995705,
+          "score": 810276572,
+          "file_sha256": "c324e7b580b61a5ccd6b97e2e663bb9e014c042416d5667f2faa69d78707728a",
+          "pixel_sha256": "2ef752dd4c5401611d2322779b1ead1a6e3749f086bfec49496f867b596695cc",
+          "base_sha256": "6e97ce78614f8dbaf7dc6712d5697a8933829c939c2ea9686b5734fc6442783d",
+          "base_mse": 453.441459640832,
+          "coarse": {
+            "working_width": 612,
+            "working_height": 408,
+            "patch_count": 13,
+            "color_space": "YCbCr",
+            "downsampled": true
+          },
+          "mode_counts": {
+            "skip": 3727,
+            "procedural": 10058,
+            "transform": 19591
+          },
+          "byte_accounting": {
+            "header_bytes": 32,
+            "xz_bytes": 6376352,
+            "coarse_raw_bytes": 14881,
+            "mode_map_raw_bytes": 8344,
+            "procedural_raw_bytes": 227456,
+            "transform_raw_bytes": 22620244,
+            "raw_payload_bytes": 22870929
+          },
+          "skip_exact": true,
+          "variant": "D",
+          "point": "intermediate",
+          "coarse_patch_count": 13,
+          "encode_seconds": 52.261454300023615,
+          "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_v2_intermediate_p3013.pbc"
+        }
+      }
+    },
+    "v1_control_sha256": "e273fd9158aff94da7467ccbb74e0a1904373c37646e9154e2219b837fa3158f",
+    "v1_control_exact": true
+  },
+  "coast.jpg": {
+    "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+    "points": {
+      "low": {
+        "candidates": [
+          {
+            "bytes": 182676,
+            "bpp": 0.12170610809082187,
+            "mse": 12.23205939865153,
+            "sse": 440635965,
+            "psnr": 37.2558077953265,
+            "score": 623311965,
+            "file_sha256": "736e4e2e8a4b2a5fdc2604889d84bbb47ca64568c4f711fc0c9bdbeef835fa92",
+            "pixel_sha256": "052653b28b834fa50dc381543697c4b1d14823bbab6c05fd4fe639240773a16f",
+            "base_sha256": "5f5cbd59ff4596b61c3c66b235feb754f90d71c0320438b14bd83479585dde3d",
+            "base_mse": 156.15020250928293,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 409,
+              "patch_count": 3,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 33855,
+              "procedural": 11523,
+              "transform": 1527
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 182644,
+              "coarse_raw_bytes": 2044,
+              "mode_map_raw_bytes": 11727,
+              "procedural_raw_bytes": 287841,
+              "transform_raw_bytes": 360678,
+              "raw_payload_bytes": 662294
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 3,
+            "encode_seconds": 7.610104600025807,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_low_p3003.pbc"
+          },
+          {
+            "bytes": 178448,
+            "bpp": 0.11888924421703444,
+            "mse": 12.929047076537682,
+            "sse": 465743580,
+            "psnr": 37.015138440812656,
+            "score": 644191580,
+            "file_sha256": "9d02ab200134e8bef8ec0b2159be54b9093b3c8fb6d2c38a2290f7252030b362",
+            "pixel_sha256": "548679e0d60671a4c26c4ff87aca7bf569de50b01623a674375bf2d827553e70",
+            "base_sha256": "8f3654d0762f8e7074bb65c360ca00eb764ada7b8ec6ed3afbda2458a76338a9",
+            "base_mse": 99.5252321847351,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 409,
+              "patch_count": 6,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 35149,
+              "procedural": 10272,
+              "transform": 1484
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 178416,
+              "coarse_raw_bytes": 5348,
+              "mode_map_raw_bytes": 11727,
+              "procedural_raw_bytes": 256350,
+              "transform_raw_bytes": 353135,
+              "raw_payload_bytes": 626564
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 6,
+            "encode_seconds": 7.315211300039664,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_low_p3006.pbc"
+          },
+          {
+            "bytes": 176064,
+            "bpp": 0.11730092740645987,
+            "mse": 13.191726017570977,
+            "sse": 475206074,
+            "psnr": 36.927787381141584,
+            "score": 651270074,
+            "file_sha256": "618ef019f989d2163150f01c3da816ed54d2474daee6d927ed6b85766b10177e",
+            "pixel_sha256": "191d43a4f551dbd0e0616fe557ca39c9b84de519b3fc1bf7e2149be88014ac12",
+            "base_sha256": "821bc1aa52dfb755cfe4b8438453aeb97f062ea0162d67dc9e065d66a0b5d3ec",
+            "base_mse": 89.35681991303343,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 409,
+              "patch_count": 13,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 36055,
+              "procedural": 9368,
+              "transform": 1482
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 176032,
+              "coarse_raw_bytes": 7596,
+              "mode_map_raw_bytes": 11727,
+              "procedural_raw_bytes": 233786,
+              "transform_raw_bytes": 351854,
+              "raw_payload_bytes": 604967
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "low",
+            "coarse_patch_count": 13,
+            "encode_seconds": 7.66957079997519,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_low_p3013.pbc"
+          }
+        ],
+        "selected": {
+          "bytes": 182676,
+          "bpp": 0.12170610809082187,
+          "mse": 12.23205939865153,
+          "sse": 440635965,
+          "psnr": 37.2558077953265,
+          "score": 623311965,
+          "file_sha256": "736e4e2e8a4b2a5fdc2604889d84bbb47ca64568c4f711fc0c9bdbeef835fa92",
+          "pixel_sha256": "052653b28b834fa50dc381543697c4b1d14823bbab6c05fd4fe639240773a16f",
+          "base_sha256": "5f5cbd59ff4596b61c3c66b235feb754f90d71c0320438b14bd83479585dde3d",
+          "base_mse": 156.15020250928293,
+          "coarse": {
+            "working_width": 612,
+            "working_height": 409,
+            "patch_count": 3,
+            "color_space": "YCbCr",
+            "downsampled": true
+          },
+          "mode_counts": {
+            "skip": 33855,
+            "procedural": 11523,
+            "transform": 1527
+          },
+          "byte_accounting": {
+            "header_bytes": 32,
+            "xz_bytes": 182644,
+            "coarse_raw_bytes": 2044,
+            "mode_map_raw_bytes": 11727,
+            "procedural_raw_bytes": 287841,
+            "transform_raw_bytes": 360678,
+            "raw_payload_bytes": 662294
+          },
+          "skip_exact": true,
+          "variant": "D",
+          "point": "low",
+          "coarse_patch_count": 3,
+          "encode_seconds": 7.610104600025807,
+          "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_low_p3003.pbc"
+        }
+      },
+      "intermediate": {
+        "candidates": [
+          {
+            "bytes": 735768,
+            "bpp": 0.4901982731052127,
+            "mse": 6.122431366147888,
+            "sse": 220548590,
+            "psnr": 40.26156435584073,
+            "score": 294125390,
+            "file_sha256": "5ee637aa6a239372173c3ab57e2c1ccd10e876512c65f89b3e4863606b79ff7f",
+            "pixel_sha256": "add1bb40974eb36e5b7974a0bf3a7448a7179f19fb5a576e7b7773ff7a781d42",
+            "base_sha256": "5f5cbd59ff4596b61c3c66b235feb754f90d71c0320438b14bd83479585dde3d",
+            "base_mse": 156.15020250928293,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 409,
+              "patch_count": 3,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 16577,
+              "procedural": 28211,
+              "transform": 2117
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 735736,
+              "coarse_raw_bytes": 2044,
+              "mode_map_raw_bytes": 11727,
+              "procedural_raw_bytes": 625265,
+              "transform_raw_bytes": 1725596,
+              "raw_payload_bytes": 2364636
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 3,
+            "encode_seconds": 10.402695700002369,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_intermediate_p3003.pbc"
+          },
+          {
+            "bytes": 732124,
+            "bpp": 0.48777049355079416,
+            "mse": 6.286779100264719,
+            "sse": 226468895,
+            "psnr": 40.14652160136224,
+            "score": 299681295,
+            "file_sha256": "363d509317a3ae3d56a4652732975b2e32a373cc0e056aeea6acbc60df2a786c",
+            "pixel_sha256": "b4f116f43d4c1498f77c3a0476c95bc2e02ba0ce2c4ba8fba6069b5a4c41f13f",
+            "base_sha256": "8f3654d0762f8e7074bb65c360ca00eb764ada7b8ec6ed3afbda2458a76338a9",
+            "base_mse": 99.5252321847351,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 409,
+              "patch_count": 6,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 16725,
+              "procedural": 28086,
+              "transform": 2094
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 732092,
+              "coarse_raw_bytes": 5348,
+              "mode_map_raw_bytes": 11727,
+              "procedural_raw_bytes": 621420,
+              "transform_raw_bytes": 1711102,
+              "raw_payload_bytes": 2349601
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 6,
+            "encode_seconds": 10.437072900007479,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_intermediate_p3006.pbc"
+          },
+          {
+            "bytes": 730740,
+            "bpp": 0.4868484170131116,
+            "mse": 6.340968141500551,
+            "sse": 228420949,
+            "psnr": 40.10924789672003,
+            "score": 301494949,
+            "file_sha256": "c3a17b25abc09f7916aef4613f387d7415416575f957152124ac4aff407e8253",
+            "pixel_sha256": "d90579b75a97040b04e73795ccfd943ca1c319547313b2ed6f8db30a44f8fe31",
+            "base_sha256": "821bc1aa52dfb755cfe4b8438453aeb97f062ea0162d67dc9e065d66a0b5d3ec",
+            "base_mse": 89.35681991303343,
+            "coarse": {
+              "working_width": 612,
+              "working_height": 409,
+              "patch_count": 13,
+              "color_space": "YCbCr",
+              "downsampled": true
+            },
+            "mode_counts": {
+              "skip": 16976,
+              "procedural": 27844,
+              "transform": 2085
+            },
+            "byte_accounting": {
+              "header_bytes": 32,
+              "xz_bytes": 730708,
+              "coarse_raw_bytes": 7596,
+              "mode_map_raw_bytes": 11727,
+              "procedural_raw_bytes": 615316,
+              "transform_raw_bytes": 1711657,
+              "raw_payload_bytes": 2346300
+            },
+            "skip_exact": true,
+            "variant": "D",
+            "point": "intermediate",
+            "coarse_patch_count": 13,
+            "encode_seconds": 10.007854400028009,
+            "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_intermediate_p3013.pbc"
+          }
+        ],
+        "selected": {
+          "bytes": 735768,
+          "bpp": 0.4901982731052127,
+          "mse": 6.122431366147888,
+          "sse": 220548590,
+          "psnr": 40.26156435584073,
+          "score": 294125390,
+          "file_sha256": "5ee637aa6a239372173c3ab57e2c1ccd10e876512c65f89b3e4863606b79ff7f",
+          "pixel_sha256": "add1bb40974eb36e5b7974a0bf3a7448a7179f19fb5a576e7b7773ff7a781d42",
+          "base_sha256": "5f5cbd59ff4596b61c3c66b235feb754f90d71c0320438b14bd83479585dde3d",
+          "base_mse": 156.15020250928293,
+          "coarse": {
+            "working_width": 612,
+            "working_height": 409,
+            "patch_count": 3,
+            "color_space": "YCbCr",
+            "downsampled": true
+          },
+          "mode_counts": {
+            "skip": 16577,
+            "procedural": 28211,
+            "transform": 2117
+          },
+          "byte_accounting": {
+            "header_bytes": 32,
+            "xz_bytes": 735736,
+            "coarse_raw_bytes": 2044,
+            "mode_map_raw_bytes": 11727,
+            "procedural_raw_bytes": 625265,
+            "transform_raw_bytes": 1725596,
+            "raw_payload_bytes": 2364636
+          },
+          "skip_exact": true,
+          "variant": "D",
+          "point": "intermediate",
+          "coarse_patch_count": 3,
+          "encode_seconds": 10.402695700002369,
+          "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_intermediate_p3003.pbc"
+        }
+      }
+    },
+    "v1_control_sha256": "77e3fea432bc9c98b7697278011a9f3eab1001f2606300c932457955291b60e2",
+    "v1_control_exact": true
+  }
+}

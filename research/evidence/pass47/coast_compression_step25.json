@@ -1,0 +1,491 @@
+{
+  "image": "coast.jpg",
+  "preset": "compression",
+  "step": 25,
+  "channel": 0,
+  "channel_bits": 2,
+  "config": {
+    "patch_count": 50,
+    "search_depth": 200,
+    "proposal_depth": 50,
+    "exact_depth": 10,
+    "min_patch_size": 16,
+    "max_patch_size": 400,
+    "min_cell_size": 1,
+    "max_cell_size": 64,
+    "cell_sizes_per_candidate": 3,
+    "top_k": 20,
+    "search_q_start": 0.5,
+    "search_q_end": 0.2,
+    "q_init": 0.7,
+    "q_start": 0.8,
+    "q_end": 0.8,
+    "color_space": "YCbCr",
+    "channel_cycle": "Sum",
+    "auto_downsample_init": true,
+    "init_search_depth": 3,
+    "downsample_init_cell_size": 12,
+    "downsample_palette_bitcount": 6,
+    "downsample_rate": -1,
+    "auto_downsample_max_pixels": 250000,
+    "warmup_ratio": -1,
+    "warm_downsample_max_pixels": 750000,
+    "patch_palette_bitcount": 2,
+    "quality_target_mae": 0.0,
+    "mask_size": 4,
+    "anchor_block_size": 8,
+    "positive_bias": true,
+    "learned_filler_enabled": true,
+    "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+    "learned_filler_top_k": 1,
+    "learned_filler_q": 0.4,
+    "learned_filler_candidates": 1,
+    "use_lzma": true,
+    "random_seed": 2003,
+    "compute_final_mse": true,
+    "debug_mode": false,
+    "debug_print": false,
+    "debug_path": null,
+    "reuse_selected_delta": true,
+    "residual_projection_mode": "bicubic",
+    "cell_selection_mode": "gradient",
+    "representability_threshold": 0.0
+  },
+  "rng_before": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 327704661041896768423220830685859864940,
+      "inc": 297406999998297658746278787271095723267
+    },
+    "has_uint32": 0,
+    "uinteger": 1258287494
+  },
+  "policy_bits_before": 0.0,
+  "policy_pixels": null,
+  "canonical_builds": [
+    {
+      "action_index": 11,
+      "seconds": 0.0003081000177189708,
+      "patch_signature": {
+        "channel": 0,
+        "x": 1,
+        "y": 271,
+        "w": 248,
+        "h": 32,
+        "cell_size": 4,
+        "bitcount": 2,
+        "max_bitcount": 2,
+        "mask": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "negative": 15,
+        "positive": 23,
+        "index_shape": [
+          8,
+          62
+        ],
+        "index_sha256": "40dec1f42d0bbe53914f028d956bf6cee655e256e15b4351a1b27ecbf9697076"
+      },
+      "reduction": 120543.0,
+      "bits": 1109.0
+    }
+  ],
+  "proposals": [
+    [
+      0,
+      1,
+      271,
+      248,
+      32
+    ],
+    [
+      0,
+      9,
+      284,
+      327,
+      91
+    ],
+    [
+      0,
+      7,
+      282,
+      292,
+      28
+    ],
+    [
+      0,
+      7,
+      260,
+      372,
+      41
+    ],
+    [
+      0,
+      17,
+      281,
+      257,
+      29
+    ],
+    [
+      0,
+      0,
+      285,
+      216,
+      22
+    ],
+    [
+      0,
+      11,
+      281,
+      156,
+      22
+    ],
+    [
+      0,
+      232,
+      275,
+      379,
+      56
+    ],
+    [
+      0,
+      37,
+      264,
+      262,
+      43
+    ],
+    [
+      0,
+      441,
+      296,
+      171,
+      19
+    ],
+    [
+      0,
+      358,
+      125,
+      39,
+      59
+    ],
+    [
+      0,
+      62,
+      280,
+      105,
+      17
+    ],
+    [
+      0,
+      25,
+      275,
+      103,
+      125
+    ],
+    [
+      0,
+      29,
+      281,
+      236,
+      56
+    ],
+    [
+      0,
+      8,
+      258,
+      128,
+      52
+    ],
+    [
+      0,
+      3,
+      280,
+      35,
+      26
+    ],
+    [
+      0,
+      6,
+      291,
+      199,
+      19
+    ],
+    [
+      0,
+      11,
+      276,
+      111,
+      21
+    ],
+    [
+      0,
+      363,
+      127,
+      36,
+      67
+    ],
+    [
+      0,
+      361,
+      101,
+      42,
+      67
+    ],
+    [
+      0,
+      21,
+      274,
+      24,
+      28
+    ],
+    [
+      0,
+      323,
+      166,
+      50,
+      233
+    ],
+    [
+      0,
+      8,
+      273,
+      88,
+      69
+    ],
+    [
+      0,
+      16,
+      249,
+      126,
+      136
+    ],
+    [
+      0,
+      341,
+      152,
+      31,
+      92
+    ],
+    [
+      0,
+      3,
+      231,
+      43,
+      173
+    ],
+    [
+      0,
+      355,
+      163,
+      16,
+      27
+    ],
+    [
+      0,
+      332,
+      176,
+      31,
+      39
+    ],
+    [
+      0,
+      344,
+      157,
+      43,
+      28
+    ],
+    [
+      0,
+      24,
+      282,
+      24,
+      34
+    ],
+    [
+      0,
+      84,
+      258,
+      102,
+      37
+    ],
+    [
+      0,
+      355,
+      159,
+      30,
+      21
+    ],
+    [
+      0,
+      104,
+      267,
+      66,
+      72
+    ],
+    [
+      0,
+      341,
+      174,
+      24,
+      45
+    ],
+    [
+      0,
+      335,
+      191,
+      22,
+      53
+    ],
+    [
+      0,
+      352,
+      146,
+      28,
+      24
+    ],
+    [
+      0,
+      367,
+      114,
+      29,
+      35
+    ],
+    [
+      0,
+      50,
+      283,
+      149,
+      27
+    ],
+    [
+      0,
+      99,
+      282,
+      33,
+      16
+    ],
+    [
+      0,
+      359,
+      121,
+      24,
+      94
+    ],
+    [
+      0,
+      347,
+      160,
+      26,
+      18
+    ],
+    [
+      0,
+      112,
+      268,
+      27,
+      71
+    ],
+    [
+      0,
+      8,
+      246,
+      42,
+      80
+    ],
+    [
+      0,
+      332,
+      163,
+      22,
+      92
+    ],
+    [
+      0,
+      84,
+      271,
+      19,
+      110
+    ],
+    [
+      0,
+      340,
+      179,
+      28,
+      27
+    ],
+    [
+      0,
+      0,
+      258,
+      20,
+      46
+    ],
+    [
+      0,
+      383,
+      95,
+      31,
+      76
+    ],
+    [
+      0,
+      335,
+      173,
+      28,
+      18
+    ],
+    [
+      0,
+      585,
+      280,
+      26,
+      28
+    ]
+  ],
+  "rng_after_proposals": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 43763279363150504982177668436012320612,
+      "inc": 297406999998297658746278787271095723267
+    },
+    "has_uint32": 0,
+    "uinteger": 1782197737
+  },
+  "rng_after_select": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 43763279363150504982177668436012320612,
+      "inc": 297406999998297658746278787271095723267
+    },
+    "has_uint32": 0,
+    "uinteger": 1782197737
+  },
+  "canonical_patch": {
+    "channel": 0,
+    "x": 1,
+    "y": 271,
+    "w": 248,
+    "h": 32,
+    "cell_size": 4,
+    "bitcount": 2,
+    "max_bitcount": 2,
+    "mask": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "negative": 15,
+    "positive": 23,
+    "index_shape": [
+      8,
+      62
+    ],
+    "index_sha256": "40dec1f42d0bbe53914f028d956bf6cee655e256e15b4351a1b27ecbf9697076"
+  },
+  "state_npz": "outputs\\states\\coast_compression_step25.npz",
+  "target_canvas_sha256": "ff3c2c7c51160392342792d923dc6479291d96f0c2730b2c51fc578c588236ce"
+}

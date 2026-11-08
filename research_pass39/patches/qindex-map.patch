@@ -1,0 +1,120 @@
+diff --git a/av1/av1_cx_iface.c b/av1/av1_cx_iface.c
+index 47ce04b..ba7683f 100644
+--- a/av1/av1_cx_iface.c
++++ b/av1/av1_cx_iface.c
+@@ -1662,6 +1662,10 @@ static aom_codec_err_t update_encoder_cfg(aom_codec_alg_priv_t *ctx) {
+ 
+ static aom_codec_err_t update_extra_cfg(aom_codec_alg_priv_t *ctx,
+                                         const struct av1_extracfg *extra_cfg) {
++#ifdef PBC_DUMP_QMAP
++  fprintf(stderr, "PBC_EXTRA_CFG,%d,%d,%d\n", extra_cfg->aq_mode,
++          extra_cfg->deltaq_mode, ctx->ppi->cpi->rc.use_external_qp_one_pass);
++#endif
+   const aom_codec_err_t res = validate_config(ctx, &ctx->cfg, extra_cfg);
+   if (res == AOM_CODEC_OK) {
+     ctx->extra_cfg = *extra_cfg;
+@@ -2299,6 +2303,10 @@ static aom_codec_err_t ctrl_set_aq_mode(aom_codec_alg_priv_t *ctx,
+ 
+   // Skip AQ mode if using fixed QP for current frame.
+   if (ctx->ppi->cpi->rc.use_external_qp_one_pass) extra_cfg.aq_mode = 0;
++#ifdef PBC_DUMP_QMAP
++  fprintf(stderr, "PBC_AQ_CTRL,%d,%d\n", extra_cfg.aq_mode,
++          ctx->ppi->cpi->rc.use_external_qp_one_pass);
++#endif
+   return update_extra_cfg(ctx, &extra_cfg);
+ }
+ 
+diff --git a/av1/encoder/aq_variance.c b/av1/encoder/aq_variance.c
+index c9a9524..8a1792a 100644
+--- a/av1/encoder/aq_variance.c
++++ b/av1/encoder/aq_variance.c
+@@ -10,6 +10,7 @@
+  */
+ 
+ #include <math.h>
++#include <stdio.h>
+ #include <stdlib.h>
+ 
+ #include "aom_dsp/aom_dsp_common.h"
+@@ -52,6 +53,10 @@ void av1_vaq_frame_setup(AV1_COMP *cpi) {
+                          cm->height != cm->prev_frame->height);
+   int avg_energy = (int)(cpi->twopass_frame.mb_av_energy - 2);
+   double avg_ratio;
++#ifdef PBC_DUMP_QMAP
++  fprintf(stderr, "PBC_VAQ_CALL,%d,%d,%d\n", base_qindex, cpi->vaq_refresh,
++          frame_is_intra_only(cm));
++#endif
+   if (avg_energy > 7) avg_energy = 7;
+   if (avg_energy < 0) avg_energy = 0;
+   avg_ratio = rate_ratio[avg_energy];
+diff --git a/av1/encoder/encodeframe.c b/av1/encoder/encodeframe.c
+index 215b571..0c8625d 100644
+--- a/av1/encoder/encodeframe.c
++++ b/av1/encoder/encodeframe.c
+@@ -1263,6 +1263,29 @@ static inline void encode_sb_row(AV1_COMP *cpi, ThreadData *td,
+     } else {
+       encode_rd_sb(cpi, td, tile_data, tp, mi_row, mi_col, seg_skip);
+     }
++#ifdef PBC_DUMP_QMAP
++    {
++      const int map_step = 4;
++      for (int r = 0; r < cm->seq_params->mib_size; r += map_step) {
++        const int y = mi_row + r;
++        if (y >= cm->mi_params.mi_rows) break;
++        for (int c = 0; c < cm->seq_params->mib_size; c += map_step) {
++          const int map_col = mi_col + c;
++          if (map_col >= cm->mi_params.mi_cols) break;
++          MB_MODE_INFO **mi = cm->mi_params.mi_grid_base +
++                              get_mi_grid_idx(&cm->mi_params, y, map_col);
++          if (mi[0] != NULL) {
++            const int qindex = cm->delta_q_info.delta_q_present_flag
++                                   ? mi[0]->current_qindex
++                                   : av1_get_qindex(&cm->seg, mi[0]->segment_id,
++                                                    cm->quant_params.base_qindex);
++            fprintf(stderr, "PBC_QMAP,%d,%d,%d,%d\n", y, map_col, qindex,
++                    mi[0]->segment_id);
++          }
++        }
++      }
++    }
++#endif
+ 
+     // Update the top-right context in row_mt coding
+     if (update_cdf && (tile_info->mi_row_end > (mi_row + mib_size))) {
+diff --git a/av1/encoder/encoder.c b/av1/encoder/encoder.c
+index 87f2515..ad58d32 100644
+--- a/av1/encoder/encoder.c
++++ b/av1/encoder/encoder.c
+@@ -2478,6 +2478,9 @@ static void update_motion_stat(AV1_COMP *const cpi) {
+ static int encode_without_recode(AV1_COMP *cpi) {
+   AV1_COMMON *const cm = &cpi->common;
+   const QuantizationCfg *const q_cfg = &cpi->oxcf.q_cfg;
++#ifdef PBC_DUMP_QMAP
++  fprintf(stderr, "PBC_NO_RECODE_AQ,%d\n", q_cfg->aq_mode);
++#endif
+   SVC *const svc = &cpi->svc;
+   const int resize_pending = is_frame_resize_pending(cpi);
+   int top_index = 0, bottom_index = 0, q = 0;
+@@ -2978,6 +2981,11 @@ static int encode_with_recode_loop(AV1_COMP *cpi, size_t *size, uint8_t *dest,
+     } else if (q_cfg->aq_mode == COMPLEXITY_AQ) {
+       av1_setup_in_frame_q_adj(cpi);
+     }
++#ifdef PBC_DUMP_QMAP
++    fprintf(stderr, "PBC_AQSTATE,%d,%d,%d,%d,%d\n", q_cfg->aq_mode,
++            cpi->vaq_refresh, cm->seg.enabled, cm->quant_params.base_qindex,
++            q_cfg->deltaq_mode);
++#endif
+ 
+     if (cm->seg.enabled) {
+       if (!cm->seg.update_data && cm->prev_frame) {
+@@ -3190,6 +3198,10 @@ static int encode_with_recode_loop_and_filter(AV1_COMP *cpi, size_t *size,
+ 
+   cpi->do_update_vbr_bits_off_target_fast = 0;
+   int err;
++#ifdef PBC_DUMP_QMAP
++  fprintf(stderr, "PBC_RECODE_SWITCH,%d,%d\n", cpi->oxcf.q_cfg.aq_mode,
++          cpi->sf.hl_sf.recode_loop);
++#endif
+ #if CONFIG_REALTIME_ONLY
+   err = encode_without_recode(cpi);
+ #else

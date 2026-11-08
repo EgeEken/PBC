@@ -1,0 +1,801 @@
+{
+  "pass": 46,
+  "source_revision": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+  "canonical_python_dir": "research_pass45\\outputs\\published_release_python",
+  "canonical_model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "ssimulacra2": {
+    "path": "LOCAL_EXTERNAL_PATH/ssimulacra2.exe",
+    "sha256": "08a44e2d4cd44098695dbe47cdec1f0ba7c68bf9f0389b5785133d81e9b25fed",
+    "paired_cjxl_version": "v0.11.2",
+    "source_input": "EXIF-transposed RGB PNG",
+    "score_semantics": "higher is better, 100 is identical"
+  },
+  "runtime": {
+    "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "pillow": "11.3.0",
+    "threads": 1
+  },
+  "input_hashes": {
+    "coast.jpg": {
+      "source_file_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "dimensions": [
+        4240,
+        2832
+      ]
+    },
+    "googlewiki.png": {
+      "source_file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "dimensions": [
+        814,
+        812
+      ]
+    },
+    "mario64.png": {
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "dimensions": [
+        1152,
+        864
+      ]
+    }
+  },
+  "rows": [
+    {
+      "image": "coast.jpg",
+      "codec": "canonical_pbc31",
+      "preset": "compression",
+      "dimensions": [
+        4240,
+        2832
+      ],
+      "completed_bytes": 6461,
+      "bpp": 0.004304578403155314,
+      "rgb_mse": 73.13358281255552,
+      "rgb_psnr": 29.489635108457165,
+      "ssimulacra2": -45.34859335,
+      "stream_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+      "decoded_rgb_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+      "encode_samples_seconds": [
+        0.4725647000595927,
+        0.6453721999423578,
+        0.5057816000189632
+      ],
+      "decode_samples_seconds": [
+        0.11323090002406389,
+        0.10296799999196082,
+        0.12993759999517351
+      ],
+      "encode_median_seconds": 0.5057816000189632,
+      "decode_median_seconds": 0.11323090002406389,
+      "source_file_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "canonical_stream_repeated": true,
+      "frozen_pass44_exact_match": true
+    },
+    {
+      "image": "coast.jpg",
+      "codec": "canonical_pbc31",
+      "preset": "balanced",
+      "dimensions": [
+        4240,
+        2832
+      ],
+      "completed_bytes": 11729,
+      "bpp": 0.007814332160750453,
+      "rgb_mse": 48.220032040605126,
+      "rgb_psnr": 31.29852866252162,
+      "ssimulacra2": -31.47029064,
+      "stream_sha256": "13af78e41e489e51796b36381014a52b9eb914be7547e3016b6c4fb8b77a96e6",
+      "decoded_rgb_sha256": "b5fe5909b6daa0358eb443b38102df7a6a26ca955f59ffcf3af39f8ed25131d4",
+      "encode_samples_seconds": [
+        0.5637855000095442,
+        0.48639099998399615,
+        0.5530159999616444
+      ],
+      "decode_samples_seconds": [
+        0.1309128999710083,
+        0.16444369999226183,
+        0.10634729999583215
+      ],
+      "encode_median_seconds": 0.5530159999616444,
+      "decode_median_seconds": 0.1309128999710083,
+      "source_file_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "canonical_stream_repeated": true,
+      "frozen_pass44_exact_match": true
+    },
+    {
+      "image": "coast.jpg",
+      "codec": "avif_pillow_11_3_quality0",
+      "preset": "quality=0",
+      "dimensions": [
+        4240,
+        2832
+      ],
+      "completed_bytes": 7647,
+      "bpp": 0.005094739366805245,
+      "rgb_mse": 72.37818490610454,
+      "rgb_psnr": 29.534726731588293,
+      "ssimulacra2": -18.89978762,
+      "stream_sha256": "d457975ff58666fd1cec0661932e96b2ad19079a8ba9b5b0fcb536ce3328a68a",
+      "decoded_rgb_sha256": "3aca03ea1b3cd8033f5b1cd7d340ded1cc8cc33dce433da004a57d8ecbf0a592",
+      "encode_samples_seconds": [
+        0.36397890001535416,
+        0.24920510000083596,
+        0.25696699996478856
+      ],
+      "decode_samples_seconds": [
+        0.18780730001162738,
+        0.19495369994547218,
+        0.19458430004306138
+      ],
+      "encode_median_seconds": 0.25696699996478856,
+      "decode_median_seconds": 0.19458430004306138,
+      "source_file_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "settings": {
+        "pillow": "11.3.0",
+        "quality": 0,
+        "frontend_defaults": "Pillow plugin defaults"
+      }
+    },
+    {
+      "image": "coast.jpg",
+      "codec": "avif_pinned_libaom_q0",
+      "preset": "qcolor=0",
+      "dimensions": [
+        4240,
+        2832
+      ],
+      "completed_bytes": 6747,
+      "bpp": 0.00449512312120243,
+      "rgb_mse": 88.53728771919305,
+      "rgb_psnr": 28.659541473433347,
+      "ssimulacra2": -26.67681564,
+      "stream_sha256": "47b86dde4f5244bb9c57131fa7d68b2ba34cb4ef1c3448032756fd5be732946c",
+      "decoded_rgb_sha256": "9813bd62eea5e4b870590829830c80319a85244a4e57f760da142d607b7da041",
+      "encode_samples_seconds": [
+        0.40529109991621226,
+        0.37309150001965463,
+        0.4175553999375552
+      ],
+      "decode_samples_seconds": [
+        0.5326464000390843,
+        0.5117138000205159,
+        0.530761000001803
+      ],
+      "encode_median_seconds": 0.40529109991621226,
+      "decode_median_seconds": 0.530761000001803,
+      "source_file_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch, input/output I/O, and PNG output included; not compared as codec-call timing"
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "codec": "canonical_pbc31",
+      "preset": "compression",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 28974,
+      "bpp": 0.3506856610304886,
+      "rgb_mse": 1005.0220131685649,
+      "rgb_psnr": 18.10904786581117,
+      "ssimulacra2": -25.69240641,
+      "stream_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+      "decoded_rgb_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+      "encode_samples_seconds": [
+        0.1683499999344349,
+        0.22745909995865077,
+        0.20294810004997998
+      ],
+      "decode_samples_seconds": [
+        0.021453300025314093,
+        0.018058199901133776,
+        0.01756450009997934
+      ],
+      "encode_median_seconds": 0.20294810004997998,
+      "decode_median_seconds": 0.018058199901133776,
+      "source_file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "canonical_stream_repeated": true,
+      "frozen_pass44_exact_match": true
+    },
+    {
+      "image": "googlewiki.png",
+      "codec": "canonical_pbc31",
+      "preset": "balanced",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 53890,
+      "bpp": 0.6522554798416867,
+      "rgb_mse": 845.4413844543155,
+      "rgb_psnr": 18.859968580890722,
+      "ssimulacra2": -14.10670008,
+      "stream_sha256": "c92bb171c4e266d05e7edad068b9de0a5ddbd3365880dba08ba91b614c83f4e2",
+      "decoded_rgb_sha256": "7dec7f981b971a6683af19e08030d3a56cf41ae4f01339ed75ea695d40e137b6",
+      "encode_samples_seconds": [
+        0.23705679993145168,
+        0.2376261999597773,
+        0.18954160006251186
+      ],
+      "decode_samples_seconds": [
+        0.039676800020970404,
+        0.03149309998843819,
+        0.028007499990053475
+      ],
+      "encode_median_seconds": 0.23705679993145168,
+      "decode_median_seconds": 0.03149309998843819,
+      "source_file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "canonical_stream_repeated": true,
+      "frozen_pass44_exact_match": true
+    },
+    {
+      "image": "googlewiki.png",
+      "codec": "avif_pillow_11_3_quality0",
+      "preset": "quality=0",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 8299,
+      "bpp": 0.100446617687997,
+      "rgb_mse": 1061.6601181902906,
+      "rgb_psnr": 17.870948577004352,
+      "ssimulacra2": -42.49962604,
+      "stream_sha256": "99f11bcffc5a303c7b905cb6d634e872fd12c32fd9f312276bc00cc954bb213d",
+      "decoded_rgb_sha256": "9fdf5abd577dfc4d23f8ffce7e53e00eedd513bcb1ead3c311ec8329961ae61d",
+      "encode_samples_seconds": [
+        0.15156700008083135,
+        0.16585230000782758,
+        0.1420249999500811
+      ],
+      "decode_samples_seconds": [
+        0.012012599967420101,
+        0.012737900018692017,
+        0.01568850001785904
+      ],
+      "encode_median_seconds": 0.15156700008083135,
+      "decode_median_seconds": 0.012737900018692017,
+      "source_file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "settings": {
+        "pillow": "11.3.0",
+        "quality": 0,
+        "frontend_defaults": "Pillow plugin defaults"
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "codec": "avif_pinned_libaom_q0",
+      "preset": "qcolor=0",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 5218,
+      "bpp": 0.06315585625930453,
+      "rgb_mse": 1390.6085861947931,
+      "rgb_psnr": 16.698754542955843,
+      "ssimulacra2": -55.96276161,
+      "stream_sha256": "aa4faa5953872adc1c03493d16d1b1ca1a3789c048001b82acbf7148ae0d038b",
+      "decoded_rgb_sha256": "c9a1c45902010472082170703a5a16d3293f4ed36b8ffc58bda5422109c5d30e",
+      "encode_samples_seconds": [
+        0.05901490000542253,
+        0.05353279993869364,
+        0.05299959995318204
+      ],
+      "decode_samples_seconds": [
+        0.07749289995990694,
+        0.0775497000431642,
+        0.07746980001684278
+      ],
+      "encode_median_seconds": 0.05353279993869364,
+      "decode_median_seconds": 0.07749289995990694,
+      "source_file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch, input/output I/O, and PNG output included; not compared as codec-call timing"
+      }
+    },
+    {
+      "image": "mario64.png",
+      "codec": "canonical_pbc31",
+      "preset": "compression",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 14099,
+      "bpp": 0.11332143775720165,
+      "rgb_mse": 414.2361328794796,
+      "rgb_psnr": 21.958323821343516,
+      "ssimulacra2": -50.69367301,
+      "stream_sha256": "0b9356baa7991eb4f14b743b70f31483cbb59636472ec9483618865fe29d1fa7",
+      "decoded_rgb_sha256": "7253b304018fe5ec21209e1957f2c768d8fa464fb171d0b6528cf57e0436610f",
+      "encode_samples_seconds": [
+        0.1931293000234291,
+        0.1990732999984175,
+        0.20267949998378754
+      ],
+      "decode_samples_seconds": [
+        0.037901800009422004,
+        0.022978599998168647,
+        0.02415760001167655
+      ],
+      "encode_median_seconds": 0.1990732999984175,
+      "decode_median_seconds": 0.02415760001167655,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "canonical_stream_repeated": true
+    },
+    {
+      "image": "mario64.png",
+      "codec": "canonical_pbc31",
+      "preset": "balanced",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 38900,
+      "bpp": 0.3126607510288066,
+      "rgb_mse": 185.71151419431584,
+      "rgb_psnr": 25.44241529847389,
+      "ssimulacra2": -22.90784528,
+      "stream_sha256": "570ce9dd709763c43f438b087d76e50ca2c157afaa2ddcae5954107093fc9f80",
+      "decoded_rgb_sha256": "f4b7ac48071de9b52e2dee827509bfc2ea5d660b1eaa3fd4097151a470c79dea",
+      "encode_samples_seconds": [
+        0.33965690003242344,
+        0.3425239999778569,
+        0.34338360000401735
+      ],
+      "decode_samples_seconds": [
+        0.034846700029447675,
+        0.024914899957366288,
+        0.04087739996612072
+      ],
+      "encode_median_seconds": 0.3425239999778569,
+      "decode_median_seconds": 0.034846700029447675,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "canonical_stream_repeated": true
+    },
+    {
+      "image": "mario64.png",
+      "codec": "avif_pillow_11_3_quality0",
+      "preset": "quality=0",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 4425,
+      "bpp": 0.03556616512345679,
+      "rgb_mse": 418.1904859503601,
+      "rgb_psnr": 21.917062126977353,
+      "ssimulacra2": -55.0695702,
+      "stream_sha256": "a74fb98a11b78550a7371e892c854c554642036bd3bc8e23aa31c420c6025d68",
+      "decoded_rgb_sha256": "cad38562a9698ddb528f2bbeffbcb523a8e1c27d6193d90d0d705308e44b0ea6",
+      "encode_samples_seconds": [
+        0.0736553999595344,
+        0.08735749998595566,
+        0.07819659996312112
+      ],
+      "decode_samples_seconds": [
+        0.019352199975401163,
+        0.018038999987766147,
+        0.023483099997974932
+      ],
+      "encode_median_seconds": 0.07819659996312112,
+      "decode_median_seconds": 0.019352199975401163,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "settings": {
+        "pillow": "11.3.0",
+        "quality": 0,
+        "frontend_defaults": "Pillow plugin defaults"
+      }
+    },
+    {
+      "image": "mario64.png",
+      "codec": "avif_pinned_libaom_q0",
+      "preset": "qcolor=0",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 4139,
+      "bpp": 0.03326742541152263,
+      "rgb_mse": 580.1384595496828,
+      "rgb_psnr": 20.495487034393637,
+      "ssimulacra2": -57.29965896,
+      "stream_sha256": "7833f511ea75bdfa78c7f419819963b5b8ad606afa8ada190d69c29c8a910077",
+      "decoded_rgb_sha256": "a8ad37e078e2d5f1eb6a88d61cba299684441fe2b7a68ebff20a7e0937f0774a",
+      "encode_samples_seconds": [
+        0.06800500000827014,
+        0.051941500045359135,
+        0.05346829991322011
+      ],
+      "decode_samples_seconds": [
+        0.13464060006663203,
+        0.12808639998547733,
+        0.12873950006905943
+      ],
+      "encode_median_seconds": 0.05346829991322011,
+      "decode_median_seconds": 0.12873950006905943,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch, input/output I/O, and PNG output included; not compared as codec-call timing"
+      }
+    },
+    {
+      "image": "mario64.png",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=5",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 6758,
+      "bpp": 0.054317772633744855,
+      "rgb_mse": 344.83462269054354,
+      "rgb_psnr": 22.754694967298267,
+      "ssimulacra2": -36.75075952,
+      "stream_sha256": "65b8d41ee89a3953b7d3094a05d298e1e9c25128ddecd7c28f99733ddd9b7add",
+      "decoded_rgb_sha256": "cf9446d658320a5bb1705c56f535147dbbd716ab6c05f7087456b85a11a248a5",
+      "encode_samples_seconds": [
+        0.060980299953371286,
+        0.05855549999978393,
+        0.05800620000809431
+      ],
+      "decode_samples_seconds": [
+        0.14951210003346205,
+        0.15420530003029853,
+        0.1407693000510335
+      ],
+      "encode_median_seconds": 0.05855549999978393,
+      "decode_median_seconds": 0.14951210003346205,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 5,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    },
+    {
+      "image": "mario64.png",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=12",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 10445,
+      "bpp": 0.08395222479423868,
+      "rgb_mse": 210.99231074245543,
+      "rgb_psnr": 24.888137324089392,
+      "ssimulacra2": -12.55330728,
+      "stream_sha256": "7b7606b27084c6ed3e809bd52ed37ce40b600c724eb0a8fc40199a41cb9b2940",
+      "decoded_rgb_sha256": "ef5893ca6044d0371264063bde08bbb3ab84003dfedfcd8c769256435706a29f",
+      "encode_samples_seconds": [
+        0.07014710002113134,
+        0.06760379998013377,
+        0.06633760000113398
+      ],
+      "decode_samples_seconds": [
+        0.16881970001850277,
+        0.16340109996963292,
+        0.1647697000298649
+      ],
+      "encode_median_seconds": 0.06760379998013377,
+      "decode_median_seconds": 0.1647697000298649,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 12,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    },
+    {
+      "image": "mario64.png",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=20",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 14504,
+      "bpp": 0.11657664609053497,
+      "rgb_mse": 154.80481610082305,
+      "rgb_psnr": 26.232958930644756,
+      "ssimulacra2": 9.43307451,
+      "stream_sha256": "a4a3701f4d4e12c3b6f581b581e4bb4daf6249092799c2ca9b4423fece07e90b",
+      "decoded_rgb_sha256": "ee02bfe644af19f5db26eed2c5993bf82775598da0f0d28c36346e64d616ad76",
+      "encode_samples_seconds": [
+        0.08473229990340769,
+        0.09231840004213154,
+        0.07906449993606657
+      ],
+      "decode_samples_seconds": [
+        0.19486510008573532,
+        0.19266389997210354,
+        0.18881149997469038
+      ],
+      "encode_median_seconds": 0.08473229990340769,
+      "decode_median_seconds": 0.19266389997210354,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 20,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    },
+    {
+      "image": "mario64.png",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=35",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 24812,
+      "bpp": 0.19942772633744857,
+      "rgb_mse": 89.96234105742026,
+      "rgb_psnr": 28.59019612469249,
+      "ssimulacra2": 38.91468453,
+      "stream_sha256": "145962e6629267d8f79b13555bbb6493b4895ae78c2541577b1650780ea73cb6",
+      "decoded_rgb_sha256": "b2faa74da848ec3ba59329dd60936a142ae49fc2b75a835f85c116b60e2fc688",
+      "encode_samples_seconds": [
+        0.0966103000100702,
+        0.10599650000222027,
+        0.09964639996178448
+      ],
+      "decode_samples_seconds": [
+        0.20491540001239628,
+        0.21090209996327758,
+        0.20999140001367778
+      ],
+      "encode_median_seconds": 0.09964639996178448,
+      "decode_median_seconds": 0.20999140001367778,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 35,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    },
+    {
+      "image": "mario64.png",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=50",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 39785,
+      "bpp": 0.31977398405349794,
+      "rgb_mse": 63.726135170181756,
+      "rgb_psnr": 30.08762780457402,
+      "ssimulacra2": 55.04321458,
+      "stream_sha256": "16fac7f047047f1787bbcdcb444e080c08c60f6cdb9dc3fa8aae107be868762b",
+      "decoded_rgb_sha256": "de1f079f14f051ff0e41182efb87d82c2502c688326de3694856ef19b2f14f84",
+      "encode_samples_seconds": [
+        0.11217900004703552,
+        0.10876360000111163,
+        0.10873839992564172
+      ],
+      "decode_samples_seconds": [
+        0.24970130005385727,
+        0.22658540005795658,
+        0.2274597999639809
+      ],
+      "encode_median_seconds": 0.10876360000111163,
+      "decode_median_seconds": 0.2274597999639809,
+      "source_file_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 50,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    },
+    {
+      "image": "coast.jpg",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=7",
+      "dimensions": [
+        4240,
+        2832
+      ],
+      "completed_bytes": 11260,
+      "bpp": 0.007501865472764098,
+      "rgb_mse": 31.277277070452687,
+      "rgb_psnr": 33.178514235373484,
+      "ssimulacra2": 1.7878333,
+      "stream_sha256": "b3a5db2af95500b7f5fab00febb09123539c45ab869a6c40056e9ae0fecb9a7c",
+      "decoded_rgb_sha256": "99fc162706b76670e956a891ca75997b7ac19d570184f61d39f03073e7167c4b",
+      "encode_samples_seconds": [
+        0.4092016000067815,
+        0.3821943999500945,
+        0.38812110002618283
+      ],
+      "decode_samples_seconds": [
+        0.6335349000291899,
+        0.6436572999227792,
+        0.649597099982202
+      ],
+      "encode_median_seconds": 0.38812110002618283,
+      "decode_median_seconds": 0.6436572999227792,
+      "source_file_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 7,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=12",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 29727,
+      "bpp": 0.3597995666961184,
+      "rgb_mse": 498.3599619547895,
+      "rgb_psnr": 21.15537216864805,
+      "ssimulacra2": 2.40741397,
+      "stream_sha256": "be54f910a8d619514dbe738f13f4332cc94b2486ca8f4c4db192254936249260",
+      "decoded_rgb_sha256": "9a32f5b629a7fa546cf6e7dd3707cdb8d92fe566ca3f536174c188b53b9bda6b",
+      "encode_samples_seconds": [
+        0.09620219992939383,
+        0.099386400077492,
+        0.09091310005169362
+      ],
+      "decode_samples_seconds": [
+        0.10378330003004521,
+        0.10786419990472496,
+        0.10184179991483688
+      ],
+      "encode_median_seconds": 0.09620219992939383,
+      "decode_median_seconds": 0.10378330003004521,
+      "source_file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 12,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "codec": "avif_pinned_libaom_qcolor",
+      "preset": "qcolor=28",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 55025,
+      "bpp": 0.6659929073722177,
+      "rgb_mse": 291.46410063220407,
+      "rgb_psnr": 23.484952901346496,
+      "ssimulacra2": 40.54978628,
+      "stream_sha256": "d1bac0b094fc57b31a773ae890e4bd023831a4eb9d2fc4cc646b216cf3aab9b6",
+      "decoded_rgb_sha256": "16d3226762a5bd4df34881c96cc9a71e520f82a9c38458bc643b2229dc5bab8e",
+      "encode_samples_seconds": [
+        0.1130309000145644,
+        0.12383649998810142,
+        0.11145800002850592
+      ],
+      "decode_samples_seconds": [
+        0.10853580001275986,
+        0.10971600003540516,
+        0.12663130008149892
+      ],
+      "encode_median_seconds": 0.1130309000145644,
+      "decode_median_seconds": 0.10971600003540516,
+      "source_file_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "settings": {
+        "libavif": "1.3.0",
+        "libaom": "3.12.1",
+        "qcolor": 28,
+        "speed": 8,
+        "threads": 1,
+        "depth": 8,
+        "subsampling": "420",
+        "range": "full",
+        "cicp": "1/13/1",
+        "timing_boundary": "CLI launch and input/output I/O included"
+      }
+    }
+  ]
+}

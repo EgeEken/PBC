@@ -1,0 +1,92 @@
+{
+  "googlewiki.png": {
+    "input_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+    "matched_init_cap": 750000,
+    "variant": "A",
+    "point": "low",
+    "bytes": 72352,
+    "bpp": 0.8757095653647378,
+    "rgb_mse": 31.566436902643797,
+    "file_sha256": "dcc45733b972c2df58e930ddb78e6f4f1131b3b2d25fe1232463cab757bd7015",
+    "pixel_sha256": "80a8ad908018c54557a9c979240bf074de9c2738b44fd49d02ec280d3bbbd337",
+    "mode_counts": {
+      "skip": 2601,
+      "procedural": 0,
+      "transform": 0
+    },
+    "byte_accounting": {
+      "header_bytes": 32,
+      "xz_payload_bytes": 72320,
+      "palette_bytes": 192,
+      "index_raw_bytes": 495726,
+      "init_samples": 660968,
+      "init_cap": 750000,
+      "mode_map_raw_bytes": 651,
+      "procedural_raw_bytes": 0,
+      "transform_raw_bytes": 0,
+      "raw_payload_bytes": 496570
+    },
+    "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_A_low_matched.pbc",
+    "image_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_A_low_matched.png"
+  },
+  "cat.jpg": {
+    "input_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+    "matched_init_cap": 250000,
+    "variant": "A",
+    "point": "low",
+    "bytes": 97268,
+    "bpp": 0.09127591850216957,
+    "rgb_mse": 344.3153158532023,
+    "file_sha256": "a512568562fa648b792acc070c55ff09e6bf934b22050e40359a12ada0ea99ed",
+    "pixel_sha256": "363e94fc833f9a8a6f87b6854818834d85d007d6daf476fdb73171c65a6d855b",
+    "mode_counts": {
+      "skip": 33376,
+      "procedural": 0,
+      "transform": 0
+    },
+    "byte_accounting": {
+      "header_bytes": 32,
+      "xz_payload_bytes": 97236,
+      "palette_bytes": 192,
+      "index_raw_bytes": 187272,
+      "init_samples": 249696,
+      "init_cap": 250000,
+      "mode_map_raw_bytes": 8344,
+      "procedural_raw_bytes": 0,
+      "transform_raw_bytes": 0,
+      "raw_payload_bytes": 195809
+    },
+    "stream_path": "PBC_ROOT/research_pass43/outputs/cat_v4_A_low_matched.pbc",
+    "image_path": "PBC_ROOT/research_pass43/outputs/cat_v4_A_low_matched.png"
+  },
+  "coast.jpg": {
+    "input_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+    "matched_init_cap": 250000,
+    "variant": "A",
+    "point": "low",
+    "bytes": 32056,
+    "bpp": 0.021356998187826458,
+    "rgb_mse": 45.227041832116335,
+    "file_sha256": "9bd50c13418b54769693fc493842ec859a99f7ee27463d68f590a423bbd238be",
+    "pixel_sha256": "7e904d5d85a814bd73bbe4a87768a432e4d08ded76572c7715e76ffa58a120b6",
+    "mode_counts": {
+      "skip": 46905,
+      "procedural": 0,
+      "transform": 0
+    },
+    "byte_accounting": {
+      "header_bytes": 32,
+      "xz_payload_bytes": 32024,
+      "palette_bytes": 192,
+      "index_raw_bytes": 187272,
+      "init_samples": 249696,
+      "init_cap": 250000,
+      "mode_map_raw_bytes": 11727,
+      "procedural_raw_bytes": 0,
+      "transform_raw_bytes": 0,
+      "raw_payload_bytes": 199192
+    },
+    "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_A_low_matched.pbc",
+    "image_path": "PBC_ROOT/research_pass43/outputs/coast_v4_A_low_matched.png"
+  }
+}

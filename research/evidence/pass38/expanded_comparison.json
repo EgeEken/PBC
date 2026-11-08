@@ -1,0 +1,96 @@
+{
+  "source": {
+    "libaom": "10aece4157eb79315da205f39e19bf6ab3ee30d0",
+    "libavif": "1aadfad932c98c069a1204261b1856f81f3bc199"
+  },
+  "timings": "single encode per config, RSS polled every 5 ms; exploratory, not a speed claim",
+  "cases": [
+    {
+      "REF": {
+        "seconds_one_run": 0.2702059000148438,
+        "peak_sampled_rss_bytes": 27201536,
+        "bytes": 20613,
+        "sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+        "rgb_mse": 619.1546297753194,
+        "bpp": 0.24948862879897363
+      },
+      "EXP": {
+        "seconds_one_run": 0.2626065000076778,
+        "peak_sampled_rss_bytes": 27189248,
+        "bytes": 20641,
+        "sha256": "7dfab40f07035a31cc90e74d9384657e87e434fd0009ab3c82c643e6582432e4",
+        "rgb_mse": 619.216965622138,
+        "bpp": 0.24982752568959465
+      },
+      "delta": {
+        "bytes_percent": 0.13583660796585573,
+        "bpp_percent": 0.13583660796585573,
+        "rgb_mse_percent": 0.010067896422127909,
+        "encode_time_percent": -2.8124478431997613
+      },
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 6,
+      "input_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "decoder": "pinned avifdec v1.3.0, unmodified"
+    },
+    {
+      "REF": {
+        "seconds_one_run": 0.26677019998896867,
+        "peak_sampled_rss_bytes": 33894400,
+        "bytes": 39332,
+        "sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+        "rgb_mse": 57.88574821566358,
+        "bpp": 0.3161329732510288
+      },
+      "EXP": {
+        "seconds_one_run": 0.2624097000225447,
+        "peak_sampled_rss_bytes": 33890304,
+        "bytes": 39214,
+        "sha256": "fe7832dd52adcf440c8db193e3b6c83bc9164fc3088cb228e55290e3d6bf2afd",
+        "rgb_mse": 57.85825610585991,
+        "bpp": 0.31518454218106995
+      },
+      "delta": {
+        "bytes_percent": -0.3000101698362623,
+        "bpp_percent": -0.3000101698362623,
+        "rgb_mse_percent": -0.0474937452674018,
+        "encode_time_percent": -1.6345528723239244
+      },
+      "image": "mario64.png",
+      "qcolor": 50,
+      "speed": 6,
+      "input_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "decoder": "pinned avifdec v1.3.0, unmodified"
+    },
+    {
+      "REF": {
+        "seconds_one_run": 1.8090364999952726,
+        "peak_sampled_rss_bytes": 128638976,
+        "bytes": 262385,
+        "sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+        "rgb_mse": 46.50192265644941,
+        "bpp": 0.24622107863009174
+      },
+      "EXP": {
+        "seconds_one_run": 1.8866100999875925,
+        "peak_sampled_rss_bytes": 128528384,
+        "bytes": 262490,
+        "sha256": "1d4e077eb7a85dd94c97ca55a92cb910a9931a591010a9c5839fb66080e33de5",
+        "rgb_mse": 46.48179624822956,
+        "bpp": 0.24631961022776752
+      },
+      "delta": {
+        "bytes_percent": 0.040017531489988656,
+        "bpp_percent": 0.040017531489988656,
+        "rgb_mse_percent": -0.04328080877116225,
+        "encode_time_percent": 4.2881169060172475
+      },
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 6,
+      "input_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "decoder": "pinned avifdec v1.3.0, unmodified"
+    }
+  ]
+}

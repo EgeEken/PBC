@@ -1,0 +1,4 @@
+outputs/
+*.pyc
+__pycache__/
+!PASS42_SUMMARY.json

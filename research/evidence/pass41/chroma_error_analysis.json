@@ -1,0 +1,247 @@
+{
+  "method": {
+    "source_yuv": "Pinned libavif RGB-to-YUV conversion on EXIF-oriented RGB with YUV420, full range, CICP 1/13/1, automatic chroma downsampling, no SharpYUV.",
+    "decoded_yuv": "Native Y/U/V planes from pinned libavif decode of the measured AVIF.",
+    "counterfactual_rgb": "Pinned libavif YUV-to-RGB with AVIF signaled range, CICP, chroma position, and automatic chroma upsampling.",
+    "counterfactual_warning": "Replacing Y or U/V is diagnostic; RGB MSE changes are not additive because conversion, clipping and channel interactions remain."
+  },
+  "results": [
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "avif_sha256": "078472ab4800b88de6165e2bd44ea19d1efc7d3a3a4925c7bd95f86b5814b4c4",
+      "bytes": 23362,
+      "bpp": 0.282761041381731,
+      "actual_rgb_mse": 568.2644152213118,
+      "actual_rgb_psnr": 20.585298995388023,
+      "actual_rgb_channel_mse": [
+        640.4496844022706,
+        365.5681107103521,
+        698.7754505513126
+      ],
+      "edge_rgb_mse": 2172.3323494553442,
+      "smooth_rgb_mse": 166.20258505692536,
+      "edge_fraction": 0.20041666162355817,
+      "source_yuv_roundtrip_rgb_mse_floor": 193.47289682203476,
+      "decoded_rgb_custom_vs_avifdec_max_abs": 0,
+      "counterfactual_decodedY_referenceUV_rgb_mse": 483.83411350221695,
+      "counterfactual_referenceY_decodedUV_rgb_mse": 287.4130532794326,
+      "rgb_mse_change_if_only_chroma_restored": 84.43030171909481,
+      "rgb_mse_change_if_only_luma_restored": 280.8513619418792,
+      "counterfactuals_non_additive": true,
+      "native_planes": {
+        "Y": {
+          "reference_mean": 227.49442030476513,
+          "decoded_mean": 225.137061098268,
+          "reference_std": 60.7506146200985,
+          "decoded_std": 57.973055876075236,
+          "reference_min": 0,
+          "reference_max": 255,
+          "decoded_min": 0,
+          "decoded_max": 255,
+          "mse": 333.46733729923386,
+          "sse": 220411239.0
+        },
+        "U": {
+          "reference_mean": 129.69443603926362,
+          "decoded_mean": 129.8336984543881,
+          "reference_std": 11.03365430684072,
+          "decoded_std": 7.644574890934654,
+          "reference_min": 25,
+          "reference_max": 198,
+          "decoded_min": 2,
+          "decoded_max": 217,
+          "mse": 69.22484598346668,
+          "sse": 11438852.0
+        },
+        "V": {
+          "reference_mean": 126.77008871836458,
+          "decoded_mean": 127.31534355672287,
+          "reference_std": 8.96446213897718,
+          "decoded_std": 6.3505344038741915,
+          "reference_min": 44,
+          "reference_max": 223,
+          "decoded_min": 33,
+          "decoded_max": 243,
+          "mse": 39.69355853838613,
+          "sse": 6559043.0
+        }
+      },
+      "avif_properties": {
+        "width": 814,
+        "height": 812,
+        "depth": 8,
+        "yuv_format": 3,
+        "yuv_range": 1,
+        "chroma_position": 0,
+        "primaries": 1,
+        "transfer": 13,
+        "matrix": 1
+      },
+      "encode_seconds": [
+        0.2332276999950409,
+        0.2302108000149019,
+        0.22596660000272095
+      ]
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "avif_sha256": "01adc1f23253149ab40e9e184525e262a56394534d66efab65cab69e9dea2248",
+      "bytes": 290049,
+      "bpp": 0.2721808702310707,
+      "actual_rgb_mse": 43.0190432253427,
+      "actual_rgb_psnr": 31.79419613732664,
+      "actual_rgb_channel_mse": [
+        43.85460607067249,
+        38.392693459754064,
+        46.80983014560155
+      ],
+      "edge_rgb_mse": 72.04753777581757,
+      "smooth_rgb_mse": 35.76191852365255,
+      "edge_fraction": 0.2000000234599042,
+      "source_yuv_roundtrip_rgb_mse_floor": 1.3475473764945523,
+      "decoded_rgb_custom_vs_avifdec_max_abs": 0,
+      "counterfactual_decodedY_referenceUV_rgb_mse": 38.365396649112405,
+      "counterfactual_referenceY_decodedUV_rgb_mse": 6.260788779847254,
+      "rgb_mse_change_if_only_chroma_restored": 4.653646576230294,
+      "rgb_mse_change_if_only_luma_restored": 36.758254445495446,
+      "counterfactuals_non_additive": true,
+      "native_planes": {
+        "Y": {
+          "reference_mean": 144.38658098171254,
+          "decoded_mean": 144.40292174338992,
+          "reference_std": 46.23645363590533,
+          "decoded_std": 46.023231425179446,
+          "reference_min": 0,
+          "reference_max": 255,
+          "decoded_min": 0,
+          "decoded_max": 255,
+          "mse": 37.34646173032746,
+          "sse": 318385458.0
+        },
+        "U": {
+          "reference_mean": 134.4194457269192,
+          "decoded_mean": 134.19189826284102,
+          "reference_std": 16.708627428404817,
+          "decoded_std": 16.795311360137326,
+          "reference_min": 71,
+          "reference_max": 165,
+          "decoded_min": 72,
+          "decoded_max": 163,
+          "mse": 2.6781277682686966,
+          "sse": 5707883.0
+        },
+        "V": {
+          "reference_mean": 122.30946991877242,
+          "decoded_mean": 122.55003481449785,
+          "reference_std": 13.429284347233382,
+          "decoded_std": 13.394845402963105,
+          "reference_min": 94,
+          "reference_max": 170,
+          "decoded_min": 98,
+          "decoded_max": 168,
+          "mse": 2.5797219156794737,
+          "sse": 5498151.0
+        }
+      },
+      "avif_properties": {
+        "width": 3576,
+        "height": 2384,
+        "depth": 8,
+        "yuv_format": 3,
+        "yuv_range": 1,
+        "chroma_position": 0,
+        "primaries": 1,
+        "transfer": 13,
+        "matrix": 1
+      },
+      "encode_seconds": [
+        1.754258100001607,
+        1.7799513000063598,
+        1.7810456000152044
+      ]
+    },
+    {
+      "image": "coast.jpg",
+      "qcolor": 80,
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "avif_sha256": "5fad34cdc688664f626e0163e8dfb1bbea7d98d6489829e1b5efb2b8b8bea057",
+      "bytes": 167920,
+      "bpp": 0.11187506662402728,
+      "actual_rgb_mse": 3.2423432336637883,
+      "actual_rgb_psnr": 43.02221373613914,
+      "actual_rgb_channel_mse": [
+        3.2495822673488965,
+        2.683247138498028,
+        3.794200295144441
+      ],
+      "edge_rgb_mse": 3.977348941122126,
+      "smooth_rgb_mse": 3.058591806799204,
+      "edge_fraction": 0.2,
+      "source_yuv_roundtrip_rgb_mse_floor": 0.7252178605692357,
+      "decoded_rgb_custom_vs_avifdec_max_abs": 0,
+      "counterfactual_decodedY_referenceUV_rgb_mse": 2.8866466850104824,
+      "counterfactual_referenceY_decodedUV_rgb_mse": 1.1346886881284866,
+      "rgb_mse_change_if_only_chroma_restored": 0.3556965486533059,
+      "rgb_mse_change_if_only_luma_restored": 2.1076545455353015,
+      "counterfactuals_non_additive": true,
+      "native_planes": {
+        "Y": {
+          "reference_mean": 90.04354354879544,
+          "decoded_mean": 90.10053798902037,
+          "reference_std": 51.20247338553267,
+          "decoded_std": 51.17971383033274,
+          "reference_min": 0,
+          "reference_max": 255,
+          "decoded_min": 0,
+          "decoded_max": 255,
+          "mse": 2.3626200065291547,
+          "sse": 28369585.0
+        },
+        "U": {
+          "reference_mean": 120.09404847564225,
+          "decoded_mean": 120.13069668745337,
+          "reference_std": 12.236737190592494,
+          "decoded_std": 12.2262252366318,
+          "reference_min": 16,
+          "reference_max": 208,
+          "decoded_min": 16,
+          "decoded_max": 209,
+          "mse": 0.3395656779661017,
+          "sse": 1019349.0
+        },
+        "V": {
+          "reference_mean": 143.59523138524676,
+          "decoded_mean": 143.60885266762605,
+          "reference_std": 22.539759561539128,
+          "decoded_std": 22.535341463575158,
+          "reference_min": 23,
+          "reference_max": 243,
+          "decoded_min": 24,
+          "decoded_max": 242,
+          "mse": 0.34721644813985714,
+          "sse": 1042316.0
+        }
+      },
+      "avif_properties": {
+        "width": 4240,
+        "height": 2832,
+        "depth": 8,
+        "yuv_format": 3,
+        "yuv_range": 1,
+        "chroma_position": 0,
+        "primaries": 1,
+        "transfer": 13,
+        "matrix": 1
+      },
+      "encode_seconds": [
+        1.3916894999565557,
+        1.3789980000001378,
+        1.4018321000039577
+      ]
+    }
+  ]
+}

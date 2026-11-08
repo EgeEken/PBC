@@ -1,0 +1,575 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "pass": 35,
+      "source": "research_pass35/outputs/baseline/baseline_results.json",
+      "archive": "research/evidence/pass35/baseline_results.json",
+      "source_bytes": 15383,
+      "source_sha256": "71681e78abfd9920517f37d917368874eeca89a4ad4417cdc27ad447c16eada2",
+      "archive_bytes": 14985,
+      "archive_sha256": "9669833a6fd663b2619be37381b3a1392a29807a839754c6f15c45fa439462b9",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 35,
+      "source": "research_pass35/outputs/calibration/calibration.json",
+      "archive": "research/evidence/pass35/calibration.json",
+      "source_bytes": 12563,
+      "source_sha256": "48514564c73244d5ad539e6600d78cb71aeafae3f3e6e623d122983ea09df64c",
+      "archive_bytes": 12197,
+      "archive_sha256": "6f1f3fd4d7b8a92e6828aae0ebb95e109095b3a3eb8146ee7bacf6c99d22944b",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 35,
+      "source": "research_pass35/outputs/equivalence/final_control_parity.json",
+      "archive": "research/evidence/pass35/final_control_parity.json",
+      "source_bytes": 2510,
+      "source_sha256": "20a313177049286e915602b3bce615654e91d3c9e73f84770ee8dc03e46398b3",
+      "archive_bytes": 2426,
+      "archive_sha256": "6cf01f4a466a1d8822acc4b5c0d951d23502ad072c77c952695901833428b163",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 35,
+      "source": "research_pass35/outputs/profile/profile_results.json",
+      "archive": "research/evidence/pass35/profile_results.json",
+      "source_bytes": 54878,
+      "source_sha256": "672853f7ec1ee101b83eea816b2e5dabfce8f7f5b18599dccd2f920369da74ca",
+      "archive_bytes": 53550,
+      "archive_sha256": "bb049db51617270a8e90b144a207fdb5ec3ae6a97ee283e06a87f73d5a4dc60c",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 36,
+      "source": "research_pass36/outputs/profile_probe.json",
+      "archive": "research/evidence/pass36/profile_probe.json",
+      "source_bytes": 348519,
+      "source_sha256": "7bffb2c5a6bbdc028b42448842d861e170ee6dec19ac0b49af911c357f04a6d5",
+      "archive_bytes": 200521,
+      "archive_sha256": "d442b86ec41cbf2f7c2c8ffff660ae3cb4ff872b5ae9b12647c967008bf51ba6",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 36,
+      "source": "research_pass36/outputs/symbol_parity/result.json",
+      "archive": "research/evidence/pass36/result.json",
+      "source_bytes": 1439,
+      "source_sha256": "95ca0f4bf23685b1f609819e7263029f8dbc1ccd0b257e9a92b9b3c35ba14f3d",
+      "archive_bytes": 1389,
+      "archive_sha256": "2bde573bf94ca0cac9fb1b03c6cdb6152719543f0cd15dd5db95c982875b593e",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 37,
+      "source": "research_pass37/outputs/benchmark_final/benchmark.json",
+      "archive": "research/evidence/pass37/benchmark.json",
+      "source_bytes": 60755,
+      "source_sha256": "00efcf677429341271af8266587cbe12b6fabed1623e5753e221d5768f6e19a2",
+      "archive_bytes": 59084,
+      "archive_sha256": "8ab01b6fdddc840d2a143f645ec33364be6ffb682233d6c1422e38dccc351730",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 37,
+      "source": "research_pass37/outputs/search_counts/search_counts.json",
+      "archive": "research/evidence/pass37/search_counts.json",
+      "source_bytes": 66017,
+      "source_sha256": "f914289548578b1b99dd44fb86002389cdbca5f464eef0cb95df764cb0b78004",
+      "archive_bytes": 63969,
+      "archive_sha256": "7023dba2099d93d13308177e3a92d5f3446fd50475418019cb2d1717aa8fd0b4",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 37,
+      "source": "research_pass37/outputs/synthetic_smoke/synthetic_results.json",
+      "archive": "research/evidence/pass37/synthetic_results.json",
+      "source_bytes": 7079,
+      "source_sha256": "18da4021e7f7a2428bba77a9d2e9a4cc386d093a6b760989e464d846f8a598de",
+      "archive_bytes": 6890,
+      "archive_sha256": "2d4f7d894f822022760a880f0d7d8a9dc5228c1325749ed5d4a8b7b1a8373a8d",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 37,
+      "source": "research_pass37/outputs/ctrl_parity/ctrl_parity.json",
+      "archive": "research/evidence/pass37/ctrl_parity.json",
+      "source_bytes": 5063,
+      "source_sha256": "4c10183a7121d54f7b85186d4cb082e243523c6f96e19b717dbecfc6b5086eb6",
+      "archive_bytes": 4914,
+      "archive_sha256": "c70fc89a0fb335189840b2cc825b613adf4d7a999df7bbbee42403a354c69a59",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 38,
+      "source": "research_pass38/outputs/expanded/expanded_comparison.json",
+      "archive": "research/evidence/pass38/expanded_comparison.json",
+      "source_bytes": 3454,
+      "source_sha256": "85c44cdace3c63947cee1b8f29f06e851c5d3c4f0dfdb79c608a44350e2080da",
+      "archive_bytes": 3360,
+      "archive_sha256": "888f5e1b782be69f7c976c5e30aff14e686d704858d3e612fa523092a68b7627",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 38,
+      "source": "research_pass38/outputs/shadow/diagnostic.json",
+      "archive": "research/evidence/pass38/diagnostic.json",
+      "source_bytes": 2997,
+      "source_sha256": "9063f9ead283e07f4cd4c8ae925380132edbc8b0366c5c2654b25aeed841aed9",
+      "archive_bytes": 2919,
+      "archive_sha256": "a5970e36d1e7c5e770352b4e596305b41adadaa328f47d6442fac7f379090011",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 38,
+      "source": "research_pass38/outputs/shadow_mod16/diagnostic.json",
+      "archive": "research/evidence/pass38/shadow_mod16_diagnostic.json",
+      "source_bytes": 3060,
+      "source_sha256": "6d511ceb0cd47a54acffc58f5134c51381c840b2bc90660810aa0bab35490b55",
+      "archive_bytes": 2982,
+      "archive_sha256": "6320e2969f6e3699ef791c9a9d9214720d440cf76158b8af8314bc851a696911",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 39,
+      "source": "research_pass39/outputs/benchmark/results.json",
+      "archive": "research/evidence/pass39/results.json",
+      "source_bytes": 201359,
+      "source_sha256": "582443bd9cbf4e0a8a74bd1fbe5fee82d5fc11c03f61fc84075c721a547a5e53",
+      "archive_bytes": 195816,
+      "archive_sha256": "b9c3c3a339db7e5b089c34909904a2ac9e7cc3bfac57f66b1408acce74a88e5c",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 39,
+      "source": "research_pass39/outputs/benchmark/summary.json",
+      "archive": "research/evidence/pass39/summary.json",
+      "source_bytes": 76438,
+      "source_sha256": "86067e515c7f2d81ea781b7cfd8112834a22c6c82cf64d257fa74d5fca8dc41b",
+      "archive_bytes": 74346,
+      "archive_sha256": "c824c674549792a7e849af659ad38a5e0e3fe70397991de933c05074d1d3c418",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 39,
+      "source": "research_pass39/outputs/benchmark/iq_rate_calibration2.json",
+      "archive": "research/evidence/pass39/iq_rate_calibration2.json",
+      "source_bytes": 11393,
+      "source_sha256": "736b09d4152324c288b6357e73baab9a077c08e0712981e6a057fa743aa73886",
+      "archive_bytes": 11078,
+      "archive_sha256": "2961a64f07c967e19e0160b306955ef3640b6506bf84546b185563ff7dc81393",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 39,
+      "source": "research_pass39/outputs/benchmark/spatial_analysis.json",
+      "archive": "research/evidence/pass39/spatial_analysis.json",
+      "source_bytes": 2933,
+      "source_sha256": "ace361b6d08c08fe8356f3934d3e0d92660a22eb23bcdaecc79a48d440aded17",
+      "archive_bytes": 2823,
+      "archive_sha256": "dab431fcf4c7a1ef92ca376f03d10999285365d6acd119b54e1aa753f00f9508",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 40,
+      "source": "research_pass40/outputs/ablation/results.json",
+      "archive": "research/evidence/pass40/results.json",
+      "source_bytes": 157078,
+      "source_sha256": "3f7e814c639e9010965ccf2b948d0c9ede786ba870cc8769e444ab06bc942cef",
+      "archive_bytes": 152792,
+      "archive_sha256": "24526ea595e4b3dda9acb2c22cb492afbac6376fc3a4ccdc5a32c7996285086d",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 40,
+      "source": "research_pass40/outputs/intervention/results.json",
+      "archive": "research/evidence/pass40/intervention_results.json",
+      "source_bytes": 84824,
+      "source_sha256": "8103e02705edbd9919a4bd00ae9c775de146618079c1e779aa94156f8eccb8eb",
+      "archive_bytes": 82686,
+      "archive_sha256": "3a410adb646eaed428f8ae5048f31d5881ea7716edcfad9d8b51eaa98e60b475",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 40,
+      "source": "research_pass40/outputs/spatial_analysis.json",
+      "archive": "research/evidence/pass40/spatial_analysis.json",
+      "source_bytes": 120620,
+      "source_sha256": "124eb5fb02a44a3e5b6b96e1969580e3632af2f06df2f6a7c876345ae1e34a54",
+      "archive_bytes": 116436,
+      "archive_sha256": "988a6b0fa60b31e396f16d301712d0752e37fff4bc49b18574ecc94469c1fd8f",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 41,
+      "source": "research_pass41/outputs/phase_b_results.json",
+      "archive": "research/evidence/pass41/phase_b_results.json",
+      "source_bytes": 10996,
+      "source_sha256": "539419e8d5a2ca7644dc30c2d2a788d6ff091de3c15cdac30923ca37da77a780",
+      "archive_bytes": 10706,
+      "archive_sha256": "208d233ac222091fe782535dd291015859247064ac63fafb58e5936bc99d5ff5",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 41,
+      "source": "research_pass41/outputs/phase_c_point_summary.json",
+      "archive": "research/evidence/pass41/phase_c_point_summary.json",
+      "source_bytes": 14218,
+      "source_sha256": "b040486e2dd35028f1e7b0c5bc17fb4ca0adbdf5d28c6cf5b11be15fdd1f20c8",
+      "archive_bytes": 13820,
+      "archive_sha256": "bb738f8c24ccf790457651045b9bd6bc5f06b2745bdee9567f5874eabf387a90",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 41,
+      "source": "research_pass41/outputs/phase_c_results.json",
+      "archive": "research/evidence/pass41/phase_c_results.json",
+      "source_bytes": 46384,
+      "source_sha256": "e125c905f5d9b83bb1d291a3613b5abd950ad965f3af2c6035d9cb9f2d4a5c66",
+      "archive_bytes": 45041,
+      "archive_sha256": "b0b470b68225fab5c2743dccd6ac13a39b8401f150799a289869e62893659e7f",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 41,
+      "source": "research_pass41/outputs/chroma_error_analysis.json",
+      "archive": "research/evidence/pass41/chroma_error_analysis.json",
+      "source_bytes": 8801,
+      "source_sha256": "a8332198f5a2e2a3d68d089f873f1d6791d48d58e3bba430a7fc8a433c298e44",
+      "archive_bytes": 8554,
+      "archive_sha256": "744425cdf897b21d12e03c63838cfcea5fc2f570d707c26140990fd5a20a7760",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 42,
+      "source": "research_pass42/outputs/benchmark_raw.json",
+      "archive": "research/evidence/pass42/benchmark_raw.json",
+      "source_bytes": 113927,
+      "source_sha256": "60bc282878f302672d98daf1eae6309edf5005de66b09ff0bbae5ffe1bb63e3d",
+      "archive_bytes": 104504,
+      "archive_sha256": "be87567d6e66976157ad15d87efc53b1dd58249d523bb2cb9795bc67617f9a49",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/v2_encode_benchmark.json",
+      "archive": "research/evidence/pass43/v2_encode_benchmark.json",
+      "source_bytes": 718,
+      "source_sha256": "5d83ee078996bc9007c51ecdef5fa9a821d6988d38b68e9139b598d62852b50b",
+      "archive_bytes": 680,
+      "archive_sha256": "e4af4eef4811d72d57fc486f08a5032dbcac4a0f08d53140e30f46118c5a244f",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/v2_encode_e2e_benchmark.json",
+      "archive": "research/evidence/pass43/v2_encode_e2e_benchmark.json",
+      "source_bytes": 718,
+      "source_sha256": "70908b11d15db255d7f917e50feaa17132b9615c499233ea5accf972f66bce61",
+      "archive_bytes": 680,
+      "archive_sha256": "3f1ad373f24a5e396f53cc487985e0d2239161fc546648e30eee466dd2e752bb",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/v2_decode_benchmark.json",
+      "archive": "research/evidence/pass43/v2_decode_benchmark.json",
+      "source_bytes": 952,
+      "source_sha256": "a28cfd47b29d722acc7b7e90270cf5c854a956ccd64c6637562a6603b789209c",
+      "archive_bytes": 862,
+      "archive_sha256": "49429c8cd5a73ffe7daf40838b47c4240c8788860bf32cc8cefb93df3900cc25",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/v2_high_quality_check.json",
+      "archive": "research/evidence/pass43/v2_high_quality_check.json",
+      "source_bytes": 1188,
+      "source_sha256": "2e8d20897c4c95f2bb00049e3760454a046b0850ca6f821772d6e8ab16c213d0",
+      "archive_bytes": 1091,
+      "archive_sha256": "1ca1d84ce1056026d0699c2cb470bf03e6dd8ae54d4a3f87b03c947304d8562e",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/v4_base_probe.json",
+      "archive": "research/evidence/pass43/v4_base_probe.json",
+      "source_bytes": 3576,
+      "source_sha256": "26b3c7bfffd2a633837a396219d5e012c97ff0c944bdba8399a12d1eaf3240b2",
+      "archive_bytes": 3130,
+      "archive_sha256": "b65b8460559073d6e9a997a4f9358333db0bec81960513320c1204037fd00460",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/decoder_profile.json",
+      "archive": "research/evidence/pass43/decoder_profile.json",
+      "source_bytes": 3617,
+      "source_sha256": "2cbbe687f906e4476acc4ee0810d0a75b860c309295ec44911db69d7f80b6119",
+      "archive_bytes": 3397,
+      "archive_sha256": "47b5bcbb554abfe2f98c9cbdaadfabb3ca88bb439185094eb1037ca06f05474c",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/decoder_benchmark.json",
+      "archive": "research/evidence/pass43/decoder_benchmark.json",
+      "source_bytes": 3897,
+      "source_sha256": "0e2974e1bbd931b342e831873de860e1ca60a956fb7389f73937819682cac890",
+      "archive_bytes": 3439,
+      "archive_sha256": "61c68d19aeffd3d5314885f57fadc91107971a35aad05dcfca75fb193de6d3f2",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/coarse_budget_probe.json",
+      "archive": "research/evidence/pass43/coarse_budget_probe.json",
+      "source_bytes": 12375,
+      "source_sha256": "6a1178000ba5754a4d48bc2bc87067ff577b7f5448adb4186ab6d8547c392ce4",
+      "archive_bytes": 11487,
+      "archive_sha256": "7d90637e4c0502b798665a47ce7871f525f137e069481ab01c7edf2cb45c8c23",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/v2_rd_comparison.json",
+      "archive": "research/evidence/pass43/v2_rd_comparison.json",
+      "source_bytes": 39676,
+      "source_sha256": "743218f63dd6245b17fcdfef1aa28ced05db67aa532d61357db00e2058fb7183",
+      "archive_bytes": 37279,
+      "archive_sha256": "9e4eeacc68006d5ed3c015f46bad04bfadeb2993930484e8fa984283e37e8f79",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 43,
+      "source": "research_pass43/outputs/v3_stage_probe.json",
+      "archive": "research/evidence/pass43/v3_stage_probe.json",
+      "source_bytes": 56691,
+      "source_sha256": "65faffba2cdfbdf6a62c01204d8af8df17578d0ed0c5e8f26091ed45a548955f",
+      "archive_bytes": 52191,
+      "archive_sha256": "935d5c72cd429f2d34a4e45c85874af24ca2c67aa48af449ac585f9000b74c36",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 44,
+      "source": "research_pass44/outputs/competitive_baseline.json",
+      "archive": "research/evidence/pass44/competitive_baseline.json",
+      "source_bytes": 276677,
+      "source_sha256": "b0cfc0fc8c4215a1ddf364648531f7a79aa264eeed5c3003e049b8d0849e2261",
+      "archive_bytes": 269766,
+      "archive_sha256": "4eb42ebaec30313a101ba2f4462dd5d0c6efe05b4494dbb6f77e02086aa2c481",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 44,
+      "source": "research_pass44/outputs/strict_budget_refinement.json",
+      "archive": "research/evidence/pass44/strict_budget_refinement.json",
+      "source_bytes": 180930,
+      "source_sha256": "81597b02efa42034888a16d3bf17452c460c8ee838eeae1f23fe1357afd79365",
+      "archive_bytes": 176211,
+      "archive_sha256": "0c024f0bfbfc7ed31a5ef97f25af68527e093fc5ad737e6c7324f7a7a4df5113",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 44,
+      "source": "research_pass44/outputs/final_joint_allocation.json",
+      "archive": "research/evidence/pass44/final_joint_allocation.json",
+      "source_bytes": 176438,
+      "source_sha256": "8be0e32c651d104c42f7b8e216cc99125e737d172c028d0654298478f6d088e0",
+      "archive_bytes": 172184,
+      "archive_sha256": "cb4e2932d1d2547be11bc8b676b8c8f897b93a5bcb72d9dd8cb7d0333475740d",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 44,
+      "source": "research_pass44/outputs/independent_decode_checks.json",
+      "archive": "research/evidence/pass44/independent_decode_checks.json",
+      "source_bytes": 1927,
+      "source_sha256": "994df276aafaf24262da80d8a877c86cfdc1952c45f99029fc59bc62cf280501",
+      "archive_bytes": 1849,
+      "archive_sha256": "4eb41a3361f6b8a0375afb79d041591425070138cf47143b991e07d239865bcb",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 45,
+      "source": "research_pass45/outputs/corpus_results.json",
+      "archive": "research/evidence/pass45/corpus_results.json",
+      "source_bytes": 18136,
+      "source_sha256": "bd17e0b87379e24485def0e8cd6885575d1f7bbe11706b578123cb10f52b3372",
+      "archive_bytes": 18136,
+      "archive_sha256": "bd17e0b87379e24485def0e8cd6885575d1f7bbe11706b578123cb10f52b3372",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 45,
+      "source": "research_pass45/outputs/implementation_hash_inventory.json",
+      "archive": "research/evidence/pass45/implementation_hash_inventory.json",
+      "source_bytes": 14174,
+      "source_sha256": "c2ce6e0caaf33aa6a3ac71779a9c6d546336a065e9528e1a29f1b265b414c86b",
+      "archive_bytes": 13750,
+      "archive_sha256": "b3948e134a9096d81dc2b7c2bd1e589dc327ffa2342108bf58db69700a81c970",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 45,
+      "source": "research_pass45/outputs/published_release_python_hashes.json",
+      "archive": "research/evidence/pass45/published_release_python_hashes.json",
+      "source_bytes": 7308,
+      "source_sha256": "4a1e8de90e3aca147b0ead65946ec63799f76ab943801a04e47b78a72cb224a5",
+      "archive_bytes": 7241,
+      "archive_sha256": "38e61193109a6bc9a1fd771973f6ed2595d19e700e29e9be04229622c73cbed5",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 46,
+      "source": "research_pass46/outputs/baseline/baseline_metrics.json",
+      "archive": "research/evidence/pass46/baseline_metrics.json",
+      "source_bytes": 28530,
+      "source_sha256": "8798d8155a22148a1ea7258d689b9c86fdfb49dbdd09010798b3532bad356d4f",
+      "archive_bytes": 27630,
+      "archive_sha256": "b82285e1bd9bd14381b465d8ecd68a5982df4aec7eda2938a8ec7235d0d6d7ec",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 46,
+      "source": "research_pass46/outputs/feasibility_results.json",
+      "archive": "research/evidence/pass46/feasibility_results.json",
+      "source_bytes": 54020,
+      "source_sha256": "41d43b6ba860f63400027cebfe1a2ca6f606f8b84fc7aa178b63fd1b6aefc94a",
+      "archive_bytes": 52456,
+      "archive_sha256": "f95df78a5a66c21bf35de6d7dd84c1db1b872e5b667c09679a9be130b433fcab",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 46,
+      "source": "research_pass46/outputs/visual_metrics.json",
+      "archive": "research/evidence/pass46/visual_metrics.json",
+      "source_bytes": 767,
+      "source_sha256": "164dbd0f34eb2be34584f688e230adc13588b5f555d10f1ba8cfd291e576ff9a",
+      "archive_bytes": 747,
+      "archive_sha256": "45735372ff89205ec20f4c589dc45a91821bad0c29ccb330c798b6ec3913fcf6",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/oracle_results.json",
+      "archive": "research/evidence/pass47/oracle_results.json",
+      "source_bytes": 184728,
+      "source_sha256": "7ba7ff5b066f1eef0dee47f6f94cf36283ff5401621f36c59695bbf87f586bb2",
+      "archive_bytes": 178386,
+      "archive_sha256": "a35c41ea630e7e76daf67b16c94060b6c10342c695df95f3824529af20b245d7",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/coast_compression_step01.json",
+      "archive": "research/evidence/pass47/coast_compression_step01.json",
+      "source_bytes": 7199,
+      "source_sha256": "4216174fcb2663dcc0a6c62fa50b0cf19721316e099029c3088cc153de051759",
+      "archive_bytes": 6649,
+      "archive_sha256": "92ceb125f64ce6086534b0d4fb14cb1fbfd014df6a5e69ce9c7f5b4ac5a274b3",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/coast_compression_step25.json",
+      "archive": "research/evidence/pass47/coast_compression_step25.json",
+      "source_bytes": 7130,
+      "source_sha256": "24f3e928cf9322bf32ec9d2ba1691c5608f7c46904a6f9346d410085b489dbab",
+      "archive_bytes": 6580,
+      "archive_sha256": "82e2f834e3206329077657905442c469cd796c1399c5d82444d51beb74fd4194",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/coast_balanced_step01.json",
+      "archive": "research/evidence/pass47/coast_balanced_step01.json",
+      "source_bytes": 7196,
+      "source_sha256": "9621c087ff3f08f5e5c54f25042dc06b104b5090884ed225108e855c02b6de6b",
+      "archive_bytes": 6646,
+      "archive_sha256": "4ad7c41aed5d680d1c095a7265c122f780649bcdc4ffa409729d8f500650a43b",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/coast_balanced_step25.json",
+      "archive": "research/evidence/pass47/coast_balanced_step25.json",
+      "source_bytes": 7130,
+      "source_sha256": "822181ce7d769d13f229f9c3c58ece8a8cb41e434f9db386239f98e5b1ce4d41",
+      "archive_bytes": 6580,
+      "archive_sha256": "4a4cd01dfe5e69c221648facdd5b102d157886986558188ac1ee397c9c53c6c1",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/googlewiki_compression_step01.json",
+      "archive": "research/evidence/pass47/googlewiki_compression_step01.json",
+      "source_bytes": 7150,
+      "source_sha256": "b98f91faa1c79c275922b80e674b8dc6032b186658fcd24e74c97ddf1102fc87",
+      "archive_bytes": 6600,
+      "archive_sha256": "dfc116c8c88a33376b11459d2965ad1ad5c7f9d9f506dcd6ee5ed67ff77ed201",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/googlewiki_balanced_step01.json",
+      "archive": "research/evidence/pass47/googlewiki_balanced_step01.json",
+      "source_bytes": 7144,
+      "source_sha256": "dca28d4d169f5b10dcb4aeba81d5c86f31f357f88c388368cebe133427b380a7",
+      "archive_bytes": 6594,
+      "archive_sha256": "34506bb8677d495a14973f8057c819f1f01b2e9eaeb71fe0dbd0801b6e57ebd2",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/mario64_compression_step01.json",
+      "archive": "research/evidence/pass47/mario64_compression_step01.json",
+      "source_bytes": 7173,
+      "source_sha256": "e6e891ec79e456267fec19f6a21d4416c044cd0836ceac7b9ee3ac10b0a15e05",
+      "archive_bytes": 6623,
+      "archive_sha256": "ba2f46521e61c0fe12e723229f3425548e2213433eba8626650953a527a44b08",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/mario64_balanced_step01.json",
+      "archive": "research/evidence/pass47/mario64_balanced_step01.json",
+      "source_bytes": 7169,
+      "source_sha256": "0404fb8d825c82a354238f6ae4d2d824054e41887d9eafb7710147cf29c6e6e3",
+      "archive_bytes": 6619,
+      "archive_sha256": "db06a2edce928fced93d17fdfcdcb20ebdb1aeb73aa8fc16b5030b87013528eb",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/mario64_balanced_step25.json",
+      "archive": "research/evidence/pass47/mario64_balanced_step25.json",
+      "source_bytes": 7108,
+      "source_sha256": "6b701ad24f55717b5ff05a73a1aa91c5ad39bdb1810c5e3aab665f33ae56c143",
+      "archive_bytes": 6558,
+      "archive_sha256": "d4553baf92694f6e476b3dd54ab51bef61202d259044c1d4b15e6427eac30aca",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    },
+    {
+      "pass": 47,
+      "source": "research_pass47/outputs/states/mario64_balanced_step50.json",
+      "archive": "research/evidence/pass47/mario64_balanced_step50.json",
+      "source_bytes": 7032,
+      "source_sha256": "76cee0451e716e42d517796e44260ae721d02456fbe7ee4c03b52f2b0513e060",
+      "archive_bytes": 6482,
+      "archive_sha256": "e7ce6cd85ff71b3cb848ee44b32f6923203d0486ecc851b55889b91ecb1529b2",
+      "normalization": "Windows absolute path values replaced with portable placeholders"
+    }
+  ],
+  "missing_sources": [
+    "research_pass47/outputs/states/coast_compression_step50.json",
+    "research_pass47/outputs/states/coast_balanced_step50.json",
+    "research_pass47/outputs/states/googlewiki_compression_step25.json",
+    "research_pass47/outputs/states/googlewiki_compression_step50.json",
+    "research_pass47/outputs/states/googlewiki_balanced_step25.json",
+    "research_pass47/outputs/states/googlewiki_balanced_step50.json",
+    "research_pass47/outputs/states/mario64_compression_step25.json",
+    "research_pass47/outputs/states/mario64_compression_step50.json"
+  ]
+}

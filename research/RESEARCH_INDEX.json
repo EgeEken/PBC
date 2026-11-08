@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "status": "research paused after pass 47",
+  "released_codec": "PBC V3.1",
+  "canonical_baseline": "PBC31_CANONICAL_BASELINE.json",
+  "passes": [
+    {
+      "pass": 1,
+      "title": "PBC first-pass results",
+      "primary_report": "PBC_FIRST_PASS_RESULTS.md",
+      "summary_excerpt": "Use the verified immutable public release as the research baseline. The historical old runtime is equivalent on the tested default-preset sets but is not source-identical. Current root is a combined trajectory/performance variant, not clean release PBC 3.0. No PBC 3.1 release success is established by this pass."
+    },
+    {
+      "pass": 2,
+      "title": "PBC Pass 2 research summary",
+      "primary_report": "research_pass2/PBC_PASS2_SUMMARY.md",
+      "summary_excerpt": "All four workstreams completed locally. The pass establishes matched-work engineering speedups, screens the single-stage quality/resolution frontier, rejects two tested lossless entropy transformations, and confirms fixed runtime candidates on main/holdout. It does not authorize or enable a production PBC 3.1 configuration."
+    },
+    {
+      "pass": 3,
+      "title": "PBC Pass 3 summary",
+      "primary_report": "research_pass3/PBC_PASS3_SUMMARY.md",
+      "summary_excerpt": "The combined performance optimization and exact rectangle error-map reuse are confirmed local runtime improvements with identical output. Rate-aware allocation at 500k/35, weight 0.4, is a credible measured RD research lead that survives this holdout under interpolated existing-frontier comparisons. It is not a release improvement: encoding remains slower than released HQ, regressions persist, and most holdout matche"
+    },
+    {
+      "pass": 4,
+      "title": "PBC Pass 4 summary",
+      "primary_report": "research_pass4/PBC_PASS4_SUMMARY.md",
+      "summary_excerpt": "The combined bit-exact runtime implementation improves full local encode/decode time. Frozen weight 0.4 survives close-rate testing as a useful content-dependent alternative, with actual main-set Q-HQ wins, but not a general high-quality frontier improvement. High-quality holdout coverage remains insufficient. The two exact allocator caches do not materially reduce full encoding cost, so broad promotion/composition w"
+    },
+    {
+      "pass": 5,
+      "title": "Existing HF Space runtime benchmark results",
+      "primary_report": "research_pass5/PBC_HF_BENCHMARK_RESULTS.md",
+      "summary_excerpt": "Outcome: Validated and ready to promote through a separate production integration. The optimizations ran on the actual existing HF cpu-basic deployment. Public codec defaults and UI remain unchanged. The current deployment exposes the optimized implementation only through the authenticated isolated benchmark worker."
+    },
+    {
+      "pass": 6,
+      "title": "Pass 6",
+      "primary_report": "research_pass6/PBC_PASS6_SUMMARY.md",
+      "summary_excerpt": "Runtime integration succeeded and is deployed on the existing HF Space. NumPy grid I/O is called directly; per-encode search state replaces source rewriting/global hooks. Public MSE, presets, model, stream v0 and version remain unchanged."
+    },
+    {
+      "pass": 7,
+      "title": "Pass 7",
+      "primary_report": "research_pass7/PBC_PASS7_SUMMARY.md",
+      "summary_excerpt": "The Speed Benchmark pools historical runs. The live database has one PBC3 run (20 main images, four presets, ten trials), with means **0.768602 s encode / 0.117958 s decode**. Its PBC3 all-history means are identical; the misleading composite is with June measurements of other codecs. The described 0.704/0.108 screenshot is not reproduced by the complete unfiltered database. Deployed source hashes and timestamps iden"
+    },
+    {
+      "pass": 8,
+      "title": "Pass 8",
+      "primary_report": "research_pass8/PBC_PASS8_SUMMARY.md",
+      "summary_excerpt": "The actual immutable PBC 3.0 release and actual integrated development defaults were measured on the same existing HF cpu-basic worker: 20 main images Ã— four presets Ã— two implementations Ã— three interleaved trials, with public internal MSE enabled. Each implementation retains its authentic RNG. Complete speed, RD, variation and 80 per-image outcomes are in [PBC30_VS_DEV31_HF_BENCHMARK.md](PBC30_VS_DEV31_HF_BENCHM"
+    },
+    {
+      "pass": 9,
+      "title": "Pass 9 completed on HF",
+      "primary_report": "research_pass9/PBC_PASS9_SUMMARY.md",
+      "summary_excerpt": "Yes: optimized PBC with explicit release RNG reproduces immutable PBC 3.0 exactly on HF in 100/100 image/preset cases (20 main, five holdout; all four presets). Complete file, decoded pixel and ordered patch hashes/counts, RGB MSE and final post-LZMA bpp agree. All 96 repeated timed release/restored comparisons also match."
+    },
+    {
+      "pass": 10,
+      "title": "PBC 3.1 development baseline promotion",
+      "primary_report": "research_pass10/PBC31_BASELINE_PROMOTION.md",
+      "summary_excerpt": "Yes: `pbc31_release_rng_baseline` is now the default on the live HF demo, public compression/streaming paths and normal benchmark utilities. This is a development baseline, not an official PBC 3.1 release."
+    },
+    {
+      "pass": 11,
+      "title": "PBC Pass 11 â€” Summary",
+      "primary_report": "research_pass11/PBC_PASS11_SUMMARY.md",
+      "summary_excerpt": "- **Speed discrepancy:** The 20-image Pass 10 run averages 0.728451 s encode / 0.107516 s decode. On the exact eight Pass 9 images, Pass 10 averages 0.552984 / 0.066456 s. Sample composition explains about 72% of the encode gap and 86% of the decode gap. Timer scope and runtime controls explain why the residual is not a controlled comparison: Pass 10 includes `Image.fromarray` in the timer and is unpinned; Pass 9 pre"
+    },
+    {
+      "pass": 12,
+      "title": "PBC Pass 12 â€” Summary",
+      "primary_report": "research_pass12/PBC_PASS12_SUMMARY.md",
+      "summary_excerpt": "RGB v0 encoding and decoding work, but RGB did not improve rate-distortion efficiency in the fixed Quality/High Quality screen. Keep YCbCr as the default and stop this direction."
+    },
+    {
+      "pass": 13,
+      "title": "PBC Pass 13 summary",
+      "primary_report": "research_pass13/PBC_PASS13_SUMMARY.md",
+      "summary_excerpt": "The frozen baseline remained unchanged. Work was limited to local research scripts, measurements, and reports."
+    },
+    {
+      "pass": 14,
+      "title": "PBC Research Pass 14 summary",
+      "primary_report": "research_pass14/PBC_PASS14_SUMMARY.md",
+      "summary_excerpt": "Pass 14 completed the native runtime audit and prepared the standalone PBC 3.1 Python package. No rate-distortion experiment was run."
+    },
+    {
+      "pass": 15,
+      "title": "PBC Pass 15 summary",
+      "primary_report": "research_pass15/PBC_PASS15_SUMMARY.md",
+      "summary_excerpt": "The final staged candidate was compared with immutable PBC 3.0 on the i9-12900H using eight images, four presets, three warmed/interleaved repetitions, one pinned P-core, and one numerical thread. Across the 32 image/preset cases, encode time fell 34.00% and decode time fell 64.28%. All 96 paired streams were byte-identical; decoded RGB pixels, patch counts, bpp, and independent MSE also matched. There were no per-ca"
+    },
+    {
+      "pass": 16,
+      "title": "PBC Pass 16 summary",
+      "primary_report": "research_pass16/PBC_PASS16_SUMMARY.md",
+      "summary_excerpt": "Promoted development candidate: `pbc31_feature_histogram` (Pass 15 fused integral images plus exact integer residual order statistics). Relative to `pbc31_integral_fused` at c0d0339a509ceb4027574fc388cef18a643b14e5, full encoding time fell **3.88%** in the uncontended four-image, four-preset, three-repeat local screen. All 16 case medians improved. Compression/Balanced/Quality/High Quality reductions were **3.57% / 3"
+    },
+    {
+      "pass": 17,
+      "title": "Pass 17 completed-file RD results",
+      "primary_report": "research_pass17/PBC_RD_PROTOTYPE_RESULTS.md",
+      "summary_excerpt": "The full-image DCT sidecar is promising on four of six images, but is not a production promotion. The current development codec remains pbc31_feature_histogram. Cat and Flower fail the studied rate range. Independent tile selection is rejected in its tested form. No alternative architecture or full-set confirmation was run."
+    },
+    {
+      "pass": 18,
+      "title": "Pass 18 deterministic spatial proposals",
+      "primary_report": "research_pass18/PBC_SPATIAL_PROPOSAL_RESULTS.md",
+      "summary_excerpt": "The tested contrast/binary-fit proposal generator did not identify a useful replacement for the ordinary chosen patch. It is rejected at frozen feasibility; this is a negative result for this one method, not proof that the stochastic search is optimal."
+    },
+    {
+      "pass": 19,
+      "title": "Pass 19 summary",
+      "primary_report": "research_pass19/PBC_PASS19_SUMMARY.md",
+      "summary_excerpt": "The signed ternary hard-mask primitive failed the frozen feasibility gate. Stop after Phase A; no complete hybrid image files or completed-file results report were produced."
+    },
+    {
+      "pass": 20,
+      "title": "Pass 20 multiscale completed-file results",
+      "primary_report": "research_pass20/PBC_MULTISCALE_RESIDUAL_RESULTS.md",
+      "summary_excerpt": "Stop after the fixed three-image screen. The prototype retains some ordinary-PBC RD wins but fails to improve the frozen Pass 17 frontier. Nine of twelve files are strictly dominated by frozen full-DCT files; the remaining three are dominated by the actual A-band repacks. No six-image extension, repeated candidate timing or activation rule follows."
+    },
+    {
+      "pass": 21,
+      "title": "Pass 21 sparse hybrid completed files",
+      "primary_report": "research_pass21/PBC_SPARSE_HYBRID_RESULTS.md",
+      "summary_excerpt": "Sparse storage retains all four successful Pass17 ordinary-HQ dominance points with identical RGB pixels and much faster encoding. It solves the extreme-XZ encode bottleneck on this bounded screen. Full decoding remains too expensive for a general-purpose replacement; Cat/Flower remain RD failures."
+    },
+    {
+      "pass": 22,
+      "title": "Pass 22 reconstruction results",
+      "primary_report": "research_pass22/PBC_DECODER_RECONSTRUCTION_RESULTS.md",
+      "summary_excerpt": "One sparse gather/IDCT/scatter method and one buffer-reuse method. No fused Numba kernel was implemented: compatible in-place NumPy/SciPy operations were sufficient to test the allocation hypothesis without changing color arithmetic. Frozen Pass21 remains the regression decoder; research_pass22.decoder.decode reads the identical P21S container through the unchanged split/read_coefficients functions."
+    },
+    {
+      "pass": 23,
+      "title": "Pass 23 decoder-aware completed-file results",
+      "primary_report": "research_pass23/PBC_DECODER_AWARE_RD_RESULTS.md",
+      "summary_excerpt": "The conservative target adjustment fails the frozen progression gate. It yields one same-preset strict RD win (Cat Quality), several HQ quality/rate trades, and two Quality points dominated by their unchanged controls. No Monet/Eiffel extension, three-repeat timing campaign, classifier, dual encode or parameter rescue followed."
+    },
+    {
+      "pass": 24,
+      "title": "Pass 24 final-patch redundancy",
+      "primary_report": "research_pass24/PBC_FINAL_PATCH_REDUNDANCY.md",
+      "summary_excerpt": "Stop at the completed-stream omission feasibility gate. Three strict RD improvements exist, but their final-file savings are only 14, 74 and 97 bytes. No sampled omission reaches 5% savings with at most 1% RGB MSE growth. This does not justify a pruning algorithm, cheap working-SSE predictor or integrated encoder experiment. Only this feasibility report and the summary are created; no postencode-pruning report."
+    },
+    {
+      "pass": 25,
+      "title": "Pass 25 completed transform-base results",
+      "primary_report": "research_pass25/PBC_TRANSFORM_BASE_RD_RESULTS.md",
+      "summary_excerpt": "Reject the tested architecture as a general-purpose improvement. Outcome C/D: useful initialization-only capacity does not produce a reliable completed-file RD gain with the existing patch policy, and conventional JPEG dominates 5 of 8 hybrid points. No extension or repeated timing campaign."
+    },
+    {
+      "pass": 26,
+      "title": "Pass 26 handoff",
+      "primary_report": "research_pass26/PBC_PASS26_SUMMARY.md",
+      "summary_excerpt": "Both standalone Windows forms work. An optional exact C metric lowers six-case mean median encode time by 5.70% and reduces one Cat encode peak by about 147 MiB. Video-container correctness succeeds, temporal rate efficiency fails. Conventional controls do not support another incremental RD change."
+    },
+    {
+      "pass": 27,
+      "title": "Pass 27 handoff",
+      "primary_report": "research_pass27/PBC_PASS27_SUMMARY.md",
+      "summary_excerpt": "PBC 3.2.0rc1 is a local engineering candidate, not a published release. Compression/model/presets/RNG/entropy/v0 format retain actual published 3.1 behavior."
+    },
+    {
+      "pass": 28,
+      "title": "PBC 3.2.0 release acceptance",
+      "primary_report": "research_pass28/PBC32_RELEASE_ACCEPTANCE.md",
+      "summary_excerpt": "Verdict: **READY WITH LIMITATIONS**. Mandatory functional, packaging, independent Windows and performance gates pass. Final 3.2.0 artifacts are local and await explicit publication approval. No release/tag/main/HF change was made."
+    },
+    {
+      "pass": 29,
+      "title": "PBC V4: nonlocal grouping and seeded permutations",
+      "primary_report": "research_pass29/PBC_V4_NONLOCAL_GROUPING_RESULTS.md",
+      "summary_excerpt": "Pass 29 is a bounded component study. It does not change the PBC codec or claim a V4 codec improvement."
+    },
+    {
+      "pass": 30,
+      "title": "PBC V4 Pass 30: shared-action feasibility",
+      "primary_report": "research_pass30/PBC_V4_SHARED_ACTION_RESULTS.md",
+      "summary_excerpt": "Phase A failed its stop gate. The four-pattern residual-shape fit cleared the 10% residual-SSE screen on only Cat, one of four content classes. Its 12.57% reduction beyond DC used all four patterns at multiple cells. The other classes reached 4.83% (Flower), 1.93% (Mario64) and 0.20% (Googlewiki). Phase B was not run: no enhancement streams, XZ sizes, rate-distortion points, or file-only decoder were built."
+    },
+    {
+      "pass": 31,
+      "title": "PBC V4 Pass 31 â€” Fixed-Grid Predictive Refinement Results",
+      "primary_report": "research_pass31/PBC_V4_PREDICTIVE_REFINEMENT_RESULTS.md",
+      "summary_excerpt": "The fixed-grid refinement is decodable and produces complete enhancement files, but the screen does not support adopting it as a general PBC architecture. Local detail improves reconstruction when the stream is allowed to grow substantially. The combined adaptive configuration (D) is useful on the detailed cat image: at lambda 20 it is 13.3% smaller than detail-only B at slightly lower MSE. On the other images its ga"
+    },
+    {
+      "pass": 32,
+      "title": "PBC V4 â€” Pass 32: Rate-Aware Mode Selection and Generalization",
+      "primary_report": "research_pass32/PBC_V4_RATE_AWARE_PREDICTION_RESULTS.md",
+      "summary_excerpt": "The fixed-grid predictive modes generalize to these three held-out photographs, but the gains are small and do not meet the screen for a meaningful improvement. R1 changes candidate ranking and yields additional measured frontier points, but it does not materially improve quality at a matched rate. Keep this as a research result; do not promote it as a release change."
+    },
+    {
+      "pass": 33,
+      "title": "PBC V4 Pass 33 â€” Sparse Original-Resolution Detail",
+      "primary_report": "research_pass33/PBC_V4_SPARSE_DETAIL_RESULTS.md",
+      "summary_excerpt": "The sparse 8Ã—8 RGB DCT mode produced useful completed-file RD gains over Pass 31's interpolated-detail control on synthetic graphics and detailed photography, and on both conditional extension images. The initial four-image progression gate passed on Mario64 and Cat. The result is content-dependent: Googlewiki missed the 10% MSE threshold and smooth-photo Flower did not meet either gate. Sparse coding also raised en"
+    },
+    {
+      "pass": 34,
+      "title": "PBC V4 â€” Research Pass 34",
+      "primary_report": "research_pass34/REPORT.md",
+      "summary_excerpt": "Reject the sparse-frequency PBC variant as a release candidate. It reduces base error, but costs substantially more bytes on the photographic images, and fixed AVIF points beat its MSE at equal or lower completed-file size on all four images. Direct the next experiment to encoder-side AV1/libaom search and bit allocation. Keep production PBC unchanged. This is a four-image screen, not a population-level claim. No nex"
+    },
+    {
+      "pass": 35,
+      "title": "AVIF Baseline Results",
+      "primary_report": "research_pass35/AVIF_BASELINE_RESULTS.md",
+      "summary_excerpt": "The five development images were EXIF-transposed and converted to RGB. Hashes and dimensions for them and the three held-outs are in [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json). Held-outs were not encoded or used for tuning."
+    },
+    {
+      "pass": 36,
+      "title": "Pass 36 results",
+      "primary_report": "research_pass36/PASS36_RESULTS.md",
+      "summary_excerpt": "Profile the pinned libaom speed-6 AVIF path with optimized native symbols, inspect repeated computations, and make at most one exact-output reuse change if evidence supports it."
+    },
+    {
+      "pass": 37,
+      "title": "Pass 37 results",
+      "primary_report": "research_pass37/PASS37_RESULTS.md",
+      "summary_excerpt": "Test whether stable ordering of the first 13 AV1 luma intra base modes by their existing syntax cost can improve speed-6 AVIF coding. REF is the clean pinned libaom build; CTRL is the patched source with the compile-time switch off; EXP enables the ordering. No PBC production or decoder source was changed."
+    },
+    {
+      "pass": 38,
+      "title": "Pass 38 results",
+      "primary_report": "research_pass38/PASS38_RESULTS.md",
+      "summary_excerpt": "This pass tested whether libaom 3.12.1's adaptive transform-type RD exit skips useful candidates and whether fully expanding that search improves completed AVIF output. The pinned revisions were libaom 10aece4157eb79315da205f39e19bf6ab3ee30d0 and libavif 1aadfad932c98c069a1204261b1856f81f3bc199. The branch is research/experiments, starting HEAD 3723dc14de88c6c3dcbd98dd80a097e019a92a9f. Builds used Windows 11 x64, GCC"
+    },
+    {
+      "pass": 39,
+      "title": "Pass 39 results",
+      "primary_report": "research_pass39/PASS39_RESULTS.md",
+      "summary_excerpt": "Pass 39 tested existing libaom AV1 options through pinned libavif, with no PBC production or upstream encoder changes. Runtime was libaom 3.12.1 (`10aece4157eb79315da205f39e19bf6ab3ee30d0`) and libavif 1.3.0 (`1aadfad932c98c069a1204261b1856f81f3bc199`). The actual Pass 35 binaries were reused for the primary encodes."
+    },
+    {
+      "pass": 40,
+      "title": "Pass 40 results",
+      "primary_report": "research_pass40/PASS40_RESULTS.md",
+      "summary_excerpt": "The active Variance Boost path is confirmed. At equal qcolor, it lowers RGB MSE but spends more bytes; its rate penalty ranges from 5.7% to 216% in the PSNR component points. Rate calibration reverses that result: 9 of 10 delta-Q comparisons have worse RGB MSE than their delta-Q-off targets, with one effectively neutral. This does not support using the existing boost as a general equal-rate quality improvement."
+    },
+    {
+      "pass": 41,
+      "title": "Pass 41 results",
+      "primary_report": "research_pass41/PASS41_RESULTS.md",
+      "summary_excerpt": "Pass 41 asked whether reallocation between luma and chroma improves completed-file AVIF RGB rate-distortion. It used the pinned Pass 35 static build: libaom 3.12.1 `10aece4157eb79315da205f39e19bf6ab3ee30d0` and libavif 1.3.0 `1aadfad932c98c069a1204261b1856f81f3bc199`. The worktree began at `3723dc14de88c6c3dcbd98dd80a097e019a92a9f` on `research/experiments`. The reference `avifenc` SHA-256 is `d9f46b7b7d790fbb50b1041"
+    },
+    {
+      "pass": 42,
+      "title": "PBC V4 Pass 42 results",
+      "primary_report": "research_pass42/V4_CODEC_RESULTS.md",
+      "summary_excerpt": "This is a first isolated V4-A prototype, not a release candidate. It uses the fixed 16Ã—16 regional grid, compact 64-color initialization, protected SKIP, procedural residual surfaces, full 8Ã—8 RGB DCT refinement, and one shared XZ payload. Measurements use the three specified development images; reserved validation images were not opened. The frozen V3.1 source commit and model hash are recorded in the raw results."
+    },
+    {
+      "pass": 43,
+      "title": "PBC V4 Pass 43 results",
+      "primary_report": "research_pass43/PASS43_RESULTS.md",
+      "summary_excerpt": "Diagnose V4-Aâ€™s low-rate loss and decoder cost, test one optional coarse stage, and optimize the dominant decoder operation without changing the v1 bitstream. Repository HEAD at start: `3723dc14de88c6c3dcbd98dd80a097e019a92a9f`, branch `research/experiments`. Frozen V3.1 source commit/model and source image hashes are in `PASS43_SUMMARY.json`. Work stayed under `research_pass43/`, except the V4 goals synchronizatio"
+    },
+    {
+      "pass": 44,
+      "title": "Pass 44 results",
+      "primary_report": "research_pass44/PASS44_RESULTS.md",
+      "summary_excerpt": "No competitive V4 result demonstrated so far. The existing V4-B native-refinement files are far above V3.1 Compression rates and encode 10.7Ã—â€“31.7Ã— slower while decoding 14.0Ã—â€“89.8Ã— slower under controlled single-thread in-process timing. The corrected strict-budget experiment uses complete V3.1 Compression prefixes (12/19/50 patches for Googlewiki/Cat/Coast), then selects sparse native detail. Its final MSE "
+    },
+    {
+      "pass": 45,
+      "title": "Pass 45 results",
+      "primary_report": "research_pass45/PASS45_RESULTS.md",
+      "summary_excerpt": "**What caused the Hugging Face / research mismatch?** The PBC mismatch is not reproduced by the available published or research sources. The exact HF upload and returned stream are unavailable, so the incidentâ€™s cause remains unproven. Current HF preset/source/model identity matches the frozen research baseline; all 12 Coast/Cat/Googlewiki preset outputs from current release Python match the archived research strea"
+    },
+    {
+      "pass": 46,
+      "title": "PBC V4 Pass 46 results",
+      "primary_report": "research_pass46/PASS46_RESULTS.md",
+      "summary_excerpt": "This pass tested a narrowly defined question: can a compact source-resolution procedural stroke recover perceptually important detail at canonical PBC 3.1 Compression rates? It also rechecked canonical PBC output, compared two distinct AVIF quality-0 configurations, and added pinned AVIF points around PBC's measured rates. No codec architecture or stream was changed."
+    },
+    {
+      "pass": 47,
+      "title": "Competitive status",
+      "primary_report": "research_pass47/PASS47_RESULTS.md",
+      "summary_excerpt": "Pass 47 produced **no completed experimental PBC file and no demonstrated completed-file improvement** over canonical V3.1. The predeclared local gate failed its cross-image threshold, so the conditional continuation and selection-rule phases were not run. The oracle did find two large local RD-score alternatives, both on Mario64 Balanced; their effect after the remaining patch trajectory is unknown."
+    }
+  ]
+}

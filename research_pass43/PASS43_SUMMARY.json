@@ -1,0 +1,130 @@
+{
+  "pass": 43,
+  "status": "exploratory; no release claim",
+  "repository": {
+    "branch": "research/experiments",
+    "head_expected_and_verified": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+    "v31_frozen_source_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+    "staged": false,
+    "commit_or_push": false,
+    "git_status_error": "Standalone git status --short still fails: this operation must be run in a work tree; rev-parse identifies this linked worktree and read-only index listing works; no repair attempted",
+    "tracked_modified_from_read_only_index": ["AGENTS.md"],
+    "untracked_research": ["research/PBC_V4_GOALS.md", "research_pass43/"],
+    "preexisting_untracked_research_preserved": ["research_pass35/", "research_pass36/", "research_pass37/", "research_pass38/", "research_pass39/", "research_pass40/", "research_pass41/", "research_pass42/"],
+    "status_workaround_attempts": ["read-only rev-parse, ls-files, and diff inspection", "per-command core.bare=false", "per-command core.worktree override"],
+    "git_metadata_modified": false
+  },
+  "goals_sync": {
+    "destination": "research/PBC_V4_GOALS.md",
+    "downloads_source_sha256": "67DEF368271B0291A3C71E3DA0284866DA9F0ECC55C2054CD469CDD4A29C7F91",
+    "destination_sha256": "773AE76778669C59C6BBCB23779906B10722DE76963E7FC92370D2B42FBF32DA",
+    "source_file_contains_avif_stretch_goal": false,
+    "pass43_avif_goal_appended_from_request": true,
+    "existing_goals_preserved": true
+  },
+  "runtime": {
+    "python": "3.13.5",
+    "platform": "Windows 11 x64",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3",
+    "openblas_threads": 1,
+    "omp_threads": 1,
+    "frozen_model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+  },
+  "inputs": {
+    "googlewiki.png": {"sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e", "dimensions": [814, 812]},
+    "cat.jpg": {"sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e", "dimensions": [3576, 2384]},
+    "coast.jpg": {"sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2", "dimensions": [4240, 2832]}
+  },
+  "coarse_only_v3_full_prefix_as_v4": {
+    "googlewiki.png": {"coarse_patch_count": 12, "bytes": 29180, "rgb_mse": 1005.0220131685649, "pixel_identical_to_v3_prefix": true, "skip_exact": true},
+    "cat.jpg": {"coarse_patch_count": 13, "bytes": 6448, "rgb_mse": 453.441459640832, "pixel_identical_to_v3_prefix": true, "skip_exact": true},
+    "coast.jpg": {"coarse_patch_count": 13, "bytes": 4436, "rgb_mse": 89.35681991303343, "pixel_identical_to_v3_prefix": true, "skip_exact": true}
+  },
+  "v4_b_d_low": {
+    "googlewiki.png": {"coarse_patch_count": 3, "bytes": 423996, "bpp": 5.131818786991201, "rgb_mse": 70.15750333853782, "mode_counts": {"skip": 879, "procedural": 150, "transform": 1572}, "skip_exact": true},
+    "cat.jpg": {"coarse_patch_count": 3, "bytes": 978704, "bpp": 0.9184120835397805, "rgb_mse": 143.80178476695244, "rgb_psnr": 26.553160846289128, "file_sha256": "4b72b783ce2127a7e9844f2c707a8cf0dc4809053b93c55dc1a96140d5d80a10", "mode_counts": {"skip": 17927, "procedural": 8148, "transform": 7301}, "skip_exact": true},
+    "coast.jpg": {"coarse_patch_count": 3, "bytes": 182676, "bpp": 0.12170610809082187, "rgb_mse": 12.23205939865153, "rgb_psnr": 37.2558077953265, "file_sha256": "736e4e2e8a4b2a5fdc2604889d84bbb47ca64568c4f711fc0c9bdbeef835fa92", "mode_counts": {"skip": 33855, "procedural": 11523, "transform": 1527}, "skip_exact": true}
+  },
+  "v4_b_quality_scaling_googlewiki": {
+    "low": {"bytes": 423996, "rgb_mse": 70.1575},
+    "intermediate": {"bytes": 737264, "rgb_mse": 2.546},
+    "high": {"bytes": 1225860, "rgb_mse": 0.0383972}
+  },
+  "v4_a_d_low": {
+    "googlewiki.png": {"bytes": 73148, "bpp": 0.8853439198266785, "rgb_mse": 24.83473330025054, "file_sha256": "1634423203a45158747e794419ecc0c983d4308d9a9db101a1e4583386df2ddf"},
+    "cat.jpg": {"bytes": 779344, "bpp": 0.7313334234193655, "rgb_mse": 167.3674119330836, "file_sha256": "e273fd9158aff94da7467ccbb74e0a1904373c37646e9154e2219b837fa3158f"},
+    "coast.jpg": {"bytes": 138848, "bpp": 0.0925061294105106, "rgb_mse": 18.691769767348898, "file_sha256": "77e3fea432bc9c98b7697278011a9f3eab1001f2606300c932457955291b60e2"}
+  },
+  "v4_a_d_intermediate": {
+    "googlewiki.png": {"bytes": 106968, "bpp": 1.2946829498553636, "rgb_mse": 15.618359739049394},
+    "cat.jpg": {"bytes": 6333468, "bpp": 5.943302103508851, "rgb_mse": 10.111106966528034},
+    "coast.jpg": {"bytes": 688860, "bpp": 0.458946274384394, "rgb_mse": 7.162201302277653}
+  },
+  "v4_b_d_intermediate": {
+    "googlewiki.png": {"coarse_patch_count": 3, "bytes": 737264, "bpp": 8.923445613100785, "rgb_mse": 2.5464102145136627, "mode_counts": {"skip": 225, "procedural": 519, "transform": 1857}},
+    "cat.jpg": {"coarse_patch_count": 13, "bytes": 6376384, "bpp": 5.983574313469363, "rgb_mse": 6.750124963089751, "mode_counts": {"skip": 3727, "procedural": 10058, "transform": 19591}},
+    "coast.jpg": {"coarse_patch_count": 3, "bytes": 735768, "bpp": 0.4901982731052127, "rgb_mse": 6.122431366147888, "mode_counts": {"skip": 16577, "procedural": 28211, "transform": 2117}}
+  },
+  "decode_profile_coast_v1": {
+    "file_bytes": 688860,
+    "instrumented_total_seconds": 14.7707294,
+    "stage_seconds": {"xz": 0.0389715, "bit_unpack": 0.0617549, "upsample": 1.6472081, "procedural_surface": 10.8319551, "coefficient_parse": 0.9264104, "inverse_dct": 0.0692915, "other": 1.1935181},
+    "operations": {"surfaces": 32182, "procedural_records": 32205, "coefficient_reads": 20040, "matrix_multiplies": 40080, "transform_regions": 1670},
+    "rss_before_bytes": 39329792,
+    "rss_peak_bytes": 116166656,
+    "rss_observed_delta_bytes": 76836864,
+    "746_mib_high_water_belongs_to": "Pass 42 encode-only profile"
+  },
+  "decoder_optimization": {
+    "change": "batched integer bilinear surface interpolation with equivalent rounding",
+    "stream_or_pixel_semantics_changed": false,
+    "coast_ref_median_seconds": 14.3049621,
+    "coast_opt_median_seconds": 4.2706216,
+    "coast_speedup": 3.3496206,
+    "coast_rss_delta_ref_bytes": 76677120,
+    "coast_rss_delta_opt_bytes": 76406784,
+    "googlewiki_ref_median_seconds": 0.25355,
+    "googlewiki_opt_median_seconds": 0.2576094,
+    "googlewiki_speedup": 0.984242,
+    "fresh_process_pixel_hashes_equal": true,
+    "focused_test_groups_passed": 3
+  },
+  "coast_low_encode_interleaved_seconds": {
+    "v4_a": [23.83309, 23.03411, 24.31247],
+    "v4_b_end_to_end": [8.97620, 8.86312, 8.50631],
+    "v4_a_bytes": 138848,
+    "v4_b_bytes": 182676,
+    "warmup_per_encoder": 1
+  },
+  "coast_v2_intermediate_decode_seconds": {
+    "warmed": [2.6411845, 2.6861819, 2.7565678, 2.8382448, 2.7309465],
+    "median": 2.7309465,
+    "fresh_process": 2.1468896,
+    "peak_observed_rss_delta_bytes": 162545664,
+    "skip_exact": true
+  },
+  "correctness": {
+    "optimized_v1_pixel_hash_equivalence": true,
+    "v2_fresh_process_pixel_hash_equivalence": true,
+    "v2_protected_skip": true,
+    "v2_odd_dimensions_73x59": true,
+    "v1_disabled_control_reproduces_pass42_streams": true,
+    "neural_weights_used_by_decoder": false
+  },
+  "visuals": {
+    "coast_crop": "visuals/coast_low_rate_comparison.png",
+    "googlewiki_crop": "visuals/googlewiki_low_rate_comparison.png",
+    "taper_enabled": false,
+    "observed_artifact": "visible local 16x16 transition at some dark foreground edges"
+  },
+  "gates": {
+    "A_low_rate_diagnosis": "pass",
+    "B_decoder_bottleneck_identified": "pass",
+    "C_semantics_preserving_decode_speed": "pass; 3.35x Coast, neutral Googlewiki",
+    "D_v4a_comparable_rate_rd_improvement": "not_passed",
+    "E_v31_competitiveness": "not_passed_overall; coarse-only RD matches V3 on all three, but end-to-end coarse-only performance is unmeasured and V4-detail rates rise sharply",
+    "F_quality_scaling": "pass",
+    "G_broader_validation": "not_attempted"
+  },
+  "avif": {"benchmark_attempted": false, "reason": "no matched-rate V4 advantage over V3.1 established"}
+}

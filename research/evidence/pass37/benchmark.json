@@ -1,0 +1,1671 @@
+{
+  "source": {
+    "libaom": "10aece4157eb79315da205f39e19bf6ab3ee30d0",
+    "libavif": "1aadfad932c98c069a1204261b1856f81f3bc199"
+  },
+  "timing_boundary": "full avifenc process wall time; includes CLI startup, frontend, encoding, and file write",
+  "repetitions": 5,
+  "memory_method": "separate encode probes with 2 ms psutil RSS polling; excluded from timed runs",
+  "memory_probes": {
+    "googlewiki_q5_s6": {
+      "REF": {
+        "peak_sampled_rss_bytes": 27156480,
+        "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 27209728,
+        "avif_sha256": "29f0c18303a6630a586a7cfec0a2d327c1b646de06cecb9fa9fdea3ef8892516"
+      }
+    },
+    "googlewiki_q20_s6": {
+      "REF": {
+        "peak_sampled_rss_bytes": 27918336,
+        "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 27983872,
+        "avif_sha256": "c6a7a725dae95eeb4ad3d04ab427ea5333725d7c057eb99705423c76d9ee3734"
+      }
+    },
+    "mario64_q50_s6": {
+      "REF": {
+        "peak_sampled_rss_bytes": 33988608,
+        "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 34029568,
+        "avif_sha256": "be2ef172d392dbfaac7a9cf9832720d5f8390cca4a540538cfc521017f7f1bf8"
+      }
+    },
+    "flower_q80_s6": {
+      "REF": {
+        "peak_sampled_rss_bytes": 144486400,
+        "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 144396288,
+        "avif_sha256": "973e611dc289069ca88cc7897ca85291922e43ed5c0224fd8b685032dffc6d49"
+      }
+    },
+    "cat_q35_s6": {
+      "REF": {
+        "peak_sampled_rss_bytes": 128663552,
+        "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 128606208,
+        "avif_sha256": "98a5dfb5a56f19cb69e36e12fb9cebc1da8348f15630f304fca239eed1a45ee7"
+      }
+    },
+    "cat_q50_s6": {
+      "REF": {
+        "peak_sampled_rss_bytes": 132050944,
+        "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 132177920,
+        "avif_sha256": "d6c0d225f79a740456b123a55e37b838f6f61b78615312bfabb4f8145bb26538"
+      }
+    },
+    "coast_q80_s6": {
+      "REF": {
+        "peak_sampled_rss_bytes": 198176768,
+        "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 198262784,
+        "avif_sha256": "810c052ed31c39fd9b385373cb846ea7f68d12b0554d8a1e2746936e38bcdf88"
+      }
+    },
+    "googlewiki_q5_s8": {
+      "REF": {
+        "peak_sampled_rss_bytes": 18747392,
+        "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 18747392,
+        "avif_sha256": "756b66b10812360c5bf08bbdc7e59cb497cee29c439a7672892de9c541765030"
+      }
+    },
+    "cat_q35_s8": {
+      "REF": {
+        "peak_sampled_rss_bytes": 129671168,
+        "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44"
+      },
+      "EXP": {
+        "peak_sampled_rss_bytes": 129630208,
+        "avif_sha256": "c86b60671a11bdc88d82a58e196b9e412e86c5a26a781e284fa5a9c609ffbbaa"
+      }
+    }
+  },
+  "runs": [
+    {
+      "seconds": 0.2226525999722071,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20613,
+      "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\ref_r1.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.2279530999949202,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20361,
+      "avif_sha256": "29f0c18303a6630a586a7cfec0a2d327c1b646de06cecb9fa9fdea3ef8892516",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\exp_r1.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.23059960000682622,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20361,
+      "avif_sha256": "29f0c18303a6630a586a7cfec0a2d327c1b646de06cecb9fa9fdea3ef8892516",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\exp_r2.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.2265437000314705,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20613,
+      "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\ref_r2.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.2270581999910064,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20613,
+      "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\ref_r3.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.23002710001310334,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20361,
+      "avif_sha256": "29f0c18303a6630a586a7cfec0a2d327c1b646de06cecb9fa9fdea3ef8892516",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\exp_r3.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.2261551000410691,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20361,
+      "avif_sha256": "29f0c18303a6630a586a7cfec0a2d327c1b646de06cecb9fa9fdea3ef8892516",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\exp_r4.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.2322287000133656,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20613,
+      "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\ref_r4.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.22513169999001548,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20613,
+      "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\ref_r5.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.2308439000044018,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 20361,
+      "avif_sha256": "29f0c18303a6630a586a7cfec0a2d327c1b646de06cecb9fa9fdea3ef8892516",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s6\\exp_r5.avif",
+      "case": "googlewiki_q5_s6",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.2711258999770507,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44550,
+      "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\ref_r1.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.26855879998765886,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44653,
+      "avif_sha256": "c6a7a725dae95eeb4ad3d04ab427ea5333725d7c057eb99705423c76d9ee3734",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\exp_r1.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.26604140002746135,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44653,
+      "avif_sha256": "c6a7a725dae95eeb4ad3d04ab427ea5333725d7c057eb99705423c76d9ee3734",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\exp_r2.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.26292870001634583,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44550,
+      "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\ref_r2.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.2676999000250362,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44550,
+      "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\ref_r3.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.2680322999949567,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44653,
+      "avif_sha256": "c6a7a725dae95eeb4ad3d04ab427ea5333725d7c057eb99705423c76d9ee3734",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\exp_r3.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.27193099999567494,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44653,
+      "avif_sha256": "c6a7a725dae95eeb4ad3d04ab427ea5333725d7c057eb99705423c76d9ee3734",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\exp_r4.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.272694599989336,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44550,
+      "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\ref_r4.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.2761903000064194,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44550,
+      "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\ref_r5.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.27223289996618405,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 44653,
+      "avif_sha256": "c6a7a725dae95eeb4ad3d04ab427ea5333725d7c057eb99705423c76d9ee3734",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q20_s6\\exp_r5.avif",
+      "case": "googlewiki_q20_s6",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.24827179999556392,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39332,
+      "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\ref_r1.avif",
+      "case": "mario64_q50_s6",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.2440185999730602,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39082,
+      "avif_sha256": "be2ef172d392dbfaac7a9cf9832720d5f8390cca4a540538cfc521017f7f1bf8",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\exp_r1.avif",
+      "case": "mario64_q50_s6",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.2404009000165388,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39082,
+      "avif_sha256": "be2ef172d392dbfaac7a9cf9832720d5f8390cca4a540538cfc521017f7f1bf8",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\exp_r2.avif",
+      "case": "mario64_q50_s6",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.24508909997530282,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39332,
+      "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\ref_r2.avif",
+      "case": "mario64_q50_s6",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.24975109996739775,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39332,
+      "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\ref_r3.avif",
+      "case": "mario64_q50_s6",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.25196779996622354,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39082,
+      "avif_sha256": "be2ef172d392dbfaac7a9cf9832720d5f8390cca4a540538cfc521017f7f1bf8",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\exp_r3.avif",
+      "case": "mario64_q50_s6",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.2414297999930568,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39082,
+      "avif_sha256": "be2ef172d392dbfaac7a9cf9832720d5f8390cca4a540538cfc521017f7f1bf8",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\exp_r4.avif",
+      "case": "mario64_q50_s6",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.24607670004479587,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39332,
+      "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\ref_r4.avif",
+      "case": "mario64_q50_s6",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.24402689997805282,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39332,
+      "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\ref_r5.avif",
+      "case": "mario64_q50_s6",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.24613589997170493,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 39082,
+      "avif_sha256": "be2ef172d392dbfaac7a9cf9832720d5f8390cca4a540538cfc521017f7f1bf8",
+      "path": "research_pass37\\outputs\\benchmark_final\\mario64_q50_s6\\exp_r5.avif",
+      "case": "mario64_q50_s6",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 1.1891708000330254,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170486,
+      "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\ref_r1.avif",
+      "case": "flower_q80_s6",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 1.1969269999535754,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170244,
+      "avif_sha256": "973e611dc289069ca88cc7897ca85291922e43ed5c0224fd8b685032dffc6d49",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\exp_r1.avif",
+      "case": "flower_q80_s6",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 1.173829899984412,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170244,
+      "avif_sha256": "973e611dc289069ca88cc7897ca85291922e43ed5c0224fd8b685032dffc6d49",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\exp_r2.avif",
+      "case": "flower_q80_s6",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 1.1778407000238076,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170486,
+      "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\ref_r2.avif",
+      "case": "flower_q80_s6",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 1.1999377000029199,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170486,
+      "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\ref_r3.avif",
+      "case": "flower_q80_s6",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 1.2222425999934785,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170244,
+      "avif_sha256": "973e611dc289069ca88cc7897ca85291922e43ed5c0224fd8b685032dffc6d49",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\exp_r3.avif",
+      "case": "flower_q80_s6",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 1.1957435999647714,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170244,
+      "avif_sha256": "973e611dc289069ca88cc7897ca85291922e43ed5c0224fd8b685032dffc6d49",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\exp_r4.avif",
+      "case": "flower_q80_s6",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 1.2132554999552667,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170486,
+      "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\ref_r4.avif",
+      "case": "flower_q80_s6",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 1.210817400016822,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170486,
+      "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\ref_r5.avif",
+      "case": "flower_q80_s6",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 1.1865659999893978,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 170244,
+      "avif_sha256": "973e611dc289069ca88cc7897ca85291922e43ed5c0224fd8b685032dffc6d49",
+      "path": "research_pass37\\outputs\\benchmark_final\\flower_q80_s6\\exp_r5.avif",
+      "case": "flower_q80_s6",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 1.698458299972117,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 262385,
+      "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\ref_r1.avif",
+      "case": "cat_q35_s6",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 1.7103741000173613,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 261979,
+      "avif_sha256": "98a5dfb5a56f19cb69e36e12fb9cebc1da8348f15630f304fca239eed1a45ee7",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\exp_r1.avif",
+      "case": "cat_q35_s6",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 1.6992530000279658,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 261979,
+      "avif_sha256": "98a5dfb5a56f19cb69e36e12fb9cebc1da8348f15630f304fca239eed1a45ee7",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\exp_r2.avif",
+      "case": "cat_q35_s6",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 1.6895192000083625,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 262385,
+      "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\ref_r2.avif",
+      "case": "cat_q35_s6",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 1.7161610000184737,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 262385,
+      "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\ref_r3.avif",
+      "case": "cat_q35_s6",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 1.7343538000131957,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 261979,
+      "avif_sha256": "98a5dfb5a56f19cb69e36e12fb9cebc1da8348f15630f304fca239eed1a45ee7",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\exp_r3.avif",
+      "case": "cat_q35_s6",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 1.7268108000280336,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 261979,
+      "avif_sha256": "98a5dfb5a56f19cb69e36e12fb9cebc1da8348f15630f304fca239eed1a45ee7",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\exp_r4.avif",
+      "case": "cat_q35_s6",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 1.70674760005204,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 262385,
+      "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\ref_r4.avif",
+      "case": "cat_q35_s6",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 1.7183528000023216,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 262385,
+      "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\ref_r5.avif",
+      "case": "cat_q35_s6",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 1.6984039000235498,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 261979,
+      "avif_sha256": "98a5dfb5a56f19cb69e36e12fb9cebc1da8348f15630f304fca239eed1a45ee7",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s6\\exp_r5.avif",
+      "case": "cat_q35_s6",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 2.1100790000054985,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528238,
+      "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\ref_r1.avif",
+      "case": "cat_q50_s6",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 2.0878219000296667,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528312,
+      "avif_sha256": "d6c0d225f79a740456b123a55e37b838f6f61b78615312bfabb4f8145bb26538",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\exp_r1.avif",
+      "case": "cat_q50_s6",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 2.0900175000424497,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528312,
+      "avif_sha256": "d6c0d225f79a740456b123a55e37b838f6f61b78615312bfabb4f8145bb26538",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\exp_r2.avif",
+      "case": "cat_q50_s6",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 2.0621720000053756,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528238,
+      "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\ref_r2.avif",
+      "case": "cat_q50_s6",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 2.0663693000096828,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528238,
+      "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\ref_r3.avif",
+      "case": "cat_q50_s6",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 2.0678947999840602,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528312,
+      "avif_sha256": "d6c0d225f79a740456b123a55e37b838f6f61b78615312bfabb4f8145bb26538",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\exp_r3.avif",
+      "case": "cat_q50_s6",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 2.073512999981176,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528312,
+      "avif_sha256": "d6c0d225f79a740456b123a55e37b838f6f61b78615312bfabb4f8145bb26538",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\exp_r4.avif",
+      "case": "cat_q50_s6",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 2.0735610999981873,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528238,
+      "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\ref_r4.avif",
+      "case": "cat_q50_s6",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 2.0853929999866523,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528238,
+      "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\ref_r5.avif",
+      "case": "cat_q50_s6",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 2.0657522000255994,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 528312,
+      "avif_sha256": "d6c0d225f79a740456b123a55e37b838f6f61b78615312bfabb4f8145bb26538",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q50_s6\\exp_r5.avif",
+      "case": "cat_q50_s6",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 1.376434000034351,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159713,
+      "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\ref_r1.avif",
+      "case": "coast_q80_s6",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 1.4010346999857575,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159569,
+      "avif_sha256": "810c052ed31c39fd9b385373cb846ea7f68d12b0554d8a1e2746936e38bcdf88",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\exp_r1.avif",
+      "case": "coast_q80_s6",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 1.3858201000257395,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159569,
+      "avif_sha256": "810c052ed31c39fd9b385373cb846ea7f68d12b0554d8a1e2746936e38bcdf88",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\exp_r2.avif",
+      "case": "coast_q80_s6",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 1.376719599997159,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159713,
+      "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\ref_r2.avif",
+      "case": "coast_q80_s6",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 1.3812112000305206,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159713,
+      "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\ref_r3.avif",
+      "case": "coast_q80_s6",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 1.3874031999730505,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159569,
+      "avif_sha256": "810c052ed31c39fd9b385373cb846ea7f68d12b0554d8a1e2746936e38bcdf88",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\exp_r3.avif",
+      "case": "coast_q80_s6",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 1.3724518000381067,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159569,
+      "avif_sha256": "810c052ed31c39fd9b385373cb846ea7f68d12b0554d8a1e2746936e38bcdf88",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\exp_r4.avif",
+      "case": "coast_q80_s6",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 1.3936830000020564,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159713,
+      "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\ref_r4.avif",
+      "case": "coast_q80_s6",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 1.379486399993766,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159713,
+      "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\ref_r5.avif",
+      "case": "coast_q80_s6",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 1.3799258000217378,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 159569,
+      "avif_sha256": "810c052ed31c39fd9b385373cb846ea7f68d12b0554d8a1e2746936e38bcdf88",
+      "path": "research_pass37\\outputs\\benchmark_final\\coast_q80_s6\\exp_r5.avif",
+      "case": "coast_q80_s6",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.06919970002491027,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15985,
+      "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\ref_r1.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.06805120001081377,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15919,
+      "avif_sha256": "756b66b10812360c5bf08bbdc7e59cb497cee29c439a7672892de9c541765030",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\exp_r1.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.06460650003282353,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15919,
+      "avif_sha256": "756b66b10812360c5bf08bbdc7e59cb497cee29c439a7672892de9c541765030",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\exp_r2.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.06960039999103174,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15985,
+      "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\ref_r2.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.06887580000329763,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15985,
+      "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\ref_r3.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.06621660001110286,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15919,
+      "avif_sha256": "756b66b10812360c5bf08bbdc7e59cb497cee29c439a7672892de9c541765030",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\exp_r3.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.06621459999587387,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15919,
+      "avif_sha256": "756b66b10812360c5bf08bbdc7e59cb497cee29c439a7672892de9c541765030",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\exp_r4.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.06427840003743768,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15985,
+      "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\ref_r4.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.06603919999906793,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15985,
+      "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\ref_r5.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.0669859999907203,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 15919,
+      "avif_sha256": "756b66b10812360c5bf08bbdc7e59cb497cee29c439a7672892de9c541765030",
+      "path": "research_pass37\\outputs\\benchmark_final\\googlewiki_q5_s8\\exp_r5.avif",
+      "case": "googlewiki_q5_s8",
+      "config": "EXP",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.5970061999978498,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251357,
+      "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\ref_r1.avif",
+      "case": "cat_q35_s8",
+      "config": "REF",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.5950455000274815,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251332,
+      "avif_sha256": "c86b60671a11bdc88d82a58e196b9e412e86c5a26a781e284fa5a9c609ffbbaa",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\exp_r1.avif",
+      "case": "cat_q35_s8",
+      "config": "EXP",
+      "repetition": 1
+    },
+    {
+      "seconds": 0.5890195000101812,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251332,
+      "avif_sha256": "c86b60671a11bdc88d82a58e196b9e412e86c5a26a781e284fa5a9c609ffbbaa",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\exp_r2.avif",
+      "case": "cat_q35_s8",
+      "config": "EXP",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.5966285000322387,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251357,
+      "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\ref_r2.avif",
+      "case": "cat_q35_s8",
+      "config": "REF",
+      "repetition": 2
+    },
+    {
+      "seconds": 0.6031743999919854,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251357,
+      "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\ref_r3.avif",
+      "case": "cat_q35_s8",
+      "config": "REF",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.5979069999884814,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251332,
+      "avif_sha256": "c86b60671a11bdc88d82a58e196b9e412e86c5a26a781e284fa5a9c609ffbbaa",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\exp_r3.avif",
+      "case": "cat_q35_s8",
+      "config": "EXP",
+      "repetition": 3
+    },
+    {
+      "seconds": 0.5962825000169687,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251332,
+      "avif_sha256": "c86b60671a11bdc88d82a58e196b9e412e86c5a26a781e284fa5a9c609ffbbaa",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\exp_r4.avif",
+      "case": "cat_q35_s8",
+      "config": "EXP",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.5953549999976531,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251357,
+      "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\ref_r4.avif",
+      "case": "cat_q35_s8",
+      "config": "REF",
+      "repetition": 4
+    },
+    {
+      "seconds": 0.6139587000361644,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251357,
+      "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\ref_r5.avif",
+      "case": "cat_q35_s8",
+      "config": "REF",
+      "repetition": 5
+    },
+    {
+      "seconds": 0.595964299980551,
+      "peak_rss_bytes": null,
+      "exit_code": 0,
+      "bytes": 251332,
+      "avif_sha256": "c86b60671a11bdc88d82a58e196b9e412e86c5a26a781e284fa5a9c609ffbbaa",
+      "path": "research_pass37\\outputs\\benchmark_final\\cat_q35_s8\\exp_r5.avif",
+      "case": "cat_q35_s8",
+      "config": "EXP",
+      "repetition": 5
+    }
+  ],
+  "rows": [
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 6,
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "width": 814,
+      "height": 812,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": -1.5376282726683326,
+      "speedup": 0.9848565669808714,
+      "byte_change_percent": -1.2225294716926212,
+      "mse_change_percent": 0.21405336940691974,
+      "configs": {
+        "REF": {
+          "bytes": 20613,
+          "bpp": 0.24948862879897363,
+          "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+          "decoded_rgb_sha256": "b062aa4937ce291a9590054b622745e34fd837f5810cc4c69cb36fec4bb5a0c6",
+          "rgb_mse": 619.1546297753194,
+          "timed_seconds": [
+            0.2226525999722071,
+            0.2265437000314705,
+            0.2270581999910064,
+            0.2322287000133656,
+            0.22513169999001548
+          ],
+          "median_seconds": 0.2265437000314705,
+          "mean_seconds": 0.22672297999961302,
+          "stdev_seconds": 0.003519859097176065,
+          "peak_rss_bytes": 27156480
+        },
+        "CTRL": {
+          "bytes": 20613,
+          "bpp": 0.24948862879897363,
+          "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+          "decoded_rgb_sha256": "b062aa4937ce291a9590054b622745e34fd837f5810cc4c69cb36fec4bb5a0c6",
+          "rgb_mse": 619.1546297753194,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 20361,
+          "bpp": 0.24643855678338436,
+          "avif_sha256": "29f0c18303a6630a586a7cfec0a2d327c1b646de06cecb9fa9fdea3ef8892516",
+          "decoded_rgb_sha256": "dba679bc7c212a68e982adc3c5f20701424fe4c6dda01bd73f32c854fa426527",
+          "rgb_mse": 620.4799511221925,
+          "timed_seconds": [
+            0.2279530999949202,
+            0.23059960000682622,
+            0.23002710001310334,
+            0.2261551000410691,
+            0.2308439000044018
+          ],
+          "median_seconds": 0.23002710001310334,
+          "mean_seconds": 0.22911576001206413,
+          "stdev_seconds": 0.002008486702718246,
+          "peak_rss_bytes": 27209728
+        }
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 20,
+      "speed": 6,
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "width": 814,
+      "height": 812,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": 0.9468294949354354,
+      "speedup": 1.0095588004917726,
+      "byte_change_percent": 0.23120089786756454,
+      "mse_change_percent": 0.182618567352983,
+      "configs": {
+        "REF": {
+          "bytes": 44550,
+          "bpp": 0.539209159898815,
+          "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+          "decoded_rgb_sha256": "c5e90c1c194dd3b250102e6ea6bbb7dc4cae790bd45c96c33ba0adba786f7aa2",
+          "rgb_mse": 319.8367147375768,
+          "timed_seconds": [
+            0.2711258999770507,
+            0.26292870001634583,
+            0.2676999000250362,
+            0.272694599989336,
+            0.2761903000064194
+          ],
+          "median_seconds": 0.2711258999770507,
+          "mean_seconds": 0.2701278800028376,
+          "stdev_seconds": 0.005051245166005008,
+          "peak_rss_bytes": 27918336
+        },
+        "CTRL": {
+          "bytes": 44550,
+          "bpp": 0.539209159898815,
+          "avif_sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+          "decoded_rgb_sha256": "c5e90c1c194dd3b250102e6ea6bbb7dc4cae790bd45c96c33ba0adba786f7aa2",
+          "rgb_mse": 319.8367147375768,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 44653,
+          "bpp": 0.5404558163178853,
+          "avif_sha256": "c6a7a725dae95eeb4ad3d04ab427ea5333725d7c057eb99705423c76d9ee3734",
+          "decoded_rgb_sha256": "e5fc4053a3b0cc36e016db6ce2066bd63aa0a1d212f3ce4a6addd88628232bca",
+          "rgb_mse": 320.4207959638994,
+          "timed_seconds": [
+            0.26855879998765886,
+            0.26604140002746135,
+            0.2680322999949567,
+            0.27193099999567494,
+            0.27223289996618405
+          ],
+          "median_seconds": 0.26855879998765886,
+          "mean_seconds": 0.2693592799943872,
+          "stdev_seconds": 0.0026590133105308714,
+          "peak_rss_bytes": 27983872
+        }
+      }
+    },
+    {
+      "image": "mario64.png",
+      "qcolor": 50,
+      "speed": 6,
+      "source_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "width": 1152,
+      "height": 864,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": 0.8363652760952267,
+      "speedup": 1.0084341934260868,
+      "byte_change_percent": -0.6356147666022577,
+      "mse_change_percent": 0.1636283941631701,
+      "configs": {
+        "REF": {
+          "bytes": 39332,
+          "bpp": 0.3161329732510288,
+          "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+          "decoded_rgb_sha256": "232752309a3f7eeafdc6448218c9e8e29089e49b481077c50b87389230489784",
+          "rgb_mse": 57.88574821566358,
+          "timed_seconds": [
+            0.24827179999556392,
+            0.24508909997530282,
+            0.24975109996739775,
+            0.24607670004479587,
+            0.24402689997805282
+          ],
+          "median_seconds": 0.24607670004479587,
+          "mean_seconds": 0.24664311999222263,
+          "stdev_seconds": 0.002339474033396523,
+          "peak_rss_bytes": 33988608
+        },
+        "CTRL": {
+          "bytes": 39332,
+          "bpp": 0.3161329732510288,
+          "avif_sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+          "decoded_rgb_sha256": "232752309a3f7eeafdc6448218c9e8e29089e49b481077c50b87389230489784",
+          "rgb_mse": 57.88574821566358,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 39082,
+          "bpp": 0.3141235853909465,
+          "avif_sha256": "be2ef172d392dbfaac7a9cf9832720d5f8390cca4a540538cfc521017f7f1bf8",
+          "decoded_rgb_sha256": "9a2b9bbe03aefd4aef8c02fd43c5a4d91ac269b7c00221c1e0de73f873e8e6e9",
+          "rgb_mse": 57.98046573591821,
+          "timed_seconds": [
+            0.2440185999730602,
+            0.2404009000165388,
+            0.25196779996622354,
+            0.2414297999930568,
+            0.24613589997170493
+          ],
+          "median_seconds": 0.2440185999730602,
+          "mean_seconds": 0.24479059998411684,
+          "stdev_seconds": 0.004595716974588736,
+          "peak_rss_bytes": 34029568
+        }
+      }
+    },
+    {
+      "image": "flower.jpg",
+      "qcolor": 80,
+      "speed": 6,
+      "source_sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72",
+      "width": 3576,
+      "height": 2384,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": 0.3495264827614181,
+      "speedup": 1.0035075245548226,
+      "byte_change_percent": -0.1419471393545511,
+      "mse_change_percent": 0.06478436316337244,
+      "configs": {
+        "REF": {
+          "bytes": 170486,
+          "bpp": 0.15998340915574374,
+          "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+          "decoded_rgb_sha256": "9c6cb8b0d9f5bcd3e9054481cb225238147412eaf0ba031318f1e4a0bc33230d",
+          "rgb_mse": 3.184147032290838,
+          "timed_seconds": [
+            1.1891708000330254,
+            1.1778407000238076,
+            1.1999377000029199,
+            1.2132554999552667,
+            1.210817400016822
+          ],
+          "median_seconds": 1.1999377000029199,
+          "mean_seconds": 1.1982044200063684,
+          "stdev_seconds": 0.014873751319603286,
+          "peak_rss_bytes": 144486400
+        },
+        "CTRL": {
+          "bytes": 170486,
+          "bpp": 0.15998340915574374,
+          "avif_sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+          "decoded_rgb_sha256": "9c6cb8b0d9f5bcd3e9054481cb225238147412eaf0ba031318f1e4a0bc33230d",
+          "rgb_mse": 3.184147032290838,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 170244,
+          "bpp": 0.15975631728300527,
+          "avif_sha256": "973e611dc289069ca88cc7897ca85291922e43ed5c0224fd8b685032dffc6d49",
+          "decoded_rgb_sha256": "23c1d5b088d4db002161b305c527eef3a1c50bdb7479da6c29963fb66fb11ef6",
+          "rgb_mse": 3.186209861667893,
+          "timed_seconds": [
+            1.1969269999535754,
+            1.173829899984412,
+            1.2222425999934785,
+            1.1957435999647714,
+            1.1865659999893978
+          ],
+          "median_seconds": 1.1957435999647714,
+          "mean_seconds": 1.195061819977127,
+          "stdev_seconds": 0.017788422544132067,
+          "peak_rss_bytes": 144396288
+        }
+      }
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 6,
+      "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "width": 3576,
+      "height": 2384,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": -0.21248015612916038,
+      "speedup": 0.9978797036477082,
+      "byte_change_percent": -0.15473445509461287,
+      "mse_change_percent": 0.2555491013777395,
+      "configs": {
+        "REF": {
+          "bytes": 262385,
+          "bpp": 0.24622107863009174,
+          "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+          "decoded_rgb_sha256": "e7999e39deffcd829d0c5653b9b706f6bceb2c31d59aa61cbae2a3a4a22e043c",
+          "rgb_mse": 46.50192265644941,
+          "timed_seconds": [
+            1.698458299972117,
+            1.6895192000083625,
+            1.7161610000184737,
+            1.70674760005204,
+            1.7183528000023216
+          ],
+          "median_seconds": 1.70674760005204,
+          "mean_seconds": 1.705847780010663,
+          "stdev_seconds": 0.012091057110109828,
+          "peak_rss_bytes": 128663552
+        },
+        "CTRL": {
+          "bytes": 262385,
+          "bpp": 0.24622107863009174,
+          "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+          "decoded_rgb_sha256": "e7999e39deffcd829d0c5653b9b706f6bceb2c31d59aa61cbae2a3a4a22e043c",
+          "rgb_mse": 46.50192265644941,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 261979,
+          "bpp": 0.2458400897857454,
+          "avif_sha256": "98a5dfb5a56f19cb69e36e12fb9cebc1da8348f15630f304fca239eed1a45ee7",
+          "decoded_rgb_sha256": "15c165f69ca4ccfec102471dfdb70747a5efccddff3378755b239c899aa04df1",
+          "rgb_mse": 46.62075790192134,
+          "timed_seconds": [
+            1.7103741000173613,
+            1.6992530000279658,
+            1.7343538000131957,
+            1.7268108000280336,
+            1.6984039000235498
+          ],
+          "median_seconds": 1.7103741000173613,
+          "mean_seconds": 1.7138391200220213,
+          "stdev_seconds": 0.016218229356449225,
+          "peak_rss_bytes": 128606208
+        }
+      }
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 50,
+      "speed": 6,
+      "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "width": 3576,
+      "height": 2384,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": 0.0023196816824547716,
+      "speedup": 1.0000231973549294,
+      "byte_change_percent": 0.014008836925779667,
+      "mse_change_percent": -0.09496725442666586,
+      "configs": {
+        "REF": {
+          "bytes": 528238,
+          "bpp": 0.49569651517198926,
+          "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+          "decoded_rgb_sha256": "d8ff809e1b1ee689246c3bc4572e13ad339b978bcd2661431bb7a0bd23f0d402",
+          "rgb_mse": 21.685661056308774,
+          "timed_seconds": [
+            2.1100790000054985,
+            2.0621720000053756,
+            2.0663693000096828,
+            2.0735610999981873,
+            2.0853929999866523
+          ],
+          "median_seconds": 2.0735610999981873,
+          "mean_seconds": 2.079514880001079,
+          "stdev_seconds": 0.019220737384318492,
+          "peak_rss_bytes": 132050944
+        },
+        "CTRL": {
+          "bytes": 528238,
+          "bpp": 0.49569651517198926,
+          "avif_sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+          "decoded_rgb_sha256": "d8ff809e1b1ee689246c3bc4572e13ad339b978bcd2661431bb7a0bd23f0d402",
+          "rgb_mse": 21.685661056308774,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 528312,
+          "bpp": 0.49576595648844646,
+          "avif_sha256": "d6c0d225f79a740456b123a55e37b838f6f61b78615312bfabb4f8145bb26538",
+          "decoded_rgb_sha256": "3225eb1b7a27a9a7367336421e75cba09173cdadac289add260ca616a69c0ae6",
+          "rgb_mse": 21.665066779399325,
+          "timed_seconds": [
+            2.0878219000296667,
+            2.0900175000424497,
+            2.0678947999840602,
+            2.073512999981176,
+            2.0657522000255994
+          ],
+          "median_seconds": 2.073512999981176,
+          "mean_seconds": 2.0769998800125906,
+          "stdev_seconds": 0.011271043299767835,
+          "peak_rss_bytes": 132177920
+        }
+      }
+    },
+    {
+      "image": "coast.jpg",
+      "qcolor": 80,
+      "speed": 6,
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "width": 4240,
+      "height": 2832,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": -0.4591346483736297,
+      "speedup": 0.9954296376334448,
+      "byte_change_percent": -0.09016172759888048,
+      "mse_change_percent": -0.03750759613169579,
+      "configs": {
+        "REF": {
+          "bytes": 159713,
+          "bpp": 0.10640723270440251,
+          "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+          "decoded_rgb_sha256": "fe4c65df0ed4f2db624b6a60ee63b91c0e0fd935dcc9986bb3e657b156db3336",
+          "rgb_mse": 3.299367793501048,
+          "timed_seconds": [
+            1.376434000034351,
+            1.376719599997159,
+            1.3812112000305206,
+            1.3936830000020564,
+            1.379486399993766
+          ],
+          "median_seconds": 1.379486399993766,
+          "mean_seconds": 1.3815068400115706,
+          "stdev_seconds": 0.007090130911483728,
+          "peak_rss_bytes": 198176768
+        },
+        "CTRL": {
+          "bytes": 159713,
+          "bpp": 0.10640723270440251,
+          "avif_sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+          "decoded_rgb_sha256": "fe4c65df0ed4f2db624b6a60ee63b91c0e0fd935dcc9986bb3e657b156db3336",
+          "rgb_mse": 3.299367793501048,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 159569,
+          "bpp": 0.10631129410510606,
+          "avif_sha256": "810c052ed31c39fd9b385373cb846ea7f68d12b0554d8a1e2746936e38bcdf88",
+          "decoded_rgb_sha256": "d301a3d84dbff26a36d873ce96a3b7f650562ecfa728d77be542b65419de0d5c",
+          "rgb_mse": 3.2981302799541625,
+          "timed_seconds": [
+            1.4010346999857575,
+            1.3858201000257395,
+            1.3874031999730505,
+            1.3724518000381067,
+            1.3799258000217378
+          ],
+          "median_seconds": 1.3858201000257395,
+          "mean_seconds": 1.3853271200088784,
+          "stdev_seconds": 0.010562070440945153,
+          "peak_rss_bytes": 198262784
+        }
+      }
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 8,
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "width": 814,
+      "height": 812,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": 3.86086258463416,
+      "speedup": 1.0401591140552202,
+      "byte_change_percent": -0.4128870816390366,
+      "mse_change_percent": -0.2962826924002679,
+      "configs": {
+        "REF": {
+          "bytes": 15985,
+          "bpp": 0.19347381416346934,
+          "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+          "decoded_rgb_sha256": "c2331adc591294da6f76ef72a8d7da173bea7613a48f4c125f375905068ac2d3",
+          "rgb_mse": 806.5124943012875,
+          "timed_seconds": [
+            0.06919970002491027,
+            0.06960039999103174,
+            0.06887580000329763,
+            0.06427840003743768,
+            0.06603919999906793
+          ],
+          "median_seconds": 0.06887580000329763,
+          "mean_seconds": 0.06759870001114905,
+          "stdev_seconds": 0.0023268766859558983,
+          "peak_rss_bytes": 18747392
+        },
+        "CTRL": {
+          "bytes": 15985,
+          "bpp": 0.19347381416346934,
+          "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+          "decoded_rgb_sha256": "c2331adc591294da6f76ef72a8d7da173bea7613a48f4c125f375905068ac2d3",
+          "rgb_mse": 806.5124943012875,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 15919,
+          "bpp": 0.19267498577843406,
+          "avif_sha256": "756b66b10812360c5bf08bbdc7e59cb497cee29c439a7672892de9c541765030",
+          "decoded_rgb_sha256": "9832ae480309eb23bb944baf5db9dea7c47e4f2a59cfa3f98e28d6a31ddec2c8",
+          "rgb_mse": 804.122937368627,
+          "timed_seconds": [
+            0.06805120001081377,
+            0.06460650003282353,
+            0.06621660001110286,
+            0.06621459999587387,
+            0.0669859999907203
+          ],
+          "median_seconds": 0.06621660001110286,
+          "mean_seconds": 0.06641498000826687,
+          "stdev_seconds": 0.0012602962262219,
+          "peak_rss_bytes": 18747392
+        }
+      }
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 8,
+      "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "width": 3576,
+      "height": 2384,
+      "ref_ctrl_byte_identical": true,
+      "exp_deterministic": true,
+      "time_reduction_percent": 0.17452080351971397,
+      "speedup": 1.0017482591110454,
+      "byte_change_percent": -0.0099460130412123,
+      "mse_change_percent": 0.031107737058340693,
+      "configs": {
+        "REF": {
+          "bytes": 251357,
+          "bpp": 0.2358724456856298,
+          "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+          "decoded_rgb_sha256": "462d17b895ff7dcb62ce86a05d9e0d0b96171562d7b6a06782e9301f9c8810eb",
+          "rgb_mse": 51.48381888297074,
+          "timed_seconds": [
+            0.5970061999978498,
+            0.5966285000322387,
+            0.6031743999919854,
+            0.5953549999976531,
+            0.6139587000361644
+          ],
+          "median_seconds": 0.5970061999978498,
+          "mean_seconds": 0.6012245600111783,
+          "stdev_seconds": 0.007735151281829274,
+          "peak_rss_bytes": 129671168
+        },
+        "CTRL": {
+          "bytes": 251357,
+          "bpp": 0.2358724456856298,
+          "avif_sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+          "decoded_rgb_sha256": "462d17b895ff7dcb62ce86a05d9e0d0b96171562d7b6a06782e9301f9c8810eb",
+          "rgb_mse": 51.48381888297074,
+          "timed_seconds": [],
+          "median_seconds": null,
+          "mean_seconds": null,
+          "stdev_seconds": null,
+          "peak_rss_bytes": 0
+        },
+        "EXP": {
+          "bytes": 251332,
+          "bpp": 0.23584898578142124,
+          "avif_sha256": "c86b60671a11bdc88d82a58e196b9e412e86c5a26a781e284fa5a9c609ffbbaa",
+          "decoded_rgb_sha256": "c44a418c709698be47bfa0f70d9c5fac668364c847ac94ef9aeb13c8b32a7fcd",
+          "rgb_mse": 51.499834333976445,
+          "timed_seconds": [
+            0.5950455000274815,
+            0.5890195000101812,
+            0.5979069999884814,
+            0.5962825000169687,
+            0.595964299980551
+          ],
+          "median_seconds": 0.595964299980551,
+          "mean_seconds": 0.5948437600047327,
+          "stdev_seconds": 0.00341583538022414,
+          "peak_rss_bytes": 129630208
+        }
+      }
+    }
+  ]
+}

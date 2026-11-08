@@ -1,0 +1,424 @@
+{
+  "public_asset": {
+    "path": "research_pass45\\outputs\\PBC3_1_Release_published.zip",
+    "bytes": 76861234,
+    "sha256": "3ee8f68b45adb3a89128251b8905d93cb99a96d911a055f91e124e724abbe069",
+    "published_asset_sha256_expected": "3ee8f68b45adb3a89128251b8905d93cb99a96d911a055f91e124e724abbe069",
+    "relevant_python_source_hashes": {
+      "PBC3.py": "a0a1cfe094ca596c5e1b3fa7b10c925e8bc008a0b04c75df846d25573999990a",
+      "pbc3_types.py": "fc1835445394e3affed4620e81180a1f55b3c1a3a73172373e8b956907e5b360",
+      "pbc3_ops.py": "d8103bd5c53bd49d81ed76319aba9a0539286fd6b9572b77e0c97ff3d0d8ffad",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_stream.py": "29efced0554f3fc7f76c8c6bf178de9c8fb43b1f47d92a8961e0403d59f12496",
+      "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+      "patch_policy.npz": null
+    },
+    "files": [
+      {
+        "path": "PBC3_1_Release/_internal/licenses/gui-sources.json",
+        "bytes": 465
+      },
+      {
+        "path": "PBC3_1_Release/_internal/licenses/installed-sources.json",
+        "bytes": 6065
+      },
+      {
+        "path": "PBC3_1_Release/_internal/licenses/sources.json",
+        "bytes": 1048
+      },
+      {
+        "path": "PBC3_1_Release/_internal/pbc3/patch_policy.npz",
+        "bytes": 104903
+      },
+      {
+        "path": "PBC3_1_Release/PBC.exe",
+        "bytes": 8362749
+      },
+      {
+        "path": "PBC3_1_Release/Python/learned_filler.py",
+        "bytes": 14201
+      },
+      {
+        "path": "PBC3_1_Release/Python/LICENSE",
+        "bytes": 1065
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/CPYTHON_THIRD_PARTY.rst",
+        "bytes": 53753
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/gui-sources.json",
+        "bytes": 465
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/installed-sources.json",
+        "bytes": 6065
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/llvmlite/llvmlite-0.50.0.dist-info/LICENSE",
+        "bytes": 1309
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/llvmlite/llvmlite-0.50.0.dist-info/LICENSE.thirdparty",
+        "bytes": 12786
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/MINGW_COPYING.txt",
+        "bytes": 2326
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numba/numba-0.68.0.dist-info/licenses/LICENSE",
+        "bytes": 1310
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numba/numba-0.68.0.dist-info/licenses/LICENSES.third-party",
+        "bytes": 26891
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy/_core/include/numpy/random/LICENSE.txt",
+        "bytes": 1039
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy/ma/LICENSE",
+        "bytes": 1616
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy/random/LICENSE.md",
+        "bytes": 3582
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/LICENSE.txt",
+        "bytes": 45831
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+        "bytes": 1039
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+        "bytes": 704
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+        "bytes": 21155
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+        "bytes": 1441
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+        "bytes": 1542
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+        "bytes": 1573
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+        "bytes": 1523
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+        "bytes": 2314
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/ma/LICENSE",
+        "bytes": 1616
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.md",
+        "bytes": 3582
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+        "bytes": 2805
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+        "bytes": 2986
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+        "bytes": 1176
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+        "bytes": 1540
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+        "bytes": 1253
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/numpy/numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+        "bytes": 340
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/OPENSSL_LICENSE.txt",
+        "bytes": 10175
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/Pillow/pillow-11.3.0.dist-info/licenses/LICENSE",
+        "bytes": 76724
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/pyinstaller/pyinstaller-6.16.0.dist-info/licenses/COPYING.txt",
+        "bytes": 32138
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/PYTHON_LICENSE.txt",
+        "bytes": 25066
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/sources.json",
+        "bytes": 1048
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/TCL_LICENSE.txt",
+        "bytes": 2255
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/TK_LICENSE.txt",
+        "bytes": 2307
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/XZ_0BSD.txt",
+        "bytes": 607
+      },
+      {
+        "path": "PBC3_1_Release/Python/licenses/XZ_COPYING.txt",
+        "bytes": 3119
+      },
+      {
+        "path": "PBC3_1_Release/Python/MANIFEST.in",
+        "bytes": 132
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3/__init__.py",
+        "bytes": 88
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3/mse.c",
+        "bytes": 943
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3/mse.dll",
+        "bytes": 55172
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3/patch_policy.npz",
+        "bytes": 104903
+      },
+      {
+        "path": "PBC3_1_Release/Python/PBC3.py",
+        "bytes": 29159
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_cache.py",
+        "bytes": 418
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_decode_ops.py",
+        "bytes": 6559
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_decoder.py",
+        "bytes": 5231
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_features.py",
+        "bytes": 6889
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_heads.py",
+        "bytes": 12864
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_native.py",
+        "bytes": 1511
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_ops.py",
+        "bytes": 21627
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_stream.py",
+        "bytes": 6727
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_trace.py",
+        "bytes": 3490
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc3_types.py",
+        "bytes": 9896
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc_cli.py",
+        "bytes": 5854
+      },
+      {
+        "path": "PBC3_1_Release/Python/pbc_decode_cli.py",
+        "bytes": 278
+      },
+      {
+        "path": "PBC3_1_Release/Python/pyproject.toml",
+        "bytes": 892
+      },
+      {
+        "path": "PBC3_1_Release/Python/README.md",
+        "bytes": 492
+      },
+      {
+        "path": "PBC3_1_Release/Python/setup.py",
+        "bytes": 174
+      },
+      {
+        "path": "PBC3_1_Release/Python/THIRD_PARTY_NOTICES.md",
+        "bytes": 1167
+      }
+    ]
+  },
+  "local_dist_zip": {
+    "path": "dist\\PBC3_1_Release.zip",
+    "bytes": 129366,
+    "sha256": "dc069a075836040d45cf7a6375dd3603cb2d3ce0b3f1392784498b68ee522084"
+  },
+  "git_revisions": {
+    "release_tag": {
+      "PBC3.py": {
+        "sha256": "ab3988d9d39a1937c545a89b827fbb0b6982a573f498e5c81686b42cd501bd34",
+        "bytes": 25430
+      },
+      "pbc3_types.py": {
+        "sha256": "cc3c092cd100591765fb824a0ef93b9d01f169cbfe440f4b67efb1180d7638c9",
+        "bytes": 9623
+      },
+      "pbc3_ops.py": {
+        "sha256": "5778344d8a0eacee26019804ca988af022131f6c414ac6bcc196012a038fc401",
+        "bytes": 20455
+      },
+      "pbc3_heads.py": {
+        "sha256": "6f26c54b143eaa2b306343db6335685043baf4e7c1a5b188d3c5f7032cf65476",
+        "bytes": 10873
+      },
+      "pbc3_stream.py": null,
+      "pbc3_features.py": {
+        "sha256": "a5e74cd7497081694fee015a5605357367fc5c850875ee56c21ab61dc52a013e",
+        "bytes": 5371
+      },
+      "learned_filler.py": {
+        "sha256": "6a1d5b4ba77ffd7e5038dc7d8a44898cf5605316db742c2991f3b6b73eef0a08",
+        "bytes": 11962
+      },
+      "patch_policy.npz": {
+        "sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+        "bytes": 104903
+      }
+    },
+    "release_source_manifest": {
+      "PBC3.py": {
+        "sha256": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
+        "bytes": 28996
+      },
+      "pbc3_types.py": {
+        "sha256": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+        "bytes": 9785
+      },
+      "pbc3_ops.py": {
+        "sha256": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e",
+        "bytes": 27540
+      },
+      "pbc3_heads.py": {
+        "sha256": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+        "bytes": 12864
+      },
+      "pbc3_stream.py": {
+        "sha256": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+        "bytes": 6720
+      },
+      "pbc3_features.py": {
+        "sha256": "f6f19e560072636bc733b5b0885daace4ea724bd0100672dfcd0a2628c293c33",
+        "bytes": 5372
+      },
+      "learned_filler.py": {
+        "sha256": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+        "bytes": 14201
+      },
+      "patch_policy.npz": {
+        "sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+        "bytes": 104903
+      }
+    },
+    "hf_head": {
+      "PBC3.py": {
+        "sha256": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
+        "bytes": 28996
+      },
+      "pbc3_types.py": {
+        "sha256": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+        "bytes": 9785
+      },
+      "pbc3_ops.py": {
+        "sha256": "62243c349dd5f74c6248abad0013a38aeb416984074bd47e3dbdfec6fd11739e",
+        "bytes": 27540
+      },
+      "pbc3_heads.py": {
+        "sha256": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+        "bytes": 12864
+      },
+      "pbc3_stream.py": {
+        "sha256": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+        "bytes": 6720
+      },
+      "pbc3_features.py": {
+        "sha256": "f6f19e560072636bc733b5b0885daace4ea724bd0100672dfcd0a2628c293c33",
+        "bytes": 5372
+      },
+      "learned_filler.py": {
+        "sha256": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+        "bytes": 14201
+      },
+      "patch_policy.npz": {
+        "sha256": "c35d9a296f7b46e2f42cf9c83b01d3631e027b80a4e035602034dd3b3e19e2c0",
+        "bytes": 131
+      }
+    },
+    "research_pass44_reference": {
+      "PBC3.py": {
+        "sha256": "74fe069600f8190f1a5ac1b4cb01dff29f4b1262d6d36da459236e7a9fb0016c",
+        "bytes": 28996
+      },
+      "pbc3_types.py": {
+        "sha256": "c09981d314bb0b176de5ab30050fa2a6b7013f371849b90efcfff1641e9b5c7f",
+        "bytes": 9785
+      },
+      "pbc3_ops.py": {
+        "sha256": "0aa08cf7e1716cf0f28740aa289e45484b38622b67c45e39b81b199f881a2852",
+        "bytes": 27940
+      },
+      "pbc3_heads.py": {
+        "sha256": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+        "bytes": 12864
+      },
+      "pbc3_stream.py": {
+        "sha256": "4730b8eaebf93e3e5b577ed67ecfd2150eef264b920c9cd64d28c308ba304e94",
+        "bytes": 6720
+      },
+      "pbc3_features.py": {
+        "sha256": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+        "bytes": 6889
+      },
+      "learned_filler.py": {
+        "sha256": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50",
+        "bytes": 14201
+      },
+      "patch_policy.npz": {
+        "sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+        "bytes": 104903
+      }
+    }
+  }
+}

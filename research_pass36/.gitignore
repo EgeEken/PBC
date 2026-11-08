@@ -1,0 +1,12 @@
+outputs/
+build/
+*.etl
+*.etlx
+*.avif
+*.png
+*.log
+*.csv
+*.pdb
+*.obj
+*.a
+!PASS36_SUMMARY.json

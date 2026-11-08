@@ -1,0 +1,20 @@
+[
+  {
+    "image": "coast.jpg",
+    "single_stroke_ssimulacra2": -45.29067527,
+    "eight_stroke_group_ssimulacra2": -44.72070374,
+    "eight_stroke_group_decoded_rgb_sha256": "082051da68a614e4787b88a3973f571eca5c642195baed032bcb59f1ab045f24"
+  },
+  {
+    "image": "googlewiki.png",
+    "single_stroke_ssimulacra2": -25.48411464,
+    "eight_stroke_group_ssimulacra2": -24.92447273,
+    "eight_stroke_group_decoded_rgb_sha256": "ac1ae8c2fdd792b45207cf1e731bde9ab679c4d2eca3bf855b07197900a875b5"
+  },
+  {
+    "image": "mario64.png",
+    "single_stroke_ssimulacra2": -50.6115653,
+    "eight_stroke_group_ssimulacra2": -49.72547884,
+    "eight_stroke_group_decoded_rgb_sha256": "92fc0d19554c2f4f06d3abb213613695e2ba69dd059b3d5709f9ce9c9d1e7271"
+  }
+]

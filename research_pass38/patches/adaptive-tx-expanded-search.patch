@@ -1,0 +1,17 @@
+--- a/av1/encoder/tx_search.c
++++ b/av1/encoder/tx_search.c
+@@ -2291,12 +2291,14 @@
+ 
+     // If the current best RD cost is much worse than the reference RD cost,
+     // terminate early.
++#if !defined(PBC38_EXPAND)
+     if (cpi->sf.tx_sf.adaptive_txb_search_level) {
+       if ((best_rd - (best_rd >> cpi->sf.tx_sf.adaptive_txb_search_level)) >
+           ref_best_rd) {
+         break;
+       }
+     }
++#endif
+ 
+     // Terminate transform type search if the block has been quantized to
+     // all zero.

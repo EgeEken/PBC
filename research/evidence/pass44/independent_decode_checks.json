@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "image": "googlewiki.png",
+      "point": "low",
+      "file": "googlewiki_low_joint_p312_k97.pbc",
+      "pixel_sha256": "86fb7a9ebb2222daf7dd0c148f47f412ca836aca49bcc9742886c3e7deedb6df",
+      "skip_exact": true,
+      "shape": [
+        812,
+        814,
+        3
+      ]
+    },
+    {
+      "image": "googlewiki.png",
+      "point": "intermediate",
+      "file": "googlewiki_intermediate_joint_p312_k180.pbc",
+      "pixel_sha256": "7f2c39a0c0775afff032289fdc9b26af0179aeb72baad37444a0a4d096b047e2",
+      "skip_exact": true,
+      "shape": [
+        812,
+        814,
+        3
+      ]
+    },
+    {
+      "image": "cat.jpg",
+      "point": "low",
+      "file": "cat_low_fullp19_k14.pbc",
+      "pixel_sha256": "a3d13cf718ed2bfa2574d6c71c439231dbf56509a5f20ffa3e17a4c9cf1f98ed",
+      "skip_exact": true,
+      "shape": [
+        2384,
+        3576,
+        3
+      ]
+    },
+    {
+      "image": "cat.jpg",
+      "point": "intermediate",
+      "file": "cat_intermediate_fullp19_k512.pbc",
+      "pixel_sha256": "ca18840fc60286c31338e2f80e5e082f12abf4b2df96b79c8a933f57df3e9b19",
+      "skip_exact": true,
+      "shape": [
+        2384,
+        3576,
+        3
+      ]
+    },
+    {
+      "image": "coast.jpg",
+      "point": "low",
+      "file": "coast_low_fullp50_k10.pbc",
+      "pixel_sha256": "511dffc603ff9e09402575280a68284fe2d241b434b8260df429fac9340d4c56",
+      "skip_exact": true,
+      "shape": [
+        2832,
+        4240,
+        3
+      ]
+    },
+    {
+      "image": "coast.jpg",
+      "point": "intermediate",
+      "file": "coast_intermediate_fullp50_k512.pbc",
+      "pixel_sha256": "a8abb2906fc41e7e9d71b08623a5bf4e321cf71c64eb7d1f772e32c9ecfb80fd",
+      "skip_exact": true,
+      "shape": [
+        2832,
+        4240,
+        3
+      ]
+    }
+  ],
+  "all_exact": true,
+  "all_skip_exact": true
+}

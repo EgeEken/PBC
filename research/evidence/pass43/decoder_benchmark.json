@@ -1,0 +1,104 @@
+{
+  "coast.jpg": {
+    "stream_path": "PBC_ROOT/research_pass42/outputs/coast_v4_D_intermediate.pbc",
+    "stream_sha256": "cdb3ebc5820badc71a5ca2720604880eb376761051e0d75e33f2ce900d718db3",
+    "warmups_per_decoder": 1,
+    "timing_repetitions": 5,
+    "threadpool": {
+      "openblas_threads": 1
+    },
+    "ref_seconds": [
+      14.304962099995464,
+      14.225696999987122,
+      14.683026599988807,
+      14.418559700017795,
+      14.249690899974667
+    ],
+    "opt_seconds": [
+      4.150155100040138,
+      4.20682190003572,
+      4.270621599978767,
+      4.4462731999810785,
+      4.310725400049705
+    ],
+    "ref_median_seconds": 14.304962099995464,
+    "opt_median_seconds": 4.270621599978767,
+    "speedup_median": 3.3496206032551763,
+    "ref_peak_observed_rss_delta_bytes": 76677120,
+    "opt_peak_observed_rss_delta_bytes": 76406784,
+    "ref_pixel_sha256": "37add1c691bf25a025a6ca6c002bb4e0f46750ead38083f397a617ff7fbe0656",
+    "opt_pixel_sha256": "37add1c691bf25a025a6ca6c002bb4e0f46750ead38083f397a617ff7fbe0656",
+    "exact_pixels": true,
+    "fresh_process": {
+      "ref": {
+        "seconds": 15.13028330000816,
+        "sha256": "37add1c691bf25a025a6ca6c002bb4e0f46750ead38083f397a617ff7fbe0656",
+        "dimensions": [
+          4240,
+          2832
+        ],
+        "png_path": "PBC_ROOT/research_pass43/outputs/coast_v4_D_intermediate_ref_fresh.png"
+      },
+      "opt": {
+        "seconds": 4.2129415000090376,
+        "sha256": "37add1c691bf25a025a6ca6c002bb4e0f46750ead38083f397a617ff7fbe0656",
+        "dimensions": [
+          4240,
+          2832
+        ],
+        "png_path": "PBC_ROOT/research_pass43/outputs/coast_v4_D_intermediate_opt_fresh.png"
+      }
+    }
+  },
+  "googlewiki.png": {
+    "stream_path": "PBC_ROOT/research_pass42/outputs/googlewiki_v4_D_intermediate.pbc",
+    "stream_sha256": "ad847b4026811d2383b15308c49fcc0ebb8ca4b10593883d09626aeff4980ea5",
+    "warmups_per_decoder": 1,
+    "timing_repetitions": 5,
+    "threadpool": {
+      "openblas_threads": 1
+    },
+    "ref_seconds": [
+      0.2541954999906011,
+      0.25354999996488914,
+      0.24448649998521432,
+      0.23986199998762459,
+      0.2715281999553554
+    ],
+    "opt_seconds": [
+      0.2588716000318527,
+      0.25760940002510324,
+      0.2308445000089705,
+      0.2624268000363372,
+      0.24550799996359274
+    ],
+    "ref_median_seconds": 0.25354999996488914,
+    "opt_median_seconds": 0.25760940002510324,
+    "speedup_median": 0.984242034414045,
+    "ref_peak_observed_rss_delta_bytes": 8290304,
+    "opt_peak_observed_rss_delta_bytes": 8245248,
+    "ref_pixel_sha256": "e57e01b2f1f2cd89c3a48a6d08a77540ec4687857f4504b440dd02d4c10c6f92",
+    "opt_pixel_sha256": "e57e01b2f1f2cd89c3a48a6d08a77540ec4687857f4504b440dd02d4c10c6f92",
+    "exact_pixels": true,
+    "fresh_process": {
+      "ref": {
+        "seconds": 0.221950699982699,
+        "sha256": "e57e01b2f1f2cd89c3a48a6d08a77540ec4687857f4504b440dd02d4c10c6f92",
+        "dimensions": [
+          814,
+          812
+        ],
+        "png_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_D_intermediate_ref_fresh.png"
+      },
+      "opt": {
+        "seconds": 0.2153066999744624,
+        "sha256": "e57e01b2f1f2cd89c3a48a6d08a77540ec4687857f4504b440dd02d4c10c6f92",
+        "dimensions": [
+          814,
+          812
+        ],
+        "png_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_D_intermediate_opt_fresh.png"
+      }
+    }
+  }
+}

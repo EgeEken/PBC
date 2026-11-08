@@ -1,0 +1,110 @@
+{
+  "source": "hpt_data/cat.jpg",
+  "source_sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+  "shape": [
+    2384,
+    3576,
+    3
+  ],
+  "qcolor": 35,
+  "region_masks": "linear-light RGB luma; top 20% Sobel magnitude as edge; top 20% local 8x8 variance among remaining as texture; rest smooth",
+  "qindex_map_sampling": "one top-left root sample per coded superblock; 64x64 pixels for IQ (C/D), 128x128 for other modes; nearest superblock expansion for visualization",
+  "regions": {
+    "edge": {
+      "pixels": 1705037,
+      "area_fraction": 0.2000000234599042,
+      "configs": {
+        "A": {
+          "rgb_mse": 70.82353892222476,
+          "sse_fraction": 0.3344268774418587
+        },
+        "B": {
+          "rgb_mse": 70.82353892222476,
+          "sse_fraction": 0.3344268774418587,
+          "mse_change_vs_A_percent": 0.0
+        },
+        "C": {
+          "rgb_mse": 80.22486198246725,
+          "sse_fraction": 0.3567340028421096,
+          "mse_change_vs_A_percent": 13.274291574961538
+        }
+      }
+    },
+    "texture": {
+      "pixels": 1364030,
+      "area_fraction": 0.16000006568773179,
+      "configs": {
+        "A": {
+          "rgb_mse": 67.99495807765715,
+          "sse_fraction": 0.2568563901327347
+        },
+        "B": {
+          "rgb_mse": 67.99495807765715,
+          "sse_fraction": 0.2568563901327347,
+          "mse_change_vs_A_percent": 0.0
+        },
+        "C": {
+          "rgb_mse": 75.86512197923311,
+          "sse_fraction": 0.2698781989260024,
+          "mse_change_vs_A_percent": 11.574628654947382
+        }
+      }
+    },
+    "smooth": {
+      "pixels": 5456117,
+      "area_fraction": 0.639999910852364,
+      "configs": {
+        "A": {
+          "rgb_mse": 27.048862160885967,
+          "sse_fraction": 0.40871673242540657
+        },
+        "B": {
+          "rgb_mse": 27.048862160885967,
+          "sse_fraction": 0.40871673242540657,
+          "mse_change_vs_A_percent": 0.0
+        },
+        "C": {
+          "rgb_mse": 26.240658328991113,
+          "sse_fraction": 0.37338779823188806,
+          "mse_change_vs_A_percent": -2.9879402212472983
+        }
+      }
+    }
+  },
+  "qindex": {
+    "A": {
+      "superblocks": 532,
+      "min": 164,
+      "max": 164,
+      "mean": 164.0,
+      "histogram_superblocks": {
+        "164": 532
+      }
+    },
+    "B": {
+      "superblocks": 532,
+      "min": 164,
+      "max": 164,
+      "mean": 164.0,
+      "histogram_superblocks": {
+        "164": 532
+      }
+    },
+    "C": {
+      "superblocks": 2128,
+      "min": 108,
+      "max": 164,
+      "mean": 134.37218045112783,
+      "histogram_superblocks": {
+        "108": 664,
+        "116": 72,
+        "124": 42,
+        "132": 57,
+        "140": 310,
+        "148": 541,
+        "156": 351,
+        "164": 91
+      }
+    }
+  }
+}

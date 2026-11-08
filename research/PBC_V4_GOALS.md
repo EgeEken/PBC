@@ -1,0 +1,64 @@
+# PBC V4 — Development Goals and Design Principles
+
+**Status:** Working project goals and hypotheses, not validated architecture or release requirements. The primary purpose of V4 is a substantial, satisfying generational improvement over PBC V3.1 for an independent side project—not to outperform AVIF universally.
+
+## Product goals
+
+1. **Fix quality scaling.** Preserve the strong extreme-low-bpp behavior of PBC3, but allow refinement toward substantially higher fidelity without the working-resolution reconstruction ceiling or an implausibly steep rate-distortion curve. High-quality behavior must operate on source-resolution information.
+2. **Beat conventional JPEG broadly.** Aspirational target: better completed-file rate-distortion than a pinned conventional JPEG implementation for nearly all tested resolutions, content classes, and relevant operating points, including small images and medium/high quality. Measure exceptions explicitly; never assert mathematical dominance over every possible image. Encoding/decoding speed and universal JPEG support are separate practical tradeoffs.
+3. **Provide a genuinely usable high-quality preset.** At least one preset should avoid conspicuous information loss across typical photographs and graphics, with visual quality roughly comparable to a JPEG quality-60 reference (which is not a universal quality threshold). Inspect source-aligned crops and report objective RGB MSE/PSNR plus a reproducible perceptual metric where available.
+4. **Retain extreme compression strength.** Do not throw away V3's excellent low-bpp behavior on large photographs, particularly its efficient reconstruction of smooth/blurred backgrounds and very low-cost initial image content. Avoid major low-rate regressions in exchange for high-fidelity improvements.
+5. **Be a substantial V3-to-V4 advance, not a tiny tweak.** Evaluate across the entire rate-distortion curve; compare V4 to frozen V3.1 and JPEG on identical inputs, actual completed file sizes, source-resolution reconstructions, and matched or bracketed rates. Include sub-megapixel, mid-resolution, and 12+ MP images, photos, artwork, graphics and text.
+6. **Preserve or improve encode and decode performance.** Aim to improve both speed and RD. Do not accept material encoding or decoding regressions as the normal cost of V4; a modest slowdown is acceptable only for a genuinely large and consistent RD or visual-quality gain. Measure actual end-to-end encode and fresh-process decode times and peak memory against the frozen V3.1 implementation at comparable file sizes. Distinguish prototype-language overhead from algorithmic cost without using it to excuse an impractical decoder.
+7. **Beat AVIF in at least one meaningful niche (stretch goal).** A future aspirational target is for a PBC V4 Compression preset to outperform AVIF quality 0 in rate-distortion on 12+ MP photographs while encoding and decoding faster. This is not a requirement for the first V4 prototype and is not an established result. AVIF quality 0 does not imply a fixed bitrate; evaluate actual completed-file sizes, source-resolution reconstruction quality and controlled encode/decode timings before making any superiority claim.
+
+## Identity / principles to preserve
+
+- **Downsampled initialization:** Keep a compact, low-resolution initialization layer as a central candidate mechanism, inherited from V2.3/V3. It should cheaply represent global colors and smooth content. It must not impose a hard quality ceiling: refinement works at original resolution, and the encoder may select a higher-resolution init or omit the coarse stage when that saves bits.
+- **Procedural/brush-based reconstruction:** Preserve the notion that a small parameterized instruction can reconstruct a large number of pixels. Treat brush/smooth-surface modes as candidates that must earn their place versus spatial prediction and transforms; do not force expensive procedural operations into every region.
+- **Residual-driven, rate-aware decisions:** Improve reconstruction where the additional distortion reduction justifies the complete coding cost, including signaling, values, entropy coding and interactions with other modes. The encoder can use efficient proxies, but validate against real finished bitstreams.
+- **Probabilistic/learned encoder intelligence:** Allow stochastic/probabilistic or learned models to propose, prioritize and select coding actions. Models are optional and their net RD/compute benefit must be demonstrated. Avoid training before the underlying representation passes a basic RD gate.
+- **Algorithmic, deterministic decoder:** Strong preference for no neural decoder; output should be reproducible from the bitstream using compact, simple operations with reasonable CPU speed and memory. A *super-lightweight* neural decoder is a distant option requiring compelling evidence, not the default.
+- **LZMA-based shared entropy coding:** Retain LZMA/LZMA2 as the default final-stream compressor for early V4 research. Prior PBC experiments found it effective enough in rate and practical speed that replacing it is not currently a priority. Compress shared mode/parameter/residual streams together where useful rather than independently compressing tiny tiles; include headers, masks and all framing in final byte counts. A raw/store option is acceptable when smaller or faster. Reconsider entropy coding only if controlled completed-file benchmarks identify a material problem.
+- **Skip as a protected reconstruction decision:** If the downsample initialization already reconstructs a region well, the encoder must be able to transmit *no refinement* for it, and any subsequent refinement must leave its decoded pixels unchanged. In particular, overlapping procedural operations must honor the skip/protection map. Avoid detail corrections that lower numerical MSE while creating visible seams, resolution-transition lines or tearing in smooth areas. Favor implicit masks from the region-mode map and deterministic boundary handling over bulky per-pixel mask signaling. Skip protection is evaluated independently at each quality setting; it does not mean a region can never receive refinement at a higher-quality setting.
+- **Scalable/progressive coding if viable:** Explore a coarse-to-fine bitstream/quality control so additional bits can restore source-resolution detail, rather than merely adding more low-resolution brush patches. Do not require scalability if its syntax cost defeats RD.
+- **Practical side project:** Prefer simple independent prototypes, bounded experiments, reproducible metrics, understandable stream formats and achievable maintenance over extreme complexity or chasing AVIF/JPEG XL parity.
+
+## First architecture hypothesis (not yet validated)
+
+**PBC V4-A: Jointly allocated coarse initialization plus native full-resolution regional coding.**
+
+1. Build a small downsampled initialization image with existing PBC-style compact grid/palette or procedural representation; decode/upsample it as the initial full-resolution canvas.
+2. Encode additional detail against the **original-resolution** source, not the permanently downsampled V3 working target.
+3. Partition the full-resolution image into simple initial fixed cells (e.g. 16×16 for first experiment; only introduce adaptive splits if evidence warrants).
+4. Select per cell among a minimal set: **protected SKIP** (exactly retain base reconstruction); compact procedural smooth/brush correction; conventional residual transform. A simple spatial predictor may be an additional mode only if worth its signaling and implementation cost. The first prototype should derive the protection mask from the transmitted mode map, not transmit a separate full-resolution bitmap.
+5. Select cells/modes with approximate RD objective, measuring actual full-file rates; pack region modes and parameters into a **shared LZMA-compressed stream** as the initial default, with exact complete-file accounting. Decoder reconstructs from bitstream only using deterministic local operations. Any procedural refinement that spans multiple cells must respect protected SKIP cells.
+6. **Handle refinement boundaries explicitly.** Compare strict no-overlap cell corrections against a simple fixed, decoder-reproducible boundary taper *inside active cells only*, conditioned on adjacent SKIP cells if necessary. Never alter SKIP pixels during blending. Avoid per-pixel masks unless measurements justify their rate. Evaluate the final composed image, not independent cell SSE alone, because blending and boundary constraints couple neighboring decisions.
+7. **Jointly account for base and detail.** Vary at most a few coarse-base resolutions/precision settings alongside the same full-resolution detail budget; distinguish this from the failed Pass31–34 **frozen-base-plus-sidecar** experiments. Allow the encoder to skip downsample init when inappropriate.
+8. Reserve a fine quantization setting / extra refinement capacity for medium-quality and high-quality operation. The primary goal is a sustainable RD curve—not AVIF superiority.
+
+This is a hypothesis. Do not assume the procedural mode is better than a transform on any image. If it is unused, accept that finding rather than distorting the experiment to preserve it.
+
+## Evaluation and minimum engineering gates
+
+- Benchmark against **frozen V3.1 and conventional JPEG**, with AVIF/JXL as context rather than requirements. Use source-resolution RGB, overflow-safe error math, reproducible JPEG encoder/sampling, actual complete bytes, reliable rate bracketing, and reproducible visual comparisons.
+- Include the four familiar V3 presets as historical RD anchors; don't compare unlike quality labels literally. New V4 presets should cover a broad quality range, including a visually acceptable high-quality setting.
+- Inspect low, medium and higher-rate points on images across resolution classes, explicitly including small images where V3 struggles and 12+ MP photographs where V3 is strongest.
+- Gate early prototypes on both (a) nontrivial V3.1 RD improvement across multiple classes and (b) a credible path toward JPEG superiority at medium rates. Preserve severe regressions and missing-rate coverage; do not cherry-pick.
+- Report actual separate encode/decode times, peak memory, correctness, fresh-process decoding and bad-case behavior. Do not hide slow prototype decode or treat array proxies as file sizes. **At comparable rates, prefer no slowdown versus frozen V3.1; treat >~20–25% runtime regression as a warning requiring clear, material RD benefit, not as an acceptable default.** These are preliminary screening tolerances, not immutable release gates.
+- Include visual crops and diagnostics specifically for **smooth-region seam/tearing artifacts** introduced by refinement even where RGB MSE decreases: show base, correction mask, output and residual/difference crops, and verify exact SKIP-region preservation pixel-for-pixel. Any boundary feathering must occur on active pixels only and be evaluated for actual rate and RD impact.
+- LZMA is the assumed V4 entropy backend initially; avoid spending research time replacing it unless accurate benchmarking shows a sizable completed-file rate or runtime win. Count mode maps and any protection/boundary signaling in the actual stream.
+- Preserve the current V3.1 release, benchmark history, GUI, and HF site until a distinct V4 promotion is explicitly authorized.
+
+## Source of these goals
+
+User priorities communicated in the PBC project discussion on 2026-11-02–03; version mechanisms checked against the repository's main README, `PBC2_4.py`, `PBC3.py`, and archived Pass 26/31/33/34 research. These goals supersede the earlier assistant assumption that V4 must beat AVIF to be worthwhile. Previous negative AVIF-relative results remain valid experimental evidence, not release gates for V4.
+
+## Repository workflow
+
+Suggested location in the research checkout: `research/PBC_V4_GOALS.md`. Add a short pointer from `AGENTS.md` so future Codex sessions read it before proposing V4 work. Review both files in the worktree first. **Do not stage, commit, push, tag, deploy or change production artifacts without separate explicit user permission.**
+
+## Additional stretch goal from Pass 43
+
+- Beat AVIF in at least one meaningful niche. An aspirational example is for the PBC V4 Compression preset to outperform AVIF quality 0 in rate-distortion on 12+ MP photographs while encoding and decoding faster. This is a stretch goal, not a requirement for the first V4 prototype and not a claim established by existing measurements.
+- AVIF quality 0 is an encoder setting, not a fixed bitrate. Any future superiority claim must compare actual completed-file sizes, source-resolution reconstruction quality, and controlled encode/decode timings on identical image dimensions. Do not claim superiority from an unmatched-rate comparison.

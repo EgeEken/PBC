@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 6,
+      "reference_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+      "symbol_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+      "reference_bytes": 20613,
+      "symbol_bytes": 20613,
+      "byte_identical": true,
+      "decoded_rgb_identical": true,
+      "dimensions": [
+        814,
+        812
+      ]
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 6,
+      "reference_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+      "symbol_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+      "reference_bytes": 262385,
+      "symbol_bytes": 262385,
+      "byte_identical": true,
+      "decoded_rgb_identical": true,
+      "dimensions": [
+        3576,
+        2384
+      ]
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 8,
+      "reference_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "symbol_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+      "reference_bytes": 15985,
+      "symbol_bytes": 15985,
+      "byte_identical": true,
+      "decoded_rgb_identical": true,
+      "dimensions": [
+        814,
+        812
+      ]
+    }
+  ],
+  "passed": true
+}

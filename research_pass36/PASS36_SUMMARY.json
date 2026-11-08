@@ -1,0 +1,186 @@
+{
+  "pass": 36,
+  "branch": "research/experiments",
+  "starting_head": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+  "ending_head": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+  "libaom": {
+    "version": "3.12.1",
+    "commit": "10aece4157eb79315da205f39e19bf6ab3ee30d0",
+    "archive_sha256": "65954A1217A16782F38DD3C2C85A7D5DD1F2C896324ABF22735355BDDBC72937"
+  },
+  "libavif": {
+    "version": "1.3.0",
+    "commit": "1aadfad932c98c069a1204261b1856f81f3bc199"
+  },
+  "build": {
+    "compiler": "Strawberry GCC/G++ 13.2.0",
+    "flags": "-O3 -DNDEBUG -g",
+    "linkage": "static local libaom archive",
+    "instrumentation": "PBC_PROFILE disabled",
+    "profile_executable_sha256": "14A06B9C7FF3181562BA67CEF439AE61F8023CD3CB7EB2646342A24418BB66D9",
+    "text_section_bytes": 9372472,
+    "text_section_sha256": "EEFD91D43A9F6CC2AAEA272201CD882AF3098BE5ADE2626736FBB91EE4AC962C",
+    "same_text_as_reference": true
+  },
+  "inputs": [
+    {
+      "image": "googlewiki.png",
+      "sha256": "CB2CC48D6A03B603D217B59FC4A3D3E53C6BEBDFF09E0A8172640BF85CCDE94E"
+    },
+    {
+      "image": "mario64.png",
+      "sha256": "19E195DE8F46FC4C4EF19925461C21DA5769D682B152C967A783D5D3868C00D9"
+    },
+    {
+      "image": "cat.jpg",
+      "sha256": "75482650C75B9FC17F4EE2F40B093A6065CA9103216650DF5DA4DBD492915C4E"
+    }
+  ],
+  "profile": {
+    "profiler": "WPR 10.0.26100 CPU.Verbose.Memory",
+    "parser": "TraceEvent 2.0.74.0",
+    "sample_interval_ms": 1,
+    "encoder_threads": 1,
+    "completed_configurations": [
+      {
+        "qcolor": 5,
+        "speed": 6,
+        "image": "googlewiki.png"
+      }
+    ],
+    "planned_configurations": 5,
+    "independent_captures_completed": 1,
+    "processes": 25,
+    "process_cpu_ms": 7049,
+    "samples": 7011,
+    "encoder_module_stack_samples": 6894,
+    "symbolized_samples": 6480,
+    "median_unprofiled_process_cpu_ms": 250,
+    "median_profiled_process_cpu_ms": 284,
+    "estimated_cpu_overhead_percent": 13.6,
+    "hotspots": [
+      {
+        "function": "split_partition_search",
+        "source": "research_pass35/sources/libaom/av1/encoder/partition_search.c:4546",
+        "inclusive_cpu_ms": 5610,
+        "inclusive_percent": 80.02,
+        "exclusive_cpu_ms": 14,
+        "exclusive_percent": 0.2
+      },
+      {
+        "function": "block_rd_txfm",
+        "source": "research_pass35/sources/libaom/av1/encoder/tx_search.c:3056",
+        "inclusive_cpu_ms": 2368,
+        "inclusive_percent": 33.78,
+        "exclusive_cpu_ms": 54,
+        "exclusive_percent": 0.77
+      },
+      {
+        "function": "av1_rd_pick_intra_sby_mode",
+        "source": "research_pass35/sources/libaom/av1/encoder/intra_mode_search.c:1718",
+        "inclusive_cpu_ms": 1939,
+        "inclusive_percent": 27.66,
+        "exclusive_cpu_ms": 155,
+        "exclusive_percent": 2.21
+      },
+      {
+        "function": "search_tx_type",
+        "source": "research_pass35/sources/libaom/av1/encoder/tx_search.c:2165",
+        "inclusive_cpu_ms": 1704,
+        "inclusive_percent": 24.3,
+        "exclusive_cpu_ms": 130,
+        "exclusive_percent": 1.85
+      },
+      {
+        "function": "av1_rd_pick_partition",
+        "source": "research_pass35/sources/libaom/av1/encoder/partition_search.c:5670",
+        "inclusive_cpu_ms": 1317,
+        "inclusive_percent": 18.78,
+        "exclusive_cpu_ms": 19,
+        "exclusive_percent": 0.27
+      },
+      {
+        "function": "av1_pick_uniform_tx_size_type_yrd",
+        "source": "research_pass35/sources/libaom/av1/encoder/tx_search.c:3651",
+        "inclusive_cpu_ms": 1316,
+        "inclusive_percent": 18.77,
+        "exclusive_cpu_ms": 5,
+        "exclusive_percent": 0.07
+      },
+      {
+        "function": "av1_optimize_txb",
+        "source": "research_pass35/sources/libaom/av1/encoder/txb_rdopt.c:359",
+        "inclusive_cpu_ms": 376,
+        "inclusive_percent": 5.36,
+        "exclusive_cpu_ms": 144,
+        "exclusive_percent": 2.05
+      },
+      {
+        "function": "log_sub_block_var",
+        "source": "research_pass35/sources/libaom/av1/encoder/partition_search.c:5500",
+        "inclusive_cpu_ms": 52,
+        "inclusive_percent": 0.74,
+        "exclusive_cpu_ms": 12,
+        "exclusive_percent": 0.17
+      }
+    ],
+    "full_matrix_helper_started": false
+  },
+  "parity": {
+    "passed": true,
+    "cases": [
+      {
+        "image": "googlewiki.png",
+        "qcolor": 5,
+        "speed": 6,
+        "bytes": 20613,
+        "avif_sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+        "byte_identical": true,
+        "decoded_rgb_identical": true,
+        "dimensions": [
+          814,
+          812
+        ]
+      },
+      {
+        "image": "cat.jpg",
+        "qcolor": 35,
+        "speed": 6,
+        "bytes": 262385,
+        "avif_sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+        "byte_identical": true,
+        "decoded_rgb_identical": true,
+        "dimensions": [
+          3576,
+          2384
+        ]
+      },
+      {
+        "image": "googlewiki.png",
+        "qcolor": 5,
+        "speed": 8,
+        "bytes": 15985,
+        "avif_sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+        "byte_identical": true,
+        "decoded_rgb_identical": true,
+        "dimensions": [
+          814,
+          812
+        ]
+      }
+    ]
+  },
+  "encoder_modification": null,
+  "encode_timing_comparison": "not run; no modification",
+  "memory_comparison": "not run",
+  "held_out_validation": "not run",
+  "gates": {
+    "A": "not_passed",
+    "A_reason": "Only one of five configurations and one capture; measured WPR overhead approximately 13.6%, with no sampled speed-8 comparison",
+    "B": "not_attempted",
+    "B_reason": "No reuse candidate had supported whole-encode benefit",
+    "C": "not_evaluated"
+  },
+  "recommendation": "Complete low-overhead five-case, two-capture profiling; then evaluate intra-mode candidate ordering after existing pruning as a decision-changing RD experiment.",
+  "commits_or_pushes": "none"
+}

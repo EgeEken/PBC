@@ -1,0 +1,140 @@
+{
+  "status": "exploratory Pass 42 prototype; no release claim",
+  "inputs": {
+    "googlewiki.png": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\hpt_data\\googlewiki.png",
+      "sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "bytes": 266651,
+      "width": 814,
+      "height": 812
+    },
+    "cat.jpg": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\hpt_data\\cat.jpg",
+      "sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e",
+      "bytes": 8425823,
+      "width": 3576,
+      "height": 2384
+    },
+    "coast.jpg": {
+      "path": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\hpt_data\\coast.jpg",
+      "sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "bytes": 8413193,
+      "width": 4240,
+      "height": 2832
+    }
+  },
+  "runtime": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "win32",
+    "pillow": "11.3.0",
+    "numpy": "2.2.6",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "logical_cpu_count": 20,
+    "ssimulacra2": null,
+    "ssimulacra2_status": "local Pass 39 configured executable absent; metric omitted",
+    "jpeg": "Pillow JPEG encoder; RGB, subsampling=2, optimize=True",
+    "v31_commit": "8006f30debfc4a57289df06df21636aeb52baffd",
+    "v31_model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+    "blas_thread_pools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 20,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\EGE\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+        "version": "0.3.29",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      }
+    ],
+    "threading_note": "All measured workers inherited the same environment; OpenBLAS pool is recorded."
+  },
+  "condition_counts": {
+    "v4": 18,
+    "frozen_v31": 12,
+    "jpeg": 18
+  },
+  "correctness": {
+    "synthetic_tests_passed": 6,
+    "fresh_process_v4_exact_all_points": true,
+    "fresh_process_v31_exact_all_points": true,
+    "skip_exact": true,
+    "malformed_stream_rejection_tested": true
+  },
+  "boundary_taper": {
+    "condition": "coast.jpg|D|intermediate",
+    "same_mode_parameters": true,
+    "hard_bytes": 688860,
+    "taper_bytes": 688860,
+    "hard_rgb_mse": 7.162201302277653,
+    "taper_rgb_mse": 7.286768551460399,
+    "protected_skip_exact": true,
+    "changed_pixel_count": 341832,
+    "skip_adjacent_region_boundary_pairs": 196320,
+    "boundary_gradient_error_mse": {
+      "hard": 21.73653728606357,
+      "taper": 7.229008761206194
+    },
+    "smooth_boundary_gradient_error_mse_source_max_channel_step_le_8": {
+      "sample_count": 193961,
+      "hard": 19.54783865484986,
+      "taper": 5.906787103249279
+    },
+    "selection_note": "diagnostic only; mode selection was performed for hard boundaries"
+  },
+  "v4_representative_repeats": {
+    "condition": "coast.jpg|D|intermediate",
+    "warmups": 1,
+    "encode_seconds": [
+      34.1458152999985,
+      34.110791000013705,
+      34.18782619998092
+    ],
+    "encode_mean": 34.14814416666437,
+    "encode_median": 34.1458152999985,
+    "fresh_process_decode_seconds": [
+      11.73108349996619,
+      11.86857809999492,
+      11.879993899958208
+    ],
+    "decode_mean": 11.82655183330644,
+    "decode_median": 11.86857809999492
+  },
+  "memory_profile": {
+    "encode_seconds": 20.2344106999808,
+    "bytes": 138848,
+    "mse": 18.691769767348898,
+    "modes": {
+      "skip": 39679,
+      "procedural": 6364,
+      "transform": 862
+    },
+    "init": [
+      612,
+      408
+    ],
+    "sha256": "77e3fea432bc9c98b7697278011a9f3eab1001f2606300c932457955291b60e2",
+    "peak_working_set_bytes": 782675968
+  },
+  "gate_assessment": {
+    "A_correctness": "pass: six synthetic test groups and fresh-process exact-pixel checks across all measured streams",
+    "B_quality_scaling": "pass: all three V4-D curves reduce RGB MSE as bitrate increases; highest points approach lossless detail",
+    "C_rate_distortion_vs_v31": "fail as broad improvement: V4 improves fidelity at higher rates but does not preserve V3.1 low-rate behavior or show a comparable-rate general win",
+    "D_speed_memory": "fail for current implementation: coast V4-D intermediate ~34.15 s encode and ~11.83 s fresh-process decode; high points reach ~144\u2013193 s encode. V3.1 is subsecond in these controls. A low-point memory profile peaked near 746 MiB.",
+    "E_jpeg": "mixed and mostly unfavorable: Googlewiki intermediate is a strong rate-matched win; cat low point is dominated by JPEG and detailed-photo refinement costs far more rate; coast JPEG q30 is close in quality at much lower rate than V4 intermediate.",
+    "F_reserved_validation": "not run: development evidence does not justify opening reserved images"
+  },
+  "caveats": [
+    "Development set has three images and is not held out.",
+    "SSIMULACRA2 was omitted because the established local executable path is absent.",
+    "Pillow JPEG is pinned by the current runtime (Pillow 11.3.0); JPEG quality settings are compared by measured bytes and decoded MSE.",
+    "Fresh-process decode wall time includes Python startup and is not directly equivalent to V3.1 in-process timing; raw fresh-process V3.1 values are retained.",
+    "Boundary taper uses hard-selected modes and is diagnostic only; it is not a separately optimized codec point.",
+    "No AVIF re-encode or held-out validation was run."
+  ],
+  "files": {
+    "raw": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass42\\outputs\\benchmark_raw.json",
+    "report": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass42\\V4_CODEC_RESULTS.md",
+    "visuals": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC\\research_pass42\\visuals"
+  }
+}

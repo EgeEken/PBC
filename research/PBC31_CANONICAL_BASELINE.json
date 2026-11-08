@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "status": "provisional",
+  "codec_version": "PBC 3.1",
+  "implementation": {
+    "artifact": "GitHub release asset PBC3_1_Release.zip",
+    "release_tag_commit": "ac7566f8b4fe77020bc27ff720fbe9942040cca4",
+    "asset_sha256": "3ee8f68b45adb3a89128251b8905d93cb99a96d911a055f91e124e724abbe069",
+    "source_level_reference": "embedded Python/ source in the published ZIP",
+    "tested_source_files": {
+      "PBC3.py": "a0a1cfe094ca596c5e1b3fa7b10c925e8bc008a0b04c75df846d25573999990a",
+      "pbc3_types.py": "fc1835445394e3affed4620e81180a1f55b3c1a3a73172373e8b956907e5b360",
+      "pbc3_ops.py": "d8103bd5c53bd49d81ed76319aba9a0539286fd6b9572b77e0c97ff3d0d8ffad",
+      "pbc3_heads.py": "d48cfc36ce59e3c1874c92a771c18a4a451b7126f8aeb6b74c82a7ae1a47e482",
+      "pbc3_stream.py": "29efced0554f3fc7f76c8c6bf178de9c8fb43b1f47d92a8961e0403d59f12496",
+      "pbc3_features.py": "3d3d43379f0f6d2b3e97bfedd08a6c046bac189f9640fdaa4aaac895cc1e2700",
+      "learned_filler.py": "65d2de14c1fd01be256dbbcdfa98001db8312cfdb7a032f4e40b2c54a58b0c50"
+    },
+    "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+  },
+  "runtime": {
+    "python": "3.11.x",
+    "numpy": "2.4.6",
+    "numba": "0.68.0",
+    "pillow": "11.3.0",
+    "verified_platforms": ["Windows x64 source-level Python probe"],
+    "unverified": ["bundled PBC.exe behavior", "HF Linux exact native library build", "cross-platform byte identity"]
+  },
+  "complete_effective_preset_definitions": {
+    "source": "research_pass10/baseline_manifest.json#/presets",
+    "canonical_json_sha256": "5a2eaab04bbfe373ec0d8e4e1f059b2003b5d90f31d12178382550682780338d",
+    "normalization": "learned_filler_model_path is stored as the portable relative name patch_policy.npz; model content is separately pinned by SHA-256"
+  },
+  "encoder": {
+    "rng": "numpy.random.default_rng",
+    "rng_lifecycle": "new generator per encode",
+    "default_seed": 2003,
+    "input": "EXIF transpose, RGB or RGBA preservation",
+    "color_space": "YCbCr",
+    "resampling": "Pillow bicubic with configured reducing gap",
+    "entropy": "PBC3 v0 STORE or raw LZMA2, selected by stream encoder",
+    "presets": {
+      "compression": {"patch_count": 50, "learned_filler_q": 0.4, "search_q_start": 0.5, "search_q_end": 0.2},
+      "balanced": {"patch_count": 50, "learned_filler_q": 0.6, "search_q_start": 0.5, "search_q_end": 0.2},
+      "quality": {"patch_count": 50, "learned_filler_q": 0.8, "search_q_start": 0.5, "search_q_end": 0.2},
+      "high_quality": {"patch_count": 20, "learned_filler_q": 0.95, "search_q_start": 0.7, "search_q_end": 0.2}
+    },
+    "shared_preset_defaults": {
+      "search_depth": 200,
+      "proposal_depth": 50,
+      "exact_depth": 10,
+      "q_init": 0.7,
+      "q_start": 0.8,
+      "q_end": 0.8,
+      "learned_filler_enabled": true,
+      "learned_filler_candidates": 1,
+      "learned_filler_top_k": 1,
+      "auto_downsample_init": true,
+      "auto_downsample_max_pixels": 250000,
+      "warmup_ratio": -1,
+      "downsample_palette_bitcount": 6,
+      "patch_palette_bitcount": 2,
+      "color_space": "YCbCr",
+      "channel_cycle": "Sum",
+      "use_lzma": true
+    }
+  },
+  "format": {
+    "magic": "PBC3",
+    "version": 0,
+    "decoder_requires_model": false,
+    "backward_compatibility": "PBC3 v0 decoder; bundled executable compatibility not independently tested"
+  },
+  "golden_case": {
+    "input": "hpt_data/coast.jpg",
+    "input_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+    "decoded_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+    "preset": "compression",
+    "stream_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+    "decoded_output_rgb_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+    "bytes": 6461,
+    "rgb_mse": 73.13358281255552,
+    "environment": "Pass 44 frozen runtime; release Python direct run confirmed matching stream/pixel hashes"
+  },
+  "canonical_status_note": "Provisional until all four presets, bundled executable, current HF incident stream/input and cross-platform decoder compatibility are verified."
+}

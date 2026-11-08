@@ -11,3 +11,9 @@
 - Measure full encode/decode calls, original-size independently decoded RGB MSE, and final post-LZMA bytes. Keep local and HF timing separate; warm consistently, constrain threads, interleave variants, retain raw rows locally, and report variation/outliers.
 - Runtime mechanisms are exact within tested environments. The frozen allocator is an experimental content-dependent RD tradeoff, not an accepted PBC 3.1 release improvement. Retain named failures and the negative cache result.
 - The public UI needs internal MSE. Leave it enabled. Scoped search/grid monkeypatches belong in isolated workers; public concurrent integration needs per-encode owned state.
+
+
+## PBC V4 research
+
+- Read `research/PBC_V4_GOALS.md` before proposing or implementing V4 architectural changes.
+- Do not stage, commit, or push research changes without separate explicit user permission.

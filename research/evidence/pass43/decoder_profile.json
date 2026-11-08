@@ -1,0 +1,102 @@
+{
+  "coast.jpg": {
+    "stream_path": "PBC_ROOT/research_pass42/outputs/coast_v4_D_intermediate.pbc",
+    "stream_sha256": "cdb3ebc5820badc71a5ca2720604880eb376761051e0d75e33f2ce900d718db3",
+    "dimensions": [
+      4240,
+      2832
+    ],
+    "file_bytes": 688860,
+    "mode_counts": {
+      "skip": 13030,
+      "procedural": 32205,
+      "transform": 1670
+    },
+    "transform_block_count": 6680,
+    "inverse_block_channel_count": 20040,
+    "instrumented_decode_seconds": 14.770729399984702,
+    "stages_seconds": {
+      "unpack_total": 0.04059129999950528,
+      "header_unpack": 7.499998901039362e-06,
+      "xz_decompress": 0.03897149994736537,
+      "bit_unpack": 0.0617548999725841,
+      "bilinear_upsample": 1.6472081000101753,
+      "procedural_surface": 10.831955099361949,
+      "coefficient_parse": 0.9264103990863077,
+      "inverse_matmul": 0.06929149955976754,
+      "taper": 0.0,
+      "decode_other": 1.1935181019944139
+    },
+    "stages_fraction": {
+      "xz_decompress": 0.0026384275882412236,
+      "bit_unpack": 0.004180897117555214,
+      "bilinear_upsample": 0.11151839935622145,
+      "procedural_surface": 0.7333392147427172,
+      "coefficient_parse": 0.06271933998650515,
+      "inverse_matmul": 0.004691135940777529,
+      "taper": 0.0
+    },
+    "operation_counts": {
+      "bit_unpack_calls": 2,
+      "resize_calls": 1,
+      "surface_calls": 32182,
+      "coefficient_reads": 20040,
+      "matmul_calls": 40080,
+      "taper_calls": 0
+    },
+    "rss_before_bytes": 39329792,
+    "rss_peak_bytes": 116166656,
+    "rss_observed_delta_bytes": 76836864,
+    "instrumented_pixel_sha256": "37add1c691bf25a025a6ca6c002bb4e0f46750ead38083f397a617ff7fbe0656"
+  },
+  "googlewiki.png": {
+    "stream_path": "PBC_ROOT/research_pass42/outputs/googlewiki_v4_D_intermediate.pbc",
+    "stream_sha256": "ad847b4026811d2383b15308c49fcc0ebb8ca4b10593883d09626aeff4980ea5",
+    "dimensions": [
+      814,
+      812
+    ],
+    "file_bytes": 106968,
+    "mode_counts": {
+      "skip": 2365,
+      "procedural": 116,
+      "transform": 120
+    },
+    "transform_block_count": 480,
+    "inverse_block_channel_count": 1440,
+    "instrumented_decode_seconds": 0.2564968999940902,
+    "stages_seconds": {
+      "unpack_total": 0.00624929997138679,
+      "header_unpack": 4.300032742321491e-06,
+      "xz_decompress": 0.005971899954602122,
+      "bit_unpack": 0.10250989999622107,
+      "bilinear_upsample": 0.000331499963067472,
+      "procedural_surface": 0.023365900211501867,
+      "coefficient_parse": 0.056551700399722904,
+      "inverse_matmul": 0.00405409763334319,
+      "taper": 0.0,
+      "decode_other": 0.06343450181884691
+    },
+    "stages_fraction": {
+      "xz_decompress": 0.023282542419575898,
+      "bit_unpack": 0.3996535630589802,
+      "bilinear_upsample": 0.0012924131366699163,
+      "procedural_surface": 0.09109622850038432,
+      "coefficient_parse": 0.22047713013695636,
+      "inverse_matmul": 0.015805639886628642,
+      "taper": 0.0
+    },
+    "operation_counts": {
+      "bit_unpack_calls": 2,
+      "resize_calls": 1,
+      "surface_calls": 80,
+      "coefficient_reads": 1440,
+      "matmul_calls": 2880,
+      "taper_calls": 0
+    },
+    "rss_before_bytes": 73302016,
+    "rss_peak_bytes": 81514496,
+    "rss_observed_delta_bytes": 8212480,
+    "instrumented_pixel_sha256": "e57e01b2f1f2cd89c3a48a6d08a77540ec4687857f4504b440dd02d4c10c6f92"
+  }
+}

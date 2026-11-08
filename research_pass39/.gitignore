@@ -1,0 +1,10 @@
+outputs/
+__pycache__/
+*.pyc
+
+# Rebuildable native AV1 build/install products
+install/
+*.a
+*.dll
+*.obj
+*.pdb

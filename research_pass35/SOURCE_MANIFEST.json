@@ -1,0 +1,137 @@
+{
+  "repository": {
+    "name": "EgeEken/PBC",
+    "branch": "research/experiments",
+    "starting_head": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f"
+  },
+  "upstream_sources": {
+    "libaom": {
+      "origin": "https://aomedia.googlesource.com/aom",
+      "tag": "v3.12.1",
+      "tag_object": "fc5cf6a132697487fbaa9965b249012e0238768f8",
+      "commit": "10aece4157eb79315da205f39e19bf6ab3ee30d0",
+      "license": "BSD 2-Clause plus Alliance for Open Media patent license"
+    },
+    "libavif": {
+      "origin": "https://github.com/AOMediaCodec/libavif.git",
+      "tag": "v1.3.0",
+      "tag_object": "69847e00cd7ce09a59112d78dbe4ac167216e49e",
+      "commit": "1aadfad932c98c069a1204261b1856f81f3bc199",
+      "license": "BSD 2-Clause; LICENSE includes third-party notices"
+    }
+  },
+  "transitive_dependencies": [
+    {
+      "name": "libpng",
+      "path": "build/libavif-reference/_deps/libpng-src",
+      "commit": "872555f4ba910252783af1507f9e7fe1653be252"
+    },
+    {
+      "name": "zlib",
+      "path": "build/libavif-reference/_deps/zlib-src",
+      "commit": "51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf"
+    },
+    {
+      "name": "libyuv",
+      "path": "build/libavif-reference/_deps/libyuv-src",
+      "commit": "4db2af62dab48895226be6b52737247e898ebe36"
+    },
+    {
+      "name": "libwebp/libsharpyuv",
+      "path": "build/libavif-reference/_deps/libwebp-src",
+      "commit": "a4d7a715337ded4451fec90ff8ce79728e04126c"
+    },
+    {
+      "name": "libjpeg-turbo",
+      "path": "build/libavif-reference/libjpeg/src/libjpeg",
+      "commit": "20ade4dea9589515a69793e447a6c6220b464535"
+    }
+  ],
+  "assets": [
+    {
+      "name": "googlewiki.png",
+      "role": "development: text and sharp graphics",
+      "width": 814,
+      "height": 812,
+      "bytes": 266651,
+      "sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e"
+    },
+    {
+      "name": "mario64.png",
+      "role": "development: synthetic graphics",
+      "width": 1152,
+      "height": 864,
+      "bytes": 478250,
+      "sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9"
+    },
+    {
+      "name": "flower.jpg",
+      "role": "development: smooth photography",
+      "width": 3576,
+      "height": 2384,
+      "bytes": 6878458,
+      "sha256": "a8a33c44cfaf9b251d896181d55e30a8bd1e53fa41574c8f75b74950d73f2f72"
+    },
+    {
+      "name": "cat.jpg",
+      "role": "development: detailed photography",
+      "width": 3576,
+      "height": 2384,
+      "bytes": 8425823,
+      "sha256": "75482650c75b9fc17f4ee2f40b093a6065ca9103216650df5da4dbd492915c4e"
+    },
+    {
+      "name": "coast.jpg",
+      "role": "development: large natural photograph",
+      "width": 4240,
+      "height": 2832,
+      "bytes": 8413193,
+      "sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2"
+    },
+    {
+      "name": "cathedral.png",
+      "role": "held-out",
+      "width": 3585,
+      "height": 3346,
+      "bytes": 18291201,
+      "sha256": "d7a3859fcbbe118daf8f3ea1f2daf120d6d38be474ab2ee845d6802675b21bf1"
+    },
+    {
+      "name": "park.jpg",
+      "role": "held-out",
+      "width": 3577,
+      "height": 2384,
+      "bytes": 8175909,
+      "sha256": "96640a11a732044b81d575b84af1d05cda79fcb6b39bc097a8455145fc5c0ef4"
+    },
+    {
+      "name": "ducklings.jpg",
+      "role": "held-out",
+      "width": 4240,
+      "height": 2832,
+      "bytes": 2916352,
+      "sha256": "3f9857490373bd56a5ca9d173998aea94a3d356fa2bbeef4ca41728584f1da43"
+    }
+  ],
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.5",
+    "pillow": "11.3.0",
+    "numpy": "2.2.6",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "logical_cpus": 20,
+    "cmake": "3.29.2",
+    "ninja": "1.12.0",
+    "gcc": "13.2.0 (Strawberry MinGW-w64 x86_64 UCRT)",
+    "nasm": "available",
+    "msvc": "unavailable"
+  },
+  "builds": {
+    "reference_libaom": "research_pass35/install/reference/lib/libaom.a",
+    "research_libaom_instrumentation_off": "research_pass35/install/research-off/lib/libaom.a",
+    "research_libaom_profile": "research_pass35/install/profile/lib/libaom.a",
+    "libavif_apps": "research_pass35/build/libavif-reference/avifenc.exe and avifdec.exe",
+    "static_link_verified": true,
+    "instrumentation": "CONFIG_COLLECT_PARTITION_STATS=2; CONFIG_COLLECT_COMPONENT_TIMING=1; PBC_PROFILE guarded counters"
+  }
+}

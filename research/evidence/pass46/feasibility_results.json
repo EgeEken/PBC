@@ -1,0 +1,1564 @@
+{
+  "pass": 46,
+  "frozen_design": "research_pass46\\EXPERIMENT_DESIGN.md",
+  "coding_mode": "one straight source-resolution residual stroke with 16-bit endpoints, 8-bit width and signed RGB int8 amplitudes; no mask",
+  "fixed_limits": {
+    "max_edge_points": 5000,
+    "hough_angles": 30,
+    "angle_step_degrees": 6,
+    "rho_step_pixels": 4,
+    "max_proposed_lines": 64,
+    "tested_widths": [
+      1,
+      2,
+      4
+    ],
+    "max_strokes_per_image": 8
+  },
+  "packet_format": "8-byte P46S header/count plus 12-byte records, shared XZ preset 6; packet measurements only, not complete-file RD",
+  "native_controls": "released PBC make_patch, 3 RGB channels, cell1/max2bits and cell2/max3bits, chunked to its 400-pixel rectangle bound, one shared XZ packet",
+  "runtime": {
+    "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "threads": 1
+  },
+  "images": [
+    {
+      "image": "coast.jpg",
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "base_pixel_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+      "base_sse": 2634493979,
+      "base_rgb_mse": 73.13358281255552,
+      "proposal_stats": {
+        "edge_points": 5000,
+        "hough_peaks": 64
+      },
+      "proposal_seconds": 0.46640979999210685,
+      "fit_seconds": 1.1509711999678984,
+      "native_comparison_seconds": [
+        0.7458717999979854,
+        0.48761860001832247,
+        0.5154197999509051,
+        0.5274552999762818,
+        0.4506762999808416,
+        0.46726579999085516,
+        0.5110529999947175,
+        0.515378599986434,
+        0.5851595000131056,
+        0.5372695999685675,
+        0.5997534000780433,
+        0.5768613000400364,
+        0.5210854000179097,
+        0.4959184000035748,
+        0.4916534998919815,
+        0.46763760002795607
+      ],
+      "candidate_results": [
+        {
+          "rank": 1,
+          "line_id": 14,
+          "geometry": {
+            "x0": 4227,
+            "y0": 2064,
+            "x1": 217,
+            "y1": 2064,
+            "width": 4,
+            "amplitudes": [
+              5,
+              0,
+              -18
+            ],
+            "length": 4010.0,
+            "support": 125,
+            "support_pixels": 20071,
+            "hough_weight": 669570.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 5823176,
+          "stroke_gain_fraction_of_full_base_sse": 0.002210358439388181,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 33,
+              "raw_packet_bytes": 80835,
+              "compressed_packet_bytes": 25352,
+              "gain_sse": 203981129,
+              "packet_sha256": "22f03ec3450d062df6df52d5ea190213a2d22950cb1eb9ee68578d37a3559d82"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 33,
+              "raw_packet_bytes": 31862,
+              "compressed_packet_bytes": 16052,
+              "gain_sse": 225295440,
+              "packet_sha256": "9d5c03a9dc7f84337fe305e2b6c5b016684c39034270d3b3cfca040f7c07bc9c"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 33,
+            "raw_packet_bytes": 31862,
+            "compressed_packet_bytes": 16052,
+            "gain_sse": 225295440,
+            "packet_sha256": "9d5c03a9dc7f84337fe305e2b6c5b016684c39034270d3b3cfca040f7c07bc9c"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 5.459125438976811
+        },
+        {
+          "rank": 2,
+          "line_id": 5,
+          "geometry": {
+            "x0": 2870,
+            "y0": 653,
+            "x1": 2733,
+            "y1": 890,
+            "width": 4,
+            "amplitudes": [
+              -84,
+              -77,
+              -64
+            ],
+            "length": 273.7480593538519,
+            "support": 161,
+            "support_pixels": 289,
+            "hough_weight": 1088213.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 3591967,
+          "stroke_gain_fraction_of_full_base_sse": 0.0013634371642646294,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 31885,
+              "compressed_packet_bytes": 2984,
+              "gain_sse": 49035955,
+              "packet_sha256": "50c6346db61d4e3898b7b5ab78903fdc5c80c4f1095363fe2b5a5ac2f65a198a"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 11990,
+              "compressed_packet_bytes": 2828,
+              "gain_sse": 52006036,
+              "packet_sha256": "e8e9cfd026d39240dd2e43589ce3d5f1f038e847e19a6c0c1ebfaf3d1f60f5f4"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 3,
+            "raw_packet_bytes": 11990,
+            "compressed_packet_bytes": 2828,
+            "gain_sse": 52006036,
+            "packet_sha256": "e8e9cfd026d39240dd2e43589ce3d5f1f038e847e19a6c0c1ebfaf3d1f60f5f4"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 2.5700667241576993
+        },
+        {
+          "rank": 3,
+          "line_id": 33,
+          "geometry": {
+            "x0": 3022,
+            "y0": 2280,
+            "x1": 2998,
+            "y1": 2280,
+            "width": 4,
+            "amplitudes": [
+              110,
+              117,
+              95
+            ],
+            "length": 24.0,
+            "support": 64,
+            "support_pixels": 141,
+            "hough_weight": 438316.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 3294808,
+          "stroke_gain_fraction_of_full_base_sse": 0.0012506416891681952,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 971,
+              "compressed_packet_bytes": 696,
+              "gain_sse": 11616030,
+              "packet_sha256": "ab3b89c88255e615139a07148e311760687f0c1842151024f10693b133fd0604"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 418,
+              "compressed_packet_bytes": 428,
+              "gain_sse": 11982170,
+              "packet_sha256": "cbe1d9b47f0b0fe39421bcbc00654747e6ddaae62cfe22b44552f96fa4dc4835"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 3,
+            "raw_packet_bytes": 418,
+            "compressed_packet_bytes": 428,
+            "gain_sse": 11982170,
+            "packet_sha256": "cbe1d9b47f0b0fe39421bcbc00654747e6ddaae62cfe22b44552f96fa4dc4835"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 1.5485484990132048
+        },
+        {
+          "rank": 4,
+          "line_id": 44,
+          "geometry": {
+            "x0": 3691,
+            "y0": 2048,
+            "x1": 65,
+            "y1": 2048,
+            "width": 4,
+            "amplitudes": [
+              5,
+              2,
+              -13
+            ],
+            "length": 3626.0,
+            "support": 74,
+            "support_pixels": 18151,
+            "hough_weight": 407251.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 3177895,
+          "stroke_gain_fraction_of_full_base_sse": 0.0012062639069709562,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 30,
+              "raw_packet_bytes": 73122,
+              "compressed_packet_bytes": 19268,
+              "gain_sse": 129141560,
+              "packet_sha256": "97c2a54d08c9c3540ff1202ab2badbbfd4293b442271f598dbd16d4d42896560"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 30,
+              "raw_packet_bytes": 28820,
+              "compressed_packet_bytes": 13604,
+              "gain_sse": 146205700,
+              "packet_sha256": "5fe2d874fceda4fcc59696d87dc28f69efb0a68a8d4814f5cbd6ad531799eace"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 30,
+            "raw_packet_bytes": 28820,
+            "compressed_packet_bytes": 13604,
+            "gain_sse": 146205700,
+            "packet_sha256": "5fe2d874fceda4fcc59696d87dc28f69efb0a68a8d4814f5cbd6ad531799eace"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 3.8907047057672854
+        },
+        {
+          "rank": 5,
+          "line_id": 7,
+          "geometry": {
+            "x0": 2948,
+            "y0": 542,
+            "x1": 2327,
+            "y1": 1617,
+            "width": 4,
+            "amplitudes": [
+              -71,
+              -72,
+              -66
+            ],
+            "length": 1241.4773457457852,
+            "support": 165,
+            "support_pixels": 290,
+            "hough_weight": 1053379.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 3076821,
+          "stroke_gain_fraction_of_full_base_sse": 0.0011678982850315332,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 9,
+              "raw_packet_bytes": 200240,
+              "compressed_packet_bytes": 15788,
+              "gain_sse": 204406346,
+              "packet_sha256": "b3f61c98e5938ae710c7d412d098c9778771ea94319df0632651766515d800cb"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 9,
+              "raw_packet_bytes": 75308,
+              "compressed_packet_bytes": 14464,
+              "gain_sse": 220201591,
+              "packet_sha256": "34765e6916ccffbd96bba0f1359fde5bd14de53e3c9347c7af5d551ed15e65db"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 9,
+            "raw_packet_bytes": 75308,
+            "compressed_packet_bytes": 14464,
+            "gain_sse": 220201591,
+            "packet_sha256": "34765e6916ccffbd96bba0f1359fde5bd14de53e3c9347c7af5d551ed15e65db"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 2.659234272672492
+        },
+        {
+          "rank": 6,
+          "line_id": 9,
+          "geometry": {
+            "x0": 3017,
+            "y0": 446,
+            "x1": 2321,
+            "y1": 1652,
+            "width": 4,
+            "amplitudes": [
+              -62,
+              -63,
+              -54
+            ],
+            "length": 1392.4266587508298,
+            "support": 132,
+            "support_pixels": 290,
+            "hough_weight": 857497.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 2259572,
+          "stroke_gain_fraction_of_full_base_sse": 0.0008576872894800417,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 12,
+              "raw_packet_bytes": 195104,
+              "compressed_packet_bytes": 18404,
+              "gain_sse": 209665967,
+              "packet_sha256": "21dc0c3a9f1632005dcdcd80938289d20d6c4e85f4531e062a6f8347a966e300"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 12,
+              "raw_packet_bytes": 73759,
+              "compressed_packet_bytes": 16432,
+              "gain_sse": 223253466,
+              "packet_sha256": "b56aca75b6e4604985de87237127ac3c8b5b3628bc0fc9a63f6ec3722e1d54d6"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 12,
+            "raw_packet_bytes": 73759,
+            "compressed_packet_bytes": 16432,
+            "gain_sse": 223253466,
+            "packet_sha256": "b56aca75b6e4604985de87237127ac3c8b5b3628bc0fc9a63f6ec3722e1d54d6"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 2.1882896607232114
+        },
+        {
+          "rank": 7,
+          "line_id": 29,
+          "geometry": {
+            "x0": 2990,
+            "y0": 483,
+            "x1": 2977,
+            "y1": 512,
+            "width": 4,
+            "amplitudes": [
+              -70,
+              -70,
+              -60
+            ],
+            "length": 31.78049716414141,
+            "support": 61,
+            "support_pixels": 180,
+            "hough_weight": 451846.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 1699654,
+          "stroke_gain_fraction_of_full_base_sse": 0.0006451538752975833,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 1591,
+              "compressed_packet_bytes": 1264,
+              "gain_sse": 9420301,
+              "packet_sha256": "b1740d9275b5f388fcf6b53aa7467df5585e36c2053d51fa157127eb26a91f8b"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 629,
+              "compressed_packet_bytes": 468,
+              "gain_sse": 9419928,
+              "packet_sha256": "90b848b22b821b927a0e7eeef2b4d95858d662dac05634462aabe2bffc9446a8"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 3,
+            "raw_packet_bytes": 629,
+            "compressed_packet_bytes": 468,
+            "gain_sse": 9419928,
+            "packet_sha256": "90b848b22b821b927a0e7eeef2b4d95858d662dac05634462aabe2bffc9446a8"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 1.1110796622917534
+        },
+        {
+          "rank": 8,
+          "line_id": 25,
+          "geometry": {
+            "x0": 3020,
+            "y0": 2275,
+            "x1": 2962,
+            "y1": 2318,
+            "width": 4,
+            "amplitudes": [
+              62,
+              75,
+              52
+            ],
+            "length": 72.20110802473879,
+            "support": 72,
+            "support_pixels": 177,
+            "hough_weight": 463613.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 1545928,
+          "stroke_gain_fraction_of_full_base_sse": 0.0005868026316715298,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 4285,
+              "compressed_packet_bytes": 1424,
+              "gain_sse": 18928446,
+              "packet_sha256": "41da3c6203fad4e0dfd837b5a2714c2e8d8ba06d654456e10232e6418cc01d28"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 1659,
+              "compressed_packet_bytes": 924,
+              "gain_sse": 20776716,
+              "packet_sha256": "f87a7d296a15556b61142099172546f6d1ed6f31d3392c38e189da90908ac358"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 3,
+            "raw_packet_bytes": 1659,
+            "compressed_packet_bytes": 924,
+            "gain_sse": 20776716,
+            "packet_sha256": "f87a7d296a15556b61142099172546f6d1ed6f31d3392c38e189da90908ac358"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.9046294849839042
+        }
+      ],
+      "selected_stroke_count": 8,
+      "selected_group_raw_bytes": 104,
+      "selected_group_xz_bytes": 164,
+      "selected_group_allowance_bytes_at_5pct": 323,
+      "selected_group_within_5pct_packet_allowance": true,
+      "selected_group_gain_sse_recomputed": 23409471,
+      "selected_group_mse": 72.48373563141811,
+      "selected_group_gain_fraction_of_base_sse": 0.008885756121137827,
+      "selected_group_decoded_pixel_sha256": "082051da68a614e4787b88a3973f571eca5c642195baed032bcb59f1ab045f24",
+      "top1_corrected_mse": 72.97193138058309,
+      "top1_corrected_pixel_sha256": "931c7ddf1673c0a05384ad6949b4910e0715ea336abe2e5e716db9d98033a2ef",
+      "top1_corrected_ssimulacra2": -45.29067527
+    },
+    {
+      "image": "googlewiki.png",
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "base_pixel_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+      "base_sse": 1992862170,
+      "base_rgb_mse": 1005.0220131685649,
+      "proposal_stats": {
+        "edge_points": 5000,
+        "hough_peaks": 64
+      },
+      "proposal_seconds": 0.03520569996908307,
+      "fit_seconds": 1.0840115000028163,
+      "native_comparison_seconds": [
+        0.03737789997830987,
+        0.036139799980446696,
+        0.0318527000490576,
+        0.031080099986866117,
+        0.03142690006643534,
+        0.03148529992904514,
+        0.03590789996087551,
+        0.033414200064726174,
+        0.049015199998393655,
+        0.04617979994509369,
+        0.03517179994378239,
+        0.030576999997720122,
+        0.035355000058189034,
+        0.031991299940273166,
+        0.039787900052033365,
+        0.03492539993021637
+      ],
+      "candidate_results": [
+        {
+          "rank": 1,
+          "line_id": 22,
+          "geometry": {
+            "x0": 477,
+            "y0": 304,
+            "x1": 79,
+            "y1": 304,
+            "width": 1,
+            "amplitudes": [
+              39,
+              38,
+              35
+            ],
+            "length": 398.0,
+            "support": 73,
+            "support_pixels": 399,
+            "hough_weight": 2837743.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 2105028,
+          "stroke_gain_fraction_of_full_base_sse": 0.0010562837870518663,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 6309,
+              "compressed_packet_bytes": 3416,
+              "gain_sse": 42912750,
+              "packet_sha256": "e3d2f15d52d0f09601157ed5745be4970c133a6f1604a127ee08ef4d803c3c30"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 2549,
+              "compressed_packet_bytes": 1972,
+              "gain_sse": 9534574,
+              "packet_sha256": "e103e553ca8566693ea5bfabaeab3ba0607ccc79fca7075e5de132d474644768"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 6309,
+            "compressed_packet_bytes": 3416,
+            "gain_sse": 42912750,
+            "packet_sha256": "e3d2f15d52d0f09601157ed5745be4970c133a6f1604a127ee08ef4d803c3c30"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 2.2048335064201567
+        },
+        {
+          "rank": 2,
+          "line_id": 7,
+          "geometry": {
+            "x0": 794,
+            "y0": 156,
+            "x1": 118,
+            "y1": 156,
+            "width": 1,
+            "amplitudes": [
+              26,
+              24,
+              21
+            ],
+            "length": 676.0,
+            "support": 145,
+            "support_pixels": 677,
+            "hough_weight": 4690361.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 1351934,
+          "stroke_gain_fraction_of_full_base_sse": 0.0006783881094998155,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 10271,
+              "compressed_packet_bytes": 5360,
+              "gain_sse": 71939298,
+              "packet_sha256": "9efd0dfe9f2317f730360275de8fa4920884dbf2096fcbab5a1d5e15472c7b2c"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 4124,
+              "compressed_packet_bytes": 3024,
+              "gain_sse": 17941932,
+              "packet_sha256": "daafbe687701f7fd8cefa94a7defcf007c3b2dbb9d672930ab8f80931c933318"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 10271,
+            "compressed_packet_bytes": 5360,
+            "gain_sse": 71939298,
+            "packet_sha256": "9efd0dfe9f2317f730360275de8fa4920884dbf2096fcbab5a1d5e15472c7b2c"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 1.32538024224988
+        },
+        {
+          "rank": 3,
+          "line_id": 0,
+          "geometry": {
+            "x0": 764,
+            "y0": 576,
+            "x1": 74,
+            "y1": 576,
+            "width": 1,
+            "amplitudes": [
+              17,
+              16,
+              15
+            ],
+            "length": 690.0,
+            "support": 161,
+            "support_pixels": 691,
+            "hough_weight": 6887611.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 676086,
+          "stroke_gain_fraction_of_full_base_sse": 0.00033925376786092537,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 10470,
+              "compressed_packet_bytes": 4492,
+              "gain_sse": 80431395,
+              "packet_sha256": "ccd026296c38b886320a51fa40e242f7a10b6166e912fd0d16bae67ac42c13b6"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 4191,
+              "compressed_packet_bytes": 2776,
+              "gain_sse": 23351977,
+              "packet_sha256": "98904404284ed382bbbc4a65e15b8b0afb6492619db1cc1ce5363aed13e83355"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 10470,
+            "compressed_packet_bytes": 4492,
+            "gain_sse": 80431395,
+            "packet_sha256": "ccd026296c38b886320a51fa40e242f7a10b6166e912fd0d16bae67ac42c13b6"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.4968239199055098
+        },
+        {
+          "rank": 4,
+          "line_id": 21,
+          "geometry": {
+            "x0": 578,
+            "y0": 660,
+            "x1": 112,
+            "y1": 660,
+            "width": 1,
+            "amplitudes": [
+              21,
+              19,
+              17
+            ],
+            "length": 466.0,
+            "support": 92,
+            "support_pixels": 467,
+            "hough_weight": 2860308.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 632809,
+          "stroke_gain_fraction_of_full_base_sse": 0.0003175377652936229,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 7278,
+              "compressed_packet_bytes": 3432,
+              "gain_sse": 51453378,
+              "packet_sha256": "dda350223a52671fd62c5b9098e9a643d26a5f5d743a265e5df35896f7f9c3c5"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 2931,
+              "compressed_packet_bytes": 2040,
+              "gain_sse": 12633782,
+              "packet_sha256": "2d99bbe76ffdfde0ce2f169223e53f324f947a1b49942243c7a4079d8ce2e69d"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 7278,
+            "compressed_packet_bytes": 3432,
+            "gain_sse": 51453378,
+            "packet_sha256": "dda350223a52671fd62c5b9098e9a643d26a5f5d743a265e5df35896f7f9c3c5"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.5553828207455361
+        },
+        {
+          "rank": 5,
+          "line_id": 6,
+          "geometry": {
+            "x0": 674,
+            "y0": 552,
+            "x1": 40,
+            "y1": 552,
+            "width": 1,
+            "amplitudes": [
+              15,
+              14,
+              12
+            ],
+            "length": 634.0,
+            "support": 132,
+            "support_pixels": 635,
+            "hough_weight": 5249134.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 467034,
+          "stroke_gain_fraction_of_full_base_sse": 0.00023435338731930466,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 9672,
+              "compressed_packet_bytes": 3816,
+              "gain_sse": 52986347,
+              "packet_sha256": "e5c9bcfb651084a7e1351b19786a4ec8d2078f797e3fc5e172686be254f2b6e7"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 3876,
+              "compressed_packet_bytes": 2320,
+              "gain_sse": 12825801,
+              "packet_sha256": "0765d678c2fd5d96ef3fcb7a1e19c03f07c5aee93363acff3c8a2b9a820f0a7b"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 9672,
+            "compressed_packet_bytes": 3816,
+            "gain_sse": 52986347,
+            "packet_sha256": "e5c9bcfb651084a7e1351b19786a4ec8d2078f797e3fc5e172686be254f2b6e7"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.4425672701567523
+        },
+        {
+          "rank": 6,
+          "line_id": 2,
+          "geometry": {
+            "x0": 696,
+            "y0": 532,
+            "x1": 66,
+            "y1": 532,
+            "width": 1,
+            "amplitudes": [
+              16,
+              15,
+              13
+            ],
+            "length": 630.0,
+            "support": 251,
+            "support_pixels": 631,
+            "hough_weight": 6656345.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 466721,
+          "stroke_gain_fraction_of_full_base_sse": 0.0002341963267836029,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 9615,
+              "compressed_packet_bytes": 5088,
+              "gain_sse": 81710874,
+              "packet_sha256": "11694a898febc3ddc9c9ea97626247d19dad33f791c6d325f94d4f134f62fb3f"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 3854,
+              "compressed_packet_bytes": 3156,
+              "gain_sse": 21804467,
+              "packet_sha256": "60ba5b25153a0902f70f81a78c2d17102cc28699dfbd62745a2f4ccfc5210343"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 9615,
+            "compressed_packet_bytes": 5088,
+            "gain_sse": 81710874,
+            "packet_sha256": "11694a898febc3ddc9c9ea97626247d19dad33f791c6d325f94d4f134f62fb3f"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.38239393617111606
+        },
+        {
+          "rank": 7,
+          "line_id": 4,
+          "geometry": {
+            "x0": 500,
+            "y0": 392,
+            "x1": 49,
+            "y1": 392,
+            "width": 1,
+            "amplitudes": [
+              20,
+              18,
+              16
+            ],
+            "length": 451.0,
+            "support": 146,
+            "support_pixels": 452,
+            "hough_weight": 5745897.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 464558,
+          "stroke_gain_fraction_of_full_base_sse": 0.00023311095317745932,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 7064,
+              "compressed_packet_bytes": 3860,
+              "gain_sse": 48564900,
+              "packet_sha256": "b89bf04de6736d861a81626dfbe0145bdbe300ceb0783732e8847cb74cc383a3"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 2852,
+              "compressed_packet_bytes": 2456,
+              "gain_sse": 11489536,
+              "packet_sha256": "eea7c1720708bde65b2d85f3f06f1f471b6e727ba16ee016f1579e53e08aac0d"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 7064,
+            "compressed_packet_bytes": 3860,
+            "gain_sse": 48564900,
+            "packet_sha256": "b89bf04de6736d861a81626dfbe0145bdbe300ceb0783732e8847cb74cc383a3"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.48583763820762477
+        },
+        {
+          "rank": 8,
+          "line_id": 17,
+          "geometry": {
+            "x0": 360,
+            "y0": 212,
+            "x1": 34,
+            "y1": 212,
+            "width": 2,
+            "amplitudes": [
+              -16,
+              -16,
+              -15
+            ],
+            "length": 326.0,
+            "support": 95,
+            "support_pixels": 987,
+            "hough_weight": 3139679.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 362259,
+          "stroke_gain_fraction_of_full_base_sse": 0.00018177825112712136,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 5518,
+              "compressed_packet_bytes": 2948,
+              "gain_sse": 46679873,
+              "packet_sha256": "d80629e78b0e9eb7ea92434ed910c337b8b8c6d62935443538c00a5916efcb94"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 2206,
+              "compressed_packet_bytes": 1704,
+              "gain_sse": 20811814,
+              "packet_sha256": "3a43d9d042e96a3a2c3f0366db4a72f67a70d44ff87de41b1c2d7e6461795dcd"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 3,
+            "raw_packet_bytes": 5518,
+            "compressed_packet_bytes": 2948,
+            "gain_sse": 46679873,
+            "packet_sha256": "d80629e78b0e9eb7ea92434ed910c337b8b8c6d62935443538c00a5916efcb94"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.3010255822111688
+        }
+      ],
+      "selected_stroke_count": 8,
+      "selected_group_raw_bytes": 104,
+      "selected_group_xz_bytes": 164,
+      "selected_group_allowance_bytes_at_5pct": 1448,
+      "selected_group_within_5pct_packet_allowance": true,
+      "selected_group_gain_sse_recomputed": 6526429,
+      "selected_group_mse": 1001.7306642177332,
+      "selected_group_gain_fraction_of_base_sse": 0.003274902348113718,
+      "selected_group_decoded_pixel_sha256": "ac1ae8c2fdd792b45207cf1e731bde9ab679c4d2eca3bf855b07197900a875b5",
+      "top1_corrected_mse": 1003.9604247104247,
+      "top1_corrected_pixel_sha256": "dd64e1dca191844e1868d6bd450db62f4d9dee06a77c964834ba066c52c55d1d",
+      "top1_corrected_ssimulacra2": -25.48411464
+    },
+    {
+      "image": "mario64.png",
+      "source_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "base_pixel_sha256": "7253b304018fe5ec21209e1957f2c768d8fa464fb171d0b6528cf57e0436610f",
+      "base_sse": 1236902465,
+      "base_rgb_mse": 414.2361328794796,
+      "proposal_stats": {
+        "edge_points": 5000,
+        "hough_peaks": 64
+      },
+      "proposal_seconds": 0.04389890003949404,
+      "fit_seconds": 1.0318474000087008,
+      "native_comparison_seconds": [
+        0.050723800086416304,
+        0.043858100078068674,
+        0.04556989995762706,
+        0.04034089995548129,
+        0.04003989999182522,
+        0.04779649991542101,
+        0.10864859994035214,
+        0.0798503999831155,
+        0.06128720007836819,
+        0.05600439989939332,
+        0.10858110000845045,
+        0.10478629998397082,
+        0.07366500003263354,
+        0.06724570004735142,
+        0.0734659000299871,
+        0.06066249997820705
+      ],
+      "candidate_results": [
+        {
+          "rank": 1,
+          "line_id": 0,
+          "geometry": {
+            "x0": 1140,
+            "y0": 104,
+            "x1": 1140,
+            "y1": 550,
+            "width": 1,
+            "amplitudes": [
+              -86,
+              -93,
+              -96
+            ],
+            "length": 446.0,
+            "support": 468,
+            "support_pixels": 447,
+            "hough_weight": 9882333.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 11662083,
+          "stroke_gain_fraction_of_full_base_sse": 0.009428458047417668,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 6993,
+              "compressed_packet_bytes": 1332,
+              "gain_sse": 30555771,
+              "packet_sha256": "21860bbd6edc0c58a8790705a37040f26bbcd9bff9b004356bc37b291c53cd84"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 2819,
+              "compressed_packet_bytes": 1372,
+              "gain_sse": 21763025,
+              "packet_sha256": "19b7925649d474badccc6262fc51b0ef57c8cbf3897fe2e28bb6b9ae1216800c"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 1,
+            "max_bits": 2,
+            "patch_count": 6,
+            "raw_packet_bytes": 6993,
+            "compressed_packet_bytes": 1332,
+            "gain_sse": 30555771,
+            "packet_sha256": "21860bbd6edc0c58a8790705a37040f26bbcd9bff9b004356bc37b291c53cd84"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 6.689189725274896
+        },
+        {
+          "rank": 2,
+          "line_id": 2,
+          "geometry": {
+            "x0": 16,
+            "y0": 171,
+            "x1": 16,
+            "y1": 365,
+            "width": 4,
+            "amplitudes": [
+              26,
+              47,
+              70
+            ],
+            "length": 194.0,
+            "support": 164,
+            "support_pixels": 991,
+            "hough_weight": 2538417.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 5615202,
+          "stroke_gain_fraction_of_full_base_sse": 0.0045397290076546176,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 4159,
+              "compressed_packet_bytes": 1472,
+              "gain_sse": 22612524,
+              "packet_sha256": "545171a16bd6dd32f7e27b23bd55f8dd335526f86d2ca60f77928246dd9b3a75"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 1661,
+              "compressed_packet_bytes": 1260,
+              "gain_sse": 20642152,
+              "packet_sha256": "46c4995f29509eb9c1461138d79a7965ef8eee2cb7040fcbe183ff41ed6844e8"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 3,
+            "raw_packet_bytes": 1661,
+            "compressed_packet_bytes": 1260,
+            "gain_sse": 20642152,
+            "packet_sha256": "46c4995f29509eb9c1461138d79a7965ef8eee2cb7040fcbe183ff41ed6844e8"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 4.5099047047542635
+        },
+        {
+          "rank": 3,
+          "line_id": 58,
+          "geometry": {
+            "x0": 400,
+            "y0": 333,
+            "x1": 400,
+            "y1": 395,
+            "width": 2,
+            "amplitudes": [
+              -38,
+              -49,
+              -63
+            ],
+            "length": 62.0,
+            "support": 60,
+            "support_pixels": 195,
+            "hough_weight": 903722.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 869244,
+          "stroke_gain_fraction_of_full_base_sse": 0.0007027587256041244,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 1360,
+              "compressed_packet_bytes": 1064,
+              "gain_sse": 13911632,
+              "packet_sha256": "73519e29d1df0fb7e91c4c5815b9c99f9b5dfd70ec424aa69a30a03af75f74d4"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 572,
+              "compressed_packet_bytes": 588,
+              "gain_sse": 11283109,
+              "packet_sha256": "79af93ff2f456ba5aa809a9d93c31d3cdaa43d87536eaba04443bd661aab089c"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 3,
+            "raw_packet_bytes": 572,
+            "compressed_packet_bytes": 588,
+            "gain_sse": 11283109,
+            "packet_sha256": "79af93ff2f456ba5aa809a9d93c31d3cdaa43d87536eaba04443bd661aab089c"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.5960417096872296
+        },
+        {
+          "rank": 4,
+          "line_id": 54,
+          "geometry": {
+            "x0": 987,
+            "y0": 776,
+            "x1": 207,
+            "y1": 73,
+            "width": 4,
+            "amplitudes": [
+              34,
+              54,
+              44
+            ],
+            "length": 1050.0519034790614,
+            "support": 88,
+            "support_pixels": 123,
+            "hough_weight": 941522.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 533573,
+          "stroke_gain_fraction_of_full_base_sse": 0.00043137839490036106,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 9,
+              "raw_packet_bytes": 166438,
+              "compressed_packet_bytes": 19728,
+              "gain_sse": 200869764,
+              "packet_sha256": "7b47aa25d1f2da68c31c1373e256e74e03ff98b9d64b678a6c9a58210858e2b5"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 9,
+              "raw_packet_bytes": 62881,
+              "compressed_packet_bytes": 13268,
+              "gain_sse": 186841831,
+              "packet_sha256": "c354b5cd56508f8d8c7c2c02ce4e373a3f626a2988259634e11c67416dd9d016"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 9,
+            "raw_packet_bytes": 62881,
+            "compressed_packet_bytes": 13268,
+            "gain_sse": 186841831,
+            "packet_sha256": "c354b5cd56508f8d8c7c2c02ce4e373a3f626a2988259634e11c67416dd9d016"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.4985533067496567
+        },
+        {
+          "rank": 5,
+          "line_id": 63,
+          "geometry": {
+            "x0": 784,
+            "y0": 73,
+            "x1": 346,
+            "y1": 391,
+            "width": 4,
+            "amplitudes": [
+              -52,
+              33,
+              8
+            ],
+            "length": 541.2651845445077,
+            "support": 79,
+            "support_pixels": 184,
+            "hough_weight": 879909.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 506196,
+          "stroke_gain_fraction_of_full_base_sse": 0.00040924487930420607,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 67440,
+              "compressed_packet_bytes": 10680,
+              "gain_sse": 143107453,
+              "packet_sha256": "a6a2722d87bb4fb97a008e08aab7cb3f68d3940c84e60c2a9e9bfc97159ee67e"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 25350,
+              "compressed_packet_bytes": 8560,
+              "gain_sse": 118212166,
+              "packet_sha256": "50bb0e079b59f72da49b960bd8b0aa2eb25789e6d5470dce98585e24f98114e1"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 6,
+            "raw_packet_bytes": 25350,
+            "compressed_packet_bytes": 8560,
+            "gain_sse": 118212166,
+            "packet_sha256": "50bb0e079b59f72da49b960bd8b0aa2eb25789e6d5470dce98585e24f98114e1"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.482299383101077
+        },
+        {
+          "rank": 6,
+          "line_id": 16,
+          "geometry": {
+            "x0": 992,
+            "y0": 775,
+            "x1": 380,
+            "y1": 330,
+            "width": 2,
+            "amplitudes": [
+              47,
+              68,
+              61
+            ],
+            "length": 756.6828926307242,
+            "support": 128,
+            "support_pixels": 78,
+            "hough_weight": 1341631.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 440825,
+          "stroke_gain_fraction_of_full_base_sse": 0.00035639430955455327,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 119533,
+              "compressed_packet_bytes": 18268,
+              "gain_sse": 179856191,
+              "packet_sha256": "d914c3cf7c3bf381ba4865b3591ec39fbeed8f7ecdbae97eef7b65201f8e36a5"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 45114,
+              "compressed_packet_bytes": 11360,
+              "gain_sse": 165245147,
+              "packet_sha256": "6013a1a8d15fe9368a5304b852a6b6d599561e026c65560a3a68c9fa3b72b6d5"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 6,
+            "raw_packet_bytes": 45114,
+            "compressed_packet_bytes": 11360,
+            "gain_sse": 165245147,
+            "packet_sha256": "6013a1a8d15fe9368a5304b852a6b6d599561e026c65560a3a68c9fa3b72b6d5"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.39875141895758826
+        },
+        {
+          "rank": 7,
+          "line_id": 5,
+          "geometry": {
+            "x0": 786,
+            "y0": 441,
+            "x1": 258,
+            "y1": 329,
+            "width": 4,
+            "amplitudes": [
+              -2,
+              8,
+              12
+            ],
+            "length": 539.748089389856,
+            "support": 226,
+            "support_pixels": 2716,
+            "hough_weight": 2218165.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 424110,
+          "stroke_gain_fraction_of_full_base_sse": 0.0003428807137190078,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 6,
+              "raw_packet_bytes": 35210,
+              "compressed_packet_bytes": 19176,
+              "gain_sse": 149218184,
+              "packet_sha256": "e41895a74ff48efbe5be33d2f8a37363625077cdfd9f415c0d1f6c7afeecc090"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 6,
+              "raw_packet_bytes": 13472,
+              "compressed_packet_bytes": 10416,
+              "gain_sse": 128659580,
+              "packet_sha256": "107ffe9afcec0e776267432adc2b69079a9eeb07a8d0d19bfc73f3effea91f8f"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 6,
+            "raw_packet_bytes": 13472,
+            "compressed_packet_bytes": 10416,
+            "gain_sse": 128659580,
+            "packet_sha256": "107ffe9afcec0e776267432adc2b69079a9eeb07a8d0d19bfc73f3effea91f8f"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.45177663084977715
+        },
+        {
+          "rank": 8,
+          "line_id": 8,
+          "geometry": {
+            "x0": 663,
+            "y0": 447,
+            "x1": 298,
+            "y1": 328,
+            "width": 4,
+            "amplitudes": [
+              17,
+              -4,
+              9
+            ],
+            "length": 383.90884334695915,
+            "support": 177,
+            "support_pixels": 1186,
+            "hough_weight": 1825519.0
+          },
+          "stroke_raw_bytes": 20,
+          "stroke_xz_bytes": 76,
+          "stroke_gain_sse": 373282,
+          "stroke_gain_fraction_of_full_base_sse": 0.00030178774039390404,
+          "native_controls": [
+            {
+              "cell_size": 1,
+              "max_bits": 2,
+              "patch_count": 3,
+              "raw_packet_bytes": 42172,
+              "compressed_packet_bytes": 16332,
+              "gain_sse": 141824262,
+              "packet_sha256": "811302b782f1030ce52af7c9998001d1ae78c81d9c94f81926c0fa2f7ce91270"
+            },
+            {
+              "cell_size": 2,
+              "max_bits": 3,
+              "patch_count": 3,
+              "raw_packet_bytes": 15847,
+              "compressed_packet_bytes": 10008,
+              "gain_sse": 119809228,
+              "packet_sha256": "f126176d6432e8f47f4121f56cfc27367222fe2e4b512eb880ef91d04cf98770"
+            }
+          ],
+          "best_comparable_native": {
+            "cell_size": 2,
+            "max_bits": 3,
+            "patch_count": 3,
+            "raw_packet_bytes": 15847,
+            "compressed_packet_bytes": 10008,
+            "gain_sse": 119809228,
+            "packet_sha256": "f126176d6432e8f47f4121f56cfc27367222fe2e4b512eb880ef91d04cf98770"
+          },
+          "gain_per_xz_byte_ratio_vs_best_comparable_native": 0.410280128619844
+        }
+      ],
+      "selected_stroke_count": 8,
+      "selected_group_raw_bytes": 104,
+      "selected_group_xz_bytes": 164,
+      "selected_group_allowance_bytes_at_5pct": 704,
+      "selected_group_within_5pct_packet_allowance": true,
+      "selected_group_gain_sse_recomputed": 20341467,
+      "selected_group_mse": 407.4238167384688,
+      "selected_group_gain_fraction_of_base_sse": 0.016445489903684524,
+      "selected_group_decoded_pixel_sha256": "92fc0d19554c2f4f06d3abb213613695e2ba69dd059b3d5709f9ce9c9d1e7271",
+      "top1_corrected_mse": 410.3305248789009,
+      "top1_corrected_pixel_sha256": "cd1a0eee2f2c037f7cb165a39ac290fb701ab8e09b8b53a322b5b72cdb6c4cbb",
+      "top1_corrected_ssimulacra2": -50.6115653
+    }
+  ],
+  "profiles": [
+    {
+      "image": "coast.jpg",
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "base_sse": 2634493979,
+      "proposal": {
+        "edge_points": 5000,
+        "hough_peaks": 64
+      },
+      "proposal_seconds": 0.46640979999210685,
+      "fit_seconds": 1.1509711999678984,
+      "selected_candidate_count": 8,
+      "stroke_group_bytes": 164,
+      "native_comparison_seconds": [
+        0.7458717999979854,
+        0.48761860001832247,
+        0.5154197999509051,
+        0.5274552999762818,
+        0.4506762999808416,
+        0.46726579999085516,
+        0.5110529999947175,
+        0.515378599986434,
+        0.5851595000131056,
+        0.5372695999685675,
+        0.5997534000780433,
+        0.5768613000400364,
+        0.5210854000179097,
+        0.4959184000035748,
+        0.4916534998919815,
+        0.46763760002795607
+      ]
+    },
+    {
+      "image": "googlewiki.png",
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "base_sse": 1992862170,
+      "proposal": {
+        "edge_points": 5000,
+        "hough_peaks": 64
+      },
+      "proposal_seconds": 0.03520569996908307,
+      "fit_seconds": 1.0840115000028163,
+      "selected_candidate_count": 8,
+      "stroke_group_bytes": 164,
+      "native_comparison_seconds": [
+        0.03737789997830987,
+        0.036139799980446696,
+        0.0318527000490576,
+        0.031080099986866117,
+        0.03142690006643534,
+        0.03148529992904514,
+        0.03590789996087551,
+        0.033414200064726174,
+        0.049015199998393655,
+        0.04617979994509369,
+        0.03517179994378239,
+        0.030576999997720122,
+        0.035355000058189034,
+        0.031991299940273166,
+        0.039787900052033365,
+        0.03492539993021637
+      ]
+    },
+    {
+      "image": "mario64.png",
+      "source_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "base_sse": 1236902465,
+      "proposal": {
+        "edge_points": 5000,
+        "hough_peaks": 64
+      },
+      "proposal_seconds": 0.04389890003949404,
+      "fit_seconds": 1.0318474000087008,
+      "selected_candidate_count": 8,
+      "stroke_group_bytes": 164,
+      "native_comparison_seconds": [
+        0.050723800086416304,
+        0.043858100078068674,
+        0.04556989995762706,
+        0.04034089995548129,
+        0.04003989999182522,
+        0.04779649991542101,
+        0.10864859994035214,
+        0.0798503999831155,
+        0.06128720007836819,
+        0.05600439989939332,
+        0.10858110000845045,
+        0.10478629998397082,
+        0.07366500003263354,
+        0.06724570004735142,
+        0.0734659000299871,
+        0.06066249997820705
+      ]
+    }
+  ],
+  "gate": {
+    "useful_correction_rule": "at least 0.5% of full decoded-base RGB SSE; visual inspection also required",
+    "comparable_native_rule": "native local gain at least 80% of stroke gain",
+    "efficiency_ratio_threshold": 1.2,
+    "required_structural_wins": 3,
+    "required_content_classes": 2,
+    "complete_codec": "not attempted in this script"
+  }
+}

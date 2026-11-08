@@ -1,0 +1,491 @@
+{
+  "image": "mario64.png",
+  "preset": "balanced",
+  "step": 50,
+  "channel": 1,
+  "channel_bits": 2,
+  "config": {
+    "patch_count": 50,
+    "search_depth": 200,
+    "proposal_depth": 50,
+    "exact_depth": 10,
+    "min_patch_size": 16,
+    "max_patch_size": 400,
+    "min_cell_size": 1,
+    "max_cell_size": 64,
+    "cell_sizes_per_candidate": 3,
+    "top_k": 20,
+    "search_q_start": 0.5,
+    "search_q_end": 0.2,
+    "q_init": 0.7,
+    "q_start": 0.8,
+    "q_end": 0.8,
+    "color_space": "YCbCr",
+    "channel_cycle": "Sum",
+    "auto_downsample_init": true,
+    "init_search_depth": 3,
+    "downsample_init_cell_size": 12,
+    "downsample_palette_bitcount": 6,
+    "downsample_rate": -1,
+    "auto_downsample_max_pixels": 250000,
+    "warmup_ratio": -1,
+    "warm_downsample_max_pixels": 750000,
+    "patch_palette_bitcount": 2,
+    "quality_target_mae": 0.0,
+    "mask_size": 4,
+    "anchor_block_size": 8,
+    "positive_bias": true,
+    "learned_filler_enabled": true,
+    "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+    "learned_filler_top_k": 1,
+    "learned_filler_q": 0.6,
+    "learned_filler_candidates": 1,
+    "use_lzma": true,
+    "random_seed": 2003,
+    "compute_final_mse": true,
+    "debug_mode": false,
+    "debug_print": false,
+    "debug_path": null,
+    "reuse_selected_delta": true,
+    "residual_projection_mode": "bicubic",
+    "cell_selection_mode": "gradient",
+    "representability_threshold": 0.0
+  },
+  "rng_before": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 271548435321475381411268422766992675425,
+      "inc": 297406999998297658746278787271095723267
+    },
+    "has_uint32": 0,
+    "uinteger": 249929119
+  },
+  "policy_bits_before": 0.0,
+  "policy_pixels": null,
+  "canonical_builds": [
+    {
+      "action_index": 6,
+      "seconds": 0.00017259991727769375,
+      "patch_signature": {
+        "channel": 1,
+        "x": 0,
+        "y": 49,
+        "w": 17,
+        "h": 17,
+        "cell_size": 2,
+        "bitcount": 2,
+        "max_bitcount": 2,
+        "mask": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "negative": 10,
+        "positive": 14,
+        "index_shape": [
+          9,
+          9
+        ],
+        "index_sha256": "e04eb20789ac622a9d221b6bc08717895d068eeea9b192fd1d49c3675db1643a"
+      },
+      "reduction": 14557.0,
+      "bits": 279.0
+    }
+  ],
+  "proposals": [
+    [
+      1,
+      0,
+      49,
+      17,
+      17
+    ],
+    [
+      1,
+      3,
+      5,
+      20,
+      17
+    ],
+    [
+      1,
+      205,
+      193,
+      25,
+      19
+    ],
+    [
+      1,
+      3,
+      20,
+      18,
+      24
+    ],
+    [
+      1,
+      32,
+      10,
+      31,
+      23
+    ],
+    [
+      1,
+      3,
+      4,
+      16,
+      45
+    ],
+    [
+      1,
+      8,
+      394,
+      27,
+      27
+    ],
+    [
+      1,
+      490,
+      372,
+      42,
+      21
+    ],
+    [
+      1,
+      1,
+      3,
+      20,
+      34
+    ],
+    [
+      1,
+      302,
+      189,
+      32,
+      27
+    ],
+    [
+      1,
+      1,
+      13,
+      33,
+      22
+    ],
+    [
+      1,
+      513,
+      361,
+      40,
+      23
+    ],
+    [
+      1,
+      3,
+      56,
+      18,
+      43
+    ],
+    [
+      1,
+      1,
+      115,
+      34,
+      18
+    ],
+    [
+      1,
+      89,
+      24,
+      30,
+      28
+    ],
+    [
+      1,
+      0,
+      12,
+      47,
+      21
+    ],
+    [
+      1,
+      499,
+      382,
+      21,
+      40
+    ],
+    [
+      1,
+      185,
+      211,
+      49,
+      17
+    ],
+    [
+      1,
+      2,
+      32,
+      24,
+      36
+    ],
+    [
+      1,
+      1,
+      43,
+      49,
+      17
+    ],
+    [
+      1,
+      213,
+      167,
+      16,
+      77
+    ],
+    [
+      1,
+      1,
+      42,
+      28,
+      38
+    ],
+    [
+      1,
+      528,
+      331,
+      20,
+      44
+    ],
+    [
+      1,
+      3,
+      116,
+      24,
+      43
+    ],
+    [
+      1,
+      0,
+      27,
+      23,
+      64
+    ],
+    [
+      1,
+      1,
+      31,
+      64,
+      21
+    ],
+    [
+      1,
+      38,
+      3,
+      18,
+      75
+    ],
+    [
+      1,
+      1,
+      49,
+      57,
+      20
+    ],
+    [
+      1,
+      3,
+      81,
+      39,
+      26
+    ],
+    [
+      1,
+      7,
+      11,
+      39,
+      33
+    ],
+    [
+      1,
+      506,
+      382,
+      43,
+      26
+    ],
+    [
+      1,
+      2,
+      60,
+      61,
+      18
+    ],
+    [
+      1,
+      2,
+      79,
+      21,
+      69
+    ],
+    [
+      1,
+      2,
+      75,
+      36,
+      35
+    ],
+    [
+      1,
+      449,
+      383,
+      82,
+      18
+    ],
+    [
+      1,
+      0,
+      116,
+      37,
+      41
+    ],
+    [
+      1,
+      203,
+      165,
+      113,
+      17
+    ],
+    [
+      1,
+      1,
+      94,
+      56,
+      24
+    ],
+    [
+      1,
+      1,
+      8,
+      18,
+      128
+    ],
+    [
+      1,
+      2,
+      35,
+      42,
+      39
+    ],
+    [
+      1,
+      217,
+      117,
+      26,
+      66
+    ],
+    [
+      1,
+      3,
+      69,
+      30,
+      61
+    ],
+    [
+      1,
+      3,
+      52,
+      73,
+      25
+    ],
+    [
+      1,
+      1,
+      51,
+      35,
+      56
+    ],
+    [
+      1,
+      3,
+      16,
+      84,
+      26
+    ],
+    [
+      1,
+      0,
+      99,
+      41,
+      50
+    ],
+    [
+      1,
+      1,
+      0,
+      25,
+      99
+    ],
+    [
+      1,
+      468,
+      348,
+      91,
+      28
+    ],
+    [
+      1,
+      2,
+      24,
+      132,
+      22
+    ],
+    [
+      1,
+      503,
+      341,
+      34,
+      82
+    ]
+  ],
+  "rng_after_proposals": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 271888140705798204626599840035366030201,
+      "inc": 297406999998297658746278787271095723267
+    },
+    "has_uint32": 0,
+    "uinteger": 2302220115
+  },
+  "rng_after_select": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 271888140705798204626599840035366030201,
+      "inc": 297406999998297658746278787271095723267
+    },
+    "has_uint32": 0,
+    "uinteger": 2302220115
+  },
+  "canonical_patch": {
+    "channel": 1,
+    "x": 0,
+    "y": 49,
+    "w": 17,
+    "h": 17,
+    "cell_size": 2,
+    "bitcount": 2,
+    "max_bitcount": 2,
+    "mask": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "negative": 10,
+    "positive": 14,
+    "index_shape": [
+      9,
+      9
+    ],
+    "index_sha256": "e04eb20789ac622a9d221b6bc08717895d068eeea9b192fd1d49c3675db1643a"
+  },
+  "state_npz": "outputs\\states\\mario64_balanced_step50.npz",
+  "target_canvas_sha256": "4aeebd14fb0d3fae25b3f6aeef2c28f9a5bb73f68e55ccec398bacbf5f495859"
+}

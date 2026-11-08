@@ -1,0 +1,50 @@
+{
+  "pass": "35",
+  "branch": "research/experiments",
+  "starting_head": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+  "libaom_commit": "10aece4157eb79315da205f39e19bf6ab3ee30d0",
+  "libavif_commit": "1aadfad932c98c069a1204261b1856f81f3bc199",
+  "gate_a": "passed",
+  "gate_a_evidence": [
+    "Pinned reference and research Release builds completed",
+    "avifenc and avifdec built; static libaom linkage verified",
+    "Ten speed-8 reference/research-off outputs byte-identical",
+    "Seven instrumented speed-8/speed-6 outputs byte-identical to reference",
+    "Fresh avifdec decode passed; Pillow AVIF frontend RGB matched on all seven profile outputs",
+    "Active partition and intra candidate counters nonzero; inactive RD/ML branches identified",
+    "Final instrumentation-off build from complete guarded patch matched all ten reference AVIF bytes and decoded RGB outputs"
+  ],
+  "gate_b": "not_run",
+  "algorithmic_encoder_modification": null,
+  "instrumentation_patch": "patches/libaom-profile-counters.patch",
+  "development_images": [
+    "googlewiki.png",
+    "mario64.png",
+    "flower.jpg",
+    "cat.jpg",
+    "coast.jpg"
+  ],
+  "held_out_images_not_encoded": [
+    "cathedral.png",
+    "park.jpg",
+    "ducklings.jpg"
+  ],
+  "reference_equivalence": {
+    "speed8_points": 10,
+    "all_bytes_identical": true,
+    "profile_cases": 7,
+    "all_profile_bytes_identical": true,
+    "all_profile_decodes_passed": true,
+    "final_instrumentation_off_control": {
+      "points": 10,
+      "bytes_identical": true,
+      "decoded_rgb_identical": true
+    }
+  },
+  "median_profile_overhead_percent": {
+    "speed8": 1.31,
+    "speed6": 500.94
+  },
+  "commits_or_pushes": "none",
+  "worktree_status": "uncommitted research_pass35 changes"
+}

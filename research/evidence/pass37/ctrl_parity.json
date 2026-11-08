@@ -1,0 +1,149 @@
+{
+  "all_byte_identical": true,
+  "cases": [
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 6,
+      "ref": {
+        "bytes": 20613,
+        "sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+        "path": "research_pass37\\outputs\\ctrl_parity\\googlewiki_q5_s6_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 20613,
+        "sha256": "26c7e64a185987671beb47cc6a7f31ad018207bc4d4fac3198be90d6a00d31a1",
+        "path": "research_pass37\\outputs\\ctrl_parity\\googlewiki_q5_s6_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 20,
+      "speed": 6,
+      "ref": {
+        "bytes": 44550,
+        "sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+        "path": "research_pass37\\outputs\\ctrl_parity\\googlewiki_q20_s6_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 44550,
+        "sha256": "7f19505dad180bf53320ac9d8134a20a44b12ad48a44d7a4283edfaec95bcbbc",
+        "path": "research_pass37\\outputs\\ctrl_parity\\googlewiki_q20_s6_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "mario64.png",
+      "qcolor": 50,
+      "speed": 6,
+      "ref": {
+        "bytes": 39332,
+        "sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+        "path": "research_pass37\\outputs\\ctrl_parity\\mario64_q50_s6_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 39332,
+        "sha256": "67895be6c971c2f9d27fbf0b2575d1169eeb54187f8c22da9d70f9171f76c197",
+        "path": "research_pass37\\outputs\\ctrl_parity\\mario64_q50_s6_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "flower.jpg",
+      "qcolor": 80,
+      "speed": 6,
+      "ref": {
+        "bytes": 170486,
+        "sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+        "path": "research_pass37\\outputs\\ctrl_parity\\flower_q80_s6_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 170486,
+        "sha256": "46df5c9495b8db1b9e7044d8c8aaf246463ee806d7179925f14cf7cbe80841db",
+        "path": "research_pass37\\outputs\\ctrl_parity\\flower_q80_s6_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 6,
+      "ref": {
+        "bytes": 262385,
+        "sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+        "path": "research_pass37\\outputs\\ctrl_parity\\cat_q35_s6_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 262385,
+        "sha256": "2747700288e5f84b2a44f6916292e87ab020320ea2bf7bf8e51e70e22d678881",
+        "path": "research_pass37\\outputs\\ctrl_parity\\cat_q35_s6_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 50,
+      "speed": 6,
+      "ref": {
+        "bytes": 528238,
+        "sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+        "path": "research_pass37\\outputs\\ctrl_parity\\cat_q50_s6_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 528238,
+        "sha256": "f0c9d2ec708de263c93a500a381f3057a82db2f9675bd80065c67361786e4240",
+        "path": "research_pass37\\outputs\\ctrl_parity\\cat_q50_s6_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "coast.jpg",
+      "qcolor": 80,
+      "speed": 6,
+      "ref": {
+        "bytes": 159713,
+        "sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+        "path": "research_pass37\\outputs\\ctrl_parity\\coast_q80_s6_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 159713,
+        "sha256": "4883571eae92001237d603294218991006ddf5899e69237767245f5296842f4b",
+        "path": "research_pass37\\outputs\\ctrl_parity\\coast_q80_s6_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "googlewiki.png",
+      "qcolor": 5,
+      "speed": 8,
+      "ref": {
+        "bytes": 15985,
+        "sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+        "path": "research_pass37\\outputs\\ctrl_parity\\googlewiki_q5_s8_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 15985,
+        "sha256": "8580f1bc71f624ab7370eaa2191536996204b1d2157ce4a501f2e8b708f3be2e",
+        "path": "research_pass37\\outputs\\ctrl_parity\\googlewiki_q5_s8_ctrl.avif"
+      },
+      "byte_identical": true
+    },
+    {
+      "image": "cat.jpg",
+      "qcolor": 35,
+      "speed": 8,
+      "ref": {
+        "bytes": 251357,
+        "sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+        "path": "research_pass37\\outputs\\ctrl_parity\\cat_q35_s8_ref.avif"
+      },
+      "ctrl": {
+        "bytes": 251357,
+        "sha256": "58fb5d252ea53ee8039d3f28a66e749e5fd07554a599d3a2de29a71c37373c44",
+        "path": "research_pass37\\outputs\\ctrl_parity\\cat_q35_s8_ctrl.avif"
+      },
+      "byte_identical": true
+    }
+  ]
+}

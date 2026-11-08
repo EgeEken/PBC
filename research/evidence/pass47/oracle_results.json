@@ -1,0 +1,5988 @@
+{
+  "pass": 47,
+  "source_revision": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+  "branch": "research/experiments",
+  "runtime": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.2.6",
+    "pillow": "11.3.0",
+    "threads": 1
+  },
+  "model_sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f",
+  "cases": [
+    {
+      "image": "coast.jpg",
+      "preset": "compression",
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "dimensions": [
+        4240,
+        2832
+      ],
+      "completed_bytes": 6461,
+      "bpp": 0.004304578403155314,
+      "rgb_mse": 73.13358281255552,
+      "rgb_psnr": 29.489635108457165,
+      "stream_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+      "decoded_rgb_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+      "encode_samples_seconds": [
+        0.44506970001384616,
+        0.4365750999422744,
+        0.43585880007594824
+      ],
+      "encode_median_seconds": 0.4365750999422744,
+      "fresh_decode": {
+        "size": [
+          4240,
+          2832
+        ],
+        "rgb_sha256": "0c0527f2fb9f95694509acd5fe91b1440126c80b068bd1476a77970e7150f655",
+        "stream_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029"
+      },
+      "canonical_roundtrip_identity": true,
+      "instrumented_control_byte_identity": true,
+      "instrumented_patch_sequence_identity": true,
+      "instrumented_pixel_identity": true,
+      "historical_pass46_exact_match": true,
+      "historical_pass46_stream_sha256": "792e9602ba3c4a407c143c1e1e2fdb6e15d35ae1ca8ad2446303770a0833a029",
+      "sampled_states": [
+        "outputs\\states\\coast_compression_step01.json",
+        "outputs\\states\\coast_compression_step25.json"
+      ],
+      "effective_config": {
+        "patch_count": 50,
+        "search_depth": 200,
+        "proposal_depth": 50,
+        "exact_depth": 10,
+        "min_patch_size": 16,
+        "max_patch_size": 400,
+        "min_cell_size": 1,
+        "max_cell_size": 64,
+        "cell_sizes_per_candidate": 3,
+        "top_k": 20,
+        "search_q_start": 0.5,
+        "search_q_end": 0.2,
+        "q_init": 0.7,
+        "q_start": 0.8,
+        "q_end": 0.8,
+        "color_space": "YCbCr",
+        "channel_cycle": "Sum",
+        "auto_downsample_init": true,
+        "init_search_depth": 3,
+        "downsample_init_cell_size": 12,
+        "downsample_palette_bitcount": 6,
+        "downsample_rate": -1,
+        "auto_downsample_max_pixels": 250000,
+        "warmup_ratio": -1,
+        "warm_downsample_max_pixels": 750000,
+        "patch_palette_bitcount": 2,
+        "quality_target_mae": 0.0,
+        "mask_size": 4,
+        "anchor_block_size": 8,
+        "positive_bias": true,
+        "learned_filler_enabled": true,
+        "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+        "learned_filler_top_k": 1,
+        "learned_filler_q": 0.4,
+        "learned_filler_candidates": 1,
+        "use_lzma": true,
+        "random_seed": 2003,
+        "compute_final_mse": true,
+        "debug_mode": false,
+        "debug_print": false,
+        "debug_path": null,
+        "reuse_selected_delta": true,
+        "residual_projection_mode": "bicubic",
+        "cell_selection_mode": "gradient",
+        "representability_threshold": 0.0
+      },
+      "decode_samples_seconds": [
+        0.09098720003385097,
+        0.09574010001961142,
+        0.0945246999617666
+      ],
+      "decode_median_seconds": 0.0945246999617666,
+      "serialized_patch_count": 50
+    },
+    {
+      "image": "coast.jpg",
+      "preset": "balanced",
+      "source_sha256": "7cb3bd541613e2f048a49add80d6e83109686b6744f490d894938ac887765ea2",
+      "source_rgb_sha256": "29af11f09492532ea4d62bde434cacf99f7fe79d5952f8c5bbefd4a8a53d6887",
+      "dimensions": [
+        4240,
+        2832
+      ],
+      "completed_bytes": 11729,
+      "bpp": 0.007814332160750453,
+      "rgb_mse": 48.220032040605126,
+      "rgb_psnr": 31.29852866252162,
+      "stream_sha256": "13af78e41e489e51796b36381014a52b9eb914be7547e3016b6c4fb8b77a96e6",
+      "decoded_rgb_sha256": "b5fe5909b6daa0358eb443b38102df7a6a26ca955f59ffcf3af39f8ed25131d4",
+      "encode_samples_seconds": [
+        0.4570333999581635,
+        0.4151782999979332,
+        0.4350700000068173
+      ],
+      "encode_median_seconds": 0.4350700000068173,
+      "fresh_decode": {
+        "size": [
+          4240,
+          2832
+        ],
+        "rgb_sha256": "b5fe5909b6daa0358eb443b38102df7a6a26ca955f59ffcf3af39f8ed25131d4",
+        "stream_sha256": "13af78e41e489e51796b36381014a52b9eb914be7547e3016b6c4fb8b77a96e6"
+      },
+      "canonical_roundtrip_identity": true,
+      "instrumented_control_byte_identity": true,
+      "instrumented_patch_sequence_identity": true,
+      "instrumented_pixel_identity": true,
+      "historical_pass46_exact_match": true,
+      "historical_pass46_stream_sha256": "13af78e41e489e51796b36381014a52b9eb914be7547e3016b6c4fb8b77a96e6",
+      "sampled_states": [
+        "outputs\\states\\coast_balanced_step01.json",
+        "outputs\\states\\coast_balanced_step25.json"
+      ],
+      "effective_config": {
+        "patch_count": 50,
+        "search_depth": 200,
+        "proposal_depth": 50,
+        "exact_depth": 10,
+        "min_patch_size": 16,
+        "max_patch_size": 400,
+        "min_cell_size": 1,
+        "max_cell_size": 64,
+        "cell_sizes_per_candidate": 3,
+        "top_k": 20,
+        "search_q_start": 0.5,
+        "search_q_end": 0.2,
+        "q_init": 0.7,
+        "q_start": 0.8,
+        "q_end": 0.8,
+        "color_space": "YCbCr",
+        "channel_cycle": "Sum",
+        "auto_downsample_init": true,
+        "init_search_depth": 3,
+        "downsample_init_cell_size": 12,
+        "downsample_palette_bitcount": 6,
+        "downsample_rate": -1,
+        "auto_downsample_max_pixels": 250000,
+        "warmup_ratio": -1,
+        "warm_downsample_max_pixels": 750000,
+        "patch_palette_bitcount": 2,
+        "quality_target_mae": 0.0,
+        "mask_size": 4,
+        "anchor_block_size": 8,
+        "positive_bias": true,
+        "learned_filler_enabled": true,
+        "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+        "learned_filler_top_k": 1,
+        "learned_filler_q": 0.6,
+        "learned_filler_candidates": 1,
+        "use_lzma": true,
+        "random_seed": 2003,
+        "compute_final_mse": true,
+        "debug_mode": false,
+        "debug_print": false,
+        "debug_path": null,
+        "reuse_selected_delta": true,
+        "residual_projection_mode": "bicubic",
+        "cell_selection_mode": "gradient",
+        "representability_threshold": 0.0
+      },
+      "decode_samples_seconds": [
+        0.0938465999206528,
+        0.09050579997710884,
+        0.0942173000657931
+      ],
+      "decode_median_seconds": 0.0938465999206528,
+      "serialized_patch_count": 42
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "compression",
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 28974,
+      "bpp": 0.3506856610304886,
+      "rgb_mse": 1005.0220131685649,
+      "rgb_psnr": 18.10904786581117,
+      "stream_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+      "decoded_rgb_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+      "encode_samples_seconds": [
+        0.15307549992576241,
+        0.13548260007519275,
+        0.13560929999221116
+      ],
+      "encode_median_seconds": 0.13560929999221116,
+      "fresh_decode": {
+        "size": [
+          814,
+          812
+        ],
+        "rgb_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+        "stream_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855"
+      },
+      "canonical_roundtrip_identity": true,
+      "instrumented_control_byte_identity": true,
+      "instrumented_patch_sequence_identity": true,
+      "instrumented_pixel_identity": true,
+      "historical_pass46_exact_match": true,
+      "historical_pass46_stream_sha256": "9bc5d47c0148f916812c98f8f97707257e992ea483734cad65363c9df07c7855",
+      "sampled_states": [
+        "outputs\\states\\googlewiki_compression_step01.json"
+      ],
+      "effective_config": {
+        "patch_count": 50,
+        "search_depth": 200,
+        "proposal_depth": 50,
+        "exact_depth": 10,
+        "min_patch_size": 16,
+        "max_patch_size": 400,
+        "min_cell_size": 1,
+        "max_cell_size": 64,
+        "cell_sizes_per_candidate": 3,
+        "top_k": 20,
+        "search_q_start": 0.5,
+        "search_q_end": 0.2,
+        "q_init": 0.7,
+        "q_start": 0.8,
+        "q_end": 0.8,
+        "color_space": "YCbCr",
+        "channel_cycle": "Sum",
+        "auto_downsample_init": true,
+        "init_search_depth": 3,
+        "downsample_init_cell_size": 12,
+        "downsample_palette_bitcount": 6,
+        "downsample_rate": -1,
+        "auto_downsample_max_pixels": 250000,
+        "warmup_ratio": -1,
+        "warm_downsample_max_pixels": 750000,
+        "patch_palette_bitcount": 2,
+        "quality_target_mae": 0.0,
+        "mask_size": 4,
+        "anchor_block_size": 8,
+        "positive_bias": true,
+        "learned_filler_enabled": true,
+        "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+        "learned_filler_top_k": 1,
+        "learned_filler_q": 0.4,
+        "learned_filler_candidates": 1,
+        "use_lzma": true,
+        "random_seed": 2003,
+        "compute_final_mse": true,
+        "debug_mode": false,
+        "debug_print": false,
+        "debug_path": null,
+        "reuse_selected_delta": true,
+        "residual_projection_mode": "bicubic",
+        "cell_selection_mode": "gradient",
+        "representability_threshold": 0.0
+      },
+      "decode_samples_seconds": [
+        0.019692800007760525,
+        0.01844170002732426,
+        0.018633299972862005
+      ],
+      "decode_median_seconds": 0.018633299972862005,
+      "serialized_patch_count": 12
+    },
+    {
+      "image": "googlewiki.png",
+      "preset": "balanced",
+      "source_sha256": "cb2cc48d6a03b603d217b59fc4a3d3e53c6bebdff09e0a8172640bf85ccde94e",
+      "source_rgb_sha256": "e9a58b00eac2a2f5055a3a72f718200a62e387ae63d223367c23c7919bdf297a",
+      "dimensions": [
+        814,
+        812
+      ],
+      "completed_bytes": 53890,
+      "bpp": 0.6522554798416867,
+      "rgb_mse": 845.4413844543155,
+      "rgb_psnr": 18.859968580890722,
+      "stream_sha256": "c92bb171c4e266d05e7edad068b9de0a5ddbd3365880dba08ba91b614c83f4e2",
+      "decoded_rgb_sha256": "7dec7f981b971a6683af19e08030d3a56cf41ae4f01339ed75ea695d40e137b6",
+      "encode_samples_seconds": [
+        0.1534177000867203,
+        0.1558851000154391,
+        0.1697717000497505
+      ],
+      "encode_median_seconds": 0.1558851000154391,
+      "fresh_decode": {
+        "size": [
+          814,
+          812
+        ],
+        "rgb_sha256": "7dec7f981b971a6683af19e08030d3a56cf41ae4f01339ed75ea695d40e137b6",
+        "stream_sha256": "c92bb171c4e266d05e7edad068b9de0a5ddbd3365880dba08ba91b614c83f4e2"
+      },
+      "canonical_roundtrip_identity": true,
+      "instrumented_control_byte_identity": true,
+      "instrumented_patch_sequence_identity": true,
+      "instrumented_pixel_identity": true,
+      "historical_pass46_exact_match": true,
+      "historical_pass46_stream_sha256": "c92bb171c4e266d05e7edad068b9de0a5ddbd3365880dba08ba91b614c83f4e2",
+      "sampled_states": [
+        "outputs\\states\\googlewiki_balanced_step01.json"
+      ],
+      "effective_config": {
+        "patch_count": 50,
+        "search_depth": 200,
+        "proposal_depth": 50,
+        "exact_depth": 10,
+        "min_patch_size": 16,
+        "max_patch_size": 400,
+        "min_cell_size": 1,
+        "max_cell_size": 64,
+        "cell_sizes_per_candidate": 3,
+        "top_k": 20,
+        "search_q_start": 0.5,
+        "search_q_end": 0.2,
+        "q_init": 0.7,
+        "q_start": 0.8,
+        "q_end": 0.8,
+        "color_space": "YCbCr",
+        "channel_cycle": "Sum",
+        "auto_downsample_init": true,
+        "init_search_depth": 3,
+        "downsample_init_cell_size": 12,
+        "downsample_palette_bitcount": 6,
+        "downsample_rate": -1,
+        "auto_downsample_max_pixels": 250000,
+        "warmup_ratio": -1,
+        "warm_downsample_max_pixels": 750000,
+        "patch_palette_bitcount": 2,
+        "quality_target_mae": 0.0,
+        "mask_size": 4,
+        "anchor_block_size": 8,
+        "positive_bias": true,
+        "learned_filler_enabled": true,
+        "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+        "learned_filler_top_k": 1,
+        "learned_filler_q": 0.6,
+        "learned_filler_candidates": 1,
+        "use_lzma": true,
+        "random_seed": 2003,
+        "compute_final_mse": true,
+        "debug_mode": false,
+        "debug_print": false,
+        "debug_path": null,
+        "reuse_selected_delta": true,
+        "residual_projection_mode": "bicubic",
+        "cell_selection_mode": "gradient",
+        "representability_threshold": 0.0
+      },
+      "decode_samples_seconds": [
+        0.020048500038683414,
+        0.020909099956043065,
+        0.020854000002145767
+      ],
+      "decode_median_seconds": 0.020854000002145767,
+      "serialized_patch_count": 12
+    },
+    {
+      "image": "mario64.png",
+      "preset": "compression",
+      "source_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 14099,
+      "bpp": 0.11332143775720165,
+      "rgb_mse": 414.2361328794796,
+      "rgb_psnr": 21.958323821343516,
+      "stream_sha256": "0b9356baa7991eb4f14b743b70f31483cbb59636472ec9483618865fe29d1fa7",
+      "decoded_rgb_sha256": "7253b304018fe5ec21209e1957f2c768d8fa464fb171d0b6528cf57e0436610f",
+      "encode_samples_seconds": [
+        0.13566310005262494,
+        0.1375967999920249,
+        0.13862370001152158
+      ],
+      "encode_median_seconds": 0.1375967999920249,
+      "fresh_decode": {
+        "size": [
+          1152,
+          864
+        ],
+        "rgb_sha256": "7253b304018fe5ec21209e1957f2c768d8fa464fb171d0b6528cf57e0436610f",
+        "stream_sha256": "0b9356baa7991eb4f14b743b70f31483cbb59636472ec9483618865fe29d1fa7"
+      },
+      "canonical_roundtrip_identity": true,
+      "instrumented_control_byte_identity": true,
+      "instrumented_patch_sequence_identity": true,
+      "instrumented_pixel_identity": true,
+      "historical_pass46_exact_match": true,
+      "historical_pass46_stream_sha256": "0b9356baa7991eb4f14b743b70f31483cbb59636472ec9483618865fe29d1fa7",
+      "sampled_states": [
+        "outputs\\states\\mario64_compression_step01.json"
+      ],
+      "effective_config": {
+        "patch_count": 50,
+        "search_depth": 200,
+        "proposal_depth": 50,
+        "exact_depth": 10,
+        "min_patch_size": 16,
+        "max_patch_size": 400,
+        "min_cell_size": 1,
+        "max_cell_size": 64,
+        "cell_sizes_per_candidate": 3,
+        "top_k": 20,
+        "search_q_start": 0.5,
+        "search_q_end": 0.2,
+        "q_init": 0.7,
+        "q_start": 0.8,
+        "q_end": 0.8,
+        "color_space": "YCbCr",
+        "channel_cycle": "Sum",
+        "auto_downsample_init": true,
+        "init_search_depth": 3,
+        "downsample_init_cell_size": 12,
+        "downsample_palette_bitcount": 6,
+        "downsample_rate": -1,
+        "auto_downsample_max_pixels": 250000,
+        "warmup_ratio": -1,
+        "warm_downsample_max_pixels": 750000,
+        "patch_palette_bitcount": 2,
+        "quality_target_mae": 0.0,
+        "mask_size": 4,
+        "anchor_block_size": 8,
+        "positive_bias": true,
+        "learned_filler_enabled": true,
+        "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+        "learned_filler_top_k": 1,
+        "learned_filler_q": 0.4,
+        "learned_filler_candidates": 1,
+        "use_lzma": true,
+        "random_seed": 2003,
+        "compute_final_mse": true,
+        "debug_mode": false,
+        "debug_print": false,
+        "debug_path": null,
+        "reuse_selected_delta": true,
+        "residual_projection_mode": "bicubic",
+        "cell_selection_mode": "gradient",
+        "representability_threshold": 0.0
+      },
+      "decode_samples_seconds": [
+        0.022179200081154704,
+        0.023007299983873963,
+        0.021414099959656596
+      ],
+      "decode_median_seconds": 0.022179200081154704,
+      "serialized_patch_count": 19
+    },
+    {
+      "image": "mario64.png",
+      "preset": "balanced",
+      "source_sha256": "19e195de8f46fc4c4ef19925461c21da5769d682b152c967a783d5d3868c00d9",
+      "source_rgb_sha256": "34ba2e4bb282b94b1ca24e2473e5390d44f4846149b3264d8e8b898074e398d1",
+      "dimensions": [
+        1152,
+        864
+      ],
+      "completed_bytes": 38900,
+      "bpp": 0.3126607510288066,
+      "rgb_mse": 185.71151419431584,
+      "rgb_psnr": 25.44241529847389,
+      "stream_sha256": "570ce9dd709763c43f438b087d76e50ca2c157afaa2ddcae5954107093fc9f80",
+      "decoded_rgb_sha256": "f4b7ac48071de9b52e2dee827509bfc2ea5d660b1eaa3fd4097151a470c79dea",
+      "encode_samples_seconds": [
+        0.25636749994009733,
+        0.25198229996021837,
+        0.2582103000022471
+      ],
+      "encode_median_seconds": 0.25636749994009733,
+      "fresh_decode": {
+        "size": [
+          1152,
+          864
+        ],
+        "rgb_sha256": "f4b7ac48071de9b52e2dee827509bfc2ea5d660b1eaa3fd4097151a470c79dea",
+        "stream_sha256": "570ce9dd709763c43f438b087d76e50ca2c157afaa2ddcae5954107093fc9f80"
+      },
+      "canonical_roundtrip_identity": true,
+      "instrumented_control_byte_identity": true,
+      "instrumented_patch_sequence_identity": true,
+      "instrumented_pixel_identity": true,
+      "historical_pass46_exact_match": true,
+      "historical_pass46_stream_sha256": "570ce9dd709763c43f438b087d76e50ca2c157afaa2ddcae5954107093fc9f80",
+      "sampled_states": [
+        "outputs\\states\\mario64_balanced_step01.json",
+        "outputs\\states\\mario64_balanced_step25.json",
+        "outputs\\states\\mario64_balanced_step50.json"
+      ],
+      "effective_config": {
+        "patch_count": 50,
+        "search_depth": 200,
+        "proposal_depth": 50,
+        "exact_depth": 10,
+        "min_patch_size": 16,
+        "max_patch_size": 400,
+        "min_cell_size": 1,
+        "max_cell_size": 64,
+        "cell_sizes_per_candidate": 3,
+        "top_k": 20,
+        "search_q_start": 0.5,
+        "search_q_end": 0.2,
+        "q_init": 0.7,
+        "q_start": 0.8,
+        "q_end": 0.8,
+        "color_space": "YCbCr",
+        "channel_cycle": "Sum",
+        "auto_downsample_init": true,
+        "init_search_depth": 3,
+        "downsample_init_cell_size": 12,
+        "downsample_palette_bitcount": 6,
+        "downsample_rate": -1,
+        "auto_downsample_max_pixels": 250000,
+        "warmup_ratio": -1,
+        "warm_downsample_max_pixels": 750000,
+        "patch_palette_bitcount": 2,
+        "quality_target_mae": 0.0,
+        "mask_size": 4,
+        "anchor_block_size": 8,
+        "positive_bias": true,
+        "learned_filler_enabled": true,
+        "learned_filler_model_path": "PBC_ROOT/research_pass47/codec/patch_policy.npz",
+        "learned_filler_top_k": 1,
+        "learned_filler_q": 0.6,
+        "learned_filler_candidates": 1,
+        "use_lzma": true,
+        "random_seed": 2003,
+        "compute_final_mse": true,
+        "debug_mode": false,
+        "debug_print": false,
+        "debug_path": null,
+        "reuse_selected_delta": true,
+        "residual_projection_mode": "bicubic",
+        "cell_selection_mode": "gradient",
+        "representability_threshold": 0.0
+      },
+      "decode_samples_seconds": [
+        0.02647609997075051,
+        0.026164600043557584,
+        0.02761099999770522
+      ],
+      "decode_median_seconds": 0.02647609997075051,
+      "serialized_patch_count": 53
+    }
+  ],
+  "oracle_states": [
+    {
+      "state": "outputs\\states\\coast_compression_step01.json",
+      "image": "coast.jpg",
+      "preset": "compression",
+      "step": 1,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "a9cfd6b132488eaa9b464b28610648f0258e17b78180159de70e4add5203796c",
+      "rng_after_sha256": "16803924cde4e35966337959587256e9a6b70723e594338f00e886bc1507c0e9",
+      "proposal_pool_sha256": "f879f4df61c38319e7037270e81cc835f29553f47104a9acab020c0a9049b6e1",
+      "target_canvas_sha256": "cd40b6594c76c8e8ff508454791dbe2dd808ea4dbb535776f1f05dd636141a8a",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.3501696999883279,
+      "lambda": 203.09337398431708,
+      "pre_patch_original_rgb_mse": 156.15020250928293,
+      "canonical_builds": [
+        {
+          "action_index": 12,
+          "seconds": 0.0012866000179201365,
+          "patch_signature": {
+            "channel": 0,
+            "x": 194,
+            "y": 230,
+            "w": 332,
+            "h": 155,
+            "cell_size": 4,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 49,
+            "positive": 117,
+            "index_shape": [
+              39,
+              83
+            ],
+            "index_sha256": "41c219a578c9de6fe5506fcce6417449b5f9aa359683ed17ee86360fbe5a31be"
+          },
+          "reduction": 8736478.0,
+          "bits": 9828.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          194,
+          230,
+          332,
+          155
+        ],
+        "action_rank": 1,
+        "action_index": 12,
+        "cell_size": 4,
+        "bitcount_requested": 3,
+        "model_value": 2.2965097427368164,
+        "model_top_action": 12,
+        "ordinary_candidate": true,
+        "patch_bits": 9828,
+        "working_sse_reduction": 8736478.0,
+        "working_rd_score": 6740476.320482132,
+        "gain_per_bit": 888.9375254375254,
+        "feature_and_model_seconds": 0.010825999896042049,
+        "patch_build_seconds": 0.017275799997150898,
+        "candidate_evaluation_seconds": 0.028101799893192947,
+        "one_step_original_rgb_mse": 122.9681599054383,
+        "patch_signature": {
+          "channel": 0,
+          "x": 194,
+          "y": 230,
+          "w": 332,
+          "h": 155,
+          "cell_size": 4,
+          "bitcount": 3,
+          "max_bitcount": 3,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 49,
+          "positive": 117,
+          "index_shape": [
+            39,
+            83
+          ],
+          "index_sha256": "41c219a578c9de6fe5506fcce6417449b5f9aa359683ed17ee86360fbe5a31be"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 2,
+        "box": [
+          0,
+          167,
+          245,
+          334,
+          159
+        ],
+        "action_rank": 1,
+        "action_index": 12,
+        "cell_size": 4,
+        "bitcount_requested": 3,
+        "model_value": 2.2784619331359863,
+        "model_top_action": 12,
+        "ordinary_candidate": false,
+        "patch_bits": 10197,
+        "working_sse_reduction": 8694643.0,
+        "working_rd_score": 6623699.865481919,
+        "gain_per_bit": 852.6667647347259,
+        "feature_and_model_seconds": 0.0029853000305593014,
+        "patch_build_seconds": 0.0014038999797776341,
+        "candidate_evaluation_seconds": 0.0043892000103369355,
+        "one_step_original_rgb_mse": 122.56358730412536,
+        "patch_signature": {
+          "channel": 0,
+          "x": 167,
+          "y": 245,
+          "w": 334,
+          "h": 159,
+          "cell_size": 4,
+          "bitcount": 3,
+          "max_bitcount": 3,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 49,
+          "positive": 100,
+          "index_shape": [
+            40,
+            84
+          ],
+          "index_sha256": "31cf09f6937ae7cdfcf9ae8091476f7b217751cbfa51bb932b12d66f0c74fe70"
+        },
+        "delta_local_rd_score": -116776.45500021335,
+        "relative_local_rd_score_gain": -0.01732465918548922,
+        "relative_patch_bits_change": 1.0375457875457876,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            194,
+            230,
+            332,
+            155
+          ],
+          "action_rank": 1,
+          "action_index": 12,
+          "cell_size": 4,
+          "bitcount_requested": 3,
+          "model_value": 2.2965097427368164,
+          "model_top_action": 12,
+          "ordinary_candidate": true,
+          "patch_bits": 9828,
+          "working_sse_reduction": 8736478.0,
+          "working_rd_score": 6740476.320482132,
+          "gain_per_bit": 888.9375254375254,
+          "feature_and_model_seconds": 0.010825999896042049,
+          "patch_build_seconds": 0.017275799997150898,
+          "candidate_evaluation_seconds": 0.028101799893192947,
+          "one_step_original_rgb_mse": 122.9681599054383,
+          "patch_signature": {
+            "channel": 0,
+            "x": 194,
+            "y": 230,
+            "w": 332,
+            "h": 155,
+            "cell_size": 4,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 49,
+            "positive": 117,
+            "index_shape": [
+              39,
+              83
+            ],
+            "index_sha256": "41c219a578c9de6fe5506fcce6417449b5f9aa359683ed17ee86360fbe5a31be"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            194,
+            230,
+            332,
+            155
+          ],
+          "action_rank": 2,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": 2.2965097427368164,
+          "model_top_action": 12,
+          "ordinary_candidate": false,
+          "patch_bits": 6591,
+          "working_sse_reduction": 7649676.0,
+          "working_rd_score": 6311087.5720693655,
+          "gain_per_bit": 1160.6244879380974,
+          "feature_and_model_seconds": 0.010825999896042049,
+          "patch_build_seconds": 0.0023508999729529023,
+          "candidate_evaluation_seconds": 0.013176899868994951,
+          "one_step_original_rgb_mse": 127.38948239793199,
+          "patch_signature": {
+            "channel": 0,
+            "x": 194,
+            "y": 230,
+            "w": 332,
+            "h": 155,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 49,
+            "positive": 117,
+            "index_shape": [
+              39,
+              83
+            ],
+            "index_sha256": "be995af115079513a6cfdaad8e7dd2824afc293848942f615078928f88f01a7e"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            167,
+            245,
+            334,
+            159
+          ],
+          "action_rank": 1,
+          "action_index": 12,
+          "cell_size": 4,
+          "bitcount_requested": 3,
+          "model_value": 2.2784619331359863,
+          "model_top_action": 12,
+          "ordinary_candidate": false,
+          "patch_bits": 10197,
+          "working_sse_reduction": 8694643.0,
+          "working_rd_score": 6623699.865481919,
+          "gain_per_bit": 852.6667647347259,
+          "feature_and_model_seconds": 0.0029853000305593014,
+          "patch_build_seconds": 0.0014038999797776341,
+          "candidate_evaluation_seconds": 0.0043892000103369355,
+          "one_step_original_rgb_mse": 122.56358730412536,
+          "patch_signature": {
+            "channel": 0,
+            "x": 167,
+            "y": 245,
+            "w": 334,
+            "h": 159,
+            "cell_size": 4,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 49,
+            "positive": 100,
+            "index_shape": [
+              40,
+              84
+            ],
+            "index_sha256": "31cf09f6937ae7cdfcf9ae8091476f7b217751cbfa51bb932b12d66f0c74fe70"
+          },
+          "delta_local_rd_score": -116776.45500021335,
+          "relative_local_rd_score_gain": -0.01732465918548922,
+          "relative_patch_bits_change": 1.0375457875457876,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            167,
+            245,
+            334,
+            159
+          ],
+          "action_rank": 2,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": 2.2784619331359863,
+          "model_top_action": 12,
+          "ordinary_candidate": false,
+          "patch_bits": 6837,
+          "working_sse_reduction": 7644137.0,
+          "working_rd_score": 6255587.602069224,
+          "gain_per_bit": 1118.0542635658915,
+          "feature_and_model_seconds": 0.0029853000305593014,
+          "patch_build_seconds": 0.002379199955612421,
+          "candidate_evaluation_seconds": 0.005364499986171722,
+          "one_step_original_rgb_mse": 126.82784481820524,
+          "patch_signature": {
+            "channel": 0,
+            "x": 167,
+            "y": 245,
+            "w": 334,
+            "h": 159,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 49,
+            "positive": 100,
+            "index_shape": [
+              40,
+              84
+            ],
+            "index_sha256": "7e2d4adba12d6a8b74ff28939de7701f339c7a897053371f79b498a71fcb5d3c"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            184,
+            201,
+            292,
+            171
+          ],
+          "action_rank": 1,
+          "action_index": 12,
+          "cell_size": 4,
+          "bitcount_requested": 3,
+          "model_value": 2.2675974369049072,
+          "model_top_action": 12,
+          "ordinary_candidate": false,
+          "patch_bits": 9534,
+          "working_sse_reduction": 7865909.0,
+          "working_rd_score": 5929616.772433521,
+          "gain_per_bit": 825.0376547094609,
+          "feature_and_model_seconds": 0.001932299928739667,
+          "patch_build_seconds": 0.0014545000158250332,
+          "candidate_evaluation_seconds": 0.0033867999445647,
+          "one_step_original_rgb_mse": 124.76342593517926,
+          "patch_signature": {
+            "channel": 0,
+            "x": 184,
+            "y": 201,
+            "w": 292,
+            "h": 171,
+            "cell_size": 4,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 71,
+            "positive": 122,
+            "index_shape": [
+              43,
+              73
+            ],
+            "index_sha256": "0f6174acdc460f56122147ed32133c3f02cf1c90dee5e2096bad1e1b07989ade"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            184,
+            201,
+            292,
+            171
+          ],
+          "action_rank": 2,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": 2.2675974369049072,
+          "model_top_action": 12,
+          "ordinary_candidate": false,
+          "patch_bits": 6395,
+          "working_sse_reduction": 6599633.0,
+          "working_rd_score": 5300850.873370293,
+          "gain_per_bit": 1031.9989053948398,
+          "feature_and_model_seconds": 0.001932299928739667,
+          "patch_build_seconds": 0.0015287999995052814,
+          "candidate_evaluation_seconds": 0.0034610999282449484,
+          "one_step_original_rgb_mse": 129.84716995012081,
+          "patch_signature": {
+            "channel": 0,
+            "x": 184,
+            "y": 201,
+            "w": 292,
+            "h": 171,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 71,
+            "positive": 122,
+            "index_shape": [
+              43,
+              73
+            ],
+            "index_sha256": "1b7512d70ff60f0f25b25668321c77dc1309449690b3796071884782ed1e38fe"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            93,
+            204,
+            384,
+            153
+          ],
+          "action_rank": 1,
+          "action_index": 12,
+          "cell_size": 4,
+          "bitcount_requested": 3,
+          "model_value": 2.1468968391418457,
+          "model_top_action": 12,
+          "ordinary_candidate": false,
+          "patch_bits": 11349,
+          "working_sse_reduction": 8513724.0,
+          "working_rd_score": 6208817.298651986,
+          "gain_per_bit": 750.1739360296061,
+          "feature_and_model_seconds": 0.002097400021739304,
+          "patch_build_seconds": 0.0018078000284731388,
+          "candidate_evaluation_seconds": 0.003905200050212443,
+          "one_step_original_rgb_mse": 122.1228747490495,
+          "patch_signature": {
+            "channel": 0,
+            "x": 93,
+            "y": 204,
+            "w": 384,
+            "h": 153,
+            "cell_size": 4,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 74,
+            "positive": 124,
+            "index_shape": [
+              39,
+              96
+            ],
+            "index_sha256": "3a6f6cffbafa00dbbbfc192c0d6f0455b73d1754af620d833b2634b4f10bf61b"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            93,
+            204,
+            384,
+            153
+          ],
+          "action_rank": 2,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": 2.1468968391418457,
+          "model_top_action": 12,
+          "ordinary_candidate": false,
+          "patch_bits": 7605,
+          "working_sse_reduction": 6901727.0,
+          "working_rd_score": 5357201.890849268,
+          "gain_per_bit": 907.5249178172255,
+          "feature_and_model_seconds": 0.002097400021739304,
+          "patch_build_seconds": 0.0015187000390142202,
+          "candidate_evaluation_seconds": 0.0036161000607535243,
+          "one_step_original_rgb_mse": 128.6589558238283,
+          "patch_signature": {
+            "channel": 0,
+            "x": 93,
+            "y": 204,
+            "w": 384,
+            "h": 153,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 74,
+            "positive": 124,
+            "index_shape": [
+              39,
+              96
+            ],
+            "index_sha256": "9a2d1ddd4820e6771193610adaad2cb17e7d4f277b53c7293291347b45dd30d1"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\coast_compression_step25.json",
+      "image": "coast.jpg",
+      "preset": "compression",
+      "step": 25,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "42627bd4d357ee67ed2b709a7b734834f4108c604c6b9d90c5fe7368a032cc7e",
+      "rng_after_sha256": "50eace1028784ec9c4faa2f35efff56a15a28846d32baec4ca1bd388f57cfa5e",
+      "proposal_pool_sha256": "507731b562da5120342daa068b1cf36fc30bccc65921b60932ec55c8adc35513",
+      "target_canvas_sha256": "ff3c2c7c51160392342792d923dc6479291d96f0c2730b2c51fc578c588236ce",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.002684699953533709,
+      "lambda": 203.09337398431708,
+      "pre_patch_original_rgb_mse": 81.65675848012827,
+      "canonical_builds": [
+        {
+          "action_index": 11,
+          "seconds": 0.0003081000177189708,
+          "patch_signature": {
+            "channel": 0,
+            "x": 1,
+            "y": 271,
+            "w": 248,
+            "h": 32,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 15,
+            "positive": 23,
+            "index_shape": [
+              8,
+              62
+            ],
+            "index_sha256": "40dec1f42d0bbe53914f028d956bf6cee655e256e15b4351a1b27ecbf9697076"
+          },
+          "reduction": 120543.0,
+          "bits": 1109.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          1,
+          271,
+          248,
+          32
+        ],
+        "action_rank": 1,
+        "action_index": 11,
+        "cell_size": 4,
+        "bitcount_requested": 2,
+        "model_value": -0.33670929074287415,
+        "model_top_action": 11,
+        "ordinary_candidate": true,
+        "patch_bits": 1109,
+        "working_sse_reduction": 120543.0,
+        "working_rd_score": -104687.55174860766,
+        "gain_per_bit": 108.69522091974753,
+        "feature_and_model_seconds": 0.000771000050008297,
+        "patch_build_seconds": 0.00041740003507584333,
+        "candidate_evaluation_seconds": 0.0011884000850841403,
+        "one_step_original_rgb_mse": 81.30541542301816,
+        "patch_signature": {
+          "channel": 0,
+          "x": 1,
+          "y": 271,
+          "w": 248,
+          "h": 32,
+          "cell_size": 4,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 15,
+          "positive": 23,
+          "index_shape": [
+            8,
+            62
+          ],
+          "index_sha256": "40dec1f42d0bbe53914f028d956bf6cee655e256e15b4351a1b27ecbf9697076"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 3,
+        "box": [
+          0,
+          7,
+          282,
+          292,
+          28
+        ],
+        "action_rank": 2,
+        "action_index": 26,
+        "cell_size": 32,
+        "bitcount_requested": 2,
+        "model_value": -0.37414929270744324,
+        "model_top_action": 11,
+        "ordinary_candidate": false,
+        "patch_bits": 128,
+        "working_sse_reduction": 0.0,
+        "working_rd_score": -25995.951869992587,
+        "gain_per_bit": 0.0,
+        "feature_and_model_seconds": 0.0005915999645367265,
+        "patch_build_seconds": 0.0005426000570878386,
+        "candidate_evaluation_seconds": 0.0011342000216245651,
+        "one_step_original_rgb_mse": 81.65675848012827,
+        "patch_signature": {
+          "channel": 0,
+          "x": 7,
+          "y": 282,
+          "w": 292,
+          "h": 28,
+          "cell_size": 28,
+          "bitcount": 1,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "negative": 0,
+          "positive": 0,
+          "index_shape": [
+            1,
+            11
+          ],
+          "index_sha256": "6a4875ddaceaa91fb3369f0f6d962f77442daf1b1d97733457d12bcabdf79441"
+        },
+        "delta_local_rd_score": 78691.59987861507,
+        "relative_local_rd_score_gain": 0.7516805824973519,
+        "relative_patch_bits_change": 0.11541929666366095,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            1,
+            271,
+            248,
+            32
+          ],
+          "action_rank": 1,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": -0.33670929074287415,
+          "model_top_action": 11,
+          "ordinary_candidate": true,
+          "patch_bits": 1109,
+          "working_sse_reduction": 120543.0,
+          "working_rd_score": -104687.55174860766,
+          "gain_per_bit": 108.69522091974753,
+          "feature_and_model_seconds": 0.000771000050008297,
+          "patch_build_seconds": 0.00041740003507584333,
+          "candidate_evaluation_seconds": 0.0011884000850841403,
+          "one_step_original_rgb_mse": 81.30541542301816,
+          "patch_signature": {
+            "channel": 0,
+            "x": 1,
+            "y": 271,
+            "w": 248,
+            "h": 32,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 15,
+            "positive": 23,
+            "index_shape": [
+              8,
+              62
+            ],
+            "index_sha256": "40dec1f42d0bbe53914f028d956bf6cee655e256e15b4351a1b27ecbf9697076"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            1,
+            271,
+            248,
+            32
+          ],
+          "action_rank": 2,
+          "action_index": 21,
+          "cell_size": 16,
+          "bitcount_requested": 2,
+          "model_value": -0.33670929074287415,
+          "model_top_action": 11,
+          "ordinary_candidate": false,
+          "patch_bits": 181,
+          "working_sse_reduction": 1302.0,
+          "working_rd_score": -35457.90069116139,
+          "gain_per_bit": 7.193370165745856,
+          "feature_and_model_seconds": 0.000771000050008297,
+          "patch_build_seconds": 0.00060889997985214,
+          "candidate_evaluation_seconds": 0.001379900029860437,
+          "one_step_original_rgb_mse": 81.65221089058558,
+          "patch_signature": {
+            "channel": 0,
+            "x": 1,
+            "y": 271,
+            "w": 248,
+            "h": 32,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 1,
+            "positive": 2,
+            "index_shape": [
+              2,
+              16
+            ],
+            "index_sha256": "47d271471d3a3a19068881c8f58e24a00ffcdb941b2d6b54f04e03343a661797"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            9,
+            284,
+            327,
+            91
+          ],
+          "action_rank": 1,
+          "action_index": 21,
+          "cell_size": 16,
+          "bitcount_requested": 2,
+          "model_value": -0.42405465245246887,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 369,
+          "working_sse_reduction": 4545.0,
+          "working_rd_score": -70396.455000213,
+          "gain_per_bit": 12.317073170731707,
+          "feature_and_model_seconds": 0.001833599992096424,
+          "patch_build_seconds": 0.001550000044517219,
+          "candidate_evaluation_seconds": 0.003383600036613643,
+          "one_step_original_rgb_mse": 81.6003405598195,
+          "patch_signature": {
+            "channel": 0,
+            "x": 9,
+            "y": 284,
+            "w": 327,
+            "h": 91,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 2,
+            "positive": 3,
+            "index_shape": [
+              6,
+              21
+            ],
+            "index_sha256": "2d02994215d795d94a91a9c877e4026b7962e72db437ebc7ecc60a3039b617fe"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            9,
+            284,
+            327,
+            91
+          ],
+          "action_rank": 2,
+          "action_index": 16,
+          "cell_size": 8,
+          "bitcount_requested": 2,
+          "model_value": -0.42405465245246887,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 1101,
+          "working_sse_reduction": 21962.0,
+          "working_rd_score": -201643.8047567331,
+          "gain_per_bit": 19.947320617620345,
+          "feature_and_model_seconds": 0.001833599992096424,
+          "patch_build_seconds": 0.0009931999957188964,
+          "candidate_evaluation_seconds": 0.0028267999878153205,
+          "one_step_original_rgb_mse": 81.5340554267491,
+          "patch_signature": {
+            "channel": 0,
+            "x": 9,
+            "y": 284,
+            "w": 327,
+            "h": 91,
+            "cell_size": 8,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 7,
+            "positive": 9,
+            "index_shape": [
+              12,
+              41
+            ],
+            "index_sha256": "36d4b2f62617e9602a561fbf8d695ac56cefa450b9622864f3687ae0847d0c70"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            7,
+            282,
+            292,
+            28
+          ],
+          "action_rank": 1,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": -0.37414929270744324,
+          "model_top_action": 11,
+          "ordinary_candidate": false,
+          "patch_bits": 1139,
+          "working_sse_reduction": 138876.0,
+          "working_rd_score": -92447.35296813716,
+          "gain_per_bit": 121.928007023705,
+          "feature_and_model_seconds": 0.0005915999645367265,
+          "patch_build_seconds": 0.0004414999857544899,
+          "candidate_evaluation_seconds": 0.0010330999502912164,
+          "one_step_original_rgb_mse": 81.23282465888498,
+          "patch_signature": {
+            "channel": 0,
+            "x": 7,
+            "y": 282,
+            "w": 292,
+            "h": 28,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 15,
+            "positive": 31,
+            "index_shape": [
+              7,
+              73
+            ],
+            "index_sha256": "7402d0e4e295371448b36e048858a0af567a8b7059741ce37c408b0502f6a69b"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            7,
+            282,
+            292,
+            28
+          ],
+          "action_rank": 2,
+          "action_index": 26,
+          "cell_size": 32,
+          "bitcount_requested": 2,
+          "model_value": -0.37414929270744324,
+          "model_top_action": 11,
+          "ordinary_candidate": false,
+          "patch_bits": 128,
+          "working_sse_reduction": 0.0,
+          "working_rd_score": -25995.951869992587,
+          "gain_per_bit": 0.0,
+          "feature_and_model_seconds": 0.0005915999645367265,
+          "patch_build_seconds": 0.0005426000570878386,
+          "candidate_evaluation_seconds": 0.0011342000216245651,
+          "one_step_original_rgb_mse": 81.65675848012827,
+          "patch_signature": {
+            "channel": 0,
+            "x": 7,
+            "y": 282,
+            "w": 292,
+            "h": 28,
+            "cell_size": 28,
+            "bitcount": 1,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "negative": 0,
+            "positive": 0,
+            "index_shape": [
+              1,
+              11
+            ],
+            "index_sha256": "6a4875ddaceaa91fb3369f0f6d962f77442daf1b1d97733457d12bcabdf79441"
+          },
+          "delta_local_rd_score": 78691.59987861507,
+          "relative_local_rd_score_gain": 0.7516805824973519,
+          "relative_patch_bits_change": 0.11541929666366095,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            7,
+            260,
+            372,
+            41
+          ],
+          "action_rank": 1,
+          "action_index": 21,
+          "cell_size": 16,
+          "bitcount_requested": 2,
+          "model_value": -0.41819944977760315,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 261,
+          "working_sse_reduction": 5974.0,
+          "working_rd_score": -47033.37060990676,
+          "gain_per_bit": 22.88888888888889,
+          "feature_and_model_seconds": 0.0007714999374002218,
+          "patch_build_seconds": 0.0006392999785020947,
+          "candidate_evaluation_seconds": 0.0014107999159023166,
+          "one_step_original_rgb_mse": 81.64168151827275,
+          "patch_signature": {
+            "channel": 0,
+            "x": 7,
+            "y": 260,
+            "w": 372,
+            "h": 41,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 1,
+            "positive": 2,
+            "index_shape": [
+              3,
+              24
+            ],
+            "index_sha256": "5576ea93e0fbf696e14f78b8133671d28ebc9e852cb5c882d0462cc0682ef0c4"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            7,
+            260,
+            372,
+            41
+          ],
+          "action_rank": 2,
+          "action_index": 26,
+          "cell_size": 32,
+          "bitcount_requested": 2,
+          "model_value": -0.41819944977760315,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 165,
+          "working_sse_reduction": 626.0,
+          "working_rd_score": -32884.406707412316,
+          "gain_per_bit": 3.793939393939394,
+          "feature_and_model_seconds": 0.0007714999374002218,
+          "patch_build_seconds": 0.0011719000758603215,
+          "candidate_evaluation_seconds": 0.0019434000132605433,
+          "one_step_original_rgb_mse": 81.65104982811,
+          "patch_signature": {
+            "channel": 0,
+            "x": 7,
+            "y": 260,
+            "w": 372,
+            "h": 41,
+            "cell_size": 32,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "negative": 1,
+            "positive": 1,
+            "index_shape": [
+              2,
+              12
+            ],
+            "index_sha256": "6c02ee2eb5dbd3f415a63c77a651efb48ed0ef81206637e9326f5ca28cbc4f53"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\coast_balanced_step01.json",
+      "image": "coast.jpg",
+      "preset": "balanced",
+      "step": 1,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "a9cfd6b132488eaa9b464b28610648f0258e17b78180159de70e4add5203796c",
+      "rng_after_sha256": "16803924cde4e35966337959587256e9a6b70723e594338f00e886bc1507c0e9",
+      "proposal_pool_sha256": "f879f4df61c38319e7037270e81cc835f29553f47104a9acab020c0a9049b6e1",
+      "target_canvas_sha256": "cd40b6594c76c8e8ff508454791dbe2dd808ea4dbb535776f1f05dd636141a8a",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.00219409994315356,
+      "lambda": 49.583232038343816,
+      "pre_patch_original_rgb_mse": 156.15020250928293,
+      "canonical_builds": [
+        {
+          "action_index": 7,
+          "seconds": 0.0014187999768182635,
+          "patch_signature": {
+            "channel": 0,
+            "x": 194,
+            "y": 230,
+            "w": 332,
+            "h": 155,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 62,
+            "positive": 170,
+            "index_shape": [
+              78,
+              166
+            ],
+            "index_sha256": "48a01b08e8de2c6226ca5b23bf266a23cba9210eaa92cef0ac2a4f7d8d0d5e74"
+          },
+          "reduction": 11557782.0,
+          "bits": 38961.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          194,
+          230,
+          332,
+          155
+        ],
+        "action_rank": 1,
+        "action_index": 7,
+        "cell_size": 2,
+        "bitcount_requested": 3,
+        "model_value": 3.777235746383667,
+        "model_top_action": 7,
+        "ordinary_candidate": true,
+        "patch_bits": 38961,
+        "working_sse_reduction": 11557782.0,
+        "working_rd_score": 9625969.696554087,
+        "gain_per_bit": 296.6500346500346,
+        "feature_and_model_seconds": 0.0019632999319583178,
+        "patch_build_seconds": 0.0015974999405443668,
+        "candidate_evaluation_seconds": 0.0035607998725026846,
+        "one_step_original_rgb_mse": 112.66354497010802,
+        "patch_signature": {
+          "channel": 0,
+          "x": 194,
+          "y": 230,
+          "w": 332,
+          "h": 155,
+          "cell_size": 2,
+          "bitcount": 3,
+          "max_bitcount": 3,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 62,
+          "positive": 170,
+          "index_shape": [
+            78,
+            166
+          ],
+          "index_sha256": "48a01b08e8de2c6226ca5b23bf266a23cba9210eaa92cef0ac2a4f7d8d0d5e74"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 1,
+        "box": [
+          0,
+          194,
+          230,
+          332,
+          155
+        ],
+        "action_rank": 2,
+        "action_index": 8,
+        "cell_size": 2,
+        "bitcount_requested": 4,
+        "model_value": 3.777235746383667,
+        "model_top_action": 7,
+        "ordinary_candidate": false,
+        "patch_bits": 51909,
+        "working_sse_reduction": 12223331.0,
+        "working_rd_score": 9649515.008121612,
+        "gain_per_bit": 235.47614093895086,
+        "feature_and_model_seconds": 0.0019632999319583178,
+        "patch_build_seconds": 0.0017582000000402331,
+        "candidate_evaluation_seconds": 0.003721499931998551,
+        "one_step_original_rgb_mse": 110.16643953425363,
+        "patch_signature": {
+          "channel": 0,
+          "x": 194,
+          "y": 230,
+          "w": 332,
+          "h": 155,
+          "cell_size": 2,
+          "bitcount": 4,
+          "max_bitcount": 4,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 62,
+          "positive": 170,
+          "index_shape": [
+            78,
+            166
+          ],
+          "index_sha256": "d573fd0f1d13d1bb42a5c30f1967fe9146c94801ed2aa58974501ef4ef3911a0"
+        },
+        "delta_local_rd_score": 23545.311567524448,
+        "relative_local_rd_score_gain": 0.0024460197060409633,
+        "relative_patch_bits_change": 1.3323323323323324,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            194,
+            230,
+            332,
+            155
+          ],
+          "action_rank": 1,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 3.777235746383667,
+          "model_top_action": 7,
+          "ordinary_candidate": true,
+          "patch_bits": 38961,
+          "working_sse_reduction": 11557782.0,
+          "working_rd_score": 9625969.696554087,
+          "gain_per_bit": 296.6500346500346,
+          "feature_and_model_seconds": 0.0019632999319583178,
+          "patch_build_seconds": 0.0015974999405443668,
+          "candidate_evaluation_seconds": 0.0035607998725026846,
+          "one_step_original_rgb_mse": 112.66354497010802,
+          "patch_signature": {
+            "channel": 0,
+            "x": 194,
+            "y": 230,
+            "w": 332,
+            "h": 155,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 62,
+            "positive": 170,
+            "index_shape": [
+              78,
+              166
+            ],
+            "index_sha256": "48a01b08e8de2c6226ca5b23bf266a23cba9210eaa92cef0ac2a4f7d8d0d5e74"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            194,
+            230,
+            332,
+            155
+          ],
+          "action_rank": 2,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 3.777235746383667,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 51909,
+          "working_sse_reduction": 12223331.0,
+          "working_rd_score": 9649515.008121612,
+          "gain_per_bit": 235.47614093895086,
+          "feature_and_model_seconds": 0.0019632999319583178,
+          "patch_build_seconds": 0.0017582000000402331,
+          "candidate_evaluation_seconds": 0.003721499931998551,
+          "one_step_original_rgb_mse": 110.16643953425363,
+          "patch_signature": {
+            "channel": 0,
+            "x": 194,
+            "y": 230,
+            "w": 332,
+            "h": 155,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 62,
+            "positive": 170,
+            "index_shape": [
+              78,
+              166
+            ],
+            "index_sha256": "d573fd0f1d13d1bb42a5c30f1967fe9146c94801ed2aa58974501ef4ef3911a0"
+          },
+          "delta_local_rd_score": 23545.311567524448,
+          "relative_local_rd_score_gain": 0.0024460197060409633,
+          "relative_patch_bits_change": 1.3323323323323324,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            167,
+            245,
+            334,
+            159
+          ],
+          "action_rank": 1,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 3.766214609146118,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 40197,
+          "working_sse_reduction": 11379056.0,
+          "working_rd_score": 9385958.821754694,
+          "gain_per_bit": 283.0822200661741,
+          "feature_and_model_seconds": 0.0025146999396383762,
+          "patch_build_seconds": 0.0019311000360175967,
+          "candidate_evaluation_seconds": 0.004445799975655973,
+          "one_step_original_rgb_mse": 112.93925729199978,
+          "patch_signature": {
+            "channel": 0,
+            "x": 167,
+            "y": 245,
+            "w": 334,
+            "h": 159,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 58,
+            "positive": 181,
+            "index_shape": [
+              80,
+              167
+            ],
+            "index_sha256": "bce4f786d784e56e25f3d2a64745f96c52c6441b2f13c22780f6415e2c31a8f3"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            167,
+            245,
+            334,
+            159
+          ],
+          "action_rank": 2,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 3.766214609146118,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 53557,
+          "working_sse_reduction": 12063573.0,
+          "working_rd_score": 9408043.841722421,
+          "gain_per_bit": 225.2473626229998,
+          "feature_and_model_seconds": 0.0025146999396383762,
+          "patch_build_seconds": 0.0017404999816790223,
+          "candidate_evaluation_seconds": 0.0042551999213173985,
+          "one_step_original_rgb_mse": 110.50614606651743,
+          "patch_signature": {
+            "channel": 0,
+            "x": 167,
+            "y": 245,
+            "w": 334,
+            "h": 159,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 58,
+            "positive": 181,
+            "index_shape": [
+              80,
+              167
+            ],
+            "index_sha256": "1cf7b5a4778ce2939629c6aa0d5869b702a0ddb9420d8e227775ee6eccb01591"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            184,
+            201,
+            292,
+            171
+          ],
+          "action_rank": 1,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 3.7014753818511963,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 37785,
+          "working_sse_reduction": 10848324.0,
+          "working_rd_score": 8974821.57743118,
+          "gain_per_bit": 287.10662961492653,
+          "feature_and_model_seconds": 0.0019136000191792846,
+          "patch_build_seconds": 0.0015867999754846096,
+          "candidate_evaluation_seconds": 0.003500399994663894,
+          "one_step_original_rgb_mse": 113.36668754219522,
+          "patch_signature": {
+            "channel": 0,
+            "x": 184,
+            "y": 201,
+            "w": 292,
+            "h": 171,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 84,
+            "positive": 164,
+            "index_shape": [
+              86,
+              146
+            ],
+            "index_sha256": "8ea658e954ae0e0bba23248c996af678c26d45089bbc2a751a7f56612a66cfb9"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            184,
+            201,
+            292,
+            171
+          ],
+          "action_rank": 2,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 3.7014753818511963,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 50341,
+          "working_sse_reduction": 11504222.0,
+          "working_rd_score": 9008152.515957734,
+          "gain_per_bit": 228.5258934069645,
+          "feature_and_model_seconds": 0.0019136000191792846,
+          "patch_build_seconds": 0.0017367999535053968,
+          "candidate_evaluation_seconds": 0.0036503999726846814,
+          "one_step_original_rgb_mse": 110.86493685707813,
+          "patch_signature": {
+            "channel": 0,
+            "x": 184,
+            "y": 201,
+            "w": 292,
+            "h": 171,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 84,
+            "positive": 164,
+            "index_shape": [
+              86,
+              146
+            ],
+            "index_sha256": "f9fb88233e7d3a66627787ae1a33fafff11c0df72357b86c0da1ff94d214cbee"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            93,
+            204,
+            384,
+            153
+          ],
+          "action_rank": 1,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 3.7852587699890137,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 44469,
+          "working_sse_reduction": 11396259.0,
+          "working_rd_score": 9191342.254486889,
+          "gain_per_bit": 256.2742359846185,
+          "feature_and_model_seconds": 0.002198199974372983,
+          "patch_build_seconds": 0.0021563000045716763,
+          "candidate_evaluation_seconds": 0.004354499978944659,
+          "one_step_original_rgb_mse": 111.26160176931208,
+          "patch_signature": {
+            "channel": 0,
+            "x": 93,
+            "y": 204,
+            "w": 384,
+            "h": 153,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 85,
+            "positive": 176,
+            "index_shape": [
+              77,
+              192
+            ],
+            "index_sha256": "69819a5b77081901146010793f4dd8bcf8f5d72884efd0e0f3ec2e1cc7a8b8b7"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            93,
+            204,
+            384,
+            153
+          ],
+          "action_rank": 2,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 3.7852587699890137,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 59253,
+          "working_sse_reduction": 12226227.0,
+          "working_rd_score": 9288271.752032014,
+          "gain_per_bit": 206.33937522150777,
+          "feature_and_model_seconds": 0.002198199974372983,
+          "patch_build_seconds": 0.001914600026793778,
+          "candidate_evaluation_seconds": 0.004112800001166761,
+          "one_step_original_rgb_mse": 108.3025231907135,
+          "patch_signature": {
+            "channel": 0,
+            "x": 93,
+            "y": 204,
+            "w": 384,
+            "h": 153,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 85,
+            "positive": 176,
+            "index_shape": [
+              77,
+              192
+            ],
+            "index_sha256": "ddd6210028b7e7e16c5ff96e965bf7d95da5088df04e9a8144560f7a0ccedb1d"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\coast_balanced_step25.json",
+      "image": "coast.jpg",
+      "preset": "balanced",
+      "step": 25,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "42627bd4d357ee67ed2b709a7b734834f4108c604c6b9d90c5fe7368a032cc7e",
+      "rng_after_sha256": "50eace1028784ec9c4faa2f35efff56a15a28846d32baec4ca1bd388f57cfa5e",
+      "proposal_pool_sha256": "599341d2a68ac4eecfc0ec75d5c00cd26dda98978a1e00aaab6802013e7e1e32",
+      "target_canvas_sha256": "758d0b994c6b5390ce59800a2afdbc7a2d19b7a38dc4d002451d0c2fb7985294",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.0023599000414833426,
+      "lambda": 49.583232038343816,
+      "pre_patch_original_rgb_mse": 56.18532028390719,
+      "canonical_builds": [
+        {
+          "action_index": 6,
+          "seconds": 0.0002519000554457307,
+          "patch_signature": {
+            "channel": 0,
+            "x": 351,
+            "y": 295,
+            "w": 257,
+            "h": 18,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 37,
+            "positive": 21,
+            "index_shape": [
+              9,
+              129
+            ],
+            "index_sha256": "f2e2ccb98c15e396e4a5cffac2cb6633926a493c4d82c37f8b5bd7be4ed916dd"
+          },
+          "reduction": 52441.0,
+          "bits": 2439.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          351,
+          295,
+          257,
+          18
+        ],
+        "action_rank": 1,
+        "action_index": 6,
+        "cell_size": 2,
+        "bitcount_requested": 2,
+        "model_value": -0.3625176250934601,
+        "model_top_action": 6,
+        "ordinary_candidate": true,
+        "patch_bits": 2439,
+        "working_sse_reduction": 52441.0,
+        "working_rd_score": -68492.50294152056,
+        "gain_per_bit": 21.501025010250103,
+        "feature_and_model_seconds": 0.0006265001138672233,
+        "patch_build_seconds": 0.0003594999434426427,
+        "candidate_evaluation_seconds": 0.000986000057309866,
+        "one_step_original_rgb_mse": 56.02021969828199,
+        "patch_signature": {
+          "channel": 0,
+          "x": 351,
+          "y": 295,
+          "w": 257,
+          "h": 18,
+          "cell_size": 2,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 37,
+          "positive": 21,
+          "index_shape": [
+            9,
+            129
+          ],
+          "index_sha256": "f2e2ccb98c15e396e4a5cffac2cb6633926a493c4d82c37f8b5bd7be4ed916dd"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 4,
+        "box": [
+          0,
+          394,
+          293,
+          216,
+          22
+        ],
+        "action_rank": 1,
+        "action_index": 21,
+        "cell_size": 16,
+        "bitcount_requested": 2,
+        "model_value": -0.44184815883636475,
+        "model_top_action": 21,
+        "ordinary_candidate": false,
+        "patch_bits": 173,
+        "working_sse_reduction": 144.0,
+        "working_rd_score": -8433.89914263348,
+        "gain_per_bit": 0.8323699421965318,
+        "feature_and_model_seconds": 0.0006429000059142709,
+        "patch_build_seconds": 0.000318799982778728,
+        "candidate_evaluation_seconds": 0.0009616999886929989,
+        "one_step_original_rgb_mse": 56.19149577603667,
+        "patch_signature": {
+          "channel": 0,
+          "x": 394,
+          "y": 293,
+          "w": 216,
+          "h": 22,
+          "cell_size": 16,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "negative": 1,
+          "positive": 1,
+          "index_shape": [
+            2,
+            14
+          ],
+          "index_sha256": "69da6951cb1c2209e5e3e26fb541b5ebfa2162f96816d82967f8cfa21375795b"
+        },
+        "delta_local_rd_score": 60058.60379888708,
+        "relative_local_rd_score_gain": 0.8768639080129045,
+        "relative_patch_bits_change": 0.07093070930709307,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            351,
+            295,
+            257,
+            18
+          ],
+          "action_rank": 1,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": -0.3625176250934601,
+          "model_top_action": 6,
+          "ordinary_candidate": true,
+          "patch_bits": 2439,
+          "working_sse_reduction": 52441.0,
+          "working_rd_score": -68492.50294152056,
+          "gain_per_bit": 21.501025010250103,
+          "feature_and_model_seconds": 0.0006265001138672233,
+          "patch_build_seconds": 0.0003594999434426427,
+          "candidate_evaluation_seconds": 0.000986000057309866,
+          "one_step_original_rgb_mse": 56.02021969828199,
+          "patch_signature": {
+            "channel": 0,
+            "x": 351,
+            "y": 295,
+            "w": 257,
+            "h": 18,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 37,
+            "positive": 21,
+            "index_shape": [
+              9,
+              129
+            ],
+            "index_sha256": "f2e2ccb98c15e396e4a5cffac2cb6633926a493c4d82c37f8b5bd7be4ed916dd"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            351,
+            295,
+            257,
+            18
+          ],
+          "action_rank": 2,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": -0.3625176250934601,
+          "model_top_action": 6,
+          "ordinary_candidate": false,
+          "patch_bits": 767,
+          "working_sse_reduction": 7958.0,
+          "working_rd_score": -30072.338973409707,
+          "gain_per_bit": 10.3754889178618,
+          "feature_and_model_seconds": 0.0006265001138672233,
+          "patch_build_seconds": 0.0005135999526828527,
+          "candidate_evaluation_seconds": 0.001140100066550076,
+          "one_step_original_rgb_mse": 56.151852925238956,
+          "patch_signature": {
+            "channel": 0,
+            "x": 351,
+            "y": 295,
+            "w": 257,
+            "h": 18,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 15,
+            "positive": 6,
+            "index_shape": [
+              5,
+              65
+            ],
+            "index_sha256": "b4a56fe92bd31168977521a0e79460dcfaf88ed2c253d9cbf5436e7280b1bf8d"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            14,
+            277,
+            248,
+            99
+          ],
+          "action_rank": 1,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": -0.43165454268455505,
+          "model_top_action": 11,
+          "ordinary_candidate": false,
+          "patch_bits": 3217,
+          "working_sse_reduction": 39147.0,
+          "working_rd_score": -120362.25746735206,
+          "gain_per_bit": 12.168790798880945,
+          "feature_and_model_seconds": 0.0008407999994233251,
+          "patch_build_seconds": 0.0008024999406188726,
+          "candidate_evaluation_seconds": 0.0016432999400421977,
+          "one_step_original_rgb_mse": 56.0343503491099,
+          "patch_signature": {
+            "channel": 0,
+            "x": 14,
+            "y": 277,
+            "w": 248,
+            "h": 99,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 8,
+            "positive": 7,
+            "index_shape": [
+              25,
+              62
+            ],
+            "index_sha256": "b4054beb11c19a5be77588cd33e28a03bd6483eb51c0c6622c139a1300652569"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            14,
+            277,
+            248,
+            99
+          ],
+          "action_rank": 2,
+          "action_index": 16,
+          "cell_size": 8,
+          "bitcount_requested": 2,
+          "model_value": -0.43165454268455505,
+          "model_top_action": 11,
+          "ordinary_candidate": false,
+          "patch_bits": 923,
+          "working_sse_reduction": 4959.0,
+          "working_rd_score": -40806.32317139134,
+          "gain_per_bit": 5.372697724810401,
+          "feature_and_model_seconds": 0.0008407999994233251,
+          "patch_build_seconds": 0.0010797999566420913,
+          "candidate_evaluation_seconds": 0.0019205999560654163,
+          "one_step_original_rgb_mse": 56.161164993293184,
+          "patch_signature": {
+            "channel": 0,
+            "x": 14,
+            "y": 277,
+            "w": 248,
+            "h": 99,
+            "cell_size": 8,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 3,
+            "positive": 3,
+            "index_shape": [
+              13,
+              31
+            ],
+            "index_sha256": "85460aa626e408acbc9676b5515f2ffaed166e15f86995c695e95d9bdf0fdfd5"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            432,
+            282,
+            178,
+            53
+          ],
+          "action_rank": 1,
+          "action_index": 21,
+          "cell_size": 16,
+          "bitcount_requested": 2,
+          "model_value": -0.36350300908088684,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 213,
+          "working_sse_reduction": 2097.0,
+          "working_rd_score": -8464.228424167233,
+          "gain_per_bit": 9.845070422535212,
+          "feature_and_model_seconds": 0.0005327999824658036,
+          "patch_build_seconds": 0.0006548999808728695,
+          "candidate_evaluation_seconds": 0.0011876999633386731,
+          "one_step_original_rgb_mse": 56.17704891091923,
+          "patch_signature": {
+            "channel": 0,
+            "x": 432,
+            "y": 282,
+            "w": 178,
+            "h": 53,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "negative": 1,
+            "positive": 1,
+            "index_shape": [
+              4,
+              12
+            ],
+            "index_sha256": "672b6b168812d8eface64a955a82d94152c51d78e486be0ca5a9048212efeeaf"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            432,
+            282,
+            178,
+            53
+          ],
+          "action_rank": 2,
+          "action_index": 22,
+          "cell_size": 16,
+          "bitcount_requested": 3,
+          "model_value": -0.36350300908088684,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 213,
+          "working_sse_reduction": 2097.0,
+          "working_rd_score": -8464.228424167233,
+          "gain_per_bit": 9.845070422535212,
+          "feature_and_model_seconds": 0.0005327999824658036,
+          "patch_build_seconds": 0.0006303999107331038,
+          "candidate_evaluation_seconds": 0.0011631998931989074,
+          "one_step_original_rgb_mse": 56.17704891091923,
+          "patch_signature": {
+            "channel": 0,
+            "x": 432,
+            "y": 282,
+            "w": 178,
+            "h": 53,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "negative": 1,
+            "positive": 1,
+            "index_shape": [
+              4,
+              12
+            ],
+            "index_sha256": "672b6b168812d8eface64a955a82d94152c51d78e486be0ca5a9048212efeeaf"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            394,
+            293,
+            216,
+            22
+          ],
+          "action_rank": 1,
+          "action_index": 21,
+          "cell_size": 16,
+          "bitcount_requested": 2,
+          "model_value": -0.44184815883636475,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 173,
+          "working_sse_reduction": 144.0,
+          "working_rd_score": -8433.89914263348,
+          "gain_per_bit": 0.8323699421965318,
+          "feature_and_model_seconds": 0.0006429000059142709,
+          "patch_build_seconds": 0.000318799982778728,
+          "candidate_evaluation_seconds": 0.0009616999886929989,
+          "one_step_original_rgb_mse": 56.19149577603667,
+          "patch_signature": {
+            "channel": 0,
+            "x": 394,
+            "y": 293,
+            "w": 216,
+            "h": 22,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "negative": 1,
+            "positive": 1,
+            "index_shape": [
+              2,
+              14
+            ],
+            "index_sha256": "69da6951cb1c2209e5e3e26fb541b5ebfa2162f96816d82967f8cfa21375795b"
+          },
+          "delta_local_rd_score": 60058.60379888708,
+          "relative_local_rd_score_gain": 0.8768639080129045,
+          "relative_patch_bits_change": 0.07093070930709307,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            394,
+            293,
+            216,
+            22
+          ],
+          "action_rank": 2,
+          "action_index": 22,
+          "cell_size": 16,
+          "bitcount_requested": 3,
+          "model_value": -0.44184815883636475,
+          "model_top_action": 21,
+          "ordinary_candidate": false,
+          "patch_bits": 173,
+          "working_sse_reduction": 144.0,
+          "working_rd_score": -8433.89914263348,
+          "gain_per_bit": 0.8323699421965318,
+          "feature_and_model_seconds": 0.0006429000059142709,
+          "patch_build_seconds": 0.0005092000355944037,
+          "candidate_evaluation_seconds": 0.0011521000415086746,
+          "one_step_original_rgb_mse": 56.19149577603667,
+          "patch_signature": {
+            "channel": 0,
+            "x": 394,
+            "y": 293,
+            "w": 216,
+            "h": 22,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "negative": 1,
+            "positive": 1,
+            "index_shape": [
+              2,
+              14
+            ],
+            "index_sha256": "69da6951cb1c2209e5e3e26fb541b5ebfa2162f96816d82967f8cfa21375795b"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\googlewiki_compression_step01.json",
+      "image": "googlewiki.png",
+      "preset": "compression",
+      "step": 1,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "a9cfd6b132488eaa9b464b28610648f0258e17b78180159de70e4add5203796c",
+      "rng_after_sha256": "16803924cde4e35966337959587256e9a6b70723e594338f00e886bc1507c0e9",
+      "proposal_pool_sha256": "6fcf3ded920a4b782d86c898a9fea456bb0ce76f88f13f91c82cea33e5445838",
+      "target_canvas_sha256": "6199f16d1f7bd3ac32f04693076c0a08aeb06632338fc93a34fdbd856da90858",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.002329900045879185,
+      "lambda": 203.09337398431708,
+      "pre_patch_original_rgb_mse": 1559.3689755025962,
+      "canonical_builds": [
+        {
+          "action_index": 1,
+          "seconds": 0.0029501999961212277,
+          "patch_signature": {
+            "channel": 0,
+            "x": 5,
+            "y": 133,
+            "w": 337,
+            "h": 365,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 112,
+            "index_shape": [
+              365,
+              337
+            ],
+            "index_sha256": "d1d035876467924d3d3aa33330b78398878ae0f671730cef5a925a5d2d0f4ec3"
+          },
+          "reduction": 86620390.0,
+          "bits": 246127.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          5,
+          133,
+          337,
+          365
+        ],
+        "action_rank": 1,
+        "action_index": 1,
+        "cell_size": 1,
+        "bitcount_requested": 2,
+        "model_value": 16.69078254699707,
+        "model_top_action": 1,
+        "ordinary_candidate": true,
+        "patch_bits": 246127,
+        "working_sse_reduction": 86620390.0,
+        "working_rd_score": 36633627.14136199,
+        "gain_per_bit": 351.93371714602625,
+        "feature_and_model_seconds": 0.01042750000488013,
+        "patch_build_seconds": 0.0032878000056371093,
+        "candidate_evaluation_seconds": 0.01371530001051724,
+        "one_step_original_rgb_mse": 1115.7990280921315,
+        "patch_signature": {
+          "channel": 0,
+          "x": 5,
+          "y": 133,
+          "w": 337,
+          "h": 365,
+          "cell_size": 1,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 165,
+          "positive": 112,
+          "index_shape": [
+            365,
+            337
+          ],
+          "index_sha256": "d1d035876467924d3d3aa33330b78398878ae0f671730cef5a925a5d2d0f4ec3"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 4,
+        "box": [
+          0,
+          20,
+          113,
+          397,
+          287
+        ],
+        "action_rank": 1,
+        "action_index": 1,
+        "cell_size": 1,
+        "bitcount_requested": 2,
+        "model_value": 13.774118423461914,
+        "model_top_action": 1,
+        "ordinary_candidate": false,
+        "patch_bits": 227995,
+        "working_sse_reduction": 69071602.0,
+        "working_rd_score": 22767328.198445626,
+        "gain_per_bit": 302.9522664970723,
+        "feature_and_model_seconds": 0.00506120000500232,
+        "patch_build_seconds": 0.0029590000631287694,
+        "candidate_evaluation_seconds": 0.00802020006813109,
+        "one_step_original_rgb_mse": 1198.8330947943016,
+        "patch_signature": {
+          "channel": 0,
+          "x": 20,
+          "y": 113,
+          "w": 397,
+          "h": 287,
+          "cell_size": 1,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 172,
+          "positive": 149,
+          "index_shape": [
+            287,
+            397
+          ],
+          "index_sha256": "bd45be733ede4bdebc9e527f804f8f4c7b0de4f38be32558abe53630b49fbdab"
+        },
+        "delta_local_rd_score": -13866298.942916363,
+        "relative_local_rd_score_gain": -0.3785128589481198,
+        "relative_patch_bits_change": 0.9263307154436531,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            5,
+            133,
+            337,
+            365
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": 16.69078254699707,
+          "model_top_action": 1,
+          "ordinary_candidate": true,
+          "patch_bits": 246127,
+          "working_sse_reduction": 86620390.0,
+          "working_rd_score": 36633627.14136199,
+          "gain_per_bit": 351.93371714602625,
+          "feature_and_model_seconds": 0.01042750000488013,
+          "patch_build_seconds": 0.0032878000056371093,
+          "candidate_evaluation_seconds": 0.01371530001051724,
+          "one_step_original_rgb_mse": 1115.7990280921315,
+          "patch_signature": {
+            "channel": 0,
+            "x": 5,
+            "y": 133,
+            "w": 337,
+            "h": 365,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 112,
+            "index_shape": [
+              365,
+              337
+            ],
+            "index_sha256": "d1d035876467924d3d3aa33330b78398878ae0f671730cef5a925a5d2d0f4ec3"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            5,
+            133,
+            337,
+            365
+          ],
+          "action_rank": 2,
+          "action_index": 5,
+          "cell_size": 2,
+          "bitcount_requested": 1,
+          "model_value": 16.69078254699707,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 31044,
+          "working_sse_reduction": 10654448.0,
+          "working_rd_score": 4349617.298030861,
+          "gain_per_bit": 343.20474165700296,
+          "feature_and_model_seconds": 0.01042750000488013,
+          "patch_build_seconds": 0.00342550000641495,
+          "candidate_evaluation_seconds": 0.01385300001129508,
+          "one_step_original_rgb_mse": 1513.237400802056,
+          "patch_signature": {
+            "channel": 0,
+            "x": 5,
+            "y": 133,
+            "w": 337,
+            "h": 365,
+            "cell_size": 2,
+            "bitcount": 1,
+            "max_bitcount": 1,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 92,
+            "positive": 64,
+            "index_shape": [
+              183,
+              169
+            ],
+            "index_sha256": "fab564cf51084fc921171ab09e33b73cc47f7039881de52d8838a2eaf0d70d15"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            39,
+            63,
+            221,
+            285
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": 9.704063415527344,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 126087,
+          "working_sse_reduction": 46002601.0,
+          "working_rd_score": 20395166.754439414,
+          "gain_per_bit": 364.84808901790035,
+          "feature_and_model_seconds": 0.0021443000296130776,
+          "patch_build_seconds": 0.0019567999988794327,
+          "candidate_evaluation_seconds": 0.00410110002849251,
+          "one_step_original_rgb_mse": 1320.2513248246007,
+          "patch_signature": {
+            "channel": 0,
+            "x": 39,
+            "y": 63,
+            "w": 221,
+            "h": 285,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 169,
+            "positive": 121,
+            "index_shape": [
+              285,
+              221
+            ],
+            "index_sha256": "26816cdfcae76c0473dd4a1a357bb5e44051cb2a3ab58e2075fa7b5059cdc8e9"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            39,
+            63,
+            221,
+            285
+          ],
+          "action_rank": 2,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": 9.704063415527344,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 31863,
+          "working_sse_reduction": 14565047.0,
+          "working_rd_score": 8093882.824737704,
+          "gain_per_bit": 457.11474123591626,
+          "feature_and_model_seconds": 0.0021443000296130776,
+          "patch_build_seconds": 0.0019227000884711742,
+          "candidate_evaluation_seconds": 0.004067000118084252,
+          "one_step_original_rgb_mse": 1500.0700518028104,
+          "patch_signature": {
+            "channel": 0,
+            "x": 39,
+            "y": 63,
+            "w": 221,
+            "h": 285,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 99,
+            "positive": 65,
+            "index_shape": [
+              143,
+              111
+            ],
+            "index_sha256": "4c3aea71a7bfc23708879995cc503d864e1a10184371507afeef1e8b2edb56f4"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            53,
+            26,
+            196,
+            393
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": 10.992850303649902,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 154173,
+          "working_sse_reduction": 53753258.0,
+          "working_rd_score": 22441743.252715882,
+          "gain_per_bit": 348.6554584784625,
+          "feature_and_model_seconds": 0.002451400039717555,
+          "patch_build_seconds": 0.0020336000015959144,
+          "candidate_evaluation_seconds": 0.004485000041313469,
+          "one_step_original_rgb_mse": 1280.6548567152015,
+          "patch_signature": {
+            "channel": 0,
+            "x": 53,
+            "y": 26,
+            "w": 196,
+            "h": 393,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 121,
+            "index_shape": [
+              393,
+              196
+            ],
+            "index_sha256": "6908c4282a18ded266cbc4ee26376d9712c3283478c8f20080e3d500f92078f7"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            53,
+            26,
+            196,
+            393
+          ],
+          "action_rank": 2,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": 10.992850303649902,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 38729,
+          "working_sse_reduction": 18558365.0,
+          "working_rd_score": 10692761.718961384,
+          "gain_per_bit": 479.1852358697617,
+          "feature_and_model_seconds": 0.002451400039717555,
+          "patch_build_seconds": 0.0026661999290809035,
+          "candidate_evaluation_seconds": 0.005117599968798459,
+          "one_step_original_rgb_mse": 1484.6115898702105,
+          "patch_signature": {
+            "channel": 0,
+            "x": 53,
+            "y": 26,
+            "w": 196,
+            "h": 393,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 74,
+            "positive": 64,
+            "index_shape": [
+              197,
+              98
+            ],
+            "index_sha256": "d23c277d1c8097ba7771100b5246883787cf3a321fcbdb9c4630955c7cdac0e6"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            20,
+            113,
+            397,
+            287
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": 13.774118423461914,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 227995,
+          "working_sse_reduction": 69071602.0,
+          "working_rd_score": 22767328.198445626,
+          "gain_per_bit": 302.9522664970723,
+          "feature_and_model_seconds": 0.00506120000500232,
+          "patch_build_seconds": 0.0029590000631287694,
+          "candidate_evaluation_seconds": 0.00802020006813109,
+          "one_step_original_rgb_mse": 1198.8330947943016,
+          "patch_signature": {
+            "channel": 0,
+            "x": 20,
+            "y": 113,
+            "w": 397,
+            "h": 287,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 172,
+            "positive": 149,
+            "index_shape": [
+              287,
+              397
+            ],
+            "index_sha256": "bd45be733ede4bdebc9e527f804f8f4c7b0de4f38be32558abe53630b49fbdab"
+          },
+          "delta_local_rd_score": -13866298.942916363,
+          "relative_local_rd_score_gain": -0.3785128589481198,
+          "relative_patch_bits_change": 0.9263307154436531,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            20,
+            113,
+            397,
+            287
+          ],
+          "action_rank": 2,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": 13.774118423461914,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 57429,
+          "working_sse_reduction": 23523997.0,
+          "working_rd_score": 11860547.625454655,
+          "gain_per_bit": 409.6187814518797,
+          "feature_and_model_seconds": 0.00506120000500232,
+          "patch_build_seconds": 0.0031374000245705247,
+          "candidate_evaluation_seconds": 0.008198600029572845,
+          "one_step_original_rgb_mse": 1463.7184538434537,
+          "patch_signature": {
+            "channel": 0,
+            "x": 20,
+            "y": 113,
+            "w": 397,
+            "h": 287,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 95,
+            "positive": 95,
+            "index_shape": [
+              144,
+              199
+            ],
+            "index_sha256": "f3ea0495ce7125ceef90190339a72ffe198c63d14c9b8cf93f60426ee224312c"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\googlewiki_balanced_step01.json",
+      "image": "googlewiki.png",
+      "preset": "balanced",
+      "step": 1,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "a9cfd6b132488eaa9b464b28610648f0258e17b78180159de70e4add5203796c",
+      "rng_after_sha256": "16803924cde4e35966337959587256e9a6b70723e594338f00e886bc1507c0e9",
+      "proposal_pool_sha256": "6fcf3ded920a4b782d86c898a9fea456bb0ce76f88f13f91c82cea33e5445838",
+      "target_canvas_sha256": "6199f16d1f7bd3ac32f04693076c0a08aeb06632338fc93a34fdbd856da90858",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.0023626000620424747,
+      "lambda": 49.583232038343816,
+      "pre_patch_original_rgb_mse": 1559.3689755025962,
+      "canonical_builds": [
+        {
+          "action_index": 3,
+          "seconds": 0.003714199992828071,
+          "patch_signature": {
+            "channel": 0,
+            "x": 5,
+            "y": 133,
+            "w": 337,
+            "h": 365,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 112,
+            "index_shape": [
+              365,
+              337
+            ],
+            "index_sha256": "213e73982134dfffa4062bc7d9e29408034cc4f5e77221654694e887aeed0fb6"
+          },
+          "reduction": 102579582.0,
+          "bits": 492137.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          5,
+          133,
+          337,
+          365
+        ],
+        "action_rank": 1,
+        "action_index": 3,
+        "cell_size": 1,
+        "bitcount_requested": 4,
+        "model_value": 25.272605895996094,
+        "model_top_action": 3,
+        "ordinary_candidate": true,
+        "patch_bits": 492137,
+        "working_sse_reduction": 102579582.0,
+        "working_rd_score": 78177838.93434559,
+        "gain_per_bit": 208.43704496918542,
+        "feature_and_model_seconds": 0.006947000045329332,
+        "patch_build_seconds": 0.005069099948741496,
+        "candidate_evaluation_seconds": 0.012016099994070828,
+        "one_step_original_rgb_mse": 1066.3936988376643,
+        "patch_signature": {
+          "channel": 0,
+          "x": 5,
+          "y": 133,
+          "w": 337,
+          "h": 365,
+          "cell_size": 1,
+          "bitcount": 4,
+          "max_bitcount": 4,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 165,
+          "positive": 112,
+          "index_shape": [
+            365,
+            337
+          ],
+          "index_sha256": "213e73982134dfffa4062bc7d9e29408034cc4f5e77221654694e887aeed0fb6"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 1,
+        "box": [
+          0,
+          5,
+          133,
+          337,
+          365
+        ],
+        "action_rank": 2,
+        "action_index": 2,
+        "cell_size": 1,
+        "bitcount_requested": 3,
+        "model_value": 25.272605895996094,
+        "model_top_action": 3,
+        "ordinary_candidate": false,
+        "patch_bits": 369132,
+        "working_sse_reduction": 97480936.0,
+        "working_rd_score": 79178178.39122207,
+        "gain_per_bit": 264.0815101372951,
+        "feature_and_model_seconds": 0.006947000045329332,
+        "patch_build_seconds": 0.003155800048261881,
+        "candidate_evaluation_seconds": 0.010102800093591213,
+        "one_step_original_rgb_mse": 1082.3240605697501,
+        "patch_signature": {
+          "channel": 0,
+          "x": 5,
+          "y": 133,
+          "w": 337,
+          "h": 365,
+          "cell_size": 1,
+          "bitcount": 3,
+          "max_bitcount": 3,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 165,
+          "positive": 112,
+          "index_shape": [
+            365,
+            337
+          ],
+          "index_sha256": "3e05b3173a471247d35830fc9f1341ce4e9ec2a0f38bb3fa12db445e25462539"
+        },
+        "delta_local_rd_score": 1000339.4568764865,
+        "relative_local_rd_score_gain": 0.01279569083147182,
+        "relative_patch_bits_change": 0.7500594346696143,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            5,
+            133,
+            337,
+            365
+          ],
+          "action_rank": 1,
+          "action_index": 3,
+          "cell_size": 1,
+          "bitcount_requested": 4,
+          "model_value": 25.272605895996094,
+          "model_top_action": 3,
+          "ordinary_candidate": true,
+          "patch_bits": 492137,
+          "working_sse_reduction": 102579582.0,
+          "working_rd_score": 78177838.93434559,
+          "gain_per_bit": 208.43704496918542,
+          "feature_and_model_seconds": 0.006947000045329332,
+          "patch_build_seconds": 0.005069099948741496,
+          "candidate_evaluation_seconds": 0.012016099994070828,
+          "one_step_original_rgb_mse": 1066.3936988376643,
+          "patch_signature": {
+            "channel": 0,
+            "x": 5,
+            "y": 133,
+            "w": 337,
+            "h": 365,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 112,
+            "index_shape": [
+              365,
+              337
+            ],
+            "index_sha256": "213e73982134dfffa4062bc7d9e29408034cc4f5e77221654694e887aeed0fb6"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            5,
+            133,
+            337,
+            365
+          ],
+          "action_rank": 2,
+          "action_index": 2,
+          "cell_size": 1,
+          "bitcount_requested": 3,
+          "model_value": 25.272605895996094,
+          "model_top_action": 3,
+          "ordinary_candidate": false,
+          "patch_bits": 369132,
+          "working_sse_reduction": 97480936.0,
+          "working_rd_score": 79178178.39122207,
+          "gain_per_bit": 264.0815101372951,
+          "feature_and_model_seconds": 0.006947000045329332,
+          "patch_build_seconds": 0.003155800048261881,
+          "candidate_evaluation_seconds": 0.010102800093591213,
+          "one_step_original_rgb_mse": 1082.3240605697501,
+          "patch_signature": {
+            "channel": 0,
+            "x": 5,
+            "y": 133,
+            "w": 337,
+            "h": 365,
+            "cell_size": 1,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 112,
+            "index_shape": [
+              365,
+              337
+            ],
+            "index_sha256": "3e05b3173a471247d35830fc9f1341ce4e9ec2a0f38bb3fa12db445e25462539"
+          },
+          "delta_local_rd_score": 1000339.4568764865,
+          "relative_local_rd_score_gain": 0.01279569083147182,
+          "relative_patch_bits_change": 0.7500594346696143,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            39,
+            63,
+            221,
+            285
+          ],
+          "action_rank": 1,
+          "action_index": 2,
+          "cell_size": 1,
+          "bitcount_requested": 3,
+          "model_value": 17.16956901550293,
+          "model_top_action": 2,
+          "ordinary_candidate": false,
+          "patch_bits": 189072,
+          "working_sse_reduction": 52164988.0,
+          "working_rd_score": 42790187.152046256,
+          "gain_per_bit": 275.90012270457817,
+          "feature_and_model_seconds": 0.0021995999850332737,
+          "patch_build_seconds": 0.0018292999593541026,
+          "candidate_evaluation_seconds": 0.004028899944387376,
+          "one_step_original_rgb_mse": 1302.2434691745036,
+          "patch_signature": {
+            "channel": 0,
+            "x": 39,
+            "y": 63,
+            "w": 221,
+            "h": 285,
+            "cell_size": 1,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 169,
+            "positive": 121,
+            "index_shape": [
+              285,
+              221
+            ],
+            "index_sha256": "a648fcad0861f82a44602b89303145af917c1bd1a4cc31eede6d3535291c6dfd"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            39,
+            63,
+            221,
+            285
+          ],
+          "action_rank": 2,
+          "action_index": 3,
+          "cell_size": 1,
+          "bitcount_requested": 4,
+          "model_value": 17.16956901550293,
+          "model_top_action": 2,
+          "ordinary_candidate": false,
+          "patch_bits": 252057,
+          "working_sse_reduction": 54989525.0,
+          "working_rd_score": 42491724.282111175,
+          "gain_per_bit": 218.1630543884915,
+          "feature_and_model_seconds": 0.0021995999850332737,
+          "patch_build_seconds": 0.002125700004398823,
+          "candidate_evaluation_seconds": 0.0043252999894320965,
+          "one_step_original_rgb_mse": 1292.9492401044124,
+          "patch_signature": {
+            "channel": 0,
+            "x": 39,
+            "y": 63,
+            "w": 221,
+            "h": 285,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 169,
+            "positive": 121,
+            "index_shape": [
+              285,
+              221
+            ],
+            "index_sha256": "d3fd3d037bad848e887211480df64192e601d486fa40f11ec4773aa8baed87be"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            53,
+            26,
+            196,
+            393
+          ],
+          "action_rank": 1,
+          "action_index": 2,
+          "cell_size": 1,
+          "bitcount_requested": 3,
+          "model_value": 18.827476501464844,
+          "model_top_action": 2,
+          "ordinary_candidate": false,
+          "patch_bits": 231201,
+          "working_sse_reduction": 60035909.0,
+          "working_rd_score": 48572216.16950287,
+          "gain_per_bit": 259.669763539085,
+          "feature_and_model_seconds": 0.0034961000783368945,
+          "patch_build_seconds": 0.0022831999231129885,
+          "candidate_evaluation_seconds": 0.005779300001449883,
+          "one_step_original_rgb_mse": 1261.044052561294,
+          "patch_signature": {
+            "channel": 0,
+            "x": 53,
+            "y": 26,
+            "w": 196,
+            "h": 393,
+            "cell_size": 1,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 121,
+            "index_shape": [
+              393,
+              196
+            ],
+            "index_sha256": "eed257f6b79436a2ae1e40d77e5e04fdfc0b4e3956fa77bd8442304e4635c50f"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            53,
+            26,
+            196,
+            393
+          ],
+          "action_rank": 2,
+          "action_index": 3,
+          "cell_size": 1,
+          "bitcount_requested": 4,
+          "model_value": 18.827476501464844,
+          "model_top_action": 2,
+          "ordinary_candidate": false,
+          "patch_bits": 308229,
+          "working_sse_reduction": 63249295.0,
+          "working_rd_score": 47966304.97205333,
+          "gain_per_bit": 205.20228466497312,
+          "feature_and_model_seconds": 0.0034961000783368945,
+          "patch_build_seconds": 0.002141800010576844,
+          "candidate_evaluation_seconds": 0.005637900088913739,
+          "one_step_original_rgb_mse": 1250.5374914771467,
+          "patch_signature": {
+            "channel": 0,
+            "x": 53,
+            "y": 26,
+            "w": 196,
+            "h": 393,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 165,
+            "positive": 121,
+            "index_shape": [
+              393,
+              196
+            ],
+            "index_sha256": "80cb2ad0688445333bd3c36b46f3db88f5332960f4f01833b685bf41372a840d"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            20,
+            113,
+            397,
+            287
+          ],
+          "action_rank": 1,
+          "action_index": 3,
+          "cell_size": 1,
+          "bitcount_requested": 4,
+          "model_value": 22.547834396362305,
+          "model_top_action": 3,
+          "ordinary_candidate": false,
+          "patch_bits": 455873,
+          "working_sse_reduction": 85509497.0,
+          "working_rd_score": 62905840.26098409,
+          "gain_per_bit": 187.57306749906223,
+          "feature_and_model_seconds": 0.0055945999920368195,
+          "patch_build_seconds": 0.003742899978533387,
+          "candidate_evaluation_seconds": 0.009337499970570207,
+          "one_step_original_rgb_mse": 1147.291481584585,
+          "patch_signature": {
+            "channel": 0,
+            "x": 20,
+            "y": 113,
+            "w": 397,
+            "h": 287,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 172,
+            "positive": 149,
+            "index_shape": [
+              287,
+              397
+            ],
+            "index_sha256": "e3576c12752d20988fd48abddeb510585e48aa418d402564327b256591ed1e0e"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            20,
+            113,
+            397,
+            287
+          ],
+          "action_rank": 2,
+          "action_index": 2,
+          "cell_size": 1,
+          "bitcount_requested": 3,
+          "model_value": 22.547834396362305,
+          "model_top_action": 3,
+          "ordinary_candidate": false,
+          "patch_bits": 341934,
+          "working_sse_reduction": 80243086.0,
+          "working_rd_score": 63288893.13620095,
+          "gain_per_bit": 234.6741944351834,
+          "feature_and_model_seconds": 0.0055945999920368195,
+          "patch_build_seconds": 0.003625700017437339,
+          "candidate_evaluation_seconds": 0.009220300009474158,
+          "one_step_original_rgb_mse": 1164.6073869435938,
+          "patch_signature": {
+            "channel": 0,
+            "x": 20,
+            "y": 113,
+            "w": 397,
+            "h": 287,
+            "cell_size": 1,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 172,
+            "positive": 149,
+            "index_shape": [
+              287,
+              397
+            ],
+            "index_sha256": "c588b0efa7f5af64480777463d102a0887b80b24688f2877630fd570e8d7ed8c"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\mario64_compression_step01.json",
+      "image": "mario64.png",
+      "preset": "compression",
+      "step": 1,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "a9cfd6b132488eaa9b464b28610648f0258e17b78180159de70e4add5203796c",
+      "rng_after_sha256": "16803924cde4e35966337959587256e9a6b70723e594338f00e886bc1507c0e9",
+      "proposal_pool_sha256": "46b7a84ddd0320fd14951c44d2eb159530347023c072932028f06b13a8d63b8e",
+      "target_canvas_sha256": "a871771ba5829236b06def10eecdbf4b2812037e067e6364304afefc1aadfd9c",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.0022644000127911568,
+      "lambda": 203.09337398431708,
+      "pre_patch_original_rgb_mse": 975.5716989776234,
+      "canonical_builds": [
+        {
+          "action_index": 7,
+          "seconds": 0.000887800008058548,
+          "patch_signature": {
+            "channel": 0,
+            "x": 6,
+            "y": 122,
+            "w": 344,
+            "h": 95,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 134,
+            "positive": 144,
+            "index_shape": [
+              48,
+              172
+            ],
+            "index_sha256": "ac2031325327c959f37bc141556222f165aeb77d781911b50dd44c089ed20119"
+          },
+          "reduction": 33043576.0,
+          "bits": 24885.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          6,
+          122,
+          344,
+          95
+        ],
+        "action_rank": 1,
+        "action_index": 7,
+        "cell_size": 2,
+        "bitcount_requested": 3,
+        "model_value": 11.380230903625488,
+        "model_top_action": 7,
+        "ordinary_candidate": true,
+        "patch_bits": 24885,
+        "working_sse_reduction": 33043576.0,
+        "working_rd_score": 27989597.38840027,
+        "gain_per_bit": 1327.8511553144465,
+        "feature_and_model_seconds": 0.002105100080370903,
+        "patch_build_seconds": 0.001637500012293458,
+        "candidate_evaluation_seconds": 0.003742600092664361,
+        "one_step_original_rgb_mse": 827.0937419624486,
+        "patch_signature": {
+          "channel": 0,
+          "x": 6,
+          "y": 122,
+          "w": 344,
+          "h": 95,
+          "cell_size": 2,
+          "bitcount": 3,
+          "max_bitcount": 3,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 134,
+          "positive": 144,
+          "index_shape": [
+            48,
+            172
+          ],
+          "index_sha256": "ac2031325327c959f37bc141556222f165aeb77d781911b50dd44c089ed20119"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 2,
+        "box": [
+          0,
+          199,
+          28,
+          376,
+          219
+        ],
+        "action_rank": 1,
+        "action_index": 7,
+        "cell_size": 2,
+        "bitcount_requested": 3,
+        "model_value": 17.173809051513672,
+        "model_top_action": 7,
+        "ordinary_candidate": false,
+        "patch_bits": 62157,
+        "working_sse_reduction": 58654493.0,
+        "working_rd_score": 46030818.153256804,
+        "gain_per_bit": 943.6506427272874,
+        "feature_and_model_seconds": 0.0033846000442281365,
+        "patch_build_seconds": 0.003860600059852004,
+        "candidate_evaluation_seconds": 0.007245200104080141,
+        "one_step_original_rgb_mse": 749.3302810731739,
+        "patch_signature": {
+          "channel": 0,
+          "x": 199,
+          "y": 28,
+          "w": 376,
+          "h": 219,
+          "cell_size": 2,
+          "bitcount": 3,
+          "max_bitcount": 3,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 129,
+          "positive": 139,
+          "index_shape": [
+            110,
+            188
+          ],
+          "index_sha256": "9e62762e4c41499cbb301ab4b6b76627bac13e81422b6c6273b67e577eb0ddc0"
+        },
+        "delta_local_rd_score": 18041220.764856532,
+        "relative_local_rd_score_gain": 0.6445687844132175,
+        "relative_patch_bits_change": 2.4977697408077155,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            6,
+            122,
+            344,
+            95
+          ],
+          "action_rank": 1,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 11.380230903625488,
+          "model_top_action": 7,
+          "ordinary_candidate": true,
+          "patch_bits": 24885,
+          "working_sse_reduction": 33043576.0,
+          "working_rd_score": 27989597.38840027,
+          "gain_per_bit": 1327.8511553144465,
+          "feature_and_model_seconds": 0.002105100080370903,
+          "patch_build_seconds": 0.001637500012293458,
+          "candidate_evaluation_seconds": 0.003742600092664361,
+          "one_step_original_rgb_mse": 827.0937419624486,
+          "patch_signature": {
+            "channel": 0,
+            "x": 6,
+            "y": 122,
+            "w": 344,
+            "h": 95,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 134,
+            "positive": 144,
+            "index_shape": [
+              48,
+              172
+            ],
+            "index_sha256": "ac2031325327c959f37bc141556222f165aeb77d781911b50dd44c089ed20119"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            6,
+            122,
+            344,
+            95
+          ],
+          "action_rank": 2,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 11.380230903625488,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 33141,
+          "working_sse_reduction": 34035556.0,
+          "working_rd_score": 27304838.492785748,
+          "gain_per_bit": 1026.9924262997495,
+          "feature_and_model_seconds": 0.002105100080370903,
+          "patch_build_seconds": 0.0011112999636679888,
+          "candidate_evaluation_seconds": 0.003216400044038892,
+          "one_step_original_rgb_mse": 823.6089406373243,
+          "patch_signature": {
+            "channel": 0,
+            "x": 6,
+            "y": 122,
+            "w": 344,
+            "h": 95,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 134,
+            "positive": 144,
+            "index_shape": [
+              48,
+              172
+            ],
+            "index_sha256": "09cb145399ab68516d56157e4b9faa19b4872355209773e6c73c2f7b5529bbc5"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            199,
+            28,
+            376,
+            219
+          ],
+          "action_rank": 1,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 17.173809051513672,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 62157,
+          "working_sse_reduction": 58654493.0,
+          "working_rd_score": 46030818.153256804,
+          "gain_per_bit": 943.6506427272874,
+          "feature_and_model_seconds": 0.0033846000442281365,
+          "patch_build_seconds": 0.003860600059852004,
+          "candidate_evaluation_seconds": 0.007245200104080141,
+          "one_step_original_rgb_mse": 749.3302810731739,
+          "patch_signature": {
+            "channel": 0,
+            "x": 199,
+            "y": 28,
+            "w": 376,
+            "h": 219,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 129,
+            "positive": 139,
+            "index_shape": [
+              110,
+              188
+            ],
+            "index_sha256": "9e62762e4c41499cbb301ab4b6b76627bac13e81422b6c6273b67e577eb0ddc0"
+          },
+          "delta_local_rd_score": 18041220.764856532,
+          "relative_local_rd_score_gain": 0.6445687844132175,
+          "relative_patch_bits_change": 2.4977697408077155,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            199,
+            28,
+            376,
+            219
+          ],
+          "action_rank": 2,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": 17.173809051513672,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 41477,
+          "working_sse_reduction": 54126704.0,
+          "working_rd_score": 45703000.12725248,
+          "gain_per_bit": 1304.981170287147,
+          "feature_and_model_seconds": 0.0033846000442281365,
+          "patch_build_seconds": 0.003658900037407875,
+          "candidate_evaluation_seconds": 0.007043500081636012,
+          "one_step_original_rgb_mse": 764.8351394381216,
+          "patch_signature": {
+            "channel": 0,
+            "x": 199,
+            "y": 28,
+            "w": 376,
+            "h": 219,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 129,
+            "positive": 139,
+            "index_shape": [
+              110,
+              188
+            ],
+            "index_sha256": "ad6ef904b605daa33a400e4dc1e8ca2973446ea57f33f97ed60e5409ce4a22fe"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            31,
+            154,
+            257,
+            54
+          ],
+          "action_rank": 1,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 8.590043067932129,
+          "model_top_action": 8,
+          "ordinary_candidate": false,
+          "patch_bits": 14049,
+          "working_sse_reduction": 22933185.0,
+          "working_rd_score": 20079926.188894328,
+          "gain_per_bit": 1632.3713431560966,
+          "feature_and_model_seconds": 0.0008370999712496996,
+          "patch_build_seconds": 0.0008430000161752105,
+          "candidate_evaluation_seconds": 0.00168009998742491,
+          "one_step_original_rgb_mse": 872.8877833906679,
+          "patch_signature": {
+            "channel": 0,
+            "x": 31,
+            "y": 154,
+            "w": 257,
+            "h": 54,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 125,
+            "positive": 144,
+            "index_shape": [
+              27,
+              129
+            ],
+            "index_sha256": "b3baf8c007e07d9bd8735e8a6e27a10d62737eecf3485131afbb1a2bf92feba8"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            31,
+            154,
+            257,
+            54
+          ],
+          "action_rank": 2,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 8.590043067932129,
+          "model_top_action": 8,
+          "ordinary_candidate": false,
+          "patch_bits": 10566,
+          "working_sse_reduction": 22340007.0,
+          "working_rd_score": 20194122.410481706,
+          "gain_per_bit": 2114.3296422487224,
+          "feature_and_model_seconds": 0.0008370999712496996,
+          "patch_build_seconds": 0.0006636000471189618,
+          "candidate_evaluation_seconds": 0.0015007000183686614,
+          "one_step_original_rgb_mse": 875.0219981084962,
+          "patch_signature": {
+            "channel": 0,
+            "x": 31,
+            "y": 154,
+            "w": 257,
+            "h": 54,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 125,
+            "positive": 144,
+            "index_shape": [
+              27,
+              129
+            ],
+            "index_sha256": "9d81f3415b2170eb96fe47299fd218337794d79dcd76cb854608ea87aada699f"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            297,
+            162,
+            280,
+            130
+          ],
+          "action_rank": 1,
+          "action_index": 7,
+          "cell_size": 2,
+          "bitcount_requested": 3,
+          "model_value": 10.868276596069336,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 27417,
+          "working_sse_reduction": 32636041.0,
+          "working_rd_score": 27067829.96547198,
+          "gain_per_bit": 1190.3578436736332,
+          "feature_and_model_seconds": 0.0012893000384792686,
+          "patch_build_seconds": 0.0012803999707102776,
+          "candidate_evaluation_seconds": 0.002569700009189546,
+          "one_step_original_rgb_mse": 816.816621924297,
+          "patch_signature": {
+            "channel": 0,
+            "x": 297,
+            "y": 162,
+            "w": 280,
+            "h": 130,
+            "cell_size": 2,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 125,
+            "positive": 131,
+            "index_shape": [
+              65,
+              140
+            ],
+            "index_sha256": "4ab3372831e580d26677323e592c692904b9f54a706ea3edb48e450abb6a50ee"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            297,
+            162,
+            280,
+            130
+          ],
+          "action_rank": 2,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 10.868276596069336,
+          "model_top_action": 7,
+          "ordinary_candidate": false,
+          "patch_bits": 36517,
+          "working_sse_reduction": 33685817.0,
+          "working_rd_score": 26269456.262214694,
+          "gain_per_bit": 922.4694525837281,
+          "feature_and_model_seconds": 0.0012893000384792686,
+          "patch_build_seconds": 0.001999999978579581,
+          "candidate_evaluation_seconds": 0.0032893000170588493,
+          "one_step_original_rgb_mse": 812.529714157879,
+          "patch_signature": {
+            "channel": 0,
+            "x": 297,
+            "y": 162,
+            "w": 280,
+            "h": 130,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 125,
+            "positive": 131,
+            "index_shape": [
+              65,
+              140
+            ],
+            "index_sha256": "db2cf7b6ceef6d775c1cbc8a1e774c8b1a0fa7e6f9d61085ac23cdfaf3afb00d"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\mario64_balanced_step01.json",
+      "image": "mario64.png",
+      "preset": "balanced",
+      "step": 1,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "a9cfd6b132488eaa9b464b28610648f0258e17b78180159de70e4add5203796c",
+      "rng_after_sha256": "16803924cde4e35966337959587256e9a6b70723e594338f00e886bc1507c0e9",
+      "proposal_pool_sha256": "46b7a84ddd0320fd14951c44d2eb159530347023c072932028f06b13a8d63b8e",
+      "target_canvas_sha256": "a871771ba5829236b06def10eecdbf4b2812037e067e6364304afefc1aadfd9c",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.003799400059506297,
+      "lambda": 49.583232038343816,
+      "pre_patch_original_rgb_mse": 975.5716989776234,
+      "canonical_builds": [
+        {
+          "action_index": 3,
+          "seconds": 0.0012609000550583005,
+          "patch_signature": {
+            "channel": 0,
+            "x": 6,
+            "y": 122,
+            "w": 344,
+            "h": 95,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 140,
+            "positive": 153,
+            "index_shape": [
+              95,
+              344
+            ],
+            "index_sha256": "8f00d4e9881738f117770ca2e164842e92992d4f37cbca4465420efece775b2e"
+          },
+          "reduction": 41382689.0,
+          "bits": 130837.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          6,
+          122,
+          344,
+          95
+        ],
+        "action_rank": 1,
+        "action_index": 3,
+        "cell_size": 1,
+        "bitcount_requested": 4,
+        "model_value": 14.145895004272461,
+        "model_top_action": 3,
+        "ordinary_candidate": true,
+        "patch_bits": 130837,
+        "working_sse_reduction": 41382689.0,
+        "working_rd_score": 34895367.66979921,
+        "gain_per_bit": 316.29194341050317,
+        "feature_and_model_seconds": 0.0014692998956888914,
+        "patch_build_seconds": 0.0013965999241918325,
+        "candidate_evaluation_seconds": 0.002865899819880724,
+        "one_step_original_rgb_mse": 782.7757690597136,
+        "patch_signature": {
+          "channel": 0,
+          "x": 6,
+          "y": 122,
+          "w": 344,
+          "h": 95,
+          "cell_size": 1,
+          "bitcount": 4,
+          "max_bitcount": 4,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 140,
+          "positive": 153,
+          "index_shape": [
+            95,
+            344
+          ],
+          "index_sha256": "8f00d4e9881738f117770ca2e164842e92992d4f37cbca4465420efece775b2e"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 2,
+        "box": [
+          0,
+          199,
+          28,
+          376,
+          219
+        ],
+        "action_rank": 1,
+        "action_index": 8,
+        "cell_size": 2,
+        "bitcount_requested": 4,
+        "model_value": 21.309234619140625,
+        "model_top_action": 8,
+        "ordinary_candidate": false,
+        "patch_bits": 82837,
+        "working_sse_reduction": 60795822.0,
+        "working_rd_score": 56688495.80763971,
+        "gain_per_bit": 733.9210980600457,
+        "feature_and_model_seconds": 0.0026268999790772796,
+        "patch_build_seconds": 0.002208300051279366,
+        "candidate_evaluation_seconds": 0.004835200030356646,
+        "one_step_original_rgb_mse": 741.9861372331533,
+        "patch_signature": {
+          "channel": 0,
+          "x": 199,
+          "y": 28,
+          "w": 376,
+          "h": 219,
+          "cell_size": 2,
+          "bitcount": 4,
+          "max_bitcount": 4,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 129,
+          "positive": 139,
+          "index_shape": [
+            110,
+            188
+          ],
+          "index_sha256": "328a7b039e8ad8749bcaec0aace3720ed4146ecc4ff0496e346d1c6c607d3693"
+        },
+        "delta_local_rd_score": 21793128.137840502,
+        "relative_local_rd_score_gain": 0.6245278268468206,
+        "relative_patch_bits_change": 0.6331313007788317,
+        "qualifies_gate_b": true
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            6,
+            122,
+            344,
+            95
+          ],
+          "action_rank": 1,
+          "action_index": 3,
+          "cell_size": 1,
+          "bitcount_requested": 4,
+          "model_value": 14.145895004272461,
+          "model_top_action": 3,
+          "ordinary_candidate": true,
+          "patch_bits": 130837,
+          "working_sse_reduction": 41382689.0,
+          "working_rd_score": 34895367.66979921,
+          "gain_per_bit": 316.29194341050317,
+          "feature_and_model_seconds": 0.0014692998956888914,
+          "patch_build_seconds": 0.0013965999241918325,
+          "candidate_evaluation_seconds": 0.002865899819880724,
+          "one_step_original_rgb_mse": 782.7757690597136,
+          "patch_signature": {
+            "channel": 0,
+            "x": 6,
+            "y": 122,
+            "w": 344,
+            "h": 95,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 140,
+            "positive": 153,
+            "index_shape": [
+              95,
+              344
+            ],
+            "index_sha256": "8f00d4e9881738f117770ca2e164842e92992d4f37cbca4465420efece775b2e"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            6,
+            122,
+            344,
+            95
+          ],
+          "action_rank": 2,
+          "action_index": 2,
+          "cell_size": 1,
+          "bitcount_requested": 3,
+          "model_value": 14.145895004272461,
+          "model_top_action": 3,
+          "ordinary_candidate": false,
+          "patch_bits": 98157,
+          "working_sse_reduction": 39887214.0,
+          "working_rd_score": 35020272.69281229,
+          "gain_per_bit": 406.3613802377823,
+          "feature_and_model_seconds": 0.0014692998956888914,
+          "patch_build_seconds": 0.0009264000691473484,
+          "candidate_evaluation_seconds": 0.00239569996483624,
+          "one_step_original_rgb_mse": 787.0470725898062,
+          "patch_signature": {
+            "channel": 0,
+            "x": 6,
+            "y": 122,
+            "w": 344,
+            "h": 95,
+            "cell_size": 1,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 140,
+            "positive": 153,
+            "index_shape": [
+              95,
+              344
+            ],
+            "index_sha256": "7b7666b5c87fe042c653b9b6a7990f5ca7177f6953fa9bb4e98fd27325c61aed"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            199,
+            28,
+            376,
+            219
+          ],
+          "action_rank": 1,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 21.309234619140625,
+          "model_top_action": 8,
+          "ordinary_candidate": false,
+          "patch_bits": 82837,
+          "working_sse_reduction": 60795822.0,
+          "working_rd_score": 56688495.80763971,
+          "gain_per_bit": 733.9210980600457,
+          "feature_and_model_seconds": 0.0026268999790772796,
+          "patch_build_seconds": 0.002208300051279366,
+          "candidate_evaluation_seconds": 0.004835200030356646,
+          "one_step_original_rgb_mse": 741.9861372331533,
+          "patch_signature": {
+            "channel": 0,
+            "x": 199,
+            "y": 28,
+            "w": 376,
+            "h": 219,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 129,
+            "positive": 139,
+            "index_shape": [
+              110,
+              188
+            ],
+            "index_sha256": "328a7b039e8ad8749bcaec0aace3720ed4146ecc4ff0496e346d1c6c607d3693"
+          },
+          "delta_local_rd_score": 21793128.137840502,
+          "relative_local_rd_score_gain": 0.6245278268468206,
+          "relative_patch_bits_change": 0.6331313007788317,
+          "qualifies_gate_b": true
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            199,
+            28,
+            376,
+            219
+          ],
+          "action_rank": 2,
+          "action_index": 9,
+          "cell_size": 2,
+          "bitcount_requested": 5,
+          "model_value": 21.309234619140625,
+          "model_top_action": 8,
+          "ordinary_candidate": false,
+          "patch_bits": 103517,
+          "working_sse_reduction": 61348288.0,
+          "working_rd_score": 56215580.56908676,
+          "gain_per_bit": 592.6397403325058,
+          "feature_and_model_seconds": 0.0026268999790772796,
+          "patch_build_seconds": 0.003009500098414719,
+          "candidate_evaluation_seconds": 0.005636400077491999,
+          "one_step_original_rgb_mse": 739.8396917063186,
+          "patch_signature": {
+            "channel": 0,
+            "x": 199,
+            "y": 28,
+            "w": 376,
+            "h": 219,
+            "cell_size": 2,
+            "bitcount": 5,
+            "max_bitcount": 5,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 129,
+            "positive": 139,
+            "index_shape": [
+              110,
+              188
+            ],
+            "index_sha256": "1a992a786d0fc2e38bf165b95073fdb774260dc5848ab6b0d6bbecb3138b7bf7"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            31,
+            154,
+            257,
+            54
+          ],
+          "action_rank": 1,
+          "action_index": 3,
+          "cell_size": 1,
+          "bitcount_requested": 4,
+          "model_value": 10.373709678649902,
+          "model_top_action": 3,
+          "ordinary_candidate": false,
+          "patch_bits": 55629,
+          "working_sse_reduction": 28575361.0,
+          "working_rd_score": 25817095.38493897,
+          "gain_per_bit": 513.677416455446,
+          "feature_and_model_seconds": 0.0006135000148788095,
+          "patch_build_seconds": 0.0004890999989584088,
+          "candidate_evaluation_seconds": 0.0011026000138372183,
+          "one_step_original_rgb_mse": 841.2260253236454,
+          "patch_signature": {
+            "channel": 0,
+            "x": 31,
+            "y": 154,
+            "w": 257,
+            "h": 54,
+            "cell_size": 1,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 129,
+            "positive": 138,
+            "index_shape": [
+              54,
+              257
+            ],
+            "index_sha256": "c30d995a9ac040d3e4f0ba4097babf80f6ec681eff2e8195cc88468e73c013cc"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            31,
+            154,
+            257,
+            54
+          ],
+          "action_rank": 2,
+          "action_index": 4,
+          "cell_size": 1,
+          "bitcount_requested": 5,
+          "model_value": 10.373709678649902,
+          "model_top_action": 3,
+          "ordinary_candidate": false,
+          "patch_bits": 69507,
+          "working_sse_reduction": 28818813.0,
+          "working_rd_score": 25372431.290710837,
+          "gain_per_bit": 414.6174198282187,
+          "feature_and_model_seconds": 0.0006135000148788095,
+          "patch_build_seconds": 0.0008499999530613422,
+          "candidate_evaluation_seconds": 0.0014634999679401517,
+          "one_step_original_rgb_mse": 840.601418158972,
+          "patch_signature": {
+            "channel": 0,
+            "x": 31,
+            "y": 154,
+            "w": 257,
+            "h": 54,
+            "cell_size": 1,
+            "bitcount": 5,
+            "max_bitcount": 5,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 129,
+            "positive": 138,
+            "index_shape": [
+              54,
+              257
+            ],
+            "index_sha256": "88b65adebcc4330ccec35a9d2f98e81db72fb0be0415ee1359990c43259d4617"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            297,
+            162,
+            280,
+            130
+          ],
+          "action_rank": 1,
+          "action_index": 8,
+          "cell_size": 2,
+          "bitcount_requested": 4,
+          "model_value": 13.251012802124023,
+          "model_top_action": 8,
+          "ordinary_candidate": false,
+          "patch_bits": 36517,
+          "working_sse_reduction": 33685817.0,
+          "working_rd_score": 31875186.1156558,
+          "gain_per_bit": 922.4694525837281,
+          "feature_and_model_seconds": 0.0014393000165000558,
+          "patch_build_seconds": 0.0016410000389441848,
+          "candidate_evaluation_seconds": 0.0030803000554442406,
+          "one_step_original_rgb_mse": 812.529714157879,
+          "patch_signature": {
+            "channel": 0,
+            "x": 297,
+            "y": 162,
+            "w": 280,
+            "h": 130,
+            "cell_size": 2,
+            "bitcount": 4,
+            "max_bitcount": 4,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 125,
+            "positive": 131,
+            "index_shape": [
+              65,
+              140
+            ],
+            "index_sha256": "db2cf7b6ceef6d775c1cbc8a1e774c8b1a0fa7e6f9d61085ac23cdfaf3afb00d"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            297,
+            162,
+            280,
+            130
+          ],
+          "action_rank": 2,
+          "action_index": 9,
+          "cell_size": 2,
+          "bitcount_requested": 5,
+          "model_value": 13.251012802124023,
+          "model_top_action": 8,
+          "ordinary_candidate": false,
+          "patch_bits": 45617,
+          "working_sse_reduction": 34011281.0,
+          "working_rd_score": 31749442.70410687,
+          "gain_per_bit": 745.5834666900498,
+          "feature_and_model_seconds": 0.0014393000165000558,
+          "patch_build_seconds": 0.0014455000637099147,
+          "candidate_evaluation_seconds": 0.0028848000802099705,
+          "one_step_original_rgb_mse": 811.3607072241513,
+          "patch_signature": {
+            "channel": 0,
+            "x": 297,
+            "y": 162,
+            "w": 280,
+            "h": 130,
+            "cell_size": 2,
+            "bitcount": 5,
+            "max_bitcount": 5,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 125,
+            "positive": 131,
+            "index_shape": [
+              65,
+              140
+            ],
+            "index_sha256": "3552364ae879310940d6b43671d319b9af58ca87d94878e652953560578ef2cd"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\mario64_balanced_step25.json",
+      "image": "mario64.png",
+      "preset": "balanced",
+      "step": 25,
+      "channel": 0,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "ec465368b45971a2104faa26a097b82a56a86efb827585ae9d04e35d1ac2150e",
+      "rng_after_sha256": "7549a71156db8da4a6316a5a1d1f4ce40c1862a06796c9cf91fa0a361be56fb6",
+      "proposal_pool_sha256": "599a5abf36a67760f86c53aef875d342b19d2c76b050b26bd17897a4e5c6da8e",
+      "target_canvas_sha256": "5d98e2f45516b362da54ce3c8f2811a07c5cf52dedb3a5394552b205c267deee",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.003638499998487532,
+      "lambda": 49.583232038343816,
+      "pre_patch_original_rgb_mse": 208.69196686921296,
+      "canonical_builds": [
+        {
+          "action_index": 1,
+          "seconds": 0.00025919999461621046,
+          "patch_signature": {
+            "channel": 0,
+            "x": 347,
+            "y": 217,
+            "w": 129,
+            "h": 25,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 47,
+            "positive": 62,
+            "index_shape": [
+              25,
+              129
+            ],
+            "index_sha256": "137f3693fb4461e0a68e6c5eead41eb38b2da376906b91a571149c1c45b19f86"
+          },
+          "reduction": 432736.0,
+          "bits": 6567.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          0,
+          347,
+          217,
+          129,
+          25
+        ],
+        "action_rank": 1,
+        "action_index": 1,
+        "cell_size": 1,
+        "bitcount_requested": 2,
+        "model_value": -0.3162905275821686,
+        "model_top_action": 1,
+        "ordinary_candidate": true,
+        "patch_bits": 6567,
+        "working_sse_reduction": 432736.0,
+        "working_rd_score": 107122.91520419618,
+        "gain_per_bit": 65.89553829754834,
+        "feature_and_model_seconds": 0.0004912000149488449,
+        "patch_build_seconds": 0.00029640004504472017,
+        "candidate_evaluation_seconds": 0.0007876000599935651,
+        "one_step_original_rgb_mse": 206.1233971782836,
+        "patch_signature": {
+          "channel": 0,
+          "x": 347,
+          "y": 217,
+          "w": 129,
+          "h": 25,
+          "cell_size": 1,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 47,
+          "positive": 62,
+          "index_shape": [
+            25,
+            129
+          ],
+          "index_sha256": "137f3693fb4461e0a68e6c5eead41eb38b2da376906b91a571149c1c45b19f86"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 3,
+        "box": [
+          0,
+          479,
+          381,
+          28,
+          18
+        ],
+        "action_rank": 1,
+        "action_index": 2,
+        "cell_size": 1,
+        "bitcount_requested": 3,
+        "model_value": -0.26785770058631897,
+        "model_top_action": 2,
+        "ordinary_candidate": false,
+        "patch_bits": 1629,
+        "working_sse_reduction": 322283.0,
+        "working_rd_score": 241511.91500953794,
+        "gain_per_bit": 197.84100675260896,
+        "feature_and_model_seconds": 0.0003056999994441867,
+        "patch_build_seconds": 0.0001487999688833952,
+        "candidate_evaluation_seconds": 0.0004544999683275819,
+        "one_step_original_rgb_mse": 207.35447745198903,
+        "patch_signature": {
+          "channel": 0,
+          "x": 479,
+          "y": 381,
+          "w": 28,
+          "h": 18,
+          "cell_size": 1,
+          "bitcount": 3,
+          "max_bitcount": 3,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 69,
+          "positive": 164,
+          "index_shape": [
+            18,
+            28
+          ],
+          "index_sha256": "78e15efeb89bf6de726db193392c1eda42ec60e26a8dd25c756f1b76325247e4"
+        },
+        "delta_local_rd_score": 134388.99980534177,
+        "relative_local_rd_score_gain": 1.2545308307673606,
+        "relative_patch_bits_change": 0.24805847418912746,
+        "qualifies_gate_b": true
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            347,
+            217,
+            129,
+            25
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": -0.3162905275821686,
+          "model_top_action": 1,
+          "ordinary_candidate": true,
+          "patch_bits": 6567,
+          "working_sse_reduction": 432736.0,
+          "working_rd_score": 107122.91520419618,
+          "gain_per_bit": 65.89553829754834,
+          "feature_and_model_seconds": 0.0004912000149488449,
+          "patch_build_seconds": 0.00029640004504472017,
+          "candidate_evaluation_seconds": 0.0007876000599935651,
+          "one_step_original_rgb_mse": 206.1233971782836,
+          "patch_signature": {
+            "channel": 0,
+            "x": 347,
+            "y": 217,
+            "w": 129,
+            "h": 25,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 47,
+            "positive": 62,
+            "index_shape": [
+              25,
+              129
+            ],
+            "index_sha256": "137f3693fb4461e0a68e6c5eead41eb38b2da376906b91a571149c1c45b19f86"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            0,
+            347,
+            217,
+            129,
+            25
+          ],
+          "action_rank": 2,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": -0.3162905275821686,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 1807,
+          "working_sse_reduction": 68980.0,
+          "working_rd_score": -20616.900293287268,
+          "gain_per_bit": 38.1737686773658,
+          "feature_and_model_seconds": 0.0004912000149488449,
+          "patch_build_seconds": 0.00041740003507584333,
+          "candidate_evaluation_seconds": 0.0009086000500246882,
+          "one_step_original_rgb_mse": 208.32106535065157,
+          "patch_signature": {
+            "channel": 0,
+            "x": 347,
+            "y": 217,
+            "w": 129,
+            "h": 25,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 14,
+            "positive": 19,
+            "index_shape": [
+              13,
+              65
+            ],
+            "index_sha256": "6f0d4922ed6ded068abe6233dacde6b0516a88a9d60aef4098dbed501a7ad74e"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            327,
+            200,
+            52,
+            30
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": -0.35209643840789795,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 3237,
+          "working_sse_reduction": 252172.0,
+          "working_rd_score": 91671.07789188105,
+          "gain_per_bit": 77.90299660179178,
+          "feature_and_model_seconds": 0.00032190000638365746,
+          "patch_build_seconds": 0.0001762000611051917,
+          "candidate_evaluation_seconds": 0.0004981000674888492,
+          "one_step_original_rgb_mse": 207.26904631772976,
+          "patch_signature": {
+            "channel": 0,
+            "x": 327,
+            "y": 200,
+            "w": 52,
+            "h": 30,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 45,
+            "positive": 57,
+            "index_shape": [
+              30,
+              52
+            ],
+            "index_sha256": "12fb10873301cdcf207ed989550010b15026346a0d62e06a47e09e37149f99f2"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            0,
+            327,
+            200,
+            52,
+            30
+          ],
+          "action_rank": 2,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": -0.35209643840789795,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 897,
+          "working_sse_reduction": 21084.0,
+          "working_rd_score": -23392.159138394403,
+          "gain_per_bit": 23.505016722408026,
+          "feature_and_model_seconds": 0.00032190000638365746,
+          "patch_build_seconds": 0.00031240005046129227,
+          "candidate_evaluation_seconds": 0.0006343000568449497,
+          "one_step_original_rgb_mse": 208.56361521026236,
+          "patch_signature": {
+            "channel": 0,
+            "x": 327,
+            "y": 200,
+            "w": 52,
+            "h": 30,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 12,
+            "positive": 12,
+            "index_shape": [
+              15,
+              26
+            ],
+            "index_sha256": "61922e749b8e9e5599ddf8928c376a7bdd7ee8da7b82c793101165fcde16c595"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            479,
+            381,
+            28,
+            18
+          ],
+          "action_rank": 1,
+          "action_index": 2,
+          "cell_size": 1,
+          "bitcount_requested": 3,
+          "model_value": -0.26785770058631897,
+          "model_top_action": 2,
+          "ordinary_candidate": false,
+          "patch_bits": 1629,
+          "working_sse_reduction": 322283.0,
+          "working_rd_score": 241511.91500953794,
+          "gain_per_bit": 197.84100675260896,
+          "feature_and_model_seconds": 0.0003056999994441867,
+          "patch_build_seconds": 0.0001487999688833952,
+          "candidate_evaluation_seconds": 0.0004544999683275819,
+          "one_step_original_rgb_mse": 207.35447745198903,
+          "patch_signature": {
+            "channel": 0,
+            "x": 479,
+            "y": 381,
+            "w": 28,
+            "h": 18,
+            "cell_size": 1,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 69,
+            "positive": 164,
+            "index_shape": [
+              18,
+              28
+            ],
+            "index_sha256": "78e15efeb89bf6de726db193392c1eda42ec60e26a8dd25c756f1b76325247e4"
+          },
+          "delta_local_rd_score": 134388.99980534177,
+          "relative_local_rd_score_gain": 1.2545308307673606,
+          "relative_patch_bits_change": 0.24805847418912746,
+          "qualifies_gate_b": true
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            0,
+            479,
+            381,
+            28,
+            18
+          ],
+          "action_rank": 2,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": -0.26785770058631897,
+          "model_top_action": 2,
+          "ordinary_candidate": false,
+          "patch_bits": 1125,
+          "working_sse_reduction": 287332.0,
+          "working_rd_score": 231550.8639568632,
+          "gain_per_bit": 255.40622222222223,
+          "feature_and_model_seconds": 0.0003056999994441867,
+          "patch_build_seconds": 0.0002188000362366438,
+          "candidate_evaluation_seconds": 0.0005245000356808305,
+          "one_step_original_rgb_mse": 207.47766900291495,
+          "patch_signature": {
+            "channel": 0,
+            "x": 479,
+            "y": 381,
+            "w": 28,
+            "h": 18,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 69,
+            "positive": 164,
+            "index_shape": [
+              18,
+              28
+            ],
+            "index_sha256": "4cc7f12422555cdab1751404afd9fa81c0817537ba683b9b75b918a00ca2778b"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            484,
+            376,
+            35,
+            26
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": -0.32209351658821106,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 1937,
+          "working_sse_reduction": 274613.0,
+          "working_rd_score": 178570.27954172803,
+          "gain_per_bit": 141.77232834279815,
+          "feature_and_model_seconds": 0.00030880002304911613,
+          "patch_build_seconds": 0.00016149994917213917,
+          "candidate_evaluation_seconds": 0.0004702999722212553,
+          "one_step_original_rgb_mse": 207.54097275805898,
+          "patch_signature": {
+            "channel": 0,
+            "x": 484,
+            "y": 376,
+            "w": 35,
+            "h": 26,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 69,
+            "positive": 164,
+            "index_shape": [
+              26,
+              35
+            ],
+            "index_sha256": "f9e51ebd5e56c82e77f5d9eaa96467326138dc41406bf81340dcc8a21d8f3797"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            0,
+            484,
+            376,
+            35,
+            26
+          ],
+          "action_rank": 2,
+          "action_index": 2,
+          "cell_size": 1,
+          "bitcount_requested": 3,
+          "model_value": -0.32209351658821106,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 2847,
+          "working_sse_reduction": 313233.0,
+          "working_rd_score": 172069.53838683516,
+          "gain_per_bit": 110.02212855637514,
+          "feature_and_model_seconds": 0.00030880002304911613,
+          "patch_build_seconds": 0.00022990000434219837,
+          "candidate_evaluation_seconds": 0.0005387000273913145,
+          "one_step_original_rgb_mse": 207.39938325188615,
+          "patch_signature": {
+            "channel": 0,
+            "x": 484,
+            "y": 376,
+            "w": 35,
+            "h": 26,
+            "cell_size": 1,
+            "bitcount": 3,
+            "max_bitcount": 3,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 69,
+            "positive": 164,
+            "index_shape": [
+              26,
+              35
+            ],
+            "index_sha256": "9751b6b2181e525abb5f43b2386dc64631f0313560e26b7c48c720c1db299e16"
+          }
+        }
+      ]
+    },
+    {
+      "state": "outputs\\states\\mario64_balanced_step50.json",
+      "image": "mario64.png",
+      "preset": "balanced",
+      "step": 50,
+      "channel": 1,
+      "rng_replay_exact": true,
+      "rng_before_sha256": "59d9bf00e3ba8ee6c79df1fc3530cc86d53b6407a9a3312b2c257d458f50ec83",
+      "rng_after_sha256": "983a5e837712ace24047fd8a764ba0f2aa06ff2cb16c3a7e62ce0fd37ef814b5",
+      "proposal_pool_sha256": "f7f6362b66d8f475dde2f3bd13d0c80471ddfd904f6e6f15b510d23b69dcdb73",
+      "target_canvas_sha256": "4aeebd14fb0d3fae25b3f6aeef2c28f9a5bb73f68e55ccec398bacbf5f495859",
+      "random_samples": 200,
+      "retained_proposals": 50,
+      "boxes_evaluated": 4,
+      "patch_candidates_evaluated": 8,
+      "proposal_replay_seconds": 0.002328100032173097,
+      "lambda": 49.583232038343816,
+      "pre_patch_original_rgb_mse": 185.78594024616342,
+      "canonical_builds": [
+        {
+          "action_index": 6,
+          "seconds": 0.00017259991727769375,
+          "patch_signature": {
+            "channel": 1,
+            "x": 0,
+            "y": 49,
+            "w": 17,
+            "h": 17,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 10,
+            "positive": 14,
+            "index_shape": [
+              9,
+              9
+            ],
+            "index_sha256": "e04eb20789ac622a9d221b6bc08717895d068eeea9b192fd1d49c3675db1643a"
+          },
+          "reduction": 14557.0,
+          "bits": 279.0
+        }
+      ],
+      "ordinary_candidate": {
+        "box_rank": 1,
+        "box": [
+          1,
+          0,
+          49,
+          17,
+          17
+        ],
+        "action_rank": 1,
+        "action_index": 6,
+        "cell_size": 2,
+        "bitcount_requested": 2,
+        "model_value": -0.631457507610321,
+        "model_top_action": 6,
+        "ordinary_candidate": true,
+        "patch_bits": 279,
+        "working_sse_reduction": 14557.0,
+        "working_rd_score": 723.2782613020754,
+        "gain_per_bit": 52.17562724014337,
+        "feature_and_model_seconds": 0.0002976999385282397,
+        "patch_build_seconds": 0.000245999894104898,
+        "candidate_evaluation_seconds": 0.0005436998326331377,
+        "one_step_original_rgb_mse": 185.71151419431584,
+        "patch_signature": {
+          "channel": 1,
+          "x": 0,
+          "y": 49,
+          "w": 17,
+          "h": 17,
+          "cell_size": 2,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 10,
+          "positive": 14,
+          "index_shape": [
+            9,
+            9
+          ],
+          "index_sha256": "e04eb20789ac622a9d221b6bc08717895d068eeea9b192fd1d49c3675db1643a"
+        }
+      },
+      "best_local_alternative": {
+        "box_rank": 4,
+        "box": [
+          1,
+          3,
+          20,
+          18,
+          24
+        ],
+        "action_rank": 1,
+        "action_index": 6,
+        "cell_size": 2,
+        "bitcount_requested": 2,
+        "model_value": -0.5222144722938538,
+        "model_top_action": 6,
+        "ordinary_candidate": false,
+        "patch_bits": 333,
+        "working_sse_reduction": 22928.0,
+        "working_rd_score": 6416.78373123151,
+        "gain_per_bit": 68.85285285285285,
+        "feature_and_model_seconds": 0.00031949998810887337,
+        "patch_build_seconds": 0.00024669989943504333,
+        "candidate_evaluation_seconds": 0.0005661998875439167,
+        "one_step_original_rgb_mse": 185.6588149836034,
+        "patch_signature": {
+          "channel": 1,
+          "x": 3,
+          "y": 20,
+          "w": 18,
+          "h": 24,
+          "cell_size": 2,
+          "bitcount": 2,
+          "max_bitcount": 2,
+          "mask": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "negative": 19,
+          "positive": 15,
+          "index_shape": [
+            12,
+            9
+          ],
+          "index_sha256": "764e6888d422f796596a01d12961db73c67b0ba1013edd7a6c5e2eb69ecb8d2d"
+        },
+        "delta_local_rd_score": 5693.505469929434,
+        "relative_local_rd_score_gain": 7.871805050078168,
+        "relative_patch_bits_change": 1.1935483870967742,
+        "qualifies_gate_b": false
+      },
+      "candidates": [
+        {
+          "box_rank": 1,
+          "box": [
+            1,
+            0,
+            49,
+            17,
+            17
+          ],
+          "action_rank": 1,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": -0.631457507610321,
+          "model_top_action": 6,
+          "ordinary_candidate": true,
+          "patch_bits": 279,
+          "working_sse_reduction": 14557.0,
+          "working_rd_score": 723.2782613020754,
+          "gain_per_bit": 52.17562724014337,
+          "feature_and_model_seconds": 0.0002976999385282397,
+          "patch_build_seconds": 0.000245999894104898,
+          "candidate_evaluation_seconds": 0.0005436998326331377,
+          "one_step_original_rgb_mse": 185.71151419431584,
+          "patch_signature": {
+            "channel": 1,
+            "x": 0,
+            "y": 49,
+            "w": 17,
+            "h": 17,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 10,
+            "positive": 14,
+            "index_shape": [
+              9,
+              9
+            ],
+            "index_sha256": "e04eb20789ac622a9d221b6bc08717895d068eeea9b192fd1d49c3675db1643a"
+          }
+        },
+        {
+          "box_rank": 1,
+          "box": [
+            1,
+            0,
+            49,
+            17,
+            17
+          ],
+          "action_rank": 2,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": -0.631457507610321,
+          "model_top_action": 6,
+          "ordinary_candidate": false,
+          "patch_bits": 695,
+          "working_sse_reduction": 40640.0,
+          "working_rd_score": 6179.65373335105,
+          "gain_per_bit": 58.47482014388489,
+          "feature_and_model_seconds": 0.0002976999385282397,
+          "patch_build_seconds": 0.00019319995772093534,
+          "candidate_evaluation_seconds": 0.0004908998962491751,
+          "one_step_original_rgb_mse": 185.5673657327032,
+          "patch_signature": {
+            "channel": 1,
+            "x": 0,
+            "y": 49,
+            "w": 17,
+            "h": 17,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 30,
+            "positive": 30,
+            "index_shape": [
+              17,
+              17
+            ],
+            "index_sha256": "4f729e9a5adf2046c2926acbbea14611069b7923976cf949ecf39caf63f30c76"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            1,
+            3,
+            5,
+            20,
+            17
+          ],
+          "action_rank": 1,
+          "action_index": 1,
+          "cell_size": 1,
+          "bitcount_requested": 2,
+          "model_value": -0.5319627523422241,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 797,
+          "working_sse_reduction": 40000.0,
+          "working_rd_score": 482.16406543998164,
+          "gain_per_bit": 50.188205771643666,
+          "feature_and_model_seconds": 0.0002858999650925398,
+          "patch_build_seconds": 0.00013609998859465122,
+          "candidate_evaluation_seconds": 0.000421999953687191,
+          "one_step_original_rgb_mse": 185.52007813839592,
+          "patch_signature": {
+            "channel": 1,
+            "x": 3,
+            "y": 5,
+            "w": 20,
+            "h": 17,
+            "cell_size": 1,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 31,
+            "positive": 45,
+            "index_shape": [
+              17,
+              20
+            ],
+            "index_sha256": "a1b4a99532ef3f4e0b1b5f443a1d0702d94761a240691fc4b783edd9f6852779"
+          }
+        },
+        {
+          "box_rank": 2,
+          "box": [
+            1,
+            3,
+            5,
+            20,
+            17
+          ],
+          "action_rank": 2,
+          "action_index": 15,
+          "cell_size": 8,
+          "bitcount_requested": 1,
+          "model_value": -0.5319627523422241,
+          "model_top_action": 1,
+          "ordinary_candidate": false,
+          "patch_bits": 126,
+          "working_sse_reduction": 111.0,
+          "working_rd_score": -6136.487236831321,
+          "gain_per_bit": 0.8809523809523809,
+          "feature_and_model_seconds": 0.0002858999650925398,
+          "patch_build_seconds": 0.00028439995367079973,
+          "candidate_evaluation_seconds": 0.0005702999187633395,
+          "one_step_original_rgb_mse": 185.78669175722308,
+          "patch_signature": {
+            "channel": 1,
+            "x": 3,
+            "y": 5,
+            "w": 20,
+            "h": 17,
+            "cell_size": 8,
+            "bitcount": 1,
+            "max_bitcount": 1,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 2,
+            "positive": 1,
+            "index_shape": [
+              3,
+              3
+            ],
+            "index_sha256": "244fc070a12458265dbb45658f19213515deafc7db32d1f7c6a5f0e330abe67f"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            1,
+            205,
+            193,
+            25,
+            19
+          ],
+          "action_rank": 1,
+          "action_index": 26,
+          "cell_size": 32,
+          "bitcount_requested": 2,
+          "model_value": -0.5518742799758911,
+          "model_top_action": 26,
+          "ordinary_candidate": false,
+          "patch_bits": 119,
+          "working_sse_reduction": 265.0,
+          "working_rd_score": -5635.404612562914,
+          "gain_per_bit": 2.226890756302521,
+          "feature_and_model_seconds": 0.0002813000464811921,
+          "patch_build_seconds": 0.00022050004918128252,
+          "candidate_evaluation_seconds": 0.0005018000956624746,
+          "one_step_original_rgb_mse": 185.7855383685914,
+          "patch_signature": {
+            "channel": 1,
+            "x": 205,
+            "y": 193,
+            "w": 25,
+            "h": 19,
+            "cell_size": 19,
+            "bitcount": 1,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "negative": 1,
+            "positive": 0,
+            "index_shape": [
+              1,
+              2
+            ],
+            "index_sha256": "507503b51960cceda8d924904fb85377fe7d177fb8dfcf56b24e4557644ed486"
+          }
+        },
+        {
+          "box_rank": 3,
+          "box": [
+            1,
+            205,
+            193,
+            25,
+            19
+          ],
+          "action_rank": 2,
+          "action_index": 21,
+          "cell_size": 16,
+          "bitcount_requested": 2,
+          "model_value": -0.5518742799758911,
+          "model_top_action": 26,
+          "ordinary_candidate": false,
+          "patch_bits": 125,
+          "working_sse_reduction": 964.0,
+          "working_rd_score": -5233.904004792977,
+          "gain_per_bit": 7.712,
+          "feature_and_model_seconds": 0.0002813000464811921,
+          "patch_build_seconds": 0.00026929995510727167,
+          "candidate_evaluation_seconds": 0.0005506000015884638,
+          "one_step_original_rgb_mse": 185.7811277622385,
+          "patch_signature": {
+            "channel": 1,
+            "x": 205,
+            "y": 193,
+            "w": 25,
+            "h": 19,
+            "cell_size": 16,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "negative": 2,
+            "positive": 0,
+            "index_shape": [
+              2,
+              2
+            ],
+            "index_sha256": "6ab1684123fce9ed54ee2be74c776c58aed6aa8bf8dc2ede79239eaba616d772"
+          }
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            1,
+            3,
+            20,
+            18,
+            24
+          ],
+          "action_rank": 1,
+          "action_index": 6,
+          "cell_size": 2,
+          "bitcount_requested": 2,
+          "model_value": -0.5222144722938538,
+          "model_top_action": 6,
+          "ordinary_candidate": false,
+          "patch_bits": 333,
+          "working_sse_reduction": 22928.0,
+          "working_rd_score": 6416.78373123151,
+          "gain_per_bit": 68.85285285285285,
+          "feature_and_model_seconds": 0.00031949998810887337,
+          "patch_build_seconds": 0.00024669989943504333,
+          "candidate_evaluation_seconds": 0.0005661998875439167,
+          "one_step_original_rgb_mse": 185.6588149836034,
+          "patch_signature": {
+            "channel": 1,
+            "x": 3,
+            "y": 20,
+            "w": 18,
+            "h": 24,
+            "cell_size": 2,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 19,
+            "positive": 15,
+            "index_shape": [
+              12,
+              9
+            ],
+            "index_sha256": "764e6888d422f796596a01d12961db73c67b0ba1013edd7a6c5e2eb69ecb8d2d"
+          },
+          "delta_local_rd_score": 5693.505469929434,
+          "relative_local_rd_score_gain": 7.871805050078168,
+          "relative_patch_bits_change": 1.1935483870967742,
+          "qualifies_gate_b": false
+        },
+        {
+          "box_rank": 4,
+          "box": [
+            1,
+            3,
+            20,
+            18,
+            24
+          ],
+          "action_rank": 2,
+          "action_index": 11,
+          "cell_size": 4,
+          "bitcount_requested": 2,
+          "model_value": -0.5222144722938538,
+          "model_top_action": 6,
+          "ordinary_candidate": false,
+          "patch_bits": 177,
+          "working_sse_reduction": 6089.0,
+          "working_rd_score": -2687.232070786855,
+          "gain_per_bit": 34.40112994350282,
+          "feature_and_model_seconds": 0.00031949998810887337,
+          "patch_build_seconds": 0.00029420002829283476,
+          "candidate_evaluation_seconds": 0.0006137000164017081,
+          "one_step_original_rgb_mse": 185.75286739647635,
+          "patch_signature": {
+            "channel": 1,
+            "x": 3,
+            "y": 20,
+            "w": 18,
+            "h": 24,
+            "cell_size": 4,
+            "bitcount": 2,
+            "max_bitcount": 2,
+            "mask": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "negative": 11,
+            "positive": 4,
+            "index_shape": [
+              6,
+              5
+            ],
+            "index_sha256": "44c0c9c216e24bedcfa910d69e879855af62ddcddd0edb325148a322e18f97a3"
+          }
+        }
+      ]
+    }
+  ],
+  "gates": {
+    "A_canonical_instrumented_control_identity": true,
+    "B_local_candidate_opportunity": "fail",
+    "B_qualifying_states": 2,
+    "B_distinct_images": [
+      "mario64.png"
+    ],
+    "C_completed_file_counterfactual": "not attempted: Gate B failed",
+    "E_selection_rule": "not attempted"
+  }
+}

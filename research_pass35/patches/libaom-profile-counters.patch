@@ -1,0 +1,537 @@
+diff --git a/av1/encoder/intra_mode_search.c b/av1/encoder/intra_mode_search.c
+index cc9eb9f..fe67537 100644
+--- a/av1/encoder/intra_mode_search.c
++++ b/av1/encoder/intra_mode_search.c
+@@ -9,6 +9,11 @@
+  * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
+  */
+ 
++#ifdef PBC_PROFILE
++#include <stdio.h>
++#include <stdlib.h>
++#endif
++
+ #include "av1/common/av1_common_int.h"
+ #include "av1/common/cfl.h"
+ #include "av1/common/reconintra.h"
+@@ -23,6 +28,32 @@
+ // the rd threshold check to prune -3 and 3 delta angles.
+ #define SIZE_OF_ANGLE_DELTA_RD_COST_ARRAY (2 * MAX_ANGLE_DELTA + 3)
+ 
++#ifdef PBC_PROFILE
++static unsigned long long pbc_rd_intra_blocks[BLOCK_SIZES];
++static unsigned long long pbc_rd_intra_considered[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_rd_intra_evaluated[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_rd_intra_pruned[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_rd_intra_invalid[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_rd_intra_selected[BLOCK_SIZES][INTRA_MODES];
++static int pbc_rd_intra_report_registered;
++
++static void pbc_print_rd_intra_profile(void) {
++  for (int b = 0; b < BLOCK_SIZES; ++b) {
++    if (!pbc_rd_intra_blocks[b]) continue;
++    fprintf(stderr, "\nPBC_PROFILE rd_intra_bsize=%d blocks=%llu\n", b,
++            pbc_rd_intra_blocks[b]);
++    for (int m = 0; m < INTRA_MODES; ++m) {
++      if (pbc_rd_intra_considered[b][m] || pbc_rd_intra_selected[b][m])
++        fprintf(stderr,
++                "PBC_PROFILE rd_intra_mode bsize=%d mode=%d considered=%llu evaluated=%llu pruned=%llu invalid=%llu selected=%llu\n",
++                b, m, pbc_rd_intra_considered[b][m],
++                pbc_rd_intra_evaluated[b][m], pbc_rd_intra_pruned[b][m],
++                pbc_rd_intra_invalid[b][m], pbc_rd_intra_selected[b][m]);
++    }
++  }
++}
++#endif
++
+ // The order for evaluating delta angles while processing the luma directional
+ // intra modes. Currently, this order of evaluation is applicable only when
+ // speed feature prune_luma_odd_delta_angles_in_intra is enabled. In this case,
+@@ -1548,10 +1579,20 @@ int64_t av1_rd_pick_intra_sby_mode(const AV1_COMP *const cpi, MACROBLOCK *x,
+     }
+   }
+ 
++#ifdef PBC_PROFILE
++  if (!pbc_rd_intra_report_registered) {
++    atexit(pbc_print_rd_intra_profile);
++    pbc_rd_intra_report_registered = 1;
++  }
++  ++pbc_rd_intra_blocks[bsize];
++#endif
+   for (int mode_idx = INTRA_MODE_START; mode_idx < LUMA_MODE_COUNT;
+        ++mode_idx) {
+     set_y_mode_and_delta_angle(mode_idx, mbmi,
+                                intra_sf->prune_luma_odd_delta_angles_in_intra);
++#ifdef PBC_PROFILE
++    ++pbc_rd_intra_considered[bsize][mbmi->mode];
++#endif
+     RD_STATS this_rd_stats;
+     int this_rate, this_rate_tokenonly, s;
+     int is_diagonal_mode;
+@@ -1559,50 +1600,97 @@ int64_t av1_rd_pick_intra_sby_mode(const AV1_COMP *const cpi, MACROBLOCK *x,
+     const int luma_delta_angle = mbmi->angle_delta[PLANE_TYPE_Y];
+ 
+     is_diagonal_mode = av1_is_diagonal_mode(mbmi->mode);
+-    if (is_diagonal_mode && !intra_mode_cfg->enable_diagonal_intra) continue;
++    if (is_diagonal_mode && !intra_mode_cfg->enable_diagonal_intra) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
++      continue;
++    }
+     if (av1_is_directional_mode(mbmi->mode) &&
+-        !intra_mode_cfg->enable_directional_intra)
++        !intra_mode_cfg->enable_directional_intra) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
++    }
+ 
+     // The smooth prediction mode appears to be more frequently picked
+     // than horizontal / vertical smooth prediction modes. Hence treat
+     // them differently in speed features.
+     if ((!intra_mode_cfg->enable_smooth_intra ||
+          intra_sf->disable_smooth_intra) &&
+-        (mbmi->mode == SMOOTH_H_PRED || mbmi->mode == SMOOTH_V_PRED))
++        (mbmi->mode == SMOOTH_H_PRED || mbmi->mode == SMOOTH_V_PRED)) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
+-    if (!intra_mode_cfg->enable_smooth_intra && mbmi->mode == SMOOTH_PRED)
++    }
++    if (!intra_mode_cfg->enable_smooth_intra && mbmi->mode == SMOOTH_PRED) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
++    }
+ 
+     // The functionality of filter intra modes and smooth prediction
+     // overlap. Hence smooth prediction is pruned only if all the
+     // filter intra modes are enabled.
+     if (intra_sf->disable_smooth_intra &&
+-        intra_sf->prune_filter_intra_level == 0 && mbmi->mode == SMOOTH_PRED)
++        intra_sf->prune_filter_intra_level == 0 && mbmi->mode == SMOOTH_PRED) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
+-    if (!intra_mode_cfg->enable_paeth_intra && mbmi->mode == PAETH_PRED)
++    }
++    if (!intra_mode_cfg->enable_paeth_intra && mbmi->mode == PAETH_PRED) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
++    }
+ 
+     // Skip the evaluation of modes that do not match with the winner mode in
+     // x->mb_mode_cache.
+-    if (x->use_mb_mode_cache && mbmi->mode != x->mb_mode_cache->mode) continue;
++    if (x->use_mb_mode_cache && mbmi->mode != x->mb_mode_cache->mode) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
++      continue;
++    }
+ 
+     is_directional_mode = av1_is_directional_mode(mbmi->mode);
+-    if (is_directional_mode && directional_mode_skip_mask[mbmi->mode]) continue;
++    if (is_directional_mode && directional_mode_skip_mask[mbmi->mode]) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
++      continue;
++    }
+     if (is_directional_mode &&
+         !(av1_use_angle_delta(bsize) && intra_mode_cfg->enable_angle_delta) &&
+-        luma_delta_angle != 0)
++        luma_delta_angle != 0) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
++    }
+ 
+     // Use intra_y_mode_mask speed feature to skip intra mode evaluation.
+     if (!(intra_sf->intra_y_mode_mask[max_txsize_lookup[bsize]] &
+-          (1 << mbmi->mode)))
++          (1 << mbmi->mode))) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
++    }
+ 
+     if (prune_luma_odd_delta_angles_using_rd_cost(
+             mbmi, intra_modes_rd_cost[mbmi->mode], best_rd,
+-            intra_sf->prune_luma_odd_delta_angles_in_intra))
++            intra_sf->prune_luma_odd_delta_angles_in_intra)) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
++    }
+ 
+     const TX_SIZE tx_size = AOMMIN(TX_32X32, max_txsize_lookup[bsize]);
+     const int64_t this_model_rd =
+@@ -1613,19 +1701,31 @@ int64_t av1_rd_pick_intra_sby_mode(const AV1_COMP *const cpi, MACROBLOCK *x,
+ 
+     if (prune_intra_y_mode(this_model_rd, &best_model_rd, top_intra_model_rd,
+                            intra_sf->top_intra_model_count_allowed,
+-                           model_rd_index_for_pruning))
++                           model_rd_index_for_pruning)) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_pruned[bsize][mbmi->mode];
++#endif
+       continue;
++    }
+ 
+     // Builds the actual prediction. The prediction from
+     // model_intra_yrd_and_prune was just an estimation that did not take into
+     // account the effect of txfm pipeline, so we need to redo it for real
+     // here.
++#ifdef PBC_PROFILE
++    ++pbc_rd_intra_evaluated[bsize][mbmi->mode];
++#endif
+     av1_pick_uniform_tx_size_type_yrd(cpi, x, &this_rd_stats, bsize, best_rd);
+     this_rate_tokenonly = this_rd_stats.rate;
+     this_distortion = this_rd_stats.dist;
+     s = this_rd_stats.skip_txfm;
+ 
+-    if (this_rate_tokenonly == INT_MAX) continue;
++    if (this_rate_tokenonly == INT_MAX) {
++#ifdef PBC_PROFILE
++      ++pbc_rd_intra_invalid[bsize][mbmi->mode];
++#endif
++      continue;
++    }
+ 
+     if (!xd->lossless[mbmi->segment_id] && block_signals_txsize(mbmi->bsize)) {
+       // av1_pick_uniform_tx_size_type_yrd above includes the cost of the
+@@ -1743,6 +1843,9 @@ int64_t av1_rd_pick_intra_sby_mode(const AV1_COMP *const cpi, MACROBLOCK *x,
+                       rate_tokenonly, distortion, skippable, &best_mbmi, ctx);
+     }
+   }
++#ifdef PBC_PROFILE
++  ++pbc_rd_intra_selected[bsize][best_mbmi.mode];
++#endif
+   *mbmi = best_mbmi;
+   av1_copy_array(xd->tx_type_map, ctx->tx_type_map, ctx->num_4x4_blk);
+   return best_rd;
+diff --git a/av1/encoder/nonrd_pickmode.c b/av1/encoder/nonrd_pickmode.c
+index fd01565..0276c86 100644
+--- a/av1/encoder/nonrd_pickmode.c
++++ b/av1/encoder/nonrd_pickmode.c
+@@ -14,6 +14,9 @@
+ #include <limits.h>
+ #include <math.h>
+ #include <stdio.h>
++#ifdef PBC_PROFILE
++#include <stdlib.h>
++#endif
+ 
+ #include "av1/common/reconinter.h"
+ #include "av1/common/reconintra.h"
+@@ -1467,6 +1470,32 @@ static void search_motion_mode(AV1_COMP *cpi, MACROBLOCK *x, RD_STATS *this_rdc,
+ 
+ #define COLLECT_NON_SQR_STAT 0
+ 
++#ifdef PBC_PROFILE
++static unsigned long long pbc_intra_blocks[BLOCK_SIZES];
++static unsigned long long pbc_intra_considered[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_intra_evaluated[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_intra_pruned[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_intra_invalid[BLOCK_SIZES][INTRA_MODES];
++static unsigned long long pbc_intra_selected[BLOCK_SIZES][INTRA_MODES];
++static int pbc_intra_report_registered;
++
++static void pbc_print_intra_profile(void) {
++  for (int b = 0; b < BLOCK_SIZES; ++b) {
++    if (!pbc_intra_blocks[b]) continue;
++    fprintf(stderr, "\nPBC_PROFILE intra_bsize=%d blocks=%llu\n", b,
++            pbc_intra_blocks[b]);
++    for (int m = 0; m < INTRA_MODES; ++m) {
++      if (pbc_intra_considered[b][m] || pbc_intra_selected[b][m])
++        fprintf(stderr,
++                "PBC_PROFILE intra_mode bsize=%d mode=%d considered=%llu evaluated=%llu pruned=%llu invalid=%llu selected=%llu\n",
++                b, m, pbc_intra_considered[b][m], pbc_intra_evaluated[b][m],
++                pbc_intra_pruned[b][m], pbc_intra_invalid[b][m],
++                pbc_intra_selected[b][m]);
++    }
++  }
++}
++#endif
++
+ #if COLLECT_NONRD_PICK_MODE_STAT
+ 
+ static inline void print_stage_time(const char *stage_name, int64_t stage_time,
+@@ -1584,6 +1613,13 @@ void av1_nonrd_pick_intra_mode(AV1_COMP *cpi, MACROBLOCK *x, RD_STATS *rd_cost,
+   bmode_costs = x->mode_costs.y_mode_costs[above_ctx][left_ctx];
+   const int mi_row = xd->mi_row;
+   const int mi_col = xd->mi_col;
++#ifdef PBC_PROFILE
++  if (!pbc_intra_report_registered) {
++    atexit(pbc_print_intra_profile);
++    pbc_intra_report_registered = 1;
++  }
++  ++pbc_intra_blocks[bsize];
++#endif
+ 
+   av1_invalid_rd_stats(&best_rdc);
+   av1_invalid_rd_stats(&this_rdc);
+@@ -1595,12 +1631,19 @@ void av1_nonrd_pick_intra_mode(AV1_COMP *cpi, MACROBLOCK *x, RD_STATS *rd_cost,
+   // mode tests.
+   for (int mode_index = 0; mode_index < RTC_INTRA_MODES; ++mode_index) {
+     PREDICTION_MODE this_mode = intra_mode_list[mode_index];
++#ifdef PBC_PROFILE
++    ++pbc_intra_considered[bsize][this_mode];
++#endif
+ 
+     // Force DC for spatially flat block for large bsize, on top-left corner.
+     // This removed potential artifact observed in gray scale image for high Q.
+     if (x->source_variance == 0 && mi_col == 0 && mi_row == 0 &&
+-        bsize >= BLOCK_32X32 && this_mode > 0)
++        bsize >= BLOCK_32X32 && this_mode > 0) {
++#ifdef PBC_PROFILE
++      ++pbc_intra_pruned[bsize][this_mode];
++#endif
+       continue;
++    }
+ 
+     // As per the statistics generated for intra mode evaluation in the nonrd
+     // path, it is found that the probability of H_PRED mode being the winner is
+@@ -1609,24 +1652,40 @@ void av1_nonrd_pick_intra_mode(AV1_COMP *cpi, MACROBLOCK *x, RD_STATS *rd_cost,
+     // the presence of a vertically dominant pattern. Hence, H_PRED mode is not
+     // evaluated.
+     if (cpi->sf.rt_sf.prune_h_pred_using_best_mode_so_far &&
+-        this_mode == H_PRED && best_mode == V_PRED)
++        this_mode == H_PRED && best_mode == V_PRED) {
++#ifdef PBC_PROFILE
++      ++pbc_intra_pruned[bsize][this_mode];
++#endif
+       continue;
++    }
+ 
+     if (should_prune_intra_modes_using_neighbors(
+             xd, cpi->sf.rt_sf.enable_intra_mode_pruning_using_neighbors,
+             this_mode, A, L)) {
+       // Prune V_PRED and H_PRED if source variance of the block is less than
+       // or equal to 50. The source variance threshold is obtained empirically.
+-      if ((this_mode == V_PRED || this_mode == H_PRED) && source_variance <= 50)
++      if ((this_mode == V_PRED || this_mode == H_PRED) && source_variance <= 50) {
++#ifdef PBC_PROFILE
++        ++pbc_intra_pruned[bsize][this_mode];
++#endif
+         continue;
++      }
+ 
+       // As per the statistics, probability of SMOOTH_PRED being the winner is
+       // low when best mode so far is DC_PRED (out of DC_PRED, V_PRED and
+       // H_PRED). Hence, SMOOTH_PRED mode is not evaluated.
+-      if (best_mode == DC_PRED && this_mode == SMOOTH_PRED) continue;
++      if (best_mode == DC_PRED && this_mode == SMOOTH_PRED) {
++#ifdef PBC_PROFILE
++        ++pbc_intra_pruned[bsize][this_mode];
++#endif
++        continue;
++      }
+     }
+ 
+     this_rdc.dist = this_rdc.rate = 0;
++#ifdef PBC_PROFILE
++    ++pbc_intra_evaluated[bsize][this_mode];
++#endif
+     args.mode = this_mode;
+     args.skippable = 1;
+     args.rdc = &this_rdc;
+@@ -1634,7 +1693,12 @@ void av1_nonrd_pick_intra_mode(AV1_COMP *cpi, MACROBLOCK *x, RD_STATS *rd_cost,
+     av1_foreach_transformed_block_in_plane(xd, bsize, AOM_PLANE_Y,
+                                            av1_estimate_block_intra, &args);
+ 
+-    if (this_rdc.rate == INT_MAX) continue;
++    if (this_rdc.rate == INT_MAX) {
++#ifdef PBC_PROFILE
++      ++pbc_intra_invalid[bsize][this_mode];
++#endif
++      continue;
++    }
+ 
+     const int skip_ctx = av1_get_skip_txfm_context(xd);
+     if (args.skippable) {
+@@ -1699,6 +1763,9 @@ void av1_nonrd_pick_intra_mode(AV1_COMP *cpi, MACROBLOCK *x, RD_STATS *rd_cost,
+     }
+   }
+ 
++#ifdef PBC_PROFILE
++  ++pbc_intra_selected[bsize][best_mode];
++#endif
+   mi->mode = best_mode;
+   // Keep DC for UV since mode test is based on Y channel only.
+   mi->uv_mode = UV_DC_PRED;
+diff --git a/av1/encoder/partition_search.c b/av1/encoder/partition_search.c
+index 53c14fc..d9dd859 100644
+--- a/av1/encoder/partition_search.c
++++ b/av1/encoder/partition_search.c
+@@ -10,6 +10,10 @@
+  */
+ 
+ #include <float.h>
++#ifdef PBC_PROFILE
++#include <stdio.h>
++#include <stdlib.h>
++#endif
+ 
+ #include "config/aom_config.h"
+ 
+@@ -43,6 +47,56 @@
+ 
+ #define COLLECT_MOTION_SEARCH_FEATURE_SB 0
+ 
++#ifdef PBC_PROFILE
++static unsigned long long pbc_partition_calls[BLOCK_SIZES];
++static unsigned long long pbc_partition_none_attempts[BLOCK_SIZES];
++static unsigned long long pbc_partition_split_attempts[BLOCK_SIZES];
++static unsigned long long pbc_partition_selected[EXT_PARTITION_TYPES];
++static unsigned long long pbc_partition_use_calls[BLOCK_SIZES];
++static unsigned long long pbc_partition_pattern_used[EXT_PARTITION_TYPES];
++static unsigned long long pbc_nonrd_split_checks;
++static unsigned long long pbc_hybrid_rd_calls;
++static unsigned long long pbc_hybrid_nonrd_calls;
++static int pbc_partition_report_registered;
++
++static void pbc_print_partition_profile(void) {
++  fprintf(stderr, "\nPBC_PROFILE partition_calls:");
++  for (int i = 0; i < BLOCK_SIZES; ++i) {
++    if (pbc_partition_calls[i])
++      fprintf(stderr, " %d=%llu", i, pbc_partition_calls[i]);
++  }
++  fprintf(stderr, "\nPBC_PROFILE partition_none_attempts:");
++  for (int i = 0; i < BLOCK_SIZES; ++i) {
++    if (pbc_partition_none_attempts[i])
++      fprintf(stderr, " %d=%llu", i, pbc_partition_none_attempts[i]);
++  }
++  fprintf(stderr, "\nPBC_PROFILE partition_split_attempts:");
++  for (int i = 0; i < BLOCK_SIZES; ++i) {
++    if (pbc_partition_split_attempts[i])
++      fprintf(stderr, " %d=%llu", i, pbc_partition_split_attempts[i]);
++  }
++  fprintf(stderr, "\nPBC_PROFILE partition_selected:");
++  for (int i = 0; i < EXT_PARTITION_TYPES; ++i) {
++    if (pbc_partition_selected[i])
++      fprintf(stderr, " %d=%llu", i, pbc_partition_selected[i]);
++  }
++  fprintf(stderr, "\nPBC_PROFILE nonrd_partition_use_calls:");
++  for (int i = 0; i < BLOCK_SIZES; ++i) {
++    if (pbc_partition_use_calls[i])
++      fprintf(stderr, " %d=%llu", i, pbc_partition_use_calls[i]);
++  }
++  fprintf(stderr, "\nPBC_PROFILE nonrd_partition_pattern_used:");
++  for (int i = 0; i < EXT_PARTITION_TYPES; ++i) {
++    if (pbc_partition_pattern_used[i])
++      fprintf(stderr, " %d=%llu", i, pbc_partition_pattern_used[i]);
++  }
++  fprintf(stderr, "\nPBC_PROFILE nonrd_split_checks=%llu\n",
++          pbc_nonrd_split_checks);
++  fprintf(stderr, "PBC_PROFILE hybrid_intra_rd=%llu hybrid_intra_nonrd=%llu\n",
++          pbc_hybrid_rd_calls, pbc_hybrid_nonrd_calls);
++}
++#endif
++
+ #if CONFIG_PARTITION_SEARCH_ORDER
+ void av1_reset_part_sf(PARTITION_SPEED_FEATURES *part_sf) {
+   part_sf->partition_search_type = SEARCH_PARTITION;
+@@ -755,10 +809,17 @@ static inline void hybrid_intra_mode_search(AV1_COMP *cpi, MACROBLOCK *const x,
+       use_rdopt = 1;
+   }
+ 
+-  if (use_rdopt)
++  if (use_rdopt) {
++#ifdef PBC_PROFILE
++    ++pbc_hybrid_rd_calls;
++#endif
+     av1_rd_pick_intra_mode_sb(cpi, x, rd_cost, bsize, ctx, INT64_MAX);
+-  else
++  } else {
++#ifdef PBC_PROFILE
++    ++pbc_hybrid_nonrd_calls;
++#endif
+     av1_nonrd_pick_intra_mode(cpi, x, rd_cost, bsize, ctx);
++  }
+ }
+ 
+ // For real time/allintra row-mt enabled multi-threaded encoding with cost
+@@ -2966,6 +3027,15 @@ void av1_nonrd_use_partition(AV1_COMP *cpi, ThreadData *td,
+   const int pl = (bsize >= BLOCK_8X8)
+                      ? partition_plane_context(xd, mi_row, mi_col, bsize)
+                      : 0;
++#ifdef PBC_PROFILE
++  if (!pbc_partition_report_registered) {
++    atexit(pbc_print_partition_profile);
++    pbc_partition_report_registered = 1;
++  }
++  ++pbc_partition_use_calls[bsize];
++  if ((int)partition >= 0 && (int)partition < EXT_PARTITION_TYPES)
++    ++pbc_partition_pattern_used[partition];
++#endif
+ 
+   RD_STATS dummy_cost;
+   av1_invalid_rd_stats(&dummy_cost);
+@@ -2987,6 +3057,9 @@ void av1_nonrd_use_partition(AV1_COMP *cpi, ThreadData *td,
+   int change_none_to_split = 0;
+   if (partition == PARTITION_NONE &&
+       cpi->sf.rt_sf.nonrd_check_partition_split == 1) {
++#ifdef PBC_PROFILE
++    ++pbc_nonrd_split_checks;
++#endif
+     change_none_to_split =
+         try_split_partition(cpi, td, tile_data, tile_info, tp, x, xd, mi_params,
+                             mi_row, mi_col, bsize, pl, pc_tree);
+@@ -6146,6 +6219,13 @@ void av1_nonrd_pick_partition(AV1_COMP *cpi, ThreadData *td,
+ 
+   int partition_none_allowed = !force_horz_split && !force_vert_split;
+ 
++#ifdef PBC_PROFILE
++  if (!pbc_partition_report_registered) {
++    atexit(pbc_print_partition_profile);
++    pbc_partition_report_registered = 1;
++  }
++  ++pbc_partition_calls[bsize];
++#endif
+   assert(mi_size_wide[bsize] == mi_size_high[bsize]);  // Square partition only
+   assert(cm->seq_params->sb_size == BLOCK_64X64);      // Small SB so far
+ 
+@@ -6170,6 +6250,9 @@ void av1_nonrd_pick_partition(AV1_COMP *cpi, ThreadData *td,
+ 
+   // PARTITION_NONE
+   if (partition_none_allowed) {
++#ifdef PBC_PROFILE
++    ++pbc_partition_none_attempts[bsize];
++#endif
+     pc_tree->none = av1_alloc_pmc(cpi, bsize, &td->shared_coeff_buf);
+     if (!pc_tree->none)
+       aom_internal_error(xd->error_info, AOM_CODEC_MEM_ERROR,
+@@ -6200,6 +6283,9 @@ void av1_nonrd_pick_partition(AV1_COMP *cpi, ThreadData *td,
+ 
+   // PARTITION_SPLIT
+   if (do_split) {
++#ifdef PBC_PROFILE
++    ++pbc_partition_split_attempts[bsize];
++#endif
+     RD_STATS sum_rdc;
+     const BLOCK_SIZE subsize = get_partition_subsize(bsize, PARTITION_SPLIT);
+ 
+@@ -6256,6 +6342,11 @@ void av1_nonrd_pick_partition(AV1_COMP *cpi, ThreadData *td,
+     return;
+   }
+ 
++#ifdef PBC_PROFILE
++  if ((int)pc_tree->partitioning >= 0 &&
++      (int)pc_tree->partitioning < EXT_PARTITION_TYPES)
++    ++pbc_partition_selected[pc_tree->partitioning];
++#endif
+   // update mode info array
+   fill_mode_info_sb(cpi, x, mi_row, mi_col, bsize, pc_tree);
+ 

@@ -1,0 +1,38 @@
+{
+  "bytes": 1225860,
+  "bpp": 14.837147940596216,
+  "mse": 0.03839721943170219,
+  "sse": 76138,
+  "psnr": 62.2878058517724,
+  "score": 76138,
+  "file_sha256": "bacfe69cd75ff67cb6fa8101b1473748eed41f39ff43d8955557bed87e3e2fea",
+  "pixel_sha256": "9ae7b6c8d8cf551d98eebf0ebb6e6fd8ee900be175867db0f7ae7fa3ca0ba8f3",
+  "base_sha256": "3a569cb0674359d04244a16f78aab7615367ff8fa057585237f0d4aaac9ff7d3",
+  "base_mse": 1005.0220131685649,
+  "coarse": {
+    "working_width": 501,
+    "working_height": 499,
+    "patch_count": 12,
+    "color_space": "YCbCr",
+    "downsampled": true
+  },
+  "mode_counts": {
+    "skip": 0,
+    "procedural": 303,
+    "transform": 2298
+  },
+  "byte_accounting": {
+    "header_bytes": 32,
+    "xz_bytes": 1225828,
+    "coarse_raw_bytes": 71326,
+    "mode_map_raw_bytes": 651,
+    "procedural_raw_bytes": 6225,
+    "transform_raw_bytes": 2502501,
+    "raw_payload_bytes": 2580707
+  },
+  "skip_exact": true,
+  "variant": "D",
+  "point": "high",
+  "encode_seconds": 3.7836690999683924,
+  "stream_path": "PBC_ROOT/research_pass43/outputs/googlewiki_v4_v2_high_p3012.pbc"
+}

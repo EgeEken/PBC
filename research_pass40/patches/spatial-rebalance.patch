@@ -1,0 +1,18 @@
+diff --git a/av1/encoder/allintra_vis.c b/av1/encoder/allintra_vis.c
+index 0000000..0000000 100644
+--- a/av1/encoder/allintra_vis.c
++++ b/av1/encoder/allintra_vis.c
+@@ -1112,6 +1112,13 @@ int av1_get_sbq_variance_boost(const AV1_COMP *cpi, const MACROBLOCK *x) {
+   // Variance Boost was designed to always operate in the lossy domain, so MINQ
+   // is excluded.
+   int sb_qindex = AOMMAX(base_qindex - boost, MINQ + 1);
++#ifdef PBC_SPATIAL_REBALANCE
++  if (variance < 1024) {
++    sb_qindex = AOMMIN(MAXQ, sb_qindex + 8);
++  } else {
++    sb_qindex = AOMMAX(MINQ + 1, sb_qindex - 8);
++  }
++#endif
+ 
+   return sb_qindex;
+ }

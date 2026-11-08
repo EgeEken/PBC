@@ -1,0 +1,1818 @@
+{
+  "schema_version": 1,
+  "inventory_scope": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC",
+  "initial_state": {
+    "branch": "research/experiments",
+    "head": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+    "remote_branch_head_at_inventory": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
+    "logical_bytes_excluding_git": 21021472033,
+    "file_count_excluding_git": 110442,
+    "allocated_bytes": "not measured; NTFS allocation differs from logical length",
+    "cleanup_status": "pending remote archive verification"
+  },
+  "largest_top_level_entries": [
+    {
+      "name": "research_pass27",
+      "bytes": 3133341800,
+      "files": 15103
+    },
+    {
+      "name": "research_pass28",
+      "bytes": 3024202125,
+      "files": 14776
+    },
+    {
+      "name": "research_pass34",
+      "bytes": 2960707713,
+      "files": 289
+    },
+    {
+      "name": "release_prep_v31",
+      "bytes": 2808002149,
+      "files": 22212
+    },
+    {
+      "name": "research_pass40",
+      "bytes": 1799663033,
+      "files": 8646
+    },
+    {
+      "name": "research_pass39",
+      "bytes": 1376938118,
+      "files": 3640
+    },
+    {
+      "name": "research_pass41",
+      "bytes": 1320323315,
+      "files": 238
+    },
+    {
+      "name": "research_pass35",
+      "bytes": 1055349580,
+      "files": 13221
+    },
+    {
+      "name": "research_pass26",
+      "bytes": 563328281,
+      "files": 585
+    },
+    {
+      "name": "research_pass37",
+      "bytes": 465217604,
+      "files": 5823
+    },
+    {
+      "name": "research_pass38",
+      "bytes": 426047060,
+      "files": 8549
+    },
+    {
+      "name": "research_pass16",
+      "bytes": 361903746,
+      "files": 9370
+    },
+    {
+      "name": "research_pass42",
+      "bytes": 277184041,
+      "files": 537
+    },
+    {
+      "name": "research_pass13",
+      "bytes": 226956096,
+      "files": 4400
+    },
+    {
+      "name": "research_pass44",
+      "bytes": 204827158,
+      "files": 472
+    },
+    {
+      "name": "research_pass32",
+      "bytes": 155078477,
+      "files": 298
+    },
+    {
+      "name": "research_pass43",
+      "bytes": 147211387,
+      "files": 140
+    },
+    {
+      "name": "research_pass46",
+      "bytes": 102535018,
+      "files": 98
+    },
+    {
+      "name": "research_pass36",
+      "bytes": 86170425,
+      "files": 32
+    },
+    {
+      "name": "hpt_data",
+      "bytes": 82836966,
+      "files": 20
+    },
+    {
+      "name": "research_pass45",
+      "bytes": 78666062,
+      "files": 132
+    },
+    {
+      "name": "research_pass20",
+      "bytes": 65233733,
+      "files": 48
+    },
+    {
+      "name": "research_pass31",
+      "bytes": 64649472,
+      "files": 124
+    },
+    {
+      "name": "research_pass18",
+      "bytes": 45705168,
+      "files": 82
+    },
+    {
+      "name": "research_pass14",
+      "bytes": 40605461,
+      "files": 74
+    },
+    {
+      "name": "[root]",
+      "bytes": 34080250,
+      "files": 44
+    },
+    {
+      "name": "research_pass33",
+      "bytes": 16211322,
+      "files": 151
+    },
+    {
+      "name": "research_pass47",
+      "bytes": 15590776,
+      "files": 88
+    },
+    {
+      "name": "research_pass10",
+      "bytes": 15554384,
+      "files": 39
+    },
+    {
+      "name": "research_pass9",
+      "bytes": 10345118,
+      "files": 60
+    }
+  ],
+  "largest_files": [
+    {
+      "path": "research_pass28/artifacts/portability Çığ 日本 ta4v9i_p/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass28/artifacts/portability Çığ 日本 _aok09gi/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass28/artifacts/install-wheel/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass28/artifacts/install-sdist/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass28/artifacts/final/combined/onedir/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass28/artifacts/dist/combined/onedir/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass28/artifacts/PBC28 exact source px3c1h_4/rebuilt/combined/onedir/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass28/artifacts/PBC28 exact source 2rrhqgif/rebuilt/combined/onedir/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/portability Çığ 日本 thftfg48/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/portability Çığ 日本 swawm134/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/portability Çığ 日本 sh94b6bs/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/portability Çığ 日本 omjx5csh/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/portability Çığ 日本 cd8rhshu/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/portability Çığ 日本 7hpzwczx/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/portability Çığ 日本 1goq7r25/combined/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/install-wheel/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/install-source/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass27/artifacts/combined/onedir/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass26/artifacts/onedir/pbc/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass16/.venv/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass13/.venv/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/staged/PBC3_1_Release/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/staged-ui/PBC3_1_Release/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/staged-final/PBC3_1_Release/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/relocation/Extracted Çığ 日本/PBC3_1_Release/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/release/PBC3_1_Release/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/probe-dist/PBC-probe/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/final/PBC3_1_Release_OLD/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/final/PBC3_1_Release/PBC3_1_Release/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/env/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/dist/PBC/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/dist-final/PBC/_internal/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "release_prep_v31/artifacts/clean-install/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+      "bytes": 120369664
+    },
+    {
+      "path": "research_pass35/install/symbol/lib/libaom.a",
+      "bytes": 84642216
+    },
+    {
+      "path": "research_pass35/build/aom-symbol/libaom.a",
+      "bytes": 84642216
+    },
+    {
+      "path": "research_pass45/outputs/PBC3_1_Release_published.zip",
+      "bytes": 76861234
+    },
+    {
+      "path": "release_prep_v31/artifacts/final/PBC3_1_Release.zip",
+      "bytes": 76861234
+    },
+    {
+      "path": "release_prep_v31/artifacts/rollback/pre-final-corrections/PBC3_1_Release.zip",
+      "bytes": 75809444
+    },
+    {
+      "path": "release_prep_v31/artifacts/rollback/pre-ui-polish/PBC3_1_Release.zip",
+      "bytes": 75787889
+    },
+    {
+      "path": "research_pass28/artifacts/dist/PBC32rc1-combined-Windows-x64.zip",
+      "bytes": 72818078
+    },
+    {
+      "path": "research_pass28/artifacts/PBC28 exact source px3c1h_4/rebuilt/PBC32rc1-combined-Windows-x64.zip",
+      "bytes": 72817718
+    },
+    {
+      "path": "research_pass28/artifacts/PBC28 exact source 2rrhqgif/rebuilt/PBC-3.2.0-combined-Windows-x64.zip",
+      "bytes": 72817352
+    },
+    {
+      "path": "research_pass28/artifacts/final/PBC-3.2.0-combined-Windows-x64.zip",
+      "bytes": 72817005
+    },
+    {
+      "path": "research_pass27/artifacts/PBC32rc1-combined-Windows-x64.zip",
+      "bytes": 72582125
+    },
+    {
+      "path": "research_pass26/artifacts/PBC32Research-Windows-x64.zip",
+      "bytes": 72460788
+    },
+    {
+      "path": "research_pass26/artifacts/onefile/pbc.exe",
+      "bytes": 72291627
+    },
+    {
+      "path": "research_pass26/artifacts/build_onefile/pbc/pbc.pkg",
+      "bytes": 71948587
+    },
+    {
+      "path": "research_pass36/outputs/profiling/avifenc-symbol.exe",
+      "bytes": 70351342
+    },
+    {
+      "path": "research_pass27/artifacts/oversized.pbc",
+      "bytes": 67108865
+    },
+    {
+      "path": "research_pass20/artifacts/cat.jpg.q128.npy",
+      "bytes": 51151232
+    }
+  ],
+  "extensions": [
+    {
+      "extension": ".dll",
+      "files": 2257,
+      "bytes": 5792102116
+    },
+    {
+      "extension": ".png",
+      "files": 4112,
+      "bytes": 4077328423
+    },
+    {
+      "extension": ".npy",
+      "files": 175,
+      "bytes": 3181557065
+    },
+    {
+      "extension": ".exe",
+      "files": 316,
+      "bytes": 1350713161
+    },
+    {
+      "extension": ".pyd",
+      "files": 2158,
+      "bytes": 1040304640
+    },
+    {
+      "extension": ".bin",
+      "files": 125,
+      "bytes": 1019325270
+    },
+    {
+      "extension": ".zip",
+      "files": 93,
+      "bytes": 1015986159
+    },
+    {
+      "extension": ".avif",
+      "files": 1473,
+      "bytes": 412864788
+    },
+    {
+      "extension": ".a",
+      "files": 179,
+      "bytes": 406506584
+    },
+    {
+      "extension": ".py",
+      "files": 23707,
+      "bytes": 303149711
+    },
+    {
+      "extension": ".pyc",
+      "files": 14402,
+      "bytes": 283852407
+    },
+    {
+      "extension": ".pkg",
+      "files": 17,
+      "bytes": 239727992
+    },
+    {
+      "extension": ".obj",
+      "files": 4801,
+      "bytes": 227975068
+    },
+    {
+      "extension": ".pbc",
+      "files": 1168,
+      "bytes": 191562525
+    },
+    {
+      "extension": ".html",
+      "files": 4521,
+      "bytes": 172913418
+    },
+    {
+      "extension": ".csv",
+      "files": 384,
+      "bytes": 137926696
+    },
+    {
+      "extension": ".rgb",
+      "files": 10,
+      "bytes": 136009788
+    },
+    {
+      "extension": ".c",
+      "files": 4144,
+      "bytes": 116134592
+    },
+    {
+      "extension": ".pyz",
+      "files": 17,
+      "bytes": 108617269
+    },
+    {
+      "extension": ".jpg",
+      "files": 67,
+      "bytes": 93151691
+    },
+    {
+      "extension": ".npz",
+      "files": 226,
+      "bytes": 73666673
+    },
+    {
+      "extension": ".tex",
+      "files": 3240,
+      "bytes": 69758452
+    },
+    {
+      "extension": ".h",
+      "files": 3133,
+      "bytes": 57351358
+    },
+    {
+      "extension": "[no extension]",
+      "files": 9972,
+      "bytes": 47294411
+    },
+    {
+      "extension": ".json",
+      "files": 915,
+      "bytes": 42265386
+    },
+    {
+      "extension": ".cc",
+      "files": 1590,
+      "bytes": 40409884
+    },
+    {
+      "extension": ".pdf",
+      "files": 1795,
+      "bytes": 34971473
+    },
+    {
+      "extension": ".tar",
+      "files": 1,
+      "bytes": 32686080
+    },
+    {
+      "extension": ".nbc",
+      "files": 539,
+      "bytes": 27160489
+    },
+    {
+      "extension": ".p31r",
+      "files": 275,
+      "bytes": 21402949
+    },
+    {
+      "extension": ".jpeg",
+      "files": 86,
+      "bytes": 19564576
+    },
+    {
+      "extension": ".txt",
+      "files": 1643,
+      "bytes": 19168951
+    },
+    {
+      "extension": ".pyi",
+      "files": 2751,
+      "bytes": 16133703
+    },
+    {
+      "extension": ".enc",
+      "files": 800,
+      "bytes": 15367410
+    },
+    {
+      "extension": ".webp",
+      "files": 86,
+      "bytes": 15305420
+    },
+    {
+      "extension": ".p33s",
+      "files": 141,
+      "bytes": 15113055
+    },
+    {
+      "extension": ".js",
+      "files": 2705,
+      "bytes": 11185229
+    },
+    {
+      "extension": ".db",
+      "files": 11,
+      "bytes": 10842112
+    },
+    {
+      "extension": ".ninja",
+      "files": 42,
+      "bytes": 10097932
+    },
+    {
+      "extension": ".map",
+      "files": 1849,
+      "bytes": 10096154
+    },
+    {
+      "extension": ".tcl",
+      "files": 690,
+      "bytes": 9513810
+    },
+    {
+      "extension": ".ttf",
+      "files": 40,
+      "bytes": 7510312
+    },
+    {
+      "extension": ".svg",
+      "files": 347,
+      "bytes": 7124697
+    },
+    {
+      "extension": ".p17",
+      "files": 45,
+      "bytes": 6871968
+    },
+    {
+      "extension": ".toc",
+      "files": 81,
+      "bytes": 6587203
+    },
+    {
+      "extension": ".md",
+      "files": 1587,
+      "bytes": 5089276
+    },
+    {
+      "extension": ".yaml",
+      "files": 22,
+      "bytes": 4473934
+    },
+    {
+      "extension": ".y4m",
+      "files": 4,
+      "bytes": 4174504
+    },
+    {
+      "extension": ".jsonl",
+      "files": 8,
+      "bytes": 3632700
+    },
+    {
+      "extension": ".asm",
+      "files": 248,
+      "bytes": 3565753
+    },
+    {
+      "extension": ".lib",
+      "files": 190,
+      "bytes": 3545422
+    },
+    {
+      "extension": ".rst",
+      "files": 68,
+      "bytes": 3105157
+    },
+    {
+      "extension": ".p26v",
+      "files": 9,
+      "bytes": 2967447
+    },
+    {
+      "extension": ".cmake",
+      "files": 540,
+      "bytes": 2904612
+    },
+    {
+      "extension": ".tm",
+      "files": 50,
+      "bytes": 2750330
+    },
+    {
+      "extension": ".p20",
+      "files": 12,
+      "bytes": 2746950
+    },
+    {
+      "extension": ".p34s",
+      "files": 80,
+      "bytes": 2715192
+    },
+    {
+      "extension": ".sty",
+      "files": 48,
+      "bytes": 2686260
+    },
+    {
+      "extension": ".psd",
+      "files": 2,
+      "bytes": 2638942
+    },
+    {
+      "extension": ".third-party",
+      "files": 87,
+      "bytes": 2339517
+    },
+    {
+      "extension": ".dat",
+      "files": 34,
+      "bytes": 1921203
+    },
+    {
+      "extension": ".msg",
+      "files": 1430,
+      "bytes": 1863490
+    },
+    {
+      "extension": ".dot",
+      "files": 331,
+      "bytes": 1850473
+    },
+    {
+      "extension": ".pem",
+      "files": 6,
+      "bytes": 1689702
+    },
+    {
+      "extension": ".pyx",
+      "files": 43,
+      "bytes": 1558038
+    },
+    {
+      "extension": ".whl",
+      "files": 7,
+      "bytes": 1451589
+    },
+    {
+      "extension": ".log",
+      "files": 204,
+      "bytes": 1414683
+    },
+    {
+      "extension": ".afm",
+      "files": 61,
+      "bytes": 1363429
+    },
+    {
+      "extension": ".pxd",
+      "files": 76,
+      "bytes": 1226090
+    },
+    {
+      "extension": ".thirdparty",
+      "files": 87,
+      "bytes": 1112382
+    },
+    {
+      "extension": ".sh",
+      "files": 213,
+      "bytes": 1074172
+    },
+    {
+      "extension": ".xz",
+      "files": 9,
+      "bytes": 1064412
+    },
+    {
+      "extension": ".pl",
+      "files": 30,
+      "bytes": 986292
+    },
+    {
+      "extension": ".p25b",
+      "files": 28,
+      "bytes": 964520
+    },
+    {
+      "extension": ".vcxproj",
+      "files": 37,
+      "bytes": 947351
+    },
+    {
+      "extension": ".css",
+      "files": 55,
+      "bytes": 903903
+    },
+    {
+      "extension": ".jxl",
+      "files": 10,
+      "bytes": 890178
+    },
+    {
+      "extension": ".gz",
+      "files": 32,
+      "bytes": 884914
+    },
+    {
+      "extension": ".nbi",
+      "files": 517,
+      "bytes": 847352
+    },
+    {
+      "extension": ".hpp",
+      "files": 14,
+      "bytes": 765765
+    },
+    {
+      "extension": ".gni",
+      "files": 17,
+      "bytes": 706380
+    },
+    {
+      "extension": ".inc",
+      "files": 26,
+      "bytes": 704777
+    },
+    {
+      "extension": ".p21",
+      "files": 6,
+      "bytes": 687149
+    },
+    {
+      "extension": ".cpp",
+      "files": 39,
+      "bytes": 675070
+    },
+    {
+      "extension": ".doxy_template",
+      "files": 6,
+      "bytes": 647598
+    },
+    {
+      "extension": ".eps",
+      "files": 20,
+      "bytes": 646970
+    },
+    {
+      "extension": ".pbc3",
+      "files": 11,
+      "bytes": 623034
+    },
+    {
+      "extension": ".icc",
+      "files": 3,
+      "bytes": 589044
+    },
+    {
+      "extension": ".dox",
+      "files": 263,
+      "bytes": 586286
+    },
+    {
+      "extension": ".patch",
+      "files": 16,
+      "bytes": 485056
+    },
+    {
+      "extension": ".in",
+      "files": 112,
+      "bytes": 480799
+    },
+    {
+      "extension": ".m4",
+      "files": 7,
+      "bytes": 413630
+    },
+    {
+      "extension": ".ico",
+      "files": 7,
+      "bytes": 361399
+    },
+    {
+      "extension": ".gif",
+      "files": 100,
+      "bytes": 361200
+    },
+    {
+      "extension": ".ppm",
+      "files": 3,
+      "bytes": 353606
+    },
+    {
+      "extension": ".java",
+      "files": 16,
+      "bytes": 350718
+    },
+    {
+      "extension": ".s",
+      "files": 5,
+      "bytes": 317576
+    },
+    {
+      "extension": ".stdout",
+      "files": 350,
+      "bytes": 298904
+    },
+    {
+      "extension": ".3",
+      "files": 3,
+      "bytes": 277494
+    },
+    {
+      "extension": ".f90",
+      "files": 549,
+      "bytes": 275229
+    },
+    {
+      "extension": ".sha1",
+      "files": 6,
+      "bytes": 253308
+    },
+    {
+      "extension": ".sav",
+      "files": 47,
+      "bytes": 211903
+    },
+    {
+      "extension": ".arff",
+      "files": 16,
+      "bytes": 210729
+    },
+    {
+      "extension": ".lock",
+      "files": 2,
+      "bytes": 191728
+    },
+    {
+      "extension": ".bmp",
+      "files": 6,
+      "bytes": 188868
+    },
+    {
+      "extension": ".apache",
+      "files": 16,
+      "bytes": 162784
+    },
+    {
+      "extension": ".vcproj",
+      "files": 9,
+      "bytes": 130442
+    },
+    {
+      "extension": ".jar",
+      "files": 3,
+      "bytes": 120048
+    },
+    {
+      "extension": ".md5",
+      "files": 3641,
+      "bytes": 116512
+    },
+    {
+      "extension": ".p25i",
+      "files": 12,
+      "bytes": 111460
+    },
+    {
+      "extension": ".zi",
+      "files": 1,
+      "bytes": 105015
+    },
+    {
+      "extension": ".yml",
+      "files": 40,
+      "bytes": 102991
+    },
+    {
+      "extension": ".f",
+      "files": 216,
+      "bytes": 101988
+    },
+    {
+      "extension": ".pgm",
+      "files": 2,
+      "bytes": 101501
+    },
+    {
+      "extension": ".1",
+      "files": 15,
+      "bytes": 98570
+    },
+    {
+      "extension": ".cfg",
+      "files": 36,
+      "bytes": 94363
+    },
+    {
+      "extension": ".stderr",
+      "files": 350,
+      "bytes": 84235
+    },
+    {
+      "extension": ".ps1",
+      "files": 19,
+      "bytes": 80079
+    },
+    {
+      "extension": ".sln",
+      "files": 10,
+      "bytes": 78440
+    },
+    {
+      "extension": ".xml",
+      "files": 19,
+      "bytes": 77770
+    },
+    {
+      "extension": ".fits",
+      "files": 9,
+      "bytes": 77760
+    },
+    {
+      "extension": ".chm",
+      "files": 1,
+      "bytes": 72726
+    },
+    {
+      "extension": ".wav",
+      "files": 22,
+      "bytes": 72226
+    },
+    {
+      "extension": ".mat",
+      "files": 110,
+      "bytes": 70153
+    },
+    {
+      "extension": ".def",
+      "files": 12,
+      "bytes": 65795
+    },
+    {
+      "extension": ".dfa",
+      "files": 16,
+      "bytes": 62814
+    },
+    {
+      "extension": ".libaom",
+      "files": 42,
+      "bytes": 59760
+    },
+    {
+      "extension": ".index",
+      "files": 6,
+      "bytes": 57731
+    },
+    {
+      "extension": ".adb",
+      "files": 7,
+      "bytes": 57284
+    },
+    {
+      "extension": ".ac",
+      "files": 3,
+      "bytes": 55948
+    },
+    {
+      "extension": ".cs",
+      "files": 9,
+      "bytes": 55623
+    },
+    {
+      "extension": ".bat",
+      "files": 32,
+      "bytes": 52731
+    },
+    {
+      "extension": ".guess",
+      "files": 1,
+      "bytes": 52538
+    },
+    {
+      "extension": ".tab",
+      "files": 4,
+      "bytes": 49667
+    },
+    {
+      "extension": ".build",
+      "files": 31,
+      "bytes": 46681
+    },
+    {
+      "extension": ".m19",
+      "files": 12,
+      "bytes": 45044
+    },
+    {
+      "extension": ".awk",
+      "files": 3,
+      "bytes": 44170
+    },
+    {
+      "extension": ".pas",
+      "files": 4,
+      "bytes": 43854
+    },
+    {
+      "extension": ".am",
+      "files": 15,
+      "bytes": 39808
+    },
+    {
+      "extension": ".com",
+      "files": 5,
+      "bytes": 39281
+    },
+    {
+      "extension": ".sub",
+      "files": 1,
+      "bytes": 38817
+    },
+    {
+      "extension": ".mplstyle",
+      "files": 31,
+      "bytes": 38799
+    },
+    {
+      "extension": ".toml",
+      "files": 30,
+      "bytes": 35087
+    },
+    {
+      "extension": ".ads",
+      "files": 3,
+      "bytes": 34636
+    },
+    {
+      "extension": ".spec",
+      "files": 13,
+      "bytes": 31559
+    },
+    {
+      "extension": ".fish",
+      "files": 7,
+      "bytes": 30727
+    },
+    {
+      "extension": ".nu",
+      "files": 7,
+      "bytes": 28032
+    },
+    {
+      "extension": ".xsh",
+      "files": 7,
+      "bytes": 26901
+    },
+    {
+      "extension": ".cu",
+      "files": 48,
+      "bytes": 24904
+    },
+    {
+      "extension": ".mk",
+      "files": 13,
+      "bytes": 24307
+    },
+    {
+      "extension": ".sample",
+      "files": 13,
+      "bytes": 23513
+    },
+    {
+      "extension": ".terms",
+      "files": 10,
+      "bytes": 23070
+    },
+    {
+      "extension": ".pyf",
+      "files": 63,
+      "bytes": 21897
+    },
+    {
+      "extension": ".bsd",
+      "files": 16,
+      "bytes": 21504
+    },
+    {
+      "extension": ".template",
+      "files": 15,
+      "bytes": 20781
+    },
+    {
+      "extension": ".external",
+      "files": 1,
+      "bytes": 20410
+    },
+    {
+      "extension": ".rc",
+      "files": 15,
+      "bytes": 20370
+    },
+    {
+      "extension": ".vc",
+      "files": 1,
+      "bytes": 19437
+    },
+    {
+      "extension": ".csh",
+      "files": 7,
+      "bytes": 18750
+    },
+    {
+      "extension": ".unix",
+      "files": 1,
+      "bytes": 17878
+    },
+    {
+      "extension": ".cmakein",
+      "files": 2,
+      "bytes": 17403
+    },
+    {
+      "extension": ".included",
+      "files": 1,
+      "bytes": 17043
+    },
+    {
+      "extension": ".mp4",
+      "files": 3,
+      "bytes": 17034
+    },
+    {
+      "extension": ".mak",
+      "files": 7,
+      "bytes": 16875
+    },
+    {
+      "extension": ".swig",
+      "files": 1,
+      "bytes": 14783
+    },
+    {
+      "extension": ".cmd",
+      "files": 14,
+      "bytes": 14101
+    },
+    {
+      "extension": ".gradle",
+      "files": 4,
+      "bytes": 13920
+    },
+    {
+      "extension": ".ijg",
+      "files": 1,
+      "bytes": 13059
+    },
+    {
+      "extension": ".nsi",
+      "files": 1,
+      "bytes": 12497
+    },
+    {
+      "extension": ".gn",
+      "files": 1,
+      "bytes": 12398
+    },
+    {
+      "extension": ".star",
+      "files": 1,
+      "bytes": 11735
+    },
+    {
+      "extension": ".raw",
+      "files": 2,
+      "bytes": 11733
+    },
+    {
+      "extension": ".pc",
+      "files": 40,
+      "bytes": 11673
+    },
+    {
+      "extension": ".filters",
+      "files": 6,
+      "bytes": 11114
+    },
+    {
+      "extension": ".csproj",
+      "files": 2,
+      "bytes": 9113
+    },
+    {
+      "extension": ".gcc",
+      "files": 2,
+      "bytes": 8686
+    },
+    {
+      "extension": ".prebuilt",
+      "files": 1,
+      "bytes": 8323
+    },
+    {
+      "extension": ".msc",
+      "files": 3,
+      "bytes": 8150
+    },
+    {
+      "extension": ".ptx",
+      "files": 8,
+      "bytes": 7576
+    },
+    {
+      "extension": ".tgt",
+      "files": 4,
+      "bytes": 7346
+    },
+    {
+      "extension": ".coffee",
+      "files": 1,
+      "bytes": 7301
+    },
+    {
+      "extension": ".cjs",
+      "files": 3,
+      "bytes": 7283
+    },
+    {
+      "extension": ".sgi",
+      "files": 2,
+      "bytes": 7011
+    },
+    {
+      "extension": ".ini",
+      "files": 27,
+      "bytes": 6831
+    },
+    {
+      "extension": ".qpg",
+      "files": 1,
+      "bytes": 6568
+    },
+    {
+      "extension": ".pkl",
+      "files": 9,
+      "bytes": 6444
+    },
+    {
+      "extension": ".riscos",
+      "files": 2,
+      "bytes": 5873
+    },
+    {
+      "extension": ".bor",
+      "files": 2,
+      "bytes": 5829
+    },
+    {
+      "extension": ".dj2",
+      "files": 2,
+      "bytes": 5427
+    },
+    {
+      "extension": ".o",
+      "files": 1,
+      "bytes": 5396
+    },
+    {
+      "extension": ".dsp",
+      "files": 1,
+      "bytes": 5204
+    },
+    {
+      "extension": ".gyp",
+      "files": 1,
+      "bytes": 4991
+    },
+    {
+      "extension": ".bp",
+      "files": 1,
+      "bytes": 4990
+    },
+    {
+      "extension": ".darwin",
+      "files": 1,
+      "bytes": 4691
+    },
+    {
+      "extension": ".so9",
+      "files": 1,
+      "bytes": 4615
+    },
+    {
+      "extension": ".jni",
+      "files": 1,
+      "bytes": 4581
+    },
+    {
+      "extension": ".linux",
+      "files": 1,
+      "bytes": 4566
+    },
+    {
+      "extension": ".solaris",
+      "files": 1,
+      "bytes": 4474
+    },
+    {
+      "extension": ".64sunu",
+      "files": 1,
+      "bytes": 4457
+    },
+    {
+      "extension": ".32sunu",
+      "files": 1,
+      "bytes": 4430
+    },
+    {
+      "extension": ".vcwin-arm64",
+      "files": 1,
+      "bytes": 4426
+    },
+    {
+      "extension": ".ani",
+      "files": 1,
+      "bytes": 4362
+    },
+    {
+      "extension": ".tpp",
+      "files": 2,
+      "bytes": 4299
+    },
+    {
+      "extension": ".os2",
+      "files": 1,
+      "bytes": 4245
+    },
+    {
+      "extension": ".unx",
+      "files": 1,
+      "bytes": 4227
+    },
+    {
+      "extension": ".egg",
+      "files": 5,
+      "bytes": 4215
+    },
+    {
+      "extension": ".msys",
+      "files": 1,
+      "bytes": 4183
+    },
+    {
+      "extension": ".bc32",
+      "files": 1,
+      "bytes": 4134
+    },
+    {
+      "extension": ".std",
+      "files": 1,
+      "bytes": 4090
+    },
+    {
+      "extension": ".mingw32",
+      "files": 1,
+      "bytes": 4071
+    },
+    {
+      "extension": ".hp64",
+      "files": 1,
+      "bytes": 4060
+    },
+    {
+      "extension": ".beos",
+      "files": 1,
+      "bytes": 4018
+    },
+    {
+      "extension": ".intel",
+      "files": 1,
+      "bytes": 4007
+    },
+    {
+      "extension": ".hpgcc",
+      "files": 1,
+      "bytes": 3977
+    },
+    {
+      "extension": ".hpux",
+      "files": 1,
+      "bytes": 3942
+    },
+    {
+      "extension": ".sco",
+      "files": 1,
+      "bytes": 3928
+    },
+    {
+      "extension": ".vcwin32",
+      "files": 1,
+      "bytes": 3811
+    },
+    {
+      "extension": ".sggcc",
+      "files": 1,
+      "bytes": 3803
+    },
+    {
+      "extension": ".mms",
+      "files": 2,
+      "bytes": 3721
+    },
+    {
+      "extension": ".clang",
+      "files": 1,
+      "bytes": 3530
+    },
+    {
+      "extension": ".c89",
+      "files": 1,
+      "bytes": 3525
+    },
+    {
+      "extension": ".w32",
+      "files": 1,
+      "bytes": 3471
+    },
+    {
+      "extension": ".nc",
+      "files": 3,
+      "bytes": 3432
+    },
+    {
+      "extension": ".dec",
+      "files": 1,
+      "bytes": 3378
+    },
+    {
+      "extension": ".emcc",
+      "files": 1,
+      "bytes": 3326
+    },
+    {
+      "extension": ".emx",
+      "files": 2,
+      "bytes": 3041
+    },
+    {
+      "extension": ".gypi",
+      "files": 1,
+      "bytes": 3006
+    },
+    {
+      "extension": ".ibmc",
+      "files": 1,
+      "bytes": 3003
+    },
+    {
+      "extension": ".aix",
+      "files": 1,
+      "bytes": 2807
+    },
+    {
+      "extension": ".sunos",
+      "files": 1,
+      "bytes": 2794
+    },
+    {
+      "extension": ".tc",
+      "files": 1,
+      "bytes": 2757
+    },
+    {
+      "extension": ".mips",
+      "files": 1,
+      "bytes": 2645
+    },
+    {
+      "extension": ".tmp",
+      "files": 1,
+      "bytes": 2380
+    },
+    {
+      "extension": ".props",
+      "files": 1,
+      "bytes": 2352
+    },
+    {
+      "extension": ".contrib",
+      "files": 1,
+      "bytes": 2297
+    },
+    {
+      "extension": ".rtf",
+      "files": 1,
+      "bytes": 2197
+    },
+    {
+      "extension": ".xrc",
+      "files": 1,
+      "bytes": 2186
+    },
+    {
+      "extension": ".tmpl",
+      "files": 12,
+      "bytes": 2136
+    },
+    {
+      "extension": ".typed",
+      "files": 182,
+      "bytes": 2126
+    },
+    {
+      "extension": ".5",
+      "files": 1,
+      "bytes": 2058
+    },
+    {
+      "extension": ".pup",
+      "files": 1,
+      "bytes": 2050
+    },
+    {
+      "extension": ".examples",
+      "files": 1,
+      "bytes": 2024
+    },
+    {
+      "extension": ".properties",
+      "files": 4,
+      "bytes": 1998
+    },
+    {
+      "extension": ".sas",
+      "files": 1,
+      "bytes": 1915
+    },
+    {
+      "extension": ".manifest",
+      "files": 3,
+      "bytes": 1899
+    },
+    {
+      "extension": ".check_cache",
+      "files": 21,
+      "bytes": 1806
+    },
+    {
+      "extension": ".dict",
+      "files": 8,
+      "bytes": 1662
+    },
+    {
+      "extension": ".settings",
+      "files": 9,
+      "bytes": 1650
+    },
+    {
+      "extension": ".amiga",
+      "files": 1,
+      "bytes": 1523
+    },
+    {
+      "extension": ".netbsd",
+      "files": 1,
+      "bytes": 1413
+    },
+    {
+      "extension": ".freebsd",
+      "files": 1,
+      "bytes": 1381
+    },
+    {
+      "extension": ".atari",
+      "files": 1,
+      "bytes": 1377
+    },
+    {
+      "extension": ".f95",
+      "files": 9,
+      "bytes": 1296
+    },
+    {
+      "extension": ".go",
+      "files": 1,
+      "bytes": 1280
+    },
+    {
+      "extension": ".openbsd",
+      "files": 1,
+      "bytes": 1273
+    },
+    {
+      "extension": ".ppc",
+      "files": 2,
+      "bytes": 1146
+    },
+    {
+      "extension": ".meta",
+      "files": 9,
+      "bytes": 1038
+    },
+    {
+      "extension": ".pth",
+      "files": 13,
+      "bytes": 1032
+    },
+    {
+      "extension": ".wpj",
+      "files": 1,
+      "bytes": 972
+    },
+    {
+      "extension": ".rs",
+      "files": 1,
+      "bytes": 894
+    },
+    {
+      "extension": ".gdb",
+      "files": 8,
+      "bytes": 848
+    },
+    {
+      "extension": ".pro",
+      "files": 2,
+      "bytes": 715
+    },
+    {
+      "extension": ".dsw",
+      "files": 1,
+      "bytes": 541
+    },
+    {
+      "extension": ".gpr",
+      "files": 1,
+      "bytes": 531
+    },
+    {
+      "extension": ".config",
+      "files": 1,
+      "bytes": 452
+    },
+    {
+      "extension": ".new",
+      "files": 1,
+      "bytes": 360
+    },
+    {
+      "extension": ".old",
+      "files": 1,
+      "bytes": 360
+    },
+    {
+      "extension": ".tag",
+      "files": 7,
+      "bytes": 301
+    },
+    {
+      "extension": ".chromium",
+      "files": 1,
+      "bytes": 276
+    },
+    {
+      "extension": ".lua",
+      "files": 1,
+      "bytes": 189
+    },
+    {
+      "extension": ".scan",
+      "files": 1,
+      "bytes": 118
+    },
+    {
+      "extension": ".sha256",
+      "files": 1,
+      "bytes": 86
+    },
+    {
+      "extension": ".8-alpha",
+      "files": 1,
+      "bytes": 54
+    },
+    {
+      "extension": ".lst",
+      "files": 1,
+      "bytes": 53
+    },
+    {
+      "extension": ".8",
+      "files": 1,
+      "bytes": 53
+    },
+    {
+      "extension": ".mf",
+      "files": 1,
+      "bytes": 44
+    },
+    {
+      "extension": ".options",
+      "files": 1,
+      "bytes": 30
+    },
+    {
+      "extension": ".yapf",
+      "files": 1,
+      "bytes": 30
+    },
+    {
+      "extension": ".pk",
+      "files": 1,
+      "bytes": 8
+    }
+  ],
+  "large_artifacts_preserved": [
+    {
+      "path": "research_pass45/outputs/PBC3_1_Release_published.zip",
+      "bytes": 76861234,
+      "sha256": "3ee8f68b45adb3a89128251b8905d93cb99a96d911a055f91e124e724abbe069",
+      "reason_to_preserve": "Published V3.1 release artifact used by canonical baseline; preserve as reference",
+      "regeneration": "Available from public GitHub release; research source and baseline manifests are also retained"
+    },
+    {
+      "path": "dist/PBC3_1_Release.zip",
+      "bytes": 129366,
+      "sha256": "dc069a075836040d45cf7a6375dd3603cb2d3ce0b3f1392784498b68ee522084",
+      "reason_to_preserve": "Older distinct 129 KB archive; keep as historical local package artifact",
+      "regeneration": "Historical package source/build scripts are in repo; not assumed identical to published ZIP"
+    },
+    {
+      "path": "research_pass27/artifacts/PBC32rc1-combined-Windows-x64.zip",
+      "bytes": 72582125,
+      "sha256": "aade8849c74f0a808de8df1b3bd4cef3a1caea93009b474ce20c11357f0b3eed",
+      "reason_to_preserve": "Unpublished V3.2 RC package; preserve for provenance until separately reviewed",
+      "regeneration": "Pass 27 source/build instructions and SHA manifest allow rebuild"
+    },
+    {
+      "path": "research_pass28/artifacts/final/PBC-3.2.0-combined-Windows-x64.zip",
+      "bytes": 72817005,
+      "sha256": "439ac835c3e1bfc5bdfb4a83c56647fa7f1fff80bb94fd75e9fad681c1a36425",
+      "reason_to_preserve": "Unpublished V3.2 final candidate; preserve for provenance until separately reviewed",
+      "regeneration": "Pass 28 source/build instructions and distribution manifest allow rebuild"
+    }
+  ],
+  "preservation_rules": [
+    "Keep hpt_data and hpt_data_val source files and verify them against pass manifests.",
+    "Keep patch_policy.npz and old_pbc/patch_policy.npz; do not replace learned weights.",
+    "Keep Git object storage and all worktree metadata; do not run gc or prune.",
+    "Keep release package sources, research reports, scripts, compact evidence exports, canonical ZIP and user benchmark databases.",
+    "Do not delete uncertain data or anything outside this confirmed PBC research worktree."
+  ],
+  "cleanup_candidates_after_archive": [
+    "research_pass*/__pycache__ and Python bytecode/Numba caches",
+    "pass-local ignored generated streams, coefficient arrays, temporary reconstructions and intermediate visual outputs after compact evidence export",
+    "Pass 35 and Pass 39 pinned upstream source/build/install trees that are reproducible from documented source commits and build scripts",
+    "repeated extracted Windows package trees and local build products under research_pass26-28 and release_prep_v31 while retaining exact archive ZIPs and source/release instructions"
+  ],
+  "essential_ignored_artifacts": [
+    "Canonical release ZIP above; hash is recorded.",
+    "Input benchmark images in hpt_data and hpt_data_val; retained locally, not uploaded.",
+    "The rest of ignored outputs are treated as regenerable only after compact result data is preserved and source/input provenance is present; the report records omissions and does not claim every raw trace is archived."
+  ],
+  "archive_pre_cleanup_snapshot": {
+    "logical_bytes_excluding_git": 21023908778,
+    "file_count_excluding_git": 110506,
+    "note": "includes archive documents and selected compact evidence exports; inventory excludes .git"
+  },
+  "evidence_export_manifest": "research/EVIDENCE_MANIFEST.json"
+}

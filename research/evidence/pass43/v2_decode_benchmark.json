@@ -1,0 +1,31 @@
+{
+  "stream_path": "PBC_ROOT/research_pass43/outputs/coast_v4_v2_intermediate_p3003.pbc",
+  "stream_sha256": "5ee637aa6a239372173c3ab57e2c1ccd10e876512c65f89b3e4863606b79ff7f",
+  "warmups": 1,
+  "repetitions": 5,
+  "samples_seconds": [
+    2.64118450001115,
+    2.6861819000332616,
+    2.756567800010089,
+    2.838244799990207,
+    2.7309464999707416
+  ],
+  "median_seconds": 2.7309464999707416,
+  "pixel_sha256": "add1bb40974eb36e5b7974a0bf3a7448a7179f19fb5a576e7b7773ff7a781d42",
+  "peak_observed_rss_delta_bytes": 162545664,
+  "mode_counts": {
+    "skip": 16577,
+    "procedural": 28211,
+    "transform": 2117
+  },
+  "skip_exact": true,
+  "fresh_process": {
+    "seconds": 2.146889599971473,
+    "pixel_sha256": "add1bb40974eb36e5b7974a0bf3a7448a7179f19fb5a576e7b7773ff7a781d42",
+    "dimensions": [
+      4240,
+      2832
+    ],
+    "skip_exact": true
+  }
+}
