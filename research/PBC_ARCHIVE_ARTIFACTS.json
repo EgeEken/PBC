@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "inventory_scope": "C:\\Users\\EGE\\.codex\\worktrees\\pbc-research-experiments\\PBC",
+  "inventory_scope": "confirmed PBC research worktree root (local absolute path intentionally omitted)",
   "initial_state": {
     "branch": "research/experiments",
     "head": "3723dc14de88c6c3dcbd98dd80a097e019a92a9f",
@@ -8,7 +8,7 @@
     "logical_bytes_excluding_git": 21021472033,
     "file_count_excluding_git": 110442,
     "allocated_bytes": "not measured; NTFS allocation differs from logical length",
-    "cleanup_status": "pending remote archive verification"
+    "cleanup_status": "complete after remote archive verification"
   },
   "largest_top_level_entries": [
     {
@@ -1798,21 +1798,98 @@
     "Keep release package sources, research reports, scripts, compact evidence exports, canonical ZIP and user benchmark databases.",
     "Do not delete uncertain data or anything outside this confirmed PBC research worktree."
   ],
-  "cleanup_candidates_after_archive": [
-    "research_pass*/__pycache__ and Python bytecode/Numba caches",
-    "pass-local ignored generated streams, coefficient arrays, temporary reconstructions and intermediate visual outputs after compact evidence export",
-    "Pass 35 and Pass 39 pinned upstream source/build/install trees that are reproducible from documented source commits and build scripts",
-    "repeated extracted Windows package trees and local build products under research_pass26-28 and release_prep_v31 while retaining exact archive ZIPs and source/release instructions"
-  ],
   "essential_ignored_artifacts": [
     "Canonical release ZIP above; hash is recorded.",
     "Input benchmark images in hpt_data and hpt_data_val; retained locally, not uploaded.",
-    "The rest of ignored outputs are treated as regenerable only after compact result data is preserved and source/input provenance is present; the report records omissions and does not claim every raw trace is archived."
+    "The rest of ignored outputs are treated as regenerable only after compact result data is preserved and source/input provenance is present; the report records omissions and does not claim every raw trace is archived.",
+    {
+      "path": "research_pass47/outputs/states/*.npz",
+      "files": 10,
+      "bytes": 7868047,
+      "why": "Exact sampled encoder states contain target/canvas/error arrays including source-image pixels; retained locally to avoid publishing benchmark image contents while preserving exact oracle replay evidence. Per-file SHA-256 values are in the cleanup record.",
+      "regeneration": "Rerun Pass 47 state capture with the preserved canonical input images, source/model/config hashes and scripts; inputs remain in hpt_data."
+    }
   ],
   "archive_pre_cleanup_snapshot": {
-    "logical_bytes_excluding_git": 21023908778,
-    "file_count_excluding_git": 110506,
-    "note": "includes archive documents and selected compact evidence exports; inventory excludes .git"
+    "logical_bytes_excluding_git": 21023994413,
+    "file_count_excluding_git": 110508,
+    "note": "immediate measured snapshot before conservative cleanup; shared Git storage excluded"
   },
-  "evidence_export_manifest": "research/EVIDENCE_MANIFEST.json"
+  "evidence_export_manifest": "research/EVIDENCE_MANIFEST.json",
+  "post_cleanup_snapshot": {
+    "logical_bytes_excluding_git": 6582353109,
+    "file_count_excluding_git": 74659,
+    "drive_free_bytes": 133352869888,
+    "shared_git_bytes_preserved": 478307806,
+    "desktop_checkout_bytes_excluding_git": 1196368046,
+    "note": "research worktree only; desktop checkout and shared Git storage preserved"
+  },
+  "cleanup_record": "research/PBC_CLEANUP_RECORD.json",
+  "cleanup_summary": {
+    "logical_bytes": 14442149075,
+    "file_count": 35872,
+    "drive_free_delta_bytes": 14469103616,
+    "categories": {
+      "python/numba cache": {
+        "files": 15459,
+        "bytes": 311904768
+      },
+      "documented AV1 build/install output": {
+        "files": 10412,
+        "bytes": 600233090
+      },
+      "regenerable benchmark visual/array/build output; compact records retained": {
+        "files": 6755,
+        "bytes": 5874435527
+      },
+      "extracted/build binary; exact outer ZIPs retained": {
+        "files": 3138,
+        "bytes": 4721533858
+      },
+      "derived Pass 34 base/candidate arrays": {
+        "files": 108,
+        "bytes": 2934041832
+      }
+    }
+  },
+  "cleanup_actions_performed": [
+    "Removed Python/Numba caches after archiving compact evidence.",
+    "Removed reproducible Pass 35/39 AV1 build/install products outside nested Git repositories; source repositories remain intact.",
+    "Removed regenerable benchmark visual/raw-array/build outputs from Passes 35–44 and 47 while retaining compact JSON/CSV/log/text evidence, all .pbc streams, Pass45/46 AVIF references, and Pass47 state snapshots.",
+    "Removed extracted/build binary payloads under Pass27/28 artifacts while retaining all ZIP archives and provenance.",
+    "Removed Pass34 base/candidate reconstruction .npy arrays while preserving results, hashes, source inputs, completed streams and two tiny fixtures."
+  ],
+  "remaining_large_directories": [
+    {
+      "path": "release_prep_v31",
+      "bytes": 2765872554,
+      "decision": "preserve: current release staging and historical artifacts; cleanup would require a separate per-artifact audit"
+    },
+    {
+      "path": "research_pass28",
+      "bytes": 828206795,
+      "decision": "preserve exact unpublished package ZIPs and provenance; extracted payload binaries were removed"
+    },
+    {
+      "path": "research_pass26",
+      "bytes": 562603189,
+      "decision": "preserve packaging and video research outputs pending per-artifact review"
+    },
+    {
+      "path": "research_pass27",
+      "bytes": 410930311,
+      "decision": "preserve exact unpublished package ZIPs and provenance; extracted payload binaries were removed"
+    },
+    {
+      "path": "research_pass16",
+      "bytes": 321398795,
+      "decision": "preserve older virtual environment and results pending dependency/use review"
+    },
+    {
+      "path": "research_pass13",
+      "bytes": 203388298,
+      "decision": "preserve older research outputs pending per-artifact review"
+    }
+  ],
+  "inventory_timepoint": "pre-cleanup; see post_cleanup_snapshot and cleanup record for final state"
 }

@@ -1,0 +1,158 @@
+{
+  "cleanup_status": "complete",
+  "cleanup_utc": "2026-11-08T11:17:51Z",
+  "scope": "confirmed research worktree only; shared .git, linked worktrees and desktop checkout excluded",
+  "before": {
+    "logical_bytes_excluding_git": 21023994413,
+    "file_count_excluding_git": 110508,
+    "drive_free_bytes": 118717693952
+  },
+  "removed": {
+    "logical_bytes": 14442149075,
+    "file_count": 35872,
+    "drive_free_delta_bytes": 14469103616,
+    "categories": {
+      "python/numba cache": {
+        "files": 15459,
+        "bytes": 311904768
+      },
+      "documented AV1 build/install output": {
+        "files": 10412,
+        "bytes": 600233090
+      },
+      "regenerable benchmark visual/array/build output; compact records retained": {
+        "files": 6755,
+        "bytes": 5874435527
+      },
+      "extracted/build binary; exact outer ZIPs retained": {
+        "files": 3138,
+        "bytes": 4721533858
+      },
+      "derived Pass 34 base/candidate arrays": {
+        "files": 108,
+        "bytes": 2934041832
+      }
+    }
+  },
+  "after": {
+    "logical_bytes_excluding_git": 6582353109,
+    "file_count_excluding_git": 74659,
+    "drive_free_bytes": 133352869888
+  },
+  "deleted_policy": [
+    "Python/Numba caches",
+    "documented Pass 35/39 AV1 build/install products outside nested Git repositories",
+    "regenerable visual/raw-array/build outputs under Passes 35\u201344 and 47 (compact JSON/CSV/log/text retained; .pbc streams retained)",
+    "extracted/build binaries under Pass 27/28 artifacts (all ZIP files retained)",
+    "research_pass34/outputs/bases/*.npy and reconstructions/{coast.jpg,ducklings.jpg,ratedistortion.png,sunset.jpg}/*.npy; tiny generated fixture arrays preserved"
+  ],
+  "protected_hashes": {
+    "canonical_release_zip": {
+      "path": "research_pass45\\outputs\\PBC3_1_Release_published.zip",
+      "bytes": 76861234,
+      "sha256": "3ee8f68b45adb3a89128251b8905d93cb99a96d911a055f91e124e724abbe069"
+    },
+    "v32_rc1_zip": {
+      "path": "research_pass27\\artifacts\\PBC32rc1-combined-Windows-x64.zip",
+      "bytes": 72582125,
+      "sha256": "aade8849c74f0a808de8df1b3bd4cef3a1caea93009b474ce20c11357f0b3eed"
+    },
+    "v32_final_zip": {
+      "path": "research_pass28\\artifacts\\final\\PBC-3.2.0-combined-Windows-x64.zip",
+      "bytes": 72817005,
+      "sha256": "439ac835c3e1bfc5bdfb4a83c56647fa7f1fff80bb94fd75e9fad681c1a36425"
+    },
+    "root_release_zip": {
+      "path": "dist\\PBC3_1_Release.zip",
+      "bytes": 129366,
+      "sha256": "dc069a075836040d45cf7a6375dd3603cb2d3ce0b3f1392784498b68ee522084"
+    },
+    "model": {
+      "path": "patch_policy.npz",
+      "bytes": 104903,
+      "sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+    },
+    "old_model": {
+      "path": "old_pbc\\patch_policy.npz",
+      "bytes": 104903,
+      "sha256": "ffaf24aa5447b3602c53a5c4c8df14a68ee16e6bded39331d973f38d0f1ea62f"
+    }
+  },
+  "preserved_pass47_state_npz": [
+    {
+      "path": "research_pass47\\outputs\\states\\coast_balanced_step01.npz",
+      "bytes": 593075,
+      "sha256": "afa81c2eb6fb29b9ae81429d9df78b938e4ebdea09c0bef45de81dfe73526565"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\coast_balanced_step25.npz",
+      "bytes": 639949,
+      "sha256": "b5661e776c406f33e21c35c0365b57eefc227d507bbeec2f75e688def89d4b8d"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\coast_compression_step01.npz",
+      "bytes": 593075,
+      "sha256": "afa81c2eb6fb29b9ae81429d9df78b938e4ebdea09c0bef45de81dfe73526565"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\coast_compression_step25.npz",
+      "bytes": 623053,
+      "sha256": "ceb07ef09382360a3ffc738d1df97760264e2e0d0d0f6c9371c22b070a59590e"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\googlewiki_balanced_step01.npz",
+      "bytes": 793378,
+      "sha256": "fbe7d0dcd9697d84d105be43b77b33f44149f726296df6b478b5e0f6ea6ac819"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\googlewiki_compression_step01.npz",
+      "bytes": 793378,
+      "sha256": "fbe7d0dcd9697d84d105be43b77b33f44149f726296df6b478b5e0f6ea6ac819"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\mario64_balanced_step01.npz",
+      "bytes": 950940,
+      "sha256": "74a92dd349c1cd47b464c7bdde4f91fd50a9d98643fd232ae8eefa87ea09b9d2"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\mario64_balanced_step25.npz",
+      "bytes": 969832,
+      "sha256": "04e8322bed28d27188c1cc07f5e61747af0b6034be596c066ea8de25738cfeee"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\mario64_balanced_step50.npz",
+      "bytes": 960427,
+      "sha256": "935c82066b90fc087df889ff9b21c0c9944ff2994b7c725915bfac80bc8fef8f"
+    },
+    {
+      "path": "research_pass47\\outputs\\states\\mario64_compression_step01.npz",
+      "bytes": 950940,
+      "sha256": "74a92dd349c1cd47b464c7bdde4f91fd50a9d98643fd232ae8eefa87ea09b9d2"
+    }
+  ],
+  "preserved_nested_git_repositories": [
+    "research_pass35\\build\\libavif-reference\\_deps",
+    "research_pass35\\build\\libavif-reference\\libjpeg",
+    "research_pass35\\sources\\libaom",
+    "research_pass35\\sources\\libavif",
+    "research_pass39\\outputs\\libaom-qmap-source",
+    "research_pass40\\outputs\\sources\\libaom"
+  ],
+  "additional_cleanup_pass34": {
+    "scope": "research_pass34/outputs/bases/*.npy and reconstructions/{coast.jpg,ducklings.jpg,ratedistortion.png,sunset.jpg}/*.npy; tiny generated fixture arrays preserved",
+    "reason": "Derived base and candidate reconstructions; Pass 34 result JSON preserves metrics and pixel hashes, source images and generation scripts remain, and .p34s/.p33s/.pbc3/AVIF streams are preserved.",
+    "removed_files": 108,
+    "removed_logical_bytes": 2934041832,
+    "before": {
+      "logical_bytes_excluding_git": 9516394941,
+      "file_count_excluding_git": 74767,
+      "drive_free_bytes": 130418970624
+    },
+    "after": {
+      "logical_bytes_excluding_git": 6582353109,
+      "file_count_excluding_git": 74659,
+      "drive_free_bytes": 133352869888
+    },
+    "drive_free_delta_bytes": 2933899264
+  }
+}

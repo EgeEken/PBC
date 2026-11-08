@@ -3,7 +3,7 @@
 - **Current released version:** PBC V3.1. No V4 release exists.
 - **Research status:** paused after Pass 47.
 - **Canonical research baseline:** published V3.1 ZIP; [baseline note](PBC31_CANONICAL_BASELINE.md) and [JSON](PBC31_CANONICAL_BASELINE.json).
-- **Read first:** [consolidated archive](PBC_RESEARCH_ARCHIVE.md), [future handoff](PBC_FUTURE_HANDOFF.md), [closure](PBC_RESEARCH_CLOSURE.md), [public maintenance audit](PBC_PUBLIC_MAINTENANCE_AUDIT.md).
+- **Read first:** [consolidated archive](PBC_RESEARCH_ARCHIVE.md), [future handoff](PBC_FUTURE_HANDOFF.md), [closure](PBC_RESEARCH_CLOSURE.md), [public maintenance audit](PBC_PUBLIC_MAINTENANCE_AUDIT.md), [archive artifacts](PBC_ARCHIVE_ARTIFACTS.json), and [cleanup record](PBC_CLEANUP_RECORD.json).
 
 ## Pass index
 
@@ -30,4 +30,4 @@ Read [reproduction guidance](REPRODUCTION.md) and [baseline provenance](PBC31_CA
 - The reported HF screenshot 4.65 KiB / MSE 88.87 Coast output cannot be reproduced from the available returned stream/input. Cause is unknown.
 - Canonical manifest is provisional: desktop executable, exact HF Linux native library build and cross-platform byte identity were not verified.
 - HF-compatible and pinned research AVIF implementations differ; do not equate their “quality 0” points.
-- Large raw outputs/traces may be excluded or ignored; see [artifact manifest](PBC_ARCHIVE_ARTIFACTS.json) and pass reproduction notes. The archive does not claim complete rebuildability from Git alone.
+- Large raw outputs/traces may be excluded or ignored; see [artifact manifest](PBC_ARCHIVE_ARTIFACTS.json) and pass reproduction notes. The archive does not claim complete rebuildability from Git alone. Cleanup details and local-only evidence are in [the cleanup record](PBC_CLEANUP_RECORD.json).
