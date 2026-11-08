@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 
 # Rebuildable local native metric library
-codec/*.dll
+codec/pbc3/*.dll
 codec/*.pyd
 codec/*.obj
 codec/*.pdb

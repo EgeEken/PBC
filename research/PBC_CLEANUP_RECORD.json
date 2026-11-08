@@ -154,5 +154,19 @@
       "drive_free_bytes": 133352869888
     },
     "drive_free_delta_bytes": 2933899264
-  }
+  },
+  "preserved_local_only_artifacts": [
+    {
+      "path": "research_pass47/codec/pbc3/mse.dll",
+      "bytes": 55172,
+      "sha256": "0def06d35fb5d4f97949ba2bc1ddb55651afeb2d007971a7c626c951cce928f3",
+      "role": "Optional native MSE backend for Pass 47 timing/reproduction; kept locally and excluded from Git as a generated binary.",
+      "source": {
+        "path": "research_pass47/codec/pbc3/mse.c",
+        "bytes": 943,
+        "sha256": "8a5748865de1640ba88aa7d667181072e8a3438c88b3fa9a2e6bc920ec8e9395"
+      },
+      "regeneration": "Source is preserved, but the exact compiler invocation and toolchain are not recorded; no verified second binary copy was found."
+    }
+  ]
 }
